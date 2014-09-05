@@ -2,25 +2,19 @@ Curriculum Vitae
 ================
 
 Jonathan Reeve {.name}
-==============
 
 jon.reeve@gmail.com
 
 http://jonreeve.com/cv
 
-[**](http://jonreeve.com/cv/reeve-cv.pdf)
-[**](https://github.com/JonathanReeve/)
-[**](http://www.linkedin.com/pub/jonathan-reeve/36/8b/79b/)
-
-Work Experience
-===============
+Experience
+==========
 
 Nov. '13 - Present Modern Language Association: Web Developer
 
--   Edited XML and XSL transformations for the [Literary Research
-    Guide](http://mlalrg.org/public)
--   Contributed to Wordpress/Buddypress themes and plugins used on [MLA
-    Commons](http://commons.mla.org)
+-   Edited XML and XSL for the [Literary Research Guide](http://mlalrg.org/public)
+-   Contributed to [the redesign](http://updates.commons.mla.org/2014/07/28/new-theme-for-the-mla-commons/) of the [MLA Commons](http://commons.mla.org)
+-   Added new features to the electronic edition of [_Profession_](http://profession.commons.mla.org/)
 
 <!--Dec. '13 - April '14 [The Cryptocurrency Analytics Company](http://cryptocurrencyanalytics.com) Programmer-->
 
@@ -31,16 +25,10 @@ Nov. '13 - Present Modern Language Association: Web Developer
 June '12 - July '13 New York University, History Department: Web
 Programmer
 
--   Expanded functionality for the [Margaret Sanger Papers Project Web
-    Edition](http://www.nyu.edu/projects/sanger/publications/electronic_ed/speeches_and_articles.html)
--   Developed a data visualization engine for the Margaret Sanger Papers
-    Project
--   Developed [a customization
-    engine](https://github.com/JonathanReeve/theme-elementaire) for the
-    [Omeka content management platform](http://omeka.org)
--   Designed and developed Omeka themes deployed on [Greenwich Village
-    History](http://gvh.aphdigital.org) and [New Jersey Digital
-    History](http://njdigitalhistory.org/NJDHA/)
+-   Expanded functionality for the [Margaret Sanger Papers Project Web Edition](http://www.nyu.edu/projects/sanger/publications/electronic_ed/speeches_and_articles.html)
+-   Wrote a statistical analysis page to visualize data from the Margaret Sanger Papers Project
+-   Developed [a customization engine](https://github.com/JonathanReeve/theme-elementaire) for the [Omeka content management platform](http://omeka.org)
+-   Designed and developed Omeka themes deployed on [Greenwich Village History](http://gvh.aphdigital.org) and [New Jersey Digital History](http://njdigitalhistory.org/NJDHA/)
 
 July '12 - Sept. '12 Thomas Riggs & Company, Publishers: Research Writer
 
@@ -50,8 +38,8 @@ Literature*](http://www.thomasriggs.net/pages/content/index.asp?PageID=158):
 -   Richard Stallman's "The GNU Manifesto," John Barlow's "A Declaration
     of the Independence of Cyberspace," and several others
 
-Teaching Positions
-==================
+Teaching Experience
+===================
 
 Sept. '12 – Dec. '12 New York University, Computer Science Department:
 Teaching Assistant
@@ -78,6 +66,7 @@ Adjunct Lecturer
 
 Mar. '05 - Jan. '06 Missouri State University Branch Campus, Dalian, China: Adjunct Instructor
 
+-   Taught Reading and Writing to first- and second-year international students. 
 
 Education
 =========
@@ -91,36 +80,21 @@ Jan. 2004 Bachelor of Arts, Individiualized Study, New York University
 Technical Skills
 ================
 
-Languages: PHP, Python, BASH, jQuery, SQL. Some working knowledge of: Ruby,
-Javascript.
+Languages: PHP, Python, BASH, jQuery, SQL, XSL. Some working knowledge of: Ruby, Javascript.
 
-Markup Languages: HTML5, CSS3, Sass, XML, TEI XML, XSL, LaTeX,
-Markdown.
+Markup Languages: HTML, CSS, Sass, XML, TEI XML, LaTeX, Markdown.
 
-Frameworks, CMSs: Wordpress, Buddypress, Omeka. Some experience with ZEND, Django.
+Frameworks, CMSs: Wordpress, Buddypress, Commons in a Box, Omeka. Some experience with ZEND, Django, and Jekyll. 
 
 Databases: MySQL, PostgreSQL, SQLite.
 
-Servers and OSs: Linux (LAMP stack), Unix, BSD, Mac OS.
+Servers and OSs: Linux (LAMP stack), Unix, Mac OS.
 
-Natural Languages: English: native; French: advanced (TCF Level 4);
-Mandarin Chinese: advanced; Vietnamese, Irish: beginner.
+Natural Languages: English: native; French: advanced (TCF Level 4); Mandarin Chinese: advanced; Vietnamese, Irish: beginner.
 
-Skills: Web development, web design, computational text analysis, natural
-language processing, archival textual markup, database management,
-command-line scripting, version control, virtualization, basic
-networking.
+Skills: Web development, web design, mobile web design, computational text analysis, natural language processing, archival textual markup, database management, command-line scripting, version control, virtualization, basic networking.
 
 Applications: Vim, Git, Bazaar, GIMP, VMWare, LibreOffice.
-
-Open-Source Contributions and Other Projects
-============================================
-
-Buddypress, BBPress, Buddypress Docs, Commons in a Box 
-
-July 2014 - Present: Open Syllabus Project
- - developed categorizers for determining the subject of scraped syllabi
- - ran collocations analyses by subject <!-- TODO: link -->  
 
 Selected Publications and Presentations
 =======================================
@@ -148,13 +122,11 @@ Oct. 2011 *[The Art of Good Behavior](http://jonreeve.com/behaviour)*, a digital
 -   presented completed work, Yale University Digital Humanities Forum,
     Feb '12
 
-June 2011 "Hypertext Joyce: Building a Hypertext Ulysses with Open
-Source"
+June 2011 "Hypertext Joyce: Building a Hypertext Ulysses with Open Source"
 
 -   presented at the 2011 North American James Joyce Conference
 
-May 2010 "Dominance and Domine: Toward a Post-Religious Criticism of
-James Joyce's Ulysses,"
+May 2010 "Dominance and Domine: Toward a Post-Religious Criticism of James Joyce's Ulysses,"
 
 -   paper delivered at 2010 Graduate English Conference, Brooklyn
     College
@@ -164,27 +136,44 @@ James Joyce's Ulysses,"
 -   2011 A Gathering of the Tribes
 -   2009 Arsenic Lobster Anthology
 
+Open-Source Contributions and Other Projects
+============================================
+
+May 2014 - Present: through the Modern Language Assocation, contributor to the open-source projects: 
+ - [Buddypress](http://buddypress.org/): social networking WordPress plugin. Over 2.2 million downloads. 
+ - [BBPress](https://wordpress.org/plugins/bbpress/): WordPress plugin enabling forums. Over 1.4 million downloads.
+ - [Buddypress Docs](https://wordpress.org/plugins/buddypress-docs/): collaborative authoring tool for WordPress. Over 80,000 downloads.
+ - [Commons in a Box](http://commonsinabox.org/): social networking software suite, used by CUNY, SUNY, and many others. Over 12,000 downloads. 
+
+July 2014 - Present: [Open Syllabus Project](http://opensyllabusproject.org/)
+ - developed categorizers for determining the subject of scraped syllabi
+ - performed collocations analyses by subject <!-- TODO: link -->  
+
+Nov. 2013 - The Waves: a TEI XML Edition
+ - a TEI XML edition of Virginia Woolf's novel, with dialog markup
+ - this edition faciliates dialog extraction
+
+Jan. 2013 - Dec. 2013: [New York University Digital Humanities Working Group](http://nyudigitalexperiments.com) Epigraphs Project
+-   developed a [script to parse epigraphs](https://github.com/JonathanReeve/epi-project) from TEI XML
+-   designed initial prototypes of project database
+
 Other Activities
 ================
 
-Active member, **[New York University Digital Humanities Working
-Group](http://nyudigitalexperiments.com)** Epigraphs Project
-
--   developed a [script to parse
-    epigraphs](https://github.com/JonathanReeve/epi-project) from TEI
-    XML
--   led creation of project database
-
-Open source enthusiast and long-time desktop **Linux** user
-
+Open source enthusiast and long-time desktop Linux user
 -   assisted in alpha testing of Ubuntu and other FOSS
 -   contributed to vim plugins
 
-keyboardist in the rock band **Your 33 Black Angels**
-
+Keyboardist in the rock band Your 33 Black Angels
 -   recorded accordions, synthesizers, and flutes on four albums
 -   played two North American and three European tours
 
-Organizer, **Book Thug Nation** poetry reading series
+Organizer, Book Thug Nation poetry reading series
 
 Accomplished rock climber, level 5.11b
+
+Social Media Links
+==================
+
+[GitHub](https://github.com/JonathanReeve/)
+[LinkedIn](http://www.linkedin.com/pub/jonathan-reeve/36/8b/79b/)
