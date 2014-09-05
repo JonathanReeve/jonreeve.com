@@ -12,8 +12,8 @@ http://jonreeve.com/cv
 [**](https://github.com/JonathanReeve/)
 [**](http://www.linkedin.com/pub/jonathan-reeve/36/8b/79b/)
 
-Experience
-==========
+Work Experience
+===============
 
 Nov. '13 - Present Modern Language Association: Web Developer
 
@@ -22,14 +22,11 @@ Nov. '13 - Present Modern Language Association: Web Developer
 -   Contributed to Wordpress/Buddypress themes and plugins used on [MLA
     Commons](http://commons.mla.org)
 
-Dec. '13 - April '14 [The Cryptocurrency Analytics
-Company](http://cryptocurrencyanalytics.com) Programmer
+<!--Dec. '13 - April '14 [The Cryptocurrency Analytics Company](http://cryptocurrencyanalytics.com) Programmer-->
 
--   Designed and implemented a Django webapp for client account
-    management
--   Designed database model in Django and PostgreSQL
--   Contributed new features for a virtual currency trading engine in
-    Python
+<!---   Designed and implemented a Django webapp for client account management-->
+<!---   Designed database model in Django and PostgreSQL-->
+<!---   Contributed new features for a virtual currency trading engine in Python-->
 
 June '12 - July '13 New York University, History Department: Web
 Programmer
@@ -44,7 +41,6 @@ Programmer
 -   Designed and developed Omeka themes deployed on [Greenwich Village
     History](http://gvh.aphdigital.org) and [New Jersey Digital
     History](http://njdigitalhistory.org/NJDHA/)
-
 
 July '12 - Sept. '12 Thomas Riggs & Company, Publishers: Research Writer
 
@@ -95,27 +91,36 @@ Jan. 2004 Bachelor of Arts, Individiualized Study, New York University
 Technical Skills
 ================
 
-Languages PHP, Python, BASH, jQuery, SQL. Working knowledge of: Ruby,
+Languages: PHP, Python, BASH, jQuery, SQL. Some working knowledge of: Ruby,
 Javascript.
 
-Markup Languages HTML5, CSS3, Sass, XML, TEI XML, XSL(T), \*TeX,
+Markup Languages: HTML5, CSS3, Sass, XML, TEI XML, XSL, LaTeX,
 Markdown.
 
-Frameworks, CMSs Wordpress, Buddypress, Omeka, ZEND, Django.
+Frameworks, CMSs: Wordpress, Buddypress, Omeka. Some experience with ZEND, Django.
 
-Databases MySQL, PostgreSQL, SQLite.
+Databases: MySQL, PostgreSQL, SQLite.
 
-Servers and OSs Linux (LAMP stack), Unix, BSD, Mac OS.
+Servers and OSs: Linux (LAMP stack), Unix, BSD, Mac OS.
 
-Natural Languages English: native; French: advanced (TCF Level 4);
+Natural Languages: English: native; French: advanced (TCF Level 4);
 Mandarin Chinese: advanced; Vietnamese, Irish: beginner.
 
-Skills Web development, web design, computational text analysis, natural
+Skills: Web development, web design, computational text analysis, natural
 language processing, archival textual markup, database management,
 command-line scripting, version control, virtualization, basic
 networking.
 
-Applications Vim, Git, Bazaar, GIMP, VMWare, LibreOffice.
+Applications: Vim, Git, Bazaar, GIMP, VMWare, LibreOffice.
+
+Open-Source Contributions and Other Projects
+============================================
+
+Buddypress, BBPress, Buddypress Docs, Commons in a Box 
+
+July 2014 - Present: Open Syllabus Project
+ - developed categorizers for determining the subject of scraped syllabi
+ - ran collocations analyses by subject <!-- TODO: link -->  
 
 Selected Publications and Presentations
 =======================================
@@ -123,25 +128,21 @@ Selected Publications and Presentations
 July 2014 "Macro-Etymological Textual Analysis: a Computational
 Application of Language History to Literary Criticism"
 
--   presenting at [Digital Humanities 2014](http://dh2014.org/),
-    Lausanne, Switzerland
+-   presented at [Digital Humanities 2014](http://dh2014.org/), Lausanne, Switzerland
+-   winner, ADHO student bursary 
+-   winner, New York University Draper Program [Hirschhorn Thesis Award](https://draperprogram.wordpress.com/2014/06/12/congratulations-to-our-hirschhorn-award-nominees-and-winner/) 
 
 April 2013 "Toward a Social Literary Annotation Engine"
 
--   presented at [Humanities, Arts, Science and Technology Advanced
-    Collaboratory,
-    Toronto](http://hastac2013.org/schedule-2/jonathan-reeve%20)
+-   presented at [Humanities, Arts, Science and Technology Advanced Collaboratory, Toronto](http://hastac2013.org/schedule-2/jonathan-reeve%20)
 
 Oct. 2012 "Elementaire, a Customizable Omeka Theme"
 
--   presented at [The Humanities and Technology
-    Camp](http://newyork2012.thatcamp.org/)
+-   presented at [The Humanities and Technology Camp](http://newyork2012.thatcamp.org/)
 
-Aug. 2012 Articles in *The Manifesto in Literature*, Thomas Riggs &
-Company
+Aug. 2012 Articles in *The Manifesto in Literature*, Thomas Riggs & Company
 
-Oct. 2011 *[The Art of Good Behavior](http://jonreeve.com/behaviour)*, a
-digital literary archive using TEI XML
+Oct. 2011 *[The Art of Good Behavior](http://jonreeve.com/behaviour)*, a digital literary archive using TEI XML
 
 -   presented findings, NYU Workshop in Archival Practice
 -   presented completed work, Yale University Digital Humanities Forum,
