@@ -22,11 +22,13 @@ Nov. '13 - Present Modern Language Association: Web Developer
 <!---   Designed database model in Django and PostgreSQL-->
 <!---   Contributed new features for a virtual currency trading engine in Python-->
 
-June '12 - July '13 New York University, History Department: Web
+June '12 - July '13 The Margaret Sanger Papers Project, New York University History Department: Web
 Programmer
 
--   Expanded functionality for the [Margaret Sanger Papers Project Web Edition](http://www.nyu.edu/projects/sanger/publications/electronic_ed/speeches_and_articles.html)
+-   Added "mentioned places," "mentioned people," and "mentioned organizations" search functionality to the [Margaret Sanger Papers Project Web Edition](http://www.nyu.edu/projects/sanger/publications/electronic_ed/speeches_and_articles.html)
 -   Wrote a statistical analysis page to visualize data from the Margaret Sanger Papers Project
+
+June '12 - July '13 Greenwich Village History, New York University History Department: Web Programmer
 -   Developed [a customization engine](https://github.com/JonathanReeve/theme-elementaire) for the [Omeka content management platform](http://omeka.org)
 -   Designed and developed Omeka themes deployed on [Greenwich Village History](http://gvh.aphdigital.org) and [New Jersey Digital History](http://njdigitalhistory.org/NJDHA/)
 
@@ -140,18 +142,28 @@ Open-Source Contributions and Other Projects
 ============================================
 
 May 2014 - Present: through the Modern Language Assocation, contributor to the open-source projects: 
+PHP, HTML, CSS
  - [Buddypress](http://buddypress.org/): social networking WordPress plugin. Over 2.2 million downloads. 
  - [BBPress](https://wordpress.org/plugins/bbpress/): WordPress plugin enabling forums. Over 1.4 million downloads.
  - [Buddypress Docs](https://wordpress.org/plugins/buddypress-docs/): collaborative authoring tool for WordPress. Over 80,000 downloads.
  - [Commons in a Box](http://commonsinabox.org/): social networking software suite, used by CUNY, SUNY, and many others. Over 12,000 downloads. 
+ - [CAC-Advanced-Profiles](https://github.com/cuny-academic-commons/cac-advanced-profiles): engine for member portfolios used by the CUNY Academic Commons. 
 
-July 2014 - Present: [Open Syllabus Project](http://opensyllabusproject.org/)
+July 2014 - Present: [Open Syllabus Project](http://opensyllabusproject.org/): 
+Python
  - developed categorizers for determining the subject of scraped syllabi
  - performed collocations analyses by subject <!-- TODO: link -->  
 
+June 2014 - Present: [Twitter Poet](https://github.com/JonathanReeve/trendhaikubot)
+ - designed a twitter bot that generates poems based on trending Twitter topics. 
+ - uses the Python Natural Language Processing Toolkit to conduct sophisticated linguistic analyses
+
+Jan. 2014 - Present: [Annotweet]
+ - a protocol for a literary metadata hashtag that allows for livetweeting books, ebooks, and other literary works. 
+
 Nov. 2013 - The Waves: a TEI XML Edition
  - a TEI XML edition of Virginia Woolf's novel, with dialog markup
- - this edition faciliates dialog extraction
+ - faciliates dialog extraction
 
 Jan. 2013 - Dec. 2013: [New York University Digital Humanities Working Group](http://nyudigitalexperiments.com) Epigraphs Project
 -   developed a [script to parse epigraphs](https://github.com/JonathanReeve/epi-project) from TEI XML
