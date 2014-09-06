@@ -1,40 +1,521 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Your awesome title</title>
-    <description>Write an awesome description for your new site here. You can edit this line in _config.yml. It will appear in your document head meta (for Google search results) and in your feed.xml site description.
+    <title>Jonathan Reeve</title>
+    <description>The personal website of Jonathan Reeve. Digital humanities, hacks, ideas, improvements. 
 </description>
-    <link>http://yourdomain.com/</link>
-    <atom:link href="http://yourdomain.com/feed.xml" rel="self" type="application/rss+xml" />
-    <pubDate>Fri, 05 Sep 2014 16:43:51 -0400</pubDate>
-    <lastBuildDate>Fri, 05 Sep 2014 16:43:51 -0400</lastBuildDate>
+    <link>http://jonreeve.com/</link>
+    <atom:link href="http://jonreeve.com/feed.xml" rel="self" type="application/rss+xml" />
+    <pubDate>Sat, 06 Sep 2014 13:55:59 -0400</pubDate>
+    <lastBuildDate>Sat, 06 Sep 2014 13:55:59 -0400</lastBuildDate>
     <generator>Jekyll v2.3.0</generator>
     
       <item>
-        <title>Welcome to Jekyll!</title>
-        <description>&lt;p&gt;You’ll find this post in your &lt;code&gt;_posts&lt;/code&gt; directory. Go ahead and edit it and re-build the site to see your changes. You can rebuild the site in many different ways, but the most common way is to run &lt;code&gt;jekyll serve --watch&lt;/code&gt;, which launches a web server and auto-regenerates your site when a file is updated.&lt;/p&gt;
+        <title>Hacking at the Open Syllabus Project: Collocations by Subject</title>
+        <description>&lt;p&gt;I was invited to hack around on the &lt;a href=&quot;http://opensyllabusproject.org/&quot;&gt;Open Syllabus project&lt;/a&gt; this past Saturday, which I was really excited to do. They&amp;#39;ve scraped the web and come up with around 1.5 million syllabi, and only just released their API to researchers this weekend. I wanted to run some computational analyses on these syllabi, to attempt questions like:&lt;/p&gt;
 
-&lt;p&gt;To add new posts, simply add a file in the &lt;code&gt;_posts&lt;/code&gt; directory that follows the convention &lt;code&gt;YYYY-MM-DD-name-of-post.ext&lt;/code&gt; and includes the necessary front matter. Take a look at the source for this post to get an idea about how it works.&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;What were the most frequently assigned texts in freshman composition courses?&lt;/li&gt;
+&lt;li&gt;What disciplines exhibit the most variance between their syllabi? That&amp;#39;s to say, which subjects have the most similar syllabi, and which have the most divergent? &lt;/li&gt;
+&lt;li&gt;What disciplines have the longest syllabi? &lt;/li&gt;
+&lt;li&gt;In which disciplines do technological marker words like &amp;quot;blog&amp;quot; or &amp;quot;Twitter&amp;quot; appear most frequently? &lt;/li&gt;
+&lt;/ul&gt;
 
-&lt;p&gt;Jekyll also offers powerful support for code snippets:&lt;/p&gt;
+&lt;p&gt;To start with, I used a JSON file containing a subset of these syllabi--around 1000, and tagged them by subject, using their first lines and filenames as hints. (&lt;a href=&quot;https://github.com/JonathanReeve/opensyllabus/blob/master/nltk_experiments/syl-data.py&quot;&gt;See the quick and dirty code here&lt;/a&gt;.) I then imported another 600 subject-tagged syllabi from &lt;a href=&quot;https://github.com/grahamsack&quot;&gt;Graham Sack&lt;/a&gt;&amp;#39;s corpus, resulting in a subject-tagged corpus of around 1,300 syllabi. From there, I sorted the results by subject and ran it through &lt;a href=&quot;http://www.nltk.org&quot;&gt;NLTK&lt;/a&gt; to find collocations--words that frequently occur next to each other. &lt;/p&gt;
 
-&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-ruby&quot; data-lang=&quot;ruby&quot;&gt;&lt;span class=&quot;k&quot;&gt;def&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;print_hi&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;name&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
-  &lt;span class=&quot;nb&quot;&gt;puts&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&amp;quot;Hi, &lt;/span&gt;&lt;span class=&quot;si&quot;&gt;#{&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;name&lt;/span&gt;&lt;span class=&quot;si&quot;&gt;}&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&amp;quot;&lt;/span&gt;
-&lt;span class=&quot;k&quot;&gt;end&lt;/span&gt;
-&lt;span class=&quot;n&quot;&gt;print_hi&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;&amp;#39;Tom&amp;#39;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
-&lt;span class=&quot;c1&quot;&gt;#=&amp;gt; prints &amp;#39;Hi, Tom&amp;#39; to STDOUT.&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;There were some interesting findings. Some were predictable, like &amp;quot;mineral resources&amp;quot; for Geology, &amp;quot;corale room&amp;quot; for Music, or &amp;quot;Homeric Hymn&amp;quot; for Mythology. Others were revealing about required texts frequently assigned for these subjects—Michel Foucault is likely frequently assigned in Sociology courses, &amp;quot;Beyond Good&amp;quot; suggests that Nietzsche&amp;#39;s &lt;em&gt;Beyond Good and Evil&lt;/em&gt; is required reading in Philosophy courses, and the truncated &amp;quot;nhead Wilson&amp;quot; suggests that Twain&amp;#39;s tragedy—although here with a mistaken word boundary—makes a frequent appearance in Literature courses. &lt;/p&gt;
 
-&lt;p&gt;Check out the &lt;a href=&quot;http://jekyllrb.com&quot;&gt;Jekyll docs&lt;/a&gt; for more info on how to get the most out of Jekyll. File all bugs/feature requests at &lt;a href=&quot;https://github.com/jekyll/jekyll&quot;&gt;Jekyll’s GitHub repo&lt;/a&gt;. If you have questions, you can ask them on &lt;a href=&quot;https://github.com/jekyll/jekyll-help&quot;&gt;Jekyll’s dedicated Help repository&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;Some of the collocations are a little surprising, however. It&amp;#39;s a little surprising that &amp;quot;Hebrew Bible&amp;quot; appears as the highest-rated collocation in Literature syllabi. It&amp;#39;s even more surprising that &amp;quot;Gospel According&amp;quot; appears in Political Science syllabi. (Then again, since many of these syllbi come from Emory University, these may be features consistent with a Bible Belt institution.)&lt;/p&gt;
 
+&lt;p&gt;There are some stylistic features that deserve note here, too. Syllabi in the natural sciences exhibit the most use of ALL CAPS by a wide margin. Could it be that scientists have less exposure to the style manuals—those so loved by humanists—that discourage this style? Or is it possible that there is something about the exacting nature of the hard sciences that demands this kind of emphasis? &lt;/p&gt;
+
+&lt;p&gt;Chemistry syllabi featured some of these all caps collocations, and also featured the highest proportions of bigrams characteristic of course policy paragraphs: &amp;quot;make sure,&amp;quot; &amp;quot;honor code,&amp;quot; &amp;quot;usual penalty,&amp;quot; and &amp;quot;found guilty.&amp;quot; What is it about Chemistry as a discipline, I feel like asking, that makes it so strict in its policies? This could, of course, be an instance of a department-wide requirement for all syllabi to include a paragraph of boilerplate course policy text (this was a requirement for the composition courses I taught at CUNY). &lt;/p&gt;
+
+&lt;p&gt;Faced with these preliminary results, here are a few questions I ended up asking, with some hints as to their answers: &lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;Which disciplines care the most about dress code? Physical Education and Music. &lt;/li&gt;
+&lt;li&gt;Which language course is the most concerned with grammatical accuracy? German. &lt;/li&gt;
+&lt;li&gt;What is the most-mentioned historical period in (this small subset of) history courses? The Civil Rights Era. &lt;/li&gt;
+&lt;li&gt;What discipline is concerned the most with weather? Geology. (Owing, probably, to class field trips.)&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;Of course, since this data set is so severely limited, and since this analysis was so haphazard, none of these answers may be considered even halfway accurate. Still, I achieved an even more important goal in this process—to generate more questions. &lt;/p&gt;
+
+&lt;p&gt;You can read the original output of the command &lt;a href=&quot;https://drive.google.com/?authuser=0#folders/0B7WRJQdqro24eHgxVXA2YUdlM1U&quot;&gt;here in the shared Google Drive folder we used&lt;/a&gt;, run the script yourself from &lt;a href=&quot;https://github.com/JonathanReeve/opensyllabus/tree/master/nltk_experiments&quot;&gt;the code on github&lt;/a&gt;, or check out this heavily-curated selection of the findings, organized by subject: &lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;Astronomy&lt;/strong&gt;: astronomers know; investigating nature; natural sciences; ultimate fate.&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;Biology&lt;/strong&gt;: LAB EXAM; Cellular respiration; procedures outlined; FINAL EXAMINATION; SPRING BREAK. &lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;Chemistry&lt;/strong&gt;: Honor Code; Honor Code.; liberal arts; College Honor; Make sure; honor code; academic honesty; HONOR CODE; highest standards; usual penalty; found guilty. &lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;Computer science&lt;/strong&gt;: selected material; new StringBuffer; UNIX operating; constructor call. &lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;English&lt;/strong&gt;: Rhetorical Analyses; unauthorized information. &lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;Film Studies&lt;/strong&gt;: reserve Screening; Citizen Kane; Experimental Film; Francis Ford; Jean-Luc Godard; Maltese Falcon; Orson Welles; Royal Tenenbaums. &lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;Geology&lt;/strong&gt;: SPRING BREAK; scientific method; unsure whether; Mineral Resources. &lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;German&lt;/strong&gt;: grammatical accuracy. &lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;Hist&lt;/strong&gt;: Civil Rights; World War; Luther King; Martin Luther; National Historic; University Press; Black Folk; Field Trip.&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;Literature&lt;/strong&gt;: Hebrew Bible; Invisible Man; Kingsblood Royal; Black Folk; nhead Wilson; online lectures; Frederick Douglass; Human Stain; exegetical paper; &lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;Music&lt;/strong&gt;: aesthetic sense; Chorale Room; Old Church; Black dress; Chamber Ensemble; &lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;Mythology&lt;/strong&gt;: Classical Mythology; Homeric Hymn; Friedrich Nietzsche; Irrational Hero; Roman Appropriation; Sigmund Freud; Using Madness; &lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;Philosophy&lt;/strong&gt;: Nicomachean Ethics; Beyond Good; Categorical Syllogisms; Ordinary Language; &lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;Physical Education&lt;/strong&gt;: medical condition; body composition; dressed appropriately; include vigorous; full participation; physical fitness; Skill Test; Tai Chi; &lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;Policial science&lt;/strong&gt;: University Press; New York; Conflict Resolution; Communist Manifesto; Second Treatise; Gospel According&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;Psychology&lt;/strong&gt;: Think Critically; mental processes; critical thinking; Psychological Disorders; Human Development; theoretical perspectives; system; appropriate documentation. &lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;Public Relations&lt;/strong&gt;: well organized; rewrite opportunities; Case Study; Social Media; Personal brand; &lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;Religion&lt;/strong&gt;: Native American; site visit; Reflective Analysis; &lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;Sociology&lt;/strong&gt;: Michel Foucault&lt;/p&gt;
 </description>
-        <pubDate>Fri, 05 Sep 2014 12:36:01 -0400</pubDate>
-        <link>http://yourdomain.com/jekyll/update/2014/09/05/welcome-to-jekyll.html</link>
-        <guid isPermaLink="true">http://yourdomain.com/jekyll/update/2014/09/05/welcome-to-jekyll.html</guid>
+        <pubDate>Mon, 09 Jun 2014 00:00:00 -0400</pubDate>
+        <link>http://jonreeve.com/2014/06/09/hacking-at-the-open-syllabus-project-collocations-by-subject.html</link>
+        <guid isPermaLink="true">http://jonreeve.com/2014/06/09/hacking-at-the-open-syllabus-project-collocations-by-subject.html</guid>
         
         
-        <category>jekyll</category>
+      </item>
+    
+      <item>
+        <title>Workshop Proposal: Vim for Humanists</title>
+        <description>&lt;p&gt;Vim is arguably the most powerful text editor available today. It is lightweight, programmable, versatile, efficient, and has been in active development, in one incarnation or another, since 1976. Most importantly, it is free and open-source software that runs on every major operating system, including Android and iOS, and can even be run remotely over SSH. It is installed by default in most webservers, and also comes preinstalled in MacOS. It is in widespread use among computer scientists and IT professionals, but remains virtually unknown among humanists. Digital humanists, who are often faced with text editing tasks, would especially benefit from the power and efficiency of Vim. The following is a brief proposal for a workshop in Vim for digital humanists. By the end of the workshop, participants will be familiar with basic Vim commands, and will have the resources necessary to start learning more about this amazing text editor. The workshop is one hour long, and will cover:  &lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;Basic movements and commands 
+
+&lt;ul&gt;
+&lt;li&gt;Cheat-sheets will be distributed&lt;/li&gt;
+&lt;li&gt;Movements will be practiced with a few short games of &amp;quot;vim golf&amp;quot; &lt;/li&gt;
+&lt;/ul&gt;&lt;/li&gt;
+&lt;li&gt;Applications of vim: plain text editing, notetaking, word processing, and coding 
+
+&lt;ul&gt;
+&lt;li&gt;Cleaning up of text files for analysis or publication&lt;/li&gt;
+&lt;li&gt;Digital scholarly editing &lt;/li&gt;
+&lt;li&gt;Writing and editing HTML, TEI XML, and others. &lt;/li&gt;
+&lt;/ul&gt;&lt;/li&gt;
+&lt;li&gt;Useful plugins for humanists
+
+&lt;ul&gt;
+&lt;li&gt;NERDTree, vim-pandoc, notes.vim, zen-coding, todo.txt, and more&lt;/li&gt;
+&lt;/ul&gt;&lt;/li&gt;
+&lt;li&gt;A few intermediate techniques
+
+&lt;ul&gt;
+&lt;li&gt;filtering texts through external command-line programs&lt;/li&gt;
+&lt;li&gt;writing beautifully typeset PDF articles using markdown, pandoc, and LaTeX&lt;br&gt;&lt;/li&gt;
+&lt;/ul&gt;&lt;/li&gt;
+&lt;/ul&gt;
+</description>
+        <pubDate>Sat, 02 Nov 2013 00:00:00 -0400</pubDate>
+        <link>http://jonreeve.com/digital%20humanities/2013/11/02/workshop-proposal-vim-for-humanists.html</link>
+        <guid isPermaLink="true">http://jonreeve.com/digital%20humanities/2013/11/02/workshop-proposal-vim-for-humanists.html</guid>
         
-        <category>update</category>
+        <category>vim</category>
+        
+        
+        <category>digital humanities</category>
+        
+      </item>
+    
+      <item>
+        <title>Introducing the Macro-Etymological Analyzer</title>
+        <description>&lt;p&gt;Here&amp;#39;s a sneak preview of my latest project, &lt;a href=&quot;http://jonreeve.com/etym&quot;&gt;a macro-etymological textual analyzer web app&lt;/a&gt;. It&amp;#39;s an abstract, complete with preliminary results, which I recently prepared to submit to &lt;a href=&quot;http://dh2014.org/&quot;&gt;DH2014&lt;/a&gt;. Here&amp;#39;s a PDF file version: &lt;a href=&quot;http://jonreeve.com/blog/wp-content/uploads/2013/11/dh2014-abstract.pdf&quot;&gt;Abstract: Macro-Etymological Analyzer (237K PDF)&lt;/a&gt;, and the full text of the abstract is below the cut. &lt;/p&gt;
+
+&lt;p&gt;The English language has continually borrowed from foreign languages—close to 30% of modern English words are loanwords from French, and another 30% are borrowed from Latin. These words are often concentrated in semantic frames associated with their origin languages—legal vocabulary contains a preponderance of words of French origin, and the vocabulary of the natural sciences contains many words of Latin and Greek origin. The etymology of words in a text, therefore, may be suggestive of its context or its level of discourse. Should a writer choose the Latinate term “masticate” over the Anglo-Saxon term “chew,” for instance, one might assume a scientific context or a high level of discursive formality. By computing the proportion of origin languages for all the words of a given text, we may quantify stylistic properties that are potentially revealing about the text and its rhetorical modes.  &lt;/p&gt;
+
+&lt;p&gt;The Macro-Etymological Analyzer is a computer program that I wrote for this purpose. Written in PHP on a LAMP stack, it is a web app accessible at &lt;a href=&quot;http://jonreeve.com/etym&quot;&gt;http://jonreeve.com/etym&lt;/a&gt;, and is freely available for all to use, modify, and distribute under the GPLv3. It accepts as input a user-uploaded text file, and looks up each word in Gerard de Melo&amp;#39;s Etymological Wordnet database. These words are then counted by language of origin using two generations of language ancestry, and then categorized by language family. The results are displayed as a pie chart made with the Google Data Visualization API, along with a CSV log file which can be used for comparative analyses. Currently, the program accepts only English texts, but the database supports queries from any source language, and plans are in place to make the program fully multilingual. &lt;/p&gt;
+
+&lt;!--more--&gt;
+
+&lt;p&gt;Figure 1 shows the proportions of Latinate words—words descended from Latin or romance languages—for each of the 15 genres in the Brown Corpus. Learned texts and government documents show the highest proportions of Latinate words, whereas romance and adventure stories show the lowest. The same textual categories sorted by proportion of Hellenic words (words of ancient Greek origin) show changes in certain categories—religious language exhibits a higher rank, and that of mystery stories is ranked lower than in the Latinate scale. These data suggest that a high proportion of Hellenic words is correlated with religious language, among other genres, and that a high proportion of Latinate words is correlated with learned language. Once literary works are analyzed with this method, these hypothetical correlations become potentially useful as literary critical tools.  &lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/assets/img/macro-etym/brown-latinate-with-sorted.jpg&quot; alt=&quot;Borwn Corpus Genres&quot;&gt; &lt;/p&gt;
+
+&lt;p&gt;In one such analysis, the chapters of &lt;em&gt;A Portrait of the Artist as a Young Man&lt;/em&gt; were run through the Macro-Etymological Analyzer. This novel, James Joyce&amp;#39;s Bildungsroman, is known for its style—one that mimics each progressive age of its protagonist Stephen Dedalus. Early chapters, when he is young, are written with infantile language; later chapters are written with more elevated language. The program&amp;#39;s results quantify this stylistic mode, to some degree—Chapters 1 and 2 show low proportions of Latinate words, whereas later chapters show higher proportions, as shown here in Figure 2. The fact that the proportion of Latinate words begins to plateau starting with Chapter 3 might be used to argue that Stephen has at this young age already reached a precocious maturity of vocabulary, which may reflect his study of Latin. &lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/assets/img/macro-etym/portrait-with.jpg&quot; alt=&quot;_A Portrait of the Artist as a Young Man_&quot;&gt; &lt;/p&gt;
+
+&lt;p&gt;In another analysis, the extracted monologues of the seven narrators of Virginia Woolf&amp;#39;s novel &lt;em&gt;The Waves&lt;/em&gt; were computed with this program. As shown in Figure 3, the two university-educated characters, Bernard and Neville, show the highest proportions of Latinate words, while the housewife Susan shows the lowest. In fact, the male characters rank higher for Latinate words than the female characters—this would be an interesting starting-point for a discussion of gender in &lt;em&gt;The Waves&lt;/em&gt;, especially framed by Woolf&amp;#39;s much-discussed writings on gender politics. &lt;/p&gt;
+
+&lt;p&gt;The Macro-Etymological Analyzer was also used to chart variations between editions of a text. The seven revisions of Whitman&amp;#39;s &lt;em&gt;Leaves of Grass&lt;/em&gt; made available by the Whitman Archive were analyzed with this program. The results show a gradual increase in Latinate words from the 1855 edition to that of 1891-2. This might be used to argue that Whitman inflated his style with each revision, introduced foreign loanwords as he gained a more international reputation, or used a greater breadth of words as his vocabulary increased. &lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/assets/img/macro-etym/waves-with-screen.png&quot; alt=&quot;The Waves Narrators&quot;&gt; &lt;/p&gt;
+
+&lt;p&gt;These experiments were not without their surprises, of course. An early test of selected books of the King James Bible seemed promising, as it revealed the gospels Matthew, Mark, Luke, and John to have much higher proportions of Hellenic words than other books (see Figure 4). Unlike the books of the Old Testament, which were mostly written in Hebrew, these books were translated from the Greek—a fact which might seem to explain the presence of Hellenic words. Upon closer examination, however, the program was discovered to be counting the etymology of frequently-mentioned names like &amp;quot;Jesus&amp;quot; among words of Hellenic origin, and it was these names that accounted for most of the Hellenic words. Although the language of the source text did not prove to be the determinant here, this discovery may yet be valuable for other reasons—the synoptic gospels of Matthew, Mark, and Luke show similar portions of Hellenic words, whereas that of John is 100% greater. This would seem to support the hypothesis that the synoptic gospels were adapted from a common source text, whereas that of John had an independent source. &lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/assets/img/macro-etym/bible-kjv-with.jpg&quot; alt=&quot;KJV Bible&quot;&gt; &lt;/p&gt;
+
+&lt;p&gt;A number of other experiments were also conducted, and are described in this paper. Included among texts analyzed by the Macro-Etymological Analyzer were: selected Canterbury tales (in modern English translation), a series of early and late Henry James novels, a collection of Victorian novels compared with a collection of modernist novels, and groups of French and German novels in English translation. Questions to be explored include: &lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;Do translated works show a larger-than-normal proportion of words with etymological origins in the language of the source text? &lt;/li&gt;
+&lt;li&gt;Given a large enough data set, can linguistic trends (such as a general decrease in the use of Latinate words) be detected with this program? Can macro-historical events such as the Scientific Revolution be detected?&lt;/li&gt;
+&lt;li&gt;Do male and female writers of the 19th century differ in the origin-types of words they use? &lt;/li&gt;
+&lt;li&gt;Can the semantic frames in which these etymological groups of words are concentrated be explained historically, such as through the habits of the French-speaking English aristocracy in the era following the Norman Conquest? &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;Finally, this paper will discuss how this new tool might contribute to the suite of computational stylistics tools already available, and how macro-etymology might constitute a new metric that could be used towards stylistic fingerprinting or authorial detection. &lt;/p&gt;
+</description>
+        <pubDate>Fri, 01 Nov 2013 00:00:00 -0400</pubDate>
+        <link>http://jonreeve.com/2013/11/01/introducing-the-macro-etymological-analyzer.html</link>
+        <guid isPermaLink="true">http://jonreeve.com/2013/11/01/introducing-the-macro-etymological-analyzer.html</guid>
+        
+        
+      </item>
+    
+      <item>
+        <title>On Etexts and Distractions</title>
+        <description>&lt;p&gt;In a recent article in &lt;em&gt;Time&lt;/em&gt;, “&lt;a href=&quot;http://ideas.time.com/2013/06/03/why-we-should-read-literature/&quot;&gt;Reading Literature Makes Us Smarter and Nicer&lt;/a&gt;,” Annie Murphy Paul convincingly argues what her title suggests. She argues that “deep reading,” which she defines as “slow, immersive, rich in sensory detail and emotional and moral complexity” is an enriching activity. I couldn’t agree more. Yet she distinguishes this “deep reading” in necessary opposition to “the often superficial reading we do on the web,” which, at best, is an unnecessary pronouncement about electronic media. A “deep reader” must be “protected from distractions,” she argues. Fair enough. But she insists that a physical book’s “lack of hyperlinks,” then, enables this kind of reading—a paper work “frees the reader from making decisions — Should I click on this link or not? — allowing her to remain fully immersed in the narrative.” But can the problem of a reader’s attention really be reduced to a choice of medium? 
+&amp;lt;!--more--&amp;gt;
+First we must ask, is a physical book really free of these decision-making distractions? When I read a paper book, hardly a page goes by where I don’t think of looking up a place in an atlas, a name in an encyclopedia, or a word in a dictionary. Especially if I’m reading a book in a langauge I don’t speak well, the urge to pause my reading to look up words in a dictionary is immense. And putting down your book to look up a word in a dictionary can actually be more of a distraction than double-clicking on that word in an etext to summon an electronic dictionary. If the book you’re reading references another book, especially in the form of footnotes, endnotes, or in-text citations, it’s equally tempting to follow those virtual hyperlinks. In other words, any text is a natural hypertext for a reader with a sense of curiosity.&lt;/p&gt;
+
+&lt;p&gt;Second, in regards to hyperlinks, we should ask, are hyperlinks &lt;em&gt;themselves&lt;/em&gt; a distraction, or is it rather the way they are displayed? If a physical book can be said to contain hundreds of virtual “hyperlinks,” then an electronic text also contains these—just some are clickable, and others are not. The distinction, then, is not between any essential qualities of electronic of physical texts, but between varieties of user interface design. &lt;/p&gt;
+
+&lt;p&gt;Some physical books try to free the reader from distractions by using endnotes instead of footnotes. An electronic text, similarly, might reduce the number of its clickable links in favor of more analog styles of hypertextuality, or it might design its clickable links in a way that is less distracting. There are any number of user interface design choices that affect the way the text is experienced, and the number of distractions it might induce. That is true of both electronic and physical texts. It would be a mistake to assume that the distracting effects of a hyperlink are essential qualities of the medium itself. &lt;/p&gt;
+
+&lt;p&gt;Third, is it necessarily a distraction to click on hyperlinks? Couldn’t an interrupted style of reading in which hyperlinks are followed ultimately benefit deep reading? Following hyperlinks, whether digital or analog, can be an immersive process—it tunnels deeper into the text. Whether that proves a distraction or not is entirely contingent on the content of the link’s target. If a hyperlink takes you to page with a completely unrelated subject that makes you forget what you were originally reading, we can fairly call that a distraction. If, on the other hand, the page on the other end of the hyperlink provides information that helps to illuminate the original text, then the link was not a distraction at all, but facilitated deep reading. &lt;/p&gt;
+
+&lt;p&gt;Finally, we should ask, is “the web” really a place of “superficial reading,” and the library a place of “deep reading”? Maybe for some this is true, but this entirely depends on the reader’s habits with regards to electronic and physical reading. Some readers, myself included, spend more hours in deep reading of electronic books than in superficial reading. Conversely, the paper works I’m more likely to read lend themselves more to a superficial reading style. It is a huge assumption to claim that the Internet is necessarily a place of superficiality. If you spend all your time on the Internet furiously scrolling through pictures of cats with silly captions, and all your time with paper doing serious scholarly reading, then it would be easy to assume that those are natural properties of those media. Yet the potential for “deepness” in both media are coextensive. &lt;/p&gt;
+</description>
+        <pubDate>Wed, 05 Jun 2013 00:00:00 -0400</pubDate>
+        <link>http://jonreeve.com/2013/06/05/etexts-and-distractions.html</link>
+        <guid isPermaLink="true">http://jonreeve.com/2013/06/05/etexts-and-distractions.html</guid>
+        
+        
+      </item>
+    
+      <item>
+        <title>Announcing AnnoTweet: A Concept for a Decentralized Literary Annotation Protocol</title>
+        <description>&lt;p&gt;Have you ever wanted to livetweet a book? I often want to. Yet there doesn’t seem to be a standard way of doing that. You could tweet, for instance, &amp;quot;Oh Captain Wentworth! When will you propose? #JaneAustenPersuasion&amp;quot; but the hashtag isn’t standardized, so some people might be tweeting under #Persuasion and others under #AustenPersuasion. Furthermore, the hashtag isn’t specific enough to make it clear which part of the book you’re tweeting about. If you browse other tweets marked #JaneAustenPersuasion, you might find comments about other parts of the book, which may contain spoilers. &lt;/p&gt;
+
+&lt;p&gt;Enter AnnoTweet, a concept for a literary annotation hashtag, or AnnoTag. Whenever you want to tweet about part of a book, use this format: &lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;http://jonreeve.com/blog/wp-content/uploads/2013/05/annotweet-diagram.jpg&quot; alt=&quot;AnnoTweet diagram&quot;&gt;&lt;/p&gt;
+
+&lt;p&gt;The first letter is the book code type. Uppercase letters refer to raw codes and IDs, and lowercase letters refer to base 64-encoded codes. Here are some examples: &lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;I&lt;/code&gt; = Raw ISBN, ex. I0393911535. &lt;/li&gt;
+&lt;li&gt;&lt;code&gt;i&lt;/code&gt; = Base 64-encoded ISBN, ex. iXepzv&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;G&lt;/code&gt; = raw Project Gutenberg book ID, ex. G105. &lt;/li&gt;
+&lt;li&gt;&lt;code&gt;g&lt;/code&gt; = Base 64-encoded Gutenberg book ID, ex. gBp&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;B&lt;/code&gt; = &lt;a href=&quot;http://books.google.com&quot;&gt;Google Books&lt;/a&gt; ID. &lt;/li&gt;
+&lt;li&gt;&lt;code&gt;O&lt;/code&gt; = Raw OCLC Number. Ex. O29877721. These can be found using &lt;a href=&quot;http://www.worldcat.org&quot;&gt;Worldcat&lt;/a&gt;. &lt;/li&gt;
+&lt;li&gt;&lt;code&gt;o&lt;/code&gt; = Base 64-encoded OCLC number. Ex. oBx-XZ.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;Any other sources can be added to this list. I’m working on a way to shorten &lt;a href=&quot;https://en.wikipedia.org/wiki/Digital_object_identifier&quot;&gt;DOIs&lt;/a&gt;, for instance. &lt;/p&gt;
+
+&lt;p&gt;The next letters and numbers before the colon are the book code, optionally encoded in base 64. What is &lt;a href=&quot;http://en.wikipedia.org/wiki/Base_64&quot;&gt;base 64&lt;/a&gt;, you ask? It&amp;#39;s just a mathy way to take a long number and convert it to a short string of numbers and both uppercase and lowercase letters. That way, you can take an unwieldy ISBN—the ISBN for the Norton Critical Edition of Jane Austen’s &lt;em&gt;Persuasion&lt;/em&gt;, for instance, is 0393911535—and write it as “Xepzv”. Both &lt;code&gt;I0393911535&lt;/code&gt; and &lt;code&gt;iXepzv&lt;/code&gt; are valid AnnoTags, but the latter saves five characters, which you can use to write “LOL!!” or whatever your heart desires. To try this out, grab an ISBN of a book from Amazon.com or equivalent, remove all the hyphens and paste it into a converter like &lt;a href=&quot;http://convertxy.com/index.php/numberbases/&quot;&gt;the one at convertxy.com&lt;/a&gt;, which will convert it into Base 64. You may need to change &lt;code&gt;+&lt;/code&gt; and &lt;code&gt;/&lt;/code&gt; to &lt;code&gt;-&lt;/code&gt; and &lt;code&gt;_&lt;/code&gt;, though, to make it &lt;a href=&quot;http://en.wikipedia.org/wiki/Base_64#URL_applications&quot;&gt;URL-safe&lt;/a&gt;. Some book IDs won’t benefit much from encoding, of course. Many Project Gutenberg etexts IDs are short anyway, so you might as well keep them as-is. The &lt;a href=&quot;http://www.gutenberg.org/files/105/105-h/105-h.htm&quot;&gt;Project Gutenberg ebook for &lt;em&gt;Persuasion&lt;/em&gt;&lt;/a&gt;, for instance, is listed as “EBook #105,” which can be represented as the AnnoTag &lt;code&gt;#G105&lt;/code&gt;. No calculator required. &lt;/p&gt;
+
+&lt;p&gt;Next, there is a colon, followed by the location code. The location code is made up of chapter numbers, page numbers, or whatever you like. If you want to get super-specific—say, if you’re annotating a particular word or phrase—add a line number or word number. If your book doesn’t have page numbers (if you’re reading an etext, for instance), you can index your location any way you want—by chapter and paragraph number, or even chapter, paragraph, and word. This is simple, intuitive, and human-readable. If your book code is &lt;code&gt;G105&lt;/code&gt;, and you want to tweet about something that happens in Chapter XXIII, you can tweet &amp;quot;Oh no you di’n’t, Captain Wentworth! #G105:c23&amp;quot;. Because the AnnoTag is only eight characters, you have another 130 or so for your witty, insightful commentary. &lt;/p&gt;
+
+&lt;h2&gt;List of location abbreviations:&lt;/h2&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;d&lt;/code&gt; = part (“division”), ex. d2c5 is Part II, Chapter 5. &lt;/li&gt;
+&lt;li&gt;&lt;code&gt;b&lt;/code&gt; = book, ex. D3c7 is Book III, Chapter 7. For those books that are divided into &amp;quot;books.&amp;quot; &lt;/li&gt;
+&lt;li&gt;&lt;code&gt;c&lt;/code&gt; = chapter, ex. c34 or cXXXIV is Chapter 34. &lt;/li&gt;
+&lt;li&gt;&lt;code&gt;p&lt;/code&gt; = page, ex. p54 is page 54. &lt;/li&gt;
+&lt;li&gt;&lt;code&gt;a&lt;/code&gt; = act, ex. a1 is Act I. To be used for drama. &lt;/li&gt;
+&lt;li&gt;&lt;code&gt;s&lt;/code&gt; = scene, ex. a1s3 is Act I, Scene 3. &lt;/li&gt;
+&lt;li&gt;&lt;code&gt;P&lt;/code&gt; = paragraph or stanza, ex. c5P2 is the second paragraph of Chapter 5. &lt;/li&gt;
+&lt;li&gt;&lt;code&gt;l&lt;/code&gt; = line number, ex. p76l20 is page 76, line 20. &lt;/li&gt;
+&lt;li&gt;&lt;code&gt;w&lt;/code&gt; = word number, ex. p82l10w4 is the fourth word of the tenth line on page 82. &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2&gt;Examples:&lt;/h2&gt;
+
+&lt;ul&gt;
+&lt;li&gt;Not to be, man. Not to be. Get over it. #Hamlet #G1524:a3s1P24 
+
+&lt;ul&gt;
+&lt;li&gt;The Gutenberg Ebook for Shakespeare&amp;#39;s play Hamlet, Act III, Scene 1, paragraph 24. &lt;/li&gt;
+&lt;/ul&gt;&lt;/li&gt;
+&lt;li&gt;Septimus&amp;#39;s shell shock makes him unusually atune to nature. #Dalloway #iJTNWV:p22 
+
+&lt;ul&gt;
+&lt;li&gt;The Harcourt Annotated Edition of Virginia Woolf&amp;#39;s novel &lt;em&gt;Mrs. Dalloway&lt;/em&gt;, page 22. &lt;/li&gt;
+&lt;/ul&gt;&lt;/li&gt;
+&lt;li&gt;What circles does the blackbird mark, exactly? #WallaceStevens #iog85j:p94P2 
+
+&lt;ul&gt;
+&lt;li&gt;The Collected Poems of Wallace Stevens, &amp;quot;Thirteen Ways of Looking at a Blackbird,&amp;quot; page 94, second stanza. &lt;/li&gt;
+&lt;/ul&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2&gt;Here are some of the advantages of AnnoTweeting:&lt;/h2&gt;
+
+&lt;ul&gt;
+&lt;li&gt;It’s decentralized, so it’s not contingent on any one particular institution or website. &lt;/li&gt;
+&lt;li&gt;Annotations are owned by their writers, not by the website that hosts them. &lt;/li&gt;
+&lt;li&gt;AnnoTags are mostly human-readable. Once you know the code for your book, it’s easy to figure out what “p54” means (hint: it’s page 54).&lt;br&gt;&lt;/li&gt;
+&lt;li&gt;AnnoTweeting allows you to comment on both paper books and ebooks, and refer to specific editions when necessary. &lt;/li&gt;
+&lt;li&gt;You don’t even need a computer to annoTweet. Just send an SMS to your twitter account. &lt;/li&gt;
+&lt;li&gt;No registration necessary, provided you already have an account on twitter or identi.ca. &lt;/li&gt;
+&lt;li&gt;If you use AnnoTags in your blog posts, you aren’t restricted to the 140-character limit of microblogging platforms. You can even AnnoTag your scholarly papers. &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2&gt;Future Applications&lt;/h2&gt;
+
+&lt;p&gt;There are lots of ways that apps could interface with this type of protocol. Here are some ideas: &lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;A webapp to generate AnnoTags, allowing the user to look up books by author, title, or ISBN, and generate AnnoTags from them. &lt;/li&gt;
+&lt;li&gt;A webapp to aggregate AnnoTweets and display them in the margins of an etext, so that users can read an etext online and see what people have tweeted about it. Tweets that are line-specific will appear right next to those lines in the etext.&lt;/li&gt;
+&lt;li&gt;A mobile webapp or native mobile app (i.e. an Android app) that can generate AnnoTags, and maybe even scan book barcodes using one&amp;#39;s smartphone camera. &lt;/li&gt;
+&lt;li&gt;A script that can expand AnnoTags to regular MLA-compliant bibliographic entries. &lt;/li&gt;
+&lt;li&gt;A browser extension (i.e. a Firefox plugin) that automatically generates AnnoTags for books when you visit a book page on Amazon or Worldcat. &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2&gt;Calling Programmers and Collaborators&lt;/h2&gt;
+
+&lt;p&gt;Who wants to get involved? This will be a free and open-source project.  &lt;/p&gt;
+</description>
+        <pubDate>Fri, 10 May 2013 00:00:00 -0400</pubDate>
+        <link>http://jonreeve.com/2013/05/10/announcing-annotweet-a-concept-for-a-decentralized-literary-annotation-protocol.html</link>
+        <guid isPermaLink="true">http://jonreeve.com/2013/05/10/announcing-annotweet-a-concept-for-a-decentralized-literary-annotation-protocol.html</guid>
+        
+        
+      </item>
+    
+      <item>
+        <title>How I Automated My Weekly Response Papers</title>
+        <description>&lt;p&gt;A course I took last semester required that I submit a weekly response paper for that week&amp;#39;s readings. I wanted to see if I could automate that process as much as possible, so that I wouldn’t have to do all the repetitive stuff, like writing the date, putting it in MLA format, and emailing it. I came up with this workflow:&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;writing in pandoc markdown&lt;/li&gt;
+&lt;li&gt;using pandoc to convert markdown to pdf via TeX and the MLA style&lt;/li&gt;
+&lt;li&gt;emailing the result using mutt&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;For those that don’t already know, &lt;a href=&quot;http://johnmacfarlane.net/pandoc/&quot;&gt;pandoc&lt;/a&gt; is a command-line document conversion tool that excels at converting from &lt;a href=&quot;http://daringfireball.net/projects/markdown/&quot;&gt;markdown&lt;/a&gt; (for reasons why markdown is awesome, see my &lt;a href=&quot;http://jonreeve.com/blog/?p=18&quot;&gt;post below&lt;/a&gt;). LaTeX is a professional typesetting language and command-line program that’s very good at producing PDFs. &lt;a href=&quot;http://www.mutt.org/&quot;&gt;Mutt&lt;/a&gt; is an excellent command-line email program. On Linux, you can install all these tools with one simple command, like this:&lt;/p&gt;
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-sh&quot; data-lang=&quot;sh&quot;&gt;sudo apt-get install pandoc texlive mutt
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;Since they’re all command-line tools, they’re interoperable, which means you don’t have to have ten windows open on your desktop. With all these pieces in place, I wrote a single command to do everything I needed to do with my response papers. The source of my response papers looks something like this:&lt;/p&gt;
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-text&quot; data-lang=&quot;text&quot;&gt;%Title of My Paper
+
+Here is the body of my paper. It understands markdown syntax.
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;The % is there to tell pandoc which line contains the title. That’s the only thing that departs from traditional markdown syntax. Then I used &lt;a href=&quot;http://www.tex.ac.uk/tex-archive/macros/latex/contrib/mla-paper/mla.sty&quot;&gt;Ryan Aycock’s LaTeX MLA stylesheet&lt;/a&gt; and a short template I made that looks like this:&lt;/p&gt;
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-latex&quot; data-lang=&quot;latex&quot;&gt;documentclass[12pt,letterpaper]&lt;span class=&quot;nb&quot;&gt;{&lt;/span&gt;article&lt;span class=&quot;nb&quot;&gt;}&lt;/span&gt;
+usepackage&lt;span class=&quot;nb&quot;&gt;{&lt;/span&gt;ifpdf&lt;span class=&quot;nb&quot;&gt;}&lt;/span&gt;
+usepackage&lt;span class=&quot;nb&quot;&gt;{&lt;/span&gt;mla&lt;span class=&quot;nb&quot;&gt;}&lt;/span&gt;
+begin&lt;span class=&quot;nb&quot;&gt;{&lt;/span&gt;document&lt;span class=&quot;nb&quot;&gt;}&lt;/span&gt;
+begin&lt;span class=&quot;nb&quot;&gt;{&lt;/span&gt;mla&lt;span class=&quot;nb&quot;&gt;}{&lt;/span&gt;Jonathan&lt;span class=&quot;nb&quot;&gt;}{&lt;/span&gt;Reeve&lt;span class=&quot;nb&quot;&gt;}{&lt;/span&gt;Prof&amp;#39;s Name Here&lt;span class=&quot;nb&quot;&gt;}{&lt;/span&gt;Course Name Here&lt;span class=&quot;nb&quot;&gt;}{&lt;/span&gt;today&lt;span class=&quot;nb&quot;&gt;}{&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;$&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;title&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;$&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;}&lt;/span&gt;
+&lt;span class=&quot;s&quot;&gt;$&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;body&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;$&lt;/span&gt;
+end&lt;span class=&quot;nb&quot;&gt;{&lt;/span&gt;mla&lt;span class=&quot;nb&quot;&gt;}&lt;/span&gt;
+end&lt;span class=&quot;nb&quot;&gt;{&lt;/span&gt;document&lt;span class=&quot;nb&quot;&gt;}&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;I also have a short email.txt file which contains the body of my response paper email:&lt;/p&gt;
+
+&lt;blockquote&gt;
+&lt;p&gt;Hi Prof. So-and-so,
+Attached, please find my response paper for this week.
+Best,
+Jonathan&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;Then, with mla.sty and mla-template.tex (above) in my working directory, I ran:&lt;/p&gt;
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-sh&quot; data-lang=&quot;sh&quot;&gt;pandoc response.md -o response.pdf --template&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;mla-template.tex &lt;span class=&quot;o&quot;&gt;&amp;amp;&amp;amp;&lt;/span&gt; mutt -s &lt;span class=&quot;s2&quot;&gt;&amp;quot;Response Paper&amp;quot;&lt;/span&gt; -a response.pdf my-prof@university.edu &amp;lt; email.txt
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;Which converts it to LaTeX, applies the template, converts the .tex file to .pdf, attaches the PDF to an email with the body from email.txt, and emails it to my professor. What&amp;#39;s cool is that once I’ve already run the command, it&amp;#39;s in my BASH history, so all I have to do is write the response paper in markdown, then hit Ctrl+R in the shell and type the first few characters of “pandoc,” which autocompletes my command. &lt;/p&gt;
+</description>
+        <pubDate>Mon, 22 Apr 2013 00:00:00 -0400</pubDate>
+        <link>http://jonreeve.com/productivity/hacks/linux/2013/04/22/how-i-automated-my-weekly-response-papers.html</link>
+        <guid isPermaLink="true">http://jonreeve.com/productivity/hacks/linux/2013/04/22/how-i-automated-my-weekly-response-papers.html</guid>
+        
+        <category>markdown</category>
+        
+        <category>pandoc</category>
+        
+        <category>mutt</category>
+        
+        <category>linux</category>
+        
+        
+        <category>productivity</category>
+        
+        <category>hacks</category>
+        
+        <category>linux</category>
+        
+      </item>
+    
+      <item>
+        <title>Virginia Woolf's The Waves: A TEI Edition</title>
+        <description>&lt;p&gt;Stephen Ramsay’s chapter “Algorithmic Criticism” (from &lt;a href=&quot;http://books.google.com/books?id=14KPI0ORQigC&quot;&gt;&lt;em&gt;Reading Machines&lt;/em&gt;&lt;/a&gt;, anthologized in &lt;a href=&quot;http://nora.lis.uiuc.edu:3030/companion/view?docId=blackwell/9781405148641/9781405148641.xml&amp;amp;doc.view=print&amp;amp;chunk.id=ss1-6-7&amp;amp;toc.depth=1&amp;amp;toc.id=0&quot;&gt;A Companion to Digital Literary Studies&lt;/a&gt;) describes conducting a tf-idf analysis on the speech from the characters in Virginia Woolf’s novel &lt;em&gt;The Waves&lt;/em&gt;. &lt;em&gt;The Waves&lt;/em&gt; is probably the ideal novel for computationaly studying fictional speech, since it is all in the form &lt;/p&gt;
+
+&lt;blockquote&gt;
+&lt;p&gt;“A short clause,” said Speaker, “a continuation of the sentence.” &lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;For example, &lt;/p&gt;
+
+&lt;blockquote&gt;
+&lt;p&gt;“I see a ring,” said Bernard, “hanging above me. It quivers and hangs in a loop of light.” &lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;Chris Forster &lt;a href=&quot;http://cforster.com/2013/02/reading-the-waves-with-stephen-ramsay/&quot;&gt;describes a process for extracting the characters’ speech using some manual edits and some command-line-fu&lt;/a&gt;, but bemoans the lack of a TEI edition which would simplify this process. I took that as a challange and threw together &lt;a href=&quot;http://jonreeve.com/waves-tei/waves-tei.xml&quot;&gt;a quick and dirty TEI version of &lt;em&gt;The Waves&lt;/em&gt;&lt;/a&gt; as an exercise, and used a XSL transformation to color-code the characters’ dialog. &lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/assets/img/waves-tei/waves-tei.jpg&quot; alt=&quot;Color Coding&quot;&gt; 
+Showing the color coding. I&amp;#39;m open to suggestions for different colors.&lt;/p&gt;
+
+&lt;p&gt;From here, there are a number of ways of extracting the dialog of a particular character or group of characters. One easy way is to edit the CSS for the character (i.e. &lt;code&gt;p.Bernard&lt;/code&gt;) in the Web Inspector of Firefox or Chrome, adding &lt;code&gt;display: none;&lt;/code&gt; under &lt;code&gt;color: red;&lt;/code&gt;:  &lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/assets/img/waves-tei/inspector.jpg&quot; alt=&quot;Web Inspector&quot;&gt;
+Turn on or off speech by particular characters using your browser&amp;#39;s built-in Web Inspector.&lt;/p&gt;
+
+&lt;p&gt;If you do this for all the male characters, only female dialog will display. You can also edit the XSLT to selectively display dialog, or extract it with an XML parser like the &lt;a href=&quot;http://www.crummy.com/software/BeautifulSoup/bs4/doc/#id11&quot;&gt;BeautifulSoup&lt;/a&gt; python module like this: &lt;/p&gt;
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-python&quot; data-lang=&quot;python&quot;&gt;&lt;span class=&quot;kn&quot;&gt;from&lt;/span&gt; &lt;span class=&quot;nn&quot;&gt;bs4&lt;/span&gt; &lt;span class=&quot;kn&quot;&gt;import&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;BeautifulSoup&lt;/span&gt;
+&lt;span class=&quot;n&quot;&gt;tei&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;open&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&amp;#39;waves-tei.xml&amp;#39;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;read&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt; &lt;span class=&quot;c&quot;&gt;#read the file&lt;/span&gt;
+&lt;span class=&quot;n&quot;&gt;soup&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;find_all&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;who&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;u&amp;#39;#Bernard&amp;#39;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;Future versions of the webpage will hopefully provide user-interface buttons that will allow the visitor to turn on or off a character’s dialog, or to turn off the color-coding, as I attempted to do with the commentary and metadata in my TEI edition of &lt;a href=&quot;http://jonreeve.com/behaviour/&quot;&gt;&lt;em&gt;The Art of Good Behaviour&lt;/em&gt;&lt;/a&gt;.&lt;/p&gt;
+
+&lt;p&gt;Disclaimer: this text is an experiment in textual analysis.  &lt;/p&gt;
+</description>
+        <pubDate>Fri, 19 Apr 2013 00:00:00 -0400</pubDate>
+        <link>http://jonreeve.com/digital%20humanities/2013/04/19/virginia-woolfs-the-waves-a-tei-edition.html</link>
+        <guid isPermaLink="true">http://jonreeve.com/digital%20humanities/2013/04/19/virginia-woolfs-the-waves-a-tei-edition.html</guid>
+        
+        <category>TEI</category>
+        
+        <category>Python</category>
+        
+        <category>XML</category>
+        
+        
+        <category>digital humanities</category>
+        
+      </item>
+    
+      <item>
+        <title>My Awesome Notetaking System</title>
+        <description>&lt;p&gt;I accumulate a lot of notes. Some are little personal ephemera, like ideas, addresses, or sketches for poems; some are commentary about books I’m reading; some are notes I take in class. I also maintain lists of things for fun: plant names I think are cool, possible band names, titles for things, new vocabulary words. I’ve used just about every possible medium for collecting these notes: little back-pocket notebooks, giant unruled composition books, moleskines, voice recorders, and even stacks of index cards. I’ve also used a ton of different word processors and notes apps: Microsoft Word, EverNote, the iPhone notes app, and Tomboy Notes, to name a few. Each of these systems has their advantages. A composition book won’t run out of batteries, and an electronic file (properly backed up) is harder to lose than an index card. Each of these also has their disadvantages, though, and I usually lose patience with a system after a while. I’m really happy with my current notetaking system, though, and so I’m excited to write about it and show it off. Here’s how it works. &lt;/p&gt;
+
+&lt;h1&gt;Plain Text&lt;/h1&gt;
+
+&lt;p&gt;Plain text files (.txt) are better because: &lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;They’re faster. Firing up Microsoft Word can often take a while, and that can be annoying when you just want to jot something down. A plain text editor like Notepad, Text Edit, or gedit, on the other hand, loads instantly. &lt;/li&gt;
+&lt;li&gt;They’re more reliable. I’ve had Word documents fail on me a few times, and then I have no way of accessing my document except through messy data forensics. Plain text never fails, because there’s nothing to fail. &lt;/li&gt;
+&lt;li&gt;They’re future-proof. Word processors will come and go. What happens years from now when you’re stuck with a bunch of documents, but you don’t have the program that opens them? I have a bunch of old Word documents written on an old Mac, and none of the recent word processing programs can open them. Plain text solves that problem.&lt;br&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;Suppose you want to use fancy formatting, though? That’s where Markdown comes in. &lt;/p&gt;
+
+&lt;h1&gt;Markdown&lt;/h1&gt;
+
+&lt;p&gt;&lt;a href=&quot;http://daringfireball.net/projects/markdown/syntax&quot;&gt;Markdown&lt;/a&gt; is a way of formatting plain text to allow for rich-text-like formatting, like headers, italics, etc. It’s quick, easy to write, and looks great on the page. There was &lt;a href=&quot;http://lifehacker.com/5943320/what-is-markdown-and-why-is-it-better-for-my-to+do-lists-and-notes?post=52991739&quot;&gt;a good article in Lifehacker recently about the virtues of markdown&lt;/a&gt;. Markdown can be easily translated into other formats, too, like HTML or .doc files. The command-line program &lt;a href=&quot;http://daringfireball.net/projects/markdown/&quot;&gt;markdown&lt;/a&gt;, for instance, can translate to HTML and the GUI program &lt;a href=&quot;http://sourceforge.net/p/retext/home/ReText/&quot;&gt;ReText&lt;/a&gt; can export to Google Docs. &lt;/p&gt;
+
+&lt;h1&gt;Vim&lt;/h1&gt;
+
+&lt;p&gt;&lt;a href=&quot;http://www.vim.org/&quot;&gt;Vim&lt;/a&gt; is probably the best text editor ever made. It’s tough to learn, but once you learn it, it’s the most efficient way of editing text. All the editing commands are mapped to the keyboard, so you don’t have to move your hands back and forth to the mouse all the time. Vim is great because:  &lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;It’s ubiquitous. It’s installed standard on most macs, linux desktops, and servers. Furthermore, since it can run in a terminal, you can run the program remotely over SSH. As far as I know, it’s been ported to just about every platform there is: Mac OS, Windows, Linux, Android, even iOS.&lt;br&gt;&lt;/li&gt;
+&lt;li&gt;It’s small and lightning-fast. It takes almost no time to start up, and it doesn’t use that much RAM when it’s running. Unlike other word processors, I’ve never seen it crash.&lt;br&gt;&lt;/li&gt;
+&lt;li&gt;It auto-saves everything you’re working on in swap files, right down to the last letter you typed, so you never lose anything by forgetting to save. &lt;/li&gt;
+&lt;li&gt;It’s endlessly extensible. There are ridiculous numbers of plugins available for it. &lt;/li&gt;
+&lt;li&gt;The vim keybindings translate to other programs, as well. I use luakit and vimperator for web browsing, and they behave a lot like vim. &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;Here are some of my favorite vim features: &lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;Syntax highlighting. This is really nice for editing code, like HTML files, since it makes everything easier to read, but it also works for markdown syntax, too, and the variation used by notes.vim. There are dozens, if not hundreds, of color schemes, too, and some look really pretty.&lt;br&gt;&lt;/li&gt;
+&lt;li&gt;Folding. Folding is a way of collapsing sections of text to just their headings. By pressing &lt;code&gt;zM&lt;/code&gt;, for instance, I can collapse all folds and just see my file as a table of contents. I can then expand any section, or expand them all. &lt;/li&gt;
+&lt;li&gt;Split screens. I can have a bunch of notes open simultaneously, all on the same screen.&lt;br&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;Some articles celebrating vim: &lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;http://www.viemu.com/a-why-vi-vim.html&quot;&gt;“Why, oh WHY, do those #?@! nutheads use vi?”&lt;/a&gt; &lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;http://www.terminally-incoherent.com/blog/2012/03/21/why-vim/&quot;&gt;”Why Vim?&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;And if you’re interested in learning vim, there’s the game &lt;a href=&quot;http://vim-adventures.com/&quot;&gt;vim-adventures.com&lt;/a&gt;. &lt;/p&gt;
+
+&lt;h1&gt;Notes.vim&lt;/h1&gt;
+
+&lt;p&gt;Notes.vim is a vim plugin that gives you a personal wiki. It also has a ton of other functions that make notetaking easier. Here’s what’s great about notes.vim:  &lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;The wiki. The best thing about notes.vim is that if you type a word that’s the name of one of your notes, it will highlight it and turn it into a link. That way, you can easily have notes that link to other notes, and build a non-linear relational note system.&lt;br&gt;&lt;/li&gt;
+&lt;li&gt;It can autocorrect fancy characters like word processors do, i.e. turning straight quotes into curly quotes, and turning asterixes into bullet points. &lt;/li&gt;
+&lt;li&gt;It automatically handles bulleted lists with many sublevels. It’s easy to make outlines. &lt;/li&gt;
+&lt;li&gt;The syntax highlighting handles Markdown, but also some more syntax, like sentences in quotes. &lt;/li&gt;
+&lt;li&gt;It supports @tags, which is an awesome way of organizing notes by more than one criterion. Just putting notes into folders on the disk, or virtual “notebooks” as Tomboy does, doesn’t make sense if you have more than one criterion. &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h1&gt;Fun with the Terminal&lt;/h1&gt;
+
+&lt;p&gt;Manipulating plain text notes from the terminal is fun. &lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;Display a note quickly: &lt;code&gt;cat note.txt&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;Join two or more notes together: &lt;code&gt;cat note1.txt note2.txt &amp;gt; newnote.txt&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;Add some text to the bottom of a note: &lt;code&gt;cat &amp;gt;&amp;gt; note.txt&lt;/code&gt; then type some stuff.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;I added a couple of lines to my .bashrc to make it easy to open notes, too: &lt;/p&gt;
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-text&quot; data-lang=&quot;text&quot;&gt; # Opens a note
+ ne() {
+   vim -c &amp;quot;:Note $*&amp;quot; 
+ }
+
+ ## New Note: calls vim notes plugin
+ n() { 
+   vim -c :Note
+ }
+
+ # Searches Notes
+ nls() {
+   ls -c ~/Notes/ | egrep -i &amp;quot;$*&amp;quot;
+ }
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;This way I can type “ne shakes” and get my note called “Shakespeare.” &lt;/p&gt;
+
+&lt;h1&gt;Other Search Tools&lt;/h1&gt;
+
+&lt;p&gt;With over 800 notes, I need good ways to search and open them. It’s easy to do from within vim, but to open a note when vim isn’t running, I use Kupfer. I open Kupfer by pressing F13, then start typing the name of a note, and it usually finds my note after I type a few letters. I also have a keyboard shortcut in GNOME that binds Ctrl+Alt+N to the command &lt;code&gt;vim note:&lt;/code&gt; so that I can easily open a new note when I need to. &lt;/p&gt;
+
+&lt;h1&gt;Backup and Sync&lt;/h1&gt;
+
+&lt;p&gt;I use Dropbox for backup and sync, and it’s awesome. Probably the best feature it has is version control. That means, if I accidentally make a change to a document that I don’t want, Dropbox keeps all the previous versions of that file, and allows me to easily revert back to them. This also works for undeleting files. 
+Dropbox’s sync is pretty great, too, so I always have all my updated notes on my desktop, laptop, and phone. Then there are some iPhone apps that allow me to view and edit notes from Dropbox: &lt;a href=&quot;http://www.hogbaysoftware.com/products/plaintext&quot;&gt;PlainText&lt;/a&gt; is a good one.  &lt;/p&gt;
+
+&lt;h1&gt;Conclusion&lt;/h1&gt;
+
+&lt;p&gt;There you have it. It sounds complicated, but it’s actually pretty simple. &lt;/p&gt;
+</description>
+        <pubDate>Sat, 29 Sep 2012 00:00:00 -0400</pubDate>
+        <link>http://jonreeve.com/productivity/hacks/linux/2012/09/29/my-awesome-notetaking-system-2.html</link>
+        <guid isPermaLink="true">http://jonreeve.com/productivity/hacks/linux/2012/09/29/my-awesome-notetaking-system-2.html</guid>
+        
+        
+        <category>productivity</category>
+        
+        <category>hacks</category>
+        
+        <category>linux</category>
         
       </item>
     

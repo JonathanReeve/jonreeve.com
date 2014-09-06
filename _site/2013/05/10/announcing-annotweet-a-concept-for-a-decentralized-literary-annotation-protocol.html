@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html>
+
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+    <title>Announcing AnnoTweet: A Concept for a Decentralized Literary Annotation Protocol</title>
+    <meta name="description" content="The personal website of Jonathan Reeve. Digital humanities, hacks, ideas, improvements. 
+">
+
+    <link rel="stylesheet" href="/css/main.css">
+    <link rel="canonical" href="http://jonreeve.com/2013/05/10/announcing-annotweet-a-concept-for-a-decentralized-literary-annotation-protocol.html">
+</head>
+
+
+  <body>
+
+    <header class="site-header">
+
+  <div class="wrapper">
+
+    <a class="site-title" href="/">Jonathan Reeve</a>
+
+    <nav class="site-nav">
+      <a href="#" class="menu-icon">
+        <svg viewBox="0 0 18 15">
+          <path fill="#424242" d="M18,1.484c0,0.82-0.665,1.484-1.484,1.484H1.484C0.665,2.969,0,2.304,0,1.484l0,0C0,0.665,0.665,0,1.484,0 h15.031C17.335,0,18,0.665,18,1.484L18,1.484z"/>
+          <path fill="#424242" d="M18,7.516C18,8.335,17.335,9,16.516,9H1.484C0.665,9,0,8.335,0,7.516l0,0c0-0.82,0.665-1.484,1.484-1.484 h15.031C17.335,6.031,18,6.696,18,7.516L18,7.516z"/>
+          <path fill="#424242" d="M18,13.516C18,14.335,17.335,15,16.516,15H1.484C0.665,15,0,14.335,0,13.516l0,0 c0-0.82,0.665-1.484,1.484-1.484h15.031C17.335,12.031,18,12.696,18,13.516L18,13.516z"/>
+        </svg>
+      </a>
+
+      <div class="trigger">
+        
+          
+          <a class="page-link" href="/about/">About</a>
+          
+        
+          
+          <a class="page-link" href="/cv/">Curriculum Vitae</a>
+          
+        
+          
+        
+          
+        
+          
+          <a class="page-link" href="/sample-page/index.html">About Me</a>
+          
+        
+          
+        
+      </div>
+    </nav>
+
+  </div>
+
+</header>
+
+
+    <div class="page-content">
+      <div class="wrapper">
+        <div class="post">
+
+  <header class="post-header">
+    <h1 class="post-title">Announcing AnnoTweet: A Concept for a Decentralized Literary Annotation Protocol</h1>
+    <p class="post-meta">May 10, 2013</p>
+  </header>
+
+  <article class="post-content">
+    <p>Have you ever wanted to livetweet a book? I often want to. Yet there doesn’t seem to be a standard way of doing that. You could tweet, for instance, &quot;Oh Captain Wentworth! When will you propose? #JaneAustenPersuasion&quot; but the hashtag isn’t standardized, so some people might be tweeting under #Persuasion and others under #AustenPersuasion. Furthermore, the hashtag isn’t specific enough to make it clear which part of the book you’re tweeting about. If you browse other tweets marked #JaneAustenPersuasion, you might find comments about other parts of the book, which may contain spoilers. </p>
+
+<p>Enter AnnoTweet, a concept for a literary annotation hashtag, or AnnoTag. Whenever you want to tweet about part of a book, use this format: </p>
+
+<p><img src="http://jonreeve.com/blog/wp-content/uploads/2013/05/annotweet-diagram.jpg" alt="AnnoTweet diagram"></p>
+
+<p>The first letter is the book code type. Uppercase letters refer to raw codes and IDs, and lowercase letters refer to base 64-encoded codes. Here are some examples: </p>
+
+<ul>
+<li><code>I</code> = Raw ISBN, ex. I0393911535. </li>
+<li><code>i</code> = Base 64-encoded ISBN, ex. iXepzv</li>
+<li><code>G</code> = raw Project Gutenberg book ID, ex. G105. </li>
+<li><code>g</code> = Base 64-encoded Gutenberg book ID, ex. gBp</li>
+<li><code>B</code> = <a href="http://books.google.com">Google Books</a> ID. </li>
+<li><code>O</code> = Raw OCLC Number. Ex. O29877721. These can be found using <a href="http://www.worldcat.org">Worldcat</a>. </li>
+<li><code>o</code> = Base 64-encoded OCLC number. Ex. oBx-XZ.</li>
+</ul>
+
+<p>Any other sources can be added to this list. I’m working on a way to shorten <a href="https://en.wikipedia.org/wiki/Digital_object_identifier">DOIs</a>, for instance. </p>
+
+<p>The next letters and numbers before the colon are the book code, optionally encoded in base 64. What is <a href="http://en.wikipedia.org/wiki/Base_64">base 64</a>, you ask? It&#39;s just a mathy way to take a long number and convert it to a short string of numbers and both uppercase and lowercase letters. That way, you can take an unwieldy ISBN—the ISBN for the Norton Critical Edition of Jane Austen’s <em>Persuasion</em>, for instance, is 0393911535—and write it as “Xepzv”. Both <code>I0393911535</code> and <code>iXepzv</code> are valid AnnoTags, but the latter saves five characters, which you can use to write “LOL!!” or whatever your heart desires. To try this out, grab an ISBN of a book from Amazon.com or equivalent, remove all the hyphens and paste it into a converter like <a href="http://convertxy.com/index.php/numberbases/">the one at convertxy.com</a>, which will convert it into Base 64. You may need to change <code>+</code> and <code>/</code> to <code>-</code> and <code>_</code>, though, to make it <a href="http://en.wikipedia.org/wiki/Base_64#URL_applications">URL-safe</a>. Some book IDs won’t benefit much from encoding, of course. Many Project Gutenberg etexts IDs are short anyway, so you might as well keep them as-is. The <a href="http://www.gutenberg.org/files/105/105-h/105-h.htm">Project Gutenberg ebook for <em>Persuasion</em></a>, for instance, is listed as “EBook #105,” which can be represented as the AnnoTag <code>#G105</code>. No calculator required. </p>
+
+<p>Next, there is a colon, followed by the location code. The location code is made up of chapter numbers, page numbers, or whatever you like. If you want to get super-specific—say, if you’re annotating a particular word or phrase—add a line number or word number. If your book doesn’t have page numbers (if you’re reading an etext, for instance), you can index your location any way you want—by chapter and paragraph number, or even chapter, paragraph, and word. This is simple, intuitive, and human-readable. If your book code is <code>G105</code>, and you want to tweet about something that happens in Chapter XXIII, you can tweet &quot;Oh no you di’n’t, Captain Wentworth! #G105:c23&quot;. Because the AnnoTag is only eight characters, you have another 130 or so for your witty, insightful commentary. </p>
+
+<h2>List of location abbreviations:</h2>
+
+<ul>
+<li><code>d</code> = part (“division”), ex. d2c5 is Part II, Chapter 5. </li>
+<li><code>b</code> = book, ex. D3c7 is Book III, Chapter 7. For those books that are divided into &quot;books.&quot; </li>
+<li><code>c</code> = chapter, ex. c34 or cXXXIV is Chapter 34. </li>
+<li><code>p</code> = page, ex. p54 is page 54. </li>
+<li><code>a</code> = act, ex. a1 is Act I. To be used for drama. </li>
+<li><code>s</code> = scene, ex. a1s3 is Act I, Scene 3. </li>
+<li><code>P</code> = paragraph or stanza, ex. c5P2 is the second paragraph of Chapter 5. </li>
+<li><code>l</code> = line number, ex. p76l20 is page 76, line 20. </li>
+<li><code>w</code> = word number, ex. p82l10w4 is the fourth word of the tenth line on page 82. </li>
+</ul>
+
+<h2>Examples:</h2>
+
+<ul>
+<li>Not to be, man. Not to be. Get over it. #Hamlet #G1524:a3s1P24 
+
+<ul>
+<li>The Gutenberg Ebook for Shakespeare&#39;s play Hamlet, Act III, Scene 1, paragraph 24. </li>
+</ul></li>
+<li>Septimus&#39;s shell shock makes him unusually atune to nature. #Dalloway #iJTNWV:p22 
+
+<ul>
+<li>The Harcourt Annotated Edition of Virginia Woolf&#39;s novel <em>Mrs. Dalloway</em>, page 22. </li>
+</ul></li>
+<li>What circles does the blackbird mark, exactly? #WallaceStevens #iog85j:p94P2 
+
+<ul>
+<li>The Collected Poems of Wallace Stevens, &quot;Thirteen Ways of Looking at a Blackbird,&quot; page 94, second stanza. </li>
+</ul></li>
+</ul>
+
+<h2>Here are some of the advantages of AnnoTweeting:</h2>
+
+<ul>
+<li>It’s decentralized, so it’s not contingent on any one particular institution or website. </li>
+<li>Annotations are owned by their writers, not by the website that hosts them. </li>
+<li>AnnoTags are mostly human-readable. Once you know the code for your book, it’s easy to figure out what “p54” means (hint: it’s page 54).<br></li>
+<li>AnnoTweeting allows you to comment on both paper books and ebooks, and refer to specific editions when necessary. </li>
+<li>You don’t even need a computer to annoTweet. Just send an SMS to your twitter account. </li>
+<li>No registration necessary, provided you already have an account on twitter or identi.ca. </li>
+<li>If you use AnnoTags in your blog posts, you aren’t restricted to the 140-character limit of microblogging platforms. You can even AnnoTag your scholarly papers. </li>
+</ul>
+
+<h2>Future Applications</h2>
+
+<p>There are lots of ways that apps could interface with this type of protocol. Here are some ideas: </p>
+
+<ul>
+<li>A webapp to generate AnnoTags, allowing the user to look up books by author, title, or ISBN, and generate AnnoTags from them. </li>
+<li>A webapp to aggregate AnnoTweets and display them in the margins of an etext, so that users can read an etext online and see what people have tweeted about it. Tweets that are line-specific will appear right next to those lines in the etext.</li>
+<li>A mobile webapp or native mobile app (i.e. an Android app) that can generate AnnoTags, and maybe even scan book barcodes using one&#39;s smartphone camera. </li>
+<li>A script that can expand AnnoTags to regular MLA-compliant bibliographic entries. </li>
+<li>A browser extension (i.e. a Firefox plugin) that automatically generates AnnoTags for books when you visit a book page on Amazon or Worldcat. </li>
+</ul>
+
+<h2>Calling Programmers and Collaborators</h2>
+
+<p>Who wants to get involved? This will be a free and open-source project.  </p>
+
+  </article>
+
+</div>
+
+      </div>
+    </div>
+
+    <footer class="site-footer">
+
+  <div class="wrapper">
+
+    <h2 class="footer-heading">Jonathan Reeve</h2>
+
+    <div class="footer-col-wrapper">
+      <div class="footer-col  footer-col-1">
+        <ul class="contact-list">
+          <li>Jonathan Reeve</li>
+          <li><a href="mailto:jon.reeve@gmail.com">jon.reeve@gmail.com</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-col  footer-col-2">
+        <ul class="social-media-list">
+          
+          <li>
+            <a href="https://github.com/JonathanReeve">
+              <span class="icon  icon--github">
+                <svg viewBox="0 0 16 16">
+                  <path fill="#828282" d="M7.999,0.431c-4.285,0-7.76,3.474-7.76,7.761 c0,3.428,2.223,6.337,5.307,7.363c0.388,0.071,0.53-0.168,0.53-0.374c0-0.184-0.007-0.672-0.01-1.32 c-2.159,0.469-2.614-1.04-2.614-1.04c-0.353-0.896-0.862-1.135-0.862-1.135c-0.705-0.481,0.053-0.472,0.053-0.472 c0.779,0.055,1.189,0.8,1.189,0.8c0.692,1.186,1.816,0.843,2.258,0.645c0.071-0.502,0.271-0.843,0.493-1.037 C4.86,11.425,3.049,10.76,3.049,7.786c0-0.847,0.302-1.54,0.799-2.082C3.768,5.507,3.501,4.718,3.924,3.65 c0,0,0.652-0.209,2.134,0.796C6.677,4.273,7.34,4.187,8,4.184c0.659,0.003,1.323,0.089,1.943,0.261 c1.482-1.004,2.132-0.796,2.132-0.796c0.423,1.068,0.157,1.857,0.077,2.054c0.497,0.542,0.798,1.235,0.798,2.082 c0,2.981-1.814,3.637-3.543,3.829c0.279,0.24,0.527,0.713,0.527,1.437c0,1.037-0.01,1.874-0.01,2.129 c0,0.208,0.14,0.449,0.534,0.373c3.081-1.028,5.302-3.935,5.302-7.362C15.76,3.906,12.285,0.431,7.999,0.431z"/>
+                </svg>
+              </span>
+
+              <span class="username">JonathanReeve</span>
+            </a>
+          </li>
+          
+
+          
+          <li>
+            <a href="https://twitter.com/j0_0n">
+              <span class="icon  icon--twitter">
+                <svg viewBox="0 0 16 16">
+                  <path fill="#828282" d="M15.969,3.058c-0.586,0.26-1.217,0.436-1.878,0.515c0.675-0.405,1.194-1.045,1.438-1.809
+                  c-0.632,0.375-1.332,0.647-2.076,0.793c-0.596-0.636-1.446-1.033-2.387-1.033c-1.806,0-3.27,1.464-3.27,3.27 c0,0.256,0.029,0.506,0.085,0.745C5.163,5.404,2.753,4.102,1.14,2.124C0.859,2.607,0.698,3.168,0.698,3.767 c0,1.134,0.577,2.135,1.455,2.722C1.616,6.472,1.112,6.325,0.671,6.08c0,0.014,0,0.027,0,0.041c0,1.584,1.127,2.906,2.623,3.206 C3.02,9.402,2.731,9.442,2.433,9.442c-0.211,0-0.416-0.021-0.615-0.059c0.416,1.299,1.624,2.245,3.055,2.271 c-1.119,0.877-2.529,1.4-4.061,1.4c-0.264,0-0.524-0.015-0.78-0.046c1.447,0.928,3.166,1.469,5.013,1.469 c6.015,0,9.304-4.983,9.304-9.304c0-0.142-0.003-0.283-0.009-0.423C14.976,4.29,15.531,3.714,15.969,3.058z"/>
+                </svg>
+              </span>
+
+              <span class="username">j0_0n</span>
+            </a>
+          </li>
+          
+        </ul>
+      </div>
+
+      <div class="footer-col  footer-col-3">
+        <p class="text">The personal website of Jonathan Reeve. Digital humanities, hacks, ideas, improvements. 
+</p>
+      </div>
+    </div>
+
+  </div>
+
+</footer>
+
+
+  </body>
+
+</html>

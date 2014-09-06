@@ -6,12 +6,12 @@
     <meta name="viewport" content="width=device-width">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
 
-    <title>Jonathan Reeve</title>
+    <title>How I Automated My Weekly Response Papers</title>
     <meta name="description" content="The personal website of Jonathan Reeve. Digital humanities, hacks, ideas, improvements. 
 ">
 
     <link rel="stylesheet" href="/css/main.css">
-    <link rel="canonical" href="http://jonreeve.com/">
+    <link rel="canonical" href="http://jonreeve.com/productivity/hacks/linux/2013/04/22/how-i-automated-my-weekly-response-papers.html">
 </head>
 
 
@@ -62,79 +62,55 @@
 
     <div class="page-content">
       <div class="wrapper">
-        <div class="home">
+        <div class="post">
 
-  <h1 class="page-heading">Posts</h1>
+  <header class="post-header">
+    <h1 class="post-title">How I Automated My Weekly Response Papers</h1>
+    <p class="post-meta">Apr 22, 2013</p>
+  </header>
 
-  <ul class="post-list">
-    
-      <li>
-        <span class="post-meta">Jun 9, 2014</span>
+  <article class="post-content">
+    <p>A course I took last semester required that I submit a weekly response paper for that week&#39;s readings. I wanted to see if I could automate that process as much as possible, so that I wouldn’t have to do all the repetitive stuff, like writing the date, putting it in MLA format, and emailing it. I came up with this workflow:</p>
 
-        <h2>
-          <a class="post-link" href="/2014/06/09/hacking-at-the-open-syllabus-project-collocations-by-subject.html">Hacking at the Open Syllabus Project: Collocations by Subject</a>
-        </h2>
-      </li>
-    
-      <li>
-        <span class="post-meta">Nov 2, 2013</span>
+<ul>
+<li>writing in pandoc markdown</li>
+<li>using pandoc to convert markdown to pdf via TeX and the MLA style</li>
+<li>emailing the result using mutt</li>
+</ul>
 
-        <h2>
-          <a class="post-link" href="/digital%20humanities/2013/11/02/workshop-proposal-vim-for-humanists.html">Workshop Proposal: Vim for Humanists</a>
-        </h2>
-      </li>
-    
-      <li>
-        <span class="post-meta">Nov 1, 2013</span>
+<p>For those that don’t already know, <a href="http://johnmacfarlane.net/pandoc/">pandoc</a> is a command-line document conversion tool that excels at converting from <a href="http://daringfireball.net/projects/markdown/">markdown</a> (for reasons why markdown is awesome, see my <a href="http://jonreeve.com/blog/?p=18">post below</a>). LaTeX is a professional typesetting language and command-line program that’s very good at producing PDFs. <a href="http://www.mutt.org/">Mutt</a> is an excellent command-line email program. On Linux, you can install all these tools with one simple command, like this:</p>
+<div class="highlight"><pre><code class="language-sh" data-lang="sh">sudo apt-get install pandoc texlive mutt
+</code></pre></div>
+<p>Since they’re all command-line tools, they’re interoperable, which means you don’t have to have ten windows open on your desktop. With all these pieces in place, I wrote a single command to do everything I needed to do with my response papers. The source of my response papers looks something like this:</p>
+<div class="highlight"><pre><code class="language-text" data-lang="text">%Title of My Paper
 
-        <h2>
-          <a class="post-link" href="/2013/11/01/introducing-the-macro-etymological-analyzer.html">Introducing the Macro-Etymological Analyzer</a>
-        </h2>
-      </li>
-    
-      <li>
-        <span class="post-meta">Jun 5, 2013</span>
+Here is the body of my paper. It understands markdown syntax.
+</code></pre></div>
+<p>The % is there to tell pandoc which line contains the title. That’s the only thing that departs from traditional markdown syntax. Then I used <a href="http://www.tex.ac.uk/tex-archive/macros/latex/contrib/mla-paper/mla.sty">Ryan Aycock’s LaTeX MLA stylesheet</a> and a short template I made that looks like this:</p>
+<div class="highlight"><pre><code class="language-latex" data-lang="latex">documentclass[12pt,letterpaper]<span class="nb">{</span>article<span class="nb">}</span>
+usepackage<span class="nb">{</span>ifpdf<span class="nb">}</span>
+usepackage<span class="nb">{</span>mla<span class="nb">}</span>
+begin<span class="nb">{</span>document<span class="nb">}</span>
+begin<span class="nb">{</span>mla<span class="nb">}{</span>Jonathan<span class="nb">}{</span>Reeve<span class="nb">}{</span>Prof&#39;s Name Here<span class="nb">}{</span>Course Name Here<span class="nb">}{</span>today<span class="nb">}{</span><span class="s">$</span><span class="nb">title</span><span class="s">$</span><span class="nb">}</span>
+<span class="s">$</span><span class="nb">body</span><span class="s">$</span>
+end<span class="nb">{</span>mla<span class="nb">}</span>
+end<span class="nb">{</span>document<span class="nb">}</span>
+</code></pre></div>
+<p>I also have a short email.txt file which contains the body of my response paper email:</p>
 
-        <h2>
-          <a class="post-link" href="/2013/06/05/etexts-and-distractions.html">On Etexts and Distractions</a>
-        </h2>
-      </li>
-    
-      <li>
-        <span class="post-meta">May 10, 2013</span>
+<blockquote>
+<p>Hi Prof. So-and-so,
+Attached, please find my response paper for this week.
+Best,
+Jonathan</p>
+</blockquote>
 
-        <h2>
-          <a class="post-link" href="/2013/05/10/announcing-annotweet-a-concept-for-a-decentralized-literary-annotation-protocol.html">Announcing AnnoTweet: A Concept for a Decentralized Literary Annotation Protocol</a>
-        </h2>
-      </li>
-    
-      <li>
-        <span class="post-meta">Apr 22, 2013</span>
+<p>Then, with mla.sty and mla-template.tex (above) in my working directory, I ran:</p>
+<div class="highlight"><pre><code class="language-sh" data-lang="sh">pandoc response.md -o response.pdf --template<span class="o">=</span>mla-template.tex <span class="o">&amp;&amp;</span> mutt -s <span class="s2">&quot;Response Paper&quot;</span> -a response.pdf my-prof@university.edu &lt; email.txt
+</code></pre></div>
+<p>Which converts it to LaTeX, applies the template, converts the .tex file to .pdf, attaches the PDF to an email with the body from email.txt, and emails it to my professor. What&#39;s cool is that once I’ve already run the command, it&#39;s in my BASH history, so all I have to do is write the response paper in markdown, then hit Ctrl+R in the shell and type the first few characters of “pandoc,” which autocompletes my command. </p>
 
-        <h2>
-          <a class="post-link" href="/productivity/hacks/linux/2013/04/22/how-i-automated-my-weekly-response-papers.html">How I Automated My Weekly Response Papers</a>
-        </h2>
-      </li>
-    
-      <li>
-        <span class="post-meta">Apr 19, 2013</span>
-
-        <h2>
-          <a class="post-link" href="/digital%20humanities/2013/04/19/virginia-woolfs-the-waves-a-tei-edition.html">Virginia Woolf's The Waves: A TEI Edition</a>
-        </h2>
-      </li>
-    
-      <li>
-        <span class="post-meta">Sep 29, 2012</span>
-
-        <h2>
-          <a class="post-link" href="/productivity/hacks/linux/2012/09/29/my-awesome-notetaking-system-2.html">My Awesome Notetaking System</a>
-        </h2>
-      </li>
-    
-  </ul>
-
-  <p class="rss-subscribe">subscribe <a href="/feed.xml">via RSS</a></p>
+  </article>
 
 </div>
 

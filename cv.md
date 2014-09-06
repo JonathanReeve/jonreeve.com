@@ -1,11 +1,12 @@
-Curriculum Vitae
-================
+---
+layout: page
+title: Curriculum Vitae
+permalink: /cv/
+---
 
 Jonathan Reeve {.name}
 
 jon.reeve@gmail.com
-
-http://jonreeve.com/cv
 
 Experience
 ==========
