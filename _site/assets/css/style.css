@@ -382,7 +382,8 @@ nav.pagination {
       padding: 5rem; }
     .notepad-site-footer .copyright {
       text-align: left;
-      float: left; }
+      float: left; 
+      line-height: 1.4em; }
     .notepad-site-footer .social-icons {
       text-align: right;
       float: right; } }
