@@ -1,6 +1,7 @@
 ---
 layout: post
 title: My Awesome Notetaking System
+comments: true
 categories:
 - Productivity
 - Hacks
