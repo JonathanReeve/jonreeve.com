@@ -4,10 +4,6 @@ title: Curriculum Vitae
 permalink: /cv/
 ---
 
-Jonathan Reeve {.name}
-
-jon.reeve@gmail.com
-
 Experience
 ==========
 

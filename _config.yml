@@ -1,7 +1,7 @@
 # Site settings
 title: Jonathan Reeve 
 email: jon.reeve@gmail.com 
-description: Jonathan Reeve. Digital humanities, hacks, ideas, improvements. 
+description: Digital humanities, hacks, ideas, improvements. 
 baseurl: "" # the subpath of your site, e.g. /blog/
 url: "" # the base hostname & protocol for your site
 twitter_username: j0_0n 
@@ -20,11 +20,10 @@ url:
 # Owner/author information
 owner:
   name:           Jonathan Reeve 
-  avatar:         hmfaysal.jpg
+  avatar:         avatar.jpg
   email:          jon.reeve@gmail.com 
   # Social networking links used in footer. Update and remove as you like.
   twitter:        j0_0n
-  facebook:       ranjiesheng
   github:         JonathanReeve      
   instagram:      jonreeve
 
@@ -33,10 +32,12 @@ links:
     url: /
     external: false
     icon: home
-  - title: Categories
-    url: /categories
   - title: About
     url: /about
+  - title: Categories
+    url: /categories
+  - title: CV
+    url: /cv
 
 highlighter: pygments
 markdown: redcarpet

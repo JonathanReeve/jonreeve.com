@@ -21,12 +21,12 @@ For example,
 
 Chris Forster [describes a process for extracting the characters’ speech using some manual edits and some command-line-fu](http://cforster.com/2013/02/reading-the-waves-with-stephen-ramsay/), but bemoans the lack of a TEI edition which would simplify this process. I took that as a challange and threw together [a quick and dirty TEI version of _The Waves_](http://jonreeve.com/waves-tei/waves-tei.xml) as an exercise, and used a XSL transformation to color-code the characters’ dialog. 
 
-![Color Coding](/assets/img/waves-tei/waves-tei.jpg) 
+![Color Coding](/images/waves-tei/waves-tei.jpg) 
 Showing the color coding. I'm open to suggestions for different colors.
 
 From here, there are a number of ways of extracting the dialog of a particular character or group of characters. One easy way is to edit the CSS for the character (i.e. `p.Bernard`) in the Web Inspector of Firefox or Chrome, adding `display: none;` under `color: red;`:  
 
-![Web Inspector](/assets/img/waves-tei/inspector.jpg)
+![Web Inspector](/images/waves-tei/inspector.jpg)
 Turn on or off speech by particular characters using your browser's built-in Web Inspector.
 
 If you do this for all the male characters, only female dialog will display. You can also edit the XSLT to selectively display dialog, or extract it with an XML parser like the [BeautifulSoup](http://www.crummy.com/software/BeautifulSoup/bs4/doc/#id11) python module like this: 

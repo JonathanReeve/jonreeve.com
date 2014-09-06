@@ -18,21 +18,21 @@ Description: Awesome dude, awesome life
 <head>
 <meta charset="utf-8">
 <title>VIRGINIA WOOLF'S THE WAVES: A TEI EDITION &vert; JONATHAN REEVE</title>
-<meta name="description" content="Jonathan Reeve. Digital humanities, hacks, ideas, improvements.">
+<meta name="description" content="Digital humanities, hacks, ideas, improvements.">
 <meta name="keywords" content="TEI, Python, XML">
 
 <!-- Twitter Cards -->
 <meta name="twitter:card" content="summary">
 <meta name="twitter:image" content="/images/logo.png">
 <meta name="twitter:title" content="Virginia Woolf's The Waves: A TEI Edition">
-<meta name="twitter:description" content="Jonathan Reeve. Digital humanities, hacks, ideas, improvements.">
+<meta name="twitter:description" content="Digital humanities, hacks, ideas, improvements.">
 <meta name="twitter:creator" content="@j0_0n">
 
 <!-- Open Graph -->
 <meta property="og:locale" content="en_US">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Virginia Woolf's The Waves: A TEI Edition">
-<meta property="og:description" content="Jonathan Reeve. Digital humanities, hacks, ideas, improvements.">
+<meta property="og:description" content="Digital humanities, hacks, ideas, improvements.">
 <meta property="og:url" content="/digital%20humanities/virginia-woolfs-the-waves-a-tei-edition">
 <meta property="og:site_name" content="Jonathan Reeve">
 <meta property="og:image" content="/images/">
@@ -103,6 +103,10 @@ Description: Awesome dude, awesome life
                  </li>
 
             <li>
+                    <a href="/cv">CV</a>
+                 </li>
+
+            <li>
                     <a href="/categories">Categories</a>
                  </li>
 
@@ -141,12 +145,12 @@ Description: Awesome dude, awesome life
 
 <p>Chris Forster <a href="http://cforster.com/2013/02/reading-the-waves-with-stephen-ramsay/">describes a process for extracting the characters’ speech using some manual edits and some command-line-fu</a>, but bemoans the lack of a TEI edition which would simplify this process. I took that as a challange and threw together <a href="http://jonreeve.com/waves-tei/waves-tei.xml">a quick and dirty TEI version of <em>The Waves</em></a> as an exercise, and used a XSL transformation to color-code the characters’ dialog. </p>
 
-<p><img src="/assets/img/waves-tei/waves-tei.jpg" alt="Color Coding"> 
+<p><img src="/images/waves-tei/waves-tei.jpg" alt="Color Coding"> 
 Showing the color coding. I&#39;m open to suggestions for different colors.</p>
 
 <p>From here, there are a number of ways of extracting the dialog of a particular character or group of characters. One easy way is to edit the CSS for the character (i.e. <code>p.Bernard</code>) in the Web Inspector of Firefox or Chrome, adding <code>display: none;</code> under <code>color: red;</code>:  </p>
 
-<p><img src="/assets/img/waves-tei/inspector.jpg" alt="Web Inspector">
+<p><img src="/images/waves-tei/inspector.jpg" alt="Web Inspector">
 Turn on or off speech by particular characters using your browser&#39;s built-in Web Inspector.</p>
 
 <p>If you do this for all the male characters, only female dialog will display. You can also edit the XSLT to selectively display dialog, or extract it with an XML parser like the <a href="http://www.crummy.com/software/BeautifulSoup/bs4/doc/#id11">BeautifulSoup</a> python module like this: </p>
@@ -183,7 +187,7 @@ Turn on or off speech by particular characters using your browser&#39;s built-in
                 <div class="row">
                     <section class="notepad-post-author small-12 columns">
                         
-                            <img src="/images/hmfaysal.jpg" class="notepad-post-author-avatar" alt="Jonathan Reeve's photo">
+                            <img src="/images/avatar.jpg" class="notepad-post-author-avatar" alt="Jonathan Reeve's photo">
                         
                         
                             <span class="author-label">Author</span>
@@ -235,13 +239,6 @@ Turn on or off speech by particular characters using your browser&#39;s built-in
             </span>
         </a>
         
-        
-        <a href="http://facebook.com/ranjiesheng">
-            <span class="fa-stack fa-lg">
-                <i class="fa fa-circle fa-stack-2x fa-inverse"></i>
-                <i class="fa fa-facebook fa-stack-1x"></i>
-            </span>
-        </a>
         
     </div>
     
