@@ -2,12 +2,11 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Jonathan Reeve</title>
-    <description>The personal website of Jonathan Reeve. Digital humanities, hacks, ideas, improvements. 
-</description>
-    <link>http://jonreeve.com/</link>
-    <atom:link href="http://jonreeve.com/feed.xml" rel="self" type="application/rss+xml" />
-    <pubDate>Sat, 06 Sep 2014 13:55:59 -0400</pubDate>
-    <lastBuildDate>Sat, 06 Sep 2014 13:55:59 -0400</lastBuildDate>
+    <description>Jonathan Reeve. Digital humanities, hacks, ideas, improvements.</description>
+    <link>/</link>
+    <atom:link href="/feed.xml" rel="self" type="application/rss+xml" />
+    <pubDate>Sat, 06 Sep 2014 14:25:14 -0400</pubDate>
+    <lastBuildDate>Sat, 06 Sep 2014 14:25:14 -0400</lastBuildDate>
     <generator>Jekyll v2.3.0</generator>
     
       <item>
@@ -83,8 +82,8 @@
 &lt;p&gt;&lt;strong&gt;Sociology&lt;/strong&gt;: Michel Foucault&lt;/p&gt;
 </description>
         <pubDate>Mon, 09 Jun 2014 00:00:00 -0400</pubDate>
-        <link>http://jonreeve.com/2014/06/09/hacking-at-the-open-syllabus-project-collocations-by-subject.html</link>
-        <guid isPermaLink="true">http://jonreeve.com/2014/06/09/hacking-at-the-open-syllabus-project-collocations-by-subject.html</guid>
+        <link>/hacking-at-the-open-syllabus-project-collocations-by-subject</link>
+        <guid isPermaLink="true">/hacking-at-the-open-syllabus-project-collocations-by-subject</guid>
         
         
       </item>
@@ -121,8 +120,8 @@
 &lt;/ul&gt;
 </description>
         <pubDate>Sat, 02 Nov 2013 00:00:00 -0400</pubDate>
-        <link>http://jonreeve.com/digital%20humanities/2013/11/02/workshop-proposal-vim-for-humanists.html</link>
-        <guid isPermaLink="true">http://jonreeve.com/digital%20humanities/2013/11/02/workshop-proposal-vim-for-humanists.html</guid>
+        <link>/digital%20humanities/workshop-proposal-vim-for-humanists</link>
+        <guid isPermaLink="true">/digital%20humanities/workshop-proposal-vim-for-humanists</guid>
         
         <category>vim</category>
         
@@ -171,8 +170,8 @@
 &lt;p&gt;Finally, this paper will discuss how this new tool might contribute to the suite of computational stylistics tools already available, and how macro-etymology might constitute a new metric that could be used towards stylistic fingerprinting or authorial detection. &lt;/p&gt;
 </description>
         <pubDate>Fri, 01 Nov 2013 00:00:00 -0400</pubDate>
-        <link>http://jonreeve.com/2013/11/01/introducing-the-macro-etymological-analyzer.html</link>
-        <guid isPermaLink="true">http://jonreeve.com/2013/11/01/introducing-the-macro-etymological-analyzer.html</guid>
+        <link>/introducing-the-macro-etymological-analyzer</link>
+        <guid isPermaLink="true">/introducing-the-macro-etymological-analyzer</guid>
         
         
       </item>
@@ -192,8 +191,8 @@ First we must ask, is a physical book really free of these decision-making distr
 &lt;p&gt;Finally, we should ask, is “the web” really a place of “superficial reading,” and the library a place of “deep reading”? Maybe for some this is true, but this entirely depends on the reader’s habits with regards to electronic and physical reading. Some readers, myself included, spend more hours in deep reading of electronic books than in superficial reading. Conversely, the paper works I’m more likely to read lend themselves more to a superficial reading style. It is a huge assumption to claim that the Internet is necessarily a place of superficiality. If you spend all your time on the Internet furiously scrolling through pictures of cats with silly captions, and all your time with paper doing serious scholarly reading, then it would be easy to assume that those are natural properties of those media. Yet the potential for “deepness” in both media are coextensive. &lt;/p&gt;
 </description>
         <pubDate>Wed, 05 Jun 2013 00:00:00 -0400</pubDate>
-        <link>http://jonreeve.com/2013/06/05/etexts-and-distractions.html</link>
-        <guid isPermaLink="true">http://jonreeve.com/2013/06/05/etexts-and-distractions.html</guid>
+        <link>/etexts-and-distractions</link>
+        <guid isPermaLink="true">/etexts-and-distractions</guid>
         
         
       </item>
@@ -287,8 +286,8 @@ First we must ask, is a physical book really free of these decision-making distr
 &lt;p&gt;Who wants to get involved? This will be a free and open-source project.  &lt;/p&gt;
 </description>
         <pubDate>Fri, 10 May 2013 00:00:00 -0400</pubDate>
-        <link>http://jonreeve.com/2013/05/10/announcing-annotweet-a-concept-for-a-decentralized-literary-annotation-protocol.html</link>
-        <guid isPermaLink="true">http://jonreeve.com/2013/05/10/announcing-annotweet-a-concept-for-a-decentralized-literary-annotation-protocol.html</guid>
+        <link>/announcing-annotweet-a-concept-for-a-decentralized-literary-annotation-protocol</link>
+        <guid isPermaLink="true">/announcing-annotweet-a-concept-for-a-decentralized-literary-annotation-protocol</guid>
         
         
       </item>
@@ -336,8 +335,8 @@ Jonathan&lt;/p&gt;
 &lt;p&gt;Which converts it to LaTeX, applies the template, converts the .tex file to .pdf, attaches the PDF to an email with the body from email.txt, and emails it to my professor. What&amp;#39;s cool is that once I’ve already run the command, it&amp;#39;s in my BASH history, so all I have to do is write the response paper in markdown, then hit Ctrl+R in the shell and type the first few characters of “pandoc,” which autocompletes my command. &lt;/p&gt;
 </description>
         <pubDate>Mon, 22 Apr 2013 00:00:00 -0400</pubDate>
-        <link>http://jonreeve.com/productivity/hacks/linux/2013/04/22/how-i-automated-my-weekly-response-papers.html</link>
-        <guid isPermaLink="true">http://jonreeve.com/productivity/hacks/linux/2013/04/22/how-i-automated-my-weekly-response-papers.html</guid>
+        <link>/productivity/hacks/linux/how-i-automated-my-weekly-response-papers</link>
+        <guid isPermaLink="true">/productivity/hacks/linux/how-i-automated-my-weekly-response-papers</guid>
         
         <category>markdown</category>
         
@@ -390,8 +389,8 @@ Turn on or off speech by particular characters using your browser&amp;#39;s buil
 &lt;p&gt;Disclaimer: this text is an experiment in textual analysis.  &lt;/p&gt;
 </description>
         <pubDate>Fri, 19 Apr 2013 00:00:00 -0400</pubDate>
-        <link>http://jonreeve.com/digital%20humanities/2013/04/19/virginia-woolfs-the-waves-a-tei-edition.html</link>
-        <guid isPermaLink="true">http://jonreeve.com/digital%20humanities/2013/04/19/virginia-woolfs-the-waves-a-tei-edition.html</guid>
+        <link>/digital%20humanities/virginia-woolfs-the-waves-a-tei-edition</link>
+        <guid isPermaLink="true">/digital%20humanities/virginia-woolfs-the-waves-a-tei-edition</guid>
         
         <category>TEI</category>
         
@@ -507,8 +506,8 @@ Dropbox’s sync is pretty great, too, so I always have all my updated notes on 
 &lt;p&gt;There you have it. It sounds complicated, but it’s actually pretty simple. &lt;/p&gt;
 </description>
         <pubDate>Sat, 29 Sep 2012 00:00:00 -0400</pubDate>
-        <link>http://jonreeve.com/productivity/hacks/linux/2012/09/29/my-awesome-notetaking-system-2.html</link>
-        <guid isPermaLink="true">http://jonreeve.com/productivity/hacks/linux/2012/09/29/my-awesome-notetaking-system-2.html</guid>
+        <link>/productivity/hacks/linux/my-awesome-notetaking-system-2</link>
+        <guid isPermaLink="true">/productivity/hacks/linux/my-awesome-notetaking-system-2</guid>
         
         
         <category>productivity</category>

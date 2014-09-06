@@ -1,12 +1,48 @@
 # Site settings
 title: Jonathan Reeve 
 email: jon.reeve@gmail.com 
-description: > # this means to ignore newlines until "baseurl:"
-        The personal website of Jonathan Reeve. Digital humanities, hacks, ideas, improvements. 
+description: Jonathan Reeve. Digital humanities, hacks, ideas, improvements. 
 baseurl: "" # the subpath of your site, e.g. /blog/
-url: "http://jonreeve.com" # the base hostname & protocol for your site
+url: "" # the base hostname & protocol for your site
 twitter_username: j0_0n 
 github_username: JonathanReeve 
 
+logo:             logo.png
+disqus_shortname: hmfaysal
+share:            true
+dropcap:          true
+# Change url to your domain. Leave localhost server or blank when working locally.
+# or use the hint from http://jekyllrb.com/docs/github-pages/ to keep this the same 
+# whether working locally or remotely. Start Jekyll with: jekyll serve --baseurl ''
+url:        	  
+
 # Build settings
+# Owner/author information
+owner:
+  name:           Jonathan Reeve 
+  avatar:         hmfaysal.jpg
+  email:          jon.reeve@gmail.com 
+  # Social networking links used in footer. Update and remove as you like.
+  twitter:        j0_0n
+  facebook:       ranjiesheng
+  github:         JonathanReeve      
+  instagram:      jonreeve
+
+links:
+  - title: Home
+    url: /
+    external: false
+    icon: home
+  - title: Categories
+    url: /categories
+  - title: About
+    url: /about
+
+highlighter: pygments
 markdown: redcarpet
+paginate:    5
+paginate_path: "page:num"
+
+permalink:   /:categories/:title
+
+exclude: ["lib", "config.rb", "Gemfile", "Capfile", "Gemfile.lock", "config", "log", "Rakefile", "Rakefile.rb", "tmp", "less", "*.sublime-project", "*.sublime-workspace", "test", "spec", "Gruntfile.js", "package.json", "node_modules"]
