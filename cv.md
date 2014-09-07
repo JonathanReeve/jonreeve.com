@@ -140,6 +140,7 @@ Open-Source Contributions and Other Projects
 
 May 2014 - Present: through the Modern Language Assocation, contributor to the open-source projects: 
 PHP, HTML, CSS
+
  - [Buddypress](http://buddypress.org/): social networking WordPress plugin. Over 2.2 million downloads. 
  - [BBPress](https://wordpress.org/plugins/bbpress/): WordPress plugin enabling forums. Over 1.4 million downloads.
  - [Buddypress Docs](https://wordpress.org/plugins/buddypress-docs/): collaborative authoring tool for WordPress. Over 80,000 downloads.
@@ -148,21 +149,26 @@ PHP, HTML, CSS
 
 July 2014 - Present: [Open Syllabus Project](http://opensyllabusproject.org/): 
 Python
+
  - developed categorizers for determining the subject of scraped syllabi
  - performed collocations analyses by subject <!-- TODO: link -->  
 
 June 2014 - Present: [Twitter Poet](https://github.com/JonathanReeve/trendhaikubot)
+
  - designed a twitter bot that generates poems based on trending Twitter topics. 
  - uses the Python Natural Language Processing Toolkit to conduct sophisticated linguistic analyses
 
 Jan. 2014 - Present: [Annotweet]
+
  - a protocol for a literary metadata hashtag that allows for livetweeting books, ebooks, and other literary works. 
 
 Nov. 2013 - The Waves: a TEI XML Edition
+
  - a TEI XML edition of Virginia Woolf's novel, with dialog markup
  - faciliates dialog extraction
 
 Jan. 2013 - Dec. 2013: [New York University Digital Humanities Working Group](http://nyudigitalexperiments.com) Epigraphs Project
+
 -   developed a [script to parse epigraphs](https://github.com/JonathanReeve/epi-project) from TEI XML
 -   designed initial prototypes of project database
 
@@ -180,9 +186,3 @@ Keyboardist in the rock band Your 33 Black Angels
 Organizer, Book Thug Nation poetry reading series
 
 Accomplished rock climber, level 5.11b
-
-Social Media Links
-==================
-
-[GitHub](https://github.com/JonathanReeve/)
-[LinkedIn](http://www.linkedin.com/pub/jonathan-reeve/36/8b/79b/)
