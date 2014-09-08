@@ -40,15 +40,9 @@ html, body, .notepad-post-container, .notepad-post-header {
 .post-template {
 	/* Header */
 	/* based on http://tympanus.net/Development/ArticleIntroEffects/index3.html */
-	/* Trigger Button */
-	/* Conent */
-	/* -------------------------- */
-	/* Sliced */
-	/* based on http://tympanus.net/Development/ArticleIntroEffects/index3.html
-	/* -------------------------- */
-	/* Delays */
 	.notepad-blog-menu .notepad-mobile-menu a {
 		color: white;
+		text-decoration: none; 
 		&:hover {
 			color: white;
 		}
@@ -229,13 +223,11 @@ html, body, .notepad-post-container, .notepad-post-header {
 				margin-right: auto;
 			}
 			p {
-				margin: 0 auto 2em auto;
+				margin: 0 auto 1em auto;
 				max-width: 56.25rem;
 				font-size: 1.125rem;
-				&:first-child {
-					font-size: 1.375rem;
-					font-weight: 300;
-				}
+				font-size: 1.375rem;
+				font-weight: 300;
 				&.with-image {
 					text-align: center;
 					padding-top: 1.125rem;
@@ -350,6 +342,7 @@ html, body, .notepad-post-container, .notepad-post-header {
 @media only screen and (min-width: 40.063em) {
 	.post-template .notepad-blog-menu ul li a {
 		color: white;
+		text-decoration: none; 
 		&:hover {
 			border-bottom: 0.1875rem solid white;
 		}
@@ -624,7 +617,7 @@ html, body, .notepad-post-container, .notepad-post-header {
 			color: #e51843;
 		}
 		ul, ol {
-			padding-left: 1.25rem;
+			padding-left: 3rem;
 			font-size: 1.125rem;
 		}
 		h1, h2, h3, h4, h5, h6 {
@@ -636,7 +629,7 @@ html, body, .notepad-post-container, .notepad-post-header {
 			margin-right: auto;
 		}
 		p {
-			margin: 0 auto 2em auto;
+			margin: 0.5em auto 0.5em;
 			max-width: 56.25rem;
 			font-size: 1.125rem;
 			&:first-child {

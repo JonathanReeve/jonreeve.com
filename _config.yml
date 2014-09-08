@@ -16,7 +16,9 @@ dropcap:          true
 # whether working locally or remotely. Start Jekyll with: jekyll serve --baseurl ''
 url:        	  
 
-# Build settings
+sass: 
+        sourcemap: :true 
+              
 # Owner/author information
 owner:
   name:           Jonathan Reeve 
