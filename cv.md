@@ -19,13 +19,10 @@ Experience
 <!---   Designed database model in Django and PostgreSQL-->
 <!---   Contributed new features for a virtual currency trading engine in Python-->
 
-**June '12 - July '13** The Margaret Sanger Papers Project, New York University History Department: Web
-Programmer
+**June '12 - July '13** New York University History Department: Programmer
 
--   Added "mentioned places," "mentioned people," and "mentioned organizations" search functionality to the [Margaret Sanger Papers Project Web Edition](http://www.nyu.edu/projects/sanger/publications/electronic_ed/speeches_and_articles.html)
--   Wrote a statistical analysis page to visualize data from the Margaret Sanger Papers Project
-
-**June '12 - July '13** Greenwich Village History, New York University History Department: Web Programmer
+-   Added functionality for searching mentioned entities to the [Margaret Sanger Papers Project Web Edition](http://www.nyu.edu/projects/sanger/publications/electronic_ed/speeches_and_articles.html)
+-   Wrote a statistical analysis page to visualize textual trends from the Margaret Sanger Papers electronic archives
 -   Developed [a customization engine](https://github.com/JonathanReeve/theme-elementaire) for the [Omeka content management platform](http://omeka.org)
 -   Designed and developed Omeka themes deployed on [Greenwich Village History](http://gvh.aphdigital.org) and [New Jersey Digital History](http://njdigitalhistory.org/NJDHA/)
 
@@ -34,8 +31,7 @@ Programmer
 Wrote six articles for the volume [*The Manifesto in
 Literature*](http://www.thomasriggs.net/pages/content/index.asp?PageID=158):
 
--   Richard Stallman's "The GNU Manifesto," John Barlow's "A Declaration
-    of the Independence of Cyberspace," and several others
+-   Richard Stallman's "The GNU Manifesto," John Barlow's "A Declaration of the Independence of Cyberspace," and several others
 
 Teaching Experience
 ===================
@@ -74,16 +70,16 @@ Jan. 2014 **Master of Arts**, Humanities, New York University
 
 May 2010 **Master of Arts**, Literature, Brooklyn College
 
-Jan. 2004 **Bachelor of Arts**, Individiualized Study, New York University
+Jan. 2004 **Bachelor of Arts**, Individualized Study, New York University
 
 Technical Skills
 ================
 
-**Languages**: PHP, Python, BASH, jQuery, SQL, XSL. Some working knowledge of: Ruby, Javascript
+**Languages**: PHP, Python, BASH, jQuery, SQL, XSL. Working knowledge of: Ruby, Javascript
 
 **Markup Languages**: HTML, CSS, Sass, XML, TEI XML, LaTeX, Markdown
 
-**Frameworks, CMSs**: Wordpress, Buddypress, Commons in a Box, Omeka. Some experience with ZEND, Django, and Jekyll. 
+**Frameworks, CMSs**: WordPress, BuddyPress, Commons in a Box, Omeka. Some experience with ZEND, Django, and Jekyll. 
 
 **Databases**: MySQL, PostgreSQL, SQLite
 
@@ -93,20 +89,20 @@ Technical Skills
 
 **Skills**: Web development, web design, mobile web design, computational text analysis, natural language processing, archival textual markup, database management, command-line scripting, version control, virtualization, basic networking
 
-**Natural Languages**: English: native; French: advanced (TCF Level 4); Mandarin Chinese: advanced; Vietnamese, Irish: beginner
+**Natural Languages**: English: native; French: advanced (Test de connaissance du français, Level 4); Mandarin Chinese: advanced; Vietnamese, Irish: beginner
 
 Selected Publications and Presentations
 =======================================
 
 **July 2014** "Macro-Etymological Textual Analysis: a Computational Application of Language History to Literary Criticism"
 
--   presented at [Digital Humanities 2014](http://dh2014.org/), Lausanne, Switzerland
--   winner, ADHO student bursary 
--   winner, New York University Draper Program [Hirschhorn Thesis Award](https://draperprogram.wordpress.com/2014/06/12/congratulations-to-our-hirschhorn-award-nominees-and-winner/) 
+-   presented short paper, [Digital Humanities 2014](http://dh2014.org/), Lausanne, Switzerland
+-   winner, Association of Digital Humanities Organizations student bursary 
+-   winner, New York University [Hirschhorn Thesis Award](https://draperprogram.wordpress.com/2014/06/12/congratulations-to-our-hirschhorn-award-nominees-and-winner/) 
 
 **April 2013** "Toward a Social Literary Annotation Engine"
 
--   presented at [Humanities, Arts, Science and Technology Advanced Collaboratory, Toronto](http://hastac2013.org/schedule-2/jonathan-reeve%20)
+-   presented at [Humanities, Arts, Science, and Technology Advanced Collaboratory, Toronto](http://hastac2013.org/schedule-2/jonathan-reeve%20)
 
 **Oct. 2012** "Elementaire, a Customizable Omeka Theme"
 
@@ -114,40 +110,36 @@ Selected Publications and Presentations
 
 **Aug. 2012** Articles in *The Manifesto in Literature*, Thomas Riggs & Company
 
-**Oct. 2011** *[The Art of Good Behavior](http://jonreeve.com/behaviour)*, a digital literary archive using TEI XML
+**Dec. 2011** *[The Art of Good Behavior](http://jonreeve.com/behaviour)*, a digital literary archive using TEI XML
 
--   presented findings, NYU Workshop in Archival Practice
--   presented completed work, Yale University Digital Humanities Forum,
-    Feb '12
+-   presented initial findings, NYU Workshop in Archival Practice
+-   presented completed work, Yale University Digital Humanities Forum, Feb '12
 
 **June 2011** "Hypertext Joyce: Building a Hypertext Ulysses with Open Source"
 
--   presented at the 2011 North American James Joyce Conference
+-   paper delivered at the 2011 North American James Joyce Conference
 
-**May 2010** "Dominance and Domine: Toward a Post-Religious Criticism of James Joyce's Ulysses,"
+**May 2010** "Dominance and *Domine*: Toward a Post-Religious Criticism of James Joyce's Ulysses,"
 
--   paper delivered at 2010 Graduate English Conference, Brooklyn
-    College
+-   paper delivered at "Deconstructing the Gods," Graduate English Conference, City University of New York, Brooklyn College
 
 **2009-2011** Poems anthologized:
 
--   2011 A Gathering of the Tribes
--   2009 Arsenic Lobster Anthology
+-   2011 *A Gathering of the Tribes*
+-   2009 *Arsenic Lobster Anthology*
 
 Open-Source Contributions and Other Projects
 ============================================
 
-**May 2014 - Present**: through the Modern Language Assocation, contributor to the open-source projects: 
-PHP, HTML, CSS
+**May 2014 - Present**: contributor to the open-source projects: 
 
- - [Buddypress](http://buddypress.org/): social networking WordPress plugin. Over 2.2 million downloads. 
+ - [Buddypress](http://buddypress.org/): social networking WordPress plugin. Over 2.2 million downloads 
  - [BBPress](https://wordpress.org/plugins/bbpress/): WordPress plugin enabling forums. Over 1.4 million downloads
  - [Buddypress Docs](https://wordpress.org/plugins/buddypress-docs/): collaborative authoring tool for WordPress. Over 80,000 downloads
- - [Commons in a Box](http://commonsinabox.org/): social networking software suite, used by CUNY, SUNY, and many others. Over 12,000 downloads. 
- - [CAC-Advanced-Profiles](https://github.com/cuny-academic-commons/cac-advanced-profiles): engine for member portfolios used by the CUNY Academic Commons. 
+ - [Commons in a Box](http://commonsinabox.org/): social networking software suite, used by CUNY, SUNY, and many others. Over 12,000 downloads
+ - [CAC-Advanced-Profiles](https://github.com/cuny-academic-commons/cac-advanced-profiles): engine for member portfolios used by the CUNY Academic Commons
 
 **July 2014 - Present**: [Open Syllabus Project](http://opensyllabusproject.org/): 
-Python
 
  - developed categorizers for determining the subject of scraped syllabi
  - performed collocations analyses by subject <!-- TODO: link -->  
@@ -157,33 +149,23 @@ Python
  - designed a twitter bot that generates poems based on trending Twitter topics. 
  - uses the Python Natural Language Processing Toolkit to conduct sophisticated linguistic analyses
 
-**Jan. 2014 - Present**: [Annotweet]
+**Jan. 2014 - Present**: [AnnoTweet]
 
- - a protocol for a literary metadata hashtag that allows for livetweeting books, ebooks, and other literary works
+ - a protocol for a literary metadata hashtag that provides the ability to livetweet books, electronic documents, and other texts
 
 **Nov. 2013** - [The Waves: a TEI XML Edition](/projects/waves-tei/waves-tei.xml)
 
- - a TEI XML edition of Virginia Woolf's novel, with dialog markup
- - faciliates dialog extraction
+ - a TEI XML edition of Virginia Woolf's novel, with dialog markup that facilitates dialog extraction
 
 **Jan. 2013 - Dec. 2013**: [New York University Digital Humanities Working Group](http://nyudigitalexperiments.com) Epigraphs Project
 
 -   developed a [script to parse epigraphs](https://github.com/JonathanReeve/epi-project) from TEI XML
 -   designed initial prototypes of project database
 
-Other Activities
-================
+Miscellaneous Activities
+========================
 
-Open source enthusiast and long-time desktop Linux user
-
--   assisted in alpha testing of Ubuntu and other FOSS
--   contributed to vim plugins
-
-Keyboardist in the rock band Your 33 Black Angels
-
--   recorded accordions, synthesizers, and flutes on four albums
--   played two North American and three European tours
-
-Organizer, Book Thug Nation poetry reading series
-
-Accomplished rock climber, level 5.11b
+ * Member of professional organizations: Modern Language Association; Association for Computers in the Humanities; Humanities, Arts, and Sciences Advanced Collaboratory 
+ * Keyboardist in the rock band Your 33 Black Angels
+ * Organizer, Book Thug Nation poetry reading series
+ * Accomplished rock climber, level 5.11b
