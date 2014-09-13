@@ -4,7 +4,7 @@ status: publish
 published: true
 title: ! 'Virginia Woolf''s The Waves: A TEI Edition'
 categories:
-- Digital Humanities
+- digital humanities
 tags:
 - TEI
 - Python

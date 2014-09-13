@@ -1,7 +1,10 @@
 ---
 layout: post
 title: On Etexts and Distractions
+tags: 
+ - pedagogy
 ---
+
 In a recent article in _Time_, “[Reading Literature Makes Us Smarter and Nicer](http://ideas.time.com/2013/06/03/why-we-should-read-literature/),” Annie Murphy Paul convincingly argues what her title suggests. She argues that “deep reading,” which she defines as “slow, immersive, rich in sensory detail and emotional and moral complexity” is an enriching activity. I couldn’t agree more. Yet she distinguishes this “deep reading” in necessary opposition to “the often superficial reading we do on the web,” which, at best, is an unnecessary pronouncement about electronic media. A “deep reader” must be “protected from distractions,” she argues. Fair enough. But she insists that a physical book’s “lack of hyperlinks,” then, enables this kind of reading—a paper work “frees the reader from making decisions — Should I click on this link or not? — allowing her to remain fully immersed in the narrative.” But can the problem of a reader’s attention really be reduced to a choice of medium? 
 <!--more-->
 First we must ask, is a physical book really free of these decision-making distractions? When I read a paper book, hardly a page goes by where I don’t think of looking up a place in an atlas, a name in an encyclopedia, or a word in a dictionary. Especially if I’m reading a book in a langauge I don’t speak well, the urge to pause my reading to look up words in a dictionary is immense. And putting down your book to look up a word in a dictionary can actually be more of a distraction than double-clicking on that word in an etext to summon an electronic dictionary. If the book you’re reading references another book, especially in the form of footnotes, endnotes, or in-text citations, it’s equally tempting to follow those virtual hyperlinks. In other words, any text is a natural hypertext for a reader with a sense of curiosity.

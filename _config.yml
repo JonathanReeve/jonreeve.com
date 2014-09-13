@@ -17,7 +17,7 @@ dropcap:          true
 url:        	  
 
 sass: 
-        sourcemap: :true 
+  sourcemap: :true 
               
 # Owner/author information
 owner:
@@ -34,8 +34,6 @@ links:
     url: /
     external: false
     icon: home
-  - title: About
-    url: /about
   - title: Categories
     url: /categories
   - title: CV
