@@ -12,7 +12,7 @@ Experience
 
 -   Edited XML and XSL for the [Literary Research Guide](http://mlalrg.org/public)
 -   Contributed to [the redesign](http://updates.commons.mla.org/2014/07/28/new-theme-for-the-mla-commons/) of the [MLA Commons](http://commons.mla.org)
-
+ 
 <!--Dec. '13 - April '14 [The Cryptocurrency Analytics Company](http://cryptocurrencyanalytics.com) Programmer-->
 
 <!---   Designed and implemented a Django webapp for client account management-->

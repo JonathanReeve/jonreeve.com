@@ -1,6 +1,8 @@
 ---
 layout: post
 title: On Etexts and Distractions
+categories: 
+ - digital humanities
 tags: 
  - pedagogy
 ---
