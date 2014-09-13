@@ -1,6 +1,7 @@
 ---
 layout: page
 title: Curriculum Vitae
+description: Jonathan Reeve
 permalink: /cv/
 ---
 
@@ -21,17 +22,15 @@ Experience
 
 **June '12 - July '13** New York University History Department: Programmer
 
--   Added functionality for searching mentioned entities to the [Margaret Sanger Papers Project Web Edition](http://www.nyu.edu/projects/sanger/publications/electronic_ed/speeches_and_articles.html)
--   Wrote a statistical analysis page to visualize textual trends from the Margaret Sanger Papers electronic archives
+-   Added functionality for searching mentioned entities to the [Margaret Sanger Papers Project Web Edition](http://www.nyu.edu/projects/sanger/webedition/app/documents/search.php) 
+-   Wrote [a statistical analysis page](http://www.nyu.edu/projects/sanger/webedition/app/documents/stats.php) to visualize textual trends from the Margaret Sanger Papers archives
 -   Developed [a customization engine](https://github.com/JonathanReeve/theme-elementaire) for the [Omeka content management platform](http://omeka.org)
 -   Designed and developed Omeka themes deployed on [Greenwich Village History](http://gvh.aphdigital.org) and [New Jersey Digital History](http://njdigitalhistory.org/NJDHA/)
 
 **July '12 - Sept. '12** Thomas Riggs & Company, Publishers: Research Writer
 
-Wrote six articles for the volume [*The Manifesto in
-Literature*](http://www.thomasriggs.net/pages/content/index.asp?PageID=158):
-
--   Richard Stallman's "The GNU Manifesto," John Barlow's "A Declaration of the Independence of Cyberspace," and several others
+ * Authored six articles for the reference volume [*The Manifesto in Literature*](http://www.thomasriggs.net/pages/content/index.asp?PageID=158):
+    - Richard Stallman's "The GNU Manifesto," John Barlow's "A Declaration of the Independence of Cyberspace," and several others
 
 Teaching Experience
 ===================
@@ -97,8 +96,8 @@ Selected Publications and Presentations
 **July 2014** "Macro-Etymological Textual Analysis: a Computational Application of Language History to Literary Criticism"
 
 -   presented short paper, [Digital Humanities 2014](http://dh2014.org/), Lausanne, Switzerland
--   winner, Association of Digital Humanities Organizations student bursary 
 -   winner, New York University [Hirschhorn Thesis Award](https://draperprogram.wordpress.com/2014/06/12/congratulations-to-our-hirschhorn-award-nominees-and-winner/) 
+-   winner, Association of Digital Humanities Organizations student bursary 
 
 **April 2013** "Toward a Social Literary Annotation Engine"
 
@@ -108,9 +107,9 @@ Selected Publications and Presentations
 
 -   presented at [The Humanities and Technology Camp](http://newyork2012.thatcamp.org/)
 
-**Aug. 2012** Articles in *The Manifesto in Literature*, Thomas Riggs & Company
+**Aug. 2012** Articles in [*The Manifesto in Literature*](http://www.cengage.com/search/productOverview.do;jsessionid=4FD757A6BD2DD6A4F5D0D81734BF2911?N=197&Ntk=P_EPI&Ntt=315361985178615732812460845631655972971&Ntx=mode+matchallpartial), Thomas Riggs & Company
 
-**Dec. 2011** *[The Art of Good Behavior](http://jonreeve.com/behaviour)*, a digital literary archive using TEI XML
+**Dec. 2011** *[The Art of Good Behavior](http://jonreeve.com/behaviour)*, a digital literary archive in TEI XML of a 19th-century etiquette manual
 
 -   presented initial findings, NYU Workshop in Archival Practice
 -   presented completed work, Yale University Digital Humanities Forum, Feb '12
@@ -149,7 +148,7 @@ Open-Source Contributions and Other Projects
  - designed a twitter bot that generates poems based on trending Twitter topics. 
  - uses the Python Natural Language Processing Toolkit to conduct sophisticated linguistic analyses
 
-**Jan. 2014 - Present**: [AnnoTweet]
+**Jan. 2014 - Present**: [AnnoTweet](/annotweet)
 
  - a protocol for a literary metadata hashtag that provides the ability to livetweet books, electronic documents, and other texts
 
