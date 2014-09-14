@@ -44,6 +44,6 @@ markdown: redcarpet
 paginate:    5
 paginate_path: "page:num"
 
-permalink:   /:categories/:title
+permalink:   /blog/:year/:month/:title
 
 exclude: ["lib", "config.rb", "Gemfile", "Capfile", "Gemfile.lock", "config", "log", "Rakefile", "Rakefile.rb", "tmp", "less", "*.sublime-project", "*.sublime-workspace", "test", "spec", "Gruntfile.js", "package.json", "node_modules"]
