@@ -77,7 +77,7 @@ Technical Skills
 
 **Markup Languages**: HTML, CSS, Sass, XML, TEI XML, LaTeX, Markdown
 
-**Frameworks, CMSs**: WordPress, BuddyPress, Commons in a Box, Omeka. Some experience with ZEND, Django, and Jekyll. 
+**Frameworks, CMSs**: WordPress, BuddyPress, Commons in a Box, Omeka. Some experience with ZEND, Django, and Jekyll 
 
 **Databases**: MySQL, PostgreSQL, SQLite
 
@@ -126,8 +126,8 @@ Selected Publications and Presentations
 -   2011 *A Gathering of the Tribes*
 -   2009 *Arsenic Lobster Anthology*
 
-Open-Source Contributions and Other Projects
-============================================
+Other Projects
+==============
 
 **May 2014 - Present**: contributor to the open-source projects: 
 
