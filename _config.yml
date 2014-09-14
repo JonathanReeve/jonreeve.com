@@ -39,10 +39,12 @@ links:
   - title: CV
     url: /cv
 
-highlighter: pygments
-markdown: redcarpet
-paginate:    5
-paginate_path: "page:num"
+google_analytics:       UA-54793132-1 
+
+highlighter:            pygments
+markdown:               redcarpet
+paginate:               5
+paginate_path:          "page:num"
 
 permalink:   /:year/:month/:title
 

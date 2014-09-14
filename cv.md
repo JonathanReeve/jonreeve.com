@@ -140,7 +140,7 @@ Other Projects
 **July 2014 - Present**: [Open Syllabus Project](http://opensyllabusproject.org/): 
 
  - developed categorizers for determining the subject of scraped syllabi
- - performed collocations analyses by subject <!-- TODO: link -->  
+ - performed collocations analyses by subject 
 
 **June 2014 - Present**: [Twitter Poet](https://github.com/JonathanReeve/trendhaikubot)
 

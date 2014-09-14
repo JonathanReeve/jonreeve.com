@@ -1,14 +1,8 @@
 ---
 layout: post
 title: How I Automated My Weekly Response Papers
-categories:
-- Hacks
-tags:
-- productivity
-- markdown
-- pandoc
-- mutt
-- linux
+category: hacks
+tags: productivity markdown pandoc mutt linux
 ---
 
 A course I took last semester required that I submit a weekly response paper for that week's readings. I wanted to see if I could automate that process as much as possible, so that I wouldn’t have to do all the repetitive stuff, like writing the date, putting it in MLA format, and emailing it. I came up with this workflow:
