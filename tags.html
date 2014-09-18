@@ -4,7 +4,8 @@ title: Tag Index
 permalink: /tags/index.html
 description: "An archive of posts sorted by tag."
 ---
-{% for tag in site.tags | sort %} 
+{% assign taglist = site.tags | sort %} 
+{% for tag in taglist %} 
 	<h2 id="{{ tag[0] }}">{{ tag[0] | capitalize }}</h2>
 	<ul class="post-list">
 		{% assign pages_list = tag[1] %}  
