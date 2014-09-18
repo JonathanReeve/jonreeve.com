@@ -3,7 +3,7 @@ layout: post
 title: My Awesome Notetaking System
 comments: true
 categories:
-- Hacks
+ - Hacks
 tags: 
  - linux
  - vim 

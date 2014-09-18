@@ -2,9 +2,10 @@
 layout: post
 title: ! 'Announcing AnnoTweet: A Concept for a Decentralized Literary Annotation Protocol'
 permalink: /annotweet/
+category: Digital Humanities
 tags: 
- - digital humanities
- - annotweet
+ - annotags
+ - annotation
 ---
 
 Have you ever wanted to livetweet a book? I often want to. Yet there doesn’t seem to be a standard way of doing that. You could tweet, for instance, "Oh Captain Wentworth! When will you propose? #JaneAustenPersuasion" but the hashtag isn’t standardized, so some people might be tweeting under #Persuasion and others under #AustenPersuasion. Furthermore, the hashtag isn’t specific enough to make it clear which part of the book you’re tweeting about. If you browse other tweets marked #JaneAustenPersuasion, you might find comments about other parts of the book, which may contain spoilers. 
