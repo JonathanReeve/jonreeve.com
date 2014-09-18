@@ -3,8 +3,8 @@ layout: post
 status: publish
 published: true
 title: ! 'Virginia Woolf''s The Waves: A TEI Edition'
-category: digital humanities
-tags: TEI Python XML
+category: Digital Humanities
+tags: tei python xml
 ---
 
 Stephen Ramsay’s chapter “Algorithmic Criticism” (from [_Reading Machines_](http://books.google.com/books?id=14KPI0ORQigC), anthologized in [A Companion to Digital Literary Studies](http://nora.lis.uiuc.edu:3030/companion/view?docId=blackwell/9781405148641/9781405148641.xml&doc.view=print&chunk.id=ss1-6-7&toc.depth=1&toc.id=0)) describes conducting a tf-idf analysis on the speech from the characters in Virginia Woolf’s novel _The Waves_. _The Waves_ is probably the ideal novel for computationaly studying fictional speech, since it is all in the form 

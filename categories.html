@@ -8,8 +8,8 @@ description: "An archive of posts sorted by categories."
 
 ---
 
-{% assign sortedCategories = site.categories | sort_by:name %}
-{% for tag in sortedCategories %} 
+{% assign cats = site.categories | sort %}
+{% for tag in cats %} 
   <h2 id="{{ tag[0] }}">{{ tag[0] | capitalize }}</h2>
   <ul class="post-list">
     {% assign pages_list = tag[1] %}  
