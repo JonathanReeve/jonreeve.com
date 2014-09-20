@@ -1,6 +1,7 @@
 ---
 layout: post
 title: ! 'Hacking at the Open Syllabus Project: Collocations by Subject'
+comments: true
 categories:
 - Digital Humanities
 tags: 

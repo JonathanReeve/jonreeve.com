@@ -1,7 +1,6 @@
 ---
 layout: post
-status: publish
-published: true
+comments: true
 title: ! 'Virginia Woolf''s The Waves: A TEI Edition'
 category: digital humanities
 tags: TEI Python XML

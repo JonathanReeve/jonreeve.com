@@ -1,6 +1,7 @@
 ---
 layout: post
 title: Introducing the Macro-Etymological Analyzer
+comments: true
 categories: 
  - digital humanities
 tags: 

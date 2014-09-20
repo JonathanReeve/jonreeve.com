@@ -1,5 +1,6 @@
 ---
 layout: post
+comments: true
 title: ! 'Announcing AnnoTweet: A Concept for a Decentralized Literary Annotation Protocol'
 permalink: /annotweet/
 tags: 

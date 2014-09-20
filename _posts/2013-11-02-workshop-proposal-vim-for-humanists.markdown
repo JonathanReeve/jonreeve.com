@@ -1,6 +1,7 @@
 ---
 layout: post
 title: ! 'Workshop Proposal: Vim for Humanists'
+comments: true
 categories:
 - Digital Humanities
 tags:
