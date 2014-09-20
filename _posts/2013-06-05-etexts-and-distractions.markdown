@@ -2,10 +2,8 @@
 layout: post
 title: On Etexts and Distractions
 comments: true
-categories: 
- - digital humanities
-tags: 
- - pedagogy
+category: Digital Humanities
+tags: pedagogy etexts
 ---
 
 In a recent article in _Time_, “[Reading Literature Makes Us Smarter and Nicer](http://ideas.time.com/2013/06/03/why-we-should-read-literature/),” Annie Murphy Paul convincingly argues what her title suggests. She argues that “deep reading,” which she defines as “slow, immersive, rich in sensory detail and emotional and moral complexity” is an enriching activity. I couldn’t agree more. Yet she distinguishes this “deep reading” in necessary opposition to “the often superficial reading we do on the web,” which, at best, is an unnecessary pronouncement about electronic media. A “deep reader” must be “protected from distractions,” she argues. Fair enough. But she insists that a physical book’s “lack of hyperlinks,” then, enables this kind of reading—a paper work “frees the reader from making decisions — Should I click on this link or not? — allowing her to remain fully immersed in the narrative.” But can the problem of a reader’s attention really be reduced to a choice of medium? 

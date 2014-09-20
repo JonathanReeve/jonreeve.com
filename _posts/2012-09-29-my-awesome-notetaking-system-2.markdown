@@ -3,7 +3,9 @@ layout: post
 title: My Awesome Notetaking System
 comments: true
 category: hacks
-tags: linux vim
+tags: 
+ - linux 
+ - vim
 ---
 
 I accumulate a lot of notes. Some are little personal ephemera, like ideas, addresses, or sketches for poems; some are commentary about books I’m reading; some are notes I take in class. I also maintain lists of things for fun: plant names I think are cool, possible band names, titles for things, new vocabulary words. I’ve used just about every possible medium for collecting these notes: little back-pocket notebooks, giant unruled composition books, moleskines, voice recorders, and even stacks of index cards. I’ve also used a ton of different word processors and notes apps: Microsoft Word, EverNote, the iPhone notes app, and Tomboy Notes, to name a few. Each of these systems has their advantages. A composition book won’t run out of batteries, and an electronic file (properly backed up) is harder to lose than an index card. Each of these also has their disadvantages, though, and I usually lose patience with a system after a while. I’m really happy with my current notetaking system, though, and so I’m excited to write about it and show it off. Here’s how it works. 

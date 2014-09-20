@@ -1,8 +1,8 @@
 ---
 layout: post
 title: How I Automated My Weekly Response Papers
-category: hacks
 comments: true
+category: Hacks
 tags: productivity markdown pandoc mutt linux
 ---
 
