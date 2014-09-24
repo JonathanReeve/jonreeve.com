@@ -28,13 +28,12 @@ These days, we aren't restricted to the characters typable on an 86-key keyboard
 
 ##Regex remappings: 
 
- Char	Meaning 		Remapping
-------	--------		---------
- ^	beginning of string	⇤ (a left arrow from a bar) 
- $	end of string		⇥ (a right arrow to a bar)  
- \d	a numeral		№ (the numero sign) 
- | 	logical "or"		∨ (the vel sign)  
- \w	an alphabetic character	α (alpha) 
- 
+ Char	| Meaning 		  | Remapping
+:------:| ------------------------|----------------------------
+  ^	| beginning of string	  | ⇤ (a left arrow from a bar) 
+  $	| end of string		  | ⇥ (a right arrow to a bar)  
+  \d	| a numeral		  | № (the numero sign) 
+ &#124; | logical "or"		  | ∨ (the vel sign)  
+  \w	| an alphabetic character | α (alpha) 
 
 
