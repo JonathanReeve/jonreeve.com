@@ -1,7 +1,6 @@
 ---
 layout: post
 title: My Awesome Notetaking System
-comments: true
 category: hacks
 tags: 
  - linux 

@@ -1,6 +1,5 @@
 ---
 layout: post
-comments: true
 title: "Macro-Etymology of Bildungsroman: Joyce's Portrait"
 category: Digital Humanities
 tags: etymology joyce modernism

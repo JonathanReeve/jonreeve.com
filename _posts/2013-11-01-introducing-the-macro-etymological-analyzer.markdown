@@ -1,7 +1,6 @@
 ---
 layout: post
 title: Introducing the Macro-Etymological Analyzer
-comments: true
 category: Digital Humanities
 tags: etymology text analysis php
 ---

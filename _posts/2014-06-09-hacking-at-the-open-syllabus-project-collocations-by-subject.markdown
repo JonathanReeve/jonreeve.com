@@ -1,7 +1,6 @@
 ---
 layout: post
 title: ! 'Hacking at the Open Syllabus Project: Collocations by Subject'
-comments: true
 category: Digital Humanities
 tags: 
 - natural language processing

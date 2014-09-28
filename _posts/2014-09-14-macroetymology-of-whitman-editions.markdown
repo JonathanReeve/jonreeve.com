@@ -1,6 +1,5 @@
 ---
 layout: post
-comments: true
 title: ! 'A Comparative Macro-Etymology of Whitman Editions' 
 category: Digital Humanities
 tags: etymology whitman 
