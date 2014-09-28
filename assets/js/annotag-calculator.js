@@ -106,10 +106,11 @@ $('#calculator .input').on('input change', function () {
 
 	    var bookcode = raw_code.substring(0, 9); // remove check digit
 	    bookcode = encodeNums([parseInt(bookcode)]); 
+	    out = 'i' + bookcode;
     } else {
         bookcode = raw_code;
+	out = code_type + bookcode;
     }
-    out = code_type + bookcode;
     if (location) {
         out += ":";
     }

@@ -3,14 +3,14 @@ layout: post
 title: ! 'Announcing Annotags: A Concept for a Decentralized Literary Annotation Protocol'
 category: Digital Humanities
 tags: annotags annotation
-permalink: /projects/annotag
+permalink: /projects/annotags/about.html
 ---
 
 Have you ever wanted to livetweet a book? I often want to. Yet there doesn’t seem to be a standard way of doing that. You could tweet, for instance, "Oh Captain Wentworth! When will you propose? #JaneAustenPersuasion" but the hashtag isn’t standardized, so some people might be tweeting under #Persuasion and others under #AustenPersuasion. Furthermore, the hashtag isn’t specific enough to make it clear which part of the book you’re tweeting about. If you browse other tweets marked #JaneAustenPersuasion, you might find comments about other parts of the book, which may contain spoilers. 
 
 Enter Annotags, a concept for a literary annotation hashtag, or AnnoTag. Whenever you want to tweet about part of a book, use this format: 
 
-![Annotag diagram](http://jonreeve.com/blog/wp-content/uploads/2013/05/annotweet-diagram.jpg)
+![Annotag diagram](/images/annotag/annotag-diagram.jpg)
 
 The first letter is the book code type. Uppercase letters refer to raw codes and IDs, and lowercase letters refer to base 64-encoded codes. Here are some examples: 
 
