@@ -235,9 +235,15 @@
     }
 }
 
-#calculator { 
-	margin: 0 15%; 
+#calculator, #decoder { 
+	margin: 2em 15%; 
 	li { 
 		list-style-type: none; 
+	} 
+	.isbn_error { 
+		background-color: #FF8080; 
+	} 
+	.isbn_ok { 
+		background-color: #ADEBAD; 
 	} 
 } 

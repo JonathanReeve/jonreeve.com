@@ -147,7 +147,7 @@ Other Projects
  - designed a twitter bot that generates poems based on trending Twitter topics. 
  - uses the Python Natural Language Processing Toolkit to conduct sophisticated linguistic analyses
 
-**Jan. 2014 - Present**: [AnnoTweet](/annotweet)
+**Jan. 2014 - Present**: [AnnoTag](/projects/annotag)
 
  - a protocol for a literary metadata hashtag that provides the ability to livetweet books, electronic documents, and other texts
 
