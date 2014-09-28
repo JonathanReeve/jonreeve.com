@@ -1,6 +1,6 @@
 ---
 layout: post
-title: ! 'Announcing AnnoTweet: A Concept for a Decentralized Literary Annotation Protocol'
+title: ! 'Announcing Annotags: A Concept for a Decentralized Literary Annotation Protocol'
 category: Digital Humanities
 tags: annotags annotation
 permalink: /projects/annotag
@@ -8,9 +8,9 @@ permalink: /projects/annotag
 
 Have you ever wanted to livetweet a book? I often want to. Yet there doesn’t seem to be a standard way of doing that. You could tweet, for instance, "Oh Captain Wentworth! When will you propose? #JaneAustenPersuasion" but the hashtag isn’t standardized, so some people might be tweeting under #Persuasion and others under #AustenPersuasion. Furthermore, the hashtag isn’t specific enough to make it clear which part of the book you’re tweeting about. If you browse other tweets marked #JaneAustenPersuasion, you might find comments about other parts of the book, which may contain spoilers. 
 
-Enter AnnoTweet, a concept for a literary annotation hashtag, or AnnoTag. Whenever you want to tweet about part of a book, use this format: 
+Enter Annotags, a concept for a literary annotation hashtag, or AnnoTag. Whenever you want to tweet about part of a book, use this format: 
 
-![AnnoTweet diagram](http://jonreeve.com/blog/wp-content/uploads/2013/05/annotweet-diagram.jpg)
+![Annotag diagram](http://jonreeve.com/blog/wp-content/uploads/2013/05/annotweet-diagram.jpg)
 
 The first letter is the book code type. Uppercase letters refer to raw codes and IDs, and lowercase letters refer to base 64-encoded codes. Here are some examples: 
 
@@ -47,20 +47,20 @@ Next, there is a colon, followed by the location code. The location code is made
  * What circles does the blackbird mark, exactly? #WallaceStevens #iog85j:p94P2 
    - The Collected Poems of Wallace Stevens, "Thirteen Ways of Looking at a Blackbird," page 94, second stanza. 
 
-##Here are some of the advantages of AnnoTweeting: 
+##Here are some of the advantages of Annotagging: 
  * It’s decentralized, so it’s not contingent on any one particular institution or website. 
  * Annotations are owned by their writers, not by the website that hosts them. 
- * AnnoTags are mostly human-readable. Once you know the code for your book, it’s easy to figure out what “p54” means (hint: it’s page 54).  
- * AnnoTweeting allows you to comment on both paper books and ebooks, and refer to specific editions when necessary. 
- * You don’t even need a computer to annoTweet. Just send an SMS to your twitter account. 
+ * Annotags are mostly human-readable. Once you know the code for your book, it’s easy to figure out what “p54” means (hint: it’s page 54).  
+ * Annotagging allows you to comment on both paper books and ebooks, and refer to specific editions when necessary. 
+ * You don’t even need a computer to annotweet. Just send an SMS to your twitter account. 
  * No registration necessary, provided you already have an account on twitter or identi.ca. 
  * If you use AnnoTags in your blog posts, you aren’t restricted to the 140-character limit of microblogging platforms. You can even AnnoTag your scholarly papers. 
 
 ##Future Applications
 There are lots of ways that apps could interface with this type of protocol. Here are some ideas: 
 
- * A webapp to generate AnnoTags, allowing the user to look up books by author, title, or ISBN, and generate AnnoTags from them. 
- * A webapp to aggregate AnnoTweets and display them in the margins of an etext, so that users can read an etext online and see what people have tweeted about it. Tweets that are line-specific will appear right next to those lines in the etext.
+ * A webapp to generate Annotags, allowing the user to look up books by author, title, or ISBN, and generate AnnoTags from them. 
+ * A webapp to aggregate Annotweets and display them in the margins of an etext, so that users can read an etext online and see what people have tweeted about it. Tweets that are line-specific will appear right next to those lines in the etext.
  * A mobile webapp or native mobile app (i.e. an Android app) that can generate AnnoTags, and maybe even scan book barcodes using one's smartphone camera. 
  * A script that can expand AnnoTags to regular MLA-compliant bibliographic entries. 
  * A browser extension (i.e. a Firefox plugin) that automatically generates AnnoTags for books when you visit a book page on Amazon or Worldcat. 
