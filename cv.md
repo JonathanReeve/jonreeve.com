@@ -166,4 +166,4 @@ Miscellaneous Activities
  * Member of professional organizations: Modern Language Association; Association for Computers in the Humanities; Humanities, Arts, and Sciences Advanced Collaboratory 
  * Keyboardist in the rock band Your 33 Black Angels
  * Organizer, Book Thug Nation poetry reading series
- * Accomplished rock climber, level 5.11b
+ * Accomplished rock climber, level 5.12
