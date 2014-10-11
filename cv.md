@@ -150,6 +150,7 @@ Other Projects
 **Jan. 2014 - Present**: [AnnoTag](/projects/annotag)
 
  - a protocol for a literary metadata hashtag that provides the ability to livetweet books, electronic documents, and other texts
+ - since October 2014, produced in collaboration with the [Group for Experimental Methods in the Humanities](http://xpmethod.github.io/) 
 
 **Nov. 2013** - [The Waves: a TEI XML Edition](/projects/waves-tei/waves-tei.xml)
 
