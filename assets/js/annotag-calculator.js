@@ -141,6 +141,24 @@ function makeCheckDigit(isbn9){
 	} 
 	return mycheckdigitstr; 
 } 
+
+/* @param str
+ * @return str
+ */ 
+function makeCheckDigit13(isbn13){ 
+	var sum = 0;  
+	for (i=0; i<12; i++) { 
+		if (i%2) { // even
+			sum = sum + parseInt(isbn13.charAt(i)); // multiply by one	
+		} else { // odd
+			sum = sum + ( 3 * parseInt(isbn13.charAt(i)) ); // multiply by three
+		} 
+	} 
+	var mycheckdigit = 10 - ( sum % 10 ); 	
+	var mycheckdigitstr = mycheckdigit.toString();  
+	return mycheckdigitstr
+} 
+
 $('#to_be_decoded').on('change input', function() { 
 	var to_be_decoded = $('#to_be_decoded').val(); 
 	var out = decodeNums(to_be_decoded); 
