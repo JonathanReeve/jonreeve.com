@@ -147,9 +147,10 @@ Other Projects
  - designed a twitter bot that generates poems based on trending Twitter topics. 
  - uses the Python Natural Language Processing Toolkit to conduct sophisticated linguistic analyses
 
-**Jan. 2014 - Present**: [AnnoTag](/projects/annotag)
+**Jan. 2014 - Present**: [Annotags](/projects/annotags/about.html)
 
  - a protocol for a literary metadata hashtag that provides the ability to livetweet books, electronic documents, and other texts
+ - [web app calculator](/projects/annotags) released September 2014
  - since October 2014, produced in collaboration with the [Group for Experimental Methods in the Humanities](http://xpmethod.github.io/) 
 
 **Nov. 2013** - [The Waves: a TEI XML Edition](/projects/waves-tei/waves-tei.xml)
