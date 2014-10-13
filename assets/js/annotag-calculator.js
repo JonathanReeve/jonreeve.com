@@ -11,7 +11,7 @@ function get_map(s) {
 }
 
 var separate_with = ':';
-var encodable = get_map('ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789_'); 
+var encodable = get_map('ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789'); 
 var base10 = get_map('0123456789')
 
 // UNCOMMENT ME for length/speed testing in a wider base!
@@ -117,6 +117,7 @@ $('#calculator .input').on('input change', function () {
 
     if (code_type == 'I') {
 
+	    raw_code = raw_code.replace(/\-/g, ''); 
 	    if (isValidISBN(raw_code)) { 
 		    $('#raw_code').removeClass('isbn_error').addClass('isbn_ok'); 
 	    } else { 
@@ -178,14 +179,12 @@ function makeCheckDigit(isbn9){
 function makeCheckDigit13(isbn13){ 
 	var sum = 0;  
 	for (i=0; i<12; i++) { 
-		console.log('now looking at digit: ' + isbn13.charAt(i)); 
 		if (!(i%2)) { // even
 			sum = sum + parseInt(isbn13.charAt(i)); // multiply by one	
 		} else { // odd
 			sum = sum + ( 3 * parseInt(isbn13.charAt(i)) ); // multiply by three
 		} 
 	} 
-	console.log("here's the sum: " + sum); 
 	var mycheckdigit = 10 - ( sum % 10 ); 	
 	var mycheckdigitstr = mycheckdigit.toString();  
 	return mycheckdigitstr
@@ -196,14 +195,15 @@ $('#to_be_decoded').on('change input', function() {
 	var out = decodeNums(to_be_decoded); 
 	var outs = zeroPad(out, 9); // sometimes ISBNs have leading zeros 
 	
-	if ( outs.length < 10 ) { 
+	if ( outs.length < 11 ) { 
 		var isbn10_out = outs + makeCheckDigit(outs); 
 		$('#decoder_out').val(isbn10_out); 
+		var isbn13_out = '978' + outs; 
 	} else { // it's probably a ISBN-13 
 		$('#decoder_out').val('n/a'); 
+		var isbn13_out = outs; 
 	} 
 
-	var isbn13_out = '978' + outs; 
 	isbn13_out = isbn13_out + makeCheckDigit13(isbn13_out); 
 	$('#decoder_out13').val(isbn13_out); 
 }); 
