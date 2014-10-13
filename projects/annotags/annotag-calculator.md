@@ -4,7 +4,7 @@ title: 'Annotag Calculator'
 permalink: /projects/annotags/ 
 ---
 
-Make your tweetable book location annotags with this calculator. [Read the introductory blog post here](/projects/annotags/about.html) for an explanation of annotags. If you choose "ISBN" as your bookcode format below, this calculator will turn your unwieldy 10- or 13-digit ISBN into a shortened, more easily typable form, more suitable for squeezing into a tweet. For example, the ISBN `0743482786` will become the five-character code `EtVPZ`. 
+Make your tweetable book location annotags with this calculator. [Read the introductory blog post here](/projects/annotags/about.html) for an explanation of annotags. If you choose "ISBN" as your bookcode format below, this calculator will turn your unwieldy 10- or 13-digit ISBN into a shortened, more easily typable form, more suitable for squeezing into a tweet. For example, the ISBN `0743482786` will become the five-character code `FB7Xw`. 
 
 <section id="calculator"> 
 	<form>
@@ -25,11 +25,11 @@ Make your tweetable book location annotags with this calculator. [Read the intro
 
 #Bookcode Decoder
 
-Enter the bookcode below to generate the decoded ISBN. Please note that the bookcode is the part that comes after the `i`, such that for an annotag like `#iEtVPZ:p12`, the bookcode is `EtVPZ`. 
+Enter the bookcode below to generate the decoded ISBN. Please note that the bookcode is the part that comes after the `i`, such that for an annotag like `#iFB7Xw:p12`, the bookcode is `FB7Xw`. 
 
 <section id="decoder"> 
 	<form> 
-		<input id="to_be_decoded" class="input" type="text" name="to_be_decoded" /> 
+		<input id="to_be_decoded" class="input" type="text" name="to_be_decoded" placeholder="Enter book code here. Don't include the pound sign or code type digit."/> 
 	</form> 
 	<hr/>
 	<label for="decoder_out">Decoded ISBN-10:</label>
