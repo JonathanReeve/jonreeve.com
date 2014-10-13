@@ -43,4 +43,8 @@ Enter the bookcode below to generate the decoded ISBN. Please note that the book
 
 This calculator validates your ISBN by doing some modular arithmatic and looking at the [checkdigit](http://en.wikipedia.org/wiki/International_Standard_Book_Number#ISBN-10_check_digit_calculation). It then removes the checkdigit, as well as any leading zeros, and encodes the remaining digits with a base-62 encoding scheme, mapping the numbers onto numbers and letters. ISBN-13s that begin in 978 are automatically converted to ISBN-10s. You can read the code for this page and all the other pages on this site [here on github](https://github.com/JonathanReeve/JonathanReeve.github.io). 
 
+##Updates
+
+ * 2014-10-12: Version 1.1. Now supports ISBN-13s, and decodes bookcodes into both ISBN-10s and ISBN-13s. 
+
 <script src="{{ site.url }}/assets/js/annotag-calculator.js"></script>
