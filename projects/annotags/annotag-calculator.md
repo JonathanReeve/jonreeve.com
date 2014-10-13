@@ -4,7 +4,7 @@ title: 'Annotag Calculator'
 permalink: /projects/annotags/ 
 ---
 
-Make your tweetable book location annotags with this calculator. [Read the introductory blog post here](/projects/annotags/about.html) for an explanation of annotags. If you choose "ISBN" as your bookcode format below, this calculator will turn your unwieldy 10-digit ISBN into a shortened, more easily typable form, more suitable for squeezing into a tweet. For example, the ISBN `0743482786` will become the five-character code `EtVPZ`. 
+Make your tweetable book location annotags with this calculator. [Read the introductory blog post here](/projects/annotags/about.html) for an explanation of annotags. If you choose "ISBN" as your bookcode format below, this calculator will turn your unwieldy 10- or 13-digit ISBN into a shortened, more easily typable form, more suitable for squeezing into a tweet. For example, the ISBN `0743482786` will become the five-character code `EtVPZ`. 
 
 <section id="calculator"> 
 	<form>
@@ -41,6 +41,6 @@ Enter the bookcode below to generate the decoded ISBN. Please note that the book
 
 ##Technical Details 
 
-This calculator validates your ISBN-10 by doing some modular arithmatic and looking at the [checkdigit](http://en.wikipedia.org/wiki/International_Standard_Book_Number#ISBN-10_check_digit_calculation). It then removes the checkdigit, as well as any leading zeros, and encodes the remaining digits with a base-63 encoding scheme, mapping the numbers onto numbers, letters, and underscores. It only handles ISBN-10s at the moment, but ISBN-13s are in the works. You can read the code for this page and all the other pages on this site [here on github](https://github.com/JonathanReeve/JonathanReeve.github.io). 
+This calculator validates your ISBN by doing some modular arithmatic and looking at the [checkdigit](http://en.wikipedia.org/wiki/International_Standard_Book_Number#ISBN-10_check_digit_calculation). It then removes the checkdigit, as well as any leading zeros, and encodes the remaining digits with a base-62 encoding scheme, mapping the numbers onto numbers and letters. ISBN-13s that begin in 978 are automatically converted to ISBN-10s. You can read the code for this page and all the other pages on this site [here on github](https://github.com/JonathanReeve/JonathanReeve.github.io). 
 
 <script src="{{ site.url }}/assets/js/annotag-calculator.js"></script>
