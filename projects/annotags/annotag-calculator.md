@@ -32,8 +32,10 @@ Enter the bookcode below to generate the decoded ISBN. Please note that the book
 		<input id="to_be_decoded" class="input" type="text" name="to_be_decoded" /> 
 	</form> 
 	<hr/>
-	<label for="decoder_out">Decoded ISBN:</label>
-	<input type="text" id="decoder_out" placeholder="decoded ISBN" name="decoder_out"/> 
+	<label for="decoder_out">Decoded ISBN-10:</label>
+	<input type="text" id="decoder_out" placeholder="decoded ISBN-10" name="decoder_out"/> 
+	<label for="decoder_out">Decoded ISBN-13:</label>
+	<input type="text" id="decoder_out13" placeholder="decoded ISBN-13" name="decoder_out13"/> 
 </section> 
 
 
