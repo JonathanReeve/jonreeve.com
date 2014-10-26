@@ -162,6 +162,15 @@ Other Projects
 -   developed a [script to parse epigraphs](https://github.com/JonathanReeve/epi-project) from TEI XML
 -   designed initial prototypes of project database
 
+
+Affiliations and Professional Activities
+========================================
+
+ * Reviewer, [Literary and Linguistic Computing](http://oxfordjournals.org/our_journals/litlin)
+ * Member, [Experimental Methods in the Humanities Group](http://xpmethod.github.io/) 
+ * Member of professional organizations: Modern Language Association; Association for Computers in the Humanities; Humanities, Arts, and Sciences Advanced Collaboratory 
+
+
 Miscellaneous Activities
 ========================
 
