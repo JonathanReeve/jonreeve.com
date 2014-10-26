@@ -7,7 +7,7 @@ tags:
  - annotags
 ---
 
-What if you picked up a paper book, and there on the back cover, there were a tweetable hashtag for the book? 
+What if you picked up a paper book, and there on the back cover, there were [a tweetable hashtag](/projects/annotags) for the book? 
 
 ![ISBN with an Annotag](/images/annotags/isbn-with-annotag.png)
 
