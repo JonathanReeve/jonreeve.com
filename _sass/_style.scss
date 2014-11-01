@@ -1355,3 +1355,18 @@ img.mfp-img {
     padding-top: 0;
   }
 }
+
+@media print { 
+	// not so big
+	html { 
+		font-size: 16px; 
+	} 
+	// don't show UI elements in print
+	.notepad-page-menu-header, .notepad-site-footer { 
+		display: none; 
+	} 
+	// don't show links in parentheses
+	a:link:after, a:visited:after {
+		content: "";
+	} 
+} 
