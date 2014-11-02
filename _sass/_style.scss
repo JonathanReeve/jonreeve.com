@@ -1359,14 +1359,38 @@ img.mfp-img {
 @media print { 
 	// not so big
 	html { 
-		font-size: 16px; 
+		font-size: 12px; 
+		margin: 0; 
 	} 
-	// don't show UI elements in print
-	.notepad-page-menu-header, .notepad-site-footer { 
-		display: none; 
+	body, p { 
+		font-family: Roboto, Arial, sans-serif; 
+		margin: 0; 
+	} 
+	h1, h2, h3, h4, h5, h6 { 
+		font-family: 'Roboto Slab', Georgia, serif; 
 	} 
 	// don't show links in parentheses
 	a:link:after, a:visited:after {
 		content: "";
 	} 
+	a { 
+		color: #e51843 !important; 
+	} 
+	/* reset the strange declarations that are making the header look off */ 
+	.post-template .row, .page-template .row { 
+		max-width: 100%; 
+		margin-left: 0; 
+		margin-right: 0; 
+	} 
+	// don't show UI elements in print
+	.notepad-page-menu-header, .notepad-site-footer { 
+		display: none; 
+	} 
+
+} 
+@page { 
+	size: auto;   /* auto is the initial value */ 
+
+	/* this affects the margin in the printer settings */ 
+	margin: 25mm 25mm 25mm 25mm;  
 } 
