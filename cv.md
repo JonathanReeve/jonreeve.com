@@ -130,7 +130,6 @@ Digital Projects
 **May 2014 - Present**: contributor to the open-source projects: 
 
  - [Buddypress](http://buddypress.org/): social networking WordPress plugin. Over 2.2 million downloads 
- - [BBPress](https://wordpress.org/plugins/bbpress/): WordPress plugin enabling forums. Over 1.4 million downloads
  - [Buddypress Docs](https://wordpress.org/plugins/buddypress-docs/): collaborative authoring tool for WordPress. Over 80,000 downloads
  - [Commons in a Box](http://commonsinabox.org/): social networking software suite, used by CUNY, SUNY, and many others. Over 12,000 downloads
  - [CAC-Advanced-Profiles](https://github.com/cuny-academic-commons/cac-advanced-profiles): engine for member portfolios used by the CUNY Academic Commons
@@ -142,8 +141,8 @@ Digital Projects
 
 **June 2014 - Present**: [Twitter Poet](https://github.com/JonathanReeve/trendhaikubot)
 
- - designed a twitter bot that generates poems based on trending Twitter topics. 
- - uses the Python Natural Language Processing Toolkit to conduct sophisticated linguistic analyses
+ - designed a twitter bot that generates haiku based on trending Twitter topics. 
+ - uses the Python Natural Language Processing Toolkit to conduct syllabic analyses and perform POS tagging
 
 **Jan. 2014 - Present**: [Annotags](/projects/annotags/about.html)
 
@@ -157,8 +156,8 @@ Digital Projects
 
 **Jan. 2013 - Dec. 2013**: [New York University Digital Humanities Working Group](http://nyudigitalexperiments.com) Epigraphs Project
 
--   developed a [script to parse epigraphs](https://github.com/JonathanReeve/epi-project) from TEI XML
--   designed initial prototypes of project database
+ - developed a [script to parse epigraphs](https://github.com/JonathanReeve/epi-project) from TEI XML
+ - designed initial prototypes of project database
 
 
 Affiliations and Professional Activities
