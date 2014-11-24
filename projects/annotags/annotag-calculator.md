@@ -2,6 +2,8 @@
 layout: page
 title: 'Annotag Calculator' 
 permalink: /projects/annotags/ 
+customjs: 
+ - annotag-calculator.js
 ---
 
 Make your tweetable book location annotags with this calculator. [Read the introductory blog post here](/projects/annotags/about.html) for an explanation of annotags. If you choose "ISBN" as your bookcode format below, this calculator will turn your unwieldy 10- or 13-digit ISBN into a shortened, more easily typable form, more suitable for squeezing into a tweet. For example, the ISBN `0743482786` will become the five-character code `FB7Xw`. 
