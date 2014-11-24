@@ -5,14 +5,14 @@ description: Jonathan Reeve
 permalink: /cv/
 ---
 
-Experience
-==========
+Positions
+=========
 
 **Nov. '13 - Present** Modern Language Association: Web Developer
 
--   Edited XML and XSL for the [Literary Research Guide](http://mlalrg.org/public)
--   Contributed to [the redesign](http://updates.commons.mla.org/2014/07/28/new-theme-for-the-mla-commons/) of the [MLA Commons](http://commons.mla.org)
- 
+ * Edited XML and XSL for the [Literary Research Guide](http://mlalrg.org/public)
+ * Contributed to [the redesign](http://updates.commons.mla.org/2014/07/28/new-theme-for-the-mla-commons/) of the [MLA Commons](http://commons.mla.org)
+
 <!--Dec. '13 - April '14 [The Cryptocurrency Analytics Company](http://cryptocurrencyanalytics.com) Programmer-->
 
 <!---   Designed and implemented a Django webapp for client account management-->
@@ -31,31 +31,25 @@ Experience
  * Authored six articles for the reference volume [*The Manifesto in Literature*](http://www.thomasriggs.net/pages/content/index.asp?PageID=158):
     - Richard Stallman's "The GNU Manifesto," John Barlow's "A Declaration of the Independence of Cyberspace," and several others
 
-Teaching Experience
-===================
+Teaching Positions
+==================
 
-**Sept. '12 – Dec. '12** New York University, Computer Science Department:
-Teaching Assistant
+**Sept. '12 – Dec. '12** New York University, Computer Science Department: Teaching Assistant
 
--   Tutored students in the undergraduate course Computing in the
-    Humanities
+-   Tutored students in the undergraduate course Computing in the Humanities
 -   Lectured in BASH scripting, command-line image manipulation
 
-**Sept. '11 - May '12** City University of New York, York College: Adjunct
-Lecturer
+**Sept. '11 - May '12** City University of New York, York College: Adjunct Lecturer
 
 -   Taught four sections of Writing 300: research paper writing
 
 **Nov. '10 - May '11** Vietnam National University: English Instructor
 
--   Taught one section of Reading/Writing, and one section of Speaking
-    at VNU's International School in Hanoi
+-   Taught one section of Reading/Writing, and one section of Speaking at VNU's International School in Hanoi
 
-**Aug. '09 - June '10** City University of New York, Brooklyn College:
-Adjunct Lecturer
+**Aug. '09 - June '10** City University of New York, Brooklyn College: Adjunct Lecturer
 
--   Taught one section of English 1 (composition, nonfiction readings)
-    and a section of English 2 (composition, readings in literature)
+-   Taught one section of English 1 (composition, nonfiction readings) and a section of English 2 (composition, readings in literature)
 
 **Mar. '05 - Jan. '06** Missouri State University Branch Campus, Dalian, China: Adjunct Instructor
 
@@ -72,7 +66,7 @@ Jan. 2004 **Bachelor of Arts**, Individualized Study, New York University
 
 Technical Skills
 ================
-
+		
 **Languages**: PHP, Python, BASH, jQuery, SQL, XSL. Working knowledge of: Ruby, Javascript
 
 **Markup Languages**: HTML, CSS, Sass, XML, TEI XML, LaTeX, Markdown
@@ -91,6 +85,10 @@ Technical Skills
 
 Selected Publications and Presentations
 =======================================
+
+**October 2014** "Imperial Voices": a Stylometric Approach to the Study of Social Class among Shakespearean Characters 
+
+  * forthcoming presentation at Computer-Based Analysis of Drama conference, Bavarian Academy of Sciences and Humanities, March 2015
 
 **July 2014** "Macro-Etymological Textual Analysis: a Computational Application of Language History to Literary Criticism"
 
@@ -126,13 +124,12 @@ Selected Publications and Presentations
 -   2011 *A Gathering of the Tribes*
 -   2009 *Arsenic Lobster Anthology*
 
-Other Projects
-==============
+Digital Projects
+================
 
 **May 2014 - Present**: contributor to the open-source projects: 
 
  - [Buddypress](http://buddypress.org/): social networking WordPress plugin. Over 2.2 million downloads 
- - [BBPress](https://wordpress.org/plugins/bbpress/): WordPress plugin enabling forums. Over 1.4 million downloads
  - [Buddypress Docs](https://wordpress.org/plugins/buddypress-docs/): collaborative authoring tool for WordPress. Over 80,000 downloads
  - [Commons in a Box](http://commonsinabox.org/): social networking software suite, used by CUNY, SUNY, and many others. Over 12,000 downloads
  - [CAC-Advanced-Profiles](https://github.com/cuny-academic-commons/cac-advanced-profiles): engine for member portfolios used by the CUNY Academic Commons
@@ -144,8 +141,8 @@ Other Projects
 
 **June 2014 - Present**: [Twitter Poet](https://github.com/JonathanReeve/trendhaikubot)
 
- - designed a twitter bot that generates poems based on trending Twitter topics. 
- - uses the Python Natural Language Processing Toolkit to conduct sophisticated linguistic analyses
+ - designed a twitter bot that generates haiku based on trending Twitter topics. 
+ - uses the Python Natural Language Processing Toolkit to conduct syllabic analyses and perform POS tagging
 
 **Jan. 2014 - Present**: [Annotags](/projects/annotags/about.html)
 
@@ -159,13 +156,21 @@ Other Projects
 
 **Jan. 2013 - Dec. 2013**: [New York University Digital Humanities Working Group](http://nyudigitalexperiments.com) Epigraphs Project
 
--   developed a [script to parse epigraphs](https://github.com/JonathanReeve/epi-project) from TEI XML
--   designed initial prototypes of project database
+ - developed a [script to parse epigraphs](https://github.com/JonathanReeve/epi-project) from TEI XML
+ - designed initial prototypes of project database
+
+
+Affiliations and Professional Activities
+========================================
+
+ * Reviewer, [Literary and Linguistic Computing](http://oxfordjournals.org/our_journals/litlin)
+ * Member, [Experimental Methods in the Humanities Group](http://xpmethod.github.io/) 
+ * Member of professional organizations: Modern Language Association; Association for Computers in the Humanities; Humanities, Arts, and Sciences Advanced Collaboratory 
+
 
 Miscellaneous Activities
 ========================
 
- * Member of professional organizations: Modern Language Association; Association for Computers in the Humanities; Humanities, Arts, and Sciences Advanced Collaboratory 
  * Keyboardist in the rock band Your 33 Black Angels
- * Organizer, Book Thug Nation poetry reading series
- * Accomplished rock climber, level 5.12
+ * Organizer, Book Thug Nation reading series, 2011-12
+ * Accomplished rock climber, level 5.12a
