@@ -47,7 +47,7 @@ Next, there is a colon, followed by the location code. The location code is made
  * What circles does the blackbird mark, exactly? #WallaceStevens #iB8F4h:p94P2 
    - The Collected Poems of Wallace Stevens, "Thirteen Ways of Looking at a Blackbird," page 94, second stanza. 
 
-##Here are Some of the Advantages of Annotagging: 
+##Advantages of Annotagging: 
  * It’s decentralized, so it’s not contingent on any one particular institution or website. 
  * Annotations are owned by their writers, not by the website that hosts them. 
  * Annotags are mostly human-readable. Once you know the code for your book, it’s easy to figure out what “p54” means (hint: it’s page 54).  
@@ -64,4 +64,6 @@ There are lots of ways that apps could interface with this type of protocol. Her
  * A mobile webapp or native mobile app (i.e. an Android app) that can generate Annotags, and maybe even scan book barcodes using one's smartphone camera. 
  * A script that can expand Annotags to regular MLA-compliant bibliographic entries. 
  * A browser extension (i.e. a Firefox plugin) that automatically generates Annotags for books when you visit a book page on Amazon or Worldcat. 
+ * Labels for paper books that include that book's annotag, pre-calculated: 
 
+![ISBN with an Annotag](/images/annotags/isbn-with-annotag.png)
