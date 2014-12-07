@@ -12,6 +12,8 @@ Positions
 
  * Edited XML and XSL for the [Literary Research Guide](http://mlalrg.org/public)
  * Contributed to [the redesign](http://updates.commons.mla.org/2014/07/28/new-theme-for-the-mla-commons/) of the [MLA Commons](http://commons.mla.org)
+ * Contributing to software used for the electronic edition of _Literary Studies in the Digital Age_, and the forthcoming _Digital Pedagogy in the Humanities_.  
+ * Designing and implementing [a WordPress plugin for visualizing patterns of disciplinarity](https://github.com/mlaa/bp-group-statistics) on _MLA Commons_. 
 
 <!--Dec. '13 - April '14 [The Cryptocurrency Analytics Company](http://cryptocurrencyanalytics.com) Programmer-->
 
@@ -21,10 +23,10 @@ Positions
 
 **June '12 - July '13** New York University History Department: Programmer
 
--   Added functionality for searching mentioned entities to the [Margaret Sanger Papers Project Web Edition](http://www.nyu.edu/projects/sanger/webedition/app/documents/search.php) 
--   Wrote [a statistical analysis page](http://www.nyu.edu/projects/sanger/webedition/app/documents/stats.php) to visualize textual trends from the Margaret Sanger Papers archives
--   Developed [a customization engine](https://github.com/JonathanReeve/theme-elementaire) for the [Omeka content management platform](http://omeka.org)
--   Designed and developed Omeka themes deployed on [Greenwich Village History](http://gvh.aphdigital.org) and [New Jersey Digital History](http://njdigitalhistory.org/NJDHA/)
+ * Added functionality for searching mentioned entities to the [Margaret Sanger Papers Project Web Edition](http://www.nyu.edu/projects/sanger/webedition/app/documents/search.php) 
+ * Wrote [a statistical analysis page](http://www.nyu.edu/projects/sanger/webedition/app/documents/stats.php) to visualize textual trends from the Margaret Sanger Papers archives
+ * Developed [a customization engine](https://github.com/JonathanReeve/theme-elementaire) for the [Omeka content management platform](http://omeka.org)
+ * Designed and developed Omeka themes deployed on [Greenwich Village History](http://gvh.aphdigital.org) and [New Jersey Digital History](http://njdigitalhistory.org/NJDHA/)
 
 **July '12 - Sept. '12** Thomas Riggs & Company, Publishers: Research Writer
 
@@ -36,24 +38,24 @@ Teaching Positions
 
 **Sept. '12 – Dec. '12** New York University, Computer Science Department: Teaching Assistant
 
--   Tutored students in the undergraduate course Computing in the Humanities
--   Lectured in BASH scripting, command-line image manipulation
+ * Tutored students in the undergraduate course Computing in the Humanities
+ * Lectured in BASH scripting, command-line image manipulation
 
 **Sept. '11 - May '12** City University of New York, York College: Adjunct Lecturer
 
--   Taught four sections of Writing 300: research paper writing
+ * Taught four sections of Writing 300: research paper writing
 
 **Nov. '10 - May '11** Vietnam National University: English Instructor
 
--   Taught one section of Reading/Writing, and one section of Speaking at VNU's International School in Hanoi
+ * Taught one section of Reading/Writing, and one section of Speaking at VNU's International School in Hanoi
 
 **Aug. '09 - June '10** City University of New York, Brooklyn College: Adjunct Lecturer
 
--   Taught one section of English 1 (composition, nonfiction readings) and a section of English 2 (composition, readings in literature)
+ * Taught one section of English 1 (composition, nonfiction readings) and a section of English 2 (composition, readings in literature)
 
 **Mar. '05 - Jan. '06** Missouri State University Branch Campus, Dalian, China: Adjunct Instructor
 
--   Taught Reading and Writing to first- and second-year international students. 
+ * Taught Reading and Writing to first- and second-year international students. 
 
 Education
 =========
@@ -86,43 +88,44 @@ Technical Skills
 Selected Publications and Presentations
 =======================================
 
-**October 2014** "Imperial Voices": a Stylometric Approach to the Study of Social Class among Shakespearean Characters 
+**March 2015** "Imperial Voices": a Stylometric Approach to the Study of Social Class among Shakespearean Characters 
 
   * forthcoming presentation at Computer-Based Analysis of Drama conference, Bavarian Academy of Sciences and Humanities, March 2015
 
 **July 2014** "Macro-Etymological Textual Analysis: a Computational Application of Language History to Literary Criticism"
 
--   presented short paper, [Digital Humanities 2014](http://dh2014.org/), Lausanne, Switzerland
--   winner, New York University [Hirschhorn Thesis Award](https://draperprogram.wordpress.com/2014/06/12/congratulations-to-our-hirschhorn-award-nominees-and-winner/) 
--   winner, Association of Digital Humanities Organizations student bursary 
+ * presented short paper, [Digital Humanities 2014](http://dh2014.org/), Lausanne, Switzerland
+ * winner, New York University [Hirschhorn Thesis Award](https://draperprogram.wordpress.com/2014/06/12/congratulations-to-our-hirschhorn-award-nominees-and-winner/) 
+ * winner, Association of Digital Humanities Organizations student bursary 
 
 **April 2013** "Toward a Social Literary Annotation Engine"
 
--   presented at [Humanities, Arts, Science, and Technology Advanced Collaboratory, Toronto](http://hastac2013.org/schedule-2/jonathan-reeve%20)
+ * presented at [Humanities, Arts, Science, and Technology Advanced Collaboratory, Toronto](http://hastac2013.org/schedule-2/jonathan-reeve%20)
 
 **Oct. 2012** "Elementaire, a Customizable Omeka Theme"
 
--   presented at [The Humanities and Technology Camp](http://newyork2012.thatcamp.org/)
+ * presented at [The Humanities and Technology Camp](http://newyork2012.thatcamp.org/)
 
 **Aug. 2012** Articles in [*The Manifesto in Literature*](http://www.cengage.com/search/productOverview.do;jsessionid=4FD757A6BD2DD6A4F5D0D81734BF2911?N=197&Ntk=P_EPI&Ntt=315361985178615732812460845631655972971&Ntx=mode+matchallpartial), Thomas Riggs & Company
+ * "John Perry Barlow: A Declaration of the Independence of Cyberspace," "Richard Stallman: The GNU Manifesto," "Huey Newton: The Black Panther Party Platform," "Anselme Bellegarrigue: Anarchist Manifesto," "Emma Goldman: Anarchism, What it Really Stands For," "Rosa Luxemburg: The Spartacus Manifesto." 
 
 **Dec. 2011** *[The Art of Good Behavior](http://jonreeve.com/behaviour)*, a digital literary archive in TEI XML of a 19th-century etiquette manual
 
--   presented initial findings, NYU Workshop in Archival Practice
--   presented completed work, Yale University Digital Humanities Forum, Feb '12
+ * presented initial findings, NYU Workshop in Archival Practice
+ * presented completed work, Yale University Digital Humanities Forum, Feb '12
 
 **June 2011** "Hypertext Joyce: Building a Hypertext Ulysses with Open Source"
 
--   paper delivered at the 2011 North American James Joyce Conference
+ * paper delivered at the 2011 North American James Joyce Conference
 
 **May 2010** "Dominance and *Domine*: Toward a Post-Religious Criticism of James Joyce's Ulysses,"
 
--   paper delivered at "Deconstructing the Gods," Graduate English Conference, City University of New York, Brooklyn College
+ * paper delivered at "Deconstructing the Gods," Graduate English Conference, City University of New York, Brooklyn College
 
 **2009-2011** Poems anthologized:
 
--   2011 *A Gathering of the Tribes*
--   2009 *Arsenic Lobster Anthology*
+ * 2011 *A Gathering of the Tribes*
+ * 2009 *Arsenic Lobster Anthology*
 
 Digital Projects
 ================
