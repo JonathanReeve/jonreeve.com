@@ -107,7 +107,13 @@ Selected Publications and Presentations
  * presented at [The Humanities and Technology Camp](http://newyork2012.thatcamp.org/)
 
 **Aug. 2012** Articles in [*The Manifesto in Literature*](http://www.cengage.com/search/productOverview.do;jsessionid=4FD757A6BD2DD6A4F5D0D81734BF2911?N=197&Ntk=P_EPI&Ntt=315361985178615732812460845631655972971&Ntx=mode+matchallpartial), Thomas Riggs & Company
- * "John Perry Barlow: A Declaration of the Independence of Cyberspace," "Richard Stallman: The GNU Manifesto," "Huey Newton: The Black Panther Party Platform," "Anselme Bellegarrigue: Anarchist Manifesto," "Emma Goldman: Anarchism, What it Really Stands For," "Rosa Luxemburg: The Spartacus Manifesto." 
+
+ * "Richard Stallman: The GNU Manifesto" 
+ * "John Perry Barlow: A Declaration of the Independence of Cyberspace" 
+ * "Huey Newton: The Black Panther Party Platform" 
+ * "Anselme Bellegarrigue: Anarchist Manifesto" 
+ * "Emma Goldman: Anarchism, What it Really Stands For" 
+ * "Rosa Luxemburg: The Spartacus Manifesto." 
 
 **Dec. 2011** *[The Art of Good Behavior](http://jonreeve.com/behaviour)*, a digital literary archive in TEI XML of a 19th-century etiquette manual
 
@@ -118,7 +124,7 @@ Selected Publications and Presentations
 
  * paper delivered at the 2011 North American James Joyce Conference
 
-**May 2010** "Dominance and *Domine*: Toward a Post-Religious Criticism of James Joyce's Ulysses,"
+**May 2010** "Dominance and *Domine*: Toward a Post-Religious Criticism of James Joyce's _Ulysses_,"
 
  * paper delivered at "Deconstructing the Gods," Graduate English Conference, City University of New York, Brooklyn College
 
@@ -130,12 +136,13 @@ Selected Publications and Presentations
 Digital Projects
 ================
 
-**May 2014 - Present**: contributor to the open-source projects: 
+**Jan. 2014 - Present**: Contributor to the open-source projects: 
 
  - [Buddypress](http://buddypress.org/): social networking WordPress plugin. Over 2.2 million downloads 
  - [Buddypress Docs](https://wordpress.org/plugins/buddypress-docs/): collaborative authoring tool for WordPress. Over 80,000 downloads
  - [Commons in a Box](http://commonsinabox.org/): social networking software suite, used by CUNY, SUNY, and many others. Over 12,000 downloads
  - [CAC-Advanced-Profiles](https://github.com/cuny-academic-commons/cac-advanced-profiles): engine for member portfolios used by the CUNY Academic Commons
+ 
 
 **July 2014 - Present**: [Open Syllabus Project](http://opensyllabusproject.org/): 
 
@@ -144,7 +151,7 @@ Digital Projects
 
 **June 2014 - Present**: [Twitter Poet](https://github.com/JonathanReeve/trendhaikubot)
 
- - designed a twitter bot that generates haiku based on trending Twitter topics. 
+ - with mathematician [Rachel Levanger](http://rachellevanger.com/), designed a twitter bot that generates haiku based on trending Twitter topics in the styles of various poets. 
  - uses the Python Natural Language Processing Toolkit to conduct syllabic analyses and perform POS tagging
 
 **Jan. 2014 - Present**: [Annotags](/projects/annotags/about.html)
