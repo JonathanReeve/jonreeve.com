@@ -5,6 +5,15 @@ description: Jonathan Reeve
 permalink: /cv/
 ---
 
+Education
+=========
+
+Jan. 2014 **Master of Arts**, Humanities, New York University
+
+May 2010 **Master of Arts**, Literature, Brooklyn College
+
+Jan. 2004 **Bachelor of Arts**, Individualized Study, New York University
+
 Positions
 =========
 
@@ -12,8 +21,8 @@ Positions
 
  * Edited XML and XSL for the [Literary Research Guide](http://mlalrg.org/public)
  * Contributed to [the redesign](http://updates.commons.mla.org/2014/07/28/new-theme-for-the-mla-commons/) of the [MLA Commons](http://commons.mla.org)
- * Contributing to software used for the electronic edition of _Literary Studies in the Digital Age_, and the forthcoming _Digital Pedagogy in the Humanities_.  
- * Designing and implementing [a WordPress plugin for visualizing patterns of disciplinarity](https://github.com/mlaa/bp-group-statistics) on _MLA Commons_. 
+ * Contributing to software used for the electronic edition of _Literary Studies in the Digital Age_, and the forthcoming _Digital Pedagogy in the Humanities_
+ * Designing and implementing [a WordPress plugin for visualizing patterns of disciplinarity](https://github.com/mlaa/bp-group-statistics) on _MLA Commons_
 
 <!--Dec. '13 - April '14 [The Cryptocurrency Analytics Company](http://cryptocurrencyanalytics.com) Programmer-->
 
@@ -21,16 +30,19 @@ Positions
 <!---   Designed database model in Django and PostgreSQL-->
 <!---   Contributed new features for a virtual currency trading engine in Python-->
 
-**June '12 - July '13** New York University History Department: Programmer
+**June '12 - Present** New York University, History Department: Web Developer
 
- * Added functionality for searching mentioned entities to the [Margaret Sanger Papers Project Web Edition](http://www.nyu.edu/projects/sanger/webedition/app/documents/search.php) 
- * Wrote [a statistical analysis page](http://www.nyu.edu/projects/sanger/webedition/app/documents/stats.php) to visualize textual trends from the Margaret Sanger Papers archives
  * Developed [a customization engine](https://github.com/JonathanReeve/theme-elementaire) for the [Omeka content management platform](http://omeka.org)
  * Designed and developed Omeka themes deployed on [Greenwich Village History](http://gvh.aphdigital.org) and [New Jersey Digital History](http://njdigitalhistory.org/NJDHA/)
 
+**June '12 - July '13** Margaret Sanger Papers Project: Programmer
+
+ * Added functionality for searching mentioned entities to the [Margaret Sanger Papers Project Web Edition](http://www.nyu.edu/projects/sanger/webedition/app/documents/search.php) 
+ * Wrote [a statistical analysis page](http://www.nyu.edu/projects/sanger/webedition/app/documents/stats.php) to visualize textual trends from the Margaret Sanger Papers archives
+
 **July '12 - Sept. '12** Thomas Riggs & Company, Publishers: Research Writer
 
- * Authored six articles for the reference volume [*The Manifesto in Literature*](http://www.thomasriggs.net/pages/content/index.asp?PageID=158):
+ * Authored six articles for the 2013 reference volume [*The Manifesto in Literature*](http://www.thomasriggs.net/pages/content/index.asp?PageID=158):
     - Richard Stallman's "The GNU Manifesto," John Barlow's "A Declaration of the Independence of Cyberspace," and several others
 
 Teaching Positions
@@ -53,74 +65,75 @@ Teaching Positions
 
  * Taught one section of English 1 (composition, nonfiction readings) and a section of English 2 (composition, readings in literature)
 
-**Mar. '05 - Jan. '06** Missouri State University Branch Campus, Dalian, China: Adjunct Instructor
+**Mar. '05 - Jan. '06** Missouri State University: Adjunct Instructor
 
- * Taught Reading and Writing to first- and second-year international students. 
+ * Taught Reading and Writing to first- and second-year international students at MSU's branch campus in Dalian, China. 
 
-Education
-=========
-
-Jan. 2014 **Master of Arts**, Humanities, New York University
-
-May 2010 **Master of Arts**, Literature, Brooklyn College
-
-Jan. 2004 **Bachelor of Arts**, Individualized Study, New York University
-
-Technical Skills
-================
+Languages and Technical Skills
+==============================
 		
-**Languages**: PHP, Python, BASH, jQuery, SQL, XSL. Working knowledge of: Ruby, Javascript
+**Languages**: PHP, Python, BASH, jQuery, XSL. Working knowledge of: Ruby, Javascript
 
 **Markup Languages**: HTML, CSS, Sass, XML, TEI XML, LaTeX, Markdown
 
 **Frameworks, CMSs**: WordPress, BuddyPress, Commons in a Box, Omeka. Some experience with ZEND, Django, and Jekyll 
 
-**Databases**: MySQL, PostgreSQL, SQLite
+**Databases**: MySQL, PostgreSQL 
 
-**Servers and OSs**: Linux (LAMP stack), Unix, Mac OS
+**Servers and OSs**: Linux (LAMP and LEMP stacks), Unix, MacOS
 
 **Applications**: Vim, Git, Bazaar, GIMP, VMWare, LibreOffice
 
-**Skills**: Web development, web design, mobile web design, computational text analysis, natural language processing, archival textual markup, database management, command-line scripting, version control, virtualization, basic networking
+**Skills**: Web development, web design, mobile web design, computational text analysis, natural language processing, archival textual markup, database management, command-line scripting, version control, virtualization
 
-**Natural Languages**: English: native; French: advanced (Test de connaissance du français, Level 4); Mandarin Chinese: advanced; Vietnamese, Irish: beginner
+**Natural Languages**: English: native; French: advanced (Test de connaissance du français, Level 4); Mandarin Chinese: advanced; Irish, German, Italian: beginner
 
 Selected Publications and Presentations
 =======================================
 
 **March 2015** "Imperial Voices": a Stylometric Approach to the Study of Social Class among Shakespearean Characters 
 
-  * forthcoming presentation at Computer-Based Analysis of Drama conference, Bavarian Academy of Sciences and Humanities, March 2015
+  * Forthcoming presentation at Computer-Based Analysis of Drama conference, Bavarian Academy of Sciences and Humanities
+
+**February 2015** "Installing Omeka Using the Command Line" 
+
+ * Forthcoming article for [_The Programming Historian_](http://programminghistorian.org/) 
 
 **July 2014** "Macro-Etymological Textual Analysis: a Computational Application of Language History to Literary Criticism"
 
- * presented short paper, [Digital Humanities 2014](http://dh2014.org/), Lausanne, Switzerland
- * winner, New York University [Hirschhorn Thesis Award](https://draperprogram.wordpress.com/2014/06/12/congratulations-to-our-hirschhorn-award-nominees-and-winner/) 
- * winner, Association of Digital Humanities Organizations student bursary 
+ * Presented short paper, [Digital Humanities 2014](http://dh2014.org/), Lausanne, Switzerland
+ * Winner, New York University [Hirschhorn Thesis Award](https://draperprogram.wordpress.com/2014/06/12/congratulations-to-our-hirschhorn-award-nominees-and-winner/) 
+ * Winner, Association of Digital Humanities Organizations student bursary 
 
 **April 2013** "Toward a Social Literary Annotation Engine"
 
- * presented at [Humanities, Arts, Science, and Technology Advanced Collaboratory, Toronto](http://hastac2013.org/schedule-2/jonathan-reeve%20)
+ * Presented at [Humanities, Arts, Science, and Technology Advanced Collaboratory, Toronto](http://hastac2013.org/schedule-2/jonathan-reeve%20)
 
 **Oct. 2012** "Elementaire, a Customizable Omeka Theme"
 
- * presented at [The Humanities and Technology Camp](http://newyork2012.thatcamp.org/)
+ * Presented at [The Humanities and Technology Camp](http://newyork2012.thatcamp.org/)
 
 **Aug. 2012** Articles in [*The Manifesto in Literature*](http://www.cengage.com/search/productOverview.do;jsessionid=4FD757A6BD2DD6A4F5D0D81734BF2911?N=197&Ntk=P_EPI&Ntt=315361985178615732812460845631655972971&Ntx=mode+matchallpartial), Thomas Riggs & Company
- * "John Perry Barlow: A Declaration of the Independence of Cyberspace," "Richard Stallman: The GNU Manifesto," "Huey Newton: The Black Panther Party Platform," "Anselme Bellegarrigue: Anarchist Manifesto," "Emma Goldman: Anarchism, What it Really Stands For," "Rosa Luxemburg: The Spartacus Manifesto." 
+
+ * "Richard Stallman: The GNU Manifesto" 
+ * "John Perry Barlow: A Declaration of the Independence of Cyberspace" 
+ * "Huey Newton: The Black Panther Party Platform" 
+ * "Anselme Bellegarrigue: Anarchist Manifesto" 
+ * "Emma Goldman: Anarchism, What it Really Stands For" 
+ * "Rosa Luxemburg: The Spartacus Manifesto." 
 
 **Dec. 2011** *[The Art of Good Behavior](http://jonreeve.com/behaviour)*, a digital literary archive in TEI XML of a 19th-century etiquette manual
 
- * presented initial findings, NYU Workshop in Archival Practice
- * presented completed work, Yale University Digital Humanities Forum, Feb '12
+ * Presented initial findings, NYU Workshop in Archival Practice
+ * Presented completed work, Yale University Digital Humanities Forum, Feb '12
 
 **June 2011** "Hypertext Joyce: Building a Hypertext Ulysses with Open Source"
 
- * paper delivered at the 2011 North American James Joyce Conference
+ * Paper delivered at the 2011 North American James Joyce Conference
 
-**May 2010** "Dominance and *Domine*: Toward a Post-Religious Criticism of James Joyce's Ulysses,"
+**May 2010** "Dominance and *Domine*: Toward a Post-Religious Criticism of James Joyce's _Ulysses_,"
 
- * paper delivered at "Deconstructing the Gods," Graduate English Conference, City University of New York, Brooklyn College
+ * Paper delivered at "Deconstructing the Gods," Graduate English Conference, City University of New York, Brooklyn College
 
 **2009-2011** Poems anthologized:
 
@@ -130,37 +143,37 @@ Selected Publications and Presentations
 Digital Projects
 ================
 
-**May 2014 - Present**: contributor to the open-source projects: 
+**Jan. 2014 - Present**: Contributor to the open-source projects: 
 
  - [Buddypress](http://buddypress.org/): social networking WordPress plugin. Over 2.2 million downloads 
  - [Buddypress Docs](https://wordpress.org/plugins/buddypress-docs/): collaborative authoring tool for WordPress. Over 80,000 downloads
  - [Commons in a Box](http://commonsinabox.org/): social networking software suite, used by CUNY, SUNY, and many others. Over 12,000 downloads
  - [CAC-Advanced-Profiles](https://github.com/cuny-academic-commons/cac-advanced-profiles): engine for member portfolios used by the CUNY Academic Commons
+ 
 
 **July 2014 - Present**: [Open Syllabus Project](http://opensyllabusproject.org/): 
 
- - developed categorizers for determining the subject of scraped syllabi
- - performed collocations analyses by subject 
+ - Developed categorizers for determining the subject of scraped syllabi
+ - Performed collocations analyses by subject 
 
 **June 2014 - Present**: [Twitter Poet](https://github.com/JonathanReeve/trendhaikubot)
 
- - designed a twitter bot that generates haiku based on trending Twitter topics. 
- - uses the Python Natural Language Processing Toolkit to conduct syllabic analyses and perform POS tagging
+ - In collaboration with mathematician [Rachel Levanger](http://rachellevanger.com/), designed a Twitter bot that generates poems based on trending Twitter topics in the styles of 20th century poets
 
 **Jan. 2014 - Present**: [Annotags](/projects/annotags/about.html)
 
- - a protocol for a literary metadata hashtag that provides the ability to livetweet books, electronic documents, and other texts
- - [web app calculator](/projects/annotags) released September 2014
- - since October 2014, produced in collaboration with the [Group for Experimental Methods in the Humanities](http://xpmethod.github.io/) 
+ - Designed a protocol for a literary metadata hashtag that provides the ability to livetweet books, electronic documents, and other texts
+ - [Web app calculator](/projects/annotags) released September 2014
+ - Since October 2014, produced in collaboration with the [Group for Experimental Methods in the Humanities](http://xpmethod.github.io/) 
 
 **Nov. 2013** - [The Waves: a TEI XML Edition](/projects/waves-tei/waves-tei.xml)
 
- - a TEI XML edition of Virginia Woolf's novel, with dialog markup that facilitates dialog extraction
+ - A TEI XML edition of Virginia Woolf's novel, with dialog markup that facilitates dialog extraction
 
 **Jan. 2013 - Dec. 2013**: [New York University Digital Humanities Working Group](http://nyudigitalexperiments.com) Epigraphs Project
 
- - developed a [script to parse epigraphs](https://github.com/JonathanReeve/epi-project) from TEI XML
- - designed initial prototypes of project database
+ - Developed a [script to parse epigraphs](https://github.com/JonathanReeve/epi-project) from TEI XML
+ - Designed initial prototypes of project database
 
 
 Affiliations and Professional Activities
