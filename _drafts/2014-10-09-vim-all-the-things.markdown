@@ -18,7 +18,7 @@ Vim is about the greatest thing ever. One of the best things about it is that it
   
 One of the great things about Vim is that it's ergonimally designed.   
 
-## Window Manager: Map Super+HJKL
+## Top Level: Window Manager: Map Super+HJKL
 
 In ~/.i3/config, set these keybindings: 
 
@@ -39,8 +39,9 @@ bindsym $mod+Shift+k move up
 bindsym $mod+Shift+l move right
 ```
 
-## Tmux: Alt+Tabnumber
+## Intermediary Level: Alt+Stuff 
 
+### Tmux: Map Alt+HJKL and Alt+Tabnumber
 in ~/.tmux.conf, set these values to map Alt+numbers to tab switching: 
 
 ```
@@ -57,7 +58,7 @@ bind-key -n M-9 select-window -t 9
 
 (props to http://superuser.com/a/686686/83457)   
 
-## Applications: Map Ctrl+HJKL 
+## Low Level: Applications: Map Ctrl+HJKL 
 
 ###Weechat: Remap Alt+Tabnumber to Ctrl+Tabnumber
 
@@ -81,3 +82,18 @@ ctrl-3 = "/buffer *3"
 ```
 
 ###Vim: Map Ctrl+HJKL
+
+```
+"Ctrl-something for navigating split windows
+map <C-j> <C-W>j
+map <C-k> <C-W>k
+map <C-h> <C-W>h
+map <C-l> <C-W>l
+```
+
+###Vimperator: Map JK, Ctrl+Number
+
+```
+map J gt
+map K gT
+```
