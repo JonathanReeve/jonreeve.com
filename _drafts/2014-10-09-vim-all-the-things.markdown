@@ -15,5 +15,69 @@ Vim is about the greatest thing ever. One of the best things about it is that it
 2. Shell: BASH or ZSH with Vim mode.
 3. Web browser: dwb, jumanji, or the Vimperator / Pentadactyl plugins for Firefox. 
 4. Python (interpreter), MySQL, or anything else that uses Readline
+  
+One of the great things about Vim is that it's ergonimally designed.   
 
+## Window Manager: Map Super+HJKL
 
+In ~/.i3/config, set these keybindings: 
+
+```
+# set mod key to super
+set $mod Mod4
+
+# change focus
+bindsym $mod+h focus left
+bindsym $mod+j focus down
+bindsym $mod+k focus up
+bindsym $mod+l focus right
+
+# move focused window
+bindsym $mod+Shift+h move left
+bindsym $mod+Shift+j move down
+bindsym $mod+Shift+k move up
+bindsym $mod+Shift+l move right
+```
+
+## Tmux: Alt+Tabnumber
+
+in ~/.tmux.conf, set these values to map Alt+numbers to tab switching: 
+
+```
+bind-key -n M-1 select-window -t 1
+bind-key -n M-2 select-window -t 2
+bind-key -n M-3 select-window -t 3
+bind-key -n M-4 select-window -t 4
+bind-key -n M-5 select-window -t 5
+bind-key -n M-6 select-window -t 6
+bind-key -n M-7 select-window -t 7
+bind-key -n M-8 select-window -t 8
+bind-key -n M-9 select-window -t 9
+```
+
+(props to http://superuser.com/a/686686/83457)   
+
+## Applications: Map Ctrl+HJKL 
+
+###Weechat: Remap Alt+Tabnumber to Ctrl+Tabnumber
+
+Find the section in ~/.weechat/weechat.conf that reads: 
+
+```
+meta-0 = "/buffer *10"
+meta-1 = "/buffer *1"
+meta-2 = "/buffer *2"
+meta-3 = "/buffer *3"
+... etc
+```
+
+and change it so that it reads: 
+
+```
+ctrl-0 = "/buffer *10"
+ctrl-1 = "/buffer *1"
+ctrl-2 = "/buffer *2"
+ctrl-3 = "/buffer *3"
+```
+
+###Vim: Map Ctrl+HJKL
