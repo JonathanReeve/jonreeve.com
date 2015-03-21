@@ -30,12 +30,12 @@ Positions
 <!---   Designed database model in Django and PostgreSQL-->
 <!---   Contributed new features for a virtual currency trading engine in Python-->
 
-**June '12 - Present** New York University, History Department: Web Developer
+**June '12 - January '15** New York University, History Department: Web Developer
 
  * Developed [a customization engine](https://github.com/JonathanReeve/theme-elementaire) for the [Omeka content management platform](http://omeka.org)
  * Designed and developed Omeka themes deployed on [Greenwich Village History](http://gvh.aphdigital.org) and [New Jersey Digital History](http://njdigitalhistory.org/NJDHA/)
 
-**June '12 - July '13** Margaret Sanger Papers Project: Programmer
+**June '12 - Present** Margaret Sanger Papers Project: Programmer
 
  * Added functionality for searching mentioned entities to the [Margaret Sanger Papers Project Web Edition](http://www.nyu.edu/projects/sanger/webedition/app/documents/search.php) 
  * Wrote [a statistical analysis page](http://www.nyu.edu/projects/sanger/webedition/app/documents/stats.php) to visualize textual trends from the Margaret Sanger Papers archives
@@ -72,17 +72,17 @@ Teaching Positions
 Languages and Technical Skills
 ==============================
 		
-**Languages**: PHP, Python, BASH, jQuery, XSL. Working knowledge of: Ruby, Javascript
+**Languages**: PHP, Python, BASH/ZSH, jQuery, XSL. Working knowledge of: Ruby, Javascript
 
 **Markup Languages**: HTML, CSS, Sass, XML, TEI XML, LaTeX, Markdown
 
-**Frameworks, CMSs**: WordPress, BuddyPress, Commons in a Box, Omeka. Some experience with ZEND, Django, and Jekyll 
+**Frameworks, CMSs**: WordPress, BuddyPress, Commons in a Box, Omeka, Jekyll. Some experience with ZEND and Django
 
 **Databases**: MySQL, PostgreSQL 
 
-**Servers and OSs**: Linux (LAMP and LEMP stacks), Unix, MacOS
+**Servers and OSs**: Linux (LAMP and LEMP stacks, especially Ubuntu, Fedora, Arch, and Debian), Unix, MacOS
 
-**Applications**: Vim, Git, Bazaar, GIMP, VMWare, LibreOffice
+**Applications**: Vim, Git, Bazaar, GIMP, VMWare, LibreOffice. 
 
 **Skills**: Web development, web design, mobile web design, computational text analysis, natural language processing, archival textual markup, database management, command-line scripting, version control, virtualization
 
@@ -91,11 +91,12 @@ Languages and Technical Skills
 Selected Publications and Presentations
 =======================================
 
-**March 2015** "Imperial Voices": a Stylometric Approach to the Study of Social Class among Shakespearean Characters 
+**March 2015** ["Imperial Voices": a Stylometric Approach to the Study of Social Class among Shakespearean Characters](http://jonreeve.com/2015/03/imperial-voices/)
 
-  * Forthcoming presentation at Computer-Based Analysis of Drama conference, Bavarian Academy of Sciences and Humanities
+  * Presentation at Computer-Based Analysis of Drama conference, Bavarian Academy of Sciences and Humanities
+  * Forthcoming journal article from conference proceedings
 
-**February 2015** "Installing Omeka Using the Command Line" 
+**June 2015** "Installing Omeka Using the Command Line" 
 
  * Forthcoming article for [_The Programming Historian_](http://programminghistorian.org/) 
 
@@ -149,7 +150,6 @@ Digital Projects
  - [Buddypress Docs](https://wordpress.org/plugins/buddypress-docs/): collaborative authoring tool for WordPress. Over 80,000 downloads
  - [Commons in a Box](http://commonsinabox.org/): social networking software suite, used by CUNY, SUNY, and many others. Over 12,000 downloads
  - [CAC-Advanced-Profiles](https://github.com/cuny-academic-commons/cac-advanced-profiles): engine for member portfolios used by the CUNY Academic Commons
- 
 
 **July 2014 - Present**: [Open Syllabus Project](http://opensyllabusproject.org/): 
 
@@ -165,6 +165,7 @@ Digital Projects
  - Designed a protocol for a literary metadata hashtag that provides the ability to livetweet books, electronic documents, and other texts
  - [Web app calculator](/projects/annotags) released September 2014
  - Since October 2014, produced in collaboration with the [Group for Experimental Methods in the Humanities](http://xpmethod.github.io/) 
+ - Nominated for [a 2014 DH Award for Best DH Tool](http://dhawards.org/dhawards2014/results/)
 
 **Nov. 2013** - [The Waves: a TEI XML Edition](/projects/waves-tei/waves-tei.xml)
 
