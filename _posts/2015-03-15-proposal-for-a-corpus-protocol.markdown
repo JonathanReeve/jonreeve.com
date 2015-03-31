@@ -76,3 +76,6 @@ Non-English Corpora on GitHub Include:
  
  * Texts from the [Chinese Buddhist Electronic Text Association](https://github.com/cltk/chinese_text_cbeta_indices)
  * The [Open Greek and Latin Project](http://github.com/OpenGreekAndLatin) at Leipzig
+ * Papyri from the [Integrating Digital Papyrology Project](https://github.com/papyri/idp.data)
+
+If I'm missing any, please let me know in the comments below. 
