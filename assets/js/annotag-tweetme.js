@@ -43,6 +43,7 @@ if ('' !== bookcode) {
     console.log('now taking you to: ');
     twitterURL = 'https://twitter.com/intent/tweet?hashtags=' + bookcode;
     console.log(twitterURL);
+    window.location.replace(twitterURL); 
 }
 
 
