@@ -452,6 +452,18 @@ nav.pagination {
 	}
 }
 
+a.button.bookmarklet { 
+	font-size: 0.875rem;
+	text-decoration: none; 
+	color: #fff !important; 
+	display: inline-block;
+	padding: 0.625rem 1.25rem;
+	border-radius: 0.1875rem;
+	background-color: $red; 
+	font-weight: 700; 
+	border-bottom: 2px solid #98112D; 
+} 
+
 .notepad-site-footer {
   background: black;
   &.with-bg-cover {
@@ -1394,3 +1406,5 @@ img.mfp-img {
 	/* this affects the margin in the printer settings */ 
 	margin: 25mm 25mm 25mm 25mm;  
 } 
+
+

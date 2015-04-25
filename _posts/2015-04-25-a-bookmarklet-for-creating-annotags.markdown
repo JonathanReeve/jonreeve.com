@@ -8,10 +8,18 @@ tags:
  - open source
 ---
 
-At [I Annotate](http://iannotate.org/) this weekend, I made a bookmarklet that will allow you to generate an [Annotag](/projects/annotags/about.html) from a book's bibliographic entry. To use it: 
+At [I Annotate](http://iannotate.org/) this weekend, I made a bookmarklet that will allow you to generate an [Annotag](/projects/annotags/about.html) from a book's bibliographic entry: 
 
- * Drag the following button onto your bookmarks bar: <a href="javascript:(function(){document.body.appendChild(document.createElement('script')).src='http://jonathanreeve.github.io/assets/js/annotag-tweetme.js' ;})();" class="button bookmarklet">Tweet This Book</a>
- * Visit a website that has books. It currently works with [worldcat.org](http://worldcat.org) and [Project Gutenberg](https://www.gutenberg.org/). 
- * Click the bookmarklet called Tweet This Book. 
+<p class="center"><a href="javascript:(function(){document.body.appendChild(document.createElement('script')).src='http://jonathanreeve.github.io/assets/js/annotag-tweetme.js' ;})();" class="button bookmarklet">Tweet This Book</a></p>
 
-Here's how it works: the bookmarklet extracts book identifiers from your URL, encodes it in base-62, and takes you to Twitter, where this information will already be encoded as a hashtag. Now it's even easier to tweet about books! 
+To use it: 
+
+ * Drag the button above onto your bookmarks bar. 
+ * Visit a website that has books. It currently works with [Worldcat](http://worldcat.org) and [Project Gutenberg](https://www.gutenberg.org/). 
+ * Click the bookmarklet. 
+ * Add a location suffix to the hashtag, if you want, like `:p26`. 
+ * Tweet a comment about the book. 
+
+The bookmarklet extracts book identifiers from your URL, encodes it in base-62, and takes you to Twitter, where this information will be be waiting for you, encoded as a hashtag. Now it's even easier to tweet about books! 
+
+If you'd like to help improve the code, it can be found [here on github](https://github.com/JonathanReeve/JonathanReeve.github.io/blob/master/assets/js/annotag-tweetme.js). 
