@@ -27,6 +27,9 @@ var pg = /gutenberg\.org.*\/files\/(\d+)($|\/)/;
 if (gb.test(testlocation) == true) {
     bookcode = 'B' + RegExp.$2;
 } else if (wc.test(testlocation) == true) {
+    oclc= RegExp.$1; 
+    console.log( 'oclc is:' ); 
+    console.log( oclc ); 
     bookcode = 'o' + encodeNums([parseInt(RegExp.$1)]);
 } else if (pg.test(testlocation) == true) {
     bookcode = 'g' + encodeNums([parseInt(RegExp.$1)]);
