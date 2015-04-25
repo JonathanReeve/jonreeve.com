@@ -1,4 +1,8 @@
 
+var separate_with = ':';
+var encodable = get_map('ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789'); 
+var base10 = get_map('0123456789')
+
 var mocklocation1 = 'https://books.google.com/books?id=WVofz29Hx9UC&printsec=frontcover&dq=joyce&hl=en&sa=X&ei=1NE7VY6hOM-4oQScnICoAw&ved=0CB4Q6AEwAA#v=onepage&q=joyce&f=false';
 
 // test location from Worldcat
@@ -10,10 +14,9 @@ var mocklocation3 = 'http://www.worldcat.org/title/ulysses-the-corrected-text/oc
 // test location for Project Gutenberg books
 var mocklocation4 = 'http://www.gutenberg.org/files/4300/4300-h/4300-h.htm'
 
-var testlocation = mocklocation4;
+var testlocation = window.location.href;
 
 console.log(window.location.href); 
-
 
 // Are we on a Google Books page? 
 var gb = /books\.google\.com.*(id=)(.*?)\&/;
@@ -27,13 +30,13 @@ var pg = /gutenberg\.org.*\/files\/(\d+)($|\/)/;
 if (gb.test(testlocation) == true) {
     bookcode = 'B' + RegExp.$2;
 } else if (wc.test(testlocation) == true) {
-    oclc= RegExp.$1; 
-    console.log( 'oclc is:' ); 
-    console.log( oclc ); 
     bookcode = 'o' + encodeNums([parseInt(RegExp.$1)]);
 } else if (pg.test(testlocation) == true) {
     bookcode = 'g' + encodeNums([parseInt(RegExp.$1)]);
-}
+} else { 
+    alert( 'Sorry, I can\'t find any bibliographic information in this URL.' ); 	
+    die(); 
+} 
 
 // Now make the annotag
 if ('' !== bookcode) {
@@ -45,6 +48,8 @@ if ('' !== bookcode) {
 
 /// Now encoding stuff!
 
+
+
 function get_map(s) {
     d = {}
     for (var i=0; i<s.length; i++) {
@@ -53,10 +58,6 @@ function get_map(s) {
     d._s = s
     return d
 }
-
-var separate_with = ':';
-var encodable = get_map('ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789'); 
-var base10 = get_map('0123456789')
 
 // stolen from http://stackoverflow.com/a/1268377/584121  
 function baseconvert(number, fromdigits, todigits) {
