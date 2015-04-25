@@ -65,14 +65,3 @@ Eventually, a scraping engine might be built which could, like Yeoman's generato
 
 #Discussion
 What do you think? Is this a protocol you might be interested in adopting? Why or why not? Please leave comments below. 
-
-#Update 3/31
-
-[Carrie Schroeder](https://twitter.com/ctschroeder), [Allen Riddel](https://twitter.com/ariddell) and others on Twitter have pointed out that, especially in non-English DH fields, many corpora are already on GitHub: 
-
- * [Gitenberg](https://github.com/GITenberg) is a GitHub user with repositories of Project Gutenberg texts. 
-
-Non-English Corpora on GitHub Include: 
- 
- * Texts from the [Chinese Buddhist Electronic Text Association](https://github.com/cltk/chinese_text_cbeta_indices)
- * The [Open Greek and Latin Project](http://github.com/OpenGreekAndLatin) at Leipzig
