@@ -93,8 +93,7 @@ Selected Publications and Presentations
 
 **March 2015** ["Imperial Voices": a Stylometric Approach to the Study of Social Class among Shakespearean Characters](http://jonreeve.com/2015/03/imperial-voices/)
 
-  * Presentation at Computer-Based Analysis of Drama conference, Bavarian Academy of Sciences and Humanities
-  * Forthcoming journal article from conference proceedings
+  * [Presentation](http://jonreeve.com/presentations/cbad/#/imperial-voices) at [Computer-Based Analysis of Drama](http://comedy.hypotheses.org/12) workshop, Bavarian Academy of Sciences and Humanities
 
 **June 2015** "Installing Omeka Using the Command Line" 
 
