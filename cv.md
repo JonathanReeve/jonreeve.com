@@ -165,6 +165,8 @@ Digital Projects
  - [Web app calculator](/projects/annotags) released September 2014
  - Since October 2014, produced in collaboration with the [Group for Experimental Methods in the Humanities](http://xpmethod.github.io/) 
  - Nominated for [a 2014 DH Award for Best DH Tool](http://dhawards.org/dhawards2014/results/)
+ - Implemented a [bookmarklet for creating Annotags from website bibliographic data](http://jonreeve.com/2015/04/a-bookmarklet-for-creating-annotags), April 2015
+ - Demonstrated prototypes, [I Annotate 2015](http://iannotate.org/) conference
 
 **Nov. 2013** - [The Waves: a TEI XML Edition](/projects/waves-tei/waves-tei.xml)
 
