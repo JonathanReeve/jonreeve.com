@@ -1,0 +1,3 @@
+[submodule "projects/portrait-tei"]
+	path = projects/portrait-tei
+	url = https://github.com/JonathanReeve/corpus-joyce-portrait-TEI.git
