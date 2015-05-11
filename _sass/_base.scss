@@ -57,7 +57,12 @@ figcaption {
     font-size: $small-font-size;
 }
 
-
+/* My captions */ 
+span.caption { 
+	display: block; 
+	text-align: center;
+	font-style: italic; 
+} 
 
 /**
  * Lists
@@ -203,3 +208,9 @@ p.center {
         }
     }
 }
+
+/** Footnotes **/ 
+.fnref { 
+	vertical-align: super; 
+	font-size: 75%; 
+} 
