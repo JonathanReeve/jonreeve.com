@@ -2,7 +2,7 @@
 layout: post
 title: Imperial Voices&#58; Gender and Social Class among Shakespeare's Characters, a Stylometric Approach  
 category: Digital Humanities
-tags: python bash pca shakespeare
+tags: python bash pca shakespeare paper
 ---
 
 >"in the imitation of these twain--who as Ulysses says, opinion crowns with an imperial voice--many are infect." --Nestor, _Troilus and Cressida_, Act 1, Scene 3. 
