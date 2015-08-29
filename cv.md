@@ -17,12 +17,13 @@ Jan. 2004 **Bachelor of Arts**, Individualized Study, New York University
 Positions
 =========
 
-**Nov. '13 - Present** Modern Language Association: Web Developer
+**Nov. '13 - August '15** Modern Language Association: Web Developer
 
- * Edited XML and XSL for the [Literary Research Guide](http://mlalrg.org/public)
- * Contributed to [the redesign](http://updates.commons.mla.org/2014/07/28/new-theme-for-the-mla-commons/) of the [MLA Commons](http://commons.mla.org)
- * Contributing to software used for the electronic edition of _Literary Studies in the Digital Age_, and the forthcoming _Digital Pedagogy in the Humanities_
- * Designing and implementing [a WordPress plugin for visualizing patterns of disciplinarity](https://github.com/mlaa/bp-group-statistics) on _MLA Commons_
+ * Edited XML and XSL code for the [Literary Research Guide](http://mlalrg.org/public)
+ * Contributed to software used for the electronic edition of [_Literary Studies in the Digital Age_](http://dlsanthology.commons.mla.org/), and [_Digital Pedagogy in the Humanities_](https://digitalpedagogy.commons.mla.org/)
+ * Primary contributor to [the 2014 and 2015 redesigns](http://updates.commons.mla.org/2014/07/28/new-theme-for-the-mla-commons/) of the [MLA Commons](http://commons.mla.org)
+ * Rewrote [cbox-auth](https://github.com/mlaa/cbox-auth), the authentication system of the _MLA Commons_, to interface with the MLA member database
+ * Designed [a WordPress plugin for visualizing patterns of disciplinarity](https://github.com/mlaa/bp-group-statistics) between _MLA Commons_ interest groups
 
 <!--Dec. '13 - April '14 [The Cryptocurrency Analytics Company](http://cryptocurrencyanalytics.com) Programmer-->
 
@@ -32,10 +33,10 @@ Positions
 
 **June '12 - January '15** New York University, History Department: Web Developer
 
- * Developed [a customization engine](https://github.com/JonathanReeve/theme-elementaire) for the [Omeka content management platform](http://omeka.org)
+ * Developed [a customization engine](https://github.com/JonathanReeve/customeka) for the [Omeka content management platform](http://omeka.org)
  * Designed and developed Omeka themes deployed on [Greenwich Village History](http://gvh.aphdigital.org) and [New Jersey Digital History](http://njdigitalhistory.org/NJDHA/)
 
-**June '12 - Present** Margaret Sanger Papers Project: Programmer
+**June '12 - August '15** Margaret Sanger Papers Project: Programmer
 
  * Added functionality for searching mentioned entities to the [Margaret Sanger Papers Project Web Edition](http://www.nyu.edu/projects/sanger/webedition/app/documents/search.php) 
  * Wrote [a statistical analysis page](http://www.nyu.edu/projects/sanger/webedition/app/documents/stats.php) to visualize textual trends from the Margaret Sanger Papers archives
@@ -78,18 +79,20 @@ Languages and Technical Skills
 
 **Frameworks, CMSs**: WordPress, BuddyPress, Commons in a Box, Omeka, Jekyll. Some experience with ZEND and Django
 
-**Databases**: MySQL, PostgreSQL 
+**Databases**: MySQL, MariaDB, PostgreSQL 
 
-**Servers and OSs**: Linux (LAMP and LEMP stacks, especially Ubuntu, Fedora, Arch, and Debian), Unix, MacOS
+**Servers and OSs**: GNU/Linux LAMP and LEMP stacks, especially Ubuntu, Fedora, Arch, and Debian; Unix; MacOS
 
 **Applications**: Vim, Git, Bazaar, GIMP, VMWare, LibreOffice. 
 
-**Skills**: Web development, web design, mobile web design, computational text analysis, natural language processing, archival textual markup, database management, command-line scripting, version control, virtualization
+**Skills**: Web development, web design, computational text analysis, natural language processing, archival textual markup, database management, command-line scripting, version control, virtualization
 
 **Natural Languages**: English: native; French: advanced (Test de connaissance du français, Level 4); Mandarin Chinese: advanced; Irish, German, Italian: beginner
 
 Selected Publications and Presentations
 =======================================
+
+**Forthcoming** ["A Macro-Etymological Analysis of James Joyce's _A Portrait of the Artist as a Young Man"](http://www.jonreeve.com/2015/05/macroetymology-of-portrait-paper), _Reading Modernism with Machines_. 
 
 **March 2015** ["Imperial Voices": a Stylometric Approach to the Study of Social Class among Shakespearean Characters](http://jonreeve.com/2015/03/imperial-voices/)
 
@@ -149,6 +152,8 @@ Digital Projects
  - [Buddypress Docs](https://wordpress.org/plugins/buddypress-docs/): collaborative authoring tool for WordPress. Over 80,000 downloads
  - [Commons in a Box](http://commonsinabox.org/): social networking software suite, used by CUNY, SUNY, and many others. Over 12,000 downloads
  - [CAC-Advanced-Profiles](https://github.com/cuny-academic-commons/cac-advanced-profiles): engine for member portfolios used by the CUNY Academic Commons
+ - [CBOX-MLA](https://github.com/mlaa/cbox-mla), the WordPress theme and customization layer that powers the [MLA Commons](https://commons.mla.org)
+ - [CBOX-Auth](https://github.com/mlaa/cbox-auth), the authentication system for the _MLA Commons_.  
 
 **July 2014 - Present**: [Open Syllabus Project](http://opensyllabusproject.org/): 
 
@@ -166,7 +171,14 @@ Digital Projects
  - Since October 2014, produced in collaboration with the [Group for Experimental Methods in the Humanities](http://xpmethod.github.io/) 
  - Nominated for [a 2014 DH Award for Best DH Tool](http://dhawards.org/dhawards2014/results/)
  - Implemented a [bookmarklet for creating Annotags from website bibliographic data](http://jonreeve.com/2015/04/a-bookmarklet-for-creating-annotags), April 2015
- - Demonstrated prototypes, [I Annotate 2015](http://iannotate.org/) conference
+ - Demonstrated prototypes, [I Annotate 2015](http://iannotate.org/) conference, May 2015
+ - [Presented](http://www.jonreeve.com/presentations/keydh2015) at Keystone Digital Humanities conference, July 2015
+ - [Featured resource in _Digital Humanities Now_](http://www.digitalhumanitiesnow.org/2015/07/resource-annotags-a-decentralized-textual-annotation-protocol/), July 2015. 
+
+**Sept. 2013 - Present**: [The Macro-Etymological Analyzer](http://jonreeve.com/etym)
+ - [Featured](http://www.tapor.ca/?id=470) in the [Text Analysis Portal for Research](http://www.tapor.ca/), 2015. 
+ - Listed in Alain Liu's directory of Digital Humanities Tools
+ - Featured in the [Digital Research Tools](http://www.dirtdirectory.org/) (DiRT) directory, 2015.  
 
 **Nov. 2013** - [The Waves: a TEI XML Edition](/projects/waves-tei/waves-tei.xml)
 
