@@ -1,3 +1,6 @@
 [submodule "projects/portrait-tei"]
 	path = projects/portrait-tei
 	url = https://github.com/JonathanReeve/corpus-joyce-portrait-TEI.git
+[submodule "assets/js/annotags"]
+	path = assets/js/annotags
+	url = https://github.com/JonathanReeve/annotags
