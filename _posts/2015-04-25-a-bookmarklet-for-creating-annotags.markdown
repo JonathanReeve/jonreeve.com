@@ -22,4 +22,4 @@ To use it:
 
 The bookmarklet extracts book identifiers from your URL, encodes it in base-62, and takes you to Twitter, where this information will be be waiting for you, encoded as a hashtag. Now it's even easier to tweet about books! 
 
-If you'd like to help improve the code, it can be found [here on github](https://github.com/JonathanReeve/JonathanReeve.github.io/blob/master/assets/js/annotags/annotag-tweetme.js). 
+If you'd like to help improve the code, it can be found [here on GitHub](https://github.com/JonathanReeve/annotags/blob/master/annotag-tweetme.js). 
