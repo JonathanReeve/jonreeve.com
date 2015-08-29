@@ -27,12 +27,18 @@ var wc = /worldcat\.org.*\/oclc\/(\d+)($|\&)/;
 // Are we on Project Gutenberg? 
 var pg = /gutenberg\.org.*\/files\/(\d+)($|\/)/;
 
+// Are we on Goodreads? 
+var gr = /goodreads\.com.*\/book\/show\/(.*)/;
+
 if (gb.test(testlocation) == true) {
     bookcode = 'B' + RegExp.$2;
-} else if (wc.test(testlocation) == true) {
+} else if (wc.test(testlocation) == true) {    
     bookcode = 'o' + encodeNums([parseInt(RegExp.$1)]);
 } else if (pg.test(testlocation) == true) {
     bookcode = 'g' + encodeNums([parseInt(RegExp.$1)]);
+} else if (gr.test(testlocation) == true) {
+    bookcode = getGoodreadsIsbn(testlocation);       
+    bookcode = 'i' + encodeNums([parseInt(bookcode)]); 
 } else { 
     alert( 'Sorry, I can\'t find any bibliographic information in this URL.' ); 	
     die(); 
@@ -95,5 +101,23 @@ function encodeNums(L) {
          r.push(baseconvert(L[i], base10, encodable))
     }
     return r.join(separate_with)
+}
+
+function getGoodreadsIsbn() {
+   var html = document.getElementsByTagName('html')[0];
+   var elements = html.getElementsByTagName('span'), i = 0, isbn;
+
+   for(i; i < elements.length; i++) {
+       prop = elements[i].getAttribute('itemprop');       
+
+       if(prop == "isbn") {
+           isbn = elements[i].innerHTML;
+           isbn = isbn.substring(0, 12);
+           isbn = isbn.substring(3);
+           break;
+       }
+   }
+   
+    return isbn;
 }
 
