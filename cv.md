@@ -145,6 +145,9 @@ Digital Projects
 **Aug. 2015 - Present **: [Git-Lit: An Open Source Project to Parse, Version Control, and Publish British Library ALTO XML Documents](https://github.com/JonathanReeve/git-lit)
  - Honorable mention, [2015 NYCDH Graduate Student Digital Project Awards](http://nycdh.org/nycdh-graduate-student-digital-project-awards-2015/) 
 
+**Jul. 2015 - Present **: [A Portrait of the Artist as a TEI XML File: an Open, Collaborative Scholarly Edition of James Joyce's _A Portrait of the Artist as a Young Man_](https://github.com/JonathanReeve/corpus-joyce-portrait-TEI)
+ - A collaborative TEI XML scholarly edition of James Joyce's novel _A Portrait of the Artist as a Young Man_, using rich markup. Generated from a text recently released from the Oxford Text Archive. 
+
 **Dec. 2013 - Sept. 2015 **: Contributor to the open-source projects: 
 
  - [Buddypress](http://buddypress.org/): social networking WordPress plugin. Over 2.2 million downloads 
