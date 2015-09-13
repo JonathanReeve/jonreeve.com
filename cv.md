@@ -8,6 +8,8 @@ permalink: /cv/
 Education
 =========
 
+Sept. 2015 - Present: PhD Student, Columbia University 
+
 Jan. 2014 **Master of Arts**, Humanities, New York University
 
 May 2010 **Master of Arts**, Literature, Brooklyn College
@@ -146,7 +148,10 @@ Selected Publications and Presentations
 Digital Projects
 ================
 
-**Jan. 2014 - Present**: Contributor to the open-source projects: 
+**Aug. 2015 - Present **: [Git-Lit: An Open Source Project to Parse, Version Control, and Publish British Library ALTO XML Documents](https://github.com/JonathanReeve/git-lit)
+ - Honorable mention, [2015 NYCDH Graduate Student Digital Project Awards](http://nycdh.org/nycdh-graduate-student-digital-project-awards-2015/) 
+
+**Dec. 2013 - Sept. 2015 **: Contributor to the open-source projects: 
 
  - [Buddypress](http://buddypress.org/): social networking WordPress plugin. Over 2.2 million downloads 
  - [Buddypress Docs](https://wordpress.org/plugins/buddypress-docs/): collaborative authoring tool for WordPress. Over 80,000 downloads
@@ -155,12 +160,12 @@ Digital Projects
  - [CBOX-MLA](https://github.com/mlaa/cbox-mla), the WordPress theme and customization layer that powers the [MLA Commons](https://commons.mla.org)
  - [CBOX-Auth](https://github.com/mlaa/cbox-auth), the authentication system for the _MLA Commons_.  
 
-**July 2014 - Present**: [Open Syllabus Project](http://opensyllabusproject.org/): 
+**July 2014 **: [Open Syllabus Project](http://opensyllabusproject.org/): 
 
  - Developed categorizers for determining the subject of scraped syllabi
  - Performed collocations analyses by subject 
 
-**June 2014 - Present**: [Twitter Poet](https://github.com/JonathanReeve/trendhaikubot)
+**June 2014 **: [Twitter Poet](https://github.com/JonathanReeve/trendhaikubot)
 
  - In collaboration with mathematician [Rachel Levanger](http://rachellevanger.com/), designed a Twitter bot that generates poems based on trending Twitter topics in the styles of 20th century poets
 
