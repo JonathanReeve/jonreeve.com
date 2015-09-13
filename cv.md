@@ -8,7 +8,7 @@ permalink: /cv/
 Education
 =========
 
-Sept. 2015 - Present: PhD Student, Columbia University 
+Sept. 2015 - Present: **PhD Student**, Columbia University 
 
 Jan. 2014 **Master of Arts**, Humanities, New York University
 
@@ -79,7 +79,7 @@ Languages and Technical Skills
 
 **Servers and OSs**: GNU/Linux LAMP and LEMP stacks, especially Ubuntu, Fedora, Arch, and Debian; Unix; MacOS
 
-**Applications**: Vim, Git, Bazaar, GIMP, VMWare, LibreOffice. 
+**Applications**: Vim, Git, Bazaar, GIMP, VMWare, LibreOffice
 
 **Skills**: Web development, web design, computational text analysis, natural language processing, archival textual markup, database management, command-line scripting, version control, virtualization
 
@@ -88,7 +88,7 @@ Languages and Technical Skills
 Selected Publications and Presentations
 =======================================
 
-**Forthcoming** ["A Macro-Etymological Analysis of James Joyce's _A Portrait of the Artist as a Young Man"](http://www.jonreeve.com/2015/05/macroetymology-of-portrait-paper), _Reading Modernism with Machines_
+**Forthcoming** ["A Macro-Etymological Analysis of James Joyce's _A Portrait of the Artist as a Young Man_"](http://www.jonreeve.com/2015/05/macroetymology-of-portrait-paper), _Reading Modernism with Machines_
 
 **March 2015** ["Imperial Voices": a Stylometric Approach to the Study of Social Class among Shakespearean Characters](http://jonreeve.com/2015/03/imperial-voices/)
 
@@ -142,13 +142,15 @@ Selected Publications and Presentations
 Digital Projects
 ================
 
-**Aug. 2015 - Present **: [Git-Lit: An Open Source Project to Parse, Version Control, and Publish British Library ALTO XML Documents](https://github.com/JonathanReeve/git-lit)
+**Aug. 2015 - Present**: [Git-Lit: An Open Source Project to Parse, Version Control, and Publish British Library ALTO XML Documents](https://github.com/JonathanReeve/git-lit)
+
  - Honorable mention, [2015 NYCDH Graduate Student Digital Project Awards](http://nycdh.org/nycdh-graduate-student-digital-project-awards-2015/) 
 
-**Jul. 2015 - Present **: [A Portrait of the Artist as a TEI XML File: an Open, Collaborative Scholarly Edition of James Joyce's _A Portrait of the Artist as a Young Man_](https://github.com/JonathanReeve/corpus-joyce-portrait-TEI)
+**Jul. 2015 - Present**: [A Portrait of the Artist as a TEI XML File: an Open, Collaborative Scholarly Edition of James Joyce's _A Portrait of the Artist as a Young Man_](https://github.com/JonathanReeve/corpus-joyce-portrait-TEI)
+
  - A collaborative TEI XML scholarly edition of James Joyce's novel _A Portrait of the Artist as a Young Man_, using rich markup. Generated from a text recently released from the Oxford Text Archive. 
 
-**Dec. 2013 - Sept. 2015 **: Contributor to the open-source projects: 
+**Dec. 2013 - Sept. 2015**: Contributor to the open-source projects: 
 
  - [Buddypress](http://buddypress.org/): social networking WordPress plugin. Over 2.2 million downloads 
  - [Buddypress Docs](https://wordpress.org/plugins/buddypress-docs/): collaborative authoring tool for WordPress. Over 80,000 downloads
@@ -157,12 +159,12 @@ Digital Projects
  - [CBOX-MLA](https://github.com/mlaa/cbox-mla), the WordPress theme and customization layer that powers the [MLA Commons](https://commons.mla.org)
  - [CBOX-Auth](https://github.com/mlaa/cbox-auth), the authentication system for the _MLA Commons_.  
 
-**July 2014 **: [Open Syllabus Project](http://opensyllabusproject.org/): 
+**July 2014**: [Open Syllabus Project](http://opensyllabusproject.org/) 
 
  - Developed categorizers for determining the subject of scraped syllabi
  - Performed collocations analyses by subject 
 
-**June 2014 **: [Twitter Poet](https://github.com/JonathanReeve/trendhaikubot)
+**June 2014**: [Twitter Poet](https://github.com/JonathanReeve/trendhaikubot)
 
  - In collaboration with mathematician [Rachel Levanger](http://rachellevanger.com/), designed a Twitter bot that generates poems based on trending Twitter topics in the styles of 20th century poets
 
@@ -178,6 +180,7 @@ Digital Projects
  - [Featured resource in _Digital Humanities Now_](http://www.digitalhumanitiesnow.org/2015/07/resource-annotags-a-decentralized-textual-annotation-protocol/), July 2015. 
 
 **Sept. 2013 - Present**: [The Macro-Etymological Analyzer](http://jonreeve.com/etym)
+
  - [Featured](http://www.tapor.ca/?id=470) in the [Text Analysis Portal for Research](http://www.tapor.ca/), 2015. 
  - Listed in Alain Liu's directory of Digital Humanities Tools
  - Featured in the [Digital Research Tools](http://www.dirtdirectory.org/) (DiRT) directory, 2015.  
@@ -195,6 +198,6 @@ Digital Projects
 Affiliations and Professional Activities
 ========================================
 
- * Reviewer, [Literary and Linguistic Computing](http://oxfordjournals.org/our_journals/litlin)
- * Member, [Experimental Methods in the Humanities Group](http://xpmethod.github.io/) 
+ * Reviewer, [_Digital Scholarship in the Humanities_](http://dsh.oxfordjournals.org/), Oxford University Press
+ * Member, [Experimental Methods in the Humanities Group](http://xpmethod.github.io/), Columbia University
  * Member of professional organizations: Modern Language Association; Association for Computers in the Humanities; Humanities, Arts, and Sciences Advanced Collaboratory 
