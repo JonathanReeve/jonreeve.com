@@ -94,13 +94,13 @@ Languages and Technical Skills
 Selected Publications and Presentations
 =======================================
 
-**Forthcoming** ["A Macro-Etymological Analysis of James Joyce's _A Portrait of the Artist as a Young Man"](http://www.jonreeve.com/2015/05/macroetymology-of-portrait-paper), _Reading Modernism with Machines_. 
+**Forthcoming** ["A Macro-Etymological Analysis of James Joyce's _A Portrait of the Artist as a Young Man"](http://www.jonreeve.com/2015/05/macroetymology-of-portrait-paper), _Reading Modernism with Machines_
 
 **March 2015** ["Imperial Voices": a Stylometric Approach to the Study of Social Class among Shakespearean Characters](http://jonreeve.com/2015/03/imperial-voices/)
 
-  * [Presentation](http://jonreeve.com/presentations/cbad/#/imperial-voices) at [Computer-Based Analysis of Drama](http://comedy.hypotheses.org/12) workshop, Bavarian Academy of Sciences and Humanities
+  * [Presentation](http://jonreeve.com/presentations/cbad/#/imperial-voices) at [Computer-Based Analysis of Drama](http://comedy.hypotheses.org/12) workshop, Bavarian Academy of Sciences and Humanities, Munich
 
-**June 2015** "Installing Omeka Using the Command Line" 
+**June 2015** "Installing Omeka" 
 
  * Forthcoming article for [_The Programming Historian_](http://programminghistorian.org/) 
 
@@ -201,11 +201,3 @@ Affiliations and Professional Activities
  * Reviewer, [Literary and Linguistic Computing](http://oxfordjournals.org/our_journals/litlin)
  * Member, [Experimental Methods in the Humanities Group](http://xpmethod.github.io/) 
  * Member of professional organizations: Modern Language Association; Association for Computers in the Humanities; Humanities, Arts, and Sciences Advanced Collaboratory 
-
-
-Miscellaneous Activities
-========================
-
- * Keyboardist in the rock band Your 33 Black Angels
- * Organizer, Book Thug Nation reading series, 2011-12
- * Accomplished rock climber, level 5.12a
