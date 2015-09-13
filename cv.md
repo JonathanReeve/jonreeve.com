@@ -27,12 +27,6 @@ Positions
  * Rewrote [cbox-auth](https://github.com/mlaa/cbox-auth), the authentication system of the _MLA Commons_, to interface with the MLA member database
  * Designed [a WordPress plugin for visualizing patterns of disciplinarity](https://github.com/mlaa/bp-group-statistics) between _MLA Commons_ interest groups
 
-<!--Dec. '13 - April '14 [The Cryptocurrency Analytics Company](http://cryptocurrencyanalytics.com) Programmer-->
-
-<!---   Designed and implemented a Django webapp for client account management-->
-<!---   Designed database model in Django and PostgreSQL-->
-<!---   Contributed new features for a virtual currency trading engine in Python-->
-
 **June '12 - January '15** New York University, History Department: Web Developer
 
  * Developed [a customization engine](https://github.com/JonathanReeve/customeka) for the [Omeka content management platform](http://omeka.org)
