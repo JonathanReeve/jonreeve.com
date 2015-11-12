@@ -116,10 +116,6 @@ Selected Publications and Presentations
 
  * Presented at [Humanities, Arts, Science, and Technology Advanced Collaboratory, Toronto](http://hastac2013.org/schedule-2/jonathan-reeve%20)
 
-**Oct. 2012** "Elementaire, a Customizable Omeka Theme"
-
- * Presented at [The Humanities and Technology Camp](http://newyork2012.thatcamp.org/)
-
 **2013** Articles in [*The Manifesto in Literature*](http://www.cengage.com/search/productOverview.do;jsessionid=4FD757A6BD2DD6A4F5D0D81734BF2911?N=197&Ntk=P_EPI&Ntt=315361985178615732812460845631655972971&Ntx=mode+matchallpartial), Gale Cengage, Publisher; Thomas Riggs & Co, Editors. 
 
  * "Richard Stallman: GNU Manifesto" (vol. 3, 355-7)
@@ -128,6 +124,10 @@ Selected Publications and Presentations
  * "Anselme Bellegarrigue: Anarchist Manifesto" (vol 1, 175-8)
  * "Emma Goldman: Anarchism, What it Really Stands For" (vol. 2, 273-5)
  * "Rosa Luxemburg: Spartacus Manifesto" (vol. 2, 339-41)
+
+**Oct. 2012** "Elementaire, a Customizable Omeka Theme"
+
+ * Presented at [The Humanities and Technology Camp](http://newyork2012.thatcamp.org/)
 
 **Dec. 2011** *[The Art of Good Behavior](http://jonreeve.com/behaviour)*, a digital literary archive in TEI XML of a 19th-century etiquette manual
 
