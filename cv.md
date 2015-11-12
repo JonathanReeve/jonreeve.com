@@ -42,6 +42,14 @@ Positions
  * Authored six articles for the 2013 reference volume [*The Manifesto in Literature*](http://www.thomasriggs.net/pages/content/index.asp?PageID=158):
     - Richard Stallman's "The GNU Manifesto," John Barlow's "A Declaration of the Independence of Cyberspace," and several others
 
+Freelance Clients
+=================
+
+**Oct '15 - Present** DHBox
+
+**May '15 - Oct. 15** Greenwich Village Society for Historic Preservation
+
+
 Teaching Positions
 ==================
 
@@ -112,14 +120,14 @@ Selected Publications and Presentations
 
  * Presented at [The Humanities and Technology Camp](http://newyork2012.thatcamp.org/)
 
-**Aug. 2012** Articles in [*The Manifesto in Literature*](http://www.cengage.com/search/productOverview.do;jsessionid=4FD757A6BD2DD6A4F5D0D81734BF2911?N=197&Ntk=P_EPI&Ntt=315361985178615732812460845631655972971&Ntx=mode+matchallpartial), Thomas Riggs & Company
+**2013** Articles in [*The Manifesto in Literature*](http://www.cengage.com/search/productOverview.do;jsessionid=4FD757A6BD2DD6A4F5D0D81734BF2911?N=197&Ntk=P_EPI&Ntt=315361985178615732812460845631655972971&Ntx=mode+matchallpartial), Gale Cengage, Publisher; Thomas Riggs & Co, Editors. 
 
- * "Richard Stallman: The GNU Manifesto" 
- * "John Perry Barlow: A Declaration of the Independence of Cyberspace" 
- * "Huey Newton: The Black Panther Party Platform" 
- * "Anselme Bellegarrigue: Anarchist Manifesto" 
- * "Emma Goldman: Anarchism, What it Really Stands For" 
- * "Rosa Luxemburg: The Spartacus Manifesto." 
+ * "Richard Stallman: GNU Manifesto" (vol. 3, 355-7)
+ * "John Perry Barlow: A Declaration of the Independence of Cyberspace" (vol. 3, 349-51)
+ * "Huey Newton: The Black Panther Party Platform" (vol. 3, 269-72)
+ * "Anselme Bellegarrigue: Anarchist Manifesto" (vol 1, 175-8)
+ * "Emma Goldman: Anarchism, What it Really Stands For" (vol. 2, 273-5)
+ * "Rosa Luxemburg: Spartacus Manifesto" (vol. 2, 339-41)
 
 **Dec. 2011** *[The Art of Good Behavior](http://jonreeve.com/behaviour)*, a digital literary archive in TEI XML of a 19th-century etiquette manual
 
