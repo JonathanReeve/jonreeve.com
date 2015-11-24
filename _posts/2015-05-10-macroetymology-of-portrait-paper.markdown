@@ -27,7 +27,7 @@ The works of James Joyce are ideal for macro-etymological analysis.
 Joyce was famously multilingual, and many see his novels as a crescendo
 of linguistic experiments. In the words of Laurent Milesi, "Joyce's
 *oeuvre* is best seen as constantly trying to inform an evolutive
-linguistic poetics" <span class="citation">(1)</span>. *Finnegan's
+linguistic poetics" <span class="citation">(1)</span>. *Finnegans
 Wake*, the culmination of his career in literary experimentation, is
 arguably unparalleled in its paranomasia and polysemy—in its
 composition, Joyce employed word roots from forty languages. But this
@@ -567,7 +567,7 @@ neologisms, while others are portmanteau words or unhyphenated compound
 words.
 
 While much critical attention has been paid to the neologisms in
-*Finnegan's Wake*, since they are undoubtedly its distinctive property,
+*Finnegans Wake*, since they are undoubtedly its distinctive property,
 not much has been discussed regarding *Portrait*, even though at least
 one word, *pandybat* has its first OED citation in the novel. Regarding
 Joyce's work as a whole, however, Katie Wales identifies two neologistic
