@@ -45,10 +45,13 @@ Positions
 Freelance Clients
 =================
 
-**Oct '15 - Present** DHBox
+**Nov. '15 - Present** DHBox
+ 
+ * Developing a textual corpus downloader. 
 
-**May '15 - Oct. 15** Greenwich Village Society for Historic Preservation
-
+**May '15 - Oct. '15** Greenwich Village Society for Historic Preservation
+ 
+ * Developed the [Greenwich Village Society for Historic Preservation Image Archive](http://archive.gvshp.org), an Omeka-based image archive. 
 
 Teaching Positions
 ==================
@@ -150,13 +153,15 @@ Selected Publications and Presentations
 Digital Projects
 ================
 
-**Aug. 2015 - Present**: [Git-Lit: An Open Source Project to Parse, Version Control, and Publish British Library ALTO XML Documents](https://github.com/JonathanReeve/git-lit)
+**Aug. 2015 - Present**: [Git-Lit: An Open Source Project to Parse, Version Control, and Publish ~50,000 British Library Electronic Books](https://github.com/JonathanReeve/git-lit)
 
- - Honorable mention, [2015 NYCDH Graduate Student Digital Project Awards](http://nycdh.org/nycdh-graduate-student-digital-project-awards-2015/) 
+ - Nov. 2015: [Presented](http://jonreeve.com/presentations/media-res2/) at [Media Res 2, New York University](https://digitalfellows.commons.gc.cuny.edu/2015/11/12/media-res-2-nyc-dh-lightning-talks/) 
+ - Sept. 2015: Honorable mention, [2015 NYCDH Graduate Student Digital Project Awards](http://nycdh.org/nycdh-graduate-student-digital-project-awards-2015/) 
 
 **Jul. 2015 - Present**: [A Portrait of the Artist as a TEI XML File: an Open, Collaborative Scholarly Edition of James Joyce's _A Portrait of the Artist as a Young Man_](https://github.com/JonathanReeve/corpus-joyce-portrait-TEI)
 
  - A collaborative TEI XML scholarly edition of James Joyce's novel _A Portrait of the Artist as a Young Man_, using rich markup. Generated from a text recently released from the Oxford Text Archive. 
+ - Nov. 2015, [Presented](http://jonreeve.com/presentations/digital-editions/) at Digital Editions Making Encounter, Group for Experimental Methods in the Humanities, Columbia University
 
 **Dec. 2013 - Sept. 2015**: Contributor to the open-source projects: 
 
