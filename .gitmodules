@@ -4,3 +4,6 @@
 [submodule "assets/js/annotags"]
 	path = assets/js/annotags
 	url = https://github.com/JonathanReeve/annotags
+[submodule "projects/garden-party"]
+	path = projects/garden-party
+	url = https://github.com/JonathanReeve/corpus-mansfield-garden-party-TEI
