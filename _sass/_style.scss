@@ -1271,6 +1271,13 @@ img.mfp-img {
   cursor: pointer;
 }
 
+p span.callout { 
+	display: block;
+	font-size: 2em; 
+	text-align: center; 
+} 
+
+
 @media screen and (max-width: 800px) and (orientation: landscape), screen and (max-height: 300px) {
   /**
        * Remove all paddings around the image on small screen
