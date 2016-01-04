@@ -386,15 +386,7 @@ df = pd.DataFrame(CantosReader().stanzaLengths)[:4]
 df.plot(kind='bar', figsize=(16,8), alpha=0.5)
 ```
 
-
-
-
-    <matplotlib.axes._subplots.AxesSubplot at 0x7fd187391cf8>
-
-
-
-
-![png](cantos-generator_files/cantos-generator_11_1.png)
+![Stanza Lengths](/images/cantos-generator/stanza-lengths.png)
 
 
 Judging from the number of stanza divisions and the variation in the lengths of the stanzas, Cantos I-IV appear to alternate between simple and complex line grouping systems. With this information, it might be best to design individual canto writer classes for each canto, rather than try to design a canto-agnostic generator.  
@@ -407,16 +399,7 @@ df = pd.DataFrame(CantosReader().lineLengths)
 df.plot(kind='bar', figsize=(16,8), alpha=0.5)
 ```
 
-
-
-
-    <matplotlib.axes._subplots.AxesSubplot at 0x7fd186d3d5f8>
-
-
-
-
-![png](cantos-generator_files/cantos-generator_13_1.png)
-
+![Line Lengths](/images/cantos-generator/line-lengths.png)
 
 Here again, the variation is immense, further solidifying the idea that individual subclasses need to be written for each canto. However, since it'd be best not to repeat code for a particular canto, it will be useful to write a parent class that will serve as a toolbox. The following class contains "helper" functions which will be used by the canto subclasses `CantoI`, `CantoII`, and so on.
 
