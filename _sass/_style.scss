@@ -21,6 +21,12 @@ body {
   line-height: 1;
 }
 
+.notepad-post-content table { 
+	/* fix overflowing windows */
+	max-width: 56.25rem; 
+	margin: 0 auto;
+} 
+
 h1, h2, h3, h4, h5, h6 {
   font-family: "Montserrat", sans-serif;
 }
