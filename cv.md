@@ -42,8 +42,8 @@ Positions
  * Authored six articles for the 2013 reference volume [*The Manifesto in Literature*](http://www.thomasriggs.net/pages/content/index.asp?PageID=158):
     - Richard Stallman's "The GNU Manifesto," John Barlow's "A Declaration of the Independence of Cyberspace," and several others
 
-Freelance Clients
-=================
+Freelance
+=========
 
 **Nov. '15 - Present** DHBox
  
@@ -53,8 +53,16 @@ Freelance Clients
  
  * Developed the [Greenwich Village Society for Historic Preservation Image Archive](http://archive.gvshp.org), an Omeka-based image archive. 
 
-Teaching Positions
-==================
+Teaching
+========
+
+**Apr. '16** "An Introduction to Version Control with Git"
+
+ * Workshop at the 2016 meeting of the Society for Textual Scholarship
+
+**Feb. '16** NYCDH Week Workshop: "Text Editing with Vim"
+
+ * Workshop at NYCDH Week 2016
 
 **Sept. '12 – Dec. '12** New York University, Computer Science Department: Teaching Assistant
 
@@ -99,15 +107,15 @@ Languages and Technical Skills
 Selected Publications and Presentations
 =======================================
 
-**Forthcoming** ["A Macro-Etymological Analysis of James Joyce's _A Portrait of the Artist as a Young Man_"](http://www.jonreeve.com/2015/05/macroetymology-of-portrait-paper), _Reading Modernism with Machines_
+**Forthcoming** ["A Macro-Etymological Analysis of James Joyce's _A Portrait of the Artist as a Young Man_"](http://www.jonreeve.com/2015/05/macroetymology-of-portrait-paper), _Reading Modernism with Machines_, Palgrave Macmillan, 2016.
+
+**Forthcoming** "Installing Omeka" 
+
+ * Forthcoming article for [_The Programming Historian_](http://programminghistorian.org/) 
 
 **March 2015** ["Imperial Voices": a Stylometric Approach to the Study of Social Class among Shakespearean Characters](http://jonreeve.com/2015/03/imperial-voices/)
 
   * [Presentation](http://jonreeve.com/presentations/cbad/#/imperial-voices) at [Computer-Based Analysis of Drama](http://comedy.hypotheses.org/12) workshop, Bavarian Academy of Sciences and Humanities, Munich
-
-**June 2015** "Installing Omeka" 
-
- * Forthcoming article for [_The Programming Historian_](http://programminghistorian.org/) 
 
 **July 2014** "Macro-Etymological Textual Analysis: a Computational Application of Language History to Literary Criticism"
 
@@ -152,6 +160,9 @@ Selected Publications and Presentations
 
 Digital Projects
 ================
+
+**Jan 2016**: [Infinite Library](https://hackdash.org/projects/5692699962b2cc5d050af709), a universal web-based ereader that connects to GitHub (Project GITenberg) to search, save, and render books in the browser.
+ - A collaborative project conceived at the [Codex Hackathon 2016](http://codexhackathon.com/) at the [MIT Media Lab](http://media.mit.edu/)
 
 **Aug. 2015 - Present**: [Git-Lit: An Open Source Project to Parse, Version Control, and Publish ~50,000 British Library Electronic Books](https://github.com/JonathanReeve/git-lit)
 
