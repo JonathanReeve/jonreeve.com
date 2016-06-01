@@ -1,8 +1,8 @@
 ---
 layout: post
-title: 'Detecting Literary Chiaroscuro in Eliot, Dickens, and other Victorian Novelists' 
-category: Digital Humanities
-tags: wordnet python nltk 
+title: 'Detecting Literary Chiaroscuro in Eliot, Dickens, and other Victorian Novelists'
+category: digital humanities
+tags: wordnet python nltk
 ---
 
 In an 1873 review in the *Galaxy*, Henry James criticizes George Eliot's
@@ -24,7 +24,7 @@ chiaroscuro to heighten dramatic intensity, Eliot uses it as a
 preliminary artistic maneuver towards a more deliberately subtle
 mezzotint.
 
-[A computational analysis of light and dark words in these novels](http://nbviewer.ipython.org/gist/JonathanReeve/377e13c406dd4588e58e) 
+[A computational analysis of light and dark words in these novels](http://nbviewer.ipython.org/gist/JonathanReeve/377e13c406dd4588e58e)
 suggests, to whatever small degree these tropes may be quantified, Henry
 James might have been right that *Middlemarch* lacks “chiaroscuro,” at
 least in comparison to a small number of other Victorian novels. To test
@@ -544,4 +544,3 @@ Review* 51.3 (1943). Web. 23 November 2014.
 Stewart, Garrett. “Dickens and Language.” *Cambridge Companion to
 Charles Dickens*. Cambridge, UK: Cambridge University Press, 2001.
 136-151. Print.
-

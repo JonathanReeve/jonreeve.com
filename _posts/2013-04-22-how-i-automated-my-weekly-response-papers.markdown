@@ -1,7 +1,7 @@
 ---
 layout: post
 title: How I Automated My Weekly Response Papers
-category: Hacks
+category: hacks
 tags: productivity markdown pandoc mutt linux
 ---
 
@@ -50,4 +50,4 @@ Then, with mla.sty and mla-template.tex (above) in my working directory, I ran:
 ```sh
 pandoc response.md -o response.pdf --template=mla-template.tex && mutt -s "Response Paper" -a response.pdf my-prof@university.edu < email.txt
 ```
-Which converts it to LaTeX, applies the template, converts the .tex file to .pdf, attaches the PDF to an email with the body from email.txt, and emails it to my professor. What's cool is that once I’ve already run the command, it's in my BASH history, so all I have to do is write the response paper in markdown, then hit Ctrl+R in the shell and type the first few characters of “pandoc,” which autocompletes my command. 
+Which converts it to LaTeX, applies the template, converts the .tex file to .pdf, attaches the PDF to an email with the body from email.txt, and emails it to my professor. What's cool is that once I’ve already run the command, it's in my BASH history, so all I have to do is write the response paper in markdown, then hit Ctrl+R in the shell and type the first few characters of “pandoc,” which autocompletes my command.

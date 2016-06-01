@@ -9,10 +9,10 @@ description: "An archive of posts sorted by categories."
 ---
 
 {% assign cats = site.categories | sort %}
-{% for tag in cats %} 
+{% for tag in cats | downcase %}
   <h2 id="{{ tag[0] }}">{{ tag[0] | capitalize }}</h2>
   <ul class="post-list">
-    {% assign pages_list = tag[1] %}  
+    {% assign pages_list = tag[1] %}
     {% for post in pages_list %}
       {% if post.title != null %}
       {% if group == null or group == post.group %}

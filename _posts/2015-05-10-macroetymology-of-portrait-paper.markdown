@@ -2,10 +2,10 @@
 title: A Macro-Etymological Analysis of James Joyce's A Portrait of the Artist as a Young Man
 layout: post
 category: digital humanities
-tags: 
- - etymology 
+tags:
+ - etymology
  - joyce
- - paper 
+ - paper
 ---
 
 The English language is a palimpsest, bearing traces of the languages it
@@ -240,7 +240,7 @@ longest and only five-section chapter, the highest L scores for each
 chapter come in the first section. The final sections of each chapter
 are among the lowest in L scores.
 
-![Figure 4: Sections, L Scores](/images/portrait-chapter/sections-latinate.png)<span class="caption">Figure 4</span> 
+![Figure 4: Sections, L Scores](/images/portrait-chapter/sections-latinate.png)<span class="caption">Figure 4</span>
 
 Seen broadly, there is a pattern here suggestive of a what Riquelme
 calls a "structural rhythm"—a repeating sawtooth shape. A number of
@@ -595,7 +595,7 @@ Macro-Etymological Analyzer, the text was run through a command-line
 spell-checking program, and the results sorted, with this chain of Linux
 commands:
 
-``` 
+```
     cat portrait.txt | aspell -a | cut -d ' ' -f 2 | \
     grep -v '*' | sort | uniq > misspelled.txt
 ```
@@ -638,7 +638,7 @@ type/token ratio calculation, macro-etymological analysis might form a
 part of a greater textual analytic system that can inform and improve
 computational literary criticism.
 
-#Works Cited 
+#Works Cited
 
 Attridge, Derek. “‘Suck Was a Queer Word’: Language, Sex, and the
 Remainer in A Portrait of the Artist as a Young Man.” *Joyce Effects*.
@@ -781,5 +781,4 @@ Whittaker, Stephen. “Joyce and Skeat.” *James Joyce Quarterly* 24.2
     choice to use words in the Hellenic register.[↩](#fnref5)
 
 #Note
-This paper was prepared for submission to the forthcoming volume _Reading Modernism With Machines_. The source files may be found [in this GitHub repository](https://github.com/JonathanReeve/joyce-portrait-macroetymology), where you can also find a PDF version and a DOCX version. I very much welcome feedback in the comments below! 
-
+This paper was prepared for submission to the forthcoming volume _Reading Modernism With Machines_. The source files may be found [in this GitHub repository](https://github.com/JonathanReeve/joyce-portrait-macroetymology), where you can also find a PDF version and a DOCX version. I very much welcome feedback in the comments below!

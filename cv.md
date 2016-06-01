@@ -8,7 +8,7 @@ permalink: /cv/
 Education
 =========
 
-Sept. 2015 - Present: **PhD Student**, Columbia University 
+Sept. 2015 - Present: **PhD Student**, Columbia University
 
 Jan. 2014 **Master of Arts**, Humanities, New York University
 
@@ -34,7 +34,7 @@ Positions
 
 **June '12 - August '15** Margaret Sanger Papers Project: Programmer
 
- * Added functionality for searching mentioned entities to the [Margaret Sanger Papers Project Web Edition](http://www.nyu.edu/projects/sanger/webedition/app/documents/search.php) 
+ * Added functionality for searching mentioned entities to the [Margaret Sanger Papers Project Web Edition](http://www.nyu.edu/projects/sanger/webedition/app/documents/search.php)
  * Wrote [a statistical analysis page](http://www.nyu.edu/projects/sanger/webedition/app/documents/stats.php) to visualize textual trends from the Margaret Sanger Papers archives
 
 **July '12 - Sept. '12** Thomas Riggs & Company, Publishers: Research Writer
@@ -46,23 +46,30 @@ Freelance
 =========
 
 **Nov. '15 - Present** DHBox
- 
- * Developing a textual corpus downloader. 
+
+ * Developing a textual corpus downloader.
 
 **May '15 - Oct. '15** Greenwich Village Society for Historic Preservation
- 
- * Developed the [Greenwich Village Society for Historic Preservation Image Archive](http://archive.gvshp.org), an Omeka-based image archive. 
 
-Teaching
-========
+ * Developed the [Greenwich Village Society for Historic Preservation Image Archive](http://archive.gvshp.org), an Omeka-based image archive.
+
+Workshops
+=========
 
 **Apr. '16** "An Introduction to Version Control with Git"
 
- * Workshop at the 2016 meeting of the Society for Textual Scholarship
+ * Workshop at the [2016 meeting of the Society for Textual Scholarship](https://textualsociety.org/current-conference-program/)
+
+**Apr. ‘16** “An Introduction to Visualizing Text with Python”
+
+ * Workshop at Columbia University’s [Art of Data Visualization](http://library.columbia.edu/news/events/data-visualization.html) event
 
 **Feb. '16** NYCDH Week Workshop: "Text Editing with Vim"
 
- * Workshop at NYCDH Week 2016
+ * Workshop at [NYCDH Week 2016](http://dhweek.nycdh.org/)
+
+Teaching Positions
+==================
 
 **Sept. '12 – Dec. '12** New York University, Computer Science Department: Teaching Assistant
 
@@ -83,18 +90,18 @@ Teaching
 
 **Mar. '05 - Jan. '06** Missouri State University: Adjunct Instructor
 
- * Taught Reading and Writing to first- and second-year international students at MSU's branch campus in Dalian, China. 
+ * Taught Reading and Writing to first- and second-year international students at MSU's branch campus in Dalian, China.
 
 Languages and Technical Skills
 ==============================
-		
-**Languages**: PHP, Python, BASH/ZSH, jQuery, XSL. Working knowledge of: Ruby, Javascript
+
+**Languages**: Python, PHP, BASH/ZSH, jQuery, XSL. Working knowledge of: Ruby, Javascript
 
 **Markup Languages**: HTML, CSS, Sass, XML, TEI XML, LaTeX, Markdown
 
 **Frameworks, CMSs**: WordPress, BuddyPress, Commons in a Box, Omeka, Jekyll. Some experience with ZEND and Django
 
-**Databases**: MySQL, MariaDB, PostgreSQL 
+**Databases**: MySQL, MariaDB, PostgreSQL
 
 **Servers and OSs**: GNU/Linux LAMP and LEMP stacks, especially Ubuntu, Fedora, Arch, and Debian; Unix; MacOS
 
@@ -102,16 +109,37 @@ Languages and Technical Skills
 
 **Skills**: Web development, web design, computational text analysis, natural language processing, archival textual markup, database management, command-line scripting, version control, virtualization
 
-**Natural Languages**: English: native; French: advanced (Test de connaissance du français, Level 4); Mandarin Chinese: advanced; Irish, German, Italian: beginner
+**Natural Languages**: English: native; French: advanced (Test de connaissance du français, Level 4); Mandarin Chinese: advanced; Irish, German, Italian, Japanese: beginner
 
-Selected Publications and Presentations
-=======================================
+Publications
+============
 
 **Forthcoming** ["A Macro-Etymological Analysis of James Joyce's _A Portrait of the Artist as a Young Man_"](http://www.jonreeve.com/2015/05/macroetymology-of-portrait-paper), _Reading Modernism with Machines_, Palgrave Macmillan, 2016.
 
-**Forthcoming** "Installing Omeka" 
+**Forthcoming** "Installing Omeka"
 
- * Forthcoming article for [_The Programming Historian_](http://programminghistorian.org/) 
+ * Forthcoming article for [_The Programming Historian_](http://programminghistorian.org/)
+
+**2013** Articles in [*The Manifesto in Literature*](http://www.cengage.com/search/productOverview.do;jsessionid=4FD757A6BD2DD6A4F5D0D81734BF2911?N=197&Ntk=P_EPI&Ntt=315361985178615732812460845631655972971&Ntx=mode+matchallpartial), Gale Cengage, Publisher; Thomas Riggs & Co, Editors.
+
+ * "Richard Stallman: GNU Manifesto" (vol. 3, 355-7)
+ * "John Perry Barlow: A Declaration of the Independence of Cyberspace" (vol. 3, 349-51)
+ * "Huey Newton: The Black Panther Party Platform" (vol. 3, 269-72)
+ * "Anselme Bellegarrigue: Anarchist Manifesto" (vol 1, 175-8)
+ * "Emma Goldman: Anarchism, What it Really Stands For" (vol. 2, 273-5)
+ * "Rosa Luxemburg: Spartacus Manifesto" (vol. 2, 339-41)
+
+**2009-2011** Poems anthologized:
+
+ * 2011 *A Gathering of the Tribes*
+ * 2009 *Arsenic Lobster Anthology*
+
+Conference Presentations
+========================
+
+**April 2016** ["Applications of Distributed Version Control Technology to the Creation of Digital Scholarly Editions"](http://jonreeve.com/presentations/sts2016/)
+
+ * Paper presented at the annual meeting of the Society for Textual Scholarship, Ottawa
 
 **March 2015** ["Imperial Voices": a Stylometric Approach to the Study of Social Class among Shakespearean Characters](http://jonreeve.com/2015/03/imperial-voices/)
 
@@ -120,21 +148,12 @@ Selected Publications and Presentations
 **July 2014** "Macro-Etymological Textual Analysis: a Computational Application of Language History to Literary Criticism"
 
  * Presented short paper, [Digital Humanities 2014](http://dh2014.org/), Lausanne, Switzerland
- * Winner, New York University [Hirschhorn Thesis Award](https://draperprogram.wordpress.com/2014/06/12/congratulations-to-our-hirschhorn-award-nominees-and-winner/) 
- * Winner, Association of Digital Humanities Organizations student bursary 
+ * Winner, New York University [Hirschhorn Thesis Award](https://draperprogram.wordpress.com/2014/06/12/congratulations-to-our-hirschhorn-award-nominees-and-winner/)
+ * Winner, Association of Digital Humanities Organizations student bursary
 
 **April 2013** "Toward a Social Literary Annotation Engine"
 
  * Presented at [Humanities, Arts, Science, and Technology Advanced Collaboratory, Toronto](http://hastac2013.org/schedule-2/jonathan-reeve%20)
-
-**2013** Articles in [*The Manifesto in Literature*](http://www.cengage.com/search/productOverview.do;jsessionid=4FD757A6BD2DD6A4F5D0D81734BF2911?N=197&Ntk=P_EPI&Ntt=315361985178615732812460845631655972971&Ntx=mode+matchallpartial), Gale Cengage, Publisher; Thomas Riggs & Co, Editors. 
-
- * "Richard Stallman: GNU Manifesto" (vol. 3, 355-7)
- * "John Perry Barlow: A Declaration of the Independence of Cyberspace" (vol. 3, 349-51)
- * "Huey Newton: The Black Panther Party Platform" (vol. 3, 269-72)
- * "Anselme Bellegarrigue: Anarchist Manifesto" (vol 1, 175-8)
- * "Emma Goldman: Anarchism, What it Really Stands For" (vol. 2, 273-5)
- * "Rosa Luxemburg: Spartacus Manifesto" (vol. 2, 339-41)
 
 **Oct. 2012** "Elementaire, a Customizable Omeka Theme"
 
@@ -153,40 +172,37 @@ Selected Publications and Presentations
 
  * Paper delivered at "Deconstructing the Gods," Graduate English Conference, City University of New York, Brooklyn College
 
-**2009-2011** Poems anthologized:
-
- * 2011 *A Gathering of the Tribes*
- * 2009 *Arsenic Lobster Anthology*
-
 Digital Projects
 ================
 
 **Jan 2016**: [Infinite Library](https://hackdash.org/projects/5692699962b2cc5d050af709), a universal web-based ereader that connects to GitHub (Project GITenberg) to search, save, and render books in the browser.
+
  - A collaborative project conceived at the [Codex Hackathon 2016](http://codexhackathon.com/) at the [MIT Media Lab](http://media.mit.edu/)
 
 **Aug. 2015 - Present**: [Git-Lit: An Open Source Project to Parse, Version Control, and Publish ~50,000 British Library Electronic Books](https://github.com/JonathanReeve/git-lit)
 
- - Nov. 2015: [Presented](http://jonreeve.com/presentations/media-res2/) at [Media Res 2, New York University](https://digitalfellows.commons.gc.cuny.edu/2015/11/12/media-res-2-nyc-dh-lightning-talks/) 
- - Sept. 2015: Honorable mention, [2015 NYCDH Graduate Student Digital Project Awards](http://nycdh.org/nycdh-graduate-student-digital-project-awards-2015/) 
+ - Nov. 2015: [Presented](http://jonreeve.com/presentations/media-res2/) at [Media Res 2, New York University](https://digitalfellows.commons.gc.cuny.edu/2015/11/12/media-res-2-nyc-dh-lightning-talks/)
+ - Sept. 2015: Honorable mention, [2015 NYCDH Graduate Student Digital Project Awards](http://nycdh.org/nycdh-graduate-student-digital-project-awards-2015/)
+ - Apr. 2016: Recipient of Association of Digital Humanities Organizations student bursary
 
 **Jul. 2015 - Present**: [A Portrait of the Artist as a TEI XML File: an Open, Collaborative Scholarly Edition of James Joyce's _A Portrait of the Artist as a Young Man_](https://github.com/JonathanReeve/corpus-joyce-portrait-TEI)
 
- - A collaborative TEI XML scholarly edition of James Joyce's novel _A Portrait of the Artist as a Young Man_, using rich markup. Generated from a text recently released from the Oxford Text Archive. 
+ - A collaborative TEI XML scholarly edition of James Joyce's novel _A Portrait of the Artist as a Young Man_, using rich markup. Generated from a text recently released from the Oxford Text Archive.
  - Nov. 2015, [Presented](http://jonreeve.com/presentations/digital-editions/) at Digital Editions Making Encounter, Group for Experimental Methods in the Humanities, Columbia University
 
-**Dec. 2013 - Sept. 2015**: Contributor to the open-source projects: 
+**Dec. 2013 - Sept. 2015**: Contributor to the open-source projects:
 
- - [Buddypress](http://buddypress.org/): social networking WordPress plugin. Over 2.2 million downloads 
+ - [Buddypress](http://buddypress.org/): social networking WordPress plugin. Over 2.2 million downloads
  - [Buddypress Docs](https://wordpress.org/plugins/buddypress-docs/): collaborative authoring tool for WordPress. Over 80,000 downloads
  - [Commons in a Box](http://commonsinabox.org/): social networking software suite, used by CUNY, SUNY, and many others. Over 12,000 downloads
  - [CAC-Advanced-Profiles](https://github.com/cuny-academic-commons/cac-advanced-profiles): engine for member portfolios used by the CUNY Academic Commons
  - [CBOX-MLA](https://github.com/mlaa/cbox-mla), the WordPress theme and customization layer that powers the [MLA Commons](https://commons.mla.org)
  - [CBOX-Auth](https://github.com/mlaa/cbox-auth), the authentication system for the _MLA Commons_.  
 
-**July 2014**: [Open Syllabus Project](http://opensyllabusproject.org/) 
+**July 2014**: [Open Syllabus Project](http://opensyllabusproject.org/)
 
  - Developed categorizers for determining the subject of scraped syllabi
- - Performed collocations analyses by subject 
+ - Performed collocations analyses by subject
 
 **June 2014**: [Twitter Poet](https://github.com/JonathanReeve/trendhaikubot)
 
@@ -196,18 +212,19 @@ Digital Projects
 
  - Designed a protocol for a literary metadata hashtag that provides the ability to livetweet books, electronic documents, and other texts
  - [Web app calculator](/projects/annotags) released September 2014
- - Since October 2014, produced in collaboration with the [Group for Experimental Methods in the Humanities](http://xpmethod.github.io/) 
+ - Since October 2014, produced in collaboration with the [Group for Experimental Methods in the Humanities](http://xpmethod.github.io/)
  - Nominated for [a 2014 DH Award for Best DH Tool](http://dhawards.org/dhawards2014/results/)
  - Implemented a [bookmarklet for creating Annotags from website bibliographic data](http://jonreeve.com/2015/04/a-bookmarklet-for-creating-annotags), April 2015
  - Demonstrated prototypes, [I Annotate 2015](http://iannotate.org/) conference, May 2015
  - [Presented](http://www.jonreeve.com/presentations/keydh2015) at Keystone Digital Humanities conference, July 2015
- - [Featured resource in _Digital Humanities Now_](http://www.digitalhumanitiesnow.org/2015/07/resource-annotags-a-decentralized-textual-annotation-protocol/), July 2015. 
+ - [Featured resource in _Digital Humanities Now_](http://www.digitalhumanitiesnow.org/2015/07/resource-annotags-a-decentralized-textual-annotation-protocol/), July 2015.
 
 **Sept. 2013 - Present**: [The Macro-Etymological Analyzer](http://jonreeve.com/etym)
 
- - [Featured](http://www.tapor.ca/?id=470) in the [Text Analysis Portal for Research](http://www.tapor.ca/), 2015. 
+ - [Featured](http://www.tapor.ca/?id=470) in the [Text Analysis Portal for Research](http://www.tapor.ca/), 2015.
  - Listed in Alain Liu's directory of Digital Humanities Tools
  - Featured in the [Digital Research Tools](http://www.dirtdirectory.org/) (DiRT) directory, 2015.  
+ - Released as [a command-line program in the Python Package Archive](https://pypi.python.org/pypi/macroetym), 2016
 
 **Nov. 2013** - [The Waves: a TEI XML Edition](/projects/waves-tei/waves-tei.xml)
 
@@ -222,6 +239,7 @@ Digital Projects
 Affiliations and Professional Activities
 ========================================
 
- * Reviewer, [_Digital Scholarship in the Humanities_](http://dsh.oxfordjournals.org/), Oxford University Press
- * Member, [Experimental Methods in the Humanities Group](http://xpmethod.github.io/), Columbia University
- * Member of professional organizations: Modern Language Association; Association for Computers in the Humanities; Humanities, Arts, and Sciences Advanced Collaboratory 
+ * Reviewer, [_Digital Scholarship in the Humanities_](http://dsh.oxfordjournals.org/) (formerly _Literary and Linguistic Computing_), Oxford University Press
+ * Editor-At-Large, [Digital Humanities Now](http://digitalhumanitiesnow.org/)
+ * Active member, [Experimental Methods in the Humanities Group](http://xpmethod.github.io/), Columbia University
+ * Member of professional organizations: Modern Language Association; Association for Computers in the Humanities; Society for Textual Scholarship; Humanities, Arts, and Sciences Advanced Collaboratory
