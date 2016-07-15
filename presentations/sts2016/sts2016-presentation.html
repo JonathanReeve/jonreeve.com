@@ -1,0 +1,326 @@
+<!doctype html>
+
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=1024" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <title>impress.js | presentation tool based on the power of CSS3 transforms and transitions in modern browsers | by Bartek Szopka @bartaz</title>
+    
+    <meta name="description" content="impress.js is a presentation tool based on the power of CSS3 transforms and transitions in modern browsers and inspired by the idea behind prezi.com." />
+    <meta name="author" content="Bartek Szopka" />
+
+    <link href="impress.js/css/impress-demo.css" rel="stylesheet" />
+
+    <link href='https://fonts.googleapis.com/css?family=Lato|Roboto+Slab' rel='stylesheet' type='text/css'>
+
+    <style> 
+	h1, h2 { 
+		font-family: 'Roboto Slab', serif;
+		text-align: center;
+	} 
+	h1 { 
+		font-size: 1.5em; 
+		line-height: 1.2em;
+		color: red; 
+		margin-bottom: 0.3em;
+	} 
+	h2 { 
+		font-size: 1em; 
+		color: black; 
+	} 
+	p, li { 
+		font-family: 'Lato', sans-serif;
+	}
+
+	li { 
+		list-style: outside; 
+		margin-left: 1em;
+	} 
+	ul ul li { 
+		margin-left: 2em; 
+		list-style-type: circle; 
+	} 
+	figure { 
+		text-align: center; 
+	} 
+	figure img {
+		width: 100%; 
+	} 
+	.figure { 
+		width: 60%; 
+	} 
+	code { 
+		font-family: monospace; 
+		color: #333; 
+		font-size: 0.8em; 
+	} 
+    </style>
+
+</head>
+
+<body class="impress-not-supported">
+
+<div class="fallback-message">
+    <p>Your browser <b>doesn't support the features required</b> by impress.js, so you are presented with a simplified version of this presentation.</p>
+    <p>For the best experience please use the latest <b>Chrome</b>, <b>Safari</b> or <b>Firefox</b> browser.</p>
+</div>
+
+<div id="impress">
+
+<section id="overview" class="level1 step" data-scale="10">
+<h1></h1>
+</section>
+<section id="section" class="level1 step" data-x="-4000" data-y="2000" data-scale="8">
+<h1></h1>
+<figure>
+<img src="branching-illustration.png" />
+</figure>
+</section>
+<section id="applications-of-distributed-version-control-technology-to-the-creation-of-digital-scholarly-editions" class="level1 step" data-x="-2000" data-y="-1000" data-scale="7">
+<h1>Applications of Distributed Version Control Technology to the Creation of Digital Scholarly Editions</h1>
+</section>
+<section id="section-1" class="level1 step" data-x="-2000" data-y="1200" data-scale="5">
+<h1></h1>
+<section id="jonathan-reeve" class="level2">
+<h2>Jonathan Reeve</h2>
+</section>
+<section id="group-for-experimental-methods-in-the-humanities" class="level2">
+<h2>Group for Experimental Methods in the Humanities</h2>
+</section>
+<section id="columbia-university" class="level2">
+<h2>Columbia University</h2>
+</section>
+</section>
+<section id="about" class="level1 step" data-x="3500" data-y="-1000" data-scale="5">
+<h1>About</h1>
+</section>
+<section id="what-is-version-control-and-why-should-i-care" class="level1 step" data-x="2000">
+<h1>What is version control, and why should I care?</h1>
+<p>As textual scholars, we care about:</p>
+<ul>
+<li>textual difference</li>
+<li>versions of texts</li>
+<li>collaborative editing</li>
+<li>semantic metadata</li>
+</ul>
+<p>So do version control systems! It’s a perfect match!</p>
+</section>
+<section id="problems-with-electronic-texts" class="level1 step" data-x="2000" data-y="1000">
+<h1>Problems with Electronic Texts</h1>
+<ul>
+<li>Difficult to edit</li>
+<li>Editorial histories often obscure</li>
+<li>Stuck in the hands of the few</li>
+</ul>
+</section>
+<section id="version-control-systems" class="level1 step" data-x="2000" data-y="2000">
+<h1>Version control systems:</h1>
+<ul>
+<li>Store every version of a document / project</li>
+<li>Store metadata about every edit: who made the change, when the change happened, what changed</li>
+<li>Facilitate collaboration, analysis, version management</li>
+</ul>
+</section>
+<section id="about-version-control-systems" class="level1 step" data-x="2000" data-y="3000">
+<h1>About version control systems:</h1>
+<ul>
+<li>Git, mercurial, svn, bazaar</li>
+<li>Open-source, community-owned</li>
+<li>Some centralized, some decentralized</li>
+<li>Used very widely by coders (over 10 million GitHub repositories)</li>
+<li>Starting to be used by humanists</li>
+</ul>
+</section>
+<section id="version-control-is-useful" class="level1 step" data-x="3000">
+<h1>Version Control is Useful</h1>
+<ul>
+<li>Writing papers</li>
+<li>Collaborating</li>
+<li>Text collation</li>
+<li>Analyzing differences between texts</li>
+</ul>
+</section>
+<section id="features" class="level1 step" data-x="3000" data-y="1000">
+<h1>Features:</h1>
+<ul>
+<li>Temporarily reset your project to an earlier version:</li>
+</ul>
+<p><code>git checkout &lt;change number&gt;</code></p>
+<ul>
+<li>Revert a single change:</li>
+</ul>
+<p><code>git revert &lt;change number&gt;</code></p>
+<ul>
+<li>Combine changesets from two versions:</li>
+</ul>
+<p><code>git merge &lt;branch name&gt;</code></p>
+</section>
+<section id="version-control-is-efficient" class="level1 step" data-x="4000">
+<h1>Version Control is Efficient</h1>
+<p>Fruit v1.0: apples, oranges, bananas Fruit v1.1: apples, oranges, bananas, pineapples</p>
+</section>
+<section id="ordinary-filesystem" class="level1 step" data-x="4000" data-y="1000">
+<h1>Ordinary filesystem:</h1>
+<ul>
+<li>Fruit1.0.txt, fruit1.1.txt</li>
+<li>Contains redundant copies of apples, oranges, bananas.</li>
+</ul>
+</section>
+<section id="section-2" class="level1 step" data-x="4000" data-y="2000">
+<h1></h1>
+<figure>
+<img src="phd101212s.gif" class="figure" />
+</figure>
+</section>
+<section id="version-control-system" class="level1 step" data-x="4000" data-y="3000">
+<h1>Version control system</h1>
+<p>Git database contains parts:</p>
+<ul>
+<li>A: apples, oranges, bananas</li>
+<li>B: pineapples</li>
+</ul>
+<p>Versions are compiled from these parts:</p>
+<ul>
+<li>v1.0: part A</li>
+<li>v1.1: parts A+B</li>
+</ul>
+</section>
+<section id="distributed-version-control" class="level1 step" data-x="5000">
+<h1>Distributed Version Control</h1>
+<figure>
+<img src="distributed.png" class="figure" />
+</figure>
+</section>
+<section id="section-3" class="level1 step" data-x="5000" data-y="1000">
+<h1></h1>
+<ul>
+<li>Doesn’t privilege a central text, repository, user, or computer</li>
+<li>Anyone can pull changes from anyone</li>
+<li>Democratization of scholarly editing?</li>
+</ul>
+</section>
+<section id="section-4" class="level1 step" data-x="5000" data-y="2000">
+<h1></h1>
+<figure>
+<img src="stars.jpg" />
+</figure>
+</section>
+<section id="version-control-cloud-services" class="level1 step" data-x="5000" data-y="3000">
+<h1>Version Control Cloud Services</h1>
+<ul>
+<li>GitHub: a place for git repositories</li>
+<li>Also BitBucket, GitLab, etc.</li>
+<li>Back up your project in the cloud</li>
+<li>Make it open-source, allowing others to contribute</li>
+</ul>
+</section>
+<section id="collaboration-tools" class="level1 step" data-x="5000" data-y="4000">
+<h1>Collaboration Tools</h1>
+<ul>
+<li>Forking</li>
+<li>Pull requests</li>
+<li>Comments on PRs, issues, lines</li>
+</ul>
+</section>
+<section id="project-management" class="level1 step" data-x="5000" data-y="5000">
+<h1>Project Management</h1>
+<ul>
+<li>Issues</li>
+<li>Wiki</li>
+<li>Milestones</li>
+<li>Analysis</li>
+</ul>
+</section>
+<section id="examples" class="level1 step" data-x="8000" data-y="-1000" data-scale="5">
+<h1>Examples</h1>
+</section>
+<section id="digital-pedagogy-in-the-humanities" class="level1 step" data-x="7000">
+<h1>Digital Pedagogy in the Humanities</h1>
+<figure>
+<img src="digital-pedagogy-commits.png" alt="Commit History" /><figcaption>Commit History</figcaption>
+</figure>
+</section>
+<section id="section-5" class="level1 step" data-x="7000" data-y="1000">
+<h1></h1>
+<figure>
+<img src="digital-pedagogy.png" alt="Branches" /><figcaption>Branches</figcaption>
+</figure>
+</section>
+<section id="section-6" class="level1 step" data-x="7000" data-y="2000">
+<h1></h1>
+<figure>
+<img src="digital-pedagogy-contributions.png" alt="Contributions" /><figcaption>Contributions</figcaption>
+</figure>
+</section>
+<section id="gitenberg" class="level1 step" data-x="8000">
+<h1>GITenberg</h1>
+<figure>
+<img src="gitenberg.png" />
+</figure>
+</section>
+<section id="about-gitenberg" class="level1 step" data-x="8000" data-y="1000">
+<h1>About GITenberg</h1>
+<ul>
+<li>~45,000 books</li>
+<li>Anyone can edit (“crowdsourced”)</li>
+<li>Gitenberg.org</li>
+</ul>
+</section>
+<section id="git-lit" class="level1 step" data-x="9000">
+<h1>Git-Lit</h1>
+<figure>
+<img src="git-lit.png" />
+</figure>
+</section>
+<section id="about-git-lit" class="level1 step" data-x="9000" data-y="1000">
+<h1>About Git-Lit</h1>
+<ul>
+<li>Open-source initiative to parse and post to GitHub 50,000 works from the British Library</li>
+<li>Parsing ALTO XML, generating Markdown</li>
+<li>Creating beautiful web-based reading editions for each</li>
+<li>Many will be first electronic publications</li>
+<li>Anyone can get involved!</li>
+</ul>
+</section>
+<section id="learn-more" class="level1 step" data-x="12000" data-y="-1000" data-scale="5">
+<h1>Learn More</h1>
+</section>
+<section id="to-get-started" class="level1 step" data-x="11000">
+<h1>To Get Started</h1>
+<ul>
+<li>Edit in the browser!</li>
+<li>Get a command line</li>
+<li>Learn basic commands</li>
+<li>Use plain text formats (Markdown, XML, LaTeX)</li>
+<li>Download git</li>
+<li>Get a GitHub username</li>
+</ul>
+</section>
+<section id="further-resources" class="level1 step" data-x="12000">
+<h1>Further Resources</h1>
+<ul>
+<li>Try Git: <a href="https://try.github.io" class="uri">https://try.github.io</a></li>
+<li>GitHub guides: account: <a href="https://guides.github.com" class="uri">https://guides.github.com</a></li>
+<li>This presentation: <a href="http://jonreeve.com/presentations/sts2016/" class="uri">http://jonreeve.com/presentations/sts2016/</a></li>
+<li>My website: <a href="http://jonreeve.com" class="uri">http://jonreeve.com</a></li>
+</ul>
+</section>
+
+</div>
+
+<div class="hint">
+    <p>Use a spacebar or arrow keys to navigate</p>
+</div>
+<script>
+if ("ontouchstart" in document.documentElement) { 
+    document.querySelector(".hint").innerHTML = "<p>Tap on the left or right to navigate</p>";
+}
+</script>
+
+<script src="impress.js/js/impress.js"></script>
+<script>impress().init();</script>
+
+</body>
+</html>
+
