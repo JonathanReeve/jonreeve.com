@@ -1,6 +1,7 @@
-pres.html : pres.md
-	pandoc -o index.html pres.md \
-	-t revealjs \
+index.html: pres.md 
+	pandoc -o $@ $< \
+	-s -t revealjs \
+	-V revealjs-url=../../assets/js/vendor/reveal.js \
 	-V theme=moon \
-	--standalone
-	gvfs-open index.html
+	--template default.revealjs
+	chromium $@ &
