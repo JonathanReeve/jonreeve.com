@@ -151,7 +151,7 @@ Conference Presentations
 
   * [Presentation](http://jonreeve.com/presentations/cbad/#/imperial-voices) at [Computer-Based Analysis of Drama](http://comedy.hypotheses.org/12) workshop, Bavarian Academy of Sciences and Humanities, Munich
 
-**July 2014** "Macro-Etymological Textual Analysis: a Computational Application of Language History to Literary Criticism"
+**July 2014** ["Macro-Etymological Textual Analysis: a Computational Application of Language History to Literary Criticism"](http://jonreeve.com/presentations/dh2014/)
 
  * Presented short paper, [Digital Humanities 2014](http://dh2014.org/), Lausanne, Switzerland
  * Winner, New York University [Hirschhorn Thesis Award](https://draperprogram.wordpress.com/2014/06/12/congratulations-to-our-hirschhorn-award-nominees-and-winner/)
