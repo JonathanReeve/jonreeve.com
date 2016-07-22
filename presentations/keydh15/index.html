@@ -3,27 +3,25 @@
 <head>
   <meta charset="utf-8">
   <meta name="generator" content="pandoc">
-  <meta name="author" content="Jonathan Reeve" />
-  <meta name="dcterms.date" content="2015-07-24" />
+  <meta name="author" content="Jonathan Reeve">
+  <meta name="dcterms.date" content="2015-07-24">
   <title>Annotags: a Decentralized Textual Annotation Protocol</title>
-  <meta name="apple-mobile-web-app-capable" content="yes" />
-  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-  <link rel="stylesheet" href="reveal.js/css/reveal.css"/>
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
+  <link rel="stylesheet" href="../../assets/js/vendor/reveal.js/css/reveal.css">
   <style type="text/css">code{white-space: pre;}</style>
-  <link rel="stylesheet" href="reveal.js/css/theme/moon.css" id="theme">
-  <!-- If the query includes 'print-pdf', include the PDF print sheet -->
+  <link rel="stylesheet" href="../../assets/js/vendor/reveal.js/css/theme/moon.css" id="theme">
+  <!-- Printing and PDF exports -->
   <script>
-    if( window.location.search.match( /print-pdf/gi ) ) {
-      var link = document.createElement( 'link' );
-      link.rel = 'stylesheet';
-      link.type = 'text/css';
-      link.href = 'reveal.js/css/print/pdf.css';
-      document.getElementsByTagName( 'head' )[0].appendChild( link );
-    }
+    var link = document.createElement( 'link' );
+    link.rel = 'stylesheet';
+    link.type = 'text/css';
+    link.href = window.location.search.match( /print-pdf/gi ) ? '../../assets/js/vendor/reveal.js/css/print/pdf.css' : '../../assets/js/vendor/reveal.js/css/print/paper.css';
+    document.getElementsByTagName( 'head' )[0].appendChild( link );
   </script>
   <!--[if lt IE 9]>
-  <script src="reveal.js/lib/js/html5shiv.js"></script>
+  <script src="../../assets/js/vendor/reveal.js/lib/js/html5shiv.js"></script>
   <![endif]-->
 </head>
 <body>
@@ -31,9 +29,9 @@
     <div class="slides">
 
 <section>
-    <h1 class="title">Annotags: a Decentralized Textual Annotation Protocol</h1>
-    <h2 class="author">Jonathan Reeve</h2>
-    <h3 class="date">24 July 2015</h3>
+  <h1 class="title">Annotags: a Decentralized Textual Annotation Protocol</h1>
+  <h2 class="author">Jonathan Reeve</h2>
+  <h3 class="date">24 July 2015</h3>
 </section>
 
 <section id="conversations-in-the-margins" class="slide level1">
@@ -97,43 +95,28 @@
 <ul>
 <li>Annotag Calculator: <a href="http://jonreeve.com/projects/annotags/">jonreeve.com/projects/annotags/</a></li>
 <li>These slides: <a href="http://jonreeve.com/presentations/keydh15">jonreeve.com/presentations/keydh15</a></li>
-<li>My email address: <script type="text/javascript">
-<!--
-h='&#x67;&#x6d;&#x61;&#x69;&#108;&#46;&#x63;&#x6f;&#x6d;';a='&#64;';n='&#106;&#x6f;&#110;&#46;&#114;&#x65;&#x65;&#118;&#x65;';e=n+a+h;
-document.write('<a h'+'ref'+'="ma'+'ilto'+':'+e+'" clas'+'s="em' + 'ail">'+e+'<\/'+'a'+'>');
-// -->
-</script><noscript>&#106;&#x6f;&#110;&#46;&#114;&#x65;&#x65;&#118;&#x65;&#32;&#x61;&#116;&#32;&#x67;&#x6d;&#x61;&#x69;&#108;&#32;&#100;&#x6f;&#116;&#32;&#x63;&#x6f;&#x6d;</noscript></li>
+<li>My email address: <a href="mailto:jon.reeve@gmail.com">jon.reeve@gmail.com</a></li>
 </ul>
 </section>
     </div>
   </div>
 
-
-  <script src="reveal.js/lib/js/head.min.js"></script>
-  <script src="reveal.js/js/reveal.js"></script>
+  <script src="../../assets/js/vendor/reveal.js/lib/js/head.min.js"></script>
+  <script src="../../assets/js/vendor/reveal.js/js/reveal.js"></script>
 
   <script>
 
-      // Full list of configuration options available here:
+      // Full list of configuration options available at:
       // https://github.com/hakimel/reveal.js#configuration
       Reveal.initialize({
-        controls: true,         // Display controls in the bottom right corner
-        progress: true,         // Display a presentation progress bar
-        history: true,          // Push each slide change to the browser history
-        center: true,                       // Vertical centering of slides
-        maxScale: 1.5,                  // Bounds for smallest/largest possible content scale
-        slideNumber: false,                // Display the page number of the current slide
-        theme: 'moon', // available themes are in /css/theme
-        transition: Reveal.getQueryHash().transition || 'default', // default/cube/page/concave/zoom/linear/fade/none
 
-        // Optional libraries used to extend on reveal.js
+        // Optional reveal.js plugins
         dependencies: [
-          { src: 'reveal.js/lib/js/classList.js', condition: function() { return !document.body.classList; } },
-          { src: 'reveal.js/plugin/zoom-js/zoom.js', async: true, condition: function() { return !!document.body.classList; } },
-          { src: 'reveal.js/plugin/notes/notes.js', async: true, condition: function() { return !!document.body.classList; } },
-//          { src: 'reveal.js/plugin/search/search.js', async: true, condition: function() { return !!document.body.classList; }, }
-//          { src: 'reveal.js/plugin/remotes/remotes.js', async: true, condition: function() { return !!document.body.classList; } }
-]});
+          { src: '../../assets/js/vendor/reveal.js/lib/js/classList.js', condition: function() { return !document.body.classList; } },
+          { src: '../../assets/js/vendor/reveal.js/plugin/zoom-js/zoom.js', async: true },
+          { src: '../../assets/js/vendor/reveal.js/plugin/notes/notes.js', async: true }
+        ]
+      });
     </script>
     </body>
 </html>

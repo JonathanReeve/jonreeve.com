@@ -1,5 +1,6 @@
-index.html : index.md 
-	pandoc -t revealjs index.md -o index.html \
-		--standalone \
-		-V theme=moon
-	gnome-open index.html
+index.html: index.md 
+	pandoc -o $@ $< \
+	-s -t revealjs \
+	-V revealjs-url=../../assets/js/vendor/reveal.js \
+	-V theme=moon
+	chromium $@ &
