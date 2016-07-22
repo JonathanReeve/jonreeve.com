@@ -137,6 +137,12 @@ Publications
 Conference Presentations
 ========================
 
+**July 2016** [“Git-Lit: an Application of Distributed Version Control Technology toward the Creation of 50,000 Digital Scholarly Editions”](http://jonreeve.com/presentations/dh2016)
+
+ * Presented at [Digital Humanities 2016](http://dh2016.adho.org/) in Krakóv, Poland  
+ * [Abstract](http://dh2016.adho.org/abstracts/335) published in [_Digital Humanities 2016: Conference Abstracts_. Kraków: Jagiellonian University & Pedagogical University, 2016.](http://dh2016.adho.org/static/dh2016_abstracts.pdf)
+ * Winner, Association of Digital Humanities Organizations student bursary 
+
 **April 2016** ["Applications of Distributed Version Control Technology to the Creation of Digital Scholarly Editions"](http://jonreeve.com/presentations/sts2016/)
 
  * Paper presented at the annual meeting of the Society for Textual Scholarship, Ottawa
