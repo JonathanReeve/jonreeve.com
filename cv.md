@@ -118,7 +118,7 @@ Publications
 
 **August 2016** ["Installing Omeka"](http://programminghistorian.org/lessons/installing-omeka)
 
- * Tutorial appearing in [_The Programming Historian_](http://programminghistorian.org/)
+ * Tutorial in [_The Programming Historian_](http://programminghistorian.org/)
 
 **2013** Articles in [*The Manifesto in Literature*](http://www.cengage.com/search/productOverview.do;jsessionid=4FD757A6BD2DD6A4F5D0D81734BF2911?N=197&Ntk=P_EPI&Ntt=315361985178615732812460845631655972971&Ntx=mode+matchallpartial), Gale Cengage, Publisher; Thomas Riggs & Co, Editors.
 
@@ -139,7 +139,7 @@ Conference Presentations
 
 **July 2016** [“Git-Lit: an Application of Distributed Version Control Technology toward the Creation of 50,000 Digital Scholarly Editions”](http://jonreeve.com/presentations/dh2016)
 
- * Presented at [Digital Humanities 2016](http://dh2016.adho.org/) in Krakóv, Poland  
+ * Presented at [Digital Humanities 2016](http://dh2016.adho.org/) in Krakow, Poland  
  * [Abstract](http://dh2016.adho.org/abstracts/335) published in [_Digital Humanities 2016: Conference Abstracts_. Kraków: Jagiellonian University & Pedagogical University, 2016.](http://dh2016.adho.org/static/dh2016_abstracts.pdf)
  * Winner, Association of Digital Humanities Organizations student bursary 
 
