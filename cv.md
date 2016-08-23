@@ -10,6 +10,8 @@ Education
 
 Sept. 2015 - Present: **PhD Student**, Columbia University
 
+May 2016 **Master of Arts**, English and Comparative Literature, Columbia University
+
 Jan. 2014 **Master of Arts**, Humanities, New York University
 
 May 2010 **Master of Arts**, Literature, Brooklyn College
