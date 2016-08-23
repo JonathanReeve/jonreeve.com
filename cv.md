@@ -116,9 +116,9 @@ Publications
 
 **Forthcoming** ["A Macro-Etymological Analysis of James Joyce's _A Portrait of the Artist as a Young Man_"](http://www.jonreeve.com/2015/05/macroetymology-of-portrait-paper), _Reading Modernism with Machines_, Palgrave Macmillan, 2016.
 
-**Forthcoming** "Installing Omeka"
+**August 2016** ["Installing Omeka"](http://programminghistorian.org/lessons/installing-omeka)
 
- * Forthcoming article for [_The Programming Historian_](http://programminghistorian.org/)
+ * Tutorial appearing in [_The Programming Historian_](http://programminghistorian.org/)
 
 **2013** Articles in [*The Manifesto in Literature*](http://www.cengage.com/search/productOverview.do;jsessionid=4FD757A6BD2DD6A4F5D0D81734BF2911?N=197&Ntk=P_EPI&Ntt=315361985178615732812460845631655972971&Ntx=mode+matchallpartial), Gale Cengage, Publisher; Thomas Riggs & Co, Editors.
 
