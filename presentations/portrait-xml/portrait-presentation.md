@@ -1,4 +1,6 @@
-# {#overview .step data-x=4000 data-scale=10}
+---
+title: The Open Critical Edition of Joyce’s _A Portrait of the Artist as a Young Man_ 
+---
 
 # The Open Critical Edition of Joyce’s _A Portrait of the Artist as a Young Man_ {.step data-x=4000 data-y=-1600 data-scale=7}
 
