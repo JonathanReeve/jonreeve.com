@@ -2,7 +2,7 @@
 title: The Open Critical Edition of Joyce’s _A Portrait of the Artist as a Young Man_ 
 ---
 
-# The Open Critical Edition of Joyce’s _A Portrait of the Artist as a Young Man_ {.step data-x=4000 data-y=-1600 data-scale=7}
+# The Open Critical Edition of Joyce’s _A Portrait of the Artist as a Young Man_ {#bored .step data-x=4000 data-y=-1600 data-scale=7}
 
 # Traditional Editions {.step data-x=2000} 
 
@@ -85,4 +85,4 @@ title: The Open Critical Edition of Joyce’s _A Portrait of the Artist as a You
 * Contribution instructions at [bit.ly/portrait-contributing](https://github.com/JonathanReeve/corpus-joyce-portrait-TEI/blob/gh-pages/CONTRIBUTING.md) 
 * This presentation [jonreeve.com/presentations/portrait-xml](http://jonreeve.com/presentations/portrait-xml/)
 
-# {#overview .step data-x=4000 data-scale=10}
+# {#overview .step data-x=4000 data-scale=10} 
