@@ -80,9 +80,9 @@ title: The Open Critical Edition of Joyce’s _A Portrait of the Artist as a You
 
 # Links {.step data-x=6000 data-y=3000} 
 
-* Prototype at [bit.ly/portrait-xslt](http://jonathanreeve.github.io/corpus-joyce-portrait-TEI/index.html) (only works on Firefox at the moment) 
+* Prototype at [bit.ly/portrait-xslt](http://jonathanreeve.github.io/corpus-joyce-portrait-TEI/index.html)
 * Project homepage at [bit.ly/portrait-home](https://github.com/JonathanReeve/corpus-joyce-portrait-TEI) 
 * Contribution instructions at [bit.ly/portrait-contributing](https://github.com/JonathanReeve/corpus-joyce-portrait-TEI/blob/gh-pages/CONTRIBUTING.md) 
-* This presentation [jonreeve.com/presentations/portrait-xml](http://jonreeve.com/presentations/portrait-xml/)
+* This presentation at [jonreeve.com/presentations/portrait-xml](http://jonreeve.com/presentations/portrait-xml/)
 
 # {#overview .step data-x=4000 data-scale=10} 
