@@ -7,7 +7,7 @@ tags:
  - tutorials
 ---
 
-In the influential 1948 paper titled “A Mathematical Theory of Communication,” the mathematician Claude Shannon conducts a thought experiment to construct an algorithmic approximation of language. The algorithm can be described like this: 
+In the influential 1948 paper [“A Mathematical Theory of Communication,”](http://ieeexplore.ieee.org/xpl/articleDetails.jsp?arnumber=6773024) the mathematician Claude Shannon conducts a thought experiment to construct an algorithmic approximation of language. The algorithm can be described like this: 
 
 1. Choose a book at random from your bookshelf, and open to a random page. Choose a random word on that page. Record this word. 
 
