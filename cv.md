@@ -21,7 +21,7 @@ Jan. 2004 **Bachelor of Arts**, Individualized Study, New York University
 Positions
 =========
 
-**Nov. '13 - August '15** Modern Language Association: Web Developer
+**Nov. '13 - Aug. '15** Modern Language Association: Web Developer
 
  * Edited XML and XSL code for the [Literary Research Guide](http://mlalrg.org/public)
  * Contributed to software used for the electronic edition of [_Literary Studies in the Digital Age_](http://dlsanthology.commons.mla.org/), and [_Digital Pedagogy in the Humanities_](https://digitalpedagogy.commons.mla.org/)
@@ -29,12 +29,12 @@ Positions
  * Rewrote [cbox-auth](https://github.com/mlaa/cbox-auth), the authentication system of the _MLA Commons_, to interface with the MLA member database
  * Designed [a WordPress plugin for visualizing patterns of disciplinarity](https://github.com/mlaa/bp-group-statistics) between _MLA Commons_ interest groups
 
-**June '12 - January '15** New York University, History Department: Web Developer
+**June '12 - Jan. '15** New York University, History Department: Web Developer
 
  * Developed [a customization engine](https://github.com/JonathanReeve/customeka) for the [Omeka content management platform](http://omeka.org)
  * Designed and developed Omeka themes deployed on [Greenwich Village History](http://gvh.aphdigital.org) and [New Jersey Digital History](http://njdigitalhistory.org/NJDHA/)
 
-**June '12 - August '15** Margaret Sanger Papers Project: Programmer
+**June '12 - Aug. '15** Margaret Sanger Papers Project: Programmer
 
  * Added functionality for searching mentioned entities to the [Margaret Sanger Papers Project Web Edition](http://www.nyu.edu/projects/sanger/webedition/app/documents/search.php)
  * Wrote [a statistical analysis page](http://www.nyu.edu/projects/sanger/webedition/app/documents/stats.php) to visualize textual trends from the Margaret Sanger Papers archives
@@ -47,9 +47,9 @@ Positions
 Freelance
 =========
 
-**Nov. '15 - Present** DHBox
+**Nov. '15 - Present** [DHBox](http://dhbox.org), [City University of New York](http://cuny.edu)
 
- * Developing a textual corpus downloader.
+ * Developing [a textual corpus downloader](https://github.com/DH-Box/corpus-downloader). 
 
 **May '15 - Oct. '15** Greenwich Village Society for Historic Preservation
 
@@ -57,6 +57,9 @@ Freelance
 
 Workshops
 =========
+
+**Feb. ‘17** “Advanced Text Analysis with SpaCy and TextaCy”
+ - Workshop at the [2017 NYCDH Week](http://dhweek.nycdh.org/)
 
 **Apr. '16** "An Introduction to Version Control with Git"
 
@@ -66,12 +69,16 @@ Workshops
 
  * Workshop at Columbia University’s [Art of Data Visualization](http://library.columbia.edu/news/events/data-visualization.html) event
 
-**Feb. '16** NYCDH Week Workshop: "Text Editing with Vim"
+**Feb. '16** NYCDH Week Workshop: ["Text Editing with Vim"](http://dhweek.nycdh.org/event/lightning-fast-text-editing-with-vim/)
 
  * Workshop at [NYCDH Week 2016](http://dhweek.nycdh.org/)
 
-Teaching Positions
-==================
+Teaching
+========
+
+**Sept. ‘16 - Present** Columbia University, Department of English and Comparative Literature: Teaching Assistant
+
+ - Led a weekly discussion section in Joyce’s _Ulysses_ for the course “James Joyce”
 
 **Sept. '12 – Dec. '12** New York University, Computer Science Department: Teaching Assistant
 
@@ -101,7 +108,7 @@ Languages and Technical Skills
 
 **Markup Languages**: HTML, CSS, Sass, XML, TEI XML, LaTeX, Markdown
 
-**Frameworks, CMSs**: WordPress, BuddyPress, Commons in a Box, Omeka, Jekyll. Some experience with ZEND and Django
+**Frameworks, CMSs**: Jekyll, WordPress, BuddyPress, Commons in a Box, Omeka. Some experience with ZEND, Django, and Flask.
 
 **Databases**: MySQL, MariaDB, PostgreSQL
 
@@ -116,13 +123,11 @@ Languages and Technical Skills
 Publications
 ============
 
-**Forthcoming** ["A Macro-Etymological Analysis of James Joyce's _A Portrait of the Artist as a Young Man_"](http://www.jonreeve.com/2015/05/macroetymology-of-portrait-paper), _Reading Modernism with Machines_, Palgrave Macmillan, 2016.
+"A Macro-Etymological Analysis of James Joyce's _A Portrait of the Artist as a Young Man_", [_Reading Modernism with Machines_](http://www.palgrave.com/us/book/9781137595683#otherversion=9781137595690), Palgrave Macmillan, 2016.
 
-**August 2016** ["Installing Omeka"](http://programminghistorian.org/lessons/installing-omeka)
+["Installing Omeka"](http://programminghistorian.org/lessons/installing-omeka), [_The Programming Historian_](http://programminghistorian.org/), 2016. 
 
- * Tutorial in [_The Programming Historian_](http://programminghistorian.org/)
-
-**2013** Articles in [*The Manifesto in Literature*](http://www.cengage.com/search/productOverview.do;jsessionid=4FD757A6BD2DD6A4F5D0D81734BF2911?N=197&Ntk=P_EPI&Ntt=315361985178615732812460845631655972971&Ntx=mode+matchallpartial), Gale Cengage, Publisher; Thomas Riggs & Co, Editors.
+Articles in [_The Manifesto in Literature_](http://www.cengage.com/search/productOverview.do;jsessionid=4FD757A6BD2DD6A4F5D0D81734BF2911?N=197&Ntk=P_EPI&Ntt=315361985178615732812460845631655972971&Ntx=mode+matchallpartial), Thomas Riggs & Co, Eds., Gale Cengage; 2013. 
 
  * "Richard Stallman: GNU Manifesto" (vol. 3, 355-7)
  * "John Perry Barlow: A Declaration of the Independence of Cyberspace" (vol. 3, 349-51)
@@ -131,7 +136,7 @@ Publications
  * "Emma Goldman: Anarchism, What it Really Stands For" (vol. 2, 273-5)
  * "Rosa Luxemburg: Spartacus Manifesto" (vol. 2, 339-41)
 
-**2009-2011** Poems anthologized:
+Poems anthologized:
 
  * 2011 *A Gathering of the Tribes*
  * 2009 *Arsenic Lobster Anthology*
@@ -139,8 +144,9 @@ Publications
 Conference Presentations
 ========================
 
-**July 2016** [“Git-Lit: an Application of Distributed Version Control Technology toward the Creation of 50,000 Digital Scholarly Editions”](http://jonreeve.com/presentations/dh2016)
+**2016, 2017** [“Git-Lit: an Application of Distributed Version Control Technology toward the Creation of 50,000 Digital Scholarly Editions”](http://jonreeve.com/presentations/dh2016)
 
+ * [Presented at the 2017 MLA Convention](http://jonreeve.com/presentations/mla2017/#/overview) panel, [“Open Source Lit, Open Source Crit”](https://text.mla.hcommons.org/)
  * Presented at [Digital Humanities 2016](http://dh2016.adho.org/) in Krakow, Poland  
  * [Abstract](http://dh2016.adho.org/abstracts/335) published in [_Digital Humanities 2016: Conference Abstracts_. Kraków: Jagiellonian University & Pedagogical University, 2016.](http://dh2016.adho.org/static/dh2016_abstracts.pdf)
  * Winner, Association of Digital Humanities Organizations student bursary 
@@ -183,6 +189,16 @@ Conference Presentations
 Digital Projects
 ================
 
+**Sept. 2016 - Present** [Middlemarch Critical Histories](https://github.com/xpmethod/middlemarch-critical-histories)
+
+ - Computational analysis of the critical history of George Eliot’s novel _Middlemarch_. 
+ - A collaboration with Milan Terlunen, Sierra Eckert, and other members of Columbia University’s [Graph for Experimental Methods in the Humanities](http://xpmethod.plaintext.in/)
+ - [Abstract](https://github.com/xpmethod/middlemarch-critical-histories/blob/1359d403c8c8655170babb6e1bf8f81bcb4bc0c9/dh2017-submission/middlemarch-abstract.pdf) submitted to [Digital Humanities 2017](https://dh2017.adho.org/)
+
+**July 2016** [Chapterize: A Tool for Automatically Splittle Electronic Texts into Chapters](http://jonreeve.com/2016/08/chapterize/)
+
+ - Tool [published to PyPi](https://pypi.python.org/pypi/chapterize), Sept. 2016. 
+
 **Jan 2016**: [Infinite Library](https://hackdash.org/projects/5692699962b2cc5d050af709), a universal web-based ereader that connects to GitHub (Project GITenberg) to search, save, and render books in the browser.
 
  - A collaborative project conceived at the [Codex Hackathon 2016](http://codexhackathon.com/) at the [MIT Media Lab](http://media.mit.edu/)
@@ -219,7 +235,7 @@ Digital Projects
 **Jan. 2014 - Present**: [Annotags](/projects/annotags/about.html)
 
  - Designed a protocol for a literary metadata hashtag that provides the ability to livetweet books, electronic documents, and other texts
- - [Web app calculator](/projects/annotags) released September 2014
+ - [Web app calculator](/projects/annotags) released Sept. 2014
  - Since October 2014, produced in collaboration with the [Group for Experimental Methods in the Humanities](http://xpmethod.github.io/)
  - Nominated for [a 2014 DH Award for Best DH Tool](http://dhawards.org/dhawards2014/results/)
  - Implemented a [bookmarklet for creating Annotags from website bibliographic data](http://jonreeve.com/2015/04/a-bookmarklet-for-creating-annotags), April 2015
