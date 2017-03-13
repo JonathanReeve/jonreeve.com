@@ -11,6 +11,7 @@
       "pattern": ":title",
       "date": "YYYY"
     },
+    "metalsmith-sass": {},
     "metalsmith-layouts": { 
       "engine": "pug"
     }

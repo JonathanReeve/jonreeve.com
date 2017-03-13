@@ -13,6 +13,7 @@
     "metalsmith-markdown-metadata": "git+https://github.com/JonathanReeve/metalsmith-markdown-metadata.git",
     "metalsmith-metadata": "0.0.4",
     "metalsmith-permalinks": "^0.1.0",
+    "metalsmith-sass": "^1.4.0",
     "pug": "^2.0.0-beta11",
     "util": "^0.10.3"
   }
