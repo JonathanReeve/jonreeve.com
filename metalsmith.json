@@ -1,0 +1,18 @@
+{
+  "plugins": {
+    "metalsmith-markdown": {},
+    "metalsmith-metadata": {
+	    "site": "site.yaml",
+	    "cv": "cv.yaml"
+    },
+    "metalsmith-markdown-metadata": {},
+    "metalsmith-debug": {},
+    "metalsmith-permalinks": {
+      "pattern": ":title",
+      "date": "YYYY"
+    },
+    "metalsmith-layouts": { 
+      "engine": "pug"
+    }
+  }
+}

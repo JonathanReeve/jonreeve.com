@@ -1,0 +1,13 @@
+doctype html
+html
+  head
+    title= site.title
+    meta(name='description', content= site.description)
+  body
+    h1= site.title
+    p= site.description
+    block content
+
+    footer 
+      p Contact: #{site.author.email}
+      a(href="http://twitter.com/#{site.author.twitter}") Twitter: @j0_0n

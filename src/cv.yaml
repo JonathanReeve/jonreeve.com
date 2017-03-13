@@ -1,0 +1,92 @@
+ed: 
+ - university: New York University
+   degree: Bachelor of Arts
+   field: Interdisciplinary
+   date: 2004-01
+ - university: Brooklyn College
+   degree: Master of Arts
+   field: English Literature
+   date: 2010-05
+ - university: New York University
+   degree: Master of Arts
+   field: Humanities
+   date: 2014-01
+ - university: Columbia University
+   degree: Master of Arts
+   field: English and Comparative Literature
+   date: 2016-05
+ - university: Columbia University
+   degree: PhD Student
+   field: English and Comparative Literature
+   date: 2015-09
+
+projects:
+  - title: Middlemarch Critical Histories
+    url: https://github.com/lit-mod-viz/middlemarch-critical-histories
+    description: Computational analyses of the critical history of George Eliot's novel _Middlemarch_.
+    collaborators: Milan Terlunen, Sierra Eckert, Columbia University’s [Group for Experimental Methods in the Humanities](http://xpmethod.plaintext.in/), and the Stanford Literary Lab.
+    updates: 
+      - date: 2017-02
+        description: "[Abstract](https://github.com/lit-mod-viz/middlemarch-critical-histories/blob/master/papers/dh2017-submission/middlemarch-abstract.pdf) accepted for [DH2017](https://dh2017.adho.org/)" 
+    talks: 
+      - date: 2017-02
+        location: Stanford Literary Lab
+        title: "Middlemarch Critical Histories: Initial Findings" 
+        project: Middlemarch Critical Histories
+
+  - title: A Generator of Socratic Dialogues
+    description: A generator of Socratic dialogues, using meta-Markov chains to emulate character speech. 
+    url: http://jonreeve.com/2016/10/socratic-dialogue-generator/
+    updates:   
+      - date: 2017-02
+        description: 'Winner, [2016 DH Awards](http://dhawards.org/dhawards2016/results/), “Best Use of DH For Fun.”' 
+
+  - title: Git-Lit
+    description: A Project to Parse, Version Control, and Publish ~50,000 British Library Electronic Books
+    start: 2015-08
+    url: https://git-lit.github.io/
+    talks: 
+      - date: 2015-11
+        title: "Git-Lit: An Application of Distributed Version Control Systems Towards the Creation of 50,000 Digital Scholarly Editions" 
+        location: "Media Res 2, New York University" 
+        url: https://digitalfellows.commons.gc.cuny.edu/2015/11/12/media-res-2-nyc-dh-lightning-talks/
+        presentation: http://jonreeve.com/presentations/media-res2/
+        project: Git-Lit
+
+  - title: Annotags
+    description: A protocol for a literary metadata hashtag that provides the ability to livetweet books, electronic documents, and other texts.
+    start: 2014-01
+    url: http://jonreeve.com/projects/annotags/about.html
+    updates: 
+      - date: 2014-09
+        description: "[Web app calculator](/projects/annotags) released" 
+      - date: 2015-02
+        description: "Nominated for [a 2014 DH Award for Best DH Tool](http://dhawards.org/dhawards2014/results/)" 
+      - date: 2015-06
+        description: "[Featured resource in _Digital Humanities Now_](http://www.digitalhumanitiesnow.org/2015/07/resource-annotags-a-decentralized-textual-annotation-protocol/)"
+    talks: 
+      - date: 2015-05
+        title: "Annotags: A Decentralized Literary Annotation Protocol" 
+        conference: "[I Annotate 2015](http://iannotate.org/)" 
+      - date: 2015-06
+        description: Presented at Keystone Digital Humanities conference
+        presentation: http://www.jonreeve.com/presentations/keydh2015
+
+  - title: Chapterize
+    description: A command-line tool for breaking a text into chapters.
+    url: https://github.com/JonathanReeve/chapterize
+
+  - title: Macro-Etym 
+    description: Computational methods applying etymology and language history to textual analysis.
+    start: 2013-09 
+    url: http://github.com/JonathanReeve/macro-etym
+    updates: 
+      - date: 2015-01 
+        description: "[Featured](http://www.tapor.ca/?id=470) in the [Text Analysis Portal for Research](http://www.tapor.ca/)" 
+      - date: 2015-01 
+        description: Listed in Alain Liu's directory of Digital Humanities Tools
+      - date: 2015-03
+        description: "Featured in the [Digital Research Tools](http://www.dirtdirectory.org/) (DiRT) directory" 
+      - date: 2016-05
+        description: "Released as [a command-line program in the Python Package Archive](https://pypi.python.org/pypi/macroetym)" 
+

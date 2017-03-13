@@ -1,0 +1,41 @@
+extends page
+
+block content
+  h1 Jonathan Reeve
+  h2 Curriculum Vitae
+  div!= contents 
+
+  section#education
+    h2 Education
+    table 
+      each entry in cv.ed.reverse()
+        tr
+        td!= entry.date
+        td!= entry.university
+        td!= entry.degree
+
+  section#projects
+    h2 Projects
+    each project in cv.projects
+      h3.project-title
+        a(href="#{project.url}")!= project.title
+      p.project-date
+        project.date
+        if project.end
+          != ' - ' + project.end
+      p!= project.description
+      if project.collaborators
+        p!= 'In collaboration with ' + project.collaborators
+      if project.updates
+        each update in project.updates.reverse()
+          li 
+            span.date!= update.date + ' '
+            span.description!= update.description
+      if project.talks
+        h4 Talks: 
+        each talk in project.talks
+          li 
+            span.date!= talk.date + ' '
+            span.title!= '"' + talk.title + '"'
+
+  div!= JSON.stringify(cv.projects)

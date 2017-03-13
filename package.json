@@ -1,0 +1,19 @@
+{
+  "name": "jonreeve.com",
+  "private": true,
+  "dependencies": {
+    "jstransformer-markdown-it": "^2.0.0",
+    "lodash": "^4.17.4",
+    "markdown-it": "^8.3.1",
+    "metalsmith": "^1.0.0",
+    "metalsmith-data-loader": "^1.0.3",
+    "metalsmith-debug": "^1.1.0",
+    "metalsmith-layouts": "^1.4.1",
+    "metalsmith-markdown": "^0.2.1",
+    "metalsmith-markdown-metadata": "git+https://github.com/JonathanReeve/metalsmith-markdown-metadata.git",
+    "metalsmith-metadata": "0.0.4",
+    "metalsmith-permalinks": "^0.1.0",
+    "pug": "^2.0.0-beta11",
+    "util": "^0.10.3"
+  }
+}
