@@ -22,6 +22,8 @@
       "engine": "pug",
       "pretty": true
     },
-    "metalsmith-debug": {}
+    "metalsmith-debug": {},
+    "metalsmith-serve": {},
+    "metalsmith-watch": {} 
   }
 }
