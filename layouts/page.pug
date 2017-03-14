@@ -6,8 +6,14 @@ html
     meta(name='description', content= site.description)
     link(rel='stylesheet', href='assets/css/style.css')
   body
-    h1= site.title
-    p= site.description
+    header 
+      h1= site.title
+      p= site.description
+      nav
+        each navitem in site.nav 
+          li
+            a(href=navitem.url)= navitem.name
+
     block content
 
     footer 
