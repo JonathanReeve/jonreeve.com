@@ -2,3 +2,8 @@ extends page
 
 block content
   p Heyo!
+  //-div!= JSON.stringify(posts)
+  each post in posts
+    li 
+      p!= post.path
+      a(href=post.path)!= post.title

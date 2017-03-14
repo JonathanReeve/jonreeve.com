@@ -6,14 +6,22 @@
 	    "cv": "cv.yaml"
     },
     "metalsmith-markdown-metadata": {},
-    "metalsmith-debug": {},
-    "metalsmith-permalinks": {
-      "pattern": ":title",
-      "date": "YYYY"
+    "metalsmith-collections": {
+      "posts": {
+        "pattern": "posts/**.html",
+        "sortBy": "date",
+        "reverse": true
+      }
     },
     "metalsmith-sass": {},
+    "metalsmith-permalinks": {
+      "pattern": ":date/:title",
+      "date": "yyyy"
+    },
     "metalsmith-layouts": { 
-      "engine": "pug"
-    }
+      "engine": "pug",
+      "pretty": true
+    },
+    "metalsmith-debug": {}
   }
 }
