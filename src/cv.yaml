@@ -90,3 +90,12 @@ projects:
       - date: 2016-05
         description: "Released as [a command-line program in the Python Package Archive](https://pypi.python.org/pypi/macroetym)" 
 
+  - title: Text-Matcher
+    description: Fuzzy text matching and alignment algorithms. 
+    start: 2015-01
+    url: http://github.com/JonathanReeve/text-matcher
+    updates: 
+      - date: 2016-10
+        description: "[Released command-line tool on the Python Package Archive](https://pypi.python.org/pypi/text-matcher)"
+      - date: 2015-05
+        description: "Paper: [\"Modernism, Myth, and their Intertextualities: a Computational Detection of Biblical and Classical Allusion in the English-Language Novel, 1771-1930\"](https://github.com/JonathanReeve/allusion-detection/blob/master/paper/essay.pdf)" 

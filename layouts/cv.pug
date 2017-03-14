@@ -1,8 +1,7 @@
 extends page
 
 block content
-  h1 Jonathan Reeve
-  h2 Curriculum Vitae
+  h1 Curriculum Vitae
   div!= contents 
 
   section#education
@@ -18,7 +17,7 @@ block content
     h2 Projects
     each project in cv.projects
       h3.project-title
-        a(href="#{project.url}")!= project.title
+        a(href=project.url)!= project.title
       p.project-date
         project.date
         if project.end
@@ -38,4 +37,4 @@ block content
             span.date!= talk.date + ' '
             span.title!= '"' + talk.title + '"'
 
-  div!= JSON.stringify(cv.projects)
+  //-div!= JSON.stringify(cv.projects)
