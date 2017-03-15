@@ -4,7 +4,12 @@ html
     title= site.title
     meta(charset="UTF-8")
     meta(name='description', content= site.description)
-    link(rel='stylesheet', href='assets/css/style.css')
+    link(rel='stylesheet', href='/assets/css/style.css')
+    link(href="https://fonts.googleapis.com/css?family=Merriweather:400,400i,700" rel="stylesheet")
+
+    // Code highlighting with highlight.js. 
+    link(rel='stylesheet', href='/assets/css/railscasts.css')
+
   body
     header 
       h1

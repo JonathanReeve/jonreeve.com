@@ -3,6 +3,10 @@ extends page
 block content
   p Heyo!
   //-div!= JSON.stringify(posts)
-  each post in posts
-    li 
-      a(href=post.path)!= post.title
+  section#posts
+    each post in posts
+      li 
+        span.post-date!= post.date
+        a(href=post.path).post.title!= post.title
+        each tag in post.tags
+          span.post-tags!= tag

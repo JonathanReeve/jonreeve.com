@@ -1,6 +1,4 @@
 
-# wintersmith
+# Jonreeve.com, Made with Metalsmith
 
-This example uses Metalsmith to emulate a Wintersmith static site. To test it out yourself just run:
-
-    $ make build
+I'm rewriting [my personal website](http://jonreeve.com) using [Metalsmith](http://metalsmith.io). 

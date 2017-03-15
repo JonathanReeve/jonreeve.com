@@ -27,7 +27,7 @@ Here is the body of my paper. It understands markdown syntax.
 
 The % is there to tell pandoc which line contains the title. That’s the only thing that departs from traditional markdown syntax. Then I used [Ryan Aycock’s LaTeX MLA stylesheet](http://www.tex.ac.uk/tex-archive/macros/latex/contrib/mla-paper/mla.sty) and a short template I made that looks like this:
 
-```latex
+```tex
 documentclass[12pt,letterpaper]{article}
 usepackage{ifpdf}
 usepackage{mla}

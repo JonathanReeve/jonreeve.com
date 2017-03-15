@@ -6,6 +6,8 @@
 	    "cv": "cv.yaml"
     },
     "metalsmith-markdown-metadata": {},
+    "metalsmith-date-in-filename": {},
+    "metalsmith-code-highlight": {},
     "metalsmith-collections": {
       "posts": {
         "pattern": "posts/**.html",
@@ -13,17 +15,29 @@
         "reverse": true
       }
     },
-    "metalsmith-sass": {},
     "metalsmith-permalinks": {
       "pattern": ":date/:title",
-      "date": "yyyy"
+      "date": "YYYY/MM"
     },
+    "metalsmith-date-formatter": { 
+      "format": "YYYY-MM-DD"
+    },
+    "metalsmith-feed": {
+      "collection": "posts"	
+    },
+    "metalsmith-sass": {},
     "metalsmith-layouts": { 
       "engine": "pug",
       "pretty": true
     },
     "metalsmith-debug": {},
     "metalsmith-serve": {},
-    "metalsmith-watch": {} 
+    "metalsmith-watch": {
+      "paths": {
+        "${source}/**/*": true,
+        "layouts/**/*": "**/*",
+        "metalsmith.json": "**/*"
+      } 
+    } 
   }
 }
