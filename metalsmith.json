@@ -22,6 +22,10 @@
     "metalsmith-date-formatter": { 
       "format": "YYYY-MM-DD"
     },
+    "metalsmith-tags": {
+      "layout": "tag.pug", 
+      "skipPages": true
+    },
     "metalsmith-feed": {
       "collection": "posts"	
     },

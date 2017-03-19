@@ -8,3 +8,5 @@ author:
 nav: 
   - name: cv
     url: cv
+  - name: tags
+    url: tags

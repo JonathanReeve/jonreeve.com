@@ -18,7 +18,7 @@ html
       nav
         each navitem in site.nav 
           li
-            a(href=navitem.url)= navitem.name
+            a(href=navitem.url)= '/' + navitem.name
 
     block content
 
