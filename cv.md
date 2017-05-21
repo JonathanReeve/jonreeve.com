@@ -122,6 +122,7 @@ Languages and Technical Skills
 
 **Natural Languages**: English: native; French: advanced (Test de connaissance du français, Level 4); Mandarin Chinese: advanced; Irish, German, Italian, Japanese: beginner
 
+
 Publications
 ============
 
@@ -140,13 +141,13 @@ Articles in [_The Manifesto in Literature_](http://www.cengage.com/search/produc
 
 Poems anthologized:
 
- * 2011 *A Gathering of the Tribes*
+ * 2011 *A Gathering of the Tribes*adjusted_rand_score
  * 2009 *Arsenic Lobster Anthology*
 
 Conference Presentations
 ========================
 
-**2016, 2017** [“Git-Lit: an Application of Distributed Version Control Technology toward the Creation of 50,000 Digital Scholarly Editions”](http://jonreeve.com/presentations/dh2016)
+**2017, 2016** [“Git-Lit: an Application of Distributed Version Control Technology toward the Creation of 50,000 Digital Scholarly Editions”](http://jonreeve.com/presentations/dh2016)
 
  * [Presented at the 2017 MLA Convention](http://jonreeve.com/presentations/mla2017/#/overview) panel, [“Open Source Lit, Open Source Crit”](https://text.mla.hcommons.org/)
  * Presented at [Digital Humanities 2016](http://dh2016.adho.org/) in Krakow, Poland  
@@ -194,8 +195,13 @@ Digital Projects
 **Sept. 2016 - Present** [Middlemarch Critical Histories](https://github.com/xpmethod/middlemarch-critical-histories)
 
  - Computational analysis of the critical history of George Eliot’s novel _Middlemarch_. 
- - A collaboration with Milan Terlunen, Sierra Eckert, and other members of Columbia University’s [Graph for Experimental Methods in the Humanities](http://xpmethod.plaintext.in/)
+ - A collaboration with Milan Terlunen, Sierra Eckert, and other members of Columbia University’s [Group for Experimental Methods in the Humanities](http://xpmethod.plaintext.in/)
  - [Abstract](https://github.com/xpmethod/middlemarch-critical-histories/blob/1359d403c8c8655170babb6e1bf8f81bcb4bc0c9/dh2017-submission/middlemarch-abstract.pdf) submitted to [Digital Humanities 2017](https://dh2017.adho.org/)
+ - Presented initial findings, [Stanford Literary Lab](http://litlab.stanford.edu/), Feb. 2017
+
+Sept. 2016 [A Generator of Socratic Dialogues](http://jonreeve.com/2016/10/socratic-dialogue-generator/) 
+
+ - Winner, [2016 DH Awards](http://dhawards.org/dhawards2016/results/), “Best Use of DH For Fun.” 
 
 **July 2016** [Chapterize: A Tool for Automatically Splittle Electronic Texts into Chapters](http://jonreeve.com/2016/08/chapterize/)
 
@@ -266,6 +272,7 @@ Affiliations and Professional Activities
 ========================================
 
  * Reviewer, [_Digital Scholarship in the Humanities_](http://dsh.oxfordjournals.org/) (formerly _Literary and Linguistic Computing_), Oxford University Press
+ * Reviewer, [_Journal of Data Mining and Digital Humanities_](http://jdmdh.episciences.org/)
  * Editor-At-Large, [Digital Humanities Now](http://digitalhumanitiesnow.org/)
- * Active member, [Experimental Methods in the Humanities Group](http://xpmethod.github.io/), Columbia University
+ * Active member, [Group for Experimental Methods in the Humanities](http://xpmethod.github.io/), Columbia University
  * Member of professional organizations: Modern Language Association; Association for Computers in the Humanities; Society for Textual Scholarship; Humanities, Arts, and Sciences Advanced Collaboratory
