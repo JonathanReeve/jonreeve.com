@@ -58,8 +58,10 @@ Freelance
 Workshops
 =========
 
-**Feb. ‘17** “Advanced Text Analysis with SpaCy and TextaCy”
- - Workshop at the [2017 NYCDH Week](http://dhweek.nycdh.org/)
+**Feb. ‘17** [“Advanced Text Analysis with SpaCy and TextaCy”](https://github.com/JonathanReeve/advanced-text-analysis-workshop-2017/blob/master/advanced-text-analysis.ipynb)
+
+ - Workshop given at New York University during the [2017 NYCDH Week](http://dhweek.nycdh.org/)
+ - [Workshop notebook](https://github.com/JonathanReeve/advanced-text-analysis-workshop-2017/blob/master/advanced-text-analysis.ipynb) featured in the [SpaCy notebook collection](https://github.com/explosion/spacy-notebooks)
 
 **Apr. '16** "An Introduction to Version Control with Git"
 
@@ -71,7 +73,7 @@ Workshops
 
 **Feb. '16** NYCDH Week Workshop: ["Text Editing with Vim"](http://dhweek.nycdh.org/event/lightning-fast-text-editing-with-vim/)
 
- * Workshop at [NYCDH Week 2016](http://dhweek.nycdh.org/)
+ * Workshop at Columbia University during [NYCDH Week 2016](http://dhweek.nycdh.org/)
 
 Teaching
 ========
