@@ -18,9 +18,10 @@ html
       nav
         each navitem in site.nav 
           li
-            a(href=navitem.url)= '/' + navitem.name
+            a(href=navitem.url)= navitem.name
 
-    block content
+    section#content
+      block content
 
     footer 
       p Contact: #{site.author.email}

@@ -20,5 +20,10 @@
     "metalsmith-tags": "^2.0.0",
     "metalsmith-watch": "^1.0.3",
     "pug": "^2.0.0-beta11"
+  },
+  "scripts": {
+    "dev": "npm run browser_sync & NODE_ENV=development nodemon --exec 'npm start && browser-sync reload'",
+    "browser_sync": "browser-sync start --server build --browser=chromium",
+    "start": "DEBUG=metalsmith:metadata metalsmith"
   }
 }

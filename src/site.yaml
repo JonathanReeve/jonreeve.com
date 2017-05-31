@@ -1,5 +1,5 @@
 title: Jonathan Reeve
-description: Digital Humanities, Hacks, Improvements
+description: Computational Literary Analysis
 url: http://jonreeve.com
 author:
   name: Jonathan Reeve
@@ -7,6 +7,6 @@ author:
   twitter: j0_0n
 nav: 
   - name: cv
-    url: cv
+    url: /cv
   - name: tags
-    url: tags
+    url: /tags

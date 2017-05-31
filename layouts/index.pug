@@ -4,9 +4,6 @@ block content
   //-div!= JSON.stringify(posts)
   section#posts
     each post in posts
-      li 
-        a(href=post.path).post.title!= post.title
-        p
-          span.post-date!= post.date + ' '
-          each tag in post.tags
-            span.post-tags!= tag + ' '
+      li.post
+        span.post-date!= post.date + ' '
+        a(href=post.path).post-title!= post.title

@@ -1,8 +1,11 @@
 extends page
 
 block content
-  each tag in Object.keys(tags).sort()
-    li!= tag 
-    each page in tags[tag]
-      li
-        a(href=page.path)!= page.title
+  section#tags
+    each tag in Object.keys(tags).sort()
+      li.tag
+        a(name=tags[tag].urlSafe)
+        span.tag!= tag 
+        each page in tags[tag]
+          li
+            a(href='/'+page.path)!= page.title

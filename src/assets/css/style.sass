@@ -1,11 +1,29 @@
 body
   font-family: Merriweather
 
-header
-  background-color: #111 
-  color: white
-  
+// Base styles of elements
+a
+  text-decoration: none
+li
+  list-style-type: none
+
+section#content
+  margin: 0 15%
+
+section#tags
+  li li 
+    margin-left: 2em
 
 section#posts
   li 
-    list-style-type: none
+    display: flex
+    span.post-date
+      width: 30%
+    a.post.title
+      width: 70%
+
+  /* div.meta 
+    /* span.tags
+    /*   a
+    /*     &:not(:last-child):after
+    /*       content: ', '
