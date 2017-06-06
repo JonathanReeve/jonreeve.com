@@ -5,7 +5,7 @@ category: digital humanities
 tags: 
  - etymology
  - medieval
- - Chaucer
+ - chaucer
 ---
 
 Chaucer's *Canterbury Tales* exhibits one of the richest vocabularies of
