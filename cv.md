@@ -141,7 +141,7 @@ Articles in [_The Manifesto in Literature_](http://www.cengage.com/search/produc
 
 Poems anthologized:
 
- * 2011 *A Gathering of the Tribes*adjusted_rand_score
+ * 2011 *A Gathering of the Tribes*
  * 2009 *Arsenic Lobster Anthology*
 
 Conference Presentations
