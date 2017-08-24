@@ -16,7 +16,7 @@ Jan. 2014 **Master of Arts**, Humanities, New York University
 
 May 2010 **Master of Arts**, Literature, Brooklyn College
 
-Jan. 2004 **Bachelor of Arts**, Individualized Study, New York University
+Jan. 2004 **Bachelor of Arts**, Literature, New York University
 
 Positions
 =========
@@ -31,7 +31,7 @@ Positions
 
 **June '12 - Jan. '15** New York University, History Department: Web Developer
 
- * Developed [a customization engine](https://github.com/JonathanReeve/customeka) for the [Omeka content management platform](http://omeka.org)
+ * Developed [a customization engine](https://github.com/JonathanReeve/theme-customeka) for the [Omeka content management platform](http://omeka.org)
  * Designed and developed Omeka themes deployed on [Greenwich Village History](http://gvh.aphdigital.org) and [New Jersey Digital History](http://njdigitalhistory.org/NJDHA/)
 
 **June '12 - Aug. '15** Margaret Sanger Papers Project: Programmer
@@ -47,16 +47,22 @@ Positions
 Freelance
 =========
 
-**Nov. '15 - Present** [DHBox](http://dhbox.org), [City University of New York](http://cuny.edu)
+**Nov. '15 - July '17'** [DHBox](http://dhbox.org), [City University of New York](http://cuny.edu)
 
- * Developing [a textual corpus downloader](https://github.com/DH-Box/corpus-downloader). 
+ * Developed [corpus, a textual corpus downloader](https://github.com/DH-Box/corpus-downloader). 
+ * Integrated textual corpus download functionality into the [DH Box web app](http://dhbox.org)
+ * Created [DH-USB, a digital humanities operating system designed to run from a USB drive](https://github.com/DH-Box/dh-usb). 
 
 **May '15 - Oct. '15** Greenwich Village Society for Historic Preservation
 
- * Developed the [Greenwich Village Society for Historic Preservation Image Archive](http://archive.gvshp.org), an Omeka-based image archive.
+ * Developed the [Greenwich Village Society for Historic Preservation Image Archive](http://archive.gvshp.org), an Omeka-based image archive
 
 Workshops
 =========
+
+**Apr. '17** [An Introduction to Text Analysis and Visualization](https://github.com/JonathanReeve/dataviz-workshop-2017)
+
+  - [Art of Data Visualization Week](http://library.columbia.edu/news/events/art-or-knowledge/dv_program.html), Columbia University
 
 **Feb. ‘17** [“Advanced Text Analysis with SpaCy and TextaCy”](https://github.com/JonathanReeve/advanced-text-analysis-workshop-2017/blob/master/advanced-text-analysis.ipynb)
 
@@ -65,22 +71,27 @@ Workshops
 
 **Apr. '16** "An Introduction to Version Control with Git"
 
- * Workshop at the [2016 meeting of the Society for Textual Scholarship](https://textualsociety.org/current-conference-program/)
+ - Workshop at the [2016 meeting of the Society for Textual Scholarship](https://textualsociety.org/current-conference-program/)
 
 **Apr. ‘16** “An Introduction to Visualizing Text with Python”
 
- * Workshop at Columbia University’s [Art of Data Visualization](http://library.columbia.edu/news/events/data-visualization.html) event
+ - Workshop at Columbia University’s [Art of Data Visualization](http://library.columbia.edu/news/events/data-visualization.html) event
 
 **Feb. '16** NYCDH Week Workshop: ["Text Editing with Vim"](http://dhweek.nycdh.org/event/lightning-fast-text-editing-with-vim/)
 
- * Workshop at Columbia University during [NYCDH Week 2016](http://dhweek.nycdh.org/)
+ - Workshop at Columbia University during [NYCDH Week 2016](http://dhweek.nycdh.org/)
 
 Teaching
 ========
 
-**Sept. ‘16 - Present** Columbia University, Department of English and Comparative Literature: Teaching Assistant
+**Sept. '17 - Present** Columbia University, Department of English and Comparative Literature: Lecturer
 
- - Led a weekly discussion section in Joyce’s _Ulysses_ for the course “James Joyce”
+ - Teaching "University Writing with Readings in the Data Sciences"
+
+**Sept. ‘16 - May '17** Columbia University, Department of English and Comparative Literature: Teaching Assistant
+
+ - Led a weekly discussion section in Joyce’s _Ulysses_ for the course “James Joyce,” Fall '16
+ - Assistant-taught History of the English Language, Spring '17
 
 **Sept. '12 – Dec. '12** New York University, Computer Science Department: Teaching Assistant
 
@@ -106,19 +117,19 @@ Teaching
 Languages and Technical Skills
 ==============================
 
-**Languages**: Python, PHP, BASH/ZSH, jQuery, XSL. Working knowledge of: Ruby, Javascript
+**Languages**: Python, PHP, BASH/ZSH, jQuery, XSL. Working knowledge of: Ruby, Javascript, Haskell
 
-**Markup Languages**: HTML, CSS, Sass, XML, TEI XML, LaTeX, Markdown
+**Markup Languages**: HTML, CSS, Sass, XML, TEI XML, LaTeX, Markdown, Org
 
-**Frameworks, CMSs**: Jekyll, WordPress, BuddyPress, Commons in a Box, Omeka. Some experience with ZEND, Django, and Flask.
+**Frameworks, CMSs**: Flask, Jekyll, WordPress, BuddyPress, Commons in a Box, Omeka, and some experience with ZEND and Django
 
-**Databases**: MySQL, MariaDB, PostgreSQL
+**Databases**: MySQL, MariaDB, PostgreSQL, SQLite
 
 **Servers and OSs**: GNU/Linux LAMP and LEMP stacks, especially Ubuntu, Fedora, Arch, and Debian; Unix; MacOS
 
 **Applications**: Vim, Git, Bazaar, GIMP, VMWare, LibreOffice
 
-**Skills**: Web development, web design, computational text analysis, natural language processing, archival textual markup, database management, command-line scripting, version control, virtualization
+**Skills**: Computational text analysis, natural language processing, archival textual markup, web development and design, database management, command-line scripting, version control, virtualization
 
 **Natural Languages**: English: native; French: advanced (Test de connaissance du français, Level 4); Mandarin Chinese: advanced; Irish, German, Italian, Japanese: beginner
 
@@ -146,6 +157,10 @@ Poems anthologized:
 
 Conference Presentations
 ========================
+
+**2017** [_Middlemarch_: Critical Histories_](https://github.com/lit-mod-viz/middlemarch-critical-histories)
+
+ - Presented poster, "[Frequently Cited Passages Across Time: New Methods for Studying the Critical Reception of Texts](https://github.com/lit-mod-viz/middlemarch-critical-histories/blob/master/papers/dh2017-poster/main.pdf)" at [Digital Humanities 2017](https://dh2017.adho.org/) in Montréal, Canada. 
 
 **2017, 2016** [“Git-Lit: an Application of Distributed Version Control Technology toward the Creation of 50,000 Digital Scholarly Editions”](http://jonreeve.com/presentations/dh2016)
 
@@ -176,7 +191,7 @@ Conference Presentations
 
  * Presented at [The Humanities and Technology Camp](http://newyork2012.thatcamp.org/)
 
-**Dec. 2011** *[The Art of Good Behavior](http://jonreeve.com/behaviour)*, a digital literary archive in TEI XML of a 19th-century etiquette manual
+**Dec. 2011** *[The Art of Good Behavior](http://cs.nyu.edu/courses/fall11/ENGL-GA.2957-001/behaviour/)*, a digital literary archive in TEI XML of a 19th-century etiquette manual
 
  * Presented initial findings, NYU Workshop in Archival Practice
  * Presented completed work, Yale University Digital Humanities Forum, Feb '12
@@ -196,10 +211,11 @@ Digital Projects
 
  - Computational analysis of the critical history of George Eliot’s novel _Middlemarch_. 
  - A collaboration with Milan Terlunen, Sierra Eckert, and other members of Columbia University’s [Group for Experimental Methods in the Humanities](http://xpmethod.plaintext.in/)
- - [Abstract](https://github.com/xpmethod/middlemarch-critical-histories/blob/1359d403c8c8655170babb6e1bf8f81bcb4bc0c9/dh2017-submission/middlemarch-abstract.pdf) submitted to [Digital Humanities 2017](https://dh2017.adho.org/)
+ - [Abstract](https://github.com/xpmethod/middlemarch-critical-histories/blob/1359d403c8c8655170babb6e1bf8f81bcb4bc0c9/dh2017-submission/middlemarch-abstract.pdf) published in the proceedings of [Digital Humanities 2017](https://dh2017.adho.org/)
+ - Presented poster, "[Frequently Cited Passages Across Time: New Methods for Studying the Critical Reception of Texts](https://github.com/lit-mod-viz/middlemarch-critical-histories/blob/master/papers/dh2017-poster/main.pdf)" at [Digital Humanities 2017](https://dh2017.adho.org/), Aug. 2017
  - Presented initial findings, [Stanford Literary Lab](http://litlab.stanford.edu/), Feb. 2017
 
-Sept. 2016 [A Generator of Socratic Dialogues](http://jonreeve.com/2016/10/socratic-dialogue-generator/) 
+**Sept. 2016** [A Generator of Socratic Dialogues](http://jonreeve.com/2016/10/socratic-dialogue-generator/) 
 
  - Winner, [2016 DH Awards](http://dhawards.org/dhawards2016/results/), “Best Use of DH For Fun.” 
 
