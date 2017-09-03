@@ -158,7 +158,7 @@ Poems anthologized:
 Conference Presentations
 ========================
 
-**2017** [_Middlemarch_: Critical Histories_](https://github.com/lit-mod-viz/middlemarch-critical-histories)
+**2017** [_Middlemarch_: Critical Histories](https://github.com/lit-mod-viz/middlemarch-critical-histories)
 
  - Presented poster, "[Frequently Cited Passages Across Time: New Methods for Studying the Critical Reception of Texts](https://github.com/lit-mod-viz/middlemarch-critical-histories/blob/master/papers/dh2017-poster/main.pdf)" at [Digital Humanities 2017](https://dh2017.adho.org/) in Montréal, Canada. 
 
