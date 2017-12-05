@@ -207,6 +207,11 @@ Conference Presentations
 Digital Projects
 ================
 
+**Oct. 2017 - Present** Corpus-DB: A Structured Textual Corpus Database
+
+ - Oct. 2017: Recipient, Columbia University Libraries Digital Centers Internship
+ - Oct. 2017: Winner, [2017 NYCDH Graduate Student Project Award](https://nycdh.org/groups/nycdh-announcements-71439400/forum/topic/2017-nycdh-graduate-student-project-award-recipients/) 
+
 **Sept. 2016 - Present** [Middlemarch Critical Histories](https://github.com/xpmethod/middlemarch-critical-histories)
 
  - Computational analysis of the critical history of George Eliot’s novel _Middlemarch_. 
@@ -232,6 +237,7 @@ Digital Projects
  - Nov. 2015: [Presented](http://jonreeve.com/presentations/media-res2/) at [Media Res 2, New York University](https://digitalfellows.commons.gc.cuny.edu/2015/11/12/media-res-2-nyc-dh-lightning-talks/)
  - Sept. 2015: Honorable mention, [2015 NYCDH Graduate Student Digital Project Awards](http://nycdh.org/nycdh-graduate-student-digital-project-awards-2015/)
  - Apr. 2016: Recipient of Association of Digital Humanities Organizations student bursary
+ - Oct. 2017: [Runner-up, British Library Labs Awards](http://labs.bl.uk/British+Library+Labs+Awards)
 
 **Jul. 2015 - Present**: [A Portrait of the Artist as a TEI XML File: an Open, Collaborative Scholarly Edition of James Joyce's _A Portrait of the Artist as a Young Man_](https://github.com/JonathanReeve/corpus-joyce-portrait-TEI)
 
