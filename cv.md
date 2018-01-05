@@ -8,7 +8,7 @@ permalink: /cv/
 Education
 =========
 
-Sept. 2015 - Present: **PhD Student**, Columbia University
+Sept. 2015 - Present **PhD Student**, English and Comparative Literature, Columbia University
 
 May 2016 **Master of Arts**, English and Comparative Literature, Columbia University
 
@@ -47,7 +47,7 @@ Positions
 Freelance
 =========
 
-**Nov. '15 - July '17'** [DHBox](http://dhbox.org), [City University of New York](http://cuny.edu)
+**Nov. '15 - July '17** [DHBox](http://dhbox.org), [City University of New York](http://cuny.edu)
 
  * Developed [corpus, a textual corpus downloader](https://github.com/DH-Box/corpus-downloader). 
  * Integrated textual corpus download functionality into the [DH Box web app](http://dhbox.org)
@@ -59,6 +59,14 @@ Freelance
 
 Workshops
 =========
+
+**Nov. ‘17** [“Text Analysis with SpaCy and Scikit-Learn”](https://pydata.org/nyc2017/schedule/presentation/51/)
+
+ - Workshop given at [PyData NYC](https://pydata.org/) (a data science conference), Microsoft
+ 
+**Nov. '17** An Introduction to Semantic Markup and Computational Analysis of _Ulysses_
+
+ - Workshop given at [Finnegan's Waves](https://www.buffalo.edu/ubnow/stories/2017/10/finnegans-waves.html), University at Buffalo
 
 **Apr. '17** [An Introduction to Text Analysis and Visualization](https://github.com/JonathanReeve/dataviz-workshop-2017)
 
@@ -84,9 +92,9 @@ Workshops
 Teaching
 ========
 
-**Sept. '17 - Present** Columbia University, Department of English and Comparative Literature: Lecturer
+**Sept. '17 - Present** Columbia University, Department of English and Comparative Literature: Instructor
 
- - Teaching "University Writing with Readings in the Data Sciences"
+ - "University Writing with Readings in the Data Sciences"
 
 **Sept. ‘16 - May '17** Columbia University, Department of English and Comparative Literature: Teaching Assistant
 
@@ -137,9 +145,9 @@ Languages and Technical Skills
 Publications
 ============
 
-"A Macro-Etymological Analysis of James Joyce's _A Portrait of the Artist as a Young Man_", [_Reading Modernism with Machines_](http://www.palgrave.com/us/book/9781137595683#otherversion=9781137595690), Palgrave Macmillan, 2016.
+"A Macro-Etymological Analysis of James Joyce's _A Portrait of the Artist as a Young Man_," [_Reading Modernism with Machines_](http://www.palgrave.com/us/book/9781137595683#otherversion=9781137595690), Palgrave Macmillan, 2016.
 
-["Installing Omeka"](http://programminghistorian.org/lessons/installing-omeka), [_The Programming Historian_](http://programminghistorian.org/), 2016. 
+["Installing Omeka,"](http://programminghistorian.org/lessons/installing-omeka) [_The Programming Historian_](http://programminghistorian.org/), 2016. 
 
 Articles in [_The Manifesto in Literature_](http://www.cengage.com/search/productOverview.do;jsessionid=4FD757A6BD2DD6A4F5D0D81734BF2911?N=197&Ntk=P_EPI&Ntt=315361985178615732812460845631655972971&Ntx=mode+matchallpartial), Thomas Riggs & Co, Eds., Gale Cengage; 2013. 
 
@@ -200,9 +208,11 @@ Conference Presentations
 
  * Paper delivered at the 2011 North American James Joyce Conference
 
+<!--
 **May 2010** "Dominance and *Domine*: Toward a Post-Religious Criticism of James Joyce's _Ulysses_,"
 
  * Paper delivered at "Deconstructing the Gods," Graduate English Conference, City University of New York, Brooklyn College
+ -->
 
 Digital Projects
 ================
@@ -258,9 +268,11 @@ Digital Projects
  - Developed categorizers for determining the subject of scraped syllabi
  - Performed collocations analyses by subject
 
+<!-- 
 **June 2014**: [Twitter Poet](https://github.com/JonathanReeve/trendhaikubot)
 
  - In collaboration with mathematician [Rachel Levanger](http://rachellevanger.com/), designed a Twitter bot that generates poems based on trending Twitter topics in the styles of 20th century poets
+ --> 
 
 **Jan. 2014 - Present**: [Annotags](/projects/annotags/about.html)
 
@@ -293,8 +305,10 @@ Digital Projects
 Affiliations and Professional Activities
 ========================================
 
+ * Active member, [Literary Modeling and Visualization Lab](http://xpmethod.plaintext.in/projects/literary-modeling.html), [Group for Experimental Methods in the Humanities](http://xpmethod.github.io/), Columbia University
+ * Founding member, [Digital Literary Stylistics Special Interest Group](https://github.com/DLS-SIG), Association of Digital Humanities Organizations
+ * Reviewer, [Digital Humanities 2018](https://dh2018.adho.org/en/) conference
  * Reviewer, [_Digital Scholarship in the Humanities_](http://dsh.oxfordjournals.org/) (formerly _Literary and Linguistic Computing_), Oxford University Press
  * Reviewer, [_Journal of Data Mining and Digital Humanities_](http://jdmdh.episciences.org/)
  * Editor-At-Large, [Digital Humanities Now](http://digitalhumanitiesnow.org/)
- * Active member, [Group for Experimental Methods in the Humanities](http://xpmethod.github.io/), Columbia University
  * Member of professional organizations: Modern Language Association; Association for Computers in the Humanities; Society for Textual Scholarship; Humanities, Arts, and Sciences Advanced Collaboratory
