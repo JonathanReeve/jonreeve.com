@@ -214,6 +214,7 @@ Conference Presentations
  * Paper delivered at "Deconstructing the Gods," Graduate English Conference, City University of New York, Brooklyn College
  -->
 
+
 Digital Projects
 ================
 
@@ -230,6 +231,7 @@ Digital Projects
  - Presented poster, "[Frequently Cited Passages Across Time: New Methods for Studying the Critical Reception of Texts](https://github.com/lit-mod-viz/middlemarch-critical-histories/blob/master/papers/dh2017-poster/main.pdf)" at [Digital Humanities 2017](https://dh2017.adho.org/), Aug. 2017
  - Presented initial findings, [Stanford Literary Lab](http://litlab.stanford.edu/), Feb. 2017
 
+
 **Sept. 2016** [A Generator of Socratic Dialogues](http://jonreeve.com/2016/10/socratic-dialogue-generator/) 
 
  - Winner, [2016 DH Awards](http://dhawards.org/dhawards2016/results/), “Best Use of DH For Fun.” 
@@ -238,23 +240,30 @@ Digital Projects
 
  - Tool [published to PyPi](https://pypi.python.org/pypi/chapterize), Sept. 2016. 
 
-**Jan 2016**: [Infinite Library](https://hackdash.org/projects/5692699962b2cc5d050af709), a universal web-based ereader that connects to GitHub (Project GITenberg) to search, save, and render books in the browser.
+**Jan 2016** [Infinite Library](https://hackdash.org/projects/5692699962b2cc5d050af709), a universal web-based ereader that connects to GitHub (Project GITenberg) to search, save, and render books in the browser.
 
  - A collaborative project conceived at the [Codex Hackathon 2016](http://codexhackathon.com/) at the [MIT Media Lab](http://media.mit.edu/)
 
-**Aug. 2015 - Present**: [Git-Lit: An Open Source Project to Parse, Version Control, and Publish ~50,000 British Library Electronic Books](https://github.com/JonathanReeve/git-lit)
+**Jul. 2015 - Present** [The Open Scholarly Editions of James Joyce's _Ulysses_ and _A Portrait of the Artist as a Young Man_](https://github.com/Open-Editions/)
+
+ - A collaborative TEI XML scholarly edition of James Joyce's novels _Ulysses_ and _A Portrait of the Artist as a Young Man_, using semantic markup. 
+ - Nov. 2015, [Presented](http://jonreeve.com/presentations/digital-editions/) at Digital Editions Making Encounter, Group for Experimental Methods in the Humanities, Columbia University
+ - Since 2016, based on revised editions by Hans Walter Gabler
+ - Oct. 2017, presented at [Joyce in the Digital Age](https://jonathanreeve.github.io/conference-joyce-digital/), Columbia University
+ - Nov. 2017, presented at [Finnegan's Waves](https://www.buffalo.edu/ubnow/stories/2017/10/finnegans-waves.html), University at Buffalo
+
+**Aug. 2015 - Present** [Git-Lit: An Open Source Project to Parse, Version Control, and Publish ~50,000 British Library Electronic Books](https://github.com/JonathanReeve/git-lit)
 
  - Nov. 2015: [Presented](http://jonreeve.com/presentations/media-res2/) at [Media Res 2, New York University](https://digitalfellows.commons.gc.cuny.edu/2015/11/12/media-res-2-nyc-dh-lightning-talks/)
  - Sept. 2015: Honorable mention, [2015 NYCDH Graduate Student Digital Project Awards](http://nycdh.org/nycdh-graduate-student-digital-project-awards-2015/)
  - Apr. 2016: Recipient of Association of Digital Humanities Organizations student bursary
  - Oct. 2017: [Runner-up, British Library Labs Awards](http://labs.bl.uk/British+Library+Labs+Awards)
 
-**Jul. 2015 - Present**: [A Portrait of the Artist as a TEI XML File: an Open, Collaborative Scholarly Edition of James Joyce's _A Portrait of the Artist as a Young Man_](https://github.com/JonathanReeve/corpus-joyce-portrait-TEI)
+**May 2015** [Tag, Catalog, Iterate: A Non-Linear Analysis of Katherine Mansfield's "The Garden Party"](http://jonreeve.com/projects/garden-party/)
 
- - A collaborative TEI XML scholarly edition of James Joyce's novel _A Portrait of the Artist as a Young Man_, using rich markup. Generated from a text recently released from the Oxford Text Archive.
- - Nov. 2015, [Presented](http://jonreeve.com/presentations/digital-editions/) at Digital Editions Making Encounter, Group for Experimental Methods in the Humanities, Columbia University
+ - A TEI XML edition of "The Garden Party," annotated and tagged line-by-line. 
 
-**Dec. 2013 - Sept. 2015**: Contributor to the open-source projects:
+**Dec. 2013 - Sept. 2015** Contributor to the open-source projects:
 
  - [Buddypress](http://buddypress.org/): social networking WordPress plugin. Over 2.2 million downloads
  - [Buddypress Docs](https://wordpress.org/plugins/buddypress-docs/): collaborative authoring tool for WordPress. Over 80,000 downloads
@@ -263,18 +272,18 @@ Digital Projects
  - [CBOX-MLA](https://github.com/mlaa/cbox-mla), the WordPress theme and customization layer that powers the [MLA Commons](https://commons.mla.org)
  - [CBOX-Auth](https://github.com/mlaa/cbox-auth), the authentication system for the _MLA Commons_.  
 
-**July 2014**: [Open Syllabus Project](http://opensyllabusproject.org/)
+**July 2014** [Open Syllabus Project](http://opensyllabusproject.org/)
 
  - Developed categorizers for determining the subject of scraped syllabi
  - Performed collocations analyses by subject
 
 <!-- 
-**June 2014**: [Twitter Poet](https://github.com/JonathanReeve/trendhaikubot)
+**June 2014** [Twitter Poet](https://github.com/JonathanReeve/trendhaikubot)
 
  - In collaboration with mathematician [Rachel Levanger](http://rachellevanger.com/), designed a Twitter bot that generates poems based on trending Twitter topics in the styles of 20th century poets
  --> 
 
-**Jan. 2014 - Present**: [Annotags](/projects/annotags/about.html)
+**Jan. 2014 - Present** [Annotags](/projects/annotags/about.html)
 
  - Designed a protocol for a literary metadata hashtag that provides the ability to livetweet books, electronic documents, and other texts
  - [Web app calculator](/projects/annotags) released Sept. 2014
@@ -285,7 +294,7 @@ Digital Projects
  - [Presented](http://www.jonreeve.com/presentations/keydh2015) at Keystone Digital Humanities conference, July 2015
  - [Featured resource in _Digital Humanities Now_](http://www.digitalhumanitiesnow.org/2015/07/resource-annotags-a-decentralized-textual-annotation-protocol/), July 2015.
 
-**Sept. 2013 - Present**: [The Macro-Etymological Analyzer](http://jonreeve.com/etym)
+**Sept. 2013 - Present** [The Macro-Etymological Analyzer](http://jonreeve.com/etym)
 
  - [Featured](http://www.tapor.ca/?id=470) in the [Text Analysis Portal for Research](http://www.tapor.ca/), 2015.
  - Listed in Alain Liu's directory of Digital Humanities Tools
@@ -296,7 +305,7 @@ Digital Projects
 
  - A TEI XML edition of Virginia Woolf's novel, with dialog markup that facilitates dialog extraction
 
-**Jan. 2013 - Dec. 2013**: [New York University Digital Humanities Working Group](http://nyudigitalexperiments.com) Epigraphs Project
+**Jan. 2013 - Dec. 2013** [New York University Digital Humanities Working Group](http://nyudigitalexperiments.com) Epigraphs Project
 
  - Developed a [script to parse epigraphs](https://github.com/JonathanReeve/epi-project) from TEI XML
  - Designed initial prototypes of project database
