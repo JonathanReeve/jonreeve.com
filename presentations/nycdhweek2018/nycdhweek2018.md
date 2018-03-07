@@ -254,4 +254,5 @@ api.corpus-db.org/novels/adaptedTo/films
 
  - [github.com/JonathanReeve/corpus-db](https://github.com/JonathanReeve/corpus-db): project home
  - [jonreeve.com](jonreeve.com): my website
+ - [twitter.com/j0_0n](http://twitter.com/j0_0n): twitter
  - [xpmethod.plaintext.in](http://xpmethod.plaintext.in/): our lab
