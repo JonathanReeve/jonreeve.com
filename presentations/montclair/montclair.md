@@ -16,7 +16,7 @@ Columbia University
 
 ## Open source philosophy
 
- - everything open-source from the beginning
+ - always-already online
  - open-access
  - collaborative
 
@@ -113,8 +113,18 @@ life, Paris, old, live, time, sit, key, soul, prayer, consciousness, belief, mar
 
 ----------------------------
 
-
 # Experiments in Procedural Corpus Creation
+
+## Problems
+
+ - Difficult to download and manipulate large collections of text files
+ - Book metadata is scattered
+
+## Solution
+
+ - Aggregate texts from public-domain sources
+ - Clean licenses, paratext
+ - Aggregate metadata from Wikipedia, Goodreads, Etc. 
 
 ----------------------------
 
@@ -154,10 +164,13 @@ Novels set in Paris, or London?
 
 ----------------------------
 
+![Chapter statistics](images/chap-stats.png)
+
+----------------------------
+
 ## Words distinctive of first paragraphs of chapters
 
 morning, early, breakfast, afternoon, summer, autumn, winter, sunday, weather, october, arrival, june, september, saturday, awoke, situated, november, july, season, december
-
 
 ## Words distinctive of middle paragraphs of chapters
 
@@ -169,14 +182,56 @@ kissed, farewell, bye, muttered, parted, disappeared, sank, page, asleep, strode
 
 ----------------------------
 
+# Allusion Detection
+
+## Allusion Detection
+
+ - Uses custom fuzzy text-matcher (plagiarism detector) over 500 novels
+ - "Biblical": quote/structural resonance from the KJV
+ - "Classical": mention of Greek/Roman diety
+ 
+----------------------------
+
+![Biblical and classical allusions, by decade](images/allusion-bibl-clas.png)
+
+----------------------------
+
+![Classical allusions, modernist/non-modernist, by decade](images/allusion-mod.png)
+
+----------------------------
+
+## Most-Quoted Book of the Bible
+
+----------------------------
+
+ - Matthew: 129
+ - Luke: 83
+ - Psalms: 70
+ - Job: 50
+ - Isaiah: 48
+ - Mark: 46
+ - Proverbs: 39
+ - Genesis: 34
+
+----------------------------
+
+## Most-Mentioned Greco-Roman Mythological Figure
+
+----------------------------
+
+ - Venus: 229
+ - Muses: 156
+ - Apollo: 136
+ - Jupiter: 126
+ - Juno: 100
+ - Pan: 94
+
+----------------------------
+
 # Resources
 
 ## Do it yourself
 
- - You don't need to be a programmer
- - You don't need to be good at math
- - You just have to be interested in literature
- 
 ## Books
 
  - [nltk.org/book](http://nltk.org/book)
@@ -189,6 +244,10 @@ kissed, farewell, bye, muttered, parted, disappeared, sank, page, asleep, strode
 ## DHBox
 
 ![](images/dhbox.png)
+
+## DHBox Notebooks
+
+ - [github.com/DH-Box/docs/](https://github.com/DH-Box/docs/blob/master/text-analysis-tutorial.md)
 
 ## DH-USB
 
