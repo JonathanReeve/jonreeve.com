@@ -231,7 +231,6 @@ Digital Projects
  - Presented poster, "[Frequently Cited Passages Across Time: New Methods for Studying the Critical Reception of Texts](https://github.com/lit-mod-viz/middlemarch-critical-histories/blob/master/papers/dh2017-poster/main.pdf)" at [Digital Humanities 2017](https://dh2017.adho.org/), Aug. 2017
  - Presented initial findings, [Stanford Literary Lab](http://litlab.stanford.edu/), Feb. 2017
 
-
 **Sept. 2016** [A Generator of Socratic Dialogues](http://jonreeve.com/2016/10/socratic-dialogue-generator/) 
 
  - Winner, [2016 DH Awards](http://dhawards.org/dhawards2016/results/), “Best Use of DH For Fun.” 
@@ -251,6 +250,7 @@ Digital Projects
  - Since 2016, based on revised editions by Hans Walter Gabler
  - Oct. 2017, presented at [Joyce in the Digital Age](https://jonathanreeve.github.io/conference-joyce-digital/), Columbia University
  - Nov. 2017, presented at [Finnegan's Waves](https://www.buffalo.edu/ubnow/stories/2017/10/finnegans-waves.html), University at Buffalo
+ - Mar. 2018, presented at Montclair State University
 
 **Aug. 2015 - Present** [Git-Lit: An Open Source Project to Parse, Version Control, and Publish ~50,000 British Library Electronic Books](https://github.com/JonathanReeve/git-lit)
 
@@ -258,6 +258,7 @@ Digital Projects
  - Sept. 2015: Honorable mention, [2015 NYCDH Graduate Student Digital Project Awards](http://nycdh.org/nycdh-graduate-student-digital-project-awards-2015/)
  - Apr. 2016: Recipient of Association of Digital Humanities Organizations student bursary
  - Oct. 2017: [Runner-up, British Library Labs Awards](http://labs.bl.uk/British+Library+Labs+Awards)
+ - Feb. 2018: [Featured, British Library Digital Scholarship Blog](http://blogs.bl.uk/digital-scholarship/2018/02/-bl-labs-2017-symposium-git-lit-learning-teaching-award-runner-up.html)
 
 **May 2015** [Tag, Catalog, Iterate: A Non-Linear Analysis of Katherine Mansfield's "The Garden Party"](http://jonreeve.com/projects/garden-party/)
 
