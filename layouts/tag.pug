@@ -1,4 +1,4 @@
 h1!= tag
 each page in tags[tag]
-  li 
+  li(class='taggedPost')
     a(href=page.path)!= page.title

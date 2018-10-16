@@ -1,29 +1,91 @@
+@import "../../../node_modules/bulma/bulma.sass"
+
+$blue: #494E8E
+$lightblue: lighten($blue, 10%)
+$darkblue: #002
+$lightgray: #fafafa
+
 body
+  margin: 0
   font-family: Merriweather
+  background-color: $lightgray
 
 // Base styles of elements
-a
+a, a:visited
+  color: $blue
   text-decoration: none
+  &:hover
+    color: $lightblue
 li
   list-style-type: none
 
-section#content
-  margin: 0 15%
+header
+  display: flex
+  align-items: center
+  padding: 2em
+  .navbar-brand
+    display: block
+    margin: 0
+  nav
+    margin-left: auto
+    li
+      display: inline-block
+      margin: 1em
+      text-transform: uppercase
+      font-size: 150%
+
+section.content
+  margin-top: 2em
+  time
+    margin-bottom: 1em
 
 section#tags
-  li li 
+  li.taggedPost
     margin-left: 2em
 
 section#posts
-  li 
+  li
     display: flex
+    > *
+      margin: 1em
     span.post-date
-      width: 30%
-    a.post.title
-      width: 70%
+      min-width: 7em
+      align-self: center
+    a.post-title
+      font-size: 150%
+  div.meta
+    span.tags
+      a
+        &:not(:last-child):after
+          content: ', '
 
-  /* div.meta 
-    /* span.tags
-    /*   a
-    /*     &:not(:last-child):after
-    /*       content: ', '
+#cv
+  span
+    margin-left: 0.4em
+    &.date
+      margin-left: 0
+  ul.notes, ul.updates
+    list-style-position: outside
+    li
+      list-style-type: circle
+      margin-left: 2em
+  section#teaching
+    li.job
+      span.job-name
+          font-style: italic
+
+footer
+  display: flex
+  align-items: center
+  margin-top: 1em
+  padding: 5em
+  background-color: $darkblue
+  color: $lightgray
+  font-size: 80%
+  a, a:visited
+    color: $lightblue
+    &:hover
+      color: $blue
+  a.fa
+    font-size: 200%
+    margin: 0.75em

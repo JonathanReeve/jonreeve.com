@@ -1,40 +1,95 @@
 extends page
 
 block content
-  h1 Curriculum Vitae
-  div!= contents 
+  h1.is-size-1 Curriculum Vitae
+  div!= contents
 
-  section#education
-    h2 Education
-    table 
-      each entry in cv.ed.reverse()
-        tr
-        td!= entry.date
-        td!= entry.university
-        td!= entry.degree
+  div.container#cv
 
-  section#projects
-    h2 Projects
-    each project in cv.projects
-      h3.project-title
-        a(href=project.url)!= project.title
-      p.project-date
-        project.date
-        if project.end
-          != ' - ' + project.end
-      p!= project.description
-      if project.collaborators
-        p!= 'In collaboration with ' + project.collaborators
-      if project.updates
-        each update in project.updates.reverse()
-          li 
-            span.date!= update.date + ' '
-            span.description!= update.description
-      if project.talks
-        h4 Talks: 
-        each talk in project.talks
-          li 
-            span.date!= talk.date + ' '
-            span.title!= '"' + talk.title + '"'
+    section.section#education
+      h2.title.is-2 Education
+      table.table
+        each entry in cv.ed.reverse()
+          tr
+          td!= entry.date
+          td!= entry.university
+          td!= entry.degree
+          td!= entry.field
+
+    section.section#projects
+      h2.title.is-2 Projects
+      each project in cv.projects
+        h3.title.is-3.project-title
+          a(href=project.url)!= project.title
+        div.project.container
+          span.project-date
+            != '(' + project.start + ' - '
+            if project.end
+              != project.end
+            != ')'
+          span!= project.description
+          if project.collaborators
+            p!= 'In collaboration with ' + project.collaborators
+          if project.updates
+            ul.updates
+              each update in project.updates.reverse()
+                li
+                  span.date!= update.date + ' '
+                  if update.type
+                    span.tag.type!= update.type
+                  if update.title
+                    span.updateTitle!= update.title
+                  span.description!= update.description
+                  if update.venue
+                    span.venue!= 'at ' + update.venue
+                  if update.container
+                    span.container!= 'in ' + update.container
+            if project.github
+              img(href='https://img.shields.io/github/tag/' + project.github + '.svg')
+              img(href='https://img.shields.io/github/issue/' + project.github + '.svg')
+            if project.pypi
+              img(href='https://img.shields.io/pypi/v/' + project.github + '.svg')
+
+    section.section#publications
+      h2.title.is-2 Publications
+      ul.publications
+      each project in cv.projects
+        if project.updates
+          each update in project.updates
+            if update.type == 'publication'
+              li.publication
+                span.date!= update.date
+                span.updateTitle!= update.title
+                span.description!= update.description
+                if update.venue
+                  span.venue!= ' at ' + update.venue
+                if update.container
+                  span.container!= ' in ' + update.container
+
+
+    section.section#positions
+      h2.title.is-2 Positions and Freelance Clients
+      each position in cv.positions
+        span.position-date!= position.start + ' - ' + position.end
+        span!= position.org
+        ul.position-updates
+        if position.notes
+          ul.notes
+            each note in position.notes
+              li.note!= note
+
+    section.section#teaching
+      h2.is-size-2 Teaching and Workshops
+      ul.container#teaching
+        each job in cv.teaching
+          li.job
+            span.job-date!= job.date
+            span.job-type.tag!= job.type
+            span.job-name!= job.name
+            span.job-venue!= job.venue
+          if job.notes
+            ul.notes
+              each note in job.notes
+                li.note!= note
 
   //-div!= JSON.stringify(cv.projects)

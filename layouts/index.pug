@@ -6,4 +6,8 @@ block content
     each post in posts
       li.post
         span.post-date!= post.date + ' '
-        a(href=post.path).post-title!= post.title
+        div
+          a(href=post.path).post-title!= post.title
+          div.tags
+            each tag in post.tags
+              a.tag(href="/tags/#" + tag.slug)= tag.name

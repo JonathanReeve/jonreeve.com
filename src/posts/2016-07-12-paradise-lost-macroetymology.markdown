@@ -244,10 +244,10 @@ Latinate words in a section almost always means a low proportion of
 Germanic words. For this reason, this study will mostly examine the
 proportions of Latinate words in *Paradise Lost*.
 
-![Figure 1: Paradise Lost Books, Proportions of Latinate
-Words](/images/milton-macroetym/books-latinate.png)
-<span class="caption">Figure 1: Paradise Lost Books, Proportions of Latinate
-Words</span>
+<figure>
+![Figure 1: Paradise Lost Books, Proportions of Latinate Words](/images/milton-macroetym/books-latinate.png)
+<figcaption>Figure 1: Paradise Lost Books, Proportions of Latinate Words</figcaption>
+</figure>
 
 Figure 1 shows the overall proportions of Latinate words in the books of
 *Paradise Lost*. The Latinity of the epic starts, one might say, *in
@@ -283,10 +283,11 @@ Anglo-Saxon-derived “Princedoms,” all of the words in this series are
 descended from Latin, and arrive either through French or through
 Anglo-Norman.
 
+<figure>
 ![Figure 2: Paradise Lost Subsections, Proportions of Latinate
 Words](/images/milton-macroetym//subsections-latinate.png)
-<span class="caption">
-Figure 2: *Paradise Lost* Subsections, Proportions of Latinate Words</span>
+<figcaption>Figure 2: *Paradise Lost* Subsections, Proportions of Latinate Words</figcaption>
+</figure>
 
 This section has Satan assume an air of high rhetoric, where he will
 ask, “Who can in reason then or right assume / Monarchy over such as
@@ -407,9 +408,10 @@ at ranks \#1 and \#2, respectively, are the Latinate words “redeem” and
 of fallen angels eager to reenter heaven, so it is surprising that they
 should correlate instead with the heavenly monarchy.
 
-![Figure 3: Proportions of Latinate Words among
-Speakers](/images/milton-macroetym/speakers-latinate.png)
-<span class="caption">Figure 3: Proportions of Latinate Words among Speakers</span>
+<figure>
+![Figure 3: Proportions of Latinate Words among Speakers](/images/milton-macroetym/speakers-latinate.png)
+<figcaption>Figure 3: Proportions of Latinate Words among Speakers</figcaption>
+</figure>
 
 One of the superficial features of Latinate words is that they are
 frequently composed of root words and affixes. The Latinate prefixes
@@ -423,9 +425,11 @@ fact begins with “re-” but is not etymologically composed of the “re-”
 prefix, I created a blacklist containing words like “regent,” “reason,”
 “prey,” “under,” and “union.”
 
+<figure>
 ![Figure 4: Prefixes, by Book, Not Normalized for Word
 Count](/images/milton-macroetym/prefixes-books-notnormalized.png)
-<span class="caption">Figure 4: Prefixes, by Book, Not Normalized for Word Count</span>
+<figcaption>Figure 4: Prefixes, by Book, Not Normalized for Word Count</figcaption>
+</figure>
 
 “Re-” is by far the most common of these prefixes, accounting for the
 distinctive word of the narrator, “replied,” as well as God and the
@@ -480,9 +484,11 @@ happen two more times, with the narrator’s “unprevented, unimplored,
 unsought” (3.231), and the Son’s “unshaked, unseduced,
 unterrified”<span id="fnref3" class="fnref">[3](#fn3)</span>(5.899).
 
+<figure>
 ![Figure 5: Prefixes by Speaker, Normalized by
 Wordcount](/images/milton-macroetym/prefixes-speakers-normalized.png)
-<span class="caption">Figure 5: Prefixes by Speaker, Normalized by Wordcount</span>
+<figcaption>Figure 5: Prefixes by Speaker, Normalized by Wordcount</figcaption>
+</figure>
 
 Analyzed by speaker, some surprising trends emerge. Figure 5 shows
 prefix usage by each of the main characters, adjusted for the total

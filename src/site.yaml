@@ -5,8 +5,12 @@ author:
   name: Jonathan Reeve
   email: jon.reeve@gmail.com
   twitter: j0_0n
+  github: JonathanReeve
 nav: 
   - name: cv
     url: /cv
   - name: tags
     url: /tags
+  - name: feed
+    url: /feed
+coda: This work is licensed under a [Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International License](https://creativecommons.org/licenses/by-nc-sa/4.0/). All content © Jonathan Reeve 2017. Hand-coded with love, using free and open-source software, including [Metalsmith](http://www.metalsmith.io/), [Pug](https://pugjs.org/), and [Sass](http://sass-lang.com/). Hosted on [GitHub](https://github.com) and served with [Netlify](https://netlify.com).

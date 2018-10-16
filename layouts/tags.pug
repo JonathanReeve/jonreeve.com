@@ -7,5 +7,5 @@ block content
         a(name=tags[tag].urlSafe)
         span.tag!= tag 
         each page in tags[tag]
-          li
+          li(class='taggedPost')
             a(href='/'+page.path)!= page.title
