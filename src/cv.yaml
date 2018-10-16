@@ -25,10 +25,28 @@ ed:
    date: 2018-05
 
 projects:
+  - title: Corpus-DB
+    url: https://github.com/JonathanReeve/corpus-db
+    github: JonathanReeve/corpus-db
+    start: 2017-03
+    description: A database and API for plain text archives, for digital humanities research.
+    updates:
+      - date: 2018-01
+        type: funding
+        description: Project funded $1K from NYCDH
+      - date: 2017-10
+        type: award
+        description: Winner, [2017 NYCDH Graduate Student Project Award](https://nycdh.org/groups/nycdh-announcements-71439400/forum/topic/2017-nycdh-graduate-student-project-award-recipients/) 
+      - date: 2017-09
+        type: job
+        description: Awarded 2017 Columbia University Libraries Digital Centers Internship
+
   - title: Middlemarch Critical Histories
     url: https://github.com/lit-mod-viz/middlemarch-critical-histories
+    github: lit-mod-viz/middlemarch-critical-histories
+    start: 2016-01
     description: "Computational analyses of the critical history of George Eliot's novel _Middlemarch_."
-    collaborators: "Milan Terlunen, Sierra Eckert, Columbia University’s [Group for Experimental Methods in the Humanities](http://xpmethod.plaintext.in/), and the Stanford Literary Lab."
+    notes: "In collaboration with Milan Terlunen, Sierra Eckert, Columbia University’s [Group for Experimental Methods in the Humanities](http://xpmethod.plaintext.in/), and the Stanford Literary Lab."
     updates: 
       - date: 2017-02
         type: paper
@@ -41,6 +59,8 @@ projects:
   - title: A Generator of Socratic Dialogues
     description: A generator of Socratic dialogues, using meta-Markov chains to emulate character speech. 
     url: http://jonreeve.com/2016/10/socratic-dialogue-generator/
+    start: 2016-10
+    end: 2016-11
     updates:   
       - date: 2017-02
         type: award
@@ -59,7 +79,8 @@ projects:
   - title: Annotags
     description: A protocol for a literary metadata hashtag that provides the ability to livetweet books, electronic documents, and other texts.
     start: 2014-01
-    url: http://jonreeve.com/projects/annotags/about.html
+    url: http://annotags.github.io/
+    github: Annotags/annotags.js
     updates: 
       - date: 2014-09
         description: "[Web app calculator](/projects/annotags) released" 
@@ -79,13 +100,18 @@ projects:
         venue: Keystone Digital Humanities conference
 
   - title: Chapterize
+    start: 2016-08
     description: A command-line tool for breaking a text into chapters.
     url: https://github.com/JonathanReeve/chapterize
+    github: JonathanReeve/chapterize
+    pypi: chapterize
 
   - title: Macro-Etym 
     description: Computational methods applying etymology and language history to textual analysis.
     start: 2013-09 
     url: http://github.com/JonathanReeve/macro-etym
+    github: JonathanReeve/macro-etym
+    pypi: macroetym
     updates: 
       - date: 2015-01 
         description: "[Featured](http://www.tapor.ca/?id=470) in the [Text Analysis Portal for Research](http://www.tapor.ca/)" 
@@ -104,6 +130,7 @@ projects:
     description: Fuzzy text matching and alignment algorithms. 
     start: 2015-01
     url: http://github.com/JonathanReeve/text-matcher
+    github: JonathanReeve/text-matcher
     updates: 
       - date: 2016-10
         description: "[Released command-line tool on the Python Package Archive](https://pypi.python.org/pypi/text-matcher)"
@@ -114,7 +141,8 @@ projects:
     description: A highly customizable theme for the Omeka content management system.
     start: 2013-01
     end: 2015-01
-    url: http://github.com/JonathanReeve/customeka
+    url: http://github.com/JonathanReeve/theme-customeka
+    github: JonathanReeve/theme-customeka
     updates: 
       - date: 2016-08
         type: publication
@@ -122,6 +150,21 @@ projects:
         container: The Programming Historian
 
 positions:
+
+  - org: "[DHBox](http://dhbox.org), [City University of New York](http://cuny.edu)"
+    position: Programmer
+    start: 2015-11
+    end: 2017-07
+    notes:
+      - Developed [corpus, a textual corpus downloader](https://github.com/DH-Box/corpus-downloader)
+      - Integrated textual corpus download functionality into the [DH Box web app](http://dhbox.org)
+      - Created [DH-USB, a digital humanities operating system designed to run from a USB drive](https://github.com/DH-Box/dh-usb)
+
+  - org: Greenwich Village Society for Historic Preservation
+    start: 2015-05
+    end: 2015-10
+    notes:
+      - Developed the [Greenwich Village Society for Historic Preservation Image Archive](http://archive.gvshp.org), an Omeka-based image archive
   - org: Modern Language Association
     position: Web Developer
     start: 2013-11
@@ -147,20 +190,6 @@ positions:
     end: 2012-09
     notes:
       - "Authored six articles for the 2013 reference volume [*The Manifesto in Literature*](http://www.thomasriggs.net/pages/content/index.asp?PageID=158): Richard Stallman's \"The GNU Manifesto,\" John Barlow's \"A Declaration of the Independence of Cyberspace,\" and several others"
-  - org: "[DHBox](http://dhbox.org), [City University of New York](http://cuny.edu)"
-    position: Programmer
-    start: 2015-11
-    end: 2017-07
-    notes:
-      - Developed [corpus, a textual corpus downloader](https://github.com/DH-Box/corpus-downloader)
-      - Integrated textual corpus download functionality into the [DH Box web app](http://dhbox.org)
-      - Created [DH-USB, a digital humanities operating system designed to run from a USB drive](https://github.com/DH-Box/dh-usb)
-
-  - org: Greenwich Village Society for Historic Preservation
-    start: 2015-05
-    end: 2015-10
-    notes:
-      - Developed the [Greenwich Village Society for Historic Preservation Image Archive](http://archive.gvshp.org), an Omeka-based image archive
 
 teaching:
   - date: 2018-09

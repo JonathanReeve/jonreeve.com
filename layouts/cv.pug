@@ -1,14 +1,18 @@
 extends page
 
+mixin badge(path, repo)
+  - var opts = '.svg?style=flat-square&colorB=494E8E'
+  img.badge(src='https://img.shields.io/' + path + repo + opts)
+
 block content
-  h1.is-size-1 Curriculum Vitae
-  div!= contents
+  #cv
+    section#header
+      h1 Curriculum Vitae
+      div!= contents
 
-  div.container#cv
-
-    section.section#education
-      h2.title.is-2 Education
-      table.table
+    section#education
+      h2 Education
+      table
         each entry in cv.ed.reverse()
           tr
           td!= entry.date
@@ -16,59 +20,75 @@ block content
           td!= entry.degree
           td!= entry.field
 
-    section.section#projects
-      h2.title.is-2 Projects
+    section#projects
+      h2 Projects
       each project in cv.projects
-        h3.title.is-3.project-title
-          a(href=project.url)!= project.title
-        div.project.container
-          span.project-date
-            != '(' + project.start + ' - '
-            if project.end
-              != project.end
-            != ')'
-          span!= project.description
-          if project.collaborators
-            p!= 'In collaboration with ' + project.collaborators
+        card
+          h3
+            a(href=project.url class="project-link")!= project.title
+          p
+            span.project-date
+              != '(' + project.start + ' - '
+              if project.end
+                != project.end
+              != ')'
+            span!= project.description
+            if project.notes
+              ul.notes
+                li!= project.notes
+            if project.updates
+              ul.updates
+                each update in project.updates.reverse()
+                  li
+                    span.date!= update.date + ' '
+                    if update.type
+                      tag.type!= update.type
+                    if update.title
+                      span.updateTitle!= update.title
+                    span.description!= update.description
+                    if update.venue
+                      span.venue!= 'at ' + update.venue
+                    if update.container
+                      span.container!= 'in ' + update.container
+            if project.github
+              .badges
+                +badge('github/tag/', project.github)
+                +badge('github/stars/', project.github)
+                +badge('github/issues/', project.github)
+                if project.pypi
+                  +badge('pypi/v/', project.pypi)
+
+    section#publications
+      h2 Publications
+      ul.publications
+        each project in cv.projects
           if project.updates
-            ul.updates
-              each update in project.updates.reverse()
-                li
-                  span.date!= update.date + ' '
-                  if update.type
-                    span.tag.type!= update.type
-                  if update.title
-                    span.updateTitle!= update.title
+            each update in project.updates
+              if update.type == 'publication'
+                li.publication
+                  span.date!= update.date
+                  span.updateTitle!= update.title
                   span.description!= update.description
                   if update.venue
-                    span.venue!= 'at ' + update.venue
+                    span.venue!= ' at ' + update.venue
                   if update.container
-                    span.container!= 'in ' + update.container
-            if project.github
-              img(href='https://img.shields.io/github/tag/' + project.github + '.svg')
-              img(href='https://img.shields.io/github/issue/' + project.github + '.svg')
-            if project.pypi
-              img(href='https://img.shields.io/pypi/v/' + project.github + '.svg')
+                    span.container!= ' in ' + update.container
 
-    section.section#publications
-      h2.title.is-2 Publications
-      ul.publications
-      each project in cv.projects
-        if project.updates
-          each update in project.updates
-            if update.type == 'publication'
-              li.publication
-                span.date!= update.date
-                span.updateTitle!= update.title
-                span.description!= update.description
-                if update.venue
-                  span.venue!= ' at ' + update.venue
-                if update.container
-                  span.container!= ' in ' + update.container
+    section#awards
+      h2 Awards
+      ul.awards
+        each project in cv.projects
+          if project.updates
+            each update in project.updates
+              if update.type == 'award'
+                li.publication
+                  span.date!= update.date
+                  span.updateTitle!= update.title
+                  span.description!= update.description
+                  span.project!= 'for ' + project.name
 
-
-    section.section#positions
-      h2.title.is-2 Positions and Freelance Clients
+    section#positions
+      h2 Positions and Freelance Clients
       each position in cv.positions
         span.position-date!= position.start + ' - ' + position.end
         span!= position.org
@@ -78,13 +98,13 @@ block content
             each note in position.notes
               li.note!= note
 
-    section.section#teaching
-      h2.is-size-2 Teaching and Workshops
-      ul.container#teaching
+    section#teaching
+      h2 Teaching and Workshops
+      ul#teaching
         each job in cv.teaching
           li.job
             span.job-date!= job.date
-            span.job-type.tag!= job.type
+            tag.job-type!= job.type
             span.job-name!= job.name
             span.job-venue!= job.venue
           if job.notes

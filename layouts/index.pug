@@ -10,4 +10,5 @@ block content
           a(href=post.path).post-title!= post.title
           div.tags
             each tag in post.tags
-              a.tag(href="/tags/#" + tag.slug)= tag.name
+              a(href="/tags/#" + tag.slug)
+                tag= tag.name

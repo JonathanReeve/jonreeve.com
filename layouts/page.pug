@@ -5,6 +5,7 @@ html
     meta(charset="UTF-8")
     meta(name='description', content= site.description)
 
+    link(rel='stylesheet', href='/assets/css/bare.min.css')
     link(rel='stylesheet', href='/assets/css/style.css')
     link(href="https://fonts.googleapis.com/css?family=Merriweather:400,400i,700" rel="stylesheet")
 
@@ -15,20 +16,22 @@ html
     link(rel='stylesheet', href='/assets/css/font-awesome.min.css')
 
   body
-    header.navbar
-      section.navbar-section.navbar-brand
-        h1
-          a(href='/')= site.title
-        h2= site.description
-      nav.navbar-menu.navbar-end
-        each navitem in site.nav 
-          a.navbar-item(href=navitem.url)= navitem.name
+    header
+      nav
+        header
+          a(href='/')= site.title + ' | ' + site.description
+        ul
+          each navitem in site.nav
+            li
+              a(href=navitem.url)= navitem.name
 
-    section.container
+    main
       block content
 
-    footer 
-      div!= site.coda
-      a(href="http://github.com/" + site.author.github).fa.fa-github
-      a(href="http://twitter.com/" + site.author.twitter).fa.fa-twitter
-      a(href="mailto:" + site.author.email).fa.fa-envelope
+    footer
+      grid
+        div.coda(col="2/3")!= site.coda
+        div.icons(col="1/3" txt="r")
+          a(href="http://github.com/" + site.author.github).fa.fa-github
+          a(href="http://twitter.com/" + site.author.twitter).fa.fa-twitter
+          a(href="mailto:" + site.author.email).fa.fa-envelope

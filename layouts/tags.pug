@@ -5,7 +5,7 @@ block content
     each tag in Object.keys(tags).sort()
       li.tag
         a(name=tags[tag].urlSafe)
-        span.tag!= tag 
+        span.tag!= tag
         each page in tags[tag]
           li(class='taggedPost')
             a(href='/'+page.path)!= page.title

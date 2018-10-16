@@ -1,4 +1,4 @@
-@import "../../../node_modules/bulma/bulma.sass"
+/* @import "../../../node_modules/bulma/bulma.sass"
 
 $blue: #494E8E
 $lightblue: lighten($blue, 10%)
@@ -6,7 +6,6 @@ $darkblue: #002
 $lightgray: #fafafa
 
 body
-  margin: 0
   font-family: Merriweather
   background-color: $lightgray
 
@@ -16,23 +15,6 @@ a, a:visited
   text-decoration: none
   &:hover
     color: $lightblue
-li
-  list-style-type: none
-
-header
-  display: flex
-  align-items: center
-  padding: 2em
-  .navbar-brand
-    display: block
-    margin: 0
-  nav
-    margin-left: auto
-    li
-      display: inline-block
-      margin: 1em
-      text-transform: uppercase
-      font-size: 150%
 
 section.content
   margin-top: 2em
@@ -40,6 +22,8 @@ section.content
     margin-bottom: 1em
 
 section#tags
+  li.tag
+    list-style-type: none
   li.taggedPost
     margin-left: 2em
 
@@ -61,31 +45,34 @@ section#posts
 
 #cv
   span
-    margin-left: 0.4em
+    margin-left: 0.25em
     &.date
       margin-left: 0
   ul.notes, ul.updates
     list-style-position: outside
-    li
-      list-style-type: circle
-      margin-left: 2em
+  // Bugfix: BareCSS has this as inline-block.
+  span.updateTitle > a
+    display: inline
+  .badges
+    position: absolute
+    top: 1em
+    right: 0
   section#teaching
     li.job
       span.job-name
           font-style: italic
 
 footer
-  display: flex
-  align-items: center
-  margin-top: 1em
-  padding: 5em
-  background-color: $darkblue
+  background-color: $blue
   color: $lightgray
-  font-size: 80%
-  a, a:visited
-    color: $lightblue
-    &:hover
-      color: $blue
-  a.fa
-    font-size: 200%
-    margin: 0.75em
+  grid
+    display: flex
+    align-items: center
+  .coda
+    a
+      display: inline
+  .icons
+    display: flex
+    justify-content: space-evenly
+    a.fa
+      font-size: 3em

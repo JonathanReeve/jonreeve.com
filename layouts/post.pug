@@ -1,6 +1,11 @@
 extends page
 
 block content
-  h1= title
-  time= date
-  div!= contents
+  section
+    h1= title
+    time= 'Posted ' + date
+    span.tags= ' in '
+      each tag in tags
+        tag
+          a(href='/tags/#' + tag.slug)= tag.name
+    #contents!= contents
