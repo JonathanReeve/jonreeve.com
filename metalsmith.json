@@ -41,6 +41,6 @@
       "metalsmith-layouts": {
           "engine": "pug",
           "pretty": true
-      },
+      }
   }
 }
