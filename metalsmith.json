@@ -1,6 +1,9 @@
 {
   "plugins": {
-      "metalsmith-markdown": {},
+      "metalsmith-markdown-remarkable": {
+          "typographer": true,
+          "quotes": "“”‘’"
+      },
       "metalsmith-metadata": {
           "site": "site.yaml",
           "cv": "cv.yaml"
@@ -25,16 +28,16 @@
           "format": "YYYY-MM-DD"
       },
       "metalsmith-tags": {
-          "layout": "tag.pug", 
+          "layout": "tags.pug",
           "skipPages": true
       },
       "metalsmith-feed": {
-          "collection": "posts"	
+          "collection": "posts"
       },
       "metalsmith-sass": {
           "outputStyle": "expanded"
       },
-      "metalsmith-layouts": { 
+      "metalsmith-layouts": {
           "engine": "pug",
           "pretty": true
       },

@@ -7,7 +7,7 @@ tags:
  - bash
  - pca
  - early moderns
- - shakespeare
+ - Shakespeare
  - paper
 ---
 

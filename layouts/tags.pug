@@ -2,10 +2,10 @@ extends page
 
 block content
   section#tags
-    each tag in Object.keys(tags).sort()
+    each tag in Object.keys(tags).sort(Intl.Collator().compare)
+      a(name=tags[tag].urlSafe)
       li.tag
-        a(name=tags[tag].urlSafe)
-        span.tag!= tag
+        span.chip= tag
         each page in tags[tag]
           li(class='taggedPost')
             a(href='/'+page.path)!= page.title

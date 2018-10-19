@@ -450,7 +450,7 @@ that he will speak no more of “rural repast,” (another “re-” word) (4),
 but must change the tone (and implictly the predominant prefix) of the
 poem:
 
->                                        I now must change    
+> ... I now must change    
 > those notes to tragic; foul distrust, and breach    
 > Disloyal on the part of man, revolt,    
 > And disobedience: on the part of heaven    
@@ -576,27 +576,13 @@ Ricks, Christopher. *Milton’s Grand Style*. Oxford: Clarendon Press,
 
 ------------------------------------------------------------------------
 
-1.  <div id="fn1">
+1.  <div id="fn1"></div> A complete list may be found in the
+    [analyze-pl](https://github.com/JonathanReeve/milton-analysis/blob/master/macro-etym/analyze-pl.ipynb) notebook.[↩](#fnref1)
 
-    </div>
+2.  <div id="fn2"> </div> These characters are the narrator, Adam, Eve, God, the Son, Satan, Michael, and Raphael.[↩](#fnref2)
 
-    A complete list may be found in the
-    [analyze-pl](https://github.com/JonathanReeve/milton-analysis/blob/master/macro-etym/analyze-pl.ipynb)
-    notebook.[↩](#fnref1)
-
-2.  <div id="fn2">
-
-    </div>
-
-    These characters are the narrator, Adam, Eve, God, the Son, Satan,
-    Michael, and Raphael.[↩](#fnref2)
-
-3.  <div id="fn3">
-
-    </div>
-
-    These strings are easily detected with the GNU command `grep` and a
-    regular expression: `grep -ir ‘\bun.*\bun.*\bun’ bk/*`[↩](#fnref3)
+3.  <div id="fn3"> </div> These strings are easily detected with the GNU command `grep` and a regular expression: `grep -ir ‘\bun.*\bun.*\bun’ bk/*`[↩](#fnref3)
 
 # Note
+
 The source code for this project, as well as [a nice PDF version of this paper](https://github.com/JonathanReeve/milton-analysis/blob/master/paper/pl-macro-etym.pdf) can all be found [on the project GitHub repository](https://github.com/JonathanReeve/milton-analysis). All of the analyses, as well as many others that didn't make the final cut for this paper, are available there as Jupyter notebooks. You can run these notebooks on your own computer using Jupyter, and modify them slightly to conduct similar analyses of _Paradise Lost_ or other texts. The command-line program used to generate the macro-etymological results is now available [on GitHub](https://github.com/JonathanReeve/macro-etym) and [pypi](https://pypi.python.org/pypi/macroetym/).

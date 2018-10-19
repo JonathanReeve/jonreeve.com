@@ -3,7 +3,6 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
-    "bulma": "^0.7.2",
     "markdown-it": "^8.4.2",
     "marked": "^0.5.1",
     "metalsmith": "^1.0.0",
@@ -16,12 +15,13 @@
     "metalsmith-ignore": "^1.0.0",
     "metalsmith-layouts": "^1.4.1",
     "metalsmith-markdown": "^0.2.1",
-    "metalsmith-markdown-metadata": "",
+    "metalsmith-markdown-metadata": "github:JonathanReeve/metalsmith-markdown-metadata",
+    "metalsmith-markdown-remarkable": "^0.1.1",
     "metalsmith-metadata": "0.0.4",
     "metalsmith-permalinks": "^0.5.0",
     "metalsmith-sass": "^1.5.1",
     "metalsmith-serve": "0.0.7",
-    "metalsmith-tags": "^2.0.0",
+    "metalsmith-tags": "JonathanReeve/metalsmith-tags",
     "metalsmith-watch": "^1.0.3",
     "pug": "^2.0.0-beta11"
   },

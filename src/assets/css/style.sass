@@ -1,13 +1,16 @@
-/* @import "../../../node_modules/bulma/bulma.sass"
-
 $blue: #494E8E
 $lightblue: lighten($blue, 10%)
 $darkblue: #002
 $lightgray: #fafafa
+$mediumGray: #333
 
 body
-  font-family: Merriweather
+  font-family: Raleway
   background-color: $lightgray
+
+
+img
+  max-width: 100%
 
 // Base styles of elements
 a, a:visited
@@ -16,40 +19,120 @@ a, a:visited
   &:hover
     color: $lightblue
 
+span.tag
+  padding: 0.3em
+  background: white
+  border: 1px solid $mediumGray
+  margin-right: 0.5em
+
+ul
+  list-style-position: outside
+  margin-left: 2em
+
+figure
+  text-align: center
+  font-style: italic
+
+.card
+  position: relative
+  margin-bottom: 1em
+
+// Hide header, on landing page, when not docked
+body.posts:not(.has-docked-nav)
+  #main-header
+    display: none
+
+// Header, when docked or shown by default
+body.has-docked-nav, body:not(.posts)
+  #main-header
+    position: fixed
+    top: 0
+    left: 0
+    width: 100%
+
+.header-wrapper
+  background: white
+  border-top: 2px solid $blue
+  border-bottom: 2px solid $blue
+  header
+    padding: 0 2rem
+    min-height: 4.4em
+    margin: auto
+    max-width: 65em
+    .navbar-brand
+      .subtitle
+        color: black
+
+main.container
+  // Offset the fixed header
+  margin-top: 3em
+
+.container
+  max-width: 60em
+  padding: 3em
+
+#greeting
+  margin-top: 4em
+  margin-bottom: 2em
+  font-size: 2em
+  text-align: center
+  .icons
+    display: flex
+    justify-content: space-between
+    span
+      font-size: 4em
+      font-weight: 600
+      font-family: Montserrat
+
+#cv
+  nav
+    margin-bottom: 2em
+    a.btn
+      margin-right: 1em
+  section
+    margin-bottom: 2em
+
 section.content
   margin-top: 2em
   time
     margin-bottom: 1em
 
 section#tags
+  a[name]
+    padding-top: 4.5em
+    margin-top: -4.5em
+    display: inline-block; // required for webkit browsers? 
   li.tag
     list-style-type: none
+    margin-top: 1em
   li.taggedPost
     margin-left: 2em
 
 section#posts
-  li
-    display: flex
-    > *
-      margin: 1em
+  li.post
+    margin: 5em 0
+    list-style-type: none
+    text-align: center
+    a.post-title
+      font-size: 2em
     span.post-date
       min-width: 7em
       align-self: center
-    a.post-title
-      font-size: 150%
   div.meta
     span.tags
       a
         &:not(:last-child):after
           content: ', '
 
+section#post
+  .meta
+    margin-bottom: 1em
+
 #cv
   span
     margin-left: 0.25em
     &.date
       margin-left: 0
-  ul.notes, ul.updates
-    list-style-position: outside
   // Bugfix: BareCSS has this as inline-block.
   span.updateTitle > a
     display: inline
@@ -65,13 +148,20 @@ section#posts
 footer
   background-color: $blue
   color: $lightgray
-  grid
+  a, a:visited
+    color: white
+  .container
+    margin: auto
+    max-width: 65em
     display: flex
     align-items: center
+    padding: 3em
   .coda
     a
       display: inline
   .icons
+    align-self: center
+    text-align: right
     display: flex
     justify-content: space-evenly
     a.fa

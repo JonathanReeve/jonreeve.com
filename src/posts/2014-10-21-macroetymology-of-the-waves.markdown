@@ -4,7 +4,7 @@ title: A Macro-Etymological Analysis of Character Dialog in Virginia Woolf's The
 category: digital humanities
 tags:
  - etymology
- - woolf
+ - Woolf
  - gender
 ---
 

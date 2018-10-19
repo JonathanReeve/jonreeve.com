@@ -2,7 +2,9 @@
 layout: post.pug
 title: ! 'A Comparative Macro-Etymology of Whitman Editions'
 category: digital humanities
-tags: etymology whitman
+tags: 
+ - etymology 
+ - Whitman
 ---
 
 Walt Whitman, in addition to being a poet, was somewhat of an amateur etymologist. He calls the English language “an enormous treasure-house, or range of treasure houses, arsenals, granary, chock full with so many contributions ... from Spaniards, Italians and the French” (quoted in LeMaster, 226). In the preface to the first edition of _Leaves of Grass_, he summarizes the history of English word borrowing: "On the tough stock of a race who through all change of circumstance was never without the idea of political liberty ... [the English language] has attracted the terms of daintier and gayer and subtler and more elegant tongues" (_PW_, II, 456-57, quoted in Warren, 34). Here, the "tough stock" is Anglo-Saxon, and the "more elegant tongues" are French, Latin, and Greek (35). Elsewhere, he credits French as the power that "free[d] the nascent English speech from those useless and cumbersome forms with which the Anglo-Saxon was overloaded (_Rambles_, 273, quoted in Warren, 45).
