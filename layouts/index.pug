@@ -14,12 +14,9 @@ block content
 
   .header-wrapper#inner-header
     header.navbar
-      section.navbar-section
-        a.navbar-brand(href='/')= site.title + ": "
-          span.subtitle= site.description
-      section.navbar-section
+      section.navbar-center
         each navitem in site.nav
-          a.btn.btn-link(href=navitem.url)= navitem.name
+          a.btn.btn-link(href=navitem.url)= navitem.name.toLowerCase()
 
   section#posts
     each post in posts

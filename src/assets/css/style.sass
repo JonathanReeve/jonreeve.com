@@ -30,7 +30,7 @@ ul
   margin-left: 2em
 
 // Figure captions. Old and new styles. 
-figure, img + span.caption
+figure, p.caption
   text-align: center
   font-style: italic
 
@@ -50,6 +50,7 @@ body.has-docked-nav, body:not(.posts)
     top: 0
     left: 0
     width: 100%
+    opacity: 0.95
 
 .header-wrapper
   background: white
@@ -63,6 +64,8 @@ body.has-docked-nav, body:not(.posts)
     .navbar-brand
       .subtitle
         color: black
+  &#inner-header
+    display: flex
 
 main.container
   // Offset the fixed header

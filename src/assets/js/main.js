@@ -18,7 +18,7 @@ $(document).ready(function() {
       }
 
   // Hack to display image alt values as captions. 
-  $('main.container img').each(function() {
+  $('.contents img').each(function() {
     var alt = $(this).attr("alt")
     console.log(alt)
     if (alt != '') {
@@ -72,8 +72,11 @@ $(document).ready(function() {
 
   function resize() {
     $body.removeClass('has-docked-nav')
-    navOffsetTop = $nav.offset().top
-    onScroll()
+      // Check that the inner nav exists, first. 
+      if ($nav.length) {
+          navOffsetTop = $nav.offset().top
+          onScroll()
+      }
   }
 
   function onScroll() {

@@ -26,7 +26,7 @@ html
         section.navbar-section
           each navitem in site.nav
             - var active = (title == navitem.name) ? "active" : ""
-            a.btn.btn-link(href=navitem.url class=active)= navitem.name
+            a.btn.btn-link(href=navitem.url class=active)= navitem.name.toLowerCase()
 
     main.container
       block content
