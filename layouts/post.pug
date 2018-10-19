@@ -1,11 +1,11 @@
 extends page
 
 block content
-  section
+  section#post
     h1= title
-    time= 'Posted ' + date
-    span.tags= ' in '
-      each tag in tags
-        tag
-          a(href='/tags/#' + tag.slug)= tag.name
+    .meta
+      time= 'Posted ' + date
+      span.tags= ' in '
+        each tag in tags
+          a.chip(href='/tags/#' + tag.slug)= tag.name
     #contents!= contents

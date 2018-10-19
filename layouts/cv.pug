@@ -10,9 +10,14 @@ block content
       h1 Curriculum Vitae
       div!= contents
 
+    nav
+      - var sections = ['Education', 'Projects', 'Talks', 'Publications', 'Positions', 'Awards']
+      each section in sections
+        a.btn(href='#'+section.toLowerCase())= section
+
     section#education
       h2 Education
-      table
+      table.table.table-striped.table-hover
         each entry in cv.ed.reverse()
           tr
           td!= entry.date
@@ -23,10 +28,10 @@ block content
     section#projects
       h2 Projects
       each project in cv.projects
-        card
-          h3
+        .card
+          h3.card-header
             a(href=project.url class="project-link")!= project.title
-          p
+          div.card-body
             span.project-date
               != '(' + project.start + ' - '
               if project.end
@@ -42,14 +47,14 @@ block content
                   li
                     span.date!= update.date + ' '
                     if update.type
-                      tag.type!= update.type
+                      span.chip.type!= update.type
                     if update.title
                       span.updateTitle!= update.title
                     span.description!= update.description
                     if update.venue
                       span.venue!= 'at ' + update.venue
-                    if update.container
-                      span.container!= 'in ' + update.container
+                    if update.pubVenue
+                      span.pubVenue!= 'in ' + update.pubVenue
             if project.github
               .badges
                 +badge('github/tag/', project.github)
@@ -57,6 +62,9 @@ block content
                 +badge('github/issues/', project.github)
                 if project.pypi
                   +badge('pypi/v/', project.pypi)
+
+    section#talks
+      h2 Talks and Conference Presentations
 
     section#publications
       h2 Publications
@@ -85,7 +93,7 @@ block content
                   span.date!= update.date
                   span.updateTitle!= update.title
                   span.description!= update.description
-                  span.project!= 'for ' + project.name
+                  span.project!= 'for ' + project.title
 
     section#positions
       h2 Positions and Freelance Clients
@@ -104,7 +112,7 @@ block content
         each job in cv.teaching
           li.job
             span.job-date!= job.date
-            tag.job-type!= job.type
+            span.chip.job-type!= job.type
             span.job-name!= job.name
             span.job-venue!= job.venue
           if job.notes

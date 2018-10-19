@@ -1,14 +1,32 @@
 extends page
 
+
 block content
   //-div!= JSON.stringify(posts)
+  #greeting
+    h1!= site.greeting
+    .icons
+      img(src='assets/images/noun_Book_1593490.svg')
+      span +
+      img(src='assets/images/noun_retro computer_1905469.svg')
+      span =
+      img(src='assets/images/noun_education_1909997.svg')
+
+  .header-wrapper#inner-header
+    header.navbar
+      section.navbar-section
+        a.navbar-brand(href='/')= site.title + ": "
+          span.subtitle= site.description
+      section.navbar-section
+        each navitem in site.nav
+          a.btn.btn-link(href=navitem.url)= navitem.name
+
   section#posts
     each post in posts
       li.post
-        span.post-date!= post.date + ' '
-        div
-          a(href=post.path).post-title!= post.title
-          div.tags
+        a(href=post.path).post-title!= post.title
+        .meta
+          span.post-date!= '(' + post.date + ') in '
+          span.tags
             each tag in post.tags
-              a(href="/tags/#" + tag.slug)
-                tag= tag.name
+              a.chip(href="/tags/#" + tag.slug)= tag.name

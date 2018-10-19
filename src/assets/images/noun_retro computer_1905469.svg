@@ -1,0 +1,175 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg
+   xmlns:dc="http://purl.org/dc/elements/1.1/"
+   xmlns:cc="http://creativecommons.org/ns#"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:svg="http://www.w3.org/2000/svg"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   viewBox="0 0 64 80"
+   x="0px"
+   y="0px"
+   version="1.1"
+   id="svg2245"
+   sodipodi:docname="noun_retro computer_1905469.svg"
+   inkscape:version="0.92.3 (2405546, 2018-03-11)">
+  <metadata
+     id="metadata2251">
+    <rdf:RDF>
+      <cc:Work
+         rdf:about="">
+        <dc:format>image/svg+xml</dc:format>
+        <dc:type
+           rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
+      </cc:Work>
+    </rdf:RDF>
+  </metadata>
+  <defs
+     id="defs2249" />
+  <sodipodi:namedview
+     pagecolor="#ffffff"
+     bordercolor="#666666"
+     borderopacity="1"
+     objecttolerance="10"
+     gridtolerance="10"
+     guidetolerance="10"
+     inkscape:pageopacity="0"
+     inkscape:pageshadow="2"
+     inkscape:window-width="1596"
+     inkscape:window-height="1670"
+     id="namedview2247"
+     showgrid="false"
+     inkscape:zoom="2.95"
+     inkscape:cx="27.59322"
+     inkscape:cy="44.40678"
+     inkscape:window-x="25"
+     inkscape:window-y="75"
+     inkscape:window-maximized="0"
+     inkscape:current-layer="svg2245" />
+  <title
+     id="title2193">retro-computer-diskette-monitor</title>
+  <g
+     id="g2239">
+    <path
+       d="M22,12.018V14h2l.018-2H31V10H24.018A2.02,2.02,0,0,0,22,12.018Z"
+       id="path2195" />
+    <path
+       d="M10,61a1,1,0,0,0,1,1H53a1,1,0,0,0,1-1V57a.838.838,0,0,0-.018-.087.679.679,0,0,0,0-.078l-2-12A1,1,0,0,0,51,44H50V3a1,1,0,0,0-1-1H15a1,1,0,0,0-1,1V44H13a1,1,0,0,0-.986.835l-2,12a.679.679,0,0,0,0,.078A.838.838,0,0,0,10,57Zm42-1H12V58H52ZM16,4H48V44H16ZM13.847,46H50.153l1.666,10H12.181Z"
+       id="path2197" />
+    <path
+       d="M42,6H22a4,4,0,0,0-4,4V30a4,4,0,0,0,4,4H42a4,4,0,0,0,4-4V10A4,4,0,0,0,42,6Zm2,24a2,2,0,0,1-2,2H22a2,2,0,0,1-2-2V10a2,2,0,0,1,2-2H42a2,2,0,0,1,2,2Z"
+       id="path2199" />
+    <rect
+       x="33"
+       y="10"
+       width="2"
+       height="2"
+       id="rect2201" />
+    <rect
+       x="15"
+       y="52"
+       width="2"
+       height="2"
+       id="rect2203" />
+    <rect
+       x="15"
+       y="48"
+       width="2"
+       height="2"
+       id="rect2205" />
+    <rect
+       x="19"
+       y="48"
+       width="2"
+       height="2"
+       id="rect2207" />
+    <rect
+       x="23"
+       y="48"
+       width="2"
+       height="2"
+       id="rect2209" />
+    <rect
+       x="27"
+       y="48"
+       width="2"
+       height="2"
+       id="rect2211" />
+    <rect
+       x="31"
+       y="48"
+       width="2"
+       height="2"
+       id="rect2213" />
+    <rect
+       x="35"
+       y="48"
+       width="2"
+       height="2"
+       id="rect2215" />
+    <rect
+       x="39"
+       y="48"
+       width="2"
+       height="2"
+       id="rect2217" />
+    <rect
+       x="43"
+       y="48"
+       width="2"
+       height="2"
+       id="rect2219" />
+    <rect
+       x="47"
+       y="48"
+       width="2"
+       height="2"
+       id="rect2221" />
+    <rect
+       x="19"
+       y="52"
+       width="2"
+       height="2"
+       id="rect2223" />
+    <rect
+       x="23"
+       y="52"
+       width="2"
+       height="2"
+       id="rect2225" />
+    <rect
+       x="39"
+       y="52"
+       width="2"
+       height="2"
+       id="rect2227" />
+    <rect
+       x="43"
+       y="52"
+       width="2"
+       height="2"
+       id="rect2229" />
+    <rect
+       x="47"
+       y="52"
+       width="2"
+       height="2"
+       id="rect2231" />
+    <rect
+       x="27"
+       y="52"
+       width="10"
+       height="2"
+       id="rect2233" />
+    <path
+       d="M45,36H38a1,1,0,0,0-1,1v1H31v2h6v1a1,1,0,0,0,1,1h7a1,1,0,0,0,1-1V37A1,1,0,0,0,45,36Zm-1,4H39V38h5Z"
+       id="path2235" />
+    <rect
+       x="18"
+       y="40"
+       width="2"
+       height="2"
+       id="rect2237" />
+  </g>
+</svg>

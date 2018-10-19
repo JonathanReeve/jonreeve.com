@@ -1,5 +1,5 @@
-debug: 
-	DEBUG=metalsmith:metadata metalsmith
-
-default: 
+default:
 	metalsmith
+
+debug:
+	DEBUG=metalsmith:metadata metalsmith

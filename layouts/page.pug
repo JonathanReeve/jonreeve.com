@@ -1,37 +1,41 @@
 doctype html
 html
   head
-    title= site.title
+    title= site.title + ': ' + title
     meta(charset="UTF-8")
     meta(name='description', content= site.description)
-
-    link(rel='stylesheet', href='/assets/css/bare.min.css')
+    link(rel='stylesheet', href='/assets/css/normalize.css')
+    link(rel='stylesheet', href='/assets/css/spectre.min.css')
     link(rel='stylesheet', href='/assets/css/style.css')
-    link(href="https://fonts.googleapis.com/css?family=Merriweather:400,400i,700" rel="stylesheet")
-
+    link(href="https://fonts.googleapis.com/css?family=Montserrat|Raleway" rel="stylesheet")
     // Code highlighting with highlight.js. 
-    link(rel='stylesheet', href='/assets/css/railscasts.css')
+    link(rel='stylesheet', href='/assets/css/tomorrow.css')
 
     // Icons with FontAwesome
     link(rel='stylesheet', href='/assets/css/font-awesome.min.css')
 
-  body
-    header
-      nav
-        header
-          a(href='/')= site.title + ' | ' + site.description
-        ul
-          each navitem in site.nav
-            li
-              a(href=navitem.url)= navitem.name
+    script(src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous")
+    script(src='/assets/js/main.js')
 
-    main
+  body(class=title)
+    div.header-wrapper#main-header
+      header.navbar
+        section.navbar-section
+          a.navbar-brand(href='/')= site.title + ": "
+            span.subtitle= site.description
+        section.navbar-section
+          each navitem in site.nav
+            - var active = (title == navitem.name) ? "active" : ""
+            a.btn.btn-link(href=navitem.url class=active)= navitem.name
+
+    main.container
       block content
 
     footer
-      grid
-        div.coda(col="2/3")!= site.coda
-        div.icons(col="1/3" txt="r")
-          a(href="http://github.com/" + site.author.github).fa.fa-github
-          a(href="http://twitter.com/" + site.author.twitter).fa.fa-twitter
-          a(href="mailto:" + site.author.email).fa.fa-envelope
+      .container
+        .columns
+          .coda.column.col-8()!= site.coda
+          .icons.column.col-4()
+            a(href="http://github.com/" + site.author.github).fa.fa-github
+            a(href="http://twitter.com/" + site.author.twitter).fa.fa-twitter
+            a(href="mailto:" + site.author.email).fa.fa-envelope
