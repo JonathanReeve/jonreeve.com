@@ -98,7 +98,6 @@ $(document).ready(function() {
     })
   }
 
-
   init();
 
 });

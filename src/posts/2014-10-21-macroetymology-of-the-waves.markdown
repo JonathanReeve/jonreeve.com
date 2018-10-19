@@ -28,7 +28,7 @@ In contrast to Bernard and Neville, Jinny is “sensual, alert to vivid color an
 
 In Woolf's "A Room of One's Own," she imagines a female Shakespeare, Shakespeare's sister Judith. Woolf argues that Judith Shakespeare couldn't have written her brother William's works, not from lack of talent, but from lack of opportunities--"rooms of one's own" for Elizabethan women writers during this period. "She had no chance of learning grammar and logic," Woolf contends, "let alone of reading Horace and Virgil. She picked up a book now and then, one of her brother's perhaps, and read a few pages. But then her parents came in and told her to mend the stockings or mind the stew and not moon about with books and papers" (47). Therefore, one imagines that Judith Shakespeare, like the female characters in _The Waves_, would have used fewer Latinate words than her male counterparts.
 
-##Works Cited
+## Works Cited
 Hussey, Mark. _Virginia Woolf A to Z_. New York: Facts on File, 1995. Print.
 
 Ramsay, Stephen. "Algorithmic Criticism." _A Companion to Digital Literary Studies_. Oxford: Blackwell, 2008. Web. http://www.digitalhumanities.org/companion
@@ -37,5 +37,5 @@ Woolf, Virginia. _A Room of One's One_. New York: Harcourt, 1929. Print.
 
 ---.  _The Waves_. New York: Harcourt, 1931. Print.
 
-##Note
+## Note
 This post is an adapted and expanded excerpt from my 2013 Master's thesis, "Macro-Etymological Textual Analysis: an Application of Language History to Literary Criticism." The program described herein is the web app created for these experiments, the [Macro-Etymological Analyzer](http://jonreeve.com/etym). Read more about the program and related experiments in my introductory post, "[Introducing the Macro-Etymological Analyzer](/2013/11/introducing-the-macro-etymological-analyzer/)."   

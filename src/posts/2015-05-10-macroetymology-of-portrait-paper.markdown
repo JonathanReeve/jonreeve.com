@@ -188,15 +188,15 @@ Latinate words (hereafter "L scores") in *Portrait* would have a good
 chance of exhibiting styles similar to learned text, official documents,
 or non-fiction.
 
-<figure>
-![Figure 1: Brown Corpus: Latinate Words](/images/portrait-chapter/brown-lat.png)
-<figcaption>Figure 1</figcaption>
-</figure>
 
-<figure>
+![Figure 1: Brown Corpus: Latinate Words](/images/portrait-chapter/brown-lat.png)
+<p class="caption">Figure 1</p>
+
+
+
 ![Figure 2: Brown Corpus: Hellenic Words](/images/portrait-chapter/brown-hel.png)
-<figcaption>Figure 2</figcaption>
-</figure>
+<p class="caption">Figure 2</p>
+
 
 Among proportions of Hellenic words, as shown in Figure 2, the picture
 is similar, but with a few key differences. Here, "religion" has a
@@ -235,10 +235,10 @@ chapters 1, 2, and 3, which would seem to correlate with the maturation
 of Stephen's thought and speech. The L score plateaus or drops in
 chapters 4 and 5, however. How might this be interpreted?
 
-<figure>
+
 ![Figure 3: Chapters, L Scores](/images/portrait-chapter/portrait-2g-w-lat.png)
-<figcaption>Figure 3</figcaption>
-</figure>
+<p class="caption">Figure 3</p>
+
 
 To answer this question, it is necessary to conduct a more granular
 analysis. Figure 4 shows the text is divided into sections based on John
@@ -251,10 +251,10 @@ longest and only five-section chapter, the highest L scores for each
 chapter come in the first section. The final sections of each chapter
 are among the lowest in L scores.
 
-<figure>
+
 ![Figure 4: Sections, L Scores](/images/portrait-chapter/sections-latinate.png)
-<figcaption>Figure 4</figcaption> 
-</figure>
+<p class="caption">Figure 4</p> 
+
 
 Seen broadly, there is a pattern here suggestive of a what Riquelme
 calls a "structural rhythm"—a repeating sawtooth shape. A number of
@@ -432,10 +432,8 @@ therefore, that an aesthetic treatise of the kind Stephen presents in
 5.1, or a religious sermon like Father Arnall's in 3.2, might contain a
 higher proportion of words of Hellenic origin.
 
-<figure>
 ![Figure 5: Sections, H Scores](/images/portrait-chapter/sections-hellenic.png)
-<figcaption>Figure 5</figcaption>
-</figure>
+<p class="caption">Figure 5</p>
 
 Figure 5 shows that those two sections have, respectively, the first and
 third highest H scores of any section. Father Arnall's sermon in section

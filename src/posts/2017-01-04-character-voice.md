@@ -112,15 +112,15 @@ note here is the apparent separation in this projection between the male
 and female characters, with the male characters in the upper right and
 the female characters in the lower left.
 
-<figure>
-![Figure 1A: The Waves, Labeled](/images/character-voice/waves-e2-labeled.png)
-<figcaption>Figure 1A: The Waves, Labeled</figcaption>
-</figure>
 
-<figure>
+![Figure 1A: The Waves, Labeled](/images/character-voice/waves-e2-labeled.png)
+<p class="caption">Figure 1A: The Waves, Labeled</p>
+
+
+
 ![Figure 1B: The Waves, Predicted](/images/character-voice/waves-e2-final.png)
-<figcaption class="caption">Figure 1B: The Waves, Predicted</figcaption>
-</figure>
+<figcaption class="caption">Figure 1B: The Waves, Predicted</span>
+
 
 The probabilistic model used for clustering assumes that the
 dimension-reduced, TF-IDF-weighted word frequencies can be modeled with
@@ -182,15 +182,15 @@ might reveal not only the character voices themselves, but degrees or
 modes of these voices. They might show how voice changes according to
 addressee.
 
-<figure>
-![Figure 2A: Clarissa, Labeled](/images/character-voice/clarissa-e2-labeled.png)
-<figcaption>Figure 2A: Clarissa, Labeled</figcaption>
-</figure>
 
-<figure>
+![Figure 2A: Clarissa, Labeled](/images/character-voice/clarissa-e2-labeled.png)
+<p class="caption">Figure 2A: Clarissa, Labeled</p>
+
+
+
 ![Figure 2B: Clarissa, Final](/images/character-voice/clarissa-e2-final.png)
-<figcaption>Figure 2B: Clarissa, Final</figcaption>
-</figure>
+<p class="caption">Figure 2B: Clarissa, Final</p>
+
 
 The adjusted Rand score for this clustering is a slightly lower 0.357,
 faring much better than chance, but still worse than *The Waves*.
@@ -218,14 +218,14 @@ female characters, grouping Anna and Clarissa together, and Lovelace and
 Belford. It does not seem to be able to distinguish between those
 individual characters, however.
 
-<figure>![Figure 3A: Clarissa Vectors, Labeled](/images/character-voice/clarissa-vec1-labeled.png)
-<figcaption>Figure 3A: Clarissa Vectors, Labeled</figcaption>
-</figure>
+![Figure 3A: Clarissa Vectors, Labeled](/images/character-voice/clarissa-vec1-labeled.png)
+<p class="caption">Figure 3A: Clarissa Vectors, Labeled</p>
 
-<figure>
+
+
 ![Figure 3B: Clarissa Vectors, Predicted](/images/character-voice/clarissa-vec1-final.png)
-<figcaption>Figure 3B: Clarissa Vectors, Predicted</figcaption>
-</figure>
+<p class="caption">Figure 3B: Clarissa Vectors, Predicted</p>
+
 
 I attempted other vectorizations, as well, without much success. A
 representation of a document as a vector of parts of speech frequencies

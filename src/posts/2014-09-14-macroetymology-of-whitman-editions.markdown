@@ -20,10 +20,10 @@ The goal of this experiment is to test the hypothesis that Whitman increasingly 
 
 The results of these test were as previously speculated—the proportion of Latinate words increases with each revision of _Leaves of Grass_, but with one minor exception—that of 1867. LeMaster and Kummings call this edition "the most chaotic of all six editions," whose significance "lies in its intriguing raggedness, which is embedded in the social upheaval in the immediate aftermath of the Civil War" (365). Can the "images of a coherent union" and the "urgently accented democratic nationality" which they claim characterize this edition account for the slight drop in Latinate words, or slight increase in Germanic words? Do the six new poems of this edition contain an unusually high proportion of Germanic words? These are questions that demand further investigation.
 
-##Note
+## Note
 This post is an adapted and expanded excerpt from my 2013 Master's thesis, "Macro-Etymological Textual Analysis: an Application of Langauge History to Literary Criticism." The program described herein is the web app created for these experiments, the [Macro-Etymological Analyzer](http://jonreeve.com/etym). Read more about the program and related experiments in my introductory post, "[Introducing the Macro-Etymological Analyzer](/2013/11/introducing-the-macro-etymological-analyzer/)."   
 
-##Works Cited
+## Works Cited
 
 Asselineau, Roger. [_The Evolution of Walt Whitman_](http://books.google.com/books?id=HpNa0DFh1eUC&pg=RA1-PA368). Iowa City: U Iowa P, 1999. _Google Books_. Web. 1 December 2013.  
 

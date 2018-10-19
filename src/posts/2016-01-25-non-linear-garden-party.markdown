@@ -11,10 +11,10 @@ tags:
 
 Works of literary criticism are typically built around their central arguments. The argument is often an opinion about a theme, function, or other textual attribute, and it is presented along with textual evidence that supports it. This usually means that a critical work closely examines textual details that are relevant to its thesis, while moving past or even ignoring less relevant details. Figure 1 shows a simplified illustration of this process. If each segment in the primary text contains details of types A, B, C, or D, a typical critical work will select one or more of these details for its analysis, while other details remain either less examined or fully unexamined.
 
-<figure>
+
 ![Figure 1: Narrative Criticism](/images/garden-party/narrative-criticism.png)
-<figcaption>Figure 1: Narrative Criticism</figcaption>
-</figure>
+<p class="caption">Figure 1: Narrative Criticism</p>
+
 
 There is nothing inherently problematic with this style of criticism---the thread that ties together these elements is that which makes the critical work enjoyable and easy to follow. This is also the structure that helps a critic to outline his or her contribution to the discussion: "Critic X discusses textual element A, and critic Y discusses textual element B, but they're both ignoring the key to understanding the text, which is element C." This can be a reasonably satisfying line of reasoning, but what if there were a more inclusive, less centralized way of talking about a text? Could we imagine a pluralist, iterative style of literary criticism? Would such a style be useful, or even desirable?
 
@@ -30,47 +30,47 @@ Here, Barthes catalogs the emergence of "Enigma 3," belonging to the hermeneutic
 
 The following is an experiment in iterative literary criticism, where the text of Katherine Mansfield's story "The Garden Party" is broken into 205 Barthesian lexias, annotated, and tagged. These tags are then linked to each other, forming miniature topic-based critical works. Clicking on a tag scrolls the page to the next annotation with that tag, and if there are no more, the page loops back to the first. A reader interested, in say, the semiotics of flowers in "The Garden Party" might read an annotation tagged "flora", while a reader interested in gender dynamics might choose the tag "sexuality." Since many lexia have more than one tag, the reader may switch between related tags once annotations with their first chosen tag have been exhausted. This effectively creates a non-linear critical work that more resembles a decision tree than a straight line. In this way, the reader effectively assembles his or her own critical narrative in the act of reading. A revised flowchart for this style of criticism might look something like Figure 2.
 
-<figure>
+
 ![Figure 2: Iterative Criticism](/images/garden-party/iterative-criticism.png)
-<figcaption>Figure 2: Iterative Criticism</figcaption>
-</figure>
+<p class="caption">Figure 2: Iterative Criticism</p>
+
 
 One of the advantages of this iterative style, compared with the narrative style, is that it opens the textual field to the greater possibility of surprises. New details emerge that might have otherwise been elided had the detail needed to fit into a prose paragraph, and the paragraph into an overarching argument. The two-column format used below privileges no particular reading, and as such, it allows for minority readings---critical theories that may not have enough textual evidence to be made into a standard-length journal article---to have equal status with majority readings.
 
 Another advantage of this style is that, by cataloging the appearance of textual themes, tensions, and images chronologically---that is, charting their occurrences according to where they happen in the story---we can derive a better picture of how those literary elements unfold, and where they disappear. To Barthes, this is the music of the text, which he charts literally in Figure 3.
 
-<figure>
+
 ![Figure 3: Barthes, Score for "Sarrassine" Lexias 1-13 (29)](/images/garden-party/lexia-music.png)
-<figcaption>Figure 3: Barthes, Score for "Sarrassine" Lexias 1-13 (29)</figcaption>
-</figure>
+<p class="caption">Figure 3: Barthes, Score for "Sarrassine" Lexias 1-13 (29)</p>
+
 
 Rather than use semes and cultural codes, however, this edition of "The Garden Party" is tagged nonhierarchically, using roughly fifty tags. The types of these tags range everywhere from color images like "green" and "black" to the story's treatment of social class, given by the tag "class." Some significant objects, such as Laura's hat are tagged, as well as the story's envelope(s). A full list is given in [the iPython notebook used to generate tag statistics](https://github.com/JonathanReeve/corpus-mansfield-garden-party-TEI/blob/master/garden-party-tag-stats.ipynb). Figure 4 shows all tags with more than three occurrences, sorted according to how often they are used.
 
-<figure>
+
 ![Figure 4: Most Frequently Occurring Tags](/images/garden-party/mtf.png)
-<figcaption>Figure 4: Most Frequently Occurring Tags</figcaption>
-</figure>
+<p class="caption">Figure 4: Most Frequently Occurring Tags</p>
+
 
 The tag that appears the most often is "class." This is unsurprising, given the story's overt treatment of social class. The second most frequent tag is "interruptions," which charts both syntactic truncation ("isn't life" of [L204](#204), for instance) and proairetic truncation, such as the interrupted breakfast of [L7](#7). Other notable tags include "flora," used whenever literal flowers appear, or when floral metaphors are used, such as in [L150](#150). These tags can help to track trends, themes, and moods as they unfold in the chronology of the story.
 
-<figure>
+
 ![Figure 5: Flora, Sexuality, Death](/images/garden-party/flora-sexuality-death.png)
-<figcaption>Figure 5: Flora, Sexuality, Death</figcaption>
-</figure>
+<p class="caption">Figure 5: Flora, Sexuality, Death</p>
+
 
 Figure 5 shows three of these tags: flora, sexuality, and death, plotted according to where they occur in the story. Flora and sexuality tend to collocate, as one might expect, and for the most part, references to flowers and references to death are fairly separate, with the exception of the group that occurs around the time of the party. (The X values in this chart correspond to the lexia numbers divided by 5, grouped here for smoothing.) Upon closer examination, it turns out that these are some interesting collocations of floral and morbid imagery. One is Laura's hat, black as if in mourning but "trimmed with gold daisies"; another is the floral metaphor of the dying afternoon: "the perfect afternoon slowly ripened, slowly faded, slowly its petals closed" ([L150](#150)).
 
-<figure>
+
 ![Figure 6: Green, Light, Black, Darkness](/images/garden-party/green-light-black-darkness.png)
-<figcaption>Figure 6: Green, Light, Black, Darkness</figcaption>
-</figure>
+<p class="caption">Figure 6: Green, Light, Black, Darkness</p>
+
 
 With colors, too, we find interesting collocations, as shown in Figure 6. On the whole, references to greenness or green things (the grass, bushes, and turban, for instance) collocate with the morning and with preparations for the garden party. References to light occur mostly in this portion of the story, too, and references to black and darkness mostly happen after nightfall. However, there are two notable surprises here: the collocation of green and black at 27, directly before the party, and the strange combination of light, black, and darkness around 33. The first corresponds to the black hat of [L137](#137) followed by the green band and green tennis court of [L140](#140). One might read the appearance of the black hat as a hint of the mourning scene to come, and the greenness of the garden party as the apex of the green imagery that has been building during the party's preparations. The second unexpected collocation, that of light and darkness at 33 in this chart, is the chiaroscuro generated by the dusky slant of light that makes the road "gleam white" and throws a "deep shade" on the cottages ([L171](#171)). Based on this chart alone, it might be able to guess the timeframe of the story (in classic modernist fashion, it takes place in a single day) as well as the time of sunset (around location 35 in the chart).
 
-<figure>
+
 ![Figure 7: Sounds, Colors, Touch](/images/garden-party/sounds-colors-touch.png)
-<figcaption>Figure 7: Sounds, Colors, Touch</figcaption>
-</figure>
+<p class="caption">Figure 7: Sounds, Colors, Touch</p>
+
 
 Sensory descriptions might also be useful to study quantitatively. Figure 7 shows tags of sounds, colors, and touch. A few examples of these are the "chuckling absurd" sound of the piano at [L47](#47), the repetition of "pink" in describing the lilies at [L53](#53), and Laura's nibble of her mother's ear at [L58](#58). Most of the sounds, colors, and touches occur in the first quarter of the story, highlighting the sensory richness of the morning preparations, which contrast greatly with the "dark," "oily" imagery of the cottages. Notably, however, there are none of these impressions during the party itself, or immediately before or after. Only Laura's memory remains, when she recalls "it seemed to her that kisses, voices, tinkling spoons, laughter, the smell of crushed grass were somehow inside her. She had no room for anything else. How strange!" ([L172](#72)).
 

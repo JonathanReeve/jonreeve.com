@@ -1,6 +1,7 @@
 {
   "plugins": {
       "metalsmith-markdown-remarkable": {
+          "html": true,
           "typographer": true,
           "quotes": "“”‘’"
       },

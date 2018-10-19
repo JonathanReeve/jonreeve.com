@@ -481,7 +481,7 @@ reducing the whole mass of her picture to a delicate middle tint” (180).
 This “delicate middle tint” might be a good way of describing
 *Middlemarch*.
 
-#Works Cited
+# Works Cited
 
 Andrews, Malcolm. “Illustrations.” *A Companion to Charles Dickens*.
 Malden, MA: Blackwell, 2008. 97-125. Print.

@@ -15,7 +15,7 @@ tags:
 
 The following describes an experiment in digital literary analysis, wherein dialog from Shakespeare plays was extracted, categorized, and statistically analyzed using a variety of methods. Dialog from Shakespeare's kings, for instance, such as that of Lear and Claudius, was statistically compared with dialog from a number of other groups, like Shakespeare's queens, servants, and fools, in an effort to computationally identify characteristic trends in the language of each group. This investigation concludes that relationships between these groups may be divined through this analysis, even suggesting class hierarchies and gender relations, but that these results are tenuous at best, and more fine-tuned analysis is required.
 
-#Extraction
+# Extraction
 Extracting dialog from a plain-text document would be a labor-intensive manual task, but an electronic text marked up in TEI XML is designed for easy computational manipulation of its elements. Thanks to the markup efforts of organizations like the Wordhoard Shakespeare, the Monk Project, and the Folger Shakespeare Library's Digital Texts project, many classic works have been transformed into this machine-readable form, including 42 of Shakespeare's plays. Since the dialog of these plays is assigned metadata that attributes it to its speaker, it thus becomes possible to automate the extraction of dialog. Each spoken line is rendered in XML roughly like this:
 
 ```xml
@@ -29,7 +29,7 @@ Extracting dialog from a plain-text document would be a labor-intensive manual t
 
 Each line is thus enclosed in `<sp>` tags, each with the `who` attribute assigned to unique, regularlized XML IDs corresponding to each character in Shakespeare. Since Hamlet is the only character named Hamlet in Shakespeare's plays, his XML ID is simply `Hamlet`, but other characters are given unique IDs. Since there are multiple ghosts in Shakespeare's plays, for instance, the ghost of Hamlet's father is given the XML ID `ham-ghost.` in the Wordhoard TEI rendition.
 
-##Dialog Extraction
+## Dialog Extraction
 The Folger Shakespeare Library TEI files are extremely meticulously edited, with emendations and textual differences marked up, as well as metadata about the characters, such as their sex. These would be ideal documents to work with, except that the depth of the markup makes them unwieldy in more than one respect. For instance, whereas the Wordhoard Shakespeare dialog, as illustrated above, is marked up on the level of the line, the Folger Shakespeare TEI marks up every word, space, and punctuation mark of the text:
 
 ```xml
@@ -90,7 +90,7 @@ To extract all of Falstaff's dialog from all 42 of the Wordhoard Shakespeare pla
 
 If the program is given a `characters.txt` file (or another file which the user specifies) containing a comma-separated list of characters, it outputs the combined dialog of all of those characters. It was therefore possible to extract dialog from large groups of characters in this way.
 
-#Character Lists
+# Character Lists
 To comparatively analyze the dialog of Shakespeare's characters, it was first necessary to assign categories for these characters. This proved to be a difficult problem, since this categorization can be very subjective--who is considered a comic figure by one critic may well be considered tragic or tragicomic by another, and the categories of these characters may (and often do) shift throughout the course of a single play. The categories I chose were "kings," "queens," "servants," "gentlemen," "gentlewomen," "officers," and "fools." Although categories, none of them are precisely "categorical," which is to say, none of them are completely unified and unambiguous.
 
 To choose these characters, the [Shakespeare character search engine at the Electronic Literature Foundation](http://www.theplays.org/char.html) was used, which accepts a search term and outputs a list of characters in whose role descriptions that term occurs. These data had to be trimmed somewhat, since the word "king" appears in the description "servant to the King," and thus the results of a search for the word "King" did not always return a list of kings. The "kings" and "queens" categories were probably the clearest to delineate, since most of the characters in these categories carry the titles of "king" or "queen." Even with those, however, there were plenty of problematic cases. Would Oberon, the king of the fairies from _A Midsummer Night's Dream_ be considered a king, for the purposes of this study? If this study aims to discover class-specific language in Shakespeare's works, then it could be argued that supernatural kings don't represent this class structure, but rather that of the supernatural world they inhabit. On the other hand, if one interprets the supernatural world of the fairies as a projection of the earthly world, with all its hierarchies intact, then it is entirely reasonable to include Oberon among the kings. A complete list of all the characters is available in Appendix I.
@@ -121,7 +121,7 @@ This list was then used to extract dialog from the plays by running the command:
     python parse.py -c queens.csv *.xml > queens-dialog.txt
 ```
 
-#Cleaning Up the Texts
+# Cleaning Up the Texts
 One of the features of this Python script is that it keeps the text encoded in unicode throughout. This means that any characters that do not appear in ASCII, like em-dashes or curly quotation marks, will not be mangled when they are extracted. Unfortunately, this also means that other tools, such as the University of Newcastle's Intelligent Archive, will not be able to adequately interpret these unicode characters. When The Intelligent Archive encounters straight quotation marks, for instance, it dismisses them and does not consider them part of the word, but when it encounters curly quotation marks, it converts these into unusual characters like "œ" and leaves them attached to the word, thus generating wordlists containing corrupted words like "œthy." To correct this, this command was run in the working directory:
 
 ```bash
@@ -132,7 +132,7 @@ One of the features of this Python script is that it keeps the text encoded in u
 
 This loop iterates over all the files ending in `-dialog.txt` (in this case, all the extracted dialog), runs the Linux program `iconv` on those files, and then writes them to new files, appending the `.ascii` extension. The `-c` flag tells `iconv` to throw out any characters that can't be converted into ASCII, which solves the issue with the Intelligent Archive. Em-dashes and a lot of other punctuation are removed from the texts during this process, but since punctuation isn't an object of this study, that doesn't present a problem.  
 
-#Statistical Analysis
+# Statistical Analysis
 Several varieties of computational statistical analysis were performed on the resulting texts. First, the texts were tokenized and split into segments using The Intelligent Archive. A few methods were used at this stage to lessen the impact of the word count discrepancy. In one set of tests, the texts were limited to the word count of smallest text, by setting the option “first X words of text.” The problem with this method, however, is that the first 2000 words from a king are likely to come from a single play. The analysis would then be comparing all the dialog of the servants and fools with, say, the character Henry VIII, instead of all the kings. This is a major problem, but also one that mostly affects the kings category. The smallest category isn't affected by this at all. Another technique used to lessen this effect was to divide the text into 500 word blocks, and then choose a random set of four to eight blocks for analysis. Yet another technique was randomizing the lines in the texts themselves by filtering them through a command in BASH:
 
 ```bash
@@ -169,7 +169,7 @@ A more convincing picture might be found in a cluster analysis of the same data 
 
 These results all vary considerably. This variation has the double purpose of highlighting recurring motifs as potential candidates for evidence, and showing the instability of these analyses. What almost all of these experiments show is that the dialog of Shakespeare's kings and queens is statistically dissimilar to the dialog of other characters. In most cases, the kings are queens are more like each other than any other characters. Most of the statistical divisions shown here take place along class lines. A more in-depth analysis of the language characteristic of these categories might help to shed some light on the exact nature of this division.
 
-#Distinctive Language Analysis
+# Distinctive Language Analysis
 Next, the texts in these categories were compared with one another using David Hoover's Full Spectrum Spreadsheet. This program identifies words that appear frequently in one text and rarely in another, and sorts them according to this ratio, in order to find words that are distinctive of each category. The resulting wordlists are indications of the language of their categories, insofar as they distinguish themselves from the categories with which they are being compared. The distinctive words of Shakespeare's kings, for instance, when compared with that of fools, is very different from the words distinctive of kings when compared to queens. There are many place names and names of people in this former group, for instance--"Percy," "Harry," "Douglas," "Wales," "Westmoreland" and "Northumberland" all appear among the top 25 most distinctive words. These proper names appear much less frequently in comparison with other categories of characters. This would seem to suggest that the fools and clowns of Shakespeare speak more in abstractions than the kings. If one remembers the Fool's song from King Lear, "Have more than thou showest, / Speak less than thou knowest," this rings true.  
 
 When compared with officers, the words distinctive of kings are very different. The most distinctive word, somewhat unsurprisingly, is "love"--it would be an unusual soldier that would deliver a soliloquy about love, yet this would not be impossible for a Shakespearean king. Related words in this kings' list include the sentimental terms "heart" at #17, "sweet" at #21, and "gentle" at #32--one would naturally not expect "sweet" and "gentle" to be words that a soldier would speak. There are also many kinship terms in this kings' list--"son" at #7, "father" at #11, "cousin" at #43, and "wife" at #70. This suggests that the officers investigated here do not discuss their families--they are perhaps presented as if they have no families, as if duty were their only concern.
@@ -196,17 +196,17 @@ Other unexpected words from these lists include "love" at the top of the king's 
 
 Also of note in these wordlists is the fact that the word "nay," while it appears high on the lists of fools, queens, servants, and gentlemen, doesn't appear at all in the list of distinctive kings' words. Although a concordance of the dialog shows that the word appears several times among Shakespeare's kings, the fact that this word appears more frequently among the other groups of characters seems to suggest that the kings are relatively affirmative, whereas the others could rightly be called "naysayers." It is tempting to take this interpretation further, but the presence or absence of such a versatile word could not with certainty lead to a clear reading.
 
-#Conclusion
+# Conclusion
 Here we have seen that class structure in Shakespeare, although by no means unified and unambiguous, can be revealed to some extent by a statistical comparison of categories of dialog. Similarly, gender differences--those between kings and queens, for instance--can also be shown using PCA analysis. Many of the distinctive words found with the Full Spectrum Spreadsheet are unsurprising for their categories, yet many unusual or surprising words also appear, a phenomenon which leads to insights about particular anomalous characters. A more qualitative inquiry might examine in greater detail the anomalies found in these lists, and contextualize them more among the personalities of their particular characters.
 
 Although this investigation is not traditionally conclusive, it has raised some questions which might lead to further study. The limitations of such macro-oriented work as this, which deals with dialog on the level of Shakespeare's entire dramatic oeuvre, also present opportunities for more minute, focused work.
 One such study, for instance, might separate fools from clowns, and compare the language used in both. Another might compare the speech of officers with that of soldiers, or that of princes with that of kings. Many of the observations of language mentioned here--such as the use of contractions among non-royal speakers--deserve further inquiry.  
 
-#Bibliography
+# Bibliography
 
 Blake, N F. _Shakespeare's Non-Standard English: A Dictionary of His Informal Language_. London: Thoemmes Continuum, 2004. Ebrary. Accessed 21 May 2013.
 
 Wells, Stanley. "Clown." _A Dictionary of Shakespeare_. Oxford, UK: Oxford University Press, 1998. Oxford Reference. 2003. Accessed 21 May. 2013.
 
-#Presentation Slides
+# Presentation Slides
 [Slides from this paper's presentation](http://jonreeve.com/presentations/cbad) at the workshop Computer-Based Analysis of Drama, at the Bavarian Academy of Sciences and Humanities, in March 2015.  

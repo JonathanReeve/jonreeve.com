@@ -14,10 +14,10 @@ This single sentence is the longest of Henry James’s novels. Like the house it
 
 Dependency parsing is a method of computational linguistics and natural language processing that algorithmically infers syntactic dependencies between words in a sentence. Adjectives that describe a noun, for instance, are graphed as the noun’s dependents. Grammatical subjects and objects, similarly, are dependents of the main verb of a sentence. Subordinate clauses are dependents on the main verb, as well, and have their clausal subjects and objects as their own dependents. This study uses SpaCy, a new library for natural language processing written in the Cython programming language, and one of the fastest and most accurate available dependency parsers, to parse James’s sentences (Honnibal, Johnson, and others 2015). This study also uses a Python module I wrote called Sent2Tree, which parses SpaCy’s dependency graphs into standard tree structures, mathematical objects that can then be manipulated using tools like the ETE3 Toolkit, a library originally created for manipulation of phylogenetic trees (Huerta-Cepas, Serra, and Bork 2016). These tools, as we will discover, will allow us to understand the Jamesian sentence in new ways.
 
-<figure>
+
 ![Figure 1: Visualization of the dependency-parsed tree of James’s longest sentence](/images/james-sentence/the-house-had-a-name.png)
-<figcaption>Figure 1: Visualization of the dependency-parsed tree of James’s longest sentence</figcaption>
-</figure>
+<p class="caption">Figure 1: Visualization of the dependency-parsed tree of James’s longest sentence</p>
+
 
 Figure 1 shows a visualization of a sentence tree created from parsing James’s longest sentence above with SpaCy and Sent2Tree. The SpaCy parser has inferred that “passed” is the fulcral verb in the sentence, a central verb, in a literal, if not figurative sense. The parser correctly identifies most of the clausal structures: the interlude about Edward the Sixth is identified as its own branch, and so are those about Elizabeth and Cromwell. The house’s Restoration and eighteenth-century histories are also their own branches, but top-level instead of dependent on “had.” The early history of the “American banker,” not yet revealed to be Mr. Touchett, is on a further branch, and his present history, with its digression into the house’s details and shadows, is the final branch. This segmentation might not be perfectly intuitive—an intuitive division might split the independent clauses on either side of the semicolon—but it nonetheless reveals many of the movements of the sentence: the periods of its histories, and the digression into more lingering, aesthetic language that constitutes the sentence’s finale. This figure captures both the relative balance of the sentence—its tidy list-like history—as well as its ultimate imbalance—its descent into the realm of the slow, minute, and sensory world of shadows and warm bricks.
 
@@ -30,26 +30,26 @@ These groupings, plotted chronologically according to novel, are shown in Figure
 
 Figure 3 shows the same series, but only the sums of deciles 5-9, corresponding roughly to very long sentences. In this view, which as the scale shows, only represents two percent of the whole, very long sentences like the one quoted above seem most likely to appear in the poshumously published *The Ivory Tower*, followed by *Princess Casamassima*, *The Golden Bowl*, and *The Bostonians*. Finally, Figure 4 shows a box plot of the same series, more clearly showing the properties of each distribution of sentence lengths. Here, the early/late style divide is most apparent in the division between the box sizes, representing the interquartile ranges of each distribution. Again, apart from the posthumous novel, the most notable outliers are the 1886 pair of *Princess Casamassima* and *The Bostonians*. The sentence below is from *The Bostonians*:
 
-<figure>
+
 ![Figure 2: Distributions of Sentence Lengths in James’s Novels](/images/james-sentence/james-sentences-length-cats.png)
-<figcaption>Figure 2: Distributions of Sentence Lengths in James’s Novels</figcaption>
-</figure>
+<p class="caption">Figure 2: Distributions of Sentence Lengths in James’s Novels</p>
 
-<figure>
+
+
 ![Figure 3: Proportions of Longer Sentences in James’s Novels](/images/james-sentence/james-sentences-length-5678.png)
-<figcaption>Figure 3: Proportions of Longer Sentences in James’s Novels</figcaption>
-</figure>
+<p class="caption">Figure 3: Proportions of Longer Sentences in James’s Novels</p>
 
-<figure>
+
+
 ![Figure 4: Box Plot of Sentence Length Distributions in James’s Novels](/images/james-sentence/james-sentences-length-box.png)
-<figcaption>Figure 4: Box Plot of Sentence Length Distributions in James’s Novels</figcaption>
-</figure>
+<p class="caption">Figure 4: Box Plot of Sentence Length Distributions in James’s Novels</p>
+
 
 > This edifice, a diminished copy of the chapel of King’s College, at the greater Cambridge, is a rich and impressive institution; and as he stood there, in the bright, heated stillness, which seemed suffused with the odour of old print and old bindings, and looked up into the high, light vaults that hung over quiet book-laden galleries, alcoves and tables, and glazed cases where rarer treasures gleamed more vaguely, over busts of benefactors and portraits of worthies, bowed heads of working students and the gentle creak of passing messengers–as he took possession, in a comprehensive glance, of the wealth and wisdom of the place, he felt more than ever the soreness of an opportunity missed; but he abstained from expressing it (it was too deep for that), and in a moment Verena had introduced him to a young lady, a friend of hers, who, as she explained, was working on the catalogue, and whom she had asked for on entering the library, at a desk where another young lady was occupied. (James 2006a)
 
 This 217 word sentence, James’s second longest, shares much with the longest sentence. Like the longest, its principal subject is a building. Like many of James’s characters, and indeed James himself, the building is somehow both American and European: the Harvard library, but also a Cambridge chapel. Furthermore, like the previously quoted sentence, it is a topography of a daydream. Though not a journey through time, it is a journey through space, an admiring pan through the library that nonetheless causes him deep “soreness.” This sentence does more than merely describe the library, however, for it moves straight in to the next action: “in a moment Verena had introduced him to a young lady.” The fluidity of this transition is underlined by the immediacy signaled by “in a moment,” which indicates that a sharp temporal shift has taken place. Time, that had been allowed to flow aimlessly and viscously across the objects of the library, now, “in a moment,” snaps back into place, and we again reach the staccato rhythm of action: “a friend of hers / who / as she explained.”
 
-![Figure 5: Visualization of the dependency-parsed tree of James’s second longest sentence](/images/james-sentence/this-edifice.png)<span class="caption">Figure 5: Visualization of the dependency-parsed tree of James’s second longest sentence</span>
+![Figure 5: Visualization of the dependency-parsed tree of James’s second longest sentence](/images/james-sentence/this-edifice.png)<p class="caption">Figure 5: Visualization of the dependency-parsed tree of James’s second longest sentence</p>
 
 Figure 5 shows a visualization of the parsed sentence quoted above. The parser divides the sentence into seven branches. The first is the subject of the sentence; the second, a comparison with the Cambridge capel; the third is the reverie that takes Basil along the objects in the library. The first length of this branch shows the chain-like anaphoric structure in the string of objects connected with “and” and qualified with “that.” This shoot then blossoms into a new structure on the verb “felt,” which introduces Basil’s subjectivity. The branches below parenthetically qualify that subjectivity (it was too deep for expression), and bring the reverie to a close with the introduction of the young librarian. Overall, this structure is one of a digression: a movement into the sensory world of the aesthetic, followed by a movement back into the world of people and action.
 
@@ -73,7 +73,7 @@ To speak of a sentence’s “balance,” in terms of these tree structures, is 
 
 > The enemy was no particular person and no particular body of persons: not his mother; not Mr. Carteret, who, as he heard from the doctor at Beauclere, lingered on, sinking and sinking till his vitality appeared to have the vertical depth of a gold-mine; not his pacified constituents, who had found a healthy diversion in returning another Liberal wholly without Mrs. Dallow’s aid (she had not participated even to the extent of a responsive telegram in the election); not his late colleagues in the House, nor the biting satirists of the newspapers, nor the brilliant women he took down at dinner-parties–there was only one sense in which he ever took them down; not in short his friends, his foes, his private thoughts, the periodical phantom of his shocked father: the enemy was simply the general awkwardness of his situation. (James 2006b)
 
-![Figure 6: Visualization of the dependency-parsed tree of the most digressive Jamesian sentence](/images/james-sentence/the-enemy.png)<span class="caption">Figure 6: Visualization of the dependency-parsed tree of the most digressive Jamesian sentence</span>
+![Figure 6: Visualization of the dependency-parsed tree of the most digressive Jamesian sentence](/images/james-sentence/the-enemy.png)<p class="caption">Figure 6: Visualization of the dependency-parsed tree of the most digressive Jamesian sentence</p>
 
 As shown in Figure 6, the syntactic structure of this sentence is extremely unbalanced, at least according to the SpaCy parser. It balances the subject “the enemy,” along the fulcrum “was” with a 139-word object. SpaCy parses some of these dependencies incorrectly, of course: “constituents” is dependent of “sinking” here, which is actually a wholly separate clause. Nonetheless, SpaCy captures the spirit of this sentence, which is a *via negativa* seeking to explain the nature of Nick’s abstract “enemy” in terms of what it is not.
 
@@ -82,19 +82,19 @@ At each of these negative comparisons, James lingers, exploring each to the full
 Breadth-First Quantifications of Sentence Trees
 ===============================================
 
-<figure>
+
 ![Figure 7: A visualization of a dependency parsing of an example sentence.](/images/james-sentence/fox.png)
-<figcaption>Figure 7: A visualization of a dependency parsing of an example sentence.</figcaption>
-</figure>
+<p class="caption">Figure 7: A visualization of a dependency parsing of an example sentence.</p>
+
 
 In addition to sentence balance, which measures the depth of each first-level branch by counting their total descendants, we might also employ a breadth-first approach to the numerical representation of sentence trees, one that quantifies the number of branches at each level of depth. Figure 7 shows an example sentence, “the quick brown fox jumped over the lazy dogs,” parsed with SpaCy. A breadth-first quantification of this sentence would return the vector \[1, 2, 4, 2\], since there is one word at the root (“jumped”), two at the first level (“fox” and “over”), four at the second, and two at the last. When we average these vectors for every sentence in a novel, we can represent the average sentence structure of a novel.
 
 Figure 8 shows these average vectors for the corpus of James novels. The X axis represents the level of the sentence tree, and the Y axis represents the number of nodes at that level. It appears that the sentence structures in James cluster chronologically. Overall, the general chronological trend is one that tends toward greater syntactic complexity. The most cohesive group is the purple and dark blue cluster of lines that represent James’s early work, 1871-1881. Next, there is a much wider band (suggesting greater variety in sentence structure) in orange and green that corresponds to James’s middle and late years. Next, there is the pair *The Bostonians* and *Princess Casamassima*, both written in 1886, that stand on their own in light blue. Finally, the unfinished novel *The Ivory Tower* is in its own category altogether.
 
-<figure>
+
 ![Figure 8: Averaged breadth-first sentence vectors for James novels.](/images/james-sentence/average-trees.png)
-<figcaption>Figure 8: Averaged breadth-first sentence vectors for James novels.</figcaption>
-</figure>
+<p class="caption">Figure 8: Averaged breadth-first sentence vectors for James novels.</p>
+
 
 Conclusions
 ===========

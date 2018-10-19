@@ -244,10 +244,10 @@ Latinate words in a section almost always means a low proportion of
 Germanic words. For this reason, this study will mostly examine the
 proportions of Latinate words in *Paradise Lost*.
 
-<figure>
+
 ![Figure 1: Paradise Lost Books, Proportions of Latinate Words](/images/milton-macroetym/books-latinate.png)
-<figcaption>Figure 1: Paradise Lost Books, Proportions of Latinate Words</figcaption>
-</figure>
+<p class="caption">Figure 1: Paradise Lost Books, Proportions of Latinate Words</p>
+
 
 Figure 1 shows the overall proportions of Latinate words in the books of
 *Paradise Lost*. The Latinity of the epic starts, one might say, *in
@@ -283,11 +283,11 @@ Anglo-Saxon-derived “Princedoms,” all of the words in this series are
 descended from Latin, and arrive either through French or through
 Anglo-Norman.
 
-<figure>
+
 ![Figure 2: Paradise Lost Subsections, Proportions of Latinate
 Words](/images/milton-macroetym//subsections-latinate.png)
-<figcaption>Figure 2: *Paradise Lost* Subsections, Proportions of Latinate Words</figcaption>
-</figure>
+<p class="caption">Figure 2: *Paradise Lost* Subsections, Proportions of Latinate Words</p>
+
 
 This section has Satan assume an air of high rhetoric, where he will
 ask, “Who can in reason then or right assume / Monarchy over such as
@@ -363,12 +363,12 @@ features are often reflected in the etymologies of their words. Figure 3
 shows the Latinate proportions for each of the speakers in *Paradise
 Lost*. The speakers with the highest percentages of Latinate words are
 the narrator, Adam, and Raphael, while the speakers with the lowest are
-the minor characters Zophiel, Nisroc, and Zephon<span id="fnref1" class="fnref">[1](#fn1)</span>.
+the minor characters Zophiel, Nisroc, and Zephon[^1].
 With only 84, 131, and 76 words each, however, these last
 three fallen angels likely do not show high proportions of Latinate
 words simply because they are not given the chance to—their speech
 samples are not large enough. Analyzing only the main characters—that
-is, characters who speak more than two thousand words<span id="fnref2" class="fnref">[2](#fn2)</span>
+is, characters who speak more than two thousand words[^2]
 —the characters with the lowest proportions of Latinate
 words are Eve, the Son, and the Father. This seems to suggest that the
 narrator, Adam, and Raphael all perform higher levels of discourse than
@@ -408,10 +408,10 @@ at ranks \#1 and \#2, respectively, are the Latinate words “redeem” and
 of fallen angels eager to reenter heaven, so it is surprising that they
 should correlate instead with the heavenly monarchy.
 
-<figure>
+
 ![Figure 3: Proportions of Latinate Words among Speakers](/images/milton-macroetym/speakers-latinate.png)
-<figcaption>Figure 3: Proportions of Latinate Words among Speakers</figcaption>
-</figure>
+<p class="caption">Figure 3: Proportions of Latinate Words among Speakers</p>
+
 
 One of the superficial features of Latinate words is that they are
 frequently composed of root words and affixes. The Latinate prefixes
@@ -425,11 +425,11 @@ fact begins with “re-” but is not etymologically composed of the “re-”
 prefix, I created a blacklist containing words like “regent,” “reason,”
 “prey,” “under,” and “union.”
 
-<figure>
+
 ![Figure 4: Prefixes, by Book, Not Normalized for Word
 Count](/images/milton-macroetym/prefixes-books-notnormalized.png)
-<figcaption>Figure 4: Prefixes, by Book, Not Normalized for Word Count</figcaption>
-</figure>
+<p class="caption">Figure 4: Prefixes, by Book, Not Normalized for Word Count</p>
+
 
 “Re-” is by far the most common of these prefixes, accounting for the
 distinctive word of the narrator, “replied,” as well as God and the
@@ -482,13 +482,13 @@ John Milton* 516)</span>. Thomas Corns calls this a common “stylistic
 motif” of Milton’s <span class="citation">(84–5)</span>. These chains
 happen two more times, with the narrator’s “unprevented, unimplored,
 unsought” (3.231), and the Son’s “unshaked, unseduced,
-unterrified”<span id="fnref3" class="fnref">[3](#fn3)</span>(5.899).
+unterrified”[^3](5.899).
 
-<figure>
+
 ![Figure 5: Prefixes by Speaker, Normalized by
 Wordcount](/images/milton-macroetym/prefixes-speakers-normalized.png)
-<figcaption>Figure 5: Prefixes by Speaker, Normalized by Wordcount</figcaption>
-</figure>
+<p class="caption">Figure 5: Prefixes by Speaker, Normalized by Wordcount</p>
+
 
 Analyzed by speaker, some surprising trends emerge. Figure 5 shows
 prefix usage by each of the main characters, adjusted for the total
@@ -576,12 +576,11 @@ Ricks, Christopher. *Milton’s Grand Style*. Oxford: Clarendon Press,
 
 ------------------------------------------------------------------------
 
-1.  <div id="fn1"></div> A complete list may be found in the
-    [analyze-pl](https://github.com/JonathanReeve/milton-analysis/blob/master/macro-etym/analyze-pl.ipynb) notebook.[↩](#fnref1)
+[^1]: A complete list may be found in the [analyze-pl](https://github.com/JonathanReeve/milton-analysis/blob/master/macro-etym/analyze-pl.ipynb) notebook.
 
-2.  <div id="fn2"> </div> These characters are the narrator, Adam, Eve, God, the Son, Satan, Michael, and Raphael.[↩](#fnref2)
+[^2]: These characters are the narrator, Adam, Eve, God, the Son, Satan, Michael, and Raphael.
 
-3.  <div id="fn3"> </div> These strings are easily detected with the GNU command `grep` and a regular expression: `grep -ir ‘\bun.*\bun.*\bun’ bk/*`[↩](#fnref3)
+[^3]: These strings are easily detected with the GNU command `grep` and a regular expression: `grep -ir ‘\bun.*\bun.*\bun’ bk/*`
 
 # Note
 

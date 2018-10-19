@@ -144,10 +144,10 @@ Results
 Prologues and Tales
 -------------------
 
-<figure>
+
 ![Figure 1: Language Families, by All Prologues and Tales](/images/chaucer/families.png)
-<figcaption>Figure 1: Language Families, by All Prologues and Tales</figcaption>
-</figure>
+<p class="caption">Figure 1: Language Families, by All Prologues and Tales</p>
+
 
 Figure 1 shows the proportions of Latinate, Germanic, Hellenic, and
 Semitic language families, organized by tale. Immediately noticeable
@@ -162,10 +162,10 @@ of suspicion, since in those cases, the fluctuations here reflect only
 the difference of about eleven words. It is for this reason that I will
 be focusing primarily on Latinate words here.
 
-<figure>
+
 ![Figure 2: Latinate Words, All Prologues and Tales](/images/chaucer/latinate-by-tale.png)
-<figcaption>Figure 2: Latinate Words, All Prologues and Tales</figcaption>
-</figure>
+<p class="caption">Figure 2: Latinate Words, All Prologues and Tales</p>
+
 
 Figure 2 shows the proportions of Latinate words per tale, subdivided
 into individual languages. Broadly speaking, the prologues and tales
@@ -339,10 +339,10 @@ Monk's cast of characters (VIII.3957).
 Macro-Etymology of the Individual Prologue/Tale
 -----------------------------------------------
 
-<figure>
+
 ![Figure 3: Prologues and Tales](/images/chaucer/latinate-by-chunks8.png)
-<figcaption>Figure 3: Mean Latinate Proportions of All Prologues and Tales</figcaption>
-</figure>
+<p class="caption">Figure 3: Mean Latinate Proportions of All Prologues and Tales</p>
+
 
 So far we have discussed the macro-etymologies of tales and prologues,
 but what might we discover about the macro-etymologies of the various

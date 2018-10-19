@@ -11,9 +11,9 @@ tags:
 
 Digital humanists working in computational text analysis need a better way to share corpora. Following is a rough sketch of a way to share texts in way that facilitates collaboration, provides for easy error correction, and adheres as much as possible to decentralized, open-source, and open-access models.
 
-#Problems
+# Problems
 
-##The Problem of Corpus Availability
+## The Problem of Corpus Availability
 Franco Moretti gave a talk at NYU two weeks ago, detailing digital analyses he had conducted on large numbers of novels. The handout he circulated beforehand, whose authors also included Mark Algee-Hewitt, Sarah Allison, Marissa Gemma, Ryan Heuser, and Hannah Walser, included a section about the difficulty of obtaining many of these corpora:
 
 >In August, requests were sent to Hathi and Gale – with both of which Stanford [has] a solid, long- standing agreement – for their 300 volumes; two months later, we haven't yet received anything. Of the 100 existing only in print, about half were held by the British Library, in London, which just a few months earlier had kindly offered the Literary Lab a collection of 65,000 digitized volumes from its collections; unfortunately, none of the books we were looking for was in this corpus. The special collections at UCLA and Harvard (which held about 50 of the 100 books) sent us a series of estimates that ranged (depending, quite reasonably, on the conditions of the original, and on the photographic requirements, that could be possibly very labor-intensive) from $1,000 to $20,000 per novel; finally, six novels were part of larger collections held by Proquest, which offered us a very generous 50% discount; even so, those six books would have cost us $147,000, or $25,000 per title.
@@ -26,11 +26,11 @@ Even some of the best text repositories, like the [Oxford Text Archive](http://o
 
 This problem was one of the major topics of discussion at the workshop Computer-Based Analysis of Drama I attended last week in Munich. Many of the presenters used texts from the TextGrid repository, and it was suggested that this could be a platform for the sharing of corpora among researchers. Yet TextGrid is apparently losing funding soon, and might go down. So how can we find a common platform for sharing texts, so that others might benefit from them?   
 
-##The Problem of Corpus Immutability
+## The Problem of Corpus Immutability
 
 Another issue with the current paradigms for the sharing of corpora is the problem of corpus immutability. If texts are only available from a centralized source, then new versions of that text depend on the maintainers of that centralized source for all changes. Corpora of scanned texts are full of OCR errors, and there are few opportunities for user corrections of those errors. Project Gutenberg handles this problem with volunteer proofreaders, but the fundamentally static nature of their web pages makes it difficult for those outside of their infrastructure to contribute textual corrections. At Computer-Based Analysis of Drama, Martin Muller of Northwestern University demonstrated a fantastic system for crowdsourced correction of these errors, [Annolex](http://annolex.at.northwestern.edu/), that is the one of the best such systems I've seen. Yet, at the moment, it only works on a select number of early modern English texts. How can we make this sort of crowdsourced error correction even more democratic, and even more distributed?
 
-##Summary
+## Summary
 
 What is needed is a platform for:
 
@@ -42,7 +42,7 @@ What is needed is a platform for:
  * adherence to an open-source and open-access philosophy
  * accomplishing all of the above with minimal programming
 
-#A Proposed Solution
+# A Proposed Solution
 
 Such a platform as described above has already long been in use among coders, and would need only minor usage modifications to be used as a plaform for sharing corpora. For those that aren't already familiar with it, [GitHub](https://github.com) is a repository of repositories, tightly integrated into the version control system [git](http://git-scm.com/book/en/v2/Getting-Started-Git-Basics), where coders can [upload their projects](https://guides.github.com/introduction/getting-your-project-on-github/) and [collaborate on others' projects](https://guides.github.com/activities/forking/). Each repository features [an issue tracker](https://guides.github.com/features/issues/), wiki, and a statistics suite that can help you to see at a glace the history of a project's versions. It works very well already for handling computer code, and would work just as well for handling text corpora.  
 
@@ -54,7 +54,7 @@ I propose that we upload our corpora to GitHub, with repositories named with the
 
 Eventually, a scraping engine might be built which could, like Yeoman's generator list, dynamically search GitHub for any repo beginning with `corpus-`. Then, performing large-scale text analyses on any set of these corpora would be orders of magnitude easier than manually assembling a database of texts.
 
-#Possible Concerns
+# Possible Concerns
 
  * Although this is a decentralized solution when compared with other, more static, repositories, GitHub is still a centralized hub.
    - This might be solved by dynamically pulling repositories from a number of similar git sources, like BitBucket.
@@ -63,5 +63,5 @@ Eventually, a scraping engine might be built which could, like Yeoman's generato
  * GitHub has [a repository size limit of about 1GB, with a soft limit of about 100M per file](https://help.github.com/articles/what-is-my-disk-quota/).
    - This might be solved by breaking up repositories into submodule repositories. One parent corpus repo can hold several submodule repos.
 
-#Discussion
+# Discussion
 What do you think? Is this a protocol you might be interested in adopting? Why or why not? Please leave comments below.

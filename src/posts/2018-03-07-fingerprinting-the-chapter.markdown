@@ -16,10 +16,10 @@ First, I gathered as many novels as I could. [Corpus-DB](http://corpus-db.org), 
 
 Figure 1 shows the average number of chapters, the average text length, and the average chapter length for prose fiction works written by authors who were born in the decades shown. There is an amazing range of dates here, indicating the presence of some decidedly non-novelistic classical literature. (Project Gutenberg doesn't maintain metadata about its texts' original publication dates, but they do have author birth/death years, strangely, so I'm forced to use those as a proxy. This is a problem I'm trying to correct with Corpus-DB, but my solution isn't quite ready yet.) This seems to show that by around the 19th Century, chapters are about the same length. They get a little shorter around the 20th Century, and are extreme and erratic before 1700, but I attribute this to the relative paucity of early (pre-1700) and late (post-1920) texts in the corpus, owing to factors like textual availability, canonicity, and copyright restrictions. It appears that novels have been getting shorter, however, and so there are also fewer chapters. 
 
-<figure>
+
 ![Figure 1: Chapter statistics by author date of birth](/images/chapters/chap-stats-by-author-dob.png)
-<figcaption>Figure 1: Chapter statistics by author date of birth</figcaption>
-</figure>
+<p class="caption">Figure 1: Chapter statistics by author date of birth</p>
+
 
 Figure 2 shows the average number of chapters per novel, sorted by the novel's Library of Congress subject headings. Subjects with the most number of chapters are on the left, and subjects with the least are on the right. There are a few things of note here:
 
@@ -29,10 +29,10 @@ Figure 2 shows the average number of chapters per novel, sorted by the novel's L
 
 Of course, there are many more things that can be said about this chart. Please feel free to chime in, in the comments below!
 
-<figure>
+
 ![Figure 2: Average number of chapters by Library of Congress subject heading](/images/chapters/numchaps-by-lcsh.png)
-<figcaption>Figure 2: Average number of chapters by Library of Congress subject heading</figcaption>
-</figure>
+<p class="caption">Figure 2: Average number of chapters by Library of Congress subject heading</p>
+
 
 # Language Patterns of the Chapter
 
@@ -42,10 +42,10 @@ For the next experiment, I extracted the first paragraphs of each chapter from a
 
 It seems that the first paragraphs of chapters set the scene: the season, the month, and the time of day (usually the morning). Just for fun, I computed the relative mentions of certain months from this small sample, and found that my intuition was correct: spring is over-represented in the beginnings of chapters, and winter is under-represented, with May as the most mentioned month, and January the least, as shown in Figure 3. 
 
-<figure>
+
 ![Figure 3: Months mentioned in the first paragraphs of chapters](/images/chapters/months.png)
-<figcaption>Figure 3: Months mentioned in the first paragraphs of chapters</figcaption>
-</figure>
+<p class="caption">Figure 3: Months mentioned in the first paragraphs of chapters</p>
+
 
 Here are the words distinctive of middle paragraphs: 
 
