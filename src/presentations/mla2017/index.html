@@ -1,0 +1,244 @@
+<!doctype html>
+
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=1024" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <title>impress.js | presentation tool based on the power of CSS3 transforms and transitions in modern browsers | by Bartek Szopka @bartaz</title>
+    
+    <meta name="description" content="impress.js is a presentation tool based on the power of CSS3 transforms and transitions in modern browsers and inspired by the idea behind prezi.com." />
+    <meta name="author" content="Bartek Szopka" />
+
+    <link href="../../assets/js/vendor/impress.js/css/impress-demo.css" rel="stylesheet" />
+
+    <link href='https://fonts.googleapis.com/css?family=Lato|Roboto+Slab' rel='stylesheet' type='text/css'>
+
+    <style> 
+	.step { 
+		width: 1000px; 
+	} 
+	h1, h2 { 
+		font-family: 'Roboto Slab', serif;
+		text-align: center;
+	} 
+	h1 { 
+		font-size: 1.5em; 
+		line-height: 1.2em;
+		color: red; 
+		margin-bottom: 0.3em;
+	} 
+	h2 { 
+		font-size: 1em; 
+		color: black; 
+	} 
+	p, li { 
+		font-family: 'Lato', sans-serif;
+	}
+
+	li { 
+		list-style: outside; 
+		margin-left: 1em;
+	} 
+	ul ul li { 
+		margin-left: 2em; 
+		list-style-type: circle; 
+	} 
+	figure { 
+		text-align: center; 
+	} 
+	figure img {
+		width: 100%; 
+	} 
+	.figure { 
+		width: 60%; 
+	} 
+	code { 
+		font-family: monospace; 
+		color: #333; 
+		font-size: 0.8em; 
+	} 
+    </style>
+
+</head>
+
+<body class="impress-not-supported">
+
+<div class="fallback-message">
+    <p>Your browser <b>doesn't support the features required</b> by impress.js, so you are presented with a simplified version of this presentation.</p>
+    <p>For the best experience please use the latest <b>Chrome</b>, <b>Safari</b> or <b>Firefox</b> browser.</p>
+</div>
+
+<div id="impress">
+
+<section id="overview" class="level1 step" data-scale="10">
+<h1></h1>
+</section>
+<section id="section" class="level1 step" data-x="-4000" data-y="2000" data-scale="8">
+<h1></h1>
+<figure>
+<img src="branching-illustration.png" />
+</figure>
+</section>
+<section id="git-lit-an-application-of-distributed-version-control-technology-toward-the-creation-of-50000-digital-scholarly-editions" class="level1 step" data-x="-2000" data-y="-1000" data-scale="7">
+<h1>Git-Lit: an Application of Distributed Version Control Technology toward the Creation of 50,000 Digital Scholarly Editions</h1>
+</section>
+<section id="section-1" class="level1 step" data-x="-2000" data-y="1500" data-scale="5">
+<h1></h1>
+<section id="jonathan-reeve" class="level2">
+<h2>Jonathan Reeve</h2>
+</section>
+<section id="group-for-experimental-methods-in-the-humanities" class="level2">
+<h2>Group for Experimental Methods in the Humanities</h2>
+</section>
+<section id="columbia-university" class="level2">
+<h2>Columbia University</h2>
+</section>
+</section>
+<section id="the-problems" class="level1 step" data-x="2000">
+<h1>The Problems</h1>
+<ul>
+<li>Electronic texts are full of errors</li>
+<li>These errors are difficult to correct</li>
+<li>Etexts are often static, stuck in the hands of the few</li>
+<li>Their editorial histories are often obscure</li>
+<li>They’re difficult to assemble into plain-text corpora for text analysis</li>
+<li>They’re ugly (looking at you, Project Gutenberg!)</li>
+</ul>
+</section>
+<section id="version-control-systems" class="level1 step" data-x="2000" data-y="1000">
+<h1>Version Control Systems</h1>
+<ul>
+<li>Git, mercurial, svn, bazaar</li>
+<li>Open-source, community-owned</li>
+<li>Some centralized, some distributed</li>
+<li>Used very widely by coders (over 10 million GitHub repositories)</li>
+<li>Starting to be used by humanists</li>
+</ul>
+</section>
+<section id="features-of-version-control-systems" class="level1 step" data-x="2000" data-y="2000">
+<h1>Features of Version Control Systems</h1>
+<ul>
+<li>Store every version of a document or project <em>efficiently</em></li>
+<li>Store metadata about every edit: who made the change, when the change happened, what changed</li>
+<li>Facilitate collaboration, analysis, version management</li>
+</ul>
+</section>
+<section id="section-2" class="level1 step" data-x="2000" data-y="3000">
+<h1></h1>
+<figure>
+<img src="phd101212s.gif" class="figure" />
+</figure>
+</section>
+<section id="distributed-version-control" class="level1 step" data-x="3000">
+<h1>Distributed Version Control</h1>
+<figure>
+<img src="distributed.png" class="figure" />
+</figure>
+</section>
+<section id="distributed-version-control-1" class="level1 step" data-x="3000" data-y="1000">
+<h1>Distributed Version Control</h1>
+<ul>
+<li>Doesn’t privilege a central text, repository, user, or computer</li>
+<li>Anyone can pull changes from anyone</li>
+<li>Democratization of scholarly editing?</li>
+</ul>
+</section>
+<section id="example-features" class="level1 step" data-x="3000" data-y="2000">
+<h1>Example Features:</h1>
+<ul>
+<li>Temporarily reset your project to an earlier version/state:</li>
+</ul>
+<p><code>git checkout &lt;change number&gt;</code></p>
+<ul>
+<li>Revert a single change from an arbitrary point in the past:</li>
+</ul>
+<p><code>git revert &lt;change number&gt;</code></p>
+<p>(Try doing that with Microsoft Word!)</p>
+<ul>
+<li>Automatically combine changesets from two versions:</li>
+</ul>
+<p><code>git merge &lt;branch name&gt;</code></p>
+</section>
+<section id="version-control-cloud-services" class="level1 step" data-x="4000">
+<h1>Version Control Cloud Services</h1>
+<ul>
+<li>GitHub, BitBucket, GitLab</li>
+<li>Allow easy forking, pull requests</li>
+<li>Facilitate collaboration</li>
+<li>Offer project management features such as issues, wiki, milestones</li>
+</ul>
+</section>
+<section id="git-lit" class="level1 step" data-x="5000">
+<h1>Git-Lit</h1>
+<ul>
+<li>Open-source initiative</li>
+<li>Inspired by GITenberg’s work with Project Gutenberg</li>
+<li>Comprised of ~2-3 volunteer developers and many other contributors</li>
+<li>Codebase written in Python</li>
+</ul>
+</section>
+<section id="project-aims" class="level1 step" data-x="5000" data-y="1000">
+<h1>Project Aims</h1>
+<ul>
+<li>parse and post to GitHub ~50,000 texts</li>
+<li>create submodules for categories of texts</li>
+<li>facilitate the crowdsourced proofreading of these texts</li>
+<li>make plain text editions for text mining</li>
+<li>make beautiful, readable web editions of each text</li>
+</ul>
+</section>
+<section id="the-corpora" class="level1 step" data-x="5000" data-y="2000">
+<h1>The Corpora</h1>
+<ul>
+<li>~45,000+ scanned works from the British Library in ALTO XML</li>
+<li>~1,000 works from the University of Virginia Electronic Text Center in TEI XML</li>
+<li>merged with the ~40,000 from Project Gutenberg, already available via GITenberg</li>
+</ul>
+</section>
+<section id="how-can-i-use-it" class="level1 step" data-x="5000" data-y="3000">
+<h1>How Can I Use It?</h1>
+<ul>
+<li>Download the git repositories using the <code>corpus-downloader</code> python module</li>
+<li>Use it with DHBox</li>
+<li>Proofread a text and submit changes by forking a text repository and submitting a pull request</li>
+</ul>
+</section>
+<section id="call-for-contributions" class="level1 step" data-x="5000" data-y="4000">
+<h1>Call for Contributions</h1>
+<ul>
+<li>Anyone can be involved! Coders and non-coders alike.</li>
+<li>Pull requests appreciated (Python)</li>
+<li>Bug reports, feature requests, and issue comments appreciated</li>
+</ul>
+</section>
+<section id="links" class="level1 step" data-x="6000">
+<h1>Links</h1>
+<ul>
+<li>About: <a href="http://git-lit.github.io" class="uri">http://git-lit.github.io</a></li>
+<li>Sources: <a href="https://github.com/Git-Lit" class="uri">https://github.com/Git-Lit</a></li>
+<li>Corpus downloader: <a href="https://github.com/DH-Box/corpus-downloader" class="uri">https://github.com/DH-Box/corpus-downloader</a></li>
+<li>DHBox: <a href="http://dhbox.org/" class="uri">http://dhbox.org/</a></li>
+<li>This presentation: <a href="http://jonreeve.com/presentations/mla2017/" class="uri">http://jonreeve.com/presentations/mla2017/</a></li>
+<li>My Homepage: <a href="http://jonreeve.com" class="uri">http://jonreeve.com</a></li>
+<li>Email: <a href="mailto:jon.reeve@gmail.com">jon.reeve@gmail.com</a></li>
+</ul>
+</section>
+
+</div>
+
+<div class="hint">
+    <p>Use a spacebar or arrow keys to navigate</p>
+</div>
+<script>
+if ("ontouchstart" in document.documentElement) { 
+    document.querySelector(".hint").innerHTML = "<p>Tap on the left or right to navigate</p>";
+}
+</script>
+
+<script src="../../assets/js/vendor/impress.js/js/impress.js"></script>
+<script>impress().init();</script>
+
+</body>
+</html>
+
