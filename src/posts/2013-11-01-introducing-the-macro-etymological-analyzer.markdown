@@ -5,7 +5,7 @@ category: digital humanities
 tags:
  - etymology
  - text analysis
- - php
+ - PHP
 ---
 
 Here's a sneak preview of my latest project, [a macro-etymological textual analyzer web app](http://jonreeve.com/etym). It's an abstract, complete with preliminary results, which I recently prepared to submit to [DH2014](http://dh2014.org/). Here's a PDF file version: <a href="http://jonreeve.com/blog/wp-content/uploads/2013/11/dh2014-abstract.pdf">Abstract: Macro-Etymological Analyzer (237K PDF)</a>, and the full text of the abstract is below the cut.

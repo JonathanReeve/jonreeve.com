@@ -6,6 +6,7 @@ tags:
  - etymology
  - Joyce
  - paper
+ - modernism
 ---
 
 [This is a preprint of my paper, published in [_Reading Modernism with Machines_](http://www.palgrave.com/us/book/9781137595683#otherversion=9781137595690), by Palgrave Macmillan in December 2016, reposted from the original draft.]

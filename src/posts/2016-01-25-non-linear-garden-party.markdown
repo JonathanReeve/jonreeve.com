@@ -99,4 +99,4 @@ This edition has been made using exclusively free and open-source software. This
 
 Click on the link below to start reading the edition:
 
-<button>[Start Here](http://jonreeve.com/projects/garden-party/index.html#instructions)</button>
+[Start Here](http://jonreeve.com/projects/garden-party/index.html#instructions)

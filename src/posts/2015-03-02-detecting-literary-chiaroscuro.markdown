@@ -2,7 +2,10 @@
 layout: post.pug
 title: 'Detecting Literary Chiaroscuro in Eliot, Dickens, and other Victorian Novelists'
 category: digital humanities
-tags: wordnet python nltk
+tags: 
+ - wordnet 
+ - python 
+ - NLTK
 ---
 
 In an 1873 review in the *Galaxy*, Henry James criticizes George Eliot's

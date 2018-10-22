@@ -4,11 +4,12 @@ title: Probabilistic Detection of Character Voices in Fiction
 category: digital humanities
 tags:
  - natural language processing
- - pca
+ - PCA
  - statistics
  - text analysis
- - woolf
+ - Woolf
  - Richardson
+ - modernism
 ---
 
 In James Joyce's novel *Ulysses*, the school headmaster Mr. Deasy quotes

@@ -6,6 +6,7 @@ tags:
  - etymology
  - text analysis
  - python
+ - tools
 ---
 
 I'm proud to introduce macroetym, a command-line tool for macro-etymological textual analysis, which is now available for download with the Python package manager, pip. It's a complete rewrite of [The Macro-Etymological Analyzer](http://jonreeve.com/etym), the web tool for macro-etymological analysis I wrote a few years ago, first described in [this post](/2013/11/introducing-the-macro-etymological-analyzer), and presented at [DH2014](http://jonreeve.com/dh2014/). It can now analyze any number of texts, and texts in 250 languages. Here are a few examples of the program in action:

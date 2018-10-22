@@ -1,11 +1,11 @@
 ---
 layout: post.pug
-title: Imperial Voices&#58; Gender and Social Class among Shakespeare's Characters, a Stylometric Approach  
+title: "Imperial Voices: Gender and Social Class among Shakespeare's Characters, a Stylometric Approach"
 category: digital humanities
 tags:
  - python
- - bash
- - pca
+ - BASH
+ - PCA
  - early moderns
  - Shakespeare
  - paper
