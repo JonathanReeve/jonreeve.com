@@ -11,7 +11,10 @@
       },
       "metalsmith-markdown-metadata": {},
       "metalsmith-date-in-filename": {},
-      "metalsmith-ignore": ".#*",
+      "metalsmith-ignore": [
+          ".#*",
+          "assets/js/vendor/reveal.js/**/*.scss"
+          ],
       "metalsmith-code-highlight": {},
       "metalsmith-collections": {
           "posts": {
