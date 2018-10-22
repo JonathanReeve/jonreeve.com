@@ -1,5 +1,8 @@
 default:
-	metalsmith
+	metalsmith -c dev.json
 
 debug:
 	DEBUG=metalsmith:metadata metalsmith
+
+prod:
+	metalsmith
