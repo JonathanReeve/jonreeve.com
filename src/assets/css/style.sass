@@ -19,6 +19,11 @@ a, a:visited
   &:hover
     color: $lightblue
 
+a[name]
+  padding-top: 4.5em
+  margin-top: -4.5em
+  display: inline-block; // required for webkit browsers? 
+
 span.tag
   padding: 0.3em
   background: white
@@ -51,6 +56,7 @@ body.has-docked-nav, body:not(.posts)
     left: 0
     width: 100%
     opacity: 0.95
+    z-index: 2
 
 .header-wrapper
   background: white
@@ -102,10 +108,6 @@ section.content
     margin-bottom: 1em
 
 section#tags
-  a[name]
-    padding-top: 4.5em
-    margin-top: -4.5em
-    display: inline-block; // required for webkit browsers? 
   li.tag
     list-style-type: none
     margin-top: 1em
@@ -134,7 +136,7 @@ section#post
 
 #cv
   span
-    margin-left: 0.25em
+    margin-right: 0.25em
     &.date
       margin-left: 0
   // Bugfix: BareCSS has this as inline-block.
@@ -170,3 +172,4 @@ footer
     justify-content: space-evenly
     a.fa
       font-size: 3em
+      text-decoration: none

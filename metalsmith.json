@@ -22,10 +22,10 @@
       },
       "metalsmith-permalinks": {
           "pattern": ":date/:title",
-          "date": "YYYY/MM", 
+          "date": "YYYY/MM",
           "relative": false
       },
-      "metalsmith-date-formatter": { 
+      "metalsmith-date-formatter": {
           "format": "YYYY-MM-DD"
       },
       "metalsmith-tags": {

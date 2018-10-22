@@ -30,7 +30,7 @@ projects:
     github: open-editions/corpus-joyce-ulysses-tei
     start: 2015-09
     description: Open-source, semantically annotated scholarly editions of literary texts. 
-    update:
+    updates:
       - date: 2018-01
         type: talk
         description: Open-Source Scholarly Editions of Works by James Joyce
@@ -144,7 +144,7 @@ projects:
     github: JonathanReeve/chapterize
     pypi: chapterize
 
-  - title: Macro-Etym 
+  - title: Macro-Etymological Text Analysis
     description: Computational methods applying etymology and language history to textual analysis.
     start: 2013-09 
     url: http://github.com/JonathanReeve/macro-etym
@@ -163,16 +163,16 @@ projects:
         type: publication
         title: "A Macro-Etymological Analysis of James Joyce's _A Portrait of the Artist as a Young Man_"
         pubVenue: "*Reading Modernism with Machines*, Palgrave Macmillan"
+      - date: 2014-08
+        type: award
+        description: "Winner, Association of Digital Humanities Organizations student bursary"
+      - date: 2014-07
+        type: award
+        description: "Winner, New York University [Hirschhorn Thesis Award](https://draperprogram.wordpress.com/2014/06/12/congratulations-to-our-hirschhorn-award-nominees-and-winner/)"
       - date: 2014-04
         type: talk
         title: "[Macro-Etymological Textual Analysis: a Computational Application of Language History to Literary Criticism](http://jonreeve.com/presentations/dh2014/)"
         description:  "[Digital Humanities 2014](http://dh2014.org/), Lausanne, Switzerland" 
-      - date: 2014-07
-        type: award
-        description: "Winner, New York University [Hirschhorn Thesis Award](https://draperprogram.wordpress.com/2014/06/12/congratulations-to-our-hirschhorn-award-nominees-and-winner/)"
-      - date: 2014-07
-        type: award
-        desciption: "Winner, Association of Digital Humanities Organizations student bursary"
 
   - title: Text-Matcher
     description: Fuzzy text matching and alignment algorithms. 
@@ -198,7 +198,7 @@ projects:
         pubVenue: The Programming Historian
       - date: 2012-10
         type: talk
-        title: "Elementaire, a Customizable Omea Theme"
+        title: "Elementaire, a Customizable Omeka Theme"
         description: "[The Humanities and Technology Camp](http://newyork2012.thatcamp.org/)"
 
 positions:
@@ -326,3 +326,12 @@ teaching:
     type: course
     name: Reading 100, Writing 100
     venue: 'Missouri State U, Branch Campus, Dalian, China'
+
+affiliations:
+ - Active member, [Literary Modeling and Visualization Lab](http://xpmethod.plaintext.in/projects/literary-modeling.html), [Group for Experimental Methods in the Humanities](http://xpmethod.github.io/), Columbia U
+ - Founding member, [Digital Literary Stylistics Special Interest Group](https://dls.hypotheses.org/), Association of Digital Humanities Organizations
+ - Reviewer, [Digital Humanities 2018](https://dh2018.adho.org/en/) conference
+ - Reviewer, [_Digital Scholarship in the Humanities_](http://dsh.oxfordjournals.org/) (formerly _Literary and Linguistic Computing_), Oxford UP
+ - Reviewer, [_Journal of Data Mining and Digital Humanities_](http://jdmdh.episciences.org/)
+ - Editor-At-Large, [Digital Humanities Now](http://digitalhumanitiesnow.org/)
+ - "Member of professional organizations: Modern Language Association; Association for Computers in the Humanities; Society for Textual Scholarship; Humanities, Arts, and Sciences Advanced Collaboratory"

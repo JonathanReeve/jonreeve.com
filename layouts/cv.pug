@@ -11,7 +11,7 @@ block content
       div!= contents
 
     nav
-      - var sections = ['Education', 'Projects', 'Talks', 'Publications', 'Positions', 'Awards']
+      - var sections = ['Education', 'Projects', 'Talks', 'Publications', 'Positions', 'Awards','Teaching', 'Affiliations']
       each section in sections
         a.btn(href='#'+section.toLowerCase())= section
 
@@ -65,6 +65,21 @@ block content
 
     section#talks
       h2 Talks and Conference Presentations
+      - var talks = []
+      // Go through each project, look for talks
+      each project in cv.projects
+        if project.updates
+          each update in project.updates
+            if update.type == 'talk'
+              // Add to one big list of them, for sorting
+              - talks.push(update)
+      // Sort by date. Fancy Javascript sorting magic.
+      each talk in talks.sort((a,b) => new Date(b.date) - new Date(a.date))
+        ul.talks
+          li.talk
+            span.date= talk.date
+            span.updateTitle!= talk.title
+            span.description!= talk.description
 
     section#publications
       h2 Publications
@@ -119,5 +134,11 @@ block content
             ul.notes
               each note in job.notes
                 li.note!= note
+
+    section#affiliations
+      h2 Affiliations and Professional Activities
+      ul#affiliations
+        each affiliation in cv.affiliations
+          li.affiliation!= affiliation
 
   //-div!= JSON.stringify(cv.projects)
