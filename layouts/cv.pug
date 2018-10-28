@@ -5,12 +5,12 @@ mixin badge(path, repo)
   img.badge(src='https://img.shields.io/' + path + repo + opts)
 
 block content
-  #cv
+  #cv.col-12
     section#header
       h1 Curriculum Vitae
       div!= contents
 
-    nav
+    nav.btn-group.btn-group-block
       - var sections = ['Education', 'Projects', 'Talks', 'Publications', 'Positions', 'Awards','Teaching', 'Affiliations']
       each section in sections
         a.btn(href='#'+section.toLowerCase())= section
@@ -78,8 +78,8 @@ block content
         ul.talks
           li.talk
             span.date= talk.date
-            span.updateTitle!= talk.title
-            span.description!= talk.description
+            span.updateTitle!= '"' + talk.title + '"'
+            span.venue!= 'at ' + talk.venue
 
     section#publications
       h2 Publications
@@ -90,12 +90,10 @@ block content
               if update.type == 'publication'
                 li.publication
                   span.date!= update.date
-                  span.updateTitle!= update.title
-                  span.description!= update.description
-                  if update.venue
-                    span.venue!= ' at ' + update.venue
-                  if update.container
-                    span.container!= ' in ' + update.container
+                  span.chip!= update.pubType
+                  span.updateTitle!= '"' + update.title + ',"'
+                  em
+                    span.venue!= ', ' + update.venue
 
     section#awards
       h2 Awards
@@ -128,7 +126,7 @@ block content
           li.job
             span.job-date!= job.date
             span.chip.job-type!= job.type
-            span.job-name!= job.name
+            span.job-name!= '"' + job.name + ',"'
             span.job-venue!= job.venue
           if job.notes
             ul.notes
