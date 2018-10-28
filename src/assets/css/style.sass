@@ -4,10 +4,35 @@ $darkblue: #002
 $lightgray: #fafafa
 $mediumGray: #333
 
+=sm
+  @media (min-width: 576px)
+    @content
+
+=md
+  @media (min-width: 768px)
+    @content
+
+=lg
+  @media (min-width: 992px)
+    @content
+
+=xl
+  @media (min-width: 1200px)
+    @content
+
+html
+  +sm
+    font-size: 27px
+  +md
+    font-size: 25px
+  +lg
+    font-size: 24px
+  +xl
+    font-size: 23px
+
 body
   font-family: Raleway
   background-color: $lightgray
-
 
 img
   max-width: 100%
@@ -22,7 +47,7 @@ a, a:visited
 a[name]
   padding-top: 4.5em
   margin-top: -4.5em
-  display: inline-block; // required for webkit browsers? 
+  display: inline-block
 
 span.tag
   padding: 0.3em
@@ -34,7 +59,7 @@ ul
   list-style-position: outside
   margin-left: 2em
 
-// Figure captions. Old and new styles. 
+// Figure captions. Old and new styles.
 figure, p.caption
   text-align: center
   font-style: italic
@@ -72,6 +97,7 @@ body.has-docked-nav, body:not(.posts)
         color: black
   &#inner-header
     display: flex
+    width: 100%
 
 main.container
   // Offset the fixed header
@@ -85,7 +111,6 @@ main.container
   margin-top: 4em
   margin-bottom: 2em
   font-size: 2em
-  text-align: center
   .icons
     display: flex
     justify-content: space-between
@@ -97,8 +122,6 @@ main.container
 #cv
   nav
     margin-bottom: 2em
-    a.btn
-      margin-right: 1em
   section
     margin-bottom: 2em
 
@@ -117,7 +140,6 @@ section#posts
   li.post
     margin: 5em 0
     list-style-type: none
-    text-align: center
     a.post-title
       font-size: 2em
     span.post-date
@@ -140,10 +162,6 @@ section#post
     position: absolute
     top: 1em
     right: 0
-  section#teaching
-    li.job
-      span.job-name
-          font-style: italic
 
 footer
   background-color: $blue
@@ -160,10 +178,16 @@ footer
     a
       display: inline
   .icons
-    align-self: center
-    text-align: right
     display: flex
-    justify-content: space-evenly
     a.fa
       font-size: 3em
       text-decoration: none
+    +md
+      flex-direction: column
+      align-items: center
+      align-self: auto
+    +lg
+      flex-direction: row
+      align-self: center
+      text-align: right
+      justify-content: space-evenly
