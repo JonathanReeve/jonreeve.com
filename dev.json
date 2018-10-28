@@ -46,6 +46,12 @@
           "pretty": true
       },
       "metalsmith-debug": {},
+      "metalsmith-watch": {
+          "paths": {
+              "${source}/**/*": true,
+              "layouts/*": "*"
+          }
+      },
       "metalsmith-serve": {}
   } 
 }
