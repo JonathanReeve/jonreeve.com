@@ -33,11 +33,11 @@ projects:
     updates:
       - date: 2018-01
         type: talk
-        description: Open-Source Scholarly Editions of Works by James Joyce
+        title: Open-Source Scholarly Editions of Works by James Joyce
         venue: Montclair State University
       - date: 2017-10
         type: talk
-        description: Contributing to the Open Critical Editions of James Joyce
+        title: Contributing to the Open Critical Editions of James Joyce
         venue: Joyce in the Digital Age Conference, Columbia U
   - title: Corpus-DB
     url: https://github.com/JonathanReeve/corpus-db
@@ -64,11 +64,12 @@ projects:
     updates: 
       - date: 2017-08
         type: talk
-        description: "[Frequently Cited Passages Across Time: New Methods for Studying the Critical Reception of Texts](https://github.com/lit-mod-viz/middlemarch-critical-histories/blob/master/papers/dh2017-poster/main.pdf)"
+        title: "[Frequently Cited Passages Across Time: New Methods for Studying the Critical Reception of Texts](https://github.com/lit-mod-viz/middlemarch-critical-histories/blob/master/papers/dh2017-poster/main.pdf)"
         venue: "[Digital Humanities 2017](https://dh2017.adho.org/)" 
       - date: 2017-10
         type: publication
-        description: "[Abstract](https://github.com/xpmethod/middlemarch-critical-histories/blob/1359d403c8c8655170babb6e1bf8f81bcb4bc0c9/dh2017-submission/middlemarch-abstract.pdf)"
+        pubType: abstract
+        title: "[Frequently Cited Passages Across Time: New Methods for Studying the Critical Reception of Texts](https://github.com/xpmethod/middlemarch-critical-histories/blob/1359d403c8c8655170babb6e1bf8f81bcb4bc0c9/dh2017-submission/middlemarch-abstract.pdf)"
         venue: "Proceedings of [Digital Humanities 2017](https://dh2017.adho.org/)" 
       - date: 2017-02
         type: talk
@@ -99,7 +100,8 @@ projects:
         description: "Winner, Association of Digital Humanities Organizations student bursary" 
       - date: 2016-07
         type: publication
-        description: "[Abstract](http://dh2016.adho.org/abstracts/335)" 
+        pubType: abstract
+        title: "[Git-Lit: an Application of Distributed Version Control Technology Toward the Creation of 50,000 Digital Scholarly Editions](http://dh2016.adho.org/abstracts/335)" 
         venue: "[_Digital Humanities 2016: Conference Abstracts_. Kraków: Jagiellonian University & Pedagogical University, 2016.](http://dh2016.adho.org/static/dh2016_abstracts.pdf)" 
       - date: 2016-07
         type: talk
@@ -107,7 +109,7 @@ projects:
         venue: "[Digital Humanities 2016](http://dh2016.adho.org/), Krakow, Poland"
       - date: 2016-04
         type: talk
-        description: "[Applications of Distributed Version Control Technology to the Creation of Digital Scholarly Editions](http://jonreeve.com/presentations/sts2016/)"
+        title: "[Applications of Distributed Version Control Technology to the Creation of Digital Scholarly Editions](http://jonreeve.com/presentations/sts2016/)"
         venue: Society for Textual Scholarship, Ottawa
       - date: 2015-11
         type: talk
@@ -130,11 +132,11 @@ projects:
         description: "[Featured resource in _Digital Humanities Now_](http://www.digitalhumanitiesnow.org/2015/07/resource-annotags-a-decentralized-textual-annotation-protocol/)"
       - date: 2015-05
         type: talk
-        description: "Annotags: A Decentralized Literary Annotation Protocol" 
+        title: "Annotags: A Decentralized Literary Annotation Protocol" 
         venue: "[I Annotate 2015](http://iannotate.org/)" 
       - date: 2015-06
         type: talk
-        description: "[Annotags: A Decentralized Literary Annotation Protocol](http://www.jonreeve.com/presentations/keydh2015)"
+        title: "[Annotags: A Decentralized Literary Annotation Protocol](http://www.jonreeve.com/presentations/keydh2015)"
         venue: Keystone Digital Humanities conference
 
   - title: Chapterize
@@ -161,6 +163,7 @@ projects:
         description: "Released as [a command-line program in the Python Package Archive](https://pypi.python.org/pypi/macroetym)" 
       - date: 2016-01
         type: publication
+        pubType: chapter
         title: "A Macro-Etymological Analysis of James Joyce's _A Portrait of the Artist as a Young Man_"
         pubVenue: "*Reading Modernism with Machines*, Palgrave Macmillan"
       - date: 2014-08
@@ -194,8 +197,9 @@ projects:
     updates: 
       - date: 2016-08
         type: publication
+        pubType: tutorial
         title: "[Installing Omeka](https://programminghistorian.org/en/lessons/installing-omeka)"
-        pubVenue: The Programming Historian
+        venue: The Programming Historian
       - date: 2012-10
         type: talk
         title: "Elementaire, a Customizable Omeka Theme"
