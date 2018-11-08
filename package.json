@@ -18,7 +18,7 @@
     "metalsmith-permalinks": "^0.5.0",
     "metalsmith-sass": "^1.5.1",
     "metalsmith-serve": "0.0.7",
-    "metalsmith-tags": "JonathanReeve/metalsmith-tags",
+    "metalsmith-tags": "github:JonathanReeve/metalsmith-tags",
     "metalsmith-watch": "^1.0.3",
     "pug": "^2.0.0-beta11"
   },
