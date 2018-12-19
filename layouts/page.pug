@@ -8,11 +8,9 @@ html
     link(rel='stylesheet', href='/assets/css/spectre.min.css')
     link(rel='stylesheet', href='/assets/css/style.css')
     link(href="https://fonts.googleapis.com/css?family=Montserrat|Raleway" rel="stylesheet")
+    link(rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.1/css/all.css" integrity="sha384-gfdkjb5BdAXd+lj+gudLWI+BXq4IuLW5IT+brZEZsLFm++aCMlF1V92rMkPaX4PP" crossorigin="anonymous")
     // Code highlighting with highlight.js. 
     link(rel='stylesheet', href='/assets/css/tomorrow.css')
-
-    // Icons with FontAwesome
-    link(rel='stylesheet', href='/assets/css/font-awesome.min.css')
 
     script(src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous")
     script(src='/assets/js/main.js')
@@ -36,6 +34,6 @@ html
         .columns
           .coda.column.col-8()!= site.coda
           .icons.column.col-4()
-            a(href="http://github.com/" + site.author.github).fa.fa-github
-            a(href="http://twitter.com/" + site.author.twitter).fa.fa-twitter
-            a(href="mailto:" + site.author.email).fa.fa-envelope
+            a(href="http://github.com/" + site.author.github).fab.fa-github
+            a(href="http://twitter.com/" + site.author.twitter).fab.fa-twitter
+            a(href="mailto:" + site.author.email).fas.fa-envelope
