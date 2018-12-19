@@ -10,7 +10,7 @@
           "cv": "cv.yaml"
       },
       "metalsmith-markdown-metadata": {},
-      "metalsmith-date-in-filename": {},
+      "metalsmith-jekyll-dates": {},
       "metalsmith-ignore": [
           ".#*",
           "assets/js/vendor/reveal.js/**/*.scss"
@@ -24,7 +24,7 @@
           }
       },
       "metalsmith-permalinks": {
-          "pattern": ":date/:title",
+          "pattern": ":date/:slug",
           "date": "YYYY/MM",
           "relative": false
       },
