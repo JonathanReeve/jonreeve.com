@@ -42,6 +42,7 @@
           "outputStyle": "expanded"
       },
       "metalsmith-layouts": {
+          "pattern": "**/*.md",
           "engine": "pug",
           "pretty": true
       },
