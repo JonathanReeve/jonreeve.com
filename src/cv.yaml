@@ -206,7 +206,6 @@ projects:
         description: "[The Humanities and Technology Camp](http://newyork2012.thatcamp.org/)"
 
 positions:
-
   - org: "[DHBox](http://dhbox.org), [City University of New York](http://cuny.edu)"
     position: Programmer
     start: 2015-11
@@ -216,11 +215,17 @@ positions:
       - Integrated textual corpus download functionality into the [DH Box web app](http://dhbox.org)
       - Created [DH-USB, a digital humanities operating system designed to run from a USB drive](https://github.com/DH-Box/dh-usb)
 
+  - org: '"[A Safer Online Public Square](http://icls.columbia.edu/initiatives/a-safer-online-public-square/)," Institute for Comparative Literature and Society, Columbia University'
+    position: Research Assistant in Computational Methods of Abusive Language Detection
+    start: 2017-06
+    end: 2018-07
+
   - org: Greenwich Village Society for Historic Preservation
     start: 2015-05
     end: 2015-10
     notes:
       - Developed the [Greenwich Village Society for Historic Preservation Image Archive](http://archive.gvshp.org), an Omeka-based image archive
+
   - org: Modern Language Association
     position: Web Developer
     start: 2013-11
@@ -248,7 +253,7 @@ positions:
       - "Authored six articles for the 2013 reference volume [*The Manifesto in Literature*](http://www.thomasriggs.net/pages/content/index.asp?PageID=158): Richard Stallman's \"The GNU Manifesto,\" John Barlow's \"A Declaration of the Independence of Cyberspace,\" and several others"
 
 teaching:
-  - date: 2018-09
+  - date: 2018-09 — 2018-12
     type: course
     name: Literary Texts and Critical Methods
     venue: "Department of English and Comparative Literature, Columbia U"
@@ -266,7 +271,7 @@ teaching:
     type: workshop
     name: '[Text Analysis with SpaCy and Scikit-Learn](https://pydata.org/nyc2017/schedule/presentation/51/)'
     venue: '[PyData NYC](https://pydata.org/), Microsoft'
-  - date: 2017-09 — 2018-05
+  - date: 2017-09 — 2019-05
     type: course
     name: "University Writing with Readings in the Data Sciences"
     venue: "Department of English and Comparative Literature, Columbia U"
