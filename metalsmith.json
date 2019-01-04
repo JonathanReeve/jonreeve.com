@@ -1,50 +1,54 @@
 {
-  "plugins": {
-      "metalsmith-markdown-remarkable": {
-          "html": true,
-          "typographer": true,
-          "quotes": "“”‘’"
-      },
-      "metalsmith-metadata": {
-          "site": "site.yaml",
-          "cv": "cv.yaml"
-      },
-      "metalsmith-markdown-metadata": {},
-      "metalsmith-jekyll-dates": {},
-      "metalsmith-ignore": [
-          ".#*",
-          "assets/js/vendor/reveal.js/**/*.scss"
-          ],
-      "metalsmith-code-highlight": {},
-      "metalsmith-collections": {
-          "posts": {
-              "pattern": "posts/**.html",
-              "sortBy": "date",
-              "reverse": true
-          }
-      },
-      "metalsmith-permalinks": {
-          "pattern": ":date/:slug",
-          "date": "YYYY/MM",
-          "relative": false
-      },
-      "metalsmith-date-formatter": {
-          "format": "YYYY-MM-DD"
-      },
-      "metalsmith-tags": {
-          "layout": "tags.pug",
-          "skipPages": true
-      },
-      "metalsmith-feed": {
-          "collection": "posts"
-      },
-      "metalsmith-sass": {
-          "outputStyle": "expanded"
-      },
-      "metalsmith-layouts": {
-          "pattern": "**",
-          "engine": "pug",
-          "pretty": true
-      }
-  }
+    "plugins": {
+        "metalsmith-markdown-remarkable": {
+            "html": true,
+            "typographer": true,
+            "quotes": "“”‘’"
+        },
+        "metalsmith-metadata": {
+            "site": "site.yaml",
+            "cv": "cv.yaml"
+        },
+        "metalsmith-markdown-metadata": {},
+        "metalsmith-jekyll-dates": {},
+        "metalsmith-ignore": [
+            ".#*",
+            "assets/js/vendor/reveal.js/**/*.scss",
+            "**/Makefile",
+            "**/LICENSE",
+            "**/README.md",
+            "**/.ipynb_checkpoints"
+        ],
+        "metalsmith-code-highlight": {},
+        "metalsmith-collections": {
+            "posts": {
+                "pattern": "posts/**.html",
+                "sortBy": "date",
+                "reverse": true
+            }
+        },
+        "metalsmith-permalinks": {
+            "pattern": ":date/:slug",
+            "date": "YYYY/MM",
+            "relative": false
+        },
+        "metalsmith-date-formatter": {
+            "format": "YYYY-MM-DD"
+        },
+        "metalsmith-tags": {
+            "layout": "tags.pug",
+            "skipPages": true
+        },
+        "metalsmith-feed": {
+            "collection": "posts"
+        },
+        "metalsmith-sass": {
+            "outputStyle": "expanded"
+        },
+        "metalsmith-layouts": {
+            "pattern": ["**/*.html", "!presentations/**", "!projects/**"],
+            "engine": "pug",
+            "pretty": true
+        }
+    }
 }
