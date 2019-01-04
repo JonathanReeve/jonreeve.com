@@ -1,8 +1,8 @@
 default:
-	metalsmith -c dev.json
+	npx metalsmith -c dev.json
 
 debug:
-	DEBUG=metalsmith:metadata metalsmith
+	npx DEBUG=metalsmith:metadata metalsmith
 
 prod:
-	metalsmith
+	npx metalsmith
