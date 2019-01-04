@@ -1,6 +1,6 @@
 ---
 layout: post.pug
-title: "Fingerprinting the Chapter"
+title: Fingerprinting the Chapter
 category: digital humanities
 tags:
  - corpus-db
