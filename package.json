@@ -18,7 +18,7 @@
     "metalsmith-markdown-metadata": "github:JonathanReeve/metalsmith-markdown-metadata",
     "metalsmith-markdown-remarkable": "^0.1.2",
     "metalsmith-metadata": "0.0.4",
-    "metalsmith-permalinks": "2.0.0",
+    "metalsmith-permalinks": "^2.0.0",
     "metalsmith-sass": "^1.5.1",
     "metalsmith-serve": "0.0.7",
     "metalsmith-tags": "github:JonathanReeve/metalsmith-tags",
