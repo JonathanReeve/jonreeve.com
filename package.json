@@ -15,6 +15,7 @@
     "metalsmith-ignore": "^1.0.0",
     "metalsmith-jekyll-dates": "0.0.5",
     "metalsmith-layouts": "^2.3.0",
+    "metalsmith-linkcheck": "^0.3.2",
     "metalsmith-markdown-metadata": "github:JonathanReeve/metalsmith-markdown-metadata",
     "metalsmith-markdown-remarkable": "^0.1.2",
     "metalsmith-metadata": "0.0.4",

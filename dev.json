@@ -16,7 +16,7 @@
             "assets/js/vendor/reveal.js/**/*.scss",
             "**/Makefile",
             "**/LICENSE",
-            "**/README.md",
+            "**/README",
             "**/.ipynb_checkpoints"
         ],
         "metalsmith-code-highlight": {},
@@ -25,12 +25,23 @@
                 "pattern": "posts/**.html",
                 "sortBy": "date",
                 "reverse": true
+            },
+            "static": {
+                "pattern": ["assets/**", "presentations/**", "projects/**"]
             }
         },
         "metalsmith-permalinks": {
-            "pattern": ":date/:slug",
-            "date": "YYYY/MM",
-            "relative": false
+            "linkset": [
+                {
+                    "match": {"collections": "posts"},
+                    "pattern": ":date/:slug",
+                    "date": "YYYY/MM",
+                    "relative": false
+                },
+                {
+                    "match": {"collections": "static"}
+                }
+            ]
         },
         "metalsmith-date-formatter": {
             "format": "YYYY-MM-DD"
@@ -51,6 +62,7 @@
             "pretty": true
         },
         "metalsmith-debug": {},
+        "metalsmith-linkcheck": {},
         "metalsmith-watch": {
             "paths": {
                 "${source}/**/*": true,
