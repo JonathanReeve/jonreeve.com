@@ -1,0 +1,154 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg
+   xmlns:dc="http://purl.org/dc/elements/1.1/"
+   xmlns:cc="http://creativecommons.org/ns#"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:svg="http://www.w3.org/2000/svg"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   viewBox="0 0 64 80"
+   x="0px"
+   y="0px"
+   version="1.1"
+   id="svg306"
+   sodipodi:docname="noun_Book_1593490.svg"
+   inkscape:version="0.92.3 (2405546, 2018-03-11)">
+  <metadata
+     id="metadata312">
+    <rdf:RDF>
+      <cc:Work
+         rdf:about="">
+        <dc:format>image/svg+xml</dc:format>
+        <dc:type
+           rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
+      </cc:Work>
+    </rdf:RDF>
+  </metadata>
+  <defs
+     id="defs310" />
+  <sodipodi:namedview
+     pagecolor="#ffffff"
+     bordercolor="#666666"
+     borderopacity="1"
+     objecttolerance="10"
+     gridtolerance="10"
+     guidetolerance="10"
+     inkscape:pageopacity="0"
+     inkscape:pageshadow="2"
+     inkscape:window-width="1596"
+     inkscape:window-height="1670"
+     id="namedview308"
+     showgrid="false"
+     inkscape:zoom="17.4125"
+     inkscape:cx="32.74659"
+     inkscape:cy="25.470208"
+     inkscape:window-x="25"
+     inkscape:window-y="75"
+     inkscape:window-maximized="1"
+     inkscape:current-layer="svg306" />
+  <title
+     id="title264">Book-bookmark-open-learning</title>
+  <g
+     id="g300">
+    <path
+       d="M61,12H58V6a4,4,0,0,0-4-4H51a1,1,0,0,0-1,1V8H36a1,1,0,0,0-.707.293L32,11.586,28.707,8.293A1,1,0,0,0,28,8H7A1,1,0,0,0,6,9v3H3a1,1,0,0,0-1,1V61a1,1,0,0,0,1,1H61a1,1,0,0,0,1-1V13A1,1,0,0,0,61,12ZM52,4h2a2,2,0,0,1,2,2V50.537A3.97,3.97,0,0,0,54,50H52ZM36.414,10H50v3H44v2h6v2H36v2H50v2H36v2H50v2H36v2H50v8H44v2h6v2H36v2H50v2H36v2H50v2H36v2H50v2a1,1,0,0,0,1,1h3a2,2,0,0,1,0,4H36a1,1,0,0,0-.707.293L33,58.586V13.414ZM8,10H27.586L31,13.414V58.586l-2.293-2.293A1,1,0,0,0,28,56H8ZM4,14H6V57a1,1,0,0,0,1,1H27.586l2,2H4ZM60,60H34.414l2-2H54a4,4,0,0,0,4-4V14h2Z"
+       id="path266" />
+    <rect
+       x="15"
+       y="13"
+       width="2"
+       height="2"
+       id="rect268" />
+    <rect
+       x="19"
+       y="13"
+       width="9"
+       height="2"
+       id="rect270" />
+    <rect
+       x="11"
+       y="17"
+       width="17"
+       height="2"
+       id="rect272" />
+    <rect
+       x="11"
+       y="21"
+       width="17"
+       height="2"
+       id="rect274" />
+    <rect
+       x="11"
+       y="25"
+       width="17"
+       height="2"
+       id="rect276" />
+    <rect
+       x="11"
+       y="29"
+       width="11"
+       height="2"
+       id="rect278" />
+    <rect
+       x="15"
+       y="35"
+       width="2"
+       height="2"
+       id="rect280" />
+    <rect
+       x="19"
+       y="35"
+       width="9"
+       height="2"
+       id="rect282" />
+    <rect
+       x="11"
+       y="39"
+       width="17"
+       height="2"
+       id="rect284" />
+    <rect
+       x="11"
+       y="43"
+       width="17"
+       height="2"
+       id="rect286" />
+    <rect
+       x="11"
+       y="47"
+       width="17"
+       height="2"
+       id="rect288" />
+    <rect
+       x="11"
+       y="51"
+       width="11"
+       height="2"
+       id="rect290" />
+    <rect
+       x="40"
+       y="13"
+       width="2"
+       height="2"
+       id="rect292" />
+    <rect
+       x="36"
+       y="29"
+       width="11"
+       height="2"
+       id="rect294" />
+    <rect
+       x="40"
+       y="35"
+       width="2"
+       height="2"
+       id="rect296" />
+    <rect
+       x="36"
+       y="51"
+       width="11"
+       height="2"
+       id="rect298" />
+  </g>
+</svg>

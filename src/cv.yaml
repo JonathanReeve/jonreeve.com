@@ -1,0 +1,346 @@
+ed: 
+ - university: New York University
+   degree: Bachelor of Arts
+   field: Interdisciplinary
+   date: 2004-01
+ - university: Brooklyn College
+   degree: Master of Arts
+   field: English Literature
+   date: 2010-05
+ - university: New York University
+   degree: Master of Arts
+   field: Humanities
+   date: 2014-01
+ - university: Columbia University
+   degree: Master of Arts
+   field: English and Comparative Literature
+   date: 2016-05
+ - university: Columbia University
+   degree: Master of Philosophy
+   field: English and Comparative Literature
+   date: 2018-05
+ - university: Columbia University
+   degree: PhD Candidate
+   field: English and Comparative Literature
+   date: 2018-05
+
+projects:
+  - title: Open-Editions
+    url: https://github.com/open-editions/
+    github: open-editions/corpus-joyce-ulysses-tei
+    start: 2015-09
+    description: Open-source, semantically annotated scholarly editions of literary texts. 
+    updates:
+      - date: 2018-01
+        type: talk
+        title: Open-Source Scholarly Editions of Works by James Joyce
+        venue: Montclair State University
+      - date: 2017-10
+        type: talk
+        title: Contributing to the Open Critical Editions of James Joyce
+        venue: Joyce in the Digital Age Conference, Columbia U
+  - title: Corpus-DB
+    url: https://github.com/JonathanReeve/corpus-db
+    github: JonathanReeve/corpus-db
+    start: 2017-03
+    description: A database and API for plain text archives, for digital humanities research.
+    updates:
+      - date: 2018-01
+        type: funding
+        description: Project funded $1K from NYCDH
+      - date: 2017-10
+        type: award
+        description: Winner, [2017 NYCDH Graduate Student Project Award](https://nycdh.org/groups/nycdh-announcements-71439400/forum/topic/2017-nycdh-graduate-student-project-award-recipients/) 
+      - date: 2017-09
+        type: job
+        description: Awarded 2017 Columbia University Libraries Digital Centers Internship
+
+  - title: Middlemarch Critical Histories
+    url: https://github.com/lit-mod-viz/middlemarch-critical-histories
+    github: lit-mod-viz/middlemarch-critical-histories
+    start: 2016-01
+    description: "Computational analyses of the critical history of George Eliot's novel _Middlemarch_."
+    notes: "In collaboration with Milan Terlunen, Sierra Eckert, Columbia University’s [Group for Experimental Methods in the Humanities](http://xpmethod.plaintext.in/), and the Stanford Literary Lab."
+    updates: 
+      - date: 2017-08
+        type: talk
+        title: "[Frequently Cited Passages Across Time: New Methods for Studying the Critical Reception of Texts](https://github.com/lit-mod-viz/middlemarch-critical-histories/blob/master/papers/dh2017-poster/main.pdf)"
+        venue: "[Digital Humanities 2017](https://dh2017.adho.org/)" 
+      - date: 2017-10
+        type: publication
+        pubType: abstract
+        title: "[Frequently Cited Passages Across Time: New Methods for Studying the Critical Reception of Texts](https://github.com/xpmethod/middlemarch-critical-histories/blob/1359d403c8c8655170babb6e1bf8f81bcb4bc0c9/dh2017-submission/middlemarch-abstract.pdf)"
+        venue: "Proceedings of [Digital Humanities 2017](https://dh2017.adho.org/)" 
+      - date: 2017-02
+        type: talk
+        venue: Stanford Literary Lab
+        title: "Middlemarch Critical Histories: Initial Findings" 
+
+  - title: A Generator of Socratic Dialogues
+    description: A generator of Socratic dialogues, using meta-Markov chains to emulate character speech. 
+    url: http://jonreeve.com/2016/10/socratic-dialogue-generator/
+    start: 2016-10
+    end: 2016-11
+    updates:   
+      - date: 2017-02
+        type: award
+        description: 'Winner, [2016 DH Awards](http://dhawards.org/dhawards2016/results/), “Best Use of DH For Fun.”' 
+
+  - title: Git-Lit
+    description: A Project to Parse, Version Control, and Publish ~50,000 British Library Electronic Books
+    start: 2015-08
+    url: https://git-lit.github.io/
+    updates: 
+      - date: 2017-01
+        type: talk
+        title: "Git-Lit: an Application of Distributed Version Control Technology Toward the Creation of 50,000 Digital Scholarly Editions"
+        venue: Modern Language Association Convention
+      - date: 2016-07
+        type: award
+        description: "Winner, Association of Digital Humanities Organizations student bursary" 
+      - date: 2016-07
+        type: publication
+        pubType: abstract
+        title: "[Git-Lit: an Application of Distributed Version Control Technology Toward the Creation of 50,000 Digital Scholarly Editions](http://dh2016.adho.org/abstracts/335)" 
+        venue: "[_Digital Humanities 2016: Conference Abstracts_. Kraków: Jagiellonian University & Pedagogical University, 2016.](http://dh2016.adho.org/static/dh2016_abstracts.pdf)" 
+      - date: 2016-07
+        type: talk
+        title: "Git-Lit: an Application of Distributed Version Control Technology Toward the Creation of 50,000 Digital Scholarly Editions"
+        venue: "[Digital Humanities 2016](http://dh2016.adho.org/), Krakow, Poland"
+      - date: 2016-04
+        type: talk
+        title: "[Applications of Distributed Version Control Technology to the Creation of Digital Scholarly Editions](http://jonreeve.com/presentations/sts2016/)"
+        venue: Society for Textual Scholarship, Ottawa
+      - date: 2015-11
+        type: talk
+        title: "[Git-Lit: An Application of Distributed Version Control Systems Towards the Creation of 50,000 Digital Scholarly Editions]( http://jonreeve.com/presentations/media-res2/)"
+        venue: "[Media Res 2, New York University](https://digitalfellows.commons.gc.cuny.edu/2015/11/12/media-res-2-nyc-dh-lightning-talks/)"
+
+  - title: Annotags
+    description: A protocol for a literary metadata hashtag that provides the ability to livetweet books, electronic documents, and other texts.
+    start: 2014-01
+    url: http://annotags.github.io/
+    github: Annotags/annotags.js
+    updates: 
+      - date: 2014-09
+        description: "[Web app calculator](/projects/annotags) released" 
+      - date: 2015-02
+        type: award
+        description: "Nominated for [a 2014 DH Award for Best DH Tool](http://dhawards.org/dhawards2014/results/)" 
+      - date: 2015-06
+        type: award
+        description: "[Featured resource in _Digital Humanities Now_](http://www.digitalhumanitiesnow.org/2015/07/resource-annotags-a-decentralized-textual-annotation-protocol/)"
+      - date: 2015-05
+        type: talk
+        title: "Annotags: A Decentralized Literary Annotation Protocol" 
+        venue: "[I Annotate 2015](http://iannotate.org/)" 
+      - date: 2015-06
+        type: talk
+        title: "[Annotags: A Decentralized Literary Annotation Protocol](http://www.jonreeve.com/presentations/keydh2015)"
+        venue: Keystone Digital Humanities conference
+
+  - title: Chapterize
+    start: 2016-08
+    description: A command-line tool for breaking a text into chapters.
+    url: https://github.com/JonathanReeve/chapterize
+    github: JonathanReeve/chapterize
+    pypi: chapterize
+
+  - title: Macro-Etymological Text Analysis
+    description: Computational methods applying etymology and language history to textual analysis.
+    start: 2013-09 
+    url: http://github.com/JonathanReeve/macro-etym
+    github: JonathanReeve/macro-etym
+    pypi: macroetym
+    updates: 
+      - date: 2015-01 
+        description: "[Featured](http://www.tapor.ca/?id=470) in the [Text Analysis Portal for Research](http://www.tapor.ca/)" 
+      - date: 2015-01 
+        description: Listed in Alain Liu's directory of Digital Humanities Tools
+      - date: 2015-03
+        description: "Featured in the [Digital Research Tools](http://www.dirtdirectory.org/) (DiRT) directory" 
+      - date: 2016-05
+        description: "Released as [a command-line program in the Python Package Archive](https://pypi.python.org/pypi/macroetym)" 
+      - date: 2016-01
+        type: publication
+        pubType: chapter
+        title: "A Macro-Etymological Analysis of James Joyce's _A Portrait of the Artist as a Young Man_"
+        pubVenue: "*Reading Modernism with Machines*, Palgrave Macmillan"
+      - date: 2014-08
+        type: award
+        description: "Winner, Association of Digital Humanities Organizations student bursary"
+      - date: 2014-07
+        type: award
+        description: "Winner, New York University [Hirschhorn Thesis Award](https://draperprogram.wordpress.com/2014/06/12/congratulations-to-our-hirschhorn-award-nominees-and-winner/)"
+      - date: 2014-04
+        type: talk
+        title: "[Macro-Etymological Textual Analysis: a Computational Application of Language History to Literary Criticism](http://jonreeve.com/presentations/dh2014/)"
+        description:  "[Digital Humanities 2014](http://dh2014.org/), Lausanne, Switzerland" 
+
+  - title: Text-Matcher
+    description: Fuzzy text matching and alignment algorithms. 
+    start: 2015-01
+    url: http://github.com/JonathanReeve/text-matcher
+    github: JonathanReeve/text-matcher
+    updates: 
+      - date: 2016-10
+        description: "[Released command-line tool on the Python Package Archive](https://pypi.python.org/pypi/text-matcher)"
+      - date: 2015-05
+        description: "Paper: [\"Modernism, Myth, and their Intertextualities: a Computational Detection of Biblical and Classical Allusion in the English-Language Novel, 1771-1930\"](https://github.com/JonathanReeve/allusion-detection/blob/master/paper/essay.pdf)" 
+
+  - title: Customeka
+    description: A highly customizable theme for the Omeka content management system.
+    start: 2013-01
+    end: 2015-01
+    url: http://github.com/JonathanReeve/theme-customeka
+    github: JonathanReeve/theme-customeka
+    updates: 
+      - date: 2016-08
+        type: publication
+        pubType: tutorial
+        title: "[Installing Omeka](https://programminghistorian.org/en/lessons/installing-omeka)"
+        venue: The Programming Historian
+      - date: 2012-10
+        type: talk
+        title: "Elementaire, a Customizable Omeka Theme"
+        description: "[The Humanities and Technology Camp](http://newyork2012.thatcamp.org/)"
+
+positions:
+  - org: "[DHBox](http://dhbox.org), [City University of New York](http://cuny.edu)"
+    position: Programmer
+    start: 2015-11
+    end: 2017-07
+    notes:
+      - Developed [corpus, a textual corpus downloader](https://github.com/DH-Box/corpus-downloader)
+      - Integrated textual corpus download functionality into the [DH Box web app](http://dhbox.org)
+      - Created [DH-USB, a digital humanities operating system designed to run from a USB drive](https://github.com/DH-Box/dh-usb)
+
+  - org: '"[A Safer Online Public Square](http://icls.columbia.edu/initiatives/a-safer-online-public-square/)," Institute for Comparative Literature and Society, Columbia University'
+    position: Research Assistant in Computational Methods of Abusive Language Detection
+    start: 2017-06
+    end: 2018-07
+
+  - org: Greenwich Village Society for Historic Preservation
+    start: 2015-05
+    end: 2015-10
+    notes:
+      - Developed the [Greenwich Village Society for Historic Preservation Image Archive](http://archive.gvshp.org), an Omeka-based image archive
+
+  - org: Modern Language Association
+    position: Web Developer
+    start: 2013-11
+    end: 2015-08
+    notes:
+      - Edited XML and XSL code for the [Literary Research Guide](http://mlalrg.org/public)
+      - Contributed to software used for the electronic edition of [_Literary Studies in the Digital Age_](http://dlsanthology.commons.mla.org/), and [_Digital Pedagogy in the Humanities_](https://digitalpedagogy.commons.mla.org/)
+      - Primary contributor to [the 2014 and 2015 redesigns](http://updates.commons.mla.org/2014/07/28/new-theme-for-the-mla-commons/) of the [MLA Commons](http://commons.mla.org)
+      - Rewrote [cbox-auth](https://github.com/mlaa/cbox-auth), the authentication system of the _MLA Commons_, to interface with the MLA member database
+      - Designed [a WordPress plugin for visualizing patterns of disciplinarity](https://github.com/mlaa/bp-group-statistics) between _MLA Commons_ interest groups
+
+  - org: New York University, History Department
+    position: Web Developer
+    start: 2012-06
+    end: 2015-01
+    notes:
+     - Developed [a customization engine](https://github.com/JonathanReeve/theme-customeka) for the [Omeka content management platform](http://omeka.org)
+     - Designed and developed Omeka themes deployed on [Greenwich Village History](http://gvh.aphdigital.org) and [New Jersey Digital History](http://njdigitalhistory.org/NJDHA/)
+
+  - org: Thomas Riggs & Company, Publishers
+    position: Research Writer
+    start: 2012-07
+    end: 2012-09
+    notes:
+      - "Authored six articles for the 2013 reference volume [*The Manifesto in Literature*](http://www.thomasriggs.net/pages/content/index.asp?PageID=158): Richard Stallman's \"The GNU Manifesto,\" John Barlow's \"A Declaration of the Independence of Cyberspace,\" and several others"
+
+teaching:
+  - date: 2018-09 — 2018-12
+    type: course
+    name: Literary Texts and Critical Methods
+    venue: "Department of English and Comparative Literature, Columbia U"
+  - date: 2018-07 — 2018-08
+    type: course
+    name: '[Introduction to Computational Literary Analysis](https://github.com/JonathanReeve/course-computational-literary-analysis)'
+    venue: "Digital Humanities Summer Minor Program, U California, Berkeley"
+  - date: 2018-06
+    type: workshop
+    name: "Web APIs with Python"
+    venue: "[Digital Humanities Summer Institute](https://dhsi.org), U of Victoria, Canada" 
+    notes: 
+      - "Co-taught with Stephen Zweibel, Patrick Smyth, and Jojo Karlin"
+  - date: 2017-11
+    type: workshop
+    name: '[Text Analysis with SpaCy and Scikit-Learn](https://pydata.org/nyc2017/schedule/presentation/51/)'
+    venue: '[PyData NYC](https://pydata.org/), Microsoft'
+  - date: 2017-09 — 2019-05
+    type: course
+    name: "University Writing with Readings in the Data Sciences"
+    venue: "Department of English and Comparative Literature, Columbia U"
+  - date: 2017-11
+    type: workshop
+    name: An Introduction to Semantic Markup and Computational Analysis of _Ulysses_
+    venue: "[Finnegan's Waves](https://www.buffalo.edu/ubnow/stories/2017/10/finnegans-waves.html), U Buffalo"
+  - date: 2017-04 
+    type: workshop
+    name: "[An Introduction to Text Analysis and Visualization](https://github.com/JonathanReeve/dataviz-workshop-2017)"
+    venue: "[Art of Data Visualization Week](http://library.columbia.edu/news/events/art-or-knowledge/dv_program.html), Columbia U"
+  - date: 2017-02
+    type: workshop
+    name: '[Advanced Text Analysis with SpaCy and TextaCy](https://github.com/JonathanReeve/advanced-text-analysis-workshop-2017/blob/master/advanced-text-analysis.ipynb)'
+    venue: "[2017 NYCDH Week](http://dhweek.nycdh.org/), New York U"
+    notes:
+      - "[Workshop notebook](https://github.com/JonathanReeve/advanced-text-analysis-workshop-2017/blob/master/advanced-text-analysis.ipynb) featured in the [SpaCy notebook collection](https://github.com/explosion/spacy-notebooks)"
+  - date: 2016-09 — 2016-12
+    type: course (TA)
+    venue: "Department of English and Comparative Literature, Columbia U"
+    name: James Joyce
+    notes:
+      - Led a weekly discussion section in Joyce’s _Ulysses_
+  - date: 2016-04
+    type: workshop
+    name: "An Introduction to Version Control with Git"
+    venue: "[Society for Textual Scholarship](https://textualsociety.org/current-conference-program/)"
+  - date: 2016-04
+    type: workshop
+    name: An Introduction to Visualizing Text with Python
+    venue: "[Art of Data Visualization](http://library.columbia.edu/news/events/data-visualization.html), Columbia U"
+  - date: 2016-02
+    type: workshop
+    name: '["Text Editing with Vim"](http://dhweek.nycdh.org/event/lightning-fast-text-editing-with-vim/)'
+    venue: "[NYCDH Week 2016](http://dhweek.nycdh.org/), Columbia U"
+  - date: 2016-01 — 2016-05
+    type: course (TA)
+    name: History of the English Language
+    venue: "Department of English and Comparative Literature, Columbia U"
+  - date: 2012-09 — 2012-12
+    type: course (TA)
+    name: Computing in the Humanities
+    venue: "Department of English and Comparative Literature, Columbia U"
+    notes:
+      - Lectured in BASH scripting, command-line image manipulation
+  - date: 2012-11 — 2012-05
+    type: course
+    name: "Writing 300: Research Paper Writing"
+    venue: "English Department, City U of New York, York College"
+    notes:
+      - Taught two sections per semester
+  - date: 2010-11 — 2011-05
+    type: course
+    name: "Reading 100, Writing 100"
+    venue: Vietnam National U, Hanoi, Vietnam
+  - date: 2009-08 — 2010-06
+    type: course
+    name: English 1 (composition, nonfiction readings); English 2 (composition, readings in literature)
+    venue: City U of New York, Brooklyn College
+  - date: 2005-03 — 2006-01
+    type: course
+    name: Reading 100, Writing 100
+    venue: 'Missouri State U, Branch Campus, Dalian, China'
+
+affiliations:
+ - Active member, [Literary Modeling and Visualization Lab](http://xpmethod.plaintext.in/projects/literary-modeling.html), [Group for Experimental Methods in the Humanities](http://xpmethod.github.io/), Columbia U
+ - Founding member, [Digital Literary Stylistics Special Interest Group](https://dls.hypotheses.org/), Association of Digital Humanities Organizations
+ - Reviewer, [Digital Humanities 2018](https://dh2018.adho.org/en/) conference
+ - Reviewer, [_Digital Scholarship in the Humanities_](http://dsh.oxfordjournals.org/) (formerly _Literary and Linguistic Computing_), Oxford UP
+ - Reviewer, [_Journal of Data Mining and Digital Humanities_](http://jdmdh.episciences.org/)
+ - Editor-At-Large, [Digital Humanities Now](http://digitalhumanitiesnow.org/)
+ - "Member of professional organizations: Modern Language Association; Association for Computers in the Humanities; Society for Textual Scholarship; Humanities, Arts, and Sciences Advanced Collaboratory"

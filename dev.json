@@ -1,0 +1,74 @@
+{
+    "plugins": {
+        "metalsmith-markdown-remarkable": {
+            "html": true,
+            "typographer": true,
+            "quotes": "“”‘’"
+        },
+        "metalsmith-metadata": {
+            "site": "site.yaml",
+            "cv": "cv.yaml"
+        },
+        "metalsmith-markdown-metadata": {},
+        "metalsmith-jekyll-dates": {},
+        "metalsmith-ignore": [
+            ".#*",
+            "assets/js/vendor/reveal.js/**/*.scss",
+            "**/Makefile",
+            "**/LICENSE",
+            "**/README",
+            "**/.ipynb_checkpoints"
+        ],
+        "metalsmith-code-highlight": {},
+        "metalsmith-collections": {
+            "posts": {
+                "pattern": "posts/**.html",
+                "sortBy": "date",
+                "reverse": true
+            },
+            "static": {
+                "pattern": ["assets/**", "presentations/**", "projects/**"]
+            }
+        },
+        "metalsmith-permalinks": {
+            "linkset": [
+                {
+                    "match": {"collections": "posts"},
+                    "pattern": ":date/:slug",
+                    "date": "YYYY/MM",
+                    "relative": false
+                },
+                {
+                    "match": {"collections": "static"}
+                }
+            ]
+        },
+        "metalsmith-date-formatter": {
+            "format": "YYYY-MM-DD"
+        },
+        "metalsmith-tags": {
+            "layout": "tags.pug",
+            "skipPages": true
+        },
+        "metalsmith-feed": {
+            "collection": "posts"
+        },
+        "metalsmith-sass": {
+            "outputStyle": "expanded"
+        },
+        "metalsmith-layouts": {
+            "pattern": ["**/*.html", "!presentations/**", "!projects/**"],
+            "engine": "pug",
+            "pretty": true
+        },
+        "metalsmith-debug": {},
+        "metalsmith-linkcheck": {},
+        "metalsmith-watch": {
+            "paths": {
+                "${source}/**/*": true,
+                "layouts/*": "*"
+            }
+        },
+        "metalsmith-serve": {}
+    }
+}

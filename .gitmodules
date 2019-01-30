@@ -1,0 +1,6 @@
+[submodule "src/assets/js/vendor/reveal.js"]
+	path = src/assets/js/vendor/reveal.js
+	url = https://github.com/hakimel/reveal.js.git
+[submodule "src/assets/js/vendor/impress.js"]
+	path = src/assets/js/vendor/impress.js
+	url = https://github.com/impress/impress.js.git
