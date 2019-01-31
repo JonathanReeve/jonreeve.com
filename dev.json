@@ -62,7 +62,6 @@
             "pretty": true
         },
         "metalsmith-debug": {},
-        "metalsmith-linkcheck": {},
         "metalsmith-watch": {
             "paths": {
                 "${source}/**/*": true,
