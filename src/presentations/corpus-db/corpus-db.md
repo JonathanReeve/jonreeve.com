@@ -113,9 +113,9 @@ Programmatically combine metadata from:
 
 ## Corpus-DB Is Not
 
- - Not a service
- - Not a website
+ - Not pretty
  - Not user-friendly
+ - Not meant for humans
 
 ---
 
@@ -124,6 +124,11 @@ Programmatically combine metadata from:
  - A textual corpus database
  - With awesome metadata
  - And an API wrapper for it
+ - For robots!
+
+## Process
+
+![](graph.svg){style="width: 40%; background-color: #eee"}
 
 ## DB Example: a Single-Author Corpus
 
