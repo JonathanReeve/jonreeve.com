@@ -27,10 +27,11 @@ This figure shows off some of the things you can do with document vectors. Using
 
 ![First 30 Books of Project Gutenberg](/images/word-embeddings/example-gut.png)
 
+There's more on this experiment [in this 2015 post](http://jonreeve.com/2017/12/similar-documents-in-project-gutenberg/). 
+
 ## Getting Started
 
 First, import the libraries below. (Make sure you have the packages beforehand, of course.)
-
 
 ```python
 import pandas as pd
