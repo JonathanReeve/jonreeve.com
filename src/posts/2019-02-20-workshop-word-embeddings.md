@@ -54,7 +54,6 @@ plt.rcParams["figure.figsize"] = (12,8)
 
 Now load the Spacy data that you downloaded (hopefully) prior to the workshop. If you don't have it, or get an error below, you might want to [check out the documentation that Spacy maintains here](https://spacy.io/models/en#en_vectors_web_lg) for how to download language models. Download the `en_core_web_lg` model. 
 
-
 ```python
 nlp = spacy.load('en_core_web_lg')
 ```
@@ -63,20 +62,17 @@ nlp = spacy.load('en_core_web_lg')
 
 First, let's make SpaCy "document" objects from a few expressions. These are fully parsed objects that contain lots of inferred information about the words present in the document, and their relations. For our purposes, we'll be looking at the `.vector` property, and comparing documents using the `.similarity()` method. The `.vector` is just an average of the word vectors in the document, where each word vector comes from pre-trained model—the Stanford GloVe vectors. Just for fun, I've taken the examples below from _Monty Python and the Holy Grail_, the inspiration for the name of the Python programming language. ([If you haven't seen it, this is the scene I'm referencing.](https://www.youtube.com/watch?v=liIlW-ovx0Y).) 
 
-
 ```python
 africanSwallow = nlp('African swallow')
 europeanSwallow = nlp('European swallow')
 coconut = nlp('coconut')
 ```
 
-
 ```python
 africanSwallow.similarity(europeanSwallow)
 ```
 
     0.8596378859289445
-
 
 ```python
 africanSwallow.similarity(coconut)
@@ -107,7 +103,6 @@ swallowArithmetic = (africanSwallow.vector - europeanSwallow.vector)
 
 To find out, we can make a function that will find all words with vectors that are most similar to our vector. If there's a better way of doing this, let me know! I'm just going through all the possible words (all the words in `nlp.vocab`) and comparing them. This should take a long time.
 
-
 ```python
 def mostSimilar(vec):
     highestSimilarities = [0]
@@ -119,7 +114,6 @@ def mostSimilar(vec):
             highestWords.append(w.text.lower())
     return list(zip(highestWords, highestSimilarities))[-10:]
 ```
-
 
 ```python
 mostSimilar(swallowArithmetic)
@@ -138,7 +132,6 @@ mostSimilar(swallowArithmetic)
 
 Our most similar word here is "african"! So "European swallow" - "African swallow" = "African"! Just out of curiosity, what will it say is the semantic neighborhood of "coconut"?
 
-
 ```python
 mostSimilar(coconut.vector)
 ```
@@ -156,16 +149,13 @@ mostSimilar(coconut.vector)
 
 Looks like a recipe space. Let's try the classic word2vec-style analogy, king - man + woman = queen:  
 
-
 ```python
 king, queen, woman, man = [nlp(w).vector for w in ['king', 'queen', 'woman', 'man']]
 ```
 
-
 ```python
 answer = king - man + woman
 ```
-
 
 ```python
 mostSimilar(answer)
@@ -183,7 +173,6 @@ mostSimilar(answer)
      ('king', 0.802426)]
 
 It doesn't work quite as well as expected. What about for countries and their capitals? Paris - France + Germany = Berlin? 
-
 
 ```python
 paris, france, germany = [nlp(w).vector for w in ['Paris', 'France', 'Germany']]
@@ -213,7 +202,6 @@ Now let's look at the first bunch of nouns from _Pride and Prejudice_. It starts
     
 First, load and process it. We'll grab just the first fifth of it, so we won't run out of memory. (And if you still run out of memory, maybe increase that number.)
 
-
 ```python
 pride = open('pride.txt').read()
 ```
@@ -227,7 +215,6 @@ prideDoc = nlp(pride)
 ```
 
 Now grab the first, say, 40 nouns. 
-
 
 ```python
 prideNouns = [w for w in prideDoc if w.pos_.startswith('N')][:40]
@@ -253,13 +240,11 @@ prideNounLabels[:10]
 
 Get the vectors of those nouns. 
 
-
 ```python
 prideNounVecs = [w.vector for w in prideNouns]
 ```
 
 Verify that they are, in fact, our 300-dimensional vectors.
-
 
 ```python
 prideNounVecs[0].shape
@@ -297,7 +282,6 @@ def plotResults3D(df, labels):
         ax.text(df.loc[i][0], df.loc[i][1], df.loc[i][2], label)
 ```
 
-
 ```python
 plotResults3D(prideDF, prideNounLabels)
 ```
@@ -305,7 +289,6 @@ plotResults3D(prideDF, prideNounLabels)
 ![Pride and Prejudice Nouns](/images/word-embeddings/pride-nouns.png)
 
 Now we can rewrite the above function so that instead of cycling through all the words ever, it just looks through all the _Pride and Prejudice_ nouns: 
-
 
 ```python
 # Redo this function with only nouns from Pride and Prejudice
@@ -322,7 +305,6 @@ def mostSimilar(vec):
 
 Now we can investigate, more rigorously than just eyeballing the visualization above, the vector neighborhoods of some of these words: 
 
-
 ```python
 mostSimilar(nlp('fortune').vector)
 ```
@@ -332,7 +314,6 @@ mostSimilar(nlp('fortune').vector)
 # Senses
 
 If we treat words as documents, and put them in the same vector space as other documents, we can infer how much like that word the document is, vector-wise. Let's use four words representing the senses: 
-
 
 ```python
 senseDocs = [nlp(w) for w in ['sound', 'sight', 'touch', 'smell']]
@@ -350,7 +331,6 @@ whichSense('symphony')
      touch: 0.19551651130481998,
      smell: 0.19852637065751555}
 
-
 ```python
 %matplotlib inline
 plt.rcParams["figure.figsize"] = (14,8)
@@ -362,7 +342,6 @@ pd.DataFrame([whichSense(w) for w in testWords], index=testWords).plot(kind='bar
 ```
 
 ![png](/images/word-embeddings/output_52_1.png)
-
 
 It looks like it correctly guesses that _symphony_ correlates with _sound_, and also does so with _crash_, but its guesses for _itchy_ (_smell_) and for _flower_ (_touch_) are less intuitive.
 
@@ -394,7 +373,6 @@ Process them and compute the vectors:
 ```python
 inauguralDocs = [nlp(text) for text in inauguralRaw]
 ```
-
 
 ```python
 inauguralVecs = [doc.vector for doc in inauguralDocs]
@@ -486,11 +464,9 @@ detectiveLengths
 
     [351240, 415961, 440629, 611531, 399572, 242949, 648486, 350142, 288955]
 
-
 ```python
 detectiveTextsTruncated = [t[:min(detectiveLengths)] for t in detectiveTexts]
 ```
-
 
 ```python
 detectiveDocs = [nlp(book) for book in detectiveTextsTruncated] # This should take a while
@@ -521,7 +497,6 @@ detectiveLabels
      "Rinehart-Where There's a Will",
      "Michelson-In the Bishop's Carr"]
 
-
 ```python
 pcaOut = PCA(n_components=10).fit_transform(detectiveVecs + extraVecs)
 tsneOut = TSNE(n_components=2).fit_transform(pcaOut)
@@ -536,9 +511,7 @@ for i in range(len(xs)):
 
 ![png](/images/word-embeddings/output_79_0.png)
 
-
 If you read the summaries of some of these novels on Wikipedia, this isn't terrible. To check, let's just see how often these words occur in the novels. 
-
 
 ```python
 # Sanity check
