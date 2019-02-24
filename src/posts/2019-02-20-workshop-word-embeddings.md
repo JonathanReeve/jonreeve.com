@@ -6,7 +6,7 @@ tags:
  - text analysis
  - python
  - word embeddings
- - tutorial
+ - tutorials
  - Austen
 
 ---
