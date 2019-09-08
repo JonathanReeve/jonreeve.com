@@ -74,7 +74,11 @@ Of course "You Know" gets the highest proportions of pronouns here, since every 
 
 This was a toy analysis in many respects, which I didn't expect would say anything very serious about literary style. For one, the corpus is so small that a statistical approach isn't very useful. Still, a few interesting phenomena appear here, and I'm curious to see what this looks like in a bigger corpus. 
 
+[Here's the code used to generate all this.](https://gist.github.com/JonathanReeve/cacf9d874b405b621710a7436425af49)
+
 I'd love to hear your comments below.
+
+
 
 <script src="https://cdn.jsdelivr.net/npm/vega@5"></script>
 <script src="https://cdn.jsdelivr.net/npm/vega-lite@3"></script>
