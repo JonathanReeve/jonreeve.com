@@ -40,7 +40,8 @@
             "skipPages": true
         },
         "metalsmith-feed": {
-            "collection": "posts"
+            "collection": "posts",
+      	    "destination": "feed.xml"
         },
         "metalsmith-sass": {
             "outputStyle": "expanded"
