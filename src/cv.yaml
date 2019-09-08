@@ -18,11 +18,11 @@ ed:
  - university: Columbia University
    degree: Master of Philosophy
    field: English and Comparative Literature
-   date: 2018-05
+   date: 2019-05
  - university: Columbia University
    degree: PhD Candidate
    field: English and Comparative Literature
-   date: 2018-05
+   date: 2019-05
 
 projects:
   - title: Open-Editions
@@ -47,7 +47,7 @@ projects:
     updates:
       - date: 2018-01
         type: funding
-        description: Project funded $1K from NYCDH
+        description: Grant awarded from NYC-DH (New York City Digital Humanities)
       - date: 2017-10
         type: award
         description: Winner, [2017 NYCDH Graduate Student Project Award](https://nycdh.org/groups/nycdh-announcements-71439400/forum/topic/2017-nycdh-graduate-student-project-award-recipients/) 
