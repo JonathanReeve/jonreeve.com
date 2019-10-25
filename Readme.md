@@ -1,4 +1,5 @@
 
 # Jonreeve.com, Made with Metalsmith
 
-I'm rewriting [my personal website](http://jonreeve.com) using [Metalsmith](http://metalsmith.io). 
+This is my personal website, jonreeve.com. 
+I wrote it using [Metalsmith](http://metalsmith.io), Pug templates, Sass, and Bulma. 
