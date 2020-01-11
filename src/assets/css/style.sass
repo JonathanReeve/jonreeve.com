@@ -20,6 +20,7 @@ $mediumGray: #333
   @media (min-width: 1200px)
     @content
 
+
 html
   +sm
     font-size: 27px
@@ -29,6 +30,18 @@ html
     font-size: 24px
   +xl
     font-size: 23px
+
+@media print
+  .header-wrapper, footer, nav.btn-group
+    display: none !important
+  .card
+    border: none
+  .card .badge
+    display: none
+  html
+    font-size: 14px !important
+  @page
+    margin: 1in
 
 body
   font-family: Raleway
