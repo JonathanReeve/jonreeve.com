@@ -25,12 +25,18 @@ formatDate date = let yy = year date
                       mm = month date
                   in [fmt|{yy}-{mm}|]
 
+formatDates :: [Date] -> T.Text
+formatDates dates = T.intercalate "," $ map formatDate dates
+
 formatDateRange :: DateRange -> T.Text
 formatDateRange dateRange = case dateRange of
-  DateRange (Date sy sm) Present -> [fmt| "({startDate}–)"|]
-  DateRange (Date sy sm) (Date ey em) -> [fmt|"({startDate}–{endDate})"|]
+  DateRange (Date sy sm) Present -> [fmt|({startDate}–)|]
+  DateRange (Date sy sm) (Date ey em) -> [fmt|({startDate}–{endDate})|]
   where startDate = formatDate $ start dateRange
         endDate = formatDate $ end dateRange
+
+formatDateRanges :: [DateRange] -> T.Text
+formatDateRanges dateRanges = T.intercalate ", " $ map formatDateRange dateRanges
 
 -- TODO: get this from Pandoc
 type Markdown = T.Text

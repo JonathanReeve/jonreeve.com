@@ -9,7 +9,7 @@ data Project = Project {
   title :: Text,
   role :: ProjectRole,
   homepage :: URI,
-  github :: Text,
+  github :: Maybe Text,
   pypi :: Maybe Text,
   dateRange :: DateRange,
   desc :: Markdown,
@@ -18,12 +18,11 @@ data Project = Project {
 
 data ProjectRole = Creator | CoCreator | Developer | ResearchAssistant deriving Show
 
-
 projects = [
   Project { title = "Open-Editions",
             role = Creator,
             homepage = "https://github.com/open-editions/",
-            github = "open-editions/corpus-joyce-ulysses-tei",
+            github = Just "open-editions/corpus-joyce-ulysses-tei",
             desc = "Open-source, semantically annotated scholarly editions of literary texts.",
             dateRange = DateRange (date 2015 09) Present,
             updates = [
@@ -43,7 +42,7 @@ projects = [
   Project { title = "Corpus-DB",
             role = Creator,
             homepage = "https://github.com/JonathanReeve/corpus-db",
-            github = "JonathanReeve/corpus-db",
+            github = Just "JonathanReeve/corpus-db",
             dateRange = DateRange (date 2017 03) Present,
             desc  = "A database and API for plain text archives, for digital humanities research.",
             updates = [
@@ -61,7 +60,7 @@ projects = [
   Project { title = "Middlemarch Critical Histories",
             role = CoCreator,
             homepage   = "https://github.com/lit-mod-viz/middlemarch-critical-histories",
-            github= "lit-mod-viz/middlemarch-critical-histories",
+            github= Just "lit-mod-viz/middlemarch-critical-histories",
             dateRange = DateRange (date 2016 01) Present,
             desc  = "Computational analyses of the critical history of George Eliot's novel _Middlemarch_. In collaboration with Milan Terlunen, Sierra Eckert, Columbia University’s [Group for Experimental Methods in the Humanities](http://xpmethod.plaintext.in/), and the Stanford Literary Lab.",
             updates = [
@@ -89,6 +88,8 @@ projects = [
             role = Creator,
             desc = "A generator of Socratic dialogues, using meta-Markov chains to emulate character speech.",
             homepage =  "http://jonreeve.com/2016/10/socratic-dialogue-generator/",
+            github = Nothing,
+            pypi = Nothing,
             dateRange = DateRange (date 2016 10) (date 2016 11),
             updates = [
               Update (date 2017 02) (Award "Winner, Best Use of DH For Fun"
@@ -98,6 +99,8 @@ projects = [
   Project { title =  "Git-Lit",
             desc =  "A Project to Parse, Version Control, and Publish ~50,000 British Library Electronic Books",
             role = Creator,
+            pypi = Nothing,
+            github = Nothing,
             dateRange = DateRange (date 2015 08) (Present),
             homepage =  "https://git-lit.github.io/",
             updates = [
@@ -133,19 +136,20 @@ projects = [
             role = Creator,
             dateRange = DateRange (date 2014 01) (date 2018 01),
             homepage = "http://annotags.github.io/",
-            github = "Annotags/annotags.js",
+            github = Just "Annotags/annotags.js",
+            pypi = Nothing,
             updates = [
-              Update (date 2014 09) (News "[Web app calculator](/projects/annotags) released"),
-              Update (date 2015 02) (Award "Nominated for Best DH Tool"
-                (Venue "DH Awards, 2014" "http://dhawards.org/dhawards2014/results/" "")),
               Update (date 2015 06) (Award "Featured resource"
                 (Venue "Digital Humanities Now" "http://www.digitalhumanitiesnow.org/2015/07/resource-annotags-a-decentralized-textual-annotation-protocol/" "")),
-              Update (date 2015 05) (Talk "Annotags: A Decentralized Literary Annotation Protocol" ""
-                (Venue "I Annotate 2015" "http://iannotate.org/" "")),
               Update (date 2015 06) (Talk
                 "Annotags: A Decentralized Literary Annotation Protocol"
                 "http://www.jonreeve.com/presentations/keydh2015"
-                (Venue "Keystone Digital Humanities conference" "" ""))
+                (Venue "Keystone Digital Humanities conference" "" "")),
+              Update (date 2015 05) (Talk "Annotags: A Decentralized Literary Annotation Protocol" ""
+                (Venue "I Annotate 2015" "http://iannotate.org/" "")),
+              Update (date 2015 02) (Award "Nominated for Best DH Tool"
+                (Venue "DH Awards, 2014" "http://dhawards.org/dhawards2014/results/" "")),
+              Update (date 2014 09) (News "[Web app calculator](/projects/annotags) released")
               ]
           },
 
@@ -154,8 +158,9 @@ projects = [
             dateRange = DateRange (date 2016 08) (Present),
             desc = "A command-line tool for breaking a text into chapters",
             homepage = "https://github.com/JonathanReeve/chapterize",
-            github = "JonathanReeve/chapterize",
-            pypi = Just "chapterize"
+            github = Just "JonathanReeve/chapterize",
+            pypi = Just "chapterize",
+            updates = []
           },
 
   Project { title = "Macro-Etymological Text Analysis",
@@ -163,17 +168,17 @@ projects = [
             desc = "Computational methods applying etymology and language history to textual analysis.",
             dateRange = DateRange (date 2013 09) (Present),
             homepage = "http://github.com/JonathanReeve/macro-etym",
-            github = "JonathanReeve/macro-etym",
+            github = Just "JonathanReeve/macro-etym",
             pypi = Just "macroetym",
             updates = [
-              Update (date 2015 01) $ News "[Featured](http://www.tapor.ca/?id=470) in the [Text Analysis Portal for Research](http://www.tapor.ca/)",
-              Update (date 2015 01) $ News "Listed in Alain Liu's directory of Digital Humanities Tools",
-              Update (date 2015 03) $ News "Featured in the [Digital Research Tools](http://www.dirtdirectory.org/) (DiRT) directory",
-              Update (date 2015 05) $ News "Released as [a command-line program in the Python Package Archive](https://pypi.python.org/pypi/macroetym)",
               Update (date 2016 01) $ Publication Chapter
                 "A Macro-Etymological Analysis of James Joyce's _A Portrait of the Artist as a Young Man_"
                 "" -- TODO: Add url
                 (Venue "Reading Modernism with Machines" "" "Palgrave Macmillan"),
+              Update (date 2015 01) $ News "[Featured](http://www.tapor.ca/?id=470) in the [Text Analysis Portal for Research](http://www.tapor.ca/)",
+              Update (date 2015 01) $ News "Listed in Alain Liu's directory of Digital Humanities Tools",
+              Update (date 2015 03) $ News "Featured in the [Digital Research Tools](http://www.dirtdirectory.org/) (DiRT) directory",
+              Update (date 2015 05) $ News "Released as [a command-line program in the Python Package Archive](https://pypi.python.org/pypi/macroetym)",
               Update (date 2014 08) $ Award "Winner, student bursary"
                 (Venue "Association of Digital Humanities Organizations" "" "Lausanne, Switzerland"),
               Update (date 2014 07) $ Award "Winner"
@@ -192,7 +197,8 @@ projects = [
             desc = "Fuzzy text matching and alignment algorithms.",
             dateRange = DateRange (date 2015 01) (Present),
             homepage = "http://github.com/JonathanReeve/text-matcher",
-            github = "JonathanReeve/text-matcher",
+            github = Just "JonathanReeve/text-matcher",
+            pypi = Nothing,
             updates = [
               Update (date 2016 10) $ News "[Released command-line tool on the Python Package Archive](https://pypi.python.org/pypi/text-matcher)",
               Update (date 2015 05) $ News "[Modernism, Myth, and their Intertextualities: a Computational Detection of Biblical and Classical Allusion in the English-Language Novel, 1771-1930](https://github.com/JonathanReeve/allusion-detection/blob/master/paper/essay.pdf)"
@@ -204,7 +210,8 @@ projects = [
            desc = "A highly customizable theme for the Omeka content management system.",
            dateRange = DateRange (date 2013 01) (date 2015 01),
            homepage = "http://github.com/JonathanReeve/theme-customeka",
-           github = "JonathanReeve/theme-customeka",
+           github = Just "JonathanReeve/theme-customeka",
+           pypi = Nothing,
            updates = [
              Update (date 2016 08) $ Publication Tutorial "Installing Omeka"
                "https://programminghistorian.org/en/lessons/installing-omeka"

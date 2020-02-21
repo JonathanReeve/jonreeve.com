@@ -1,6 +1,4 @@
 
-# Jonreeve.com, Made with Metalsmith
+# Jonreeve.com
 
-This is my personal website, jonreeve.com. 
-
-I wrote it using [Metalsmith](http://metalsmith.io), Pug templates, Sass, and others. 
+This is my personal website, jonreeve.com. Rewritten in Haskell because I'm crazy.

@@ -9,21 +9,19 @@ import Data.Text
 import CV.Shared
 
 data Education = Education {
+  when :: Date,
   university :: Text,
   degree :: Text,
-  field :: Text,
-  when :: Date
+  field :: Text
   } deriving Show
 
-education = [
-  Education (uni "nyu") "Bachelor of Arts" "Interdisciplinary" (date 2004 1),
-  Education (uni "bc") "Master of Arts" "English Literature" (date 2010 05),
-  Education (uni "nyu") "Master of Arts" "Humanities" (date 2014 01),
-  Education (uni "cu") "Master of Arts" "English and Comparative Literature" (date 2016 05),
-  Education (uni "cu") "Master of Philosophy" "English and Comparative Literature" (date 2019 05),
-  Education (uni "cu") "PhD Candidate" "English and Comparative Literature" (date 2019 05)
-  ]
-
+education = [ Education (date 2019 05) (uni "cu") "PhD Candidate" "English and Comparative Literature"
+            , Education (date 2019 05) (uni "cu") "Master of Philosophy" "English and Comparative Literature"
+            , Education (date 2016 05) (uni "cu") "Master of Arts" "English and Comparative Literature"
+            , Education (date 2014 01) (uni "nyu") "Master of Arts" "Humanities"
+            , Education (date 2010 05) (uni "bc") "Master of Arts" "English Literature"
+            , Education (date 2004 1) (uni "nyu") "Bachelor of Arts" "Interdisciplinary"
+            ]
 
 data Position = Position { posDateRange :: DateRange,
                            org :: Text,
@@ -38,6 +36,7 @@ positions = [
                  project = "DH Box",
                  org = uni "cuny",
                  posRole = "Developer",
+                 posUrl = "",
                  updates = [
                    Update (date 2016 07) $ News "Developed [corpus, a textual corpus downloader](https://github.com/DH-Box/corpus-downloader)",
                    Update (date 2017 08) $ News "Integrated textual corpus download functionality into the [DH Box web app](http://dhbox.org)",
@@ -49,11 +48,13 @@ positions = [
                  project = "A Safer Online Public Square",
                  posRole = "Research Assistant, Computational Methods of Abusive Language Detection",
                  posUrl = "http://icls.columbia.edu/initiatives/a-safer-online-public-square/",
-                 posDateRange = DateRange (date 2017 06)  (date 2018 07)
+                 posDateRange = DateRange (date 2017 06)  (date 2018 07),
+                 updates = []
                },
 
       Position { posDateRange = DateRange (date 2015 05) (date 2015 10),
                  posRole = "Web developer",
+                 posUrl = "",
                  org = "Greenwich Village Society for Historic Preservation",
                  project = "GVSHP Image Archive",
                  updates = [ Update (date 2015 10) $ News
@@ -62,6 +63,7 @@ positions = [
                },
 
       Position { project = "MLA Commons",
+                 posUrl = "",
                  org = "Modern Language Association",
                  posRole = "Web Developer",
                  posDateRange = DateRange (date 2013 11) (date 2015 08),
@@ -77,6 +79,7 @@ positions = [
 
       Position { posDateRange = DateRange (date 2012 06) (date 2015 01),
                  project = "DOCMAP",
+                 posUrl = "",
                  org = "New York University History Department",
                  posRole = "Web developer",
                  updates = [ Update (date 2012 09) $ News
@@ -87,6 +90,7 @@ positions = [
                },
 
       Position { project = "The Manifesto in Literature",
+                 posUrl = "",
                  org = "Thomas Riggs & Company, Publishers",
                  posRole = "Research Writer",
                  posDateRange = DateRange (date 2012 07) (date 2012 09),
