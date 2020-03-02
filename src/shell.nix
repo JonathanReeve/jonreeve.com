@@ -1,8 +1,8 @@
-{ nixpkgs ? import <nixpkgs> {}, compiler ? "ghc865" }:
+{ nixpkgs ? import <nixpkgs> {} }:
 let
   inherit (nixpkgs) pkgs;
-  ghc = pkgs.haskell.packages.${compiler}.ghcWithPackages (ps: with ps; [
-          rib PyF
+  ghc = pkgs.haskellPackages.ghcWithPackages (ps: with ps; [
+          lucid PyF clay # rib
         ]);
 in
 pkgs.stdenv.mkDerivation {

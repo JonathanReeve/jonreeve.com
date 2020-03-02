@@ -6,6 +6,7 @@ module CV.Shared where
 import qualified Data.Text as T
 import PyF
 
+
 data Date = Present | Date { year :: Int
                            , month :: Int
                            } deriving Show

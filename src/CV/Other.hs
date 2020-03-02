@@ -28,7 +28,7 @@ data Position = Position { posDateRange :: DateRange,
                            project :: Text,
                            posRole :: Text,
                            posUrl :: URI,
-                           updates :: [ Update ]
+                           posUpdates :: [ Update ]
                            } deriving Show
 
 positions = [
@@ -37,7 +37,7 @@ positions = [
                  org = uni "cuny",
                  posRole = "Developer",
                  posUrl = "",
-                 updates = [
+                 posUpdates = [
                    Update (date 2016 07) $ News "Developed [corpus, a textual corpus downloader](https://github.com/DH-Box/corpus-downloader)",
                    Update (date 2017 08) $ News "Integrated textual corpus download functionality into the [DH Box web app](http://dhbox.org)",
                    Update (date 2017 09) $ News "Created [DH-USB, a digital humanities operating system designed to run from a USB drive](https://github.com/DH-Box/dh-usb)"
@@ -49,7 +49,7 @@ positions = [
                  posRole = "Research Assistant, Computational Methods of Abusive Language Detection",
                  posUrl = "http://icls.columbia.edu/initiatives/a-safer-online-public-square/",
                  posDateRange = DateRange (date 2017 06)  (date 2018 07),
-                 updates = []
+                 posUpdates = []
                },
 
       Position { posDateRange = DateRange (date 2015 05) (date 2015 10),
@@ -57,7 +57,7 @@ positions = [
                  posUrl = "",
                  org = "Greenwich Village Society for Historic Preservation",
                  project = "GVSHP Image Archive",
-                 updates = [ Update (date 2015 10) $ News
+                 posUpdates = [ Update (date 2015 10) $ News
                              "Developed the [Greenwich Village Society for Historic Preservation Image Archive](http://archive.gvshp.org), an Omeka-based image archive"
                            ]
                },
@@ -67,7 +67,7 @@ positions = [
                  org = "Modern Language Association",
                  posRole = "Web Developer",
                  posDateRange = DateRange (date 2013 11) (date 2015 08),
-                 updates = [ Update (date 2013 11) $ News "Edited XML and XSL code for the [Literary Research Guide](http://mlalrg.org/public)",
+                 posUpdates = [ Update (date 2013 11) $ News "Edited XML and XSL code for the [Literary Research Guide](http://mlalrg.org/public)",
                              Update (date 2014 01) $ News "Contributed to software used for the electronic edition of [_Literary Studies in the Digital Age_](http://dlsanthology.commons.mla.org/), and [_Digital Pedagogy in the Humanities_](https://digitalpedagogy.commons.mla.org/)",
                              Update (date 2014 08) $ News "Primary contributor to [the 2014 and 2015 redesigns](http://updates.commons.mla.org/2014/07/28/new-theme-for-the-mla-commons/) of the [MLA Commons](http://commons.mla.org)",
                              Update (date 2015 01) $ News
@@ -82,7 +82,7 @@ positions = [
                  posUrl = "",
                  org = "New York University History Department",
                  posRole = "Web developer",
-                 updates = [ Update (date 2012 09) $ News
+                 posUpdates = [ Update (date 2012 09) $ News
                                "Developed [a customization engine](https://github.com/JonathanReeve/theme-customeka) for the [Omeka content management platform](http://omeka.org)",
                              Update (date 2015 01) $ News
                                 "Designed and developed Omeka themes deployed on [Greenwich Village History](http://gvh.aphdigital.org) and [New Jersey Digital History](http://njdigitalhistory.org/NJDHA/)"
@@ -94,7 +94,7 @@ positions = [
                  org = "Thomas Riggs & Company, Publishers",
                  posRole = "Research Writer",
                  posDateRange = DateRange (date 2012 07) (date 2012 09),
-                 updates = [
+                 posUpdates = [
                    Update (date 2012 09) $ News
                      "Authored six articles for the 2013 reference volume [*The Manifesto in Literature*](http://www.thomasriggs.net/pages/content/index.asp?PageID=158): Richard Stallman's \"The GNU Manifesto,\" John Barlow's \"A Declaration of the Independence of Cyberspace,\" and several others"
                    ]

@@ -26,6 +26,7 @@ projects = [
             desc = "Open-source, semantically annotated scholarly editions of literary texts.",
             dateRange = DateRange (date 2015 09) Present,
             updates = [
+              Update (date 2019 01) (News "[Joycewords.com](http://joycewords.com) released"),
               Update (date 2018 01) (Talk
                      "Open-Source Scholarly Editions of Works by James Joyce"
                      "" -- TODO: Add URL
