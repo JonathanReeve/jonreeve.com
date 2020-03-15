@@ -13,8 +13,22 @@ import CV.Other
 import PyF
 import qualified Data.Text as T
 import qualified Data.Text.Lazy as TL
+import qualified Data.Text.IO as TIO
 import Lucid
 import Clay hiding (title, Position, type_, header, html, filter)
+
+import Rib
+
+-- import Text.Pandoc
+
+-- md2Html :: CV.Shared.Markdown -> Html ()
+-- md2Html md = do
+--   result <- runPure $ do
+--     doc <- readMarkdown def md
+--     writeHtml5 def doc
+--   return $ case result of
+--     Left err -> error "Couldn't convert this markdown."
+--     Right res -> res
 
 educationSection :: Html ()
 educationSection = section_ [ class_ "education" ] $ do
