@@ -16,7 +16,7 @@ data Project = Project {
   updates :: [ Update ]
   } deriving Show
 
-data ProjectRole = Creator | CoCreator | Developer | ResearchAssistant deriving Show
+data ProjectRole = Creator | CoCreator | Developer | Collaborator | ResearchAssistant deriving Show
 
 projects = [
   Project { title = "Open-Editions",
@@ -26,6 +26,8 @@ projects = [
             desc = "Open-source, semantically annotated scholarly editions of literary texts.",
             dateRange = DateRange (date 2015 09) Present,
             updates = [
+              Update (date 2019 01) (Award "Second runner-up, Best DH Data Set"
+                                     (Venue "2019 DH Awards" "http://dhawards.org/dhawards2019/results/" "")),
               Update (date 2019 01) (News "[Joycewords.com](http://joycewords.com) released"),
               Update (date 2018 01) (Talk
                      "Open-Source Scholarly Editions of Works by James Joyce"
@@ -48,7 +50,7 @@ projects = [
             desc  = "A database and API for plain text archives, for digital humanities research.",
             updates = [
                 Update (date 2018 01) (Award "micro-grant awarded" (Venue "NYC-DH" "https://nycdh.org/" "")),
-                Update (date 2017 10) (Award "winner" 
+                Update (date 2017 10) (Award "winner"
                   (Venue "2017 NYCDH Graduate Student Project Award"
                    "https://nycdh.org/groups/nycdh-announcements-71439400/forum/topic/2017-nycdh-graduate-student-project-award-recipients/" "")),
                 Update (date 2017 09) (Award "awarded"
@@ -84,7 +86,19 @@ projects = [
               ],
             pypi = Nothing
           },
-
+ Project { title = "Literary Style Transfer",
+           role = Collaborator,
+           desc = "Experiments in the transfer of literary style among genres, using neural networks. A collaboration with Katy Gero, Chris Kedzie, and Lydia Chilton.",
+           dateRange = DateRange (date 2019 05) (date 2019 10),
+           homepage = "https://arxiv.org/abs/1911.03385",
+           github = Nothing,
+           pypi = Nothing,
+           updates = [
+             Update (date 2019 11) $ Publication Article "Installing Omeka"
+               "https://arxiv.org/abs/1911.03385"
+                (Venue "The 12th International Conference on Natural Language Generation" "https://www.inlg2019.com/" "Artificial Intelligence Research Center of Japan")
+             ]
+         },
   Project { title = "A Generator of Socratic Dialogues",
             role = Creator,
             desc = "A generator of Socratic dialogues, using meta-Markov chains to emulate character speech.",

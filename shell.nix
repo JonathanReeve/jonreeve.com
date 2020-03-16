@@ -19,10 +19,11 @@ let
       rib = super.callCabal2nix "rib" myRib {};
     };
   };
-
   ghc = myHaskellPackages.ghcWithPackages (ps: with ps; [
     rib
     clay
+    PyF
+    ghcid
   ]);
 in
 pkgs.mkShell {

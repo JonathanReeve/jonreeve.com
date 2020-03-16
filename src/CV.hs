@@ -18,17 +18,11 @@ import Lucid
 import Clay hiding (title, Position, type_, header, html, filter)
 
 import Rib
+import Rib.Parser.Pandoc
+import Text.Pandoc (readMarkdown)
 
--- import Text.Pandoc
-
--- md2Html :: CV.Shared.Markdown -> Html ()
--- md2Html md = do
---   result <- runPure $ do
---     doc <- readMarkdown def md
---     writeHtml5 def doc
---   return $ case result of
---     Left err -> error "Couldn't convert this markdown."
---     Right res -> res
+md2Html :: CV.Shared.Markdown -> Html ()
+md2Html md = Rib.Parser.Pandoc.render $ Rib.Parser.Pandoc.parsePure readMarkdown md
 
 educationSection :: Html ()
 educationSection = section_ [ class_ "education" ] $ do
@@ -58,7 +52,7 @@ formatProject proj = section_ [ class_ "projects" ] $ do
   div_ [ class_ "project-about" ] $ do
     span_ [] $ toHtml $ formatDateRange (dateRange proj)
     span_ [ class_ "role" ] $ formatRole $ role proj
-    span_ [ class_ "desc" ] $ toHtml $ desc proj
+    span_ [ class_ "desc" ] $ md2Html $ desc proj
   ul_ [ class_ "updates", style_ "margin-left: 1em" ] $ mapM_ formatUpdate $ CV.Projects.updates proj
 
 badges :: URI -> Html ()
@@ -80,7 +74,7 @@ formatEvent :: Event -> Html ()
 formatEvent event = foldMap (span_ [ class_ "update" ]) $
   case event of
     News md -> [ toHtml (chip "news")
-              , toHtml md
+              , md2Html md
               ]
     Award award venue -> [ toHtml (chip "award")
                         , toHtml award
@@ -99,6 +93,7 @@ formatRole :: ProjectRole -> Html ()
 formatRole role = chip $ case role of
   Creator -> "creator"
   CoCreator -> "co-creator"
+  Collaborator -> "collaborator"
   Developer -> "developer"
   ResearchAssistant -> "research assistant"
 
@@ -201,13 +196,13 @@ header :: Html ()
 header = head_ [] $ do
   link_ [rel_ "stylesheet", href_ "assets/css/spectre.min.css"]
   link_ [href_ "https://fonts.googleapis.com/css?family=Montserrat|Raleway", rel_ "stylesheet"]
-  style_ [type_ "text/css"] $ render pageStyle
+  style_ [type_ "text/css"] $ Clay.render pageStyle
   style_ [type_ "text/css"] $ toHtml printStyle
 
 -- | Print CSS style, for printing this out.
 printStyle :: T.Text
 printStyle = T.concat ["@media print {"
-                      , TL.toStrict $ render printCss
+                      , TL.toStrict $ Clay.render printCss
                       , "}; @page { margin: 3cm; }"
                       ]
 
@@ -223,6 +218,8 @@ pageStyle = do
   "section" ? do
     marginTop (em 2)
     marginBottom (em 2)
+  ".update p" ? display inline
+  ".desc p" ? display inline
 
 cv = do
   educationSection
