@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="generator" content="pandoc">
+  <title></title>
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+  <link rel="stylesheet" href="../../assets/js/vendor/reveal.js/css/reveal.css"/>
+    <style type="text/css">code{white-space: pre;}</style>
+    <link rel="stylesheet" href="../../assets/js/vendor/reveal.js/css/theme/moon.css" id="theme">
+  <link rel="stylesheet" media="print" href="../../assets/js/vendor/reveal.js/css/print/pdf.css" />
+  <!--[if lt IE 9]>
+  <script src="../../assets/js/vendor/reveal.js/lib/js/html5shiv.js"></script>
+  <![endif]-->
+</head>
+<body>
+  <div class="reveal">
+    <div class="slides">
+
+
+<section><section id="the-open-critical-editions-of-joyces-ulysses-and-a-portrait-of-the-artist-as-a-young-man" class="titleslide slide level1"><h1>The Open Critical Editions of Joyce’s <em>Ulysses</em> and <em>A Portrait of the Artist as a Young Man</em></h1></section><section id="traditional-editions" class="slide level2">
+<h1>Traditional Editions</h1>
+<ul>
+<li>Often privately owned/copyrighted by for-profit insitutions</li>
+<li>Contain errors (“geen”/“green”) that can’t be corrected</li>
+<li>Notes and backgrounds are limited by the size of the paper and book</li>
+</ul>
+</section><section id="open-critical-editions" class="slide level2">
+<h1>Open Critical Editions</h1>
+<ul>
+<li>Belong to everyone (copyleft)</li>
+<li>Errors are correctable</li>
+<li>Margins are virtually infinite</li>
+<li>Readers can choose what information to show/hide</li>
+<li>Computer readable; good for computer analysis</li>
+</ul>
+</section><section id="semantic-markup" class="slide level2">
+<h1>Semantic Markup</h1>
+<ul>
+<li>Written in TEI XML (Text Encoding Initiative eXtensible Markup Language)</li>
+<li>Semantic markup is a way to describe literary features</li>
+<li>More about literary criticism than computer programming</li>
+</ul>
+</section><section id="plain-text" class="slide level2">
+<h1>Plain Text</h1>
+<pre><code>—Madam, I never eat muscatel grapes.</code></pre>
+</section><section id="tei-text" class="slide level2">
+<h1>TEI Text</h1>
+<pre><code>&lt;said who=&quot;Edmond Dantès&quot;&gt;
+    —Madam, I never eat muscatel grapes.
+&lt;/said&gt;</code></pre>
+</section><section id="allows-easy-answers-to-questions" class="slide level2">
+<h1>Allows Easy Answers to Questions</h1>
+<ul>
+<li>How many times does Stephen use the word “art” in <em>Portrait</em>?</li>
+<li>What books of the Bible are cited or quoted most often in <em>Ulysses</em>?</li>
+<li>What are the distinctive words of each character in <em>Ulysses</em>?<br />
+</li>
+<li>What does Stephen’s walk in <em>Portrait</em> look like, on a map of Dublin?</li>
+</ul>
+</section><section class="slide level2">
+
+<figure>
+<img src="images/portrait-langs.png" />
+</figure>
+</section><section class="slide level2">
+
+<figure>
+<img src="images/ulysses-langs.png" />
+</figure>
+</section><section class="slide level2">
+
+<figure>
+<img src="images/portrait-songs.png" />
+</figure>
+</section><section class="slide level2">
+
+<figure>
+<img src="images/ulysses-titles.png" />
+</figure>
+</section><section id="who-can-contribute" class="slide level2">
+<h1>Who can contribute?</h1>
+<ul>
+<li>Anyone!</li>
+<li>No technical knowledge necessary</li>
+</ul>
+</section><section id="types-of-contributions" class="slide level2">
+<h1>Types of Contributions</h1>
+<ul>
+<li>Mark up literary features in the text</li>
+<li>Attribute dialog to speakers</li>
+<li>Annotate the text with background information or explanatory notes</li>
+<li>Geocode places mentioned in the text with their latitude and longitude</li>
+<li>Anything else that's listed as an issue</li>
+<li>Issues that aren't yet issues</li>
+</ul>
+</section><section id="why-contribute" class="slide level2">
+<h1>Why Contribute?</h1>
+<ul>
+<li>To enrich open-access knowledge</li>
+<li>Great way to closely read the novel</li>
+<li>Looks great on your CV/resume (&quot;Contributing Editor, Open Critical Edition of Joyce’s <em>Portrait</em>&quot;)</li>
+</ul>
+</section><section id="how-to-contribute" class="slide level2">
+<h1>How to Contribute</h1>
+<p>For beginners, start by reading the CONTRIBUTING.md document in the GitHub repository for <em>Portrait</em>.</p>
+<ul>
+<li><a href="http://github.com/open-editions/corpus-joyce-portrait-tei/blob/master/CONTRIBUTING.md">corpus-joyce-portrait-tei/CONTRIBUTING.md</a></li>
+</ul>
+<p>Additionally, the <em>Ulysses</em> repository has a CONTRIBUTING.md document that adds markup conventions:</p>
+<ul>
+<li><a href="http://github.com/open-editions/corpus-joyce-ulysses-tei/blob/master/CONTRIBUTING.md">corpus-joyce-ulysses-tei/CONTRIBUTING.md</a></li>
+</ul>
+</section></section>
+    </div>
+  </div>
+
+  <script src="../../assets/js/vendor/reveal.js/lib/js/head.min.js"></script>
+  <script src="../../assets/js/vendor/reveal.js/js/reveal.js"></script>
+
+  <script>
+
+      // Full list of configuration options available here:
+      // https://github.com/hakimel/reveal.js#configuration
+      Reveal.initialize({
+        controls: true,
+        progress: true,
+        history: true,
+        center: true,
+        theme: 'moon', // available themes are in /css/theme
+        transition: Reveal.getQueryHash().transition || 'default', // default/cube/page/concave/zoom/linear/fade/none
+
+        // Optional libraries used to extend on reveal.js
+        dependencies: [
+          { src: '../../assets/js/vendor/reveal.js/lib/js/classList.js', condition: function() { return !document.body.classList; } },
+          { src: '../../assets/js/vendor/reveal.js/plugin/zoom-js/zoom.js', async: true, condition: function() { return !!document.body.classList; } },
+          { src: '../../assets/js/vendor/reveal.js/plugin/notes/notes.js', async: true, condition: function() { return !!document.body.classList; } },
+	  { src: 'plugin/highlight/highlight.js', async: true, condition: function() { return !!document.querySelector( 'pre code' ); }, callback: function() { hljs.initHighlightingOnLoad(); } },
+//          { src: '../../assets/js/vendor/reveal.js/plugin/search/search.js', async: true, condition: function() { return !!document.body.classList; }, }
+//          { src: '../../assets/js/vendor/reveal.js/plugin/remotes/remotes.js', async: true, condition: function() { return !!document.body.classList; } }
+]});
+    </script>
+  </body>
+</html>

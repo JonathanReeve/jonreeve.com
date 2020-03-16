@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="generator" content="pandoc">
+  <meta name="author" content="Jonathan Reeve">
+  <meta name="dcterms.date" content="2015-07-24">
+  <title>Annotags: a Decentralized Textual Annotation Protocol</title>
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
+  <link rel="stylesheet" href="../../assets/js/vendor/reveal.js/css/reveal.css">
+  <style type="text/css">code{white-space: pre;}</style>
+  <link rel="stylesheet" href="../../assets/js/vendor/reveal.js/css/theme/moon.css" id="theme">
+  <!-- Printing and PDF exports -->
+  <script>
+    var link = document.createElement( 'link' );
+    link.rel = 'stylesheet';
+    link.type = 'text/css';
+    link.href = window.location.search.match( /print-pdf/gi ) ? '../../assets/js/vendor/reveal.js/css/print/pdf.css' : '../../assets/js/vendor/reveal.js/css/print/paper.css';
+    document.getElementsByTagName( 'head' )[0].appendChild( link );
+  </script>
+  <!--[if lt IE 9]>
+  <script src="../../assets/js/vendor/reveal.js/lib/js/html5shiv.js"></script>
+  <![endif]-->
+</head>
+<body>
+  <div class="reveal">
+    <div class="slides">
+
+<section>
+  <h1 class="title">Annotags: a Decentralized Textual Annotation Protocol</h1>
+  <h2 class="author">Jonathan Reeve</h2>
+  <h3 class="date">24 July 2015</h3>
+</section>
+
+<section id="conversations-in-the-margins" class="slide level1">
+<h1>Conversations in the Margins</h1>
+<figure>
+<img src="ship-of-theseus-3.jpg" alt="Conversations in the Margins" /><figcaption>Conversations in the Margins</figcaption>
+</figure>
+</section>
+<section id="problems" class="slide level1">
+<h1>Problems</h1>
+<ul>
+<li>How can we tweet about specific parts of a book?</li>
+<li><code>#HarryPotterAndTheSorcerer'sStonePage23Paragraph11</code> isn't practical.</li>
+<li>How can we write in the margins of ebooks?</li>
+<li>How can we have conversations in the margins?</li>
+</ul>
+</section>
+<section id="centralized-solutions" class="slide level1">
+<h1>Centralized Solutions</h1>
+<ul>
+<li>CommentPress, Socialbook, Annotation Studio, Ebrary</li>
+<li>Annotations live on the central server.</li>
+<li>The size of the virtual margins are limited by the structure of the web page.</li>
+</ul>
+</section>
+<section id="annotags-a-decentralized-solution" class="slide level1">
+<h1>Annotags: a Decentralized Solution</h1>
+<ul>
+<li>Not a product, platform, or service.</li>
+<li>A protocol for encoding text metadata into a hashtag.</li>
+<li>These hashtags can be posted to Twitter, Facebook, private blogs.</li>
+<li>Annotags can even be written on paper and sent in the mail.</li>
+</ul>
+</section>
+<section id="example" class="slide level1">
+<h1>Example</h1>
+<figure>
+<img src="annotweet.png" alt="Annotweet" /><figcaption>Annotweet</figcaption>
+</figure>
+</section>
+<section id="anatomy-of-an-annotag" class="slide level1">
+<h1>Anatomy of an Annotag</h1>
+<h2 id="ixebzp23"><code>#iXeBz:p23</code></h2>
+<ul>
+<li>First letter connotes the type of bibliographic identifier (ISBN, OCLC, short DOI).</li>
+<li>Following letters contain the identifier, encoded in base-62 for brevity.<br />
+</li>
+<li>Suffix contains a human-readable text location. Here, page 23.</li>
+</ul>
+</section>
+<section id="how-can-i-make-one" class="slide level1">
+<h1>How Can I Make One?</h1>
+<ul>
+<li><a href="http://jonreeve.com/projects/annotags/">Annotag Calculator Web App</a></li>
+<li><a href="http://jonreeve.com/2015/04/a-bookmarklet-for-creating-annotags/">Annotag Bookmarklet</a></li>
+<li>Write your own.</li>
+</ul>
+</section>
+<section id="links" class="slide level1">
+<h1>Links</h1>
+<ul>
+<li>Annotag Calculator: <a href="http://jonreeve.com/projects/annotags/">jonreeve.com/projects/annotags/</a></li>
+<li>These slides: <a href="http://jonreeve.com/presentations/keydh15">jonreeve.com/presentations/keydh15</a></li>
+<li>My email address: <a href="mailto:jon.reeve@gmail.com">jon.reeve@gmail.com</a></li>
+</ul>
+</section>
+    </div>
+  </div>
+
+  <script src="../../assets/js/vendor/reveal.js/lib/js/head.min.js"></script>
+  <script src="../../assets/js/vendor/reveal.js/js/reveal.js"></script>
+
+  <script>
+
+      // Full list of configuration options available at:
+      // https://github.com/hakimel/reveal.js#configuration
+      Reveal.initialize({
+
+        // Optional reveal.js plugins
+        dependencies: [
+          { src: '../../assets/js/vendor/reveal.js/lib/js/classList.js', condition: function() { return !document.body.classList; } },
+          { src: '../../assets/js/vendor/reveal.js/plugin/zoom-js/zoom.js', async: true },
+          { src: '../../assets/js/vendor/reveal.js/plugin/notes/notes.js', async: true }
+        ]
+      });
+    </script>
+    </body>
+</html>
