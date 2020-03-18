@@ -41,7 +41,7 @@ Next, there is a colon, followed by the location code. The location code is made
 ## Examples:
  * Not to be, man. Not to be. Get over it. #Hamlet #G1524:a3s1P24
    - The Gutenberg Ebook for Shakespeare's play Hamlet, Act III, Scene 1, paragraph 24.
- * Septimus's shell shock makes him unusually atune to nature. #Dalloway #i_ZOO:p22
+ * Septimus's shell shock makes him unusually atune to nature. #Dalloway #i\_ZOO:p22
    - The Harcourt Annotated Edition of Virginia Woolf's novel _Mrs. Dalloway_, page 22.
  * What circles does the blackbird mark, exactly? #WallaceStevens #iB8F4h:p94P2
    - The Collected Poems of Wallace Stevens, "Thirteen Ways of Looking at a Blackbird," page 94, second stanza.

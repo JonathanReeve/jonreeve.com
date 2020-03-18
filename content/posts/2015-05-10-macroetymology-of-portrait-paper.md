@@ -9,7 +9,7 @@ tags:
  - modernism
 ---
 
-[This is a preprint of my paper, published in [_Reading Modernism with Machines_](http://www.palgrave.com/us/book/9781137595683#otherversion=9781137595690), by Palgrave Macmillan in December 2016, reposted from the original draft.]
+\[This is a preprint of my paper, published in [_Reading Modernism with Machines_](http://www.palgrave.com/us/book/9781137595683#otherversion=9781137595690), by Palgrave Macmillan in December 2016, reposted from the original draft.\]
 
 The English language is a palimpsest, bearing traces of the languages it
 has contacted. French, Latin, Ancient Greek, and Irish are among the
@@ -64,7 +64,7 @@ safely assume that Joyce had also read and loved this work. In an
 etymological reading of the *Dubliners* story "Ivy Day in the Committee
 Room," Michael Brian argues that Joyce had a such a "detailed and
 profound knowledge" of Skeat's dictionary, and that it had such an
-influence on this story that "one could say [it] is written in Skeatish"
+influence on this story that "one could say \[it\] is written in Skeatish"
 <span class="citation">(220)</span>. Stephen Whittaker takes it as
 obvious that Joyce was intimately familiar with Skeat, to the extent
 that it is more interesting to him whether he worked from the third or
@@ -73,7 +73,7 @@ fourth edition of the dictionary <span class="citation">(178)</span>.
 In *Portrait*, Stephen routinely muses about words, considering their
 sounds, shapes, and beauty. "Suck," Stephen considers "a queer word"
 (8), but "wine" he thinks "a beautiful word" (39). Seeing the word
-"fœtus" carved into a desk "startle[s] his blood," (75) but upon hearing
+"fœtus" carved into a desk "startle\[s\] his blood," (75) but upon hearing
 Cranly say "mulier cantat," he remarks on the "soft beauty of the Latin
 word" (205). It is this logophilia that justifies, in part, the
 following quantitative methodology, even at the risk of
@@ -116,10 +116,10 @@ explaining that "'repaired' wears invisible quotation marks. It would be
 Uncle Charles's own word should he chance to say what he was doing"
 <span class="citation">(17)</span>. Kenner thus dubbed this Joycean
 narrative technique the "The Uncle Charles Principle," which he defines
-by explaining that "[Joyce's] words are in such delicate equilibrium,
+by explaining that "\[Joyce's\] words are in such delicate equilibrium,
 like the components of a sensitive piece of apparatus, that they detect
 the gravitational field of the nearest person" (16). For Kenner, this
-style is primarily observed on the level of the word. “[Joyce] is not,”
+style is primarily observed on the level of the word. “\[Joyce\] is not,”
 he writes, “like Beckett, an Eiffel nor a Calder of the sentence. The
 single word—‘repaired’; ‘salubrius’—is his normal means to his
 characteristic effects” (20). This might be because, as Joyce was aware,
@@ -270,7 +270,7 @@ thus:
 > characteristic of every scene. <span class="citation">(63)</span>
 
 Thomas Connolly calls this form a play between spiritual and corporeal
-forces. "Each [of these forces] nullifies the other," he argues, "and a
+forces. "Each \[of these forces\] nullifies the other," he argues, "and a
 nexus results until the aesthetic perception of the beautiful breaks the
 knot and kinesis yields to stasis" <span class="citation">(22)</span>.
 Diane Fortuna describes these cycles in terms of labyrinth imagery and
@@ -288,7 +288,7 @@ moment during which the illusory is made to appear as immediate and
 valid”; it is “both art and event.” These moments then engender an
 “anti-aesthetic impulse to action” <span
 class="citation">(164–5)</span>. While the epiphany is a “vision” or
-“illusion,” it is followed by an anti-epiphany that “show[s] Stephen to
+“illusion,” it is followed by an anti-epiphany that “show\[s\] Stephen to
 be increasingly involved with the world” (174). Riquelme calls this
 oscillation “a stylistic double helix,” and adds that “Joyce employs the
 two epiphanic modes of stark realism—‘the vulgarity of speech or of
@@ -323,11 +323,11 @@ Dinner," when the argument about Parnell becomes heated. Mr. Casey's
 livid yet comic remark here neatly illustrates the Germanic register
 used in this section: "She stuck her ugly old face up at me when she
 said it and I had my mouth full of tobacco juice. I bent down to her and
-*Phth!* says I to her like that" (30). With the notable exception of
+_Phth!_ says I to her like that" (30). With the notable exception of
 "tobacco," which is ultimately descended from an indigenous Haitian
 language, most of these words are monosyllabic and of Germanic origin.
 The rhythm here is faster, and the tone lighter. There is a certain
-playfulness evident in the onomatopoeia *Phth!*, a kind of neologism
+playfulness evident in the onomatopoeia _Phth!,_ a kind of neologism
 which we shall see is characteristic of Germanic Joyceanisms.
 
 ## Germanic
@@ -715,7 +715,7 @@ Cambridge, UK: Cambridge University Press, 2003. Print.
 O’Hehir, Brendan. *A Classical Lexicon for Finnegans Wake: a Glossary of
 the Greek and Latin in the Major Works of Joyce incl. Finnegans Wake,
 the Poems, Dubliners, Stephen Hero, A Portrait of the Artist as a Young
-Man*. Berkeley [u.a.]: Univ. of California Press, 1977. Print.
+Man*. Berkeley: Univ. of California Press, 1977. Print.
 
 ---. *A Gaelic Lexicon for Finnegans Wake, and Glossary for Joyce’s
 Other Works*. Berkeley: University of California Press, 1967. Print.
@@ -773,7 +773,7 @@ Whittaker, Stephen. “Joyce and Skeat.” *James Joyce Quarterly* 24.2
 
     The pattern of Hellenic words in Figure 5 also closely resembles
     patterns of religious images identified in a 1979 computational
-    study of *Portrait* by John B. Smith **???**. In this study, Smith
+    study of *Portrait* by John B. Smith. In this study, Smith
     counts "images" that belong to certain taxonomies like "fire" and
     "water," and plots them according to their location in the novel.
     The category of "religion" aligns very roughly with the Hellenic

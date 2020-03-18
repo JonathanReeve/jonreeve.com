@@ -80,7 +80,7 @@ Iterative criticism is not meant to replace narrative criticism. Nor is it meant
 
 # Textual Notes
 
-The text of Katherine Mansfield's story presented below is derived from [the GITenberg edition of _The Garden Party and Other Stories_]. The plain text was marked up using the Extensible Markup Language (XML) format of the [Text Encoding Initiative] (TEI). This format, the standard markup language for archival literary projects, is a semantic markup language---unlike markup languages like HTML 4.0, which describe how a text should *look*, i.e. `<i>The Garden Party</i>`, TEI XML describes what the text *is*, i.e. `<title>The Garden Party</title>`. This allows text segments to be selected based on their literary, rather than textual attributes.
+The text of Katherine Mansfield's story presented below is derived from the GITenberg edition of _The Garden Party and Other Stories_. The plain text was marked up using the Extensible Markup Language (XML) format of the [Text Encoding Initiative] (TEI). This format, the standard markup language for archival literary projects, is a semantic markup language---unlike markup languages like HTML 4.0, which describe how a text should *look*, i.e. `<i>The Garden Party</i>`, TEI XML describes what the text *is*, i.e. `<title>The Garden Party</title>`. This allows text segments to be selected based on their literary, rather than textual attributes.
 
 [The TEI text] is transformed to HTML using `xsltproc` and [an XSL stylesheet], and combined with this introductory text, which is transformed from markdown into HTML using `pandoc`. The files are combined using `sed`, and the compilation process automated using [a makefile] written for `GNU make`. [A short jQuery script] handles the interactive tag behavior.
 

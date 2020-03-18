@@ -158,7 +158,7 @@ This style is further intensified with *Bleak House*, which is often
 called the first of Dickens's “dark” novels. Norman Page explains this
 term:
 
->[Dickens] was no longer a young man, recently and happily married, with
+>\[Dickens\] was no longer a young man, recently and happily married, with
 the world at his feet, but was middle-aged, unhappy in his personal
 life, and in deteriorated health. Beyond all this, though, the pessimism
 also seems a reaction to the problems of the age … For this reason the
@@ -178,8 +178,8 @@ say “painted”) in terms of light and darkness. The High Court of
 Chancery, Chesney Wold, and Tom-all-Alone's are dark; Bleak House,
 despite its name, is bright. The fog and darkness of the Court directly
 parallels a psychological darkness in the solicitors. The court itself
-is described as “dim, with wasting candles,” with “fog hang[ing] heavy …
-windows admit[ting] no light of day” (6). Similarly, the members of the
+is described as “dim, with wasting candles,” with “fog hang\[ing\] heavy …
+windows admit\[ting\] no light of day” (6). Similarly, the members of the
 bar are “mistily engaged in one of the ten thousand stages of an endless
 cause.” It is perhaps because of the fog and darkness that they are
 “tripping one another up on slippery precedents” and “groping knee-deep
@@ -306,7 +306,7 @@ narrator reprises the ominous dark imagery in saying that “no light is
 admitted into the darkened chamber” (585), whereas sunlight appears to
 be coming through the window in the illustration. Whereas the candles in
 the illustration are lit, they are extinguished in the text: “He
-[Allegory] is pointing at a table, with a bottle (nearly full of wine)
+\[Allegory\] is pointing at a table, with a bottle (nearly full of wine)
 and a glass upon it, and two candles that were blown out suddenly, soon
 after being lighted.” This image recalls the earlier extinguished
 candle, also associated with Tulkinghorn.
@@ -330,7 +330,7 @@ scene; “Shadow” is dark and ominous. The passage “Light” illustrates is
 taken from the chapter titled “Enlightened,” most likely a reference to
 the scene where Esther learns of Richard and Ada's marriage:
 
->…[Ada] rose, put off her bonnet, kneeled down beside him with her golden
+>…\[Ada\] rose, put off her bonnet, kneeled down beside him with her golden
 hair falling like sunlight on his head … “Esther, dear,” she said very
 quietly, “I am not going home again.”
 
