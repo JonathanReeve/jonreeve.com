@@ -23,17 +23,14 @@ import Path
 import Rib (IsRoute, MMark)
 import qualified Rib
 import qualified Rib.Parser.MMark as MMark
-import qualified Rib.Parser.Pandoc as Pandoc
-
-import Text.Pandoc.Readers.Markdown (readMarkdown)
 
 -- | Route corresponding to each generated static page.
 --
 -- The `a` parameter specifies the data (typically Markdown document) used to
 -- generate the final page text.
 data Route a where
-  Route_Index :: Route [(Route Pandoc.Pandoc, Pandoc.Pandoc)]
-  Route_Article :: Path Rel File -> Route Pandoc.Pandoc
+  Route_Index :: Route [(Route MMark, MMark)]
+  Route_Article :: Path Rel File -> Route MMark
 
 -- | The `IsRoute` instance allows us to determine the target .html path for
 -- each route. This affects what `routeUrl` will return.
@@ -62,10 +59,10 @@ main = Rib.run [reldir|content|] [reldir|dest|] generateSite
 generateSite :: Action ()
 generateSite = do
   -- Copy over the static files
-  Rib.buildStaticFiles [[relfile|assets/**|]
-                      , [relfile|projects/**|]
-                      , [relfile|presentations/**|]
-                        ]
+  Rib.buildStaticFiles [ [relfile|assets/**|]
+                       , [relfile|projects/**|]
+                       , [relfile|presentations/**|]
+                       ]
 
   let writeHtmlRoute :: Route a -> a -> Action ()
       writeHtmlRoute r = Rib.writeRoute r . Lucid.renderText . renderPage r
@@ -73,7 +70,7 @@ generateSite = do
   articles <-
     Rib.forEvery [[relfile|posts/*.md|]] $ \srcPath -> do
       let r = Route_Article srcPath
-      doc <- Pandoc.parse readMarkdown srcPath
+      doc <- MMark.parse srcPath
       writeHtmlRoute r doc
       pure (r, doc)
   writeHtmlRoute Route_Index articles

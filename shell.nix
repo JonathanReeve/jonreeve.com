@@ -24,6 +24,7 @@ let
     clay
     PyF
     ghcid
+    cabal-install
   ]);
 in
 pkgs.mkShell {
