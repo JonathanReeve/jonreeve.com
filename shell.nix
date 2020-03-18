@@ -25,6 +25,7 @@ let
     PyF
     ghcid
     cabal-install
+    with-utf8
   ]);
 in
 pkgs.mkShell {
