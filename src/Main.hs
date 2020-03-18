@@ -19,19 +19,19 @@ import Data.Text (Text)
 import Development.Shake
 import GHC.Generics (Generic)
 import Lucid
-import Path
 import Main.Utf8
-import Rib (IsRoute, MMark)
+import Path
+import Rib (IsRoute, Pandoc)
 import qualified Rib
-import qualified Rib.Parser.MMark as MMark
+import qualified Rib.Parser.Pandoc as Pandoc
 
 -- | Route corresponding to each generated static page.
 --
 -- The `a` parameter specifies the data (typically Markdown document) used to
 -- generate the final page text.
 data Route a where
-  Route_Index :: Route [(Route MMark, MMark)]
-  Route_Article :: Path Rel File -> Route MMark
+  Route_Index :: Route [(Route Pandoc, Pandoc)]
+  Route_Article :: Path Rel File -> Route Pandoc
 
 -- | The `IsRoute` instance allows us to determine the target .html path for
 -- each route. This affects what `routeUrl` will return.
@@ -60,18 +60,18 @@ main = withUtf8 $ Rib.run [reldir|content|] [reldir|dest|] generateSite
 generateSite :: Action ()
 generateSite = do
   -- Copy over the static files
-  Rib.buildStaticFiles [ [relfile|assets/**|]
-                       , [relfile|projects/**|]
-                       , [relfile|presentations/**|]
-                       ]
-
+  Rib.buildStaticFiles
+    [ [relfile|assets/**|],
+      [relfile|projects/**|],
+      [relfile|presentations/**|]
+    ]
   let writeHtmlRoute :: Route a -> a -> Action ()
       writeHtmlRoute r = Rib.writeRoute r . Lucid.renderText . renderPage r
   -- Build individual sources, generating .html for each.
   articles <-
     Rib.forEvery [[relfile|posts/*.md|]] $ \srcPath -> do
       let r = Route_Article srcPath
-      doc <- MMark.parse srcPath
+      doc <- Pandoc.parse Pandoc.readMarkdown srcPath
       writeHtmlRoute r doc
       pure (r, doc)
   writeHtmlRoute Route_Index articles
@@ -96,7 +96,7 @@ renderPage route val = html_ [lang_ "en"] $ do
             renderMarkdown `mapM_` description meta
       Route_Article _ ->
         article_ $
-          MMark.render val
+          Pandoc.render val
   where
     routeTitle :: Html ()
     routeTitle = case route of
@@ -104,7 +104,7 @@ renderPage route val = html_ [lang_ "en"] $ do
       Route_Article _ -> toHtml $ title $ getMeta val
     renderMarkdown :: Text -> Html ()
     renderMarkdown =
-      MMark.render . either (error . T.unpack) id . MMark.parsePure "<none>"
+      Pandoc.render . Pandoc.parsePure Pandoc.readMarkdown
 
 -- | Define your site CSS here
 pageStyle :: Css
@@ -128,9 +128,10 @@ data SrcMeta
   deriving (Show, Eq, Generic, FromJSON)
 
 -- | Get metadata from Markdown's YAML block
-getMeta :: MMark -> SrcMeta
-getMeta src = case MMark.projectYaml src of
+getMeta :: Pandoc -> SrcMeta
+getMeta src = case Pandoc.extractMeta src of
   Nothing -> error "No YAML metadata"
-  Just val -> case fromJSON val of
+  Just (Left e) -> error $ T.unpack e
+  Just (Right val) -> case fromJSON val of
     Aeson.Error e -> error $ "JSON error: " <> e
     Aeson.Success v -> v
