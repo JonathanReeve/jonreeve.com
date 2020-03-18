@@ -105,6 +105,7 @@ renderPage route val = html_ [lang_ "en"] $ do
     title_ routeTitle
     style_ [type_ "text/css"] $ C.render pageStyle
     link_ [rel_ "stylesheet", href_ "assets/css/spectre.min.css"]
+    link_ [rel_ "stylesheet", href_ "https://fonts.googleapis.com/css?family=Montserrat|Raleway"]
   body_ $ do
     div_ [class_ "header"] $ do
       a_ [href_ $ Rib.routeUrl Route_Index] "Back to Home"
@@ -112,7 +113,15 @@ renderPage route val = html_ [lang_ "en"] $ do
       a_ [href_ $ Rib.routeUrl Route_Tags] "Tags"
     h1_ routeTitle
     content
-    footer_ [] ""
+    footer_ [ class_ "container" ] $ do
+      div_ [ class_ "columns" ] $ do
+        div_ [ class_ "column col-8" ] $ do
+          "Here is the coda"
+        div_ [ class_ "column col-4" ] $ do
+          a_ [ href_ "http://github.com/JonathanReeve", class_ "fab fa-github" ] ""
+          a_ [ href_ "http://twitter.com/j0_0n", class_ "fab fa-twitter" ] ""
+          a_ [ href_ "mailto:jonathan@jonreeve.com", class_ "fas fa-envelope" ] ""
+
   where
     routeTitle :: Html ()
     routeTitle = case route of
@@ -137,18 +146,20 @@ renderPage route val = html_ [lang_ "en"] $ do
         article_ $
           Pandoc.render val
 
-
 -- | Define your site CSS here
 pageStyle :: Css
-pageStyle = C.body ? do
-  C.margin (em 4) (pc 20) (em 1) (pc 20)
+pageStyle = do
+  C.html ? do
+    C.fontFamily ["Raleway"] [C.sansSerif]
+  C.body ? do
+    C.margin (em 4) (pc 20) (em 1) (pc 20)
   ".header" ? do
     C.marginBottom $ em 2
   "li.pages" ? do
     C.listStyleType C.none
     C.marginTop $ em 1
-    "b" ? C.fontSize (em 1.2)
-    "p" ? sym C.margin (px 0)
+  "b" ? C.fontSize (em 1.2)
+  "p" ? sym C.margin (px 0)
 
 -- | Metadata in our markdown sources
 data SrcMeta
