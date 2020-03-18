@@ -91,7 +91,7 @@ generateSite = do
       writeHtmlRoute r doc
       pure (r, doc)
   writeHtmlRoute Route_Tags $ groupByTag articles
-  writeHtmlRoute Route_Index articles
+  writeHtmlRoute Route_Index $ reverse articles
   where
     groupByTag as =
       Map.fromListWith (<>) $ flip concatMap as $ \(r, doc) ->
@@ -104,6 +104,7 @@ renderPage route val = html_ [lang_ "en"] $ do
     meta_ [httpEquiv_ "Content-Type", content_ "text/html; charset=utf-8"]
     title_ routeTitle
     style_ [type_ "text/css"] $ C.render pageStyle
+    link_ [rel_ "stylesheet", href_ "assets/css/spectre.min.css"]
   body_ $ do
     div_ [class_ "header"] $ do
       a_ [href_ $ Rib.routeUrl Route_Index] "Back to Home"
@@ -112,7 +113,7 @@ renderPage route val = html_ [lang_ "en"] $ do
     h1_ routeTitle
     case route of
       Route_Index ->
-        div_ $ forM_ val $ \(r, src) ->
+        main_ [class_ "container" ] $ forM_ val $ \(r, src) ->
           li_ [class_ "pages"] $ do
             let meta = getMeta src
             b_ $ a_ [href_ (Rib.routeUrl r)] $ toHtml $ title meta
