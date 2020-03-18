@@ -39,9 +39,18 @@ instance IsRoute Route where
   routeFile = \case
     Route_Index ->
       pure [relfile|index.html|]
-    Route_Article srcPath ->
-      fmap ([reldir|article|] </>) $
-        replaceExtension ".html" srcPath
+    Route_Article srcPath -> do
+      fn <- fmap fst $ splitExtension $ filename srcPath
+      let (year, month, _day, slug) = parseJekyllFilename fn
+      parseRelFile $ year <> "/" <> month <> "/" <> slug <> "/index.html"
+    where
+      parseJekyllFilename :: Path Rel File -> (String, String, String, String)
+      parseJekyllFilename fn =
+        case T.splitOn "-" (T.pack $ toFilePath fn) of
+          y : m : d : rest ->
+            (T.unpack y, T.unpack m, T.unpack d, T.unpack $ T.intercalate "-" rest)
+          _ ->
+            error "Malformed filename"
 
 -- | Main entry point to our generator.
 --
