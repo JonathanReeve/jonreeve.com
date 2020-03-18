@@ -160,6 +160,8 @@ pageStyle = do
     C.marginTop $ em 1
   "b" ? C.fontSize (em 1.2)
   "p" ? sym C.margin (px 0)
+  C.main_ ? do
+    C.fontFamily ["Raleway"] [C.sansSerif]
 
 -- | Metadata in our markdown sources
 data SrcMeta
