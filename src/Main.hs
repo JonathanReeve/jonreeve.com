@@ -6,6 +6,7 @@
 {-# LANGUAGE QuasiQuotes #-}
 {-# LANGUAGE ScopedTypeVariables #-}
 {-# LANGUAGE TemplateHaskell #-}
+{-# LANGUAGE TupleSections #-}
 
 module Main where
 
@@ -14,6 +15,9 @@ import qualified Clay as C
 import Control.Monad
 import Data.Aeson (FromJSON, fromJSON)
 import qualified Data.Aeson as Aeson
+import Data.List (sortOn)
+import Data.Map (Map)
+import qualified Data.Map.Strict as Map
 import qualified Data.Text as T
 import Data.Text (Text)
 import Development.Shake
@@ -31,6 +35,7 @@ import qualified Rib.Parser.Pandoc as Pandoc
 -- generate the final page text.
 data Route a where
   Route_Index :: Route [(Route Pandoc, Pandoc)]
+  Route_Tags :: Route (Map Text [(Route Pandoc, Pandoc)])
   Route_Article :: Path Rel File -> Route Pandoc
 
 -- | The `IsRoute` instance allows us to determine the target .html path for
@@ -39,6 +44,8 @@ instance IsRoute Route where
   routeFile = \case
     Route_Index ->
       pure [relfile|index.html|]
+    Route_Tags ->
+      pure [relfile|tags/index.html|]
     Route_Article srcPath -> do
       fn <- fmap fst $ splitExtension $ filename srcPath
       let (year, month, _day, slug) = parseJekyllFilename fn
@@ -83,7 +90,12 @@ generateSite = do
       doc <- Pandoc.parse Pandoc.readMarkdown srcPath
       writeHtmlRoute r doc
       pure (r, doc)
+  writeHtmlRoute Route_Tags $ groupByTag articles
   writeHtmlRoute Route_Index articles
+  where
+    groupByTag as =
+      Map.fromListWith (<>) $ flip concatMap as $ \(r, doc) ->
+        (,[(r, doc)]) <$> tags (getMeta doc)
 
 -- | Define your site HTML here
 renderPage :: Route a -> a -> Html ()
@@ -93,8 +105,10 @@ renderPage route val = html_ [lang_ "en"] $ do
     title_ routeTitle
     style_ [type_ "text/css"] $ C.render pageStyle
   body_ $ do
-    div_ [class_ "header"] $
-      a_ [href_ "/"] "Back to Home"
+    div_ [class_ "header"] $ do
+      a_ [href_ $ Rib.routeUrl Route_Index] "Back to Home"
+      " | "
+      a_ [href_ $ Rib.routeUrl Route_Tags] "Tags"
     h1_ routeTitle
     case route of
       Route_Index ->
@@ -102,7 +116,13 @@ renderPage route val = html_ [lang_ "en"] $ do
           li_ [class_ "pages"] $ do
             let meta = getMeta src
             b_ $ a_ [href_ (Rib.routeUrl r)] $ toHtml $ title meta
-            renderMarkdown `mapM_` description meta
+      Route_Tags ->
+        div_ $ forM_ (sortOn (T.toLower . fst) $ Map.toList val) $ \(tag, rs) -> do
+          h2_ $ toHtml tag
+          ul_ $ forM_ rs $ \(r, src) -> do
+            li_ [class_ "pages"] $ do
+              let meta = getMeta src
+              b_ $ a_ [href_ (Rib.routeUrl r)] $ toHtml $ title meta
       Route_Article _ ->
         article_ $
           Pandoc.render val
@@ -110,10 +130,8 @@ renderPage route val = html_ [lang_ "en"] $ do
     routeTitle :: Html ()
     routeTitle = case route of
       Route_Index -> "Rib sample site"
+      Route_Tags -> "Tags"
       Route_Article _ -> toHtml $ title $ getMeta val
-    renderMarkdown :: Text -> Html ()
-    renderMarkdown =
-      Pandoc.render . Pandoc.parsePure Pandoc.readMarkdown
 
 -- | Define your site CSS here
 pageStyle :: Css
@@ -131,8 +149,7 @@ pageStyle = C.body ? do
 data SrcMeta
   = SrcMeta
       { title :: Text,
-        -- | Description is optional, hence `Maybe`
-        description :: Maybe Text
+        tags :: [Text]
       }
   deriving (Show, Eq, Generic, FromJSON)
 
