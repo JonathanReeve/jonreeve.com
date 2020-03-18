@@ -111,7 +111,16 @@ renderPage route val = html_ [lang_ "en"] $ do
       " | "
       a_ [href_ $ Rib.routeUrl Route_Tags] "Tags"
     h1_ routeTitle
-    case route of
+    content
+    footer_ [] ""
+  where
+    routeTitle :: Html ()
+    routeTitle = case route of
+      Route_Index -> "Rib sample site"
+      Route_Tags -> "Tags"
+      Route_Article _ -> toHtml $ title $ getMeta val
+    content :: Html ()
+    content = case route of
       Route_Index ->
         main_ [class_ "container" ] $ forM_ val $ \(r, src) ->
           li_ [class_ "pages"] $ do
@@ -127,12 +136,7 @@ renderPage route val = html_ [lang_ "en"] $ do
       Route_Article _ ->
         article_ $
           Pandoc.render val
-  where
-    routeTitle :: Html ()
-    routeTitle = case route of
-      Route_Index -> "Rib sample site"
-      Route_Tags -> "Tags"
-      Route_Article _ -> toHtml $ title $ getMeta val
+
 
 -- | Define your site CSS here
 pageStyle :: Css
