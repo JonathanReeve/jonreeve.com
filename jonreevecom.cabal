@@ -23,4 +23,5 @@ executable jonreevecom
         rib ^>=0.8,
         shake,
         text,
-        with-utf8
+        with-utf8,
+        containers
