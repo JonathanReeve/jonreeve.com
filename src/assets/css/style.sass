@@ -20,6 +20,17 @@ $mediumGray: #333
   @media (min-width: 1200px)
     @content
 
+@media print
+  html
+    font-size: 14px !important
+  nav.btn-group, #main-header, .badges, footer
+    display: none !important
+  .card
+    border: none
+
+  @page
+    margin: 1in
+
 html
   +sm
     font-size: 27px

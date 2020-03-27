@@ -31,20 +31,32 @@ projects:
     start: 2015-09
     description: Open-source, semantically annotated scholarly editions of literary texts. 
     updates:
+      - date: 2020-05
+        type: publication
+        pubType: paper
+        title: "Open Editions Online"
+        venue: "James Joyce Quarterly [forthcoming]"
+      - date: 2020-02
+        type: award
+        description: Second runner-up, Best DH Dataset, [2019 DH Awards](http://dhawards.org/dhawards2019/voting/)
       - date: 2018-01
         type: talk
         title: Open-Source Scholarly Editions of Works by James Joyce
         venue: Montclair State University
       - date: 2017-10
         type: talk
-        title: Contributing to the Open Critical Editions of James Joyce
+        title: The Open Critical Editions of James Joyce
         venue: Joyce in the Digital Age Conference, Columbia U
+
   - title: Corpus-DB
     url: https://github.com/JonathanReeve/corpus-db
     github: JonathanReeve/corpus-db
     start: 2017-03
     description: A database and API for plain text archives, for digital humanities research.
     updates:
+      - date: 2019-01
+        type: award
+        description: Nominated for the 2018 DH Awards
       - date: 2018-01
         type: funding
         description: Grant awarded from NYC-DH (New York City Digital Humanities)
@@ -54,6 +66,19 @@ projects:
       - date: 2017-09
         type: job
         description: Awarded 2017 Columbia University Libraries Digital Centers Internship
+
+  - title: Literary Style Transfer
+    description: Experiments in transfer of literary style, using neural networks
+    notes: "A collaboration with Katy Gero, Chris Kedzie, and Lydia Chilton."
+    start: 2019-05
+    end: 2019-10
+    url: https://arxiv.org/abs/1911.03385
+    updates: 
+      - date: 2019-10
+        type: publication
+        pubType: paper
+        title: "Katy Gero, Chris Kedzie, Jonathan Reeve, and Lydia Chilton. [Low-Level Linguistic Controls for Style Transfer and Content Preservation](https://arxiv.org/abs/1911.03385)"
+        venue: Proceedings of the 12th International Conference on Natural Language Generation. 
 
   - title: Middlemarch Critical Histories
     url: https://github.com/lit-mod-viz/middlemarch-critical-histories
@@ -165,7 +190,7 @@ projects:
         type: publication
         pubType: chapter
         title: "A Macro-Etymological Analysis of James Joyce's _A Portrait of the Artist as a Young Man_"
-        pubVenue: "*Reading Modernism with Machines*, Palgrave Macmillan"
+        venue: "*Reading Modernism with Machines*, Palgrave Macmillan"
       - date: 2014-08
         type: award
         description: "Winner, Association of Digital Humanities Organizations student bursary"
@@ -187,23 +212,6 @@ projects:
         description: "[Released command-line tool on the Python Package Archive](https://pypi.python.org/pypi/text-matcher)"
       - date: 2015-05
         description: "Paper: [\"Modernism, Myth, and their Intertextualities: a Computational Detection of Biblical and Classical Allusion in the English-Language Novel, 1771-1930\"](https://github.com/JonathanReeve/allusion-detection/blob/master/paper/essay.pdf)" 
-
-  - title: Customeka
-    description: A highly customizable theme for the Omeka content management system.
-    start: 2013-01
-    end: 2015-01
-    url: http://github.com/JonathanReeve/theme-customeka
-    github: JonathanReeve/theme-customeka
-    updates: 
-      - date: 2016-08
-        type: publication
-        pubType: tutorial
-        title: "[Installing Omeka](https://programminghistorian.org/en/lessons/installing-omeka)"
-        venue: The Programming Historian
-      - date: 2012-10
-        type: talk
-        title: "Elementaire, a Customizable Omeka Theme"
-        description: "[The Humanities and Technology Camp](http://newyork2012.thatcamp.org/)"
 
 positions:
   - org: "[DHBox](http://dhbox.org), [City University of New York](http://cuny.edu)"
@@ -253,14 +261,20 @@ positions:
       - "Authored six articles for the 2013 reference volume [*The Manifesto in Literature*](http://www.thomasriggs.net/pages/content/index.asp?PageID=158): Richard Stallman's \"The GNU Manifesto,\" John Barlow's \"A Declaration of the Independence of Cyberspace,\" and several others"
 
 teaching:
+  - date: 2018-07 — 2018-08, 2019-07 — 2019-08
+    type: course
+    name: '[Introduction to Computational Literary Analysis](https://github.com/JonathanReeve/course-computational-literary-analysis)'
+    venue: "Digital Humanities Summer Minor Program, U California, Berkeley"
+  - date: 2019-10 – 2019-11
+    type: workshop
+    name: Text Analysis with Python
+    venue: [Foundations for Research Computing](https://rcfoundations.research.columbia.edu/), Columbia U
+    notes: 
+      - "A three-workshop series."
   - date: 2018-09 — 2018-12
     type: course
     name: Literary Texts and Critical Methods
     venue: "Department of English and Comparative Literature, Columbia U"
-  - date: 2018-07 — 2018-08
-    type: course
-    name: '[Introduction to Computational Literary Analysis](https://github.com/JonathanReeve/course-computational-literary-analysis)'
-    venue: "Digital Humanities Summer Minor Program, U California, Berkeley"
   - date: 2018-06
     type: workshop
     name: "Web APIs with Python"
@@ -337,10 +351,10 @@ teaching:
     venue: 'Missouri State U, Branch Campus, Dalian, China'
 
 affiliations:
- - Active member, [Literary Modeling and Visualization Lab](http://xpmethod.plaintext.in/projects/literary-modeling.html), [Group for Experimental Methods in the Humanities](http://xpmethod.github.io/), Columbia U
- - Founding member, [Digital Literary Stylistics Special Interest Group](https://dls.hypotheses.org/), Association of Digital Humanities Organizations
- - Reviewer, [Digital Humanities 2018](https://dh2018.adho.org/en/) conference
- - Reviewer, [_Digital Scholarship in the Humanities_](http://dsh.oxfordjournals.org/) (formerly _Literary and Linguistic Computing_), Oxford UP
- - Reviewer, [_Journal of Data Mining and Digital Humanities_](http://jdmdh.episciences.org/)
- - Editor-At-Large, [Digital Humanities Now](http://digitalhumanitiesnow.org/)
- - "Member of professional organizations: Modern Language Association; Association for Computers in the Humanities; Society for Textual Scholarship; Humanities, Arts, and Sciences Advanced Collaboratory"
+ - (2015 – ) Active member, [Literary Modeling and Visualization Lab](http://xpmethod.plaintext.in/projects/literary-modeling.html), [Group for Experimental Methods in the Humanities](http://xpmethod.github.io/), Columbia U
+ - (2016 – ) Founding member, [Digital Literary Stylistics Special Interest Group](https://dls.hypotheses.org/), Association of Digital Humanities Organizations
+ - (2018 – ) Reviewer, [Digital Humanities](https://dh2018.adho.org/en/) conference
+ - (2015) Reviewer, [_Digital Scholarship in the Humanities_](http://dsh.oxfordjournals.org/) (formerly _Literary and Linguistic Computing_), Oxford UP
+ - (2016) Reviewer, [_Journal of Data Mining and Digital Humanities_](http://jdmdh.episciences.org/)
+ - (2014 – ) Editor-At-Large, [Digital Humanities Now](http://digitalhumanitiesnow.org/)
+ - (2014 – ) "Member of professional organizations: Modern Language Association; Association for Computers in the Humanities; Society for Textual Scholarship; Humanities, Arts, and Sciences Advanced Collaboratory"

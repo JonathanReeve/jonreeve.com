@@ -8,6 +8,7 @@ block content
   #cv.col-12
     section#header
       h1 Curriculum Vitae
+      h2 Jonathan Reeve
       div!= contents
 
     nav.btn-group.btn-group-block
@@ -93,7 +94,7 @@ block content
                   span.chip!= update.pubType
                   span.updateTitle!= '"' + update.title + ',"'
                   em
-                    span.venue!= ', ' + update.venue
+                    span.venue!= update.venue
 
     section#awards
       h2 Awards

@@ -20,7 +20,7 @@
     "metalsmith-markdown-remarkable": "^0.1.2",
     "metalsmith-metadata": "0.0.4",
     "metalsmith-permalinks": "^2.2.0",
-    "metalsmith-sass": "^1.6.0",
+    "metalsmith-sass": "^1.7.0",
     "metalsmith-serve": "0.0.7",
     "metalsmith-tags": "github:JonathanReeve/metalsmith-tags",
     "metalsmith-watch": "^1.0.3",
