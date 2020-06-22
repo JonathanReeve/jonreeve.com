@@ -24,4 +24,5 @@ executable jonreevecom
         shake,
         text,
         with-utf8,
-        containers
+        containers,
+	PyF

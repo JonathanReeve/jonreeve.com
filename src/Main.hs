@@ -125,7 +125,7 @@ renderPage route val = html_ [lang_ "en"] $ do
   where
     routeTitle :: Html ()
     routeTitle = case route of
-      Route_Index -> "Rib sample site"
+      Route_Index -> "Posts"
       Route_Tags -> "Tags"
       Route_Article _ -> toHtml $ title $ getMeta val
     content :: Html ()
