@@ -39,26 +39,25 @@ data Route a where
   Route_Index :: Route [(Route Pandoc, Pandoc)]
   Route_CV :: Route [(Route Pandoc, Pandoc)]
   Route_Tags :: Route (Map Text [(Route Pandoc, Pandoc)])
-  Route_Article :: Path Rel File -> Route Pandoc
+  Route_Article :: FilePath -> Route Pandoc
 
 -- | The `IsRoute` instance allows us to determine the target .html path for
 -- each route. This affects what `routeUrl` will return.
 instance IsRoute Route where
   routeFile = \case
     Route_Index ->
-      pure [relfile|index.html|]
+      pure "index.html"
     Route_Tags ->
-      pure [relfile|tags/index.html|]
+      pure "tags/index.html"
     Route_CV ->
-      pure [relfile|cv.html|]
+      pure "cv.html"
     Route_Article srcPath -> do
-      fn <- fmap fst $ splitExtension $ filename srcPath
-      let (year, month, _day, slug) = parseJekyllFilename fn
-      parseRelFile $ year <> "/" <> month <> "/" <> slug <> "/index.html"
+      let (year, month, _day, slug) = parseJekyllFilename srcPath
+      pure $ year ++ "/" ++ month ++ "/" ++ slug ++ "/index.html"
     where
-      parseJekyllFilename :: Path Rel File -> (String, String, String, String)
+      parseJekyllFilename :: FilePath -> (String, String, String, String)
       parseJekyllFilename fn =
-        case T.splitOn "-" (T.pack $ toFilePath fn) of
+        case T.splitOn "-" (T.pack $ fn) of
           y : m : d : rest ->
             (T.unpack y, T.unpack m, T.unpack d, T.unpack $ T.intercalate "-" rest)
           _ ->
@@ -75,22 +74,21 @@ instance IsRoute Route where
 -- In the shake action you would expect to use the utility functions
 -- provided by Rib to do the actual generation of your static site.
 main :: IO ()
-main = withUtf8 $ Rib.run [reldir|content|] [reldir|dest|] generateSite
+main = withUtf8 $ Rib.run "content" "dest" generateSite
 
 -- | Shake action for generating the static site
 generateSite :: Action ()
 generateSite = do
   -- Copy over the static files
-  Rib.buildStaticFiles
-    [ [relfile|assets/**|],
-      [relfile|projects/**|],
-      [relfile|presentations/**|]
-    ]
+  Rib.buildStaticFiles [ "assets/**"
+                       , "projects/**"
+                       , "presentations/**"
+                       ]
   let writeHtmlRoute :: Route a -> a -> Action ()
       writeHtmlRoute r = Rib.writeRoute r . Lucid.renderText . renderPage r
   -- Build individual sources, generating .html for each.
   articles <-
-    Rib.forEvery [[relfile|posts/*.md|]] $ \srcPath -> do
+    Rib.forEvery ["posts/*.md"] $ \srcPath -> do
       let r = Route_Article srcPath
       doc <- Pandoc.parse Pandoc.readMarkdown srcPath
       writeHtmlRoute r doc

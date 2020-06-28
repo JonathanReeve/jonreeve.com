@@ -27,7 +27,7 @@ executable jonreevecom
         lucid,
         pandoc,
         path,
-        rib ^>=0.8,
+        rib,
         shake,
         text,
         with-utf8,

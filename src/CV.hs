@@ -174,7 +174,7 @@ formatPublication proj = foldMap formatUpdate publicationsOnly where
     publicationsOnly = (filter (getPub) $ updates proj)
     getPub update = case update of
       Update date (Publication kind title url venue) -> True
-      otherwise -> False
+      _ -> False
 
 talksSection :: Html ()
 talksSection = section_ [ class_ "talks" ] $ do
@@ -186,7 +186,7 @@ formatTalks proj = foldMap formatUpdate talksOnly where
   talksOnly = (filter (getTalk) $ updates proj)
   getTalk update = case update of
     Update date (Talk title uri venue) -> True
-    otherwise -> False
+    _ -> False
 
 header :: Html ()
 header = head_ [] $ do
