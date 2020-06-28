@@ -23,6 +23,7 @@ data Teaching = Workshop { dates :: [Date],
 data TeachingRole = Instructor | TA | TAInstructor deriving Show
 
 
+teaching :: [Teaching]
 teaching = [ Course { dateRanges = [DateRange (date 2018 09) (date 2018 12)],
                       courseName = "Literary Texts and Critical Methods",
                       teachingRole = TAInstructor,

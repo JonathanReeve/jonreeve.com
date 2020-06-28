@@ -29,12 +29,15 @@ import Rib (IsRoute, Pandoc)
 import qualified Rib
 import qualified Rib.Parser.Pandoc as Pandoc
 
+import qualified CV
+
 -- | Route corresponding to each generated static page.
 --
 -- The `a` parameter specifies the data (typically Markdown document) used to
 -- generate the final page text.
 data Route a where
   Route_Index :: Route [(Route Pandoc, Pandoc)]
+  Route_CV :: Route [(Route Pandoc, Pandoc)]
   Route_Tags :: Route (Map Text [(Route Pandoc, Pandoc)])
   Route_Article :: Path Rel File -> Route Pandoc
 
@@ -46,6 +49,8 @@ instance IsRoute Route where
       pure [relfile|index.html|]
     Route_Tags ->
       pure [relfile|tags/index.html|]
+    Route_CV ->
+      pure [relfile|cv.html|]
     Route_Article srcPath -> do
       fn <- fmap fst $ splitExtension $ filename srcPath
       let (year, month, _day, slug) = parseJekyllFilename fn
@@ -90,6 +95,7 @@ generateSite = do
       doc <- Pandoc.parse Pandoc.readMarkdown srcPath
       writeHtmlRoute r doc
       pure (r, doc)
+  writeHtmlRoute Route_CV $ articles
   writeHtmlRoute Route_Tags $ groupByTag articles
   writeHtmlRoute Route_Index $ reverse articles
   where
@@ -103,7 +109,7 @@ renderPage route val = html_ [lang_ "en"] $ do
   head_ $ do
     meta_ [httpEquiv_ "Content-Type", content_ "text/html; charset=utf-8"]
     title_ routeTitle
-    style_ [type_ "text/css"] $ C.render pageStyle
+    style_ [type_ "text/css"] $ C.render Main.pageStyle
     link_ [rel_ "stylesheet", href_ "assets/css/spectre.min.css"]
     link_ [rel_ "stylesheet", href_ "https://fonts.googleapis.com/css?family=Montserrat|Raleway"]
   body_ $ do
@@ -111,6 +117,8 @@ renderPage route val = html_ [lang_ "en"] $ do
       a_ [href_ $ Rib.routeUrl Route_Index] "Back to Home"
       " | "
       a_ [href_ $ Rib.routeUrl Route_Tags] "Tags"
+      " | "
+      a_ [href_ $ Rib.routeUrl Route_CV] "CV"
     h1_ routeTitle
     content
     footer_ [ class_ "container" ] $ do
@@ -127,6 +135,7 @@ renderPage route val = html_ [lang_ "en"] $ do
     routeTitle = case route of
       Route_Index -> "Posts"
       Route_Tags -> "Tags"
+      Route_CV -> "CV"
       Route_Article _ -> toHtml $ title $ getMeta val
     content :: Html ()
     content = case route of
@@ -142,6 +151,8 @@ renderPage route val = html_ [lang_ "en"] $ do
             li_ [class_ "pages"] $ do
               let meta = getMeta src
               b_ $ a_ [href_ (Rib.routeUrl r)] $ toHtml $ title meta
+      Route_CV ->
+        main_ [class_ "container" ] $ CV.cv
       Route_Article _ ->
         article_ $
           Pandoc.render val

@@ -18,6 +18,7 @@ data Project = Project {
 
 data ProjectRole = Creator | CoCreator | Developer | Collaborator | ResearchAssistant deriving Show
 
+projects :: [Project]
 projects = [
   Project { title = "Open-Editions",
             role = Creator,
@@ -94,7 +95,7 @@ projects = [
            github = Nothing,
            pypi = Nothing,
            updates = [
-             Update (date 2019 11) $ Publication Article "Installing Omeka"
+             Update (date 2019 11) $ Publication Article "Low-Level Linguistic Controls for Style Transfer and Content Preservation"
                "https://arxiv.org/abs/1911.03385"
                 (Venue "The 12th International Conference on Natural Language Generation" "https://www.inlg2019.com/" "Artificial Intelligence Research Center of Japan")
              ]

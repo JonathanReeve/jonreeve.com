@@ -15,6 +15,7 @@ data Education = Education {
   field :: Text
   } deriving Show
 
+education :: [Education]
 education = [ Education (date 2019 05) (uni "cu") "PhD Candidate" "English and Comparative Literature"
             , Education (date 2019 05) (uni "cu") "Master of Philosophy" "English and Comparative Literature"
             , Education (date 2016 05) (uni "cu") "Master of Arts" "English and Comparative Literature"
@@ -31,6 +32,7 @@ data Position = Position { posDateRange :: DateRange,
                            posUpdates :: [ Update ]
                            } deriving Show
 
+positions :: [Position]
 positions = [
       Position { posDateRange = DateRange (date 2015 11) (date 2017 07),
                  project = "DH Box",
@@ -107,6 +109,7 @@ data Affiliation = Affiliation {affRole :: Text,
                                 dateRanges :: [DateRange]
                                } deriving Show
 
+affiliations :: [Affiliation]
 affiliations = [Affiliation "Active member"
                 (Venue "Literary Modeling and Visualization Lab"
                   "http://xpmethod.plaintext.in/projects/literary-modeling.html"

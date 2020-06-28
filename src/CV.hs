@@ -10,16 +10,12 @@ import CV.Teaching
 import CV.Shared
 import CV.Other
 
-import PyF
 import qualified Data.Text as T
 import qualified Data.Text.Lazy as TL
-import qualified Data.Text.IO as TIO
 import Lucid
 import Clay hiding (title, Position, type_, header, html, filter)
 
-import Rib
 import Rib.Parser.Pandoc
-import Text.Pandoc (readMarkdown)
 
 md2Html :: CV.Shared.Markdown -> Html ()
 md2Html md = Rib.Parser.Pandoc.render $ Rib.Parser.Pandoc.parsePure readMarkdown md
@@ -60,8 +56,8 @@ badges repo = foldMap (\path -> badge path repo)
   ["github/tag/", "github/stars/", "github/issues/", "github/languages/top/"]
 
 badge :: T.Text -> URI -> Html ()
-badge path repo = img_ [src_ url] where
-  url = T.concat ["https://img.shields.io/", path, repo, opts]
+badge path repo = img_ [src_ badgeURL] where
+  badgeURL = T.concat ["https://img.shields.io/", path, repo, opts]
   opts = ".svg?style=flat-square&colorB=494E8E"
 
 -- data Update = Update Date Event deriving Show
@@ -76,21 +72,21 @@ formatEvent event = foldMap (span_ [ class_ "update" ]) $
     News md -> [ toHtml (chip "news")
               , md2Html md
               ]
-    Award award venue -> [ toHtml (chip "award")
-                        , toHtml award
-                        , formatVenue venue
+    Award awardAward awardVenue -> [ toHtml (chip "award")
+                        , toHtml awardAward
+                        , formatVenue awardVenue
                         ]
-    Talk title uri venue -> [ toHtml (chip "talk")
-                           , a_ [ href_ uri ] (toHtml title)
-                           , formatVenue venue
+    Talk talkTitle uri talkVenue -> [ toHtml (chip "talk")
+                           , a_ [ href_ uri ] (toHtml talkTitle)
+                           , formatVenue talkVenue
                            ]
-    Publication pubType title uri venue -> [ toHtml $ chip $ (T.pack . show) pubType
-                                          , a_ [ href_ uri ] (toHtml title)
-                                          , formatVenue venue
+    Publication pubType pubTitle pubURI pubVenue -> [ toHtml $ chip $ (T.pack . show) pubType
+                                          , a_ [ href_ pubURI ] (toHtml pubTitle)
+                                          , formatVenue pubVenue
                                           ]
 
 formatRole :: ProjectRole -> Html ()
-formatRole role = chip $ case role of
+formatRole r = chip $ case r of
   Creator -> "creator"
   CoCreator -> "co-creator"
   Collaborator -> "collaborator"
@@ -103,16 +99,16 @@ teachingSection = section_ [ class_ "teaching" ] $ do
   ul_ [] $ foldMap formatTeaching teaching
 
 chip :: T.Text -> Html ()
-chip text = span_ [ class_ "chip" ] $ toHtml text
+chip chipText = span_ [ class_ "chip" ] $ toHtml chipText
 
 formatTeaching :: Teaching -> Html ()
 formatTeaching teachingItem = li_ [ class_ "teaching" ] $ 
   case teachingItem of
-    Workshop dates name venue url notes -> do
-      span_ [] $ toHtml $ formatDates dates
+    Workshop workshopDates workshopName workshopVenue workshopURL workshopNotes -> do
+      span_ [] $ toHtml $ formatDates workshopDates
       span_ [ class_ "chip" ] "workshop"
-      span_ [] $ strong_ $ a_ [ href_ url ] $ toHtml (T.concat [name, ","])
-      span_ [] $ formatVenue venue
+      span_ [] $ strong_ $ a_ [ href_ workshopURL ] $ toHtml (T.concat [workshopName, ","])
+      span_ [] $ formatVenue workshopVenue
     Course dates name role venue url notes -> do
       span_ [] $ toHtml $ formatDateRanges dates
       span_ [ class_ "chip" ] "course"
@@ -120,9 +116,9 @@ formatTeaching teachingItem = li_ [ class_ "teaching" ] $
       span_ [] $ formatVenue venue
 
 formatVenue :: Venue -> Html ()
-formatVenue (Venue name url loc) = do
-  a_ [ class_ "venue", href_ url ] $ do
-    span_ [ class_ "name" ] $ toHtml name
+formatVenue (Venue venueName venueURL loc) = do
+  a_ [ class_ "venue", href_ venueURL ] $ do
+    span_ [ class_ "name" ] $ toHtml venueName
     span_ [ class_ "location" ] $ toHtml $ T.concat ["(", loc, ")"]
 
 affiliationsSection :: Html ()
@@ -221,6 +217,7 @@ pageStyle = do
   ".update p" ? display inline
   ".desc p" ? display inline
 
+cv :: Html ()
 cv = do
   educationSection
   projectSection
@@ -230,6 +227,7 @@ cv = do
   positionsSection
   affiliationsSection
 
+html :: Html ()
 html =
   html_ [] $ do
     header

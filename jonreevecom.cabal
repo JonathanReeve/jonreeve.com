@@ -14,15 +14,22 @@ executable jonreevecom
         -Wall
         -Wincomplete-record-updates
         -Wincomplete-uni-patterns
+    -- other-modules:
+    --     CV
+    --     CV.Projects
+    --     CV.Shared
+    --     CV.Teaching
+    --     CV.Other
     build-depends:
         base,
         aeson,
         clay,
         lucid,
+        pandoc,
         path,
         rib ^>=0.8,
         shake,
         text,
         with-utf8,
         containers,
-	PyF
+        PyF

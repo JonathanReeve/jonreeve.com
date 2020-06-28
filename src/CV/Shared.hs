@@ -22,17 +22,18 @@ date y m | y < 1981 || y > 2100 = error "You're probably not alive in that year.
          | otherwise = Date y m
 
 formatDate :: Date -> T.Text
-formatDate date = let yy = year date
-                      mm = month date
-                  in [fmt|{yy}-{mm}|]
+formatDate d = let yy = year d
+                   mm = month d
+               in [fmt|{yy}-{mm}|]
 
 formatDates :: [Date] -> T.Text
 formatDates dates = T.intercalate "," $ map formatDate dates
 
 formatDateRange :: DateRange -> T.Text
 formatDateRange dateRange = case dateRange of
-  DateRange (Date sy sm) Present -> [fmt|({startDate}–)|]
-  DateRange (Date sy sm) (Date ey em) -> [fmt|({startDate}–{endDate})|]
+  DateRange (Date _ _) Present -> [fmt|({startDate}–)|]
+  DateRange (Date _ _) (Date _ _) -> [fmt|({startDate}–{endDate})|]
+  DateRange _ _ -> error "Error reading date range."
   where startDate = formatDate $ start dateRange
         endDate = formatDate $ end dateRange
 
@@ -68,6 +69,7 @@ uni abbr = case abbr of "nyu" ->  "New York U"
                         "buffalo" -> "U at Buffalo"
                         "york" -> "York College, City U of New York"
                         "cuny" -> "City U of New York"
+                        _ -> error "Error: unrecognized abbreviation"
 
 data Venue = Venue { name :: T.Text,
                      venueUrl :: URI,
