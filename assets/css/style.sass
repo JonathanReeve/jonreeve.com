@@ -1,0 +1,217 @@
+$blue: #494E8E
+$lightblue: lighten($blue, 10%)
+$darkblue: #002
+$lightgray: #fafafa
+$mediumGray: #333
+
+=sm
+  @media (min-width: 576px)
+    @content
+
+=md
+  @media (min-width: 768px)
+    @content
+
+=lg
+  @media (min-width: 992px)
+    @content
+
+=xl
+  @media (min-width: 1200px)
+    @content
+
+
+html
+  +sm
+    font-size: 27px
+  +md
+    font-size: 25px
+  +lg
+    font-size: 24px
+  +xl
+    font-size: 23px
+
+@media print
+  .header-wrapper, footer, nav.btn-group
+    display: none !important
+  .card
+    border: none
+  .card .badge
+    display: none
+  html
+    font-size: 14px !important
+  @page
+    margin: 1in
+
+body
+  font-family: Raleway
+  background-color: $lightgray
+
+img
+  max-width: 100%
+
+// Base styles of elements
+a, a:visited
+  color: $blue
+  text-decoration: none
+  &:hover
+    color: $lightblue
+
+a[name]
+  padding-top: 4.5em
+  margin-top: -4.5em
+  display: inline-block
+
+span.tag
+  padding: 0.3em
+  background: white
+  border: 1px solid $mediumGray
+  margin-right: 0.5em
+
+ul
+  list-style-position: outside
+  margin-left: 2em
+
+// Figure captions. Old and new styles.
+figure, p.caption
+  text-align: center
+  font-style: italic
+
+.card
+  position: relative
+  margin-bottom: 1em
+
+// Hide header, on landing page, when not docked
+body.posts:not(.has-docked-nav)
+  #main-header
+    display: none
+
+// Header, when docked or shown by default
+body.has-docked-nav, body:not(.posts)
+  #main-header
+    position: fixed
+    top: 0
+    left: 0
+    width: 100%
+    opacity: 0.95
+    z-index: 2
+
+.header-wrapper
+  background: white
+  border-top: 2px solid $blue
+  border-bottom: 2px solid $blue
+  header
+    padding: 0 2rem
+    min-height: 4.4em
+    margin: auto
+    max-width: 65em
+    .navbar-brand
+      .subtitle
+        color: black
+  &#inner-header
+    display: flex
+    width: 100%
+
+main.container
+  // Offset the fixed header
+  margin-top: 3em
+
+.container
+  max-width: 60em
+  padding: 3em
+
+#greeting
+  margin-top: 4em
+  margin-bottom: 2em
+  font-size: 2em
+  .icons
+    display: flex
+    justify-content: space-between
+    span
+      font-size: 4em
+      font-weight: 600
+      font-family: Montserrat
+      padding: 0 5%
+
+#cv
+  nav
+    margin-bottom: 2em
+  section
+    margin-bottom: 2em
+
+section.content
+  margin-top: 2em
+  time
+    margin-bottom: 1em
+
+section#tags
+  li.tag
+    list-style-type: none
+  li.taggedPost
+    margin-left: 2em
+
+section#posts
+  li.post
+    margin: 5em 0
+    list-style-type: none
+    a.post-title
+      font-size: 2em
+    span.post-date
+      min-width: 7em
+      align-self: center
+
+section#post
+  .meta
+    margin-bottom: 1em
+
+#cv
+  span
+    margin-right: 0.25em
+    &.date
+      margin-left: 0
+  // Bugfix: BareCSS has this as inline-block.
+  span.updateTitle > a
+    display: inline
+  .badges
+    position: absolute
+    top: 1em
+    right: 0
+
+// "Normal" layout only has a couple pages: 404.html, etc.
+#normalContents
+  h1
+    text-align: center
+  h1 + p
+    text-align: center
+  img
+    width: 45%
+
+
+footer
+  background-color: $blue
+  color: $lightgray
+  a, a:visited
+    color: white
+  .container
+    margin: auto
+    max-width: 65em
+    display: flex
+    align-items: center
+    padding: 3em
+  .coda
+    a
+      display: inline
+  .icons
+    display: flex
+    a.fab, a.fas, a.far
+      font-size: 3em
+      text-decoration: none
+    +md
+      flex-direction: column
+      align-items: center
+      align-self: auto
+    +lg
+      flex-direction: row
+      align-self: center
+      text-align: right
+      justify-content: space-evenly
