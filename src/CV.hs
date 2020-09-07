@@ -70,8 +70,8 @@ formatEvent :: Event -> Html ()
 formatEvent event = foldMap (span_ [ class_ "update" ]) $
   case event of
     News md -> [ toHtml (chip "news")
-              , md2Html md
-              ]
+               , md2Html md
+               ]
     Award awardAward awardVenue -> [ toHtml (chip "award")
                         , toHtml awardAward
                         , formatVenue awardVenue
@@ -107,25 +107,27 @@ formatTeaching teachingItem = li_ [ class_ "teaching" ] $
     Workshop workshopDates workshopName workshopVenue workshopURL workshopNotes -> do
       span_ [] $ toHtml $ formatDates workshopDates
       span_ [ class_ "chip" ] "workshop"
-      span_ [] $ strong_ $ a_ [ href_ workshopURL ] $ toHtml (T.concat [workshopName, ","])
+      span_ [] $ strong_ $ a_ [ href_ workshopURL ] $ toHtml workshopName
       span_ [] $ formatVenue workshopVenue
     Course dates name role venue url notes -> do
       span_ [] $ toHtml $ formatDateRanges dates
       span_ [ class_ "chip" ] "course"
-      span_ [] $ strong_ $ a_ [ href_ url ] $ toHtml (T.concat [name, ","])
+      span_ [] $ strong_ $ a_ [ href_ url ] $ toHtml name
       span_ [] $ formatVenue venue
 
 formatVenue :: Venue -> Html ()
 formatVenue (Venue venueName venueURL loc) = do
+  ", "
   a_ [ class_ "venue", href_ venueURL ] $ do
     span_ [ class_ "name" ] $ toHtml venueName
-    span_ [ class_ "location" ] $ toHtml $ T.concat ["(", loc, ")"]
+    case loc of
+      "" -> toHtml ""
+      _  -> span_ [ class_ "location" ] $ toHtml $ T.concat [" (", loc, ")"]
 
 affiliationsSection :: Html ()
 affiliationsSection = section_ [ class_ "affiliations" ] $ do
   h1_ [] "Affiliations and Professional Activities"
   ul_ [] $ foldMap formatAffiliation affiliations
-
 
 -- data Affiliation = Affiliation {affRole :: Text,
 --                                 society  :: Venue,
@@ -135,9 +137,10 @@ affiliationsSection = section_ [ class_ "affiliations" ] $ do
 formatAffiliation :: Affiliation -> Html ()
 formatAffiliation (Affiliation role venue ranges) = li_ [ class_ "affiliation" ] $ do
   mapM_ (span_ [])
-    [ toHtml (T.concat [role, ","])
+    [ toHtml (formatDateRanges ranges)
+    , " "
+    , toHtml role
     , formatVenue venue
-    , toHtml (formatDateRanges ranges)
     ]
 
 -- data Position = Position { posDateRange :: DateRange,
@@ -150,8 +153,10 @@ formatAffiliation (Affiliation role venue ranges) = li_ [ class_ "affiliation" ]
 formatPosition :: Position -> Html ()
 formatPosition pos = div_ [ class_ "position", style_ "margin-bottom: 1em"] $ do
                        mapM_ (span_ []) [ toHtml $ formatDateRange (posDateRange pos)
+                                        , " "
                                         , strong_ [] $ toHtml $ org pos
                                         ]
+
                        ul_ [] $ do
                          li_ [] $ do
                            toHtml $ T.concat [posRole pos, ", "]
@@ -183,7 +188,7 @@ talksSection = section_ [ class_ "talks" ] $ do
 
 formatTalks :: Project -> Html ()
 formatTalks proj = foldMap formatUpdate talksOnly where
-  talksOnly = (filter (getTalk) $ updates proj)
+  talksOnly = filter getTalk $ updates proj
   getTalk update = case update of
     Update date (Talk title uri venue) -> True
     _ -> False

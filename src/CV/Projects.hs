@@ -50,7 +50,20 @@ projects = [
             dateRange = DateRange (date 2017 03) Present,
             desc  = "A database and API for plain text archives, for digital humanities research.",
             updates = [
-                Update (date 2018 01) (Award "micro-grant awarded" (Venue "NYC-DH" "https://nycdh.org/" "")),
+              Update (date 2020 08) (Publication Abstract
+                "Corpus-DB: a Scriptable Textual Corpus Database for Cultural Analytics"
+                "https://dh2020.adho.org/wp-content/uploads/2020/07/604_CorpusDBaScriptableTextualCorpusDatabaseforCulturalAnalytics.html"
+                (Venue "Digital Humanities 2020"
+                       "https://dh2020.adho.org/"
+                       "Ottawa, CA")),
+              Update (date 2020 07) (Talk
+                "Corpus-DB: a Scriptable Textual Corpus Database for Cultural Analytics"
+                "https://dh2020.adho.org/wp-content/uploads/2020/07/604_CorpusDBaScriptableTextualCorpusDatabaseforCulturalAnalytics.html"
+                (Venue "Digital Humanities 2020"
+                       "https://dh2020.adho.org/"
+                       "Ottawa, CA")),
+              -- Add CU Libraries talk here?
+              Update (date 2018 01) (Award "micro-grant awarded" (Venue "NYC-DH" "https://nycdh.org/" "")),
                 Update (date 2017 10) (Award "winner"
                   (Venue "2017 NYCDH Graduate Student Project Award"
                    "https://nycdh.org/groups/nycdh-announcements-71439400/forum/topic/2017-nycdh-graduate-student-project-award-recipients/" "")),

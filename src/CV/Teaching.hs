@@ -22,20 +22,30 @@ data Teaching = Workshop { dates :: [Date],
 
 data TeachingRole = Instructor | TA | TAInstructor deriving Show
 
+cuEng :: Venue
+cuEng = Venue "Department of English and Comparative Literature" "https://english.columbia.edu/" (uni "cu")
 
 teaching :: [Teaching]
-teaching = [ Course { dateRanges = [DateRange (date 2018 09) (date 2018 12)],
-                      courseName = "Literary Texts and Critical Methods",
-                      teachingRole = TAInstructor,
-                      url = "",
-                      venue = Venue "Department of English and Comparative Literature" "" (uni "cu"),
-                      notes = Nothing
-                      },
-             Course { dateRanges = [DateRange (date 2018 07) (date 2018 09),
-                                    DateRange (date 2019 07) (date 2019 08)],
+teaching = [ Course { dateRanges = [DateRange (date 2020 09) (date 2020 12)],
                       courseName = "Introduction to Computational Literary Analysis",
                       teachingRole = Instructor,
                       url = "https://github.com/JonathanReeve/course-computational-literary-analysis",
+                      venue = cuEng,
+                      notes = Nothing
+                    },
+             Course { dateRanges = [DateRange (date 2018 09) (date 2018 12)],
+                      courseName = "Literary Texts and Critical Methods",
+                      teachingRole = TAInstructor,
+                      url = "",
+                      venue = cuEng,
+                      notes = Nothing
+                      },
+             Course { dateRanges = [DateRange (date 2018 07) (date 2018 09),
+                                    DateRange (date 2019 07) (date 2019 08),
+                                    DateRange (date 2020 07) (date 2020 08)],
+                      courseName = "Introduction to Computational Literary Analysis",
+                      teachingRole = Instructor,
+                      url = "https://icla2020.jonreeve.com",
                       venue = Venue "Digital Humanities Summer Minor Program" "https://summerdigitalhumanities.berkeley.edu/" (uni "ucb"),
                       notes = Nothing
                       },
@@ -55,7 +65,7 @@ teaching = [ Course { dateRanges = [DateRange (date 2018 09) (date 2018 12)],
                        teachingRole = Instructor,
                        courseName = "University Writing with Readings in the Data Sciences",
                        url = "",
-                       venue = Venue "Department of English and Comparative Literature" "" (uni "cu"),
+                       venue = cuEng,
                        notes = Nothing
                       },
              Workshop { dates = [date 2017 11],
@@ -82,7 +92,7 @@ teaching = [ Course { dateRanges = [DateRange (date 2018 09) (date 2018 12)],
                       },
              Course   { dateRanges = [DateRange (date 2016 09) (date 2016 12)],
                         teachingRole = TAInstructor,
-                        venue = Venue "Department of English and Comparative Literature" "" (uni "cu"),
+                        venue = cuEng,
                         courseName =  "James Joyce",
                         url = "",
                         notes = Just "Led a weekly discussion section in Joyce’s _Ulysses_"
@@ -111,7 +121,7 @@ teaching = [ Course { dateRanges = [DateRange (date 2018 09) (date 2018 12)],
              Course { dateRanges = [ DateRange (date 2016 01) (date 2016 05) ],
                       teachingRole = TA,
                       courseName = "History of the English Language",
-                      venue = Venue "Department of English and Comparative Literature" "" (uni "cu"),
+                      venue = cuEng,
                       url = "",
                       notes = Nothing
                     },

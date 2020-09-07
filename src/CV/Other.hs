@@ -34,6 +34,24 @@ data Position = Position { posDateRange :: DateRange,
 
 positions :: [Position]
 positions = [
+      Position { posDateRange = DateRange (date 2020 03) (date 2020 09),
+                 project = "Digital Art History Directory",
+                 org = "Art Libraries Society of North America",
+                 posRole = "Web Consultant",
+                 posUrl = "",
+                 posUpdates = [ Update (date 2020 09) $ News "Developed a custom [WordPress theme](https://github.com/JonathanReeve/dahd-tainacan-theme) for the [Tainacan](https://tainacan.org/home/) repository framework."
+                              , Update (date 2020 08) $ News "Wrote [software]() to translate between AirTable and Tainacan data interchange formats."
+                              ]
+               },
+      Position { posDateRange = DateRange (date 2019 01) Present,
+                 project = "Modernist Networks",
+                 org = "Center for Textual Studies and Digital Humanities, Loyola U Chicago",
+                 posRole = "Project Manager",
+                 posUrl = "https://modnets.org/",
+                 posUpdates = [ Update (date 2020 01) $ News "Developed TEI-XML, XSLT automation framework for the [Lili Elbe Digital Archive](http://www.lilielbe.org/)"
+                              , Update (date 2020 01) $ News "Developed [RDF/XML parsing](https://github.com/modnetsorg/modnets-scripts/blob/master/mina-loy-parse.hs) scripts for [Mina Loy: Navigating the Avant Garde](https://mina-loy.com/chapters/introduction-digital-loy/)"
+                              ]
+               },
       Position { posDateRange = DateRange (date 2015 11) (date 2017 07),
                  project = "DH Box",
                  org = uni "cuny",
@@ -114,12 +132,12 @@ affiliations = [Affiliation "Active member"
                 (Venue "Literary Modeling and Visualization Lab"
                   "http://xpmethod.plaintext.in/projects/literary-modeling.html"
                   "Group for Experimental Methods in the Humanities, Columbia U")
-                [DateRange (date 2015 05) (Present)],
+                [DateRange (date 2015 05) Present],
 
                 Affiliation "Founding member"
                 (Venue "Digital Literary Stylistics Special Interest Group"
                   "https://dls.hypotheses.org/" "Association of Digital Humanities Organizations")
-                [DateRange (date 2017 05) (Present)],
+                [DateRange (date 2017 05) Present],
 
                 Affiliation "Reviewer"
                 (Venue "Digital Humanities 2018" "https://dh2018.adho.org/en/" "Mexico City")
@@ -141,15 +159,15 @@ affiliations = [Affiliation "Active member"
 
                  Affiliation "Editor-at-Large"
                  (Venue "Digital Humanities Now" "http://digitalhumanitiesnow.org/" "")
-                 [DateRange (date 2014 01) (Present)],
+                 [DateRange (date 2014 01) Present],
 
                  Affiliation "Member"
                  (Venue "Modern Language Association" "https://mla.org" "")
-                 [DateRange (date 2010 01) (Present)],
+                 [DateRange (date 2010 01) Present],
 
                  Affiliation "Member"
                  (Venue "Association for Computers in the Humanities" "https://ach.org" "")
-                 [DateRange (date 2014 01) (Present)],
+                 [DateRange (date 2014 01) Present],
 
                  Affiliation "Member"
                  (Venue "Society for Textual Scolarship" "https://textualsociety.org/" "")
