@@ -35,16 +35,12 @@ projectSection = section_ [ class_ "projects" ] $ do
   foldMap formatProject projects
 
 formatProject :: Project -> Html ()
-formatProject proj = section_ [ class_ "projects" ] $ do
+formatProject proj = section_ [ class_ "project" ] $ do
   h4_ [ style_ "display: inline-block;" ] $
     a_ [ class_ "title", href_ (homepage proj) ] $ toHtml $ title proj
   -- case (github proj) of
   --   Nothing -> toHtml T.empty
-  --   Just gh -> do
-  --     div_ [ class_ "projectLinks" ] $ do
-  --       span_ [] $ a_ [ class_ "github", href_ (T.concat ["https://github.com/", gh]) ] "Source code repository"
-  --       span_ [] $ a_ [ class_ "github", href_ (T.concat ["https://github.com/", gh, "/graphs/contributors"]) ] "Contributors"
-  --       -- badges gh
+  --   Just gh -> p_ $ badges gh
   div_ [ class_ "project-about" ] $ do
     span_ [] $ toHtml $ formatDateRange (dateRange proj)
     span_ [ class_ "role" ] $ formatRole $ role proj
@@ -113,7 +109,15 @@ formatTeaching teachingItem = li_ [ class_ "teaching" ] $
       span_ [] $ toHtml $ formatDateRanges dates
       span_ [ class_ "chip" ] "course"
       span_ [] $ strong_ $ a_ [ href_ url ] $ toHtml name
+      span_ [] ", "
+      formatTeachingRole role
       span_ [] $ formatVenue venue
+
+formatTeachingRole :: TeachingRole -> Html ()
+formatTeachingRole r = span_ $ case r of
+  Instructor -> "instructor"
+  TA -> "teaching assistant"
+  TAInstructor -> "instructor / teaching assistant"
 
 formatVenue :: Venue -> Html ()
 formatVenue (Venue venueName venueURL loc) = do
@@ -176,9 +180,9 @@ publicationsSection = section_ [ class_ "publications" ] $ do
 -- | Get all publications from a project
 formatPublication :: Project -> Html ()
 formatPublication proj = foldMap formatUpdate publicationsOnly where
-    publicationsOnly = (filter (getPub) $ updates proj)
+    publicationsOnly = filter getPub $ updates proj
     getPub update = case update of
-      Update date (Publication kind title url venue) -> True
+      Update _ (Publication _ _ _ _) -> True
       _ -> False
 
 talksSection :: Html ()

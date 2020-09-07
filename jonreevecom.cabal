@@ -14,12 +14,13 @@ executable jonreevecom
         -Wall
         -Wincomplete-record-updates
         -Wincomplete-uni-patterns
-    -- other-modules:
-    --     CV
-    --     CV.Projects
-    --     CV.Shared
-    --     CV.Teaching
-    --     CV.Other
+    other-modules:
+        CSS
+        CV
+        CV.Projects
+        CV.Shared
+        CV.Teaching
+        CV.Other
     build-depends:
         base,
         aeson,
