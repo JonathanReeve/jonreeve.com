@@ -40,6 +40,7 @@ data Route a where
   Route_CV :: Route [(Route Pandoc, Pandoc)]
   Route_Tags :: Route (Map Text [(Route Pandoc, Pandoc)])
   Route_Article :: FilePath -> Route Pandoc
+  Route_Feed :: Route [(Route Pandoc, Pandoc)]
 
 -- | The `IsRoute` instance allows us to determine the target .html path for
 -- each route. This affects what `routeUrl` will return.
@@ -90,14 +91,16 @@ generateSite = do
   -- Build individual sources, generating .html for each.
   articles <-
     Rib.forEvery ["posts/*.md"] $ \srcPath -> do
-      let r = Route_Article srcPath
+      let r = Route_Article $ cleanPath srcPath
       doc <- Pandoc.parse Pandoc.readMarkdown srcPath
       writeHtmlRoute r doc
       pure (r, doc)
   writeHtmlRoute Route_CV articles
   writeHtmlRoute Route_Tags $ groupByTag articles
   writeHtmlRoute Route_Index $ reverse articles
+  writeHtmlRoute Route_Feed articles
   where
+    cleanPath path = (drop 6) (take (length path - 3) path)
     groupByTag as =
       Map.fromListWith (<>) $ flip concatMap as $ \(r, doc) ->
         (,[(r, doc)]) <$> tags (getMeta doc)
@@ -120,8 +123,10 @@ renderPage route val = html_ [lang_ "en"] $ do
             span_ [] "Computational Literary Analysis"
         section_ [class_ "navbar-section"] $ do
           ul_ [class_ "nav"] $ do
-            li_ [class_ "nav-item"] $ a_ [href_ $ Rib.routeUrl Route_Tags] "Tags"
-            li_ [class_ "nav-item"] $ a_ [href_ $ Rib.routeUrl Route_CV] "CV"
+            li_ [class_ "nav_item"] $ a_ [href_ $ Rib.routeUrl Route_Index] "posts"
+            li_ [class_ "nav-item"] $ a_ [href_ $ Rib.routeUrl Route_CV] "cv"
+            li_ [class_ "nav-item"] $ a_ [href_ $ Rib.routeUrl Route_Tags] "tags"
+            li_ [class_ "nav-item"] $ a_ [href_ $ Rib.routeUrl Route_Feed] "feed"
     div_ [class_ "container"] $ do
       content
     footer_ [ ] $ do
@@ -137,19 +142,17 @@ renderPage route val = html_ [lang_ "en"] $ do
                 , async_ T.empty
                 , src_ "//gc.zgo.at/count.js"
                 ] T.empty
-        script_ [ src_ "assets/js/jquery-3.5.1.min.js" ] T.empty
-        script_ [ src_ "assets/js/main.js" ] T.empty
+        script_ [ src_ "/assets/js/jquery-3.5.1.min.js" ] T.empty
+        script_ [ src_ "/assets/js/main.js" ] T.empty
+        script_ [ src_ "https://hypothes.is/embed.js", async_ T.empty ] T.empty
   where
-    iconLink :: T.Text -> T.Text -> Html ()
-    iconLink svg target = a_ [ class_ "icon", href_ target ] $
-      img_ [ src_ (T.concat [ "/assets/images/", svg, "-square.svg" ]) ]
-
     routeTitle :: Html ()
     routeTitle = case route of
       Route_Index -> "Posts"
       Route_Tags -> "Tags"
       Route_CV -> "CV"
       Route_Article _ -> toHtml $ title $ getMeta val
+      Route_Feed -> "Feed"
     content :: Html ()
     content = case route of
       Route_Index -> do
@@ -181,10 +184,22 @@ renderPage route val = html_ [lang_ "en"] $ do
       Route_CV -> do
         h1_ "Curriculum Vitae"
         main_ [class_ "container" ] CV.cv
-      Route_Article _ -> do
+      Route_Article srcPath -> do
         h1_ routeTitle
         article_ $
           Pandoc.render val
+        -- disqus $ T.pack srcPath
+
+disqus :: T.Text -> Html ()
+disqus url = do
+  div_ [id_ "disqus_thread"] $ toHtml T.empty
+  script_ $ T.concat ["var disqus_config = function () { this.page.url='http://jonreeve.com/", url
+                     ,"'; this.page.identifier = '", url
+                     ,"'}; (function() { var d = document, s = d.createElement('script');"
+                     ,"s.src = 'https://jonreeve.disqus.com/embed.js';"
+                     ,"s.setAttribute('data-timestamp', +new Date());"
+                     ,"(d.head || d.body).appendChild(s);})();"
+                     ]
 
 
 -- | Metadata in our markdown sources
