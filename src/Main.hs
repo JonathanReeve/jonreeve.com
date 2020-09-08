@@ -29,6 +29,7 @@ import qualified Rib
 import qualified Rib.Parser.Pandoc as Pandoc
 import PyF
 
+-- My modules
 import qualified CV
 import CSS
 
@@ -99,7 +100,7 @@ generateSite = do
   writeHtmlRoute Route_Index $ reverse articles
   writeHtmlRoute Route_Feed articles
   where
-    cleanPath path = (drop 6) (take (length path - 3) path)
+    cleanPath path = drop 6 (take (length path - 3) path)
     groupByTag as =
       Map.fromListWith (<>) $ flip concatMap as $ \(r, doc) ->
         (,[(r, doc)]) <$> tags (getMeta doc)
@@ -172,6 +173,7 @@ renderPage route val = html_ [lang_ "en"] $ do
               let meta = getMeta src
               h2_ [class_ "postTitle"] $ a_ [href_ (Rib.routeUrl r)] $ toHtml $ title meta
               p_ [class_ "tags"] $ do
+                -- span_ [class_ "date"] r
                 "in "
                 mapM_ (a_ [class_ "chip", href_ ""] . toHtml) (tags meta)
       Route_Tags -> do
@@ -188,6 +190,8 @@ renderPage route val = html_ [lang_ "en"] $ do
         main_ [class_ "container" ] CV.cv
       Route_Article srcPath -> do
         h1_ routeTitle
+        let (y, m, d, _) = parseJekyllFilename srcPath
+        p_ $ [fmt|Posted {y}-{m}-{d}|]
         article_ $
           Pandoc.render val
       Route_Feed -> h1_ "RSS feed in development. Coming soon."

@@ -43,9 +43,6 @@ pageStyle = do
     position fixed
     -- top 0
     -- left 0
-  ".container" ? do
-    maxWidth (em 60)
-    paddingAll (em 3)
   "#headerWrapper" ? do
     backgroundColor white
     borderTop solid (px 2) myBlue
@@ -58,6 +55,9 @@ pageStyle = do
       maxWidth (em 65)
       ".nav" ? do
         flexDirection row
+  ".container" ? do
+    maxWidth (em 60)
+    paddingAll (em 3)
   ".header" ? do
     marginBottom $ em 2
   "li.pages" ? do
@@ -65,7 +65,6 @@ pageStyle = do
     marginTop $ em 1
   h1 <> h2 <> h3 <> h4 ? marginTop (em 1)
   b ? fontSize (em 1.2)
-  p ? sym margin nil
   main_ ? do
     fontFamily ["Raleway"] [sansSerif]
   "a.icon img" ? width (em 3)
