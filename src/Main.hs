@@ -188,19 +188,6 @@ renderPage route val = html_ [lang_ "en"] $ do
         h1_ routeTitle
         article_ $
           Pandoc.render val
-        -- disqus $ T.pack srcPath
-
-disqus :: T.Text -> Html ()
-disqus url = do
-  div_ [id_ "disqus_thread"] $ toHtml T.empty
-  script_ $ T.concat ["var disqus_config = function () { this.page.url='http://jonreeve.com/", url
-                     ,"'; this.page.identifier = '", url
-                     ,"'}; (function() { var d = document, s = d.createElement('script');"
-                     ,"s.src = 'https://jonreeve.disqus.com/embed.js';"
-                     ,"s.setAttribute('data-timestamp', +new Date());"
-                     ,"(d.head || d.body).appendChild(s);})();"
-                     ]
-
 
 -- | Metadata in our markdown sources
 data SrcMeta
