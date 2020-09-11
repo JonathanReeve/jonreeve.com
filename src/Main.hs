@@ -24,14 +24,15 @@ import GHC.Generics (Generic)
 import Lucid
 import Lucid.Base
 import Main.Utf8
-import Rib (IsRoute, Pandoc)
+import Rib (IsRoute)
 import qualified Rib
-import qualified Rib.Parser.Pandoc as Pandoc
+--import qualified Rib.Parser.Pandoc as Pandoc
 import PyF
 
 -- My modules
 import qualified CV
 import CSS
+import Pandoc
 
 -- | Route corresponding to each generated static page.
 --
@@ -105,6 +106,7 @@ generateSite = do
       Map.fromListWith (<>) $ flip concatMap as $ \(r, doc) ->
         (,[(r, doc)]) <$> tags (getMeta doc)
 
+
 -- | Define your site HTML here
 renderPage :: Route a -> a -> Html ()
 renderPage route val = html_ [lang_ "en"] $ do
@@ -172,10 +174,11 @@ renderPage route val = html_ [lang_ "en"] $ do
             li_ [class_ "post" ] $ do
               let meta = getMeta src
               h2_ [class_ "postTitle"] $ a_ [href_ (Rib.routeUrl r)] $ toHtml $ title meta
-              p_ [class_ "tags"] $ do
-                -- span_ [class_ "date"] r
-                "in "
-                mapM_ (a_ [class_ "chip", href_ ""] . toHtml) (tags meta)
+              p_ [class_ "meta"] $ do
+                span_ [class_ "date"] $ toHtml $ T.concat ["(", date meta, ")"]
+                span_ [class_ "tags"] $ do
+                  " in"
+                  mapM_ (a_ [class_ "chip", href_ ""] . toHtml) (tags meta)
       Route_Tags -> do
         h1_ routeTitle
         div_ $ forM_ (sortOn (T.toLower . fst) $ Map.toList val) $ \(tag, rs) -> do
@@ -186,12 +189,13 @@ renderPage route val = html_ [lang_ "en"] $ do
               let meta = getMeta src
               b_ $ a_ [href_ (Rib.routeUrl r)] $ toHtml $ title meta
       Route_CV -> do
-        h1_ "Curriculum Vitae"
-        main_ [class_ "container" ] CV.cv
+        main_ [class_ "container" ] $ do
+          h1_ "Curriculum Vitae"
+          CV.cv
       Route_Article srcPath -> do
         h1_ routeTitle
         let (y, m, d, _) = parseJekyllFilename srcPath
-        p_ $ [fmt|Posted {y}-{m}-{d}|]
+        p_ [fmt|Posted {y}-{m}-{d}|]
         article_ $
           Pandoc.render val
       Route_Feed -> h1_ "RSS feed in development. Coming soon."
@@ -200,6 +204,7 @@ renderPage route val = html_ [lang_ "en"] $ do
 data SrcMeta
   = SrcMeta
       { title :: Text,
+        date :: Text,
         tags :: [Text]
       }
   deriving (Show, Eq, Generic, FromJSON)
