@@ -1,4 +1,5 @@
 ---
+date: 2015-03-15
 layout: post.pug
 title: A Proposal for a Corpus Sharing Protocol
 category: digital humanities

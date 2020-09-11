@@ -1,5 +1,5 @@
 ---
-layout: post.pug
+date: 2015-03-12
 title: "Imperial Voices: Gender and Social Class among Shakespeare's Characters, a Stylometric Approach"
 category: digital humanities
 tags:

@@ -1,4 +1,5 @@
 ---
+date: 2019-02-20
 layout: post.pug
 title: "Workshop Notebook: Advanced Topics in Word Embeddings"
 category: digital humanities

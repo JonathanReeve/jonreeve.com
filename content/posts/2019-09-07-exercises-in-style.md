@@ -1,5 +1,5 @@
---- 
-layout: post.pug
+---
+date: 2019-09-07
 title: 'Isolating Literary Style with Raymond Queneau'
 category: digital humanities
 tags: 

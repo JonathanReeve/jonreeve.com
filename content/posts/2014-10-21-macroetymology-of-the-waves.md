@@ -1,4 +1,5 @@
 ---
+date: 2014-10-21
 layout: post.pug
 title: A Macro-Etymological Analysis of Character Dialog in Virginia Woolf's The Waves
 category: digital humanities

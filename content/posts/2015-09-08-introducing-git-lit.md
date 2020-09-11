@@ -1,5 +1,5 @@
 ---
-layout: post.pug
+date: 2015-09-08
 title: Introducing Git-Lit
 category: digital humanities
 tags:

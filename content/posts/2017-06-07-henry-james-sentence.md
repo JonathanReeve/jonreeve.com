@@ -1,5 +1,5 @@
---- 
-layout: post.pug
+---
+date: 2017-06-07
 title: 'The Henry James Sentence: New Quantitative Approaches'
 category: digital humanities
 tags: 

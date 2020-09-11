@@ -1,5 +1,5 @@
 ---
-layout: post.pug
+date: 2016-02-03
 title: "A Programmatic Generator for Pound's Cantos"
 category: digital humanities
 tags:

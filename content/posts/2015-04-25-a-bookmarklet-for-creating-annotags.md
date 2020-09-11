@@ -1,5 +1,5 @@
 ---
-layout: post.pug
+date: 2015-04-25
 title: A Bookmarklet For Creating Annotags
 category: digital humanities
 tags:

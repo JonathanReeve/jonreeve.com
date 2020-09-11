@@ -1,5 +1,5 @@
 ---
-layout: post.pug
+date: 2015-03-02
 title: 'Detecting Literary Chiaroscuro in Eliot, Dickens, and other Victorian Novelists'
 category: digital humanities
 tags: 

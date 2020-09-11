@@ -1,5 +1,5 @@
 ---
-layout: post.pug
+date: 2018-03-07
 title: Fingerprinting the Chapter
 category: digital humanities
 tags:

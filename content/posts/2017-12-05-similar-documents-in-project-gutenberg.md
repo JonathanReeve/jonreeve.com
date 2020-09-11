@@ -1,5 +1,5 @@
---- 
-layout: post.pug
+---
+date: 2017-12-05
 title: 'Computationally Identifying Similar Books in Project Gutenberg'
 category: digital humanities
 tags: 

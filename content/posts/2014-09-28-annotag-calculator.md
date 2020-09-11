@@ -1,4 +1,5 @@
 ---
+date: 2014-09-28
 layout: post.pug
 title: Annotag Calculator 1.0
 category: digital humanities

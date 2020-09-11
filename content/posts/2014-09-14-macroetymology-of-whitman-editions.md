@@ -1,5 +1,5 @@
 ---
-layout: post.pug
+date: 2014-09-14
 title: ! 'A Comparative Macro-Etymology of Whitman Editions'
 category: digital humanities
 tags: 

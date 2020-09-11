@@ -1,4 +1,5 @@
 ---
+date: 2015-05-10
 title: A Macro-Etymological Analysis of James Joyce's A Portrait of the Artist as a Young Man
 layout: post.pug
 category: digital humanities

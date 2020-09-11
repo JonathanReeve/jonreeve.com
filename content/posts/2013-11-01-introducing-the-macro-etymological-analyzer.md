@@ -1,7 +1,6 @@
 ---
-layout: post.pug
+date: 2013-11-01
 title: Introducing the Macro-Etymological Analyzer
-category: digital humanities
 tags:
  - etymology
  - text analysis

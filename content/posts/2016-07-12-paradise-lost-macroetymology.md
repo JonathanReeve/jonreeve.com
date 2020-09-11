@@ -1,5 +1,5 @@
 ---
-layout: post.pug
+date: 2016-07-12
 title: 'A Macro-Etymological Analysis of Milton’s Paradise Lost'
 category: digital humanities
 tags:

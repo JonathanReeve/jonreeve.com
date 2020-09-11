@@ -1,4 +1,5 @@
---- 
+---
+date: 2017-06-06
 layout: post.pug
 title: A Macro-Etymological Analysis of The Canterbury Tales
 category: digital humanities

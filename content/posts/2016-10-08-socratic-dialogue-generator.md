@@ -1,5 +1,5 @@
 ---
-layout: post.pug
+date: 2016-10-08
 title: 'A Generator of Socratic Dialogues'
 category: digital humanities
 tags:

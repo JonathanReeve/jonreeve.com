@@ -1,5 +1,5 @@
 ---
-layout: post.pug
+date: 2016-01-25
 title: 'Tag, Catalog, Iterate: A Non-Linear Analysis of Katherine Mansfield''s "The Garden Party"'
 category: digital humanities
 tags:

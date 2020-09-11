@@ -1,5 +1,5 @@
 ---
-layout: post.pug
+date: 2013-06-09
 title: ! 'Hacking at the Open Syllabus Project: Collocations by Subject'
 category: digital humanities
 tags:

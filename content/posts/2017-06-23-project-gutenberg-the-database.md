@@ -1,5 +1,5 @@
---- 
-layout: post.pug
+---
+date: 2017-06-23
 title: 'A Project Gutenberg Database for Text Mining'
 category: digital humanities
 tags: 

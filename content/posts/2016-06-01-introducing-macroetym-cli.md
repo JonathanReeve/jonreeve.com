@@ -1,5 +1,5 @@
 ---
-layout: post.pug
+date: 2016-02-01
 title: "Macroetym: a Command-Line Tool for Macro-Etymological Textual Analysis"
 category: digital humanities
 tags:

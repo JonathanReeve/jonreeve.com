@@ -1,5 +1,5 @@
 ---
-layout: post.pug
+date: 2016-08-23
 title: 'Chapterize: a Tool for Automatically Splitting Electronic Texts into Chapters'
 category: digital humanities
 tags:

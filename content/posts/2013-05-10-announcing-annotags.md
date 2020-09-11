@@ -1,5 +1,5 @@
 ---
-layout: post.pug
+date: 2013-05-10
 title: "Announcing Annotags: A Concept for a Decentralized Literary Annotation Protocol"
 category: digital humanities
 tags: 

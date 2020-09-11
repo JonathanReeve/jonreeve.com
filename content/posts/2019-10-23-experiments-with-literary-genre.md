@@ -1,4 +1,5 @@
 ---
+date: 2019-10-23
 title: Adventures in Reproducing 19th Century Digital Humanities Projects
 layout: post.pug
 category: digital humanities

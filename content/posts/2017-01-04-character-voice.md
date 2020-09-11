@@ -1,5 +1,5 @@
 ---
-layout: post.pug
+date: 2017-01-04
 title: Probabilistic Detection of Character Voices in Fiction
 category: digital humanities
 tags:
