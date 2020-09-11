@@ -26,13 +26,38 @@ cuEng :: Venue
 cuEng = Venue "Department of English and Comparative Literature" "https://english.columbia.edu/" (uni "cu")
 
 teaching :: [Teaching]
-teaching = [ Course { dateRanges = [DateRange (date 2020 09) (date 2020 12)],
+teaching = [Course { dateRanges = [DateRange (date 2020 09) (date 2020 12)],
                       courseName = "Introduction to Computational Literary Analysis",
                       teachingRole = Instructor,
                       url = "https://github.com/JonathanReeve/course-computational-literary-analysis",
                       venue = cuEng,
                       notes = Nothing
                     },
+            Course { dateRanges = [DateRange (date 2020 09) (date 2020 12)]
+                   , courseName = "Computing in Context: Computational Linguistics"
+                   , teachingRole = Instructor
+                   , url = "https://scienceandsociety.columbia.edu/content/un1002-computing-context-cannon"
+                   , venue = Venue "Department of Computer Science" "https://www.cs.columbia.edu/" (uni "cu")
+                   , notes = Nothing
+                   },
+            Workshop { dates = [date 2021 06, date 2021 06]
+                     , workshopName = "Meaningful Text Analysis with Word Embeddings"
+                     , url = "https://dhsi.org/course-offerings/"
+                     , venue = Venue "Digital Humanities Summer Institute" "https://dhsi.org" "U Victoria, Canada"
+                     , notes = Nothing
+                     },
+            Workshop { dates = [date 2019 10,  date 2019 10]
+                     , workshopName = "Python User Group sessions: Text Analysis I, II, III"
+                     , url = "" -- TODO
+                     , venue = Venue "Foundations for Research Computing program" "" (uni "cu")
+                     , notes = Nothing
+                     },
+            Workshop { dates = [date 2019 01]
+                     , workshopName = "Advanced Topics in Word Embeddings"
+                     , url = "" -- TODO
+                     , venue = Venue "New York City Digital Humanities (NYCDH) Week" "" (uni "cu")
+                     , notes = Nothing
+                     },
              Course { dateRanges = [DateRange (date 2018 09) (date 2018 12)],
                       courseName = "Literary Texts and Critical Methods",
                       teachingRole = TAInstructor,
