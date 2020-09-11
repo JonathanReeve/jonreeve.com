@@ -67,7 +67,11 @@ pageStyle = do
   b ? fontSize (em 1.2)
   main_ ? do
     fontFamily ["Raleway"] [sansSerif]
-  "a.icon img" ? width (em 3)
+    li ? listStylePosition outside
+  figure ? do
+    textAlign center
+    figcaption ? textAlign center
+    img ? maxWidth (pct 80)
   -- Sometimes markdown processing adds an additional paragraph we have to subsume
   "span.update p" ? display inline
   ".chip" ? margin (rem 0.1) (rem 0.3) (rem 0.1) (rem 0.3)
@@ -75,13 +79,13 @@ pageStyle = do
     backgroundColor myBlue
     color myLightgray
     "a" ? color "#ddddec"
+    "a.icon img" ? width (em 3)
     ".icons" ? do
       color myLightgray
       display flex
       fontSize (em 2)
       flexDirection row
       alignSelf center
-      -- textAlign right
       justifyContent spaceBetween
     ".icons svg" # hover ? do
       fill lightgray
