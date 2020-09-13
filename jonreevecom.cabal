@@ -16,7 +16,6 @@ executable jonreevecom
         -Wincomplete-uni-patterns
     other-modules:
         CSS
-        RSS
         Pandoc
         CV
         CV.Projects
