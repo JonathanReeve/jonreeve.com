@@ -16,7 +16,8 @@ executable jonreevecom
         -Wincomplete-uni-patterns
     other-modules:
         CSS
-
+        RSS
+        Pandoc
         CV
         CV.Projects
         CV.Shared
@@ -27,6 +28,7 @@ executable jonreevecom
         aeson,
         clay,
         filepath,
+        feed,
         lucid,
         mtl,
         pandoc,

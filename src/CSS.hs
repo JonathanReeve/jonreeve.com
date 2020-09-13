@@ -55,8 +55,9 @@ pageStyle = do
       maxWidth (em 65)
       ".nav" ? do
         flexDirection row
+        li ? marginTop nil
   ".container" ? do
-    maxWidth (em 60)
+    maxWidth (em 55)
     paddingAll (em 3)
   ".header" ? do
     marginBottom $ em 2
@@ -80,15 +81,21 @@ pageStyle = do
     color myLightgray
     "a" ? color "#ddddec"
     "a.icon img" ? width (em 3)
+    ".column" ? do
+      display flex
+      justifyContent center
+      alignContent center
+    p ? marginBottom nil
     ".icons" ? do
       color myLightgray
-      display flex
       fontSize (em 2)
-      flexDirection row
+      display flex
       alignSelf center
-      justifyContent spaceBetween
-    ".icons svg" # hover ? do
-      fill lightgray
+      forMedia sm $ flexDirection column
+      forMedia lg $ flexDirection row
+      "svg" # hover ? do
+        opacity 0.8
+
   "section#greeting" ? do
     marginTop (em 4)
     marginBottom (em 2)

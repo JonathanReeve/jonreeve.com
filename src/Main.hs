@@ -1,5 +1,6 @@
 {-# LANGUAGE DeriveAnyClass #-}
 {-# LANGUAGE DeriveGeneric #-}
+{-# LANGUAGE FlexibleContexts #-}
 {-# LANGUAGE GADTs #-}
 {-# LANGUAGE LambdaCase #-}
 {-# LANGUAGE OverloadedStrings #-}
@@ -106,6 +107,9 @@ generateSite = do
       Map.fromListWith (<>) $ flip concatMap as $ \(r, doc) ->
         (,[(r, doc)]) <$> tags (getMeta doc)
 
+stylesheet url = link_ [rel_ "stylesheet", href_ url]
+
+script url = script_ [src_ url, async_ T.empty] T.empty
 
 -- | Define your site HTML here
 renderPage :: Route a -> a -> Html ()
@@ -113,8 +117,12 @@ renderPage route val = html_ [lang_ "en"] $ do
   head_ $ do
     meta_ [httpEquiv_ "Content-Type", content_ "text/html; charset=utf-8"]
     title_ routeTitle
-    link_ [rel_ "stylesheet", href_ "/assets/css/spectre.min.css"]
-    link_ [rel_ "stylesheet", href_ "https://fonts.googleapis.com/css?family=Montserrat|Raleway"]
+    mapM_ stylesheet [ "/assets/css/spectre.min.css"
+                     , "https://fonts.googleapis.com/css?family=Montserrat|Raleway"
+                     , "//cdn.jsdelivr.net/gh/highlightjs/cdn-release@10.2.0/build/styles/default.min.css"
+                     ]
+    link_ [ rel_ "icon", href_ "/images/favicon.svg", sizes_ "any", type_ "image/svg+xml" ]
+    -- <link rel="icon" href="images/favicon.svg" sizes="any" type="image/svg+xml">
     style_ [type_ "text/css"] $ C.render CSS.pageStyle
   body_ $ do
     div_ [id_ "headerWrapper"] $ do
@@ -145,8 +153,11 @@ renderPage route val = html_ [lang_ "en"] $ do
                 , src_ "//gc.zgo.at/count.js"
                 ] T.empty
         script_ [ src_ "/assets/js/jquery-3.5.1.min.js" ] T.empty
-        script_ [ src_ "/assets/js/main.js" ] T.empty
-        script_ [ src_ "https://hypothes.is/embed.js", async_ T.empty ] T.empty
+        mapM_ script [ "/assets/js/main.js"
+                     , "https://hypothes.is/embed.js"
+                     ]
+        script_ [src_ "//cdn.jsdelivr.net/gh/highlightjs/cdn-release@10.2.0/build/highlight.min.js"] T.empty
+        script_ [] ("hljs.initHighlightingOnLoad();" :: Html ())
   where
     navItem :: Route a -> Html () -> Html ()
     navItem navRoute label = li_ [class_ "nav-item"] $ a_ [href_ $ Rib.routeUrl navRoute ] label
