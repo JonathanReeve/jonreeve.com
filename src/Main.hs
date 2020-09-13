@@ -93,7 +93,7 @@ generateSite = do
   let writeHtmlRoute :: Route a -> a -> Action ()
       writeHtmlRoute r = Rib.writeRoute r . Lucid.renderText . renderPage r
       writeXmlRoute :: Route a -> a -> Action ()
-      writeXmlRoute r = Rib.writeRoute r . RSS.renderFeed . mapM_ toPost r . Lucid.renderText
+      writeXmlRoute r = Rib.writeRoute r . RSS.renderFeed . mapM_ toPost r
   -- Build individual sources, generating .html for each.
   articles <-
     Rib.forEvery ["posts/*.md"] $ \srcPath -> do
@@ -106,11 +106,13 @@ generateSite = do
   writeHtmlRoute Route_Index $ reverse articles
   writeXmlRoute Route_Feed articles
   where
-    toPost r doc = RSS.Post (date (getMeta doc)) r doc
     cleanPath path = drop 6 (take (length path - 3) path)
     groupByTag as =
       Map.fromListWith (<>) $ flip concatMap as $ \(r, doc) ->
         (,[(r, doc)]) <$> tags (getMeta doc)
+
+toPost :: Route a -> Pandoc -> Post
+toPost r doc = RSS.Post (date (getMeta doc)) r (Pandoc.render doc)
 
 stylesheet url = link_ [rel_ "stylesheet", href_ url]
 
