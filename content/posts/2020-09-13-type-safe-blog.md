@@ -1,5 +1,5 @@
 ---
-date: 2020-09-03
+date: 2020-09-13
 title: My Type-Safe Blog in Haskell
 tags: 
  - haskell
@@ -24,9 +24,9 @@ projects:
       - date: 2017-10
         type: award
         description: Winner, [2017 NYCDH Graduate Student Project Award](https://nycdh.org/groups/nycdh-announcements-71439400/forum/topic/2017-nycdh-graduate-student-project-award-recipients/) 
----
+```
 
-This was a big step forward for my deduplication problem, since I could now write a template that could extract all `award` types and display those in a different section, without having to maintain those in two different places in the data. There is an *implicit* schema here: every project has a title, a url, and so on. But there was no way to keep this from breaking in an unexpected way, since I just had to remember that my template expects there to be certain fields in the YAML data. 
+This was a big step forward for my deduplication problem, since I could now write a template that could extract all `publication` types and display those in a different section, without having to maintain those in two different places in the data. There is an *implicit* schema here: every project has a title, a url, and so on. But there was no way to keep this from breaking in an unexpected way, since I just had to remember that my template expects there to be certain fields in the YAML data. 
 
 This is where Haskell comes in. Haskell allows me to define algebraic data types, like this: 
 
@@ -96,4 +96,4 @@ And it's all validated at compile time, so when I press save in my text editor, 
 
 All of this I achieve using the wonderful static site generator [Rib](https://github.com/srid/rib), which built on the Haskell build tool [Shake](https://hackage.haskell.org/package/shake). So if there's anything else I need to do, which Rib doesn't provide out of the box, I don't need a plugin for it; I can just write a Shake action.
 
-There's still some complexity left over, though, in that I still have to manage Haskell packages. But with [Nix](https://nixos.org/) this is trivial.
+There's still some complexity left over, though, in that I still have to manage Haskell packages. But with [Nix](https://nixos.org/) that's trivial. Nix is great at making reproducible builds possible.

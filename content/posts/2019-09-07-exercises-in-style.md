@@ -29,7 +29,6 @@ This form revolves around the pronoun "you," which is repeated in nearly every s
 
 The figure below shows a few selected parts of speech, and their proportions in all ninety-nine styles, in the order in which they appear in the text. (Scroll right to see the whole figure.) 
 
-
 <figure id="all" style="overflow-x: scroll; width: 100%;"></figure>
 
 There are a few things of note here. One is that, as Queneau's styles become more specific, and more experimental, the parts of speech become much more erratic. Another is that some parts of speech are much more stable than others. The variance of nouns is nearly four times that of verbs, and eight times that of adverbs, meaning that the proportion of nouns fluctuates wildly, while the proportions of adverbs remains relatively stable. 
@@ -76,9 +75,7 @@ This was a toy analysis in many respects, which I didn't expect would say anythi
 
 [Here's the code used to generate all this.](https://gist.github.com/JonathanReeve/cacf9d874b405b621710a7436425af49)
 
-I'd love to hear your comments below.
-
-
+I'd love to hear your comments in the annotations.
 
 <script src="https://cdn.jsdelivr.net/npm/vega@5"></script>
 <script src="https://cdn.jsdelivr.net/npm/vega-lite@3"></script>

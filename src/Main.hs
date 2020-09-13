@@ -149,13 +149,9 @@ renderPage route val = html_ [lang_ "en"] $ do
               a_ [href_ "http://twitter.com/j0_0n"] twitterIcon
               a_ [href_ "mailto:jonathan@jonreeve.com"] emailIcon
         script_ [ makeAttribute "data-goatcounter" "https://jonreeve.goatcounter.com/count"
-                , async_ T.empty
-                , src_ "//gc.zgo.at/count.js"
-                ] T.empty
+                , async_ T.empty, src_ "//gc.zgo.at/count.js" ] T.empty
         script_ [ src_ "/assets/js/jquery-3.5.1.min.js" ] T.empty
-        mapM_ script [ "/assets/js/main.js"
-                     , "https://hypothes.is/embed.js"
-                     ]
+        script_ [ src_ "/assets/js/main.js" ] T.empty
         script_ [src_ "//cdn.jsdelivr.net/gh/highlightjs/cdn-release@10.2.0/build/highlight.min.js"] T.empty
         script_ [] ("hljs.initHighlightingOnLoad();" :: Html ())
   where
@@ -209,6 +205,7 @@ renderPage route val = html_ [lang_ "en"] $ do
         p_ [fmt|Posted {y}-{m}-{d}|]
         article_ $
           Pandoc.render val
+        script_ [src_ "https://hypothes.is/embed.js" ] T.empty
       Route_Feed -> h1_ "RSS feed in development. Coming soon."
 
 -- | Metadata in our markdown sources
