@@ -18,7 +18,6 @@ Figure 1 shows the average number of chapters, the average text length, and the 
 
 
 ![Figure 1: Chapter statistics by author date of birth](/images/chapters/chap-stats-by-author-dob.png)
-<p class="caption">Figure 1: Chapter statistics by author date of birth</p>
 
 
 Figure 2 shows the average number of chapters per novel, sorted by the novel's Library of Congress subject headings. Subjects with the most number of chapters are on the left, and subjects with the least are on the right. There are a few things of note here:
@@ -31,7 +30,7 @@ Of course, there are many more things that can be said about this chart. Please 
 
 
 ![Figure 2: Average number of chapters by Library of Congress subject heading](/images/chapters/numchaps-by-lcsh.png)
-<p class="caption">Figure 2: Average number of chapters by Library of Congress subject heading</p>
+
 
 
 # Language Patterns of the Chapter
@@ -44,7 +43,6 @@ It seems that the first paragraphs of chapters set the scene: the season, the mo
 
 
 ![Figure 3: Months mentioned in the first paragraphs of chapters](/images/chapters/months.png)
-<p class="caption">Figure 3: Months mentioned in the first paragraphs of chapters</p>
 
 
 Here are the words distinctive of middle paragraphs: 

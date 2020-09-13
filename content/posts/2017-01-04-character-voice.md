@@ -66,16 +66,17 @@ that are more easily manipulable by the predictive step. Prediction
 takes the transformed set of vectors and performs probabilistic
 inference, effectively assigning character voices to each document.
 
-For each of these steps, there are many available techniques and
-parameters. To identify the best-performing ones, I used a
-cross-validation grid search that performs a meta-analysis by testing
-all permutations of these techniques.[<sup>1</sup>](#fn1)
-The grid search tests each configuration against an adjusted Rand score,
-which compares the labeled data with its predicted clusters. This metric
-accounts for chance, so that a score close to zero indicates a parameter
-configuration that performs no better than chance, while a score close
-to 1 is a perfect clustering, identical with the clustering of the
-original labels, although not necessarily labeled identically.
+For each of these steps, there are many available techniques and parameters. To
+identify the best-performing ones, I used a cross-validation grid search that
+performs a meta-analysis by testing all permutations of these techniques.[^1]
+The grid search tests each configuration against an adjusted Rand score, which
+compares the labeled data with its predicted clusters. This metric accounts for
+chance, so that a score close to zero indicates a parameter configuration that
+performs no better than chance, while a score close to 1 is a perfect
+clustering, identical with the clustering of the original labels, although not
+necessarily labeled identically.
+
+[^1]: A full list of techniques and parameters tested may be found in the project repository, in [the grid search notebooks for The Waves](https://github.com/JonathanReeve/character-attribution/blob/master/waves/waves-grid-search-meta.ipynb) and [for Clarissa](https://github.com/JonathanReeve/character-attribution/blob/master/clarissa/clarissa-grid-search.ipynb). 
 
 To test the efficacy of voice detection, I started with two TEI XML
 texts, distant from each other in time and genre: Virginia Woolf's
@@ -115,13 +116,8 @@ the female characters in the lower left.
 
 
 ![Figure 1A: The Waves, Labeled](/images/character-voice/waves-e2-labeled.png)
-<p class="caption">Figure 1A: The Waves, Labeled</p>
-
-
 
 ![Figure 1B: The Waves, Predicted](/images/character-voice/waves-e2-final.png)
-<figcaption class="caption">Figure 1B: The Waves, Predicted</span>
-
 
 The probabilistic model used for clustering assumes that the
 dimension-reduced, TF-IDF-weighted word frequencies can be modeled with
@@ -136,7 +132,9 @@ Bernard's utterances, three out of four of Louis's, two out of three of
 Neville's, Rhoda's, and Susan's, but misidentifies Jinny's. After twenty
 trials with this configuration, the mean adjusted Rand score was 0.443,
 with a standard deviation of 0.076—performing much better than chance,
-although with room for improvement[<sup>2</sup>](#fn2). 
+although with room for improvement.[^2]
+
+[^2]: The code used for this analysis, written in the Python programming language and using the Scikit-Learn machine learning library, is available at [this project's GitHub repository](https://github.com/JonathanReeve/character-attribution/blob/master/clarissa/clarissa-grid-search.ipynb).
 
 Clarissa
 ========
@@ -185,13 +183,8 @@ addressee.
 
 
 ![Figure 2A: Clarissa, Labeled](/images/character-voice/clarissa-e2-labeled.png)
-<p class="caption">Figure 2A: Clarissa, Labeled</p>
-
-
 
 ![Figure 2B: Clarissa, Final](/images/character-voice/clarissa-e2-final.png)
-<p class="caption">Figure 2B: Clarissa, Final</p>
-
 
 The adjusted Rand score for this clustering is a slightly lower 0.357,
 faring much better than chance, but still worse than *The Waves*.
@@ -207,26 +200,23 @@ likely function words). But what if other properties of the words, such
 as their meanings, were taken into account? First, I tried transforming
 documents into 300-dimensional vector representations using the GloVe
 algorithm in the SpaCy natural language processing Python
-library[<sup>3</sup>](#fn3). The best configuration for
-this representation, using documents from the top four characters,
-reducing the dimensions to 5 with PCA, and performing inference with a
-Gaussian mixture model with four components, showed a mean adjusted Rand
-score of 0.192, with a standard deviation of 0.023 after twenty trials.
-Figure 3B shows the results of that
-experiment. Here, the probabilistic inference manages to separate, at
-the 0.0 longitudinal line, protagonists from antagonists, and male from
-female characters, grouping Anna and Clarissa together, and Lovelace and
-Belford. It does not seem to be able to distinguish between those
-individual characters, however.
+library.[^3] 
+
+[^3]: See Pennington, Socher, and Manning (2014) for more on GloVe, and Turian, Ratinov, and Bengio (2010) for more on word vector embeddings in general.
+
+The best configuration for this representation, using documents from the top
+four characters, reducing the dimensions to 5 with PCA, and performing inference
+with a Gaussian mixture model with four components, showed a mean adjusted Rand
+score of 0.192, with a standard deviation of 0.023 after twenty trials. Figure
+3B shows the results of that experiment. Here, the probabilistic inference
+manages to separate, at the 0.0 longitudinal line, protagonists from
+antagonists, and male from female characters, grouping Anna and Clarissa
+together, and Lovelace and Belford. It does not seem to be able to distinguish
+between those individual characters, however.
 
 ![Figure 3A: Clarissa Vectors, Labeled](/images/character-voice/clarissa-vec1-labeled.png)
-<p class="caption">Figure 3A: Clarissa Vectors, Labeled</p>
-
-
 
 ![Figure 3B: Clarissa Vectors, Predicted](/images/character-voice/clarissa-vec1-final.png)
-<p class="caption">Figure 3B: Clarissa Vectors, Predicted</p>
-
 
 I attempted other vectorizations, as well, without much success. A
 representation of a document as a vector of parts of speech frequencies
@@ -271,6 +261,7 @@ reveal hidden affinities among characters, as well, or stylistic changes
 in a character's voice correlated with his or her addressee(s).
 
 # Note
+
 This paper is also available [as a PDF at the project’s GitHub repository](https://github.com/JonathanReeve/character-attribution/blob/master/paper/character-voice.pdf). 
 
 References
@@ -297,32 +288,3 @@ Representations: A Simple and General Method for Semi-Supervised
 Learning.” In *Proceedings of the 48th Annual Meeting of the Association
 for Computational Linguistics*, 384–94. Association for Computational
 Linguistics. <http://dl.acm.org/citation.cfm?id=1858721>.
-
-<hr>
-
-1.  <div id="fn1">
-
-    </div>
-
-    A full list of techniques and parameters tested may be found in the
-    project repository, in [the grid search notebooks for The
-    Waves](https://github.com/JonathanReeve/character-attribution/blob/master/waves/waves-grid-search-meta.ipynb)
-    and [for
-    Clarissa](https://github.com/JonathanReeve/character-attribution/blob/master/clarissa/clarissa-grid-search.ipynb). 
-
-2.  <div id="fn2">
-
-    </div>
-
-    The code used for this analysis, written in the Python programming
-    language and using the Scikit-Learn machine learning library, is
-    available at [this project's GitHub
-    repository](https://github.com/JonathanReeve/character-attribution/blob/master/clarissa/clarissa-grid-search.ipynb).
-
-3.  <div id="fn3">
-
-    </div>
-
-    See Pennington, Socher, and Manning (2014) for more on
-    GloVe, and Turian, Ratinov, and Bengio (2010) for more
-    on word vector embeddings in general.

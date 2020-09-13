@@ -192,12 +192,10 @@ or non-fiction.
 
 
 ![Figure 1: Brown Corpus: Latinate Words](/images/portrait-chapter/brown-lat.png)
-<p class="caption">Figure 1</p>
 
 
 
 ![Figure 2: Brown Corpus: Hellenic Words](/images/portrait-chapter/brown-hel.png)
-<p class="caption">Figure 2</p>
 
 
 Among proportions of Hellenic words, as shown in Figure 2, the picture
@@ -237,10 +235,7 @@ chapters 1, 2, and 3, which would seem to correlate with the maturation
 of Stephen's thought and speech. The L score plateaus or drops in
 chapters 4 and 5, however. How might this be interpreted?
 
-
 ![Figure 3: Chapters, L Scores](/images/portrait-chapter/portrait-2g-w-lat.png)
-<p class="caption">Figure 3</p>
-
 
 To answer this question, it is necessary to conduct a more granular
 analysis. Figure 4 shows the text is divided into sections based on John
@@ -253,10 +248,7 @@ longest and only five-section chapter, the highest L scores for each
 chapter come in the first section. The final sections of each chapter
 are among the lowest in L scores.
 
-
 ![Figure 4: Sections, L Scores](/images/portrait-chapter/sections-latinate.png)
-<p class="caption">Figure 4</p> 
-
 
 Seen broadly, there is a pattern here suggestive of a what Riquelme
 calls a "structural rhythm"—a repeating sawtooth shape. A number of
@@ -435,7 +427,6 @@ therefore, that an aesthetic treatise of the kind Stephen presents in
 higher proportion of words of Hellenic origin.
 
 ![Figure 5: Sections, H Scores](/images/portrait-chapter/sections-hellenic.png)
-<p class="caption">Figure 5</p>
 
 Figure 5 shows that those two sections have, respectively, the first and
 third highest H scores of any section. Father Arnall's sermon in section

@@ -36,22 +36,3 @@ Here’s how it works. Figure 1 shows a graphical model that represents the prob
 ![Figure 1](/images/socratic-dialogue-generator/socrates-gm.png)
 
 The Socratic dialogue generator should work with any Platonic dialogue in the Perseus library. Just specify the filename, the two characters you want to have talk to each other, and how many lines of dialogue you want to generate. 
-
-#How to Run The Program on DHBox
-If you’d rather not install iPython, LXML, and the NLTK on your computer, here’s how to run the Socratic dialogue generator in a demonstration DHBox session. 
-
-1. Go to http://dhbox.org/ and click “Start Hour-Long Demo.” 
-
-2. Click “Command Line” and log in with `demonstration` and the password `demonstration`
-
-3. Get the NLTK for Python 3 by running `sudo pip3 install nltk`
-
-4. Get Punkt tokenizer data by running `sudo python -m nltk.downloader punkt -d /root/nltk_data`
-
-4. Get a copy of the Socrates Dialogue Generator by typing `git clone https://github.com/JonathanReeve/plato-analysis`
-
-5. Click the “Jupyter Notebooks” tab and enter the password `demonstration`
-
-6. Open the folder called `demonstration`, then the folder called `plato-analysis`, and finally open the notebook called `plato-characters-Markov.ipynb`. 
-
-7. From the “Kernel” menu, select “Restart and Run All.” This will generate new Socratic dialogues. 

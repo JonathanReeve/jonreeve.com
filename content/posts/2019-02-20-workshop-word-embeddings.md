@@ -1,6 +1,5 @@
 ---
 date: 2019-02-20
-layout: post.pug
 title: "Workshop Notebook: Advanced Topics in Word Embeddings"
 category: digital humanities
 tags:
@@ -9,7 +8,6 @@ tags:
  - word embeddings
  - tutorials
  - Austen
-
 ---
 
 [This notebook](https://github.com/JonathanReeve/workshop-word-embeddings/blob/master/workshop-word-embeddings.ipynb) originally accompanied a workshop I gave at NYCDH Week, in February of 2019, called "Advanced Topics in Word Embeddings." (In truth, it's only somewhat advanced. With a little background in NLP, this could even serve as an introduction to the subject.) You can [run the code in a Binder, here](https://mybinder.org/v2/gh/JonathanReeve/workshop-word-embeddings/master). 
@@ -342,7 +340,7 @@ testWords = 'symphony itchy flower crash'.split()
 pd.DataFrame([whichSense(w) for w in testWords], index=testWords).plot(kind='bar')
 ```
 
-![png](/images/word-embeddings/output_52_1.png)
+![Pride and Prejudice Nouns](/images/word-embeddings/output_52_1.png)
 
 It looks like it correctly guesses that _symphony_ correlates with _sound_, and also does so with _crash_, but its guesses for _itchy_ (_smell_) and for _flower_ (_touch_) are less intuitive.
 
@@ -440,7 +438,7 @@ for i in range(len(xs)):
     plt.annotate(inauguralLabels[i], (xs[i], ys[i]))
 ```
 
-![png](/images/word-embeddings/output_67_0.png)
+![Presidential Inaugural Address Vectors](/images/word-embeddings/output_67_0.png)
 
 # Detective Novels
 
@@ -510,7 +508,7 @@ for i in range(len(xs)):
     plt.annotate((detectiveLabels + extraWords)[i], (xs[i], ys[i]))
 ```
 
-![png](/images/word-embeddings/output_79_0.png)
+![Detective Novel Vectors](/images/word-embeddings/output_79_0.png)
 
 If you read the summaries of some of these novels on Wikipedia, this isn't terrible. To check, let's just see how often these words occur in the novels. 
 
@@ -527,4 +525,4 @@ for i, doc in enumerate(detectiveDocs):
 pd.DataFrame(counts).T.plot(kind='bar')
 ```
 
-![png](/images/word-embeddings/output_82_1.png)
+![Weapons By Novel](/images/word-embeddings/output_82_1.png)

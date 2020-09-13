@@ -118,7 +118,9 @@ languages, macro-etym also ignores affixes by default. Rather than parse
 a word like "automobile" as, say, 40% Greek (-*auto*) and 60% Latin
 (-*mobile*), it just considers these prefixes, like stopwords, to be
 background functions of the language, and incidental to the etymological
-resonance of the word, which in this case would be labeled as Latin.[<sup>1</sup>](#fn1)
+resonance of the word, which in this case would be labeled as Latin.[^1]
+
+[^1]: The code for this algorithm is available in the notebook [chaucer-macro-etym](https://github.com/JonathanReeve/chaucer-macro-etym/blob/master/canterbury-macro-etym.ipynb) on the project GitHub repository.
 
 If a given word is not found in the Etymological Wordnet, macro-etym will
 attempt a custom lemmatization of the word according to morphological
@@ -130,7 +132,9 @@ Skeat's 1888 *A Concise Dictionary of Middle English*. If not found
 there, it will finally search for the word in an experimental tertiary
 wordnet of 38,074 words, awkwardly assembled by parsing the irregular
 etymological strings from a plain-text edition of the Oxford English
-Dictionary.[<sup>2</sup>](#fn2)
+Dictionary.[^2]
+
+[^2]: The code that parses these dictionaries may be found in the notebooks [parse-CMED](https://github.com/JonathanReeve/chaucer-macro-etym/blob/master/parse-CMED.ipynb) and [parse-oed](https://github.com/JonathanReeve/chaucer-macro-etym/blob/master/parse-oed.ipynb) notebooks, respectively.
 
 Once a word is found in one of the three wordnets, it is then
 categorized according to language family, the biggest categories being
@@ -147,8 +151,6 @@ Prologues and Tales
 
 
 ![Figure 1: Language Families, by All Prologues and Tales](/images/chaucer/families.png)
-<p class="caption">Figure 1: Language Families, by All Prologues and Tales</p>
-
 
 Figure 1 shows the proportions of Latinate, Germanic, Hellenic, and
 Semitic language families, organized by tale. Immediately noticeable
@@ -165,7 +167,7 @@ be focusing primarily on Latinate words here.
 
 
 ![Figure 2: Latinate Words, All Prologues and Tales](/images/chaucer/latinate-by-tale.png)
-<p class="caption">Figure 2: Latinate Words, All Prologues and Tales</p>
+
 
 
 Figure 2 shows the proportions of Latinate words per tale, subdivided
@@ -340,10 +342,7 @@ Monk's cast of characters (VIII.3957).
 Macro-Etymology of the Individual Prologue/Tale
 -----------------------------------------------
 
-
 ![Figure 3: Prologues and Tales](/images/chaucer/latinate-by-chunks8.png)
-<p class="caption">Figure 3: Mean Latinate Proportions of All Prologues and Tales</p>
-
 
 So far we have discussed the macro-etymologies of tales and prologues,
 but what might we discover about the macro-etymologies of the various
@@ -411,9 +410,3 @@ Tracing the History of Words.” In *Proceedings of the 9th Language
 Resources and Evaluation Conference (LREC 2014)*. Paris, France: ELRA.
 
 Mersand, Joseph E. 1939. *Chaucer's Romance Vocabulary*. New York: Comet Press.
-
-# Notes
-
-1. <span id="fn1"/> The code for this algorithm is available in the notebook [chaucer-macro-etym](https://github.com/JonathanReeve/chaucer-macro-etym/blob/master/canterbury-macro-etym.ipynb) on the project GitHub repository.
-
-2. <span id="fn2"/> The code that parses these dictionaries may be found in the notebooks [parse-CMED](https://github.com/JonathanReeve/chaucer-macro-etym/blob/master/parse-CMED.ipynb) and [parse-oed](https://github.com/JonathanReeve/chaucer-macro-etym/blob/master/parse-oed.ipynb) notebooks, respectively.
