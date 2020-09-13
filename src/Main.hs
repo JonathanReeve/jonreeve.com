@@ -93,7 +93,7 @@ generateSite = do
   let writeHtmlRoute :: Route a -> a -> Action ()
       writeHtmlRoute r = Rib.writeRoute r . Lucid.renderText . renderPage r
       writeXmlRoute :: Route a -> a -> Action ()
-      writeXmlRoute r = Rib.writeRoute r . RSS.renderFeed . mapM_ toPost r
+      writeXmlRoute r = Rib.writeRoute r . RSS.renderFeed . mapM_ toPost r . Lucid.renderText
   -- Build individual sources, generating .html for each.
   articles <-
     Rib.forEvery ["posts/*.md"] $ \srcPath -> do
