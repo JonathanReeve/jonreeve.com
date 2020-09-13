@@ -20,6 +20,7 @@ import Data.Map (Map)
 import Data.Maybe (fromJust)
 import qualified Data.Map.Strict as Map
 import qualified Data.Text as T
+import qualified Data.Text.Lazy as LT
 import Data.Text (Text)
 import Development.Shake
 import GHC.Generics (Generic)
@@ -93,7 +94,7 @@ generateSite = do
   let writeHtmlRoute :: Route a -> a -> Action ()
       writeHtmlRoute r = Rib.writeRoute r . Lucid.renderText . renderPage r
       writeXmlRoute :: Route a -> a -> Action ()
-      writeXmlRoute r = Rib.writeRoute r . RSS.renderFeed . mapM_ toPost r
+      writeXmlRoute r = Rib.writeRoute r . RSS.renderFeed . toPosts r
   -- Build individual sources, generating .html for each.
   articles <-
     Rib.forEvery ["posts/*.md"] $ \srcPath -> do
@@ -111,8 +112,13 @@ generateSite = do
       Map.fromListWith (<>) $ flip concatMap as $ \(r, doc) ->
         (,[(r, doc)]) <$> tags (getMeta doc)
 
+toPosts :: Route a -> Pandoc -> [Post]
+toPosts r doc = [toPost r doc]
+
 toPost :: Route a -> Pandoc -> Post
-toPost r doc = RSS.Post (date (getMeta doc)) r (Pandoc.render doc)
+toPost r doc = RSS.Post (date (getMeta doc)) (Rib.routeUrl r) $ pandocToText doc
+
+pandocToText = LT.toStrict . Lucid.renderText . Pandoc.render
 
 stylesheet url = link_ [rel_ "stylesheet", href_ url]
 
