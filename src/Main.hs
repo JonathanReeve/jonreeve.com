@@ -17,6 +17,7 @@ import Data.Aeson (FromJSON, fromJSON)
 import qualified Data.Aeson as Aeson
 import Data.List (sortOn)
 import Data.Map (Map)
+import Data.Maybe (fromJust)
 import qualified Data.Map.Strict as Map
 import qualified Data.Text as T
 import Data.Text (Text)
@@ -33,6 +34,7 @@ import PyF
 -- My modules
 import qualified CV
 import CSS
+import RSS
 import Pandoc
 
 -- | Route corresponding to each generated static page.
@@ -90,6 +92,8 @@ generateSite = do
                        ]
   let writeHtmlRoute :: Route a -> a -> Action ()
       writeHtmlRoute r = Rib.writeRoute r . Lucid.renderText . renderPage r
+      writeXmlRoute :: Route a -> a -> Action ()
+      writeXmlRoute r = Rib.writeRoute r . RSS.renderFeed . mapM_ toPost r
   -- Build individual sources, generating .html for each.
   articles <-
     Rib.forEvery ["posts/*.md"] $ \srcPath -> do
@@ -100,8 +104,9 @@ generateSite = do
   writeHtmlRoute Route_CV articles
   writeHtmlRoute Route_Tags $ groupByTag articles
   writeHtmlRoute Route_Index $ reverse articles
-  writeHtmlRoute Route_Feed articles
+  writeXmlRoute Route_Feed articles
   where
+    toPost r doc = RSS.Post (date (getMeta doc)) r doc
     cleanPath path = drop 6 (take (length path - 3) path)
     groupByTag as =
       Map.fromListWith (<>) $ flip concatMap as $ \(r, doc) ->
@@ -184,12 +189,13 @@ renderPage route val = html_ [lang_ "en"] $ do
           section_ [id_ "postList"] $ do
             li_ [class_ "post" ] $ do
               let meta = getMeta src
-              h2_ [class_ "postTitle"] $ a_ [href_ (Rib.routeUrl r)] $ toHtml $ title meta
-              p_ [class_ "meta"] $ do
-                span_ [class_ "date"] $ toHtml $ T.concat ["(", date meta, ")"]
-                span_ [class_ "tags"] $ do
-                  " in"
-                  mapM_ (a_ [class_ "chip", href_ ""] . toHtml) (tags meta)
+              div_ [vocab_ "https://schema.org", typeof_ "blogPosting"] $ do
+                h2_ [class_ "postTitle", property_ "headline"] $ a_ [href_ (Rib.routeUrl r)] $ toHtml $ title meta
+                p_ [class_ "meta"] $ do
+                  span_ [class_ "date", property_ "datePublished", content_ (date meta)] $ toHtml $ T.concat ["(", date meta, ")"]
+                  span_ [class_ "tags", property_ "keywords", content_ (T.intercalate "," (tags meta))] $ do
+                    " in"
+                    mapM_ (a_ [class_ "chip", rel_ "tag", href_ ""] . toHtml) (tags meta)
       Route_Tags -> do
         h1_ routeTitle
         div_ $ forM_ (sortOn (T.toLower . fst) $ Map.toList val) $ \(tag, rs) -> do
@@ -249,7 +255,10 @@ coda = [fmt|I believe in openness. This work is licensed under a [Creative
             Libera Pay](https://liberapay.com/JonathanReeve/donate) or Bitcoin:
             3Qvm1DwzFGk3L1Eb6yeg5Nbc6db8sZUnbK.|]
 
-
+-- Schema.org RDFa
+vocab_ = makeAttribute "vocab"
+typeof_ = makeAttribute "typeof"
+property_ = makeAttribute "property"
 
 path_ :: Applicative m => [Attribute] -> HtmlT m ()
 path_ = with (makeElementNoEnd "path")

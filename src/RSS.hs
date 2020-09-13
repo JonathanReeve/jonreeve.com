@@ -1,20 +1,21 @@
-module RSS
-  ( -- atomFeed
-  ) where
+{-# LANGUAGE OverloadedStrings #-}
+module RSS where
 
 import Prelude hiding (take)
- 
+
 import qualified Text.Atom.Feed as Atom
 import qualified Text.Atom.Feed.Export as Export
--- import Text.RSS.Utils
 
 import Data.Text
 import Data.Text.Lazy (toStrict)
--- import Text.XML
+import Text.XML
+import Data.XML.Types as XML
+import Text.XML as C
+
 
 atomFeed :: Maybe Text
 atomFeed = renderFeed examplePosts
- 
+
 data Post = Post
   { _postedOn :: Text
   , _url :: Text
@@ -55,3 +56,7 @@ renderFeed posts =
   Export.xmlFeed $
   (feed posts)
     {Atom.feedEntries = fmap toEntry posts, Atom.feedLinks = [Atom.nullLink "http://example.com/"]}
+ 
+elementToDoc :: XML.Element -> Maybe C.Document
+elementToDoc el =
+  either (const Nothing) Just $ fromXMLDocument $ XML.Document (Prologue [] Nothing []) el []
