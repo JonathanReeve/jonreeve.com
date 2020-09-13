@@ -1,0 +1,14 @@
+
+* Jonreeve.com
+
+This is my personal website, [[http://jonreeve.com]]
+
+** Technical Details
+
+This uses the wonderful static site generator [[https://github.com/srid/rib/][Rib]], along with other Haskell tools.
+
+** Running
+
+```
+nix-shell --run 'ghcid -WT ":main -wS"'
+```
