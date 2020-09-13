@@ -1,5 +1,5 @@
 <html lang="en"><head><meta content="text/html; charset=utf-8" http-equiv="Content-Type"><title>Adventures in Reproducing 19th Century Digital Humanities Projects
-</title><link href="/assets/css/spectre.min.css" rel="stylesheet"><link href="https://fonts.googleapis.com/css?family=Montserrat|Raleway" rel="stylesheet"><style type="text/css">
+</title><link href="/assets/css/spectre.min.css" rel="stylesheet"><link href="https://fonts.googleapis.com/css?family=Montserrat|Raleway" rel="stylesheet"><link href="//cdn.jsdelivr.net/gh/highlightjs/cdn-release@10.2.0/build/styles/default.min.css" rel="stylesheet"><link href="/images/favicon.svg" type="image/svg+xml" rel="icon" sizes="any"><style type="text/css">
 
 @media screen and (min-width: 1200px)
 {
@@ -46,12 +46,6 @@ body.has-docked-nav #main-header
   position : fixed;
 }
 
-.container
-{
-  max-width : 60em;
-  padding   : 3em 3em 3em 3em;
-}
-
 #headerWrapper
 {
   background-color : #ffffff;
@@ -71,6 +65,17 @@ body.has-docked-nav #main-header
 #headerWrapper header .nav
 {
   flex-direction : row;
+}
+
+#headerWrapper header .nav li
+{
+  margin-top : 0;
+}
+
+.container
+{
+  max-width : 55em;
+  padding   : 3em 3em 3em 3em;
 }
 
 .header
@@ -97,19 +102,29 @@ b
   font-size : 1.19999em;
 }
 
-p
-{
-  margin : 0 0 0 0;
-}
-
 main
 {
   font-family : "Raleway", sans-serif;
 }
 
-a.icon img
+main li
 {
-  width : 3em;
+  list-style-position : outside;
+}
+
+figure
+{
+  text-align : center;
+}
+
+figure figcaption
+{
+  text-align : center;
+}
+
+figure img
+{
+  max-width : 80%;
 }
 
 span.update p
@@ -133,21 +148,52 @@ footer a
   color : #ddddec;
 }
 
+footer a.icon img
+{
+  width : 3em;
+}
+
+footer .column
+{
+  display         : flex;
+  justify-content : center;
+  align-content   : center;
+}
+
+footer p
+{
+  margin-bottom : 0;
+}
+
 footer .icons
 {
-  color           : #fafafa;
-  display         : flex;
-  font-size       : 2em;
-  flex-direction  : row;
-  align-self      : center;
-  justify-content : space-between;
+  color      : #fafafa;
+  font-size  : 2em;
+  display    : flex;
+  align-self : center;
 }
 
 footer .icons svg:hover
 {
-  fill : #d3d3d3;
+  opacity : 0.8;
 }
 
+@media screen and (min-width: 576px)
+{
+footer .icons
+{
+  flex-direction : column;
+}
+
+}
+@media screen and (min-width: 992px)
+{
+footer .icons
+{
+  flex-direction : row;
+}
+
+}
 section#greeting
 {
   margin-top    : 4em;
@@ -183,12 +229,16 @@ section#postList .postTitle
 
 
 /* Generated with Clay, http://fvisser.nl/clay */</style></head><body><div id="headerWrapper"><header class="navbar"><section class="navbar-section"><a href="/" class="navbar-brand">Jonathan Reeve: <span>Computational Literary Analysis</span></a></section><section class="navbar-section"><ul class="nav"><li class="nav-item"><a href="/">posts</a></li><li class="nav-item"><a href="/cv.html">cv</a></li><li class="nav-item"><a href="/tags/">tags</a></li><li class="nav-item"><a href="/feed.xml">feed</a></li></ul></section></header></div><div class="container"><h1>Adventures in Reproducing 19th Century Digital Humanities Projects
-</h1><article><p>In 1887, <a href="https://en.wikipedia.org/wiki/Thomas_Corwin_Mendenhall">Thomas Mendenhall</a>, a self-taught physicist, published an article in <em>Science</em> called <a href="https://archive.org/details/jstor-1764604/page/n1">“The Characteristic Curve of Composition,”</a> in which he studies mathematical properties of sentences written by fiction writers of the day. As an early work of quantitative literary analysis which preexisted the field of digital humanities by many decades, I like to think of it as nonetheless a “digital” study in the literal sense, even if Mendenhall was counting on his fingers instead of using a computer. Of course, what would have been a laborious process for Mendenhall and, presumably, his assistants—counting the number of words in each sentence in a novel—is now just a matter of a few lines of code. So during <a href="http://xpmethod.plaintext.in/events/digital-lit-studies-net.html">a hackathon at the Literary Modeling and Visualization Lab</a>, I decided to try to implement his algorithm.</p>
+</h1><p>Posted 2019-10-23</p><article><p>In 1887, <a href="https://en.wikipedia.org/wiki/Thomas_Corwin_Mendenhall">Thomas Mendenhall</a>, a self-taught physicist, published an article in <em>Science</em> called <a href="https://archive.org/details/jstor-1764604/page/n1">“The Characteristic Curve of Composition,”</a> in which he studies mathematical properties of sentences written by fiction writers of the day. As an early work of quantitative literary analysis which preexisted the field of digital humanities by many decades, I like to think of it as nonetheless a “digital” study in the literal sense, even if Mendenhall was counting on his fingers instead of using a computer. Of course, what would have been a laborious process for Mendenhall and, presumably, his assistants—counting the number of words in each sentence in a novel—is now just a matter of a few lines of code. So during <a href="http://xpmethod.plaintext.in/events/digital-lit-studies-net.html">a hackathon at the Literary Modeling and Visualization Lab</a>, I decided to try to implement his algorithm.</p>
 <p>Using primarily novels of Charles Dickens, Mendenhall counts the number of words per sentence, in chunks of a thousand words each, and plots their distribution in a histogram that looks like this:</p>
-<p><img src="/images/mendenhall/mendenhall.png" alt="The “characteristic curve” of Oliver Twist" /></p>
+<figure>
+<img src="/images/mendenhall/mendenhall.png" alt="" /><figcaption>The “characteristic curve” of <em>Oliver Twist</em></figcaption>
+</figure>
 <p>According to Mendenhall, this is Dickens’s “characteristic curve,” that is, his stylistic signature, as expressed in the distribution of sentence lengths. The X axis here represents the number of words in a sentence, and the Y represents the number of sentences in that category. He shows that for other novels, this curve is roughly the same as in these samples from <em>Oliver Twist</em>. The curves of other writers, however, are somewhat different. Nonfiction, like John Stuart Mill’s <em>Essay on Liberty</em>, is the most different, and other fiction is only slightly different.</p>
 <p>During the hackathon, we decided to compare two genres of literary text: gothic novels and epistolary novels. Since <a href="http://corpus-db.org">Corpus-DB</a> allows for easy corpus generation from genre (via Library of Congress subject headings), I was able to quickly throw together a corpus of about eight gothic novels and ten epistolary novels. From there, I used SpaCy to compute the distribution of sentence lengths, and group them by genre. This is the result, the “characteristic curve” of these two corpora:</p>
-<p><img src="/images/mendenhall/genres.png" alt="Average sentence lengths, per genre" /></p>
+<figure>
+<img src="/images/mendenhall/genres.png" alt="" /><figcaption>Average sentence lengths, per genre</figcaption>
+</figure>
 <p>I should’ve used a bar chart here, since this is a histogram with discrete values, but in an effort to be faithful to Mendenhall’s method, I kept it as a line chart. I find it interesting that these two lines are so different from each other. The epistolary novels in this corpus have many more shorter sentences. I attribute this to formal features of the letter, like “Dear Sir,” and “Sincerely.” But then gothic novels have more longer sentences, that is, among sentences longer than twenty words.</p>
 <p>Since these lines are so different, it seemed like this might be a good feature to use for a categorizer, which could guess the genre based on the sentence lengths of the novel. After scripting a quick function that compares the differences between all the categories in the histograms, I tried this, but only achieved an accuracy of 66%, so only slightly better than chance. Since some novels are both gothic <em>and</em> epistolary (<em>Dracula</em> comes to mind), I can see how this wouldn’t be an easy guess to make. Still, it’s something.</p>
 <p>What other historical literary studies algorithms should I try to implement? Let me know in the comments below.</p>
@@ -227,4 +277,4 @@ section#postList .postTitle
 25.894-14.503.218-35.367-18.227-45.883-25.895zM384 217.775V360c0 13.255-10.745
 24-24 24H88c-13.255 0-24-10.745-24-24V217.775c13.958 10.794 33.329 25.236 95.303
 70.214 14.162 10.341 37.975 32.145 64.694 32.01 26.887.134 51.037-22.041
-64.72-32.025 61.958-44.965 81.325-59.406 95.283-70.199z"></svg></a></div></div></div><script async data-goatcounter="https://jonreeve.goatcounter.com/count" src="//gc.zgo.at/count.js"></script><script src="/assets/js/jquery-3.5.1.min.js"></script><script src="/assets/js/main.js"></script><script async src="https://hypothes.is/embed.js"></script></div></footer></body></html>
+64.72-32.025 61.958-44.965 81.325-59.406 95.283-70.199z"></svg></a></div></div></div><script async data-goatcounter="https://jonreeve.goatcounter.com/count" src="//gc.zgo.at/count.js"></script><script src="/assets/js/jquery-3.5.1.min.js"></script><script async src="/assets/js/main.js"></script><script async src="https://hypothes.is/embed.js"></script><script src="//cdn.jsdelivr.net/gh/highlightjs/cdn-release@10.2.0/build/highlight.min.js"></script><script>hljs.initHighlightingOnLoad();</script></div></footer></body></html>

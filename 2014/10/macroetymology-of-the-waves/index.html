@@ -1,6 +1,6 @@
 <html lang="en"><head><meta content="text/html; charset=utf-8" http-equiv="Content-Type"><title>A Macro-Etymological Analysis of Character Dialog in Virginia Woolf’s
 The Waves
-</title><link href="/assets/css/spectre.min.css" rel="stylesheet"><link href="https://fonts.googleapis.com/css?family=Montserrat|Raleway" rel="stylesheet"><style type="text/css">
+</title><link href="/assets/css/spectre.min.css" rel="stylesheet"><link href="https://fonts.googleapis.com/css?family=Montserrat|Raleway" rel="stylesheet"><link href="//cdn.jsdelivr.net/gh/highlightjs/cdn-release@10.2.0/build/styles/default.min.css" rel="stylesheet"><link href="/images/favicon.svg" type="image/svg+xml" rel="icon" sizes="any"><style type="text/css">
 
 @media screen and (min-width: 1200px)
 {
@@ -47,12 +47,6 @@ body.has-docked-nav #main-header
   position : fixed;
 }
 
-.container
-{
-  max-width : 60em;
-  padding   : 3em 3em 3em 3em;
-}
-
 #headerWrapper
 {
   background-color : #ffffff;
@@ -72,6 +66,17 @@ body.has-docked-nav #main-header
 #headerWrapper header .nav
 {
   flex-direction : row;
+}
+
+#headerWrapper header .nav li
+{
+  margin-top : 0;
+}
+
+.container
+{
+  max-width : 55em;
+  padding   : 3em 3em 3em 3em;
 }
 
 .header
@@ -98,19 +103,29 @@ b
   font-size : 1.19999em;
 }
 
-p
-{
-  margin : 0 0 0 0;
-}
-
 main
 {
   font-family : "Raleway", sans-serif;
 }
 
-a.icon img
+main li
 {
-  width : 3em;
+  list-style-position : outside;
+}
+
+figure
+{
+  text-align : center;
+}
+
+figure figcaption
+{
+  text-align : center;
+}
+
+figure img
+{
+  max-width : 80%;
 }
 
 span.update p
@@ -134,21 +149,52 @@ footer a
   color : #ddddec;
 }
 
+footer a.icon img
+{
+  width : 3em;
+}
+
+footer .column
+{
+  display         : flex;
+  justify-content : center;
+  align-content   : center;
+}
+
+footer p
+{
+  margin-bottom : 0;
+}
+
 footer .icons
 {
-  color           : #fafafa;
-  display         : flex;
-  font-size       : 2em;
-  flex-direction  : row;
-  align-self      : center;
-  justify-content : space-between;
+  color      : #fafafa;
+  font-size  : 2em;
+  display    : flex;
+  align-self : center;
 }
 
 footer .icons svg:hover
 {
-  fill : #d3d3d3;
+  opacity : 0.8;
 }
 
+@media screen and (min-width: 576px)
+{
+footer .icons
+{
+  flex-direction : column;
+}
+
+}
+@media screen and (min-width: 992px)
+{
+footer .icons
+{
+  flex-direction : row;
+}
+
+}
 section#greeting
 {
   margin-top    : 4em;
@@ -185,13 +231,15 @@ section#postList .postTitle
 
 /* Generated with Clay, http://fvisser.nl/clay */</style></head><body><div id="headerWrapper"><header class="navbar"><section class="navbar-section"><a href="/" class="navbar-brand">Jonathan Reeve: <span>Computational Literary Analysis</span></a></section><section class="navbar-section"><ul class="nav"><li class="nav-item"><a href="/">posts</a></li><li class="nav-item"><a href="/cv.html">cv</a></li><li class="nav-item"><a href="/tags/">tags</a></li><li class="nav-item"><a href="/feed.xml">feed</a></li></ul></section></header></div><div class="container"><h1>A Macro-Etymological Analysis of Character Dialog in Virginia Woolf’s
 The Waves
-</h1><article><p>Virginia Woolf’s experimental novel <em>The Waves</em> is structured as a series of dialogues and monologues by six characters. Some of these speeches are as short as a line, but most are between a few paragraphs and a chapter in length. Their extremely regular structure takes this form:</p>
+</h1><p>Posted 2014-10-21</p><article><p>Virginia Woolf’s experimental novel <em>The Waves</em> is structured as a series of dialogues and monologues by six characters. Some of these speeches are as short as a line, but most are between a few paragraphs and a chapter in length. Their extremely regular structure takes this form:</p>
 <blockquote>
 <p>‘I see a ring,’ said Bernard, ‘hanging above me. It quivers and hangs in a loop of light.’ (Woolf 9)</p>
 </blockquote>
 <p>There is a short phrase, an attribution with the word “said,” and a continuation of the speech–this is true of all the speech in the novel. This regularity makes this novel an unusually good subject for computational study, since the text can so easily be extracted—see Stephen Ramsay’s tf/idf experiment, and <a href="http://cforster.com/2013/02/reading-the-waves-with-stephen-ramsay/">Chris Forster’s subsequent blog post</a>, wherein he suggests a possible regular expression to capture dialogue. Additionally, the fact that there are three male characters and three female characters make this an interesting study for the investigation of gendered speech, at least as it appears in Woolf.</p>
 <p>For this experiment, text files containing each of the characters’ total speech were fed through the Macro-Etymological Analyzer. As the figure below shows, the macro-etymologies of the characters’ speech are distinct, and separate by gender, with the male characters showing the highest proportions of Latinate words, and the female characters showing the lowest.</p>
-<p><img src="/images/macro-etym/waves-with-screen.png" alt="The Waves by Narrator" /></p>
+<figure>
+<img src="/images/macro-etym/waves-with-screen.png" alt="" /><figcaption>The Waves by Narrator</figcaption>
+</figure>
 <p>Bernard and Neville are the two university-educated characters, and the ones with the highest proportions of Latinate words. Bernard identifies with Shakespeare and is, according to Fogel, “a clear surrogate for Virginia Woolf herself” (157, quoted in Hussey, 25). Neville “anticipates becoming a classical scholar, exploring the writing of Virgil, Lucretius and Catallus” (Hussey 181-2). Early in the novel, Neville imagines entering the library where he “shall explore the exactitude of the Latin language” (31). That exactitude is invoked by Bernard later–during one of his conversations with Neville, he praises him thus:</p>
 <blockquote>
 <p>you wish to be a poet; and you wish to be a lover. But the splendid clarity of your intelligence, and the remorseless honesty of your intellect (these Latin words I owe you; these qualities of yours make me shift a little uneasily and see the faded patches, the thin strands in my own equipment) bring you to a halt. (85)</p>
@@ -201,7 +249,7 @@ The Waves
 <p>In Woolf’s “A Room of One’s Own,” she imagines a female Shakespeare, Shakespeare’s sister Judith. Woolf argues that Judith Shakespeare couldn’t have written her brother William’s works, not from lack of talent, but from lack of opportunities–“rooms of one’s own” for Elizabethan women writers during this period. “She had no chance of learning grammar and logic,” Woolf contends, “let alone of reading Horace and Virgil. She picked up a book now and then, one of her brother’s perhaps, and read a few pages. But then her parents came in and told her to mend the stockings or mind the stew and not moon about with books and papers” (47). Therefore, one imagines that Judith Shakespeare, like the female characters in <em>The Waves</em>, would have used fewer Latinate words than her male counterparts.</p>
 <h2 id="works-cited">Works Cited</h2>
 <p>Hussey, Mark. <em>Virginia Woolf A to Z</em>. New York: Facts on File, 1995. Print.</p>
-<p>Ramsay, Stephen. “Algorithmic Criticism.” <em>A Companion to Digital Literary Studies</em>. Oxford: Blackwell, 2008. Web. <a href="http://www.digitalhumanities.org/companion" class="uri">http://www.digitalhumanities.org/companion</a></p>
+<p>Ramsay, Stephen. “Algorithmic Criticism.” <em>A Companion to Digital Literary Studies</em>. Oxford: Blackwell, 2008. Web. http://www.digitalhumanities.org/companion</p>
 <p>Woolf, Virginia. <em>A Room of One’s One</em>. New York: Harcourt, 1929. Print.</p>
 <p>—. <em>The Waves</em>. New York: Harcourt, 1931. Print.</p>
 <h2 id="note">Note</h2>
@@ -240,4 +288,4 @@ The Waves
 25.894-14.503.218-35.367-18.227-45.883-25.895zM384 217.775V360c0 13.255-10.745
 24-24 24H88c-13.255 0-24-10.745-24-24V217.775c13.958 10.794 33.329 25.236 95.303
 70.214 14.162 10.341 37.975 32.145 64.694 32.01 26.887.134 51.037-22.041
-64.72-32.025 61.958-44.965 81.325-59.406 95.283-70.199z"></svg></a></div></div></div><script async data-goatcounter="https://jonreeve.goatcounter.com/count" src="//gc.zgo.at/count.js"></script><script src="/assets/js/jquery-3.5.1.min.js"></script><script src="/assets/js/main.js"></script><script async src="https://hypothes.is/embed.js"></script></div></footer></body></html>
+64.72-32.025 61.958-44.965 81.325-59.406 95.283-70.199z"></svg></a></div></div></div><script async data-goatcounter="https://jonreeve.goatcounter.com/count" src="//gc.zgo.at/count.js"></script><script src="/assets/js/jquery-3.5.1.min.js"></script><script async src="/assets/js/main.js"></script><script async src="https://hypothes.is/embed.js"></script><script src="//cdn.jsdelivr.net/gh/highlightjs/cdn-release@10.2.0/build/highlight.min.js"></script><script>hljs.initHighlightingOnLoad();</script></div></footer></body></html>

@@ -1,5 +1,5 @@
 <html lang="en"><head><meta content="text/html; charset=utf-8" http-equiv="Content-Type"><title>Macroetym: a Command-Line Tool for Macro-Etymological Textual Analysis
-</title><link href="/assets/css/spectre.min.css" rel="stylesheet"><link href="https://fonts.googleapis.com/css?family=Montserrat|Raleway" rel="stylesheet"><style type="text/css">
+</title><link href="/assets/css/spectre.min.css" rel="stylesheet"><link href="https://fonts.googleapis.com/css?family=Montserrat|Raleway" rel="stylesheet"><link href="//cdn.jsdelivr.net/gh/highlightjs/cdn-release@10.2.0/build/styles/default.min.css" rel="stylesheet"><link href="/images/favicon.svg" type="image/svg+xml" rel="icon" sizes="any"><style type="text/css">
 
 @media screen and (min-width: 1200px)
 {
@@ -46,12 +46,6 @@ body.has-docked-nav #main-header
   position : fixed;
 }
 
-.container
-{
-  max-width : 60em;
-  padding   : 3em 3em 3em 3em;
-}
-
 #headerWrapper
 {
   background-color : #ffffff;
@@ -71,6 +65,17 @@ body.has-docked-nav #main-header
 #headerWrapper header .nav
 {
   flex-direction : row;
+}
+
+#headerWrapper header .nav li
+{
+  margin-top : 0;
+}
+
+.container
+{
+  max-width : 55em;
+  padding   : 3em 3em 3em 3em;
 }
 
 .header
@@ -97,19 +102,29 @@ b
   font-size : 1.19999em;
 }
 
-p
-{
-  margin : 0 0 0 0;
-}
-
 main
 {
   font-family : "Raleway", sans-serif;
 }
 
-a.icon img
+main li
 {
-  width : 3em;
+  list-style-position : outside;
+}
+
+figure
+{
+  text-align : center;
+}
+
+figure figcaption
+{
+  text-align : center;
+}
+
+figure img
+{
+  max-width : 80%;
 }
 
 span.update p
@@ -133,21 +148,52 @@ footer a
   color : #ddddec;
 }
 
+footer a.icon img
+{
+  width : 3em;
+}
+
+footer .column
+{
+  display         : flex;
+  justify-content : center;
+  align-content   : center;
+}
+
+footer p
+{
+  margin-bottom : 0;
+}
+
 footer .icons
 {
-  color           : #fafafa;
-  display         : flex;
-  font-size       : 2em;
-  flex-direction  : row;
-  align-self      : center;
-  justify-content : space-between;
+  color      : #fafafa;
+  font-size  : 2em;
+  display    : flex;
+  align-self : center;
 }
 
 footer .icons svg:hover
 {
-  fill : #d3d3d3;
+  opacity : 0.8;
 }
 
+@media screen and (min-width: 576px)
+{
+footer .icons
+{
+  flex-direction : column;
+}
+
+}
+@media screen and (min-width: 992px)
+{
+footer .icons
+{
+  flex-direction : row;
+}
+
+}
 section#greeting
 {
   margin-top    : 4em;
@@ -183,7 +229,7 @@ section#postList .postTitle
 
 
 /* Generated with Clay, http://fvisser.nl/clay */</style></head><body><div id="headerWrapper"><header class="navbar"><section class="navbar-section"><a href="/" class="navbar-brand">Jonathan Reeve: <span>Computational Literary Analysis</span></a></section><section class="navbar-section"><ul class="nav"><li class="nav-item"><a href="/">posts</a></li><li class="nav-item"><a href="/cv.html">cv</a></li><li class="nav-item"><a href="/tags/">tags</a></li><li class="nav-item"><a href="/feed.xml">feed</a></li></ul></section></header></div><div class="container"><h1>Macroetym: a Command-Line Tool for Macro-Etymological Textual Analysis
-</h1><article><p>I’m proud to introduce macroetym, a command-line tool for macro-etymological textual analysis, which is now available for download with the Python package manager, pip. It’s a complete rewrite of <a href="http://jonreeve.com/etym">The Macro-Etymological Analyzer</a>, the web tool for macro-etymological analysis I wrote a few years ago, first described in <a href="/2013/11/introducing-the-macro-etymological-analyzer">this post</a>, and presented at <a href="http://jonreeve.com/dh2014/">DH2014</a>. It can now analyze any number of texts, and texts in 250 languages. Here are a few examples of the program in action:</p>
+</h1><p>Posted 2016-06-01</p><article><p>I’m proud to introduce macroetym, a command-line tool for macro-etymological textual analysis, which is now available for download with the Python package manager, pip. It’s a complete rewrite of <a href="http://jonreeve.com/etym">The Macro-Etymological Analyzer</a>, the web tool for macro-etymological analysis I wrote a few years ago, first described in <a href="/2013/11/introducing-the-macro-etymological-analyzer">this post</a>, and presented at <a href="http://jonreeve.com/dh2014/">DH2014</a>. It can now analyze any number of texts, and texts in 250 languages. Here are a few examples of the program in action:</p>
 <h3 id="a-simple-comparative-macro-etymological-analysis-of-two-texts">A simple comparative macro-etymological analysis of two texts</h3>
 <pre><code>$ macroetym wells-time-machine.txt woolf-mrs-dalloway.txt
 
@@ -273,4 +319,4 @@ pip3 install .</code></pre>
 25.894-14.503.218-35.367-18.227-45.883-25.895zM384 217.775V360c0 13.255-10.745
 24-24 24H88c-13.255 0-24-10.745-24-24V217.775c13.958 10.794 33.329 25.236 95.303
 70.214 14.162 10.341 37.975 32.145 64.694 32.01 26.887.134 51.037-22.041
-64.72-32.025 61.958-44.965 81.325-59.406 95.283-70.199z"></svg></a></div></div></div><script async data-goatcounter="https://jonreeve.goatcounter.com/count" src="//gc.zgo.at/count.js"></script><script src="/assets/js/jquery-3.5.1.min.js"></script><script src="/assets/js/main.js"></script><script async src="https://hypothes.is/embed.js"></script></div></footer></body></html>
+64.72-32.025 61.958-44.965 81.325-59.406 95.283-70.199z"></svg></a></div></div></div><script async data-goatcounter="https://jonreeve.goatcounter.com/count" src="//gc.zgo.at/count.js"></script><script src="/assets/js/jquery-3.5.1.min.js"></script><script async src="/assets/js/main.js"></script><script async src="https://hypothes.is/embed.js"></script><script src="//cdn.jsdelivr.net/gh/highlightjs/cdn-release@10.2.0/build/highlight.min.js"></script><script>hljs.initHighlightingOnLoad();</script></div></footer></body></html>

@@ -1,5 +1,5 @@
 <html lang="en"><head><meta content="text/html; charset=utf-8" http-equiv="Content-Type"><title>Workshop Notebook: Advanced Topics in Word Embeddings
-</title><link href="/assets/css/spectre.min.css" rel="stylesheet"><link href="https://fonts.googleapis.com/css?family=Montserrat|Raleway" rel="stylesheet"><style type="text/css">
+</title><link href="/assets/css/spectre.min.css" rel="stylesheet"><link href="https://fonts.googleapis.com/css?family=Montserrat|Raleway" rel="stylesheet"><link href="//cdn.jsdelivr.net/gh/highlightjs/cdn-release@10.2.0/build/styles/default.min.css" rel="stylesheet"><link href="/images/favicon.svg" type="image/svg+xml" rel="icon" sizes="any"><style type="text/css">
 
 @media screen and (min-width: 1200px)
 {
@@ -46,12 +46,6 @@ body.has-docked-nav #main-header
   position : fixed;
 }
 
-.container
-{
-  max-width : 60em;
-  padding   : 3em 3em 3em 3em;
-}
-
 #headerWrapper
 {
   background-color : #ffffff;
@@ -71,6 +65,17 @@ body.has-docked-nav #main-header
 #headerWrapper header .nav
 {
   flex-direction : row;
+}
+
+#headerWrapper header .nav li
+{
+  margin-top : 0;
+}
+
+.container
+{
+  max-width : 55em;
+  padding   : 3em 3em 3em 3em;
 }
 
 .header
@@ -97,19 +102,29 @@ b
   font-size : 1.19999em;
 }
 
-p
-{
-  margin : 0 0 0 0;
-}
-
 main
 {
   font-family : "Raleway", sans-serif;
 }
 
-a.icon img
+main li
 {
-  width : 3em;
+  list-style-position : outside;
+}
+
+figure
+{
+  text-align : center;
+}
+
+figure figcaption
+{
+  text-align : center;
+}
+
+figure img
+{
+  max-width : 80%;
 }
 
 span.update p
@@ -133,21 +148,52 @@ footer a
   color : #ddddec;
 }
 
+footer a.icon img
+{
+  width : 3em;
+}
+
+footer .column
+{
+  display         : flex;
+  justify-content : center;
+  align-content   : center;
+}
+
+footer p
+{
+  margin-bottom : 0;
+}
+
 footer .icons
 {
-  color           : #fafafa;
-  display         : flex;
-  font-size       : 2em;
-  flex-direction  : row;
-  align-self      : center;
-  justify-content : space-between;
+  color      : #fafafa;
+  font-size  : 2em;
+  display    : flex;
+  align-self : center;
 }
 
 footer .icons svg:hover
 {
-  fill : #d3d3d3;
+  opacity : 0.8;
 }
 
+@media screen and (min-width: 576px)
+{
+footer .icons
+{
+  flex-direction : column;
+}
+
+}
+@media screen and (min-width: 992px)
+{
+footer .icons
+{
+  flex-direction : row;
+}
+
+}
 section#greeting
 {
   margin-top    : 4em;
@@ -183,7 +229,7 @@ section#postList .postTitle
 
 
 /* Generated with Clay, http://fvisser.nl/clay */</style></head><body><div id="headerWrapper"><header class="navbar"><section class="navbar-section"><a href="/" class="navbar-brand">Jonathan Reeve: <span>Computational Literary Analysis</span></a></section><section class="navbar-section"><ul class="nav"><li class="nav-item"><a href="/">posts</a></li><li class="nav-item"><a href="/cv.html">cv</a></li><li class="nav-item"><a href="/tags/">tags</a></li><li class="nav-item"><a href="/feed.xml">feed</a></li></ul></section></header></div><div class="container"><h1>Workshop Notebook: Advanced Topics in Word Embeddings
-</h1><article><p><a href="https://github.com/JonathanReeve/workshop-word-embeddings/blob/master/workshop-word-embeddings.ipynb">This notebook</a> originally accompanied a workshop I gave at NYCDH Week, in February of 2019, called “Advanced Topics in Word Embeddings.” (In truth, it’s only somewhat advanced. With a little background in NLP, this could even serve as an introduction to the subject.) You can <a href="https://mybinder.org/v2/gh/JonathanReeve/workshop-word-embeddings/master">run the code in a Binder, here</a>.</p>
+</h1><p>Posted 2019-02-20</p><article><p><a href="https://github.com/JonathanReeve/workshop-word-embeddings/blob/master/workshop-word-embeddings.ipynb">This notebook</a> originally accompanied a workshop I gave at NYCDH Week, in February of 2019, called “Advanced Topics in Word Embeddings.” (In truth, it’s only somewhat advanced. With a little background in NLP, this could even serve as an introduction to the subject.) You can <a href="https://mybinder.org/v2/gh/JonathanReeve/workshop-word-embeddings/master">run the code in a Binder, here</a>.</p>
 <p>Word embeddings are among the most discussed subjects in natural language processing, at the moment. If you’re not already familiar with them, there are a lot of great introductions out there. In particular, check out these:</p>
 <ul>
 <li><a href="https://www.tensorflow.org/tutorials/representation/word2vec">A classic primer on Word Embeddings, from Google (uses TensorFlow)</a></li>
@@ -194,7 +240,9 @@ section#postList .postTitle
 </ul>
 <h2 id="an-example-of-document-vectors-project-gutenberg">An Example of Document Vectors: Project Gutenberg</h2>
 <p>This figure shows off some of the things you can do with document vectors. Using just the averaged word vectors of each document, and projecting them onto PCA space, you can see a nice divide between fiction and nonfiction books. In fact, I like to think of the line connecting the upper-left and the lower-right as a vector of “fictionality,” withthe upper-left corner as “highly fictional,” and the lower right as “highly non-fictional.” Curiously, religious texts are right in between.</p>
-<p><img src="/images/word-embeddings/example-gut.png" alt="First 30 Books of Project Gutenberg" /></p>
+<figure>
+<img src="/images/word-embeddings/example-gut.png" alt="" /><figcaption>First 30 Books of Project Gutenberg</figcaption>
+</figure>
 <p>There’s more on this experiment <a href="http://jonreeve.com/2017/12/similar-documents-in-project-gutenberg/">in this 2015 post</a>.</p>
 <h2 id="getting-started">Getting Started</h2>
 <p>First, import the libraries below. (Make sure you have the packages beforehand, of course.)</p>
@@ -340,7 +388,9 @@ However little known the feelings or views of such a man may be on his first ent
 <span id="cb37-8"><a href="#cb37-8"></a>    <span class="cf">for</span> i, label <span class="kw">in</span> <span class="bu">enumerate</span>(labels):</span>
 <span id="cb37-9"><a href="#cb37-9"></a>        ax.text(df.loc[i][<span class="dv">0</span>], df.loc[i][<span class="dv">1</span>], df.loc[i][<span class="dv">2</span>], label)</span></code></pre></div>
 <div class="sourceCode" id="cb38"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb38-1"><a href="#cb38-1"></a>plotResults3D(prideDF, prideNounLabels)</span></code></pre></div>
-<p><img src="/images/word-embeddings/pride-nouns.png" alt="Pride and Prejudice Nouns" /></p>
+<figure>
+<img src="/images/word-embeddings/pride-nouns.png" alt="" /><figcaption>Pride and Prejudice Nouns</figcaption>
+</figure>
 <p>Now we can rewrite the above function so that instead of cycling through all the words ever, it just looks through all the <em>Pride and Prejudice</em> nouns:</p>
 <div class="sourceCode" id="cb39"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb39-1"><a href="#cb39-1"></a><span class="co"># Redo this function with only nouns from Pride and Prejudice</span></span>
 <span id="cb39-2"><a href="#cb39-2"></a><span class="kw">def</span> mostSimilar(vec):</span>
@@ -370,7 +420,9 @@ However little known the feelings or views of such a man may be on his first ent
 <span id="cb45-2"><a href="#cb45-2"></a>plt.rcParams[<span class="st">&quot;figure.figsize&quot;</span>] <span class="op">=</span> (<span class="dv">14</span>,<span class="dv">8</span>)</span></code></pre></div>
 <div class="sourceCode" id="cb46"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb46-1"><a href="#cb46-1"></a>testWords <span class="op">=</span> <span class="st">&#39;symphony itchy flower crash&#39;</span>.split()</span>
 <span id="cb46-2"><a href="#cb46-2"></a>pd.DataFrame([whichSense(w) <span class="cf">for</span> w <span class="kw">in</span> testWords], index<span class="op">=</span>testWords).plot(kind<span class="op">=</span><span class="st">&#39;bar&#39;</span>)</span></code></pre></div>
-<p><img src="/images/word-embeddings/output_52_1.png" alt="png" /></p>
+<figure>
+<img src="/images/word-embeddings/output_52_1.png" alt="" /><figcaption>Pride and Prejudice Nouns</figcaption>
+</figure>
 <p>It looks like it correctly guesses that <em>symphony</em> correlates with <em>sound</em>, and also does so with <em>crash</em>, but its guesses for <em>itchy</em> (<em>smell</em>) and for <em>flower</em> (<em>touch</em>) are less intuitive.</p>
 <h1 id="the-inaugural-address-corpus">The Inaugural Address Corpus</h1>
 <p>In this repo, I’ve prepared a custom version of the Inaugural Address Corpus included with the NLTK. It just represents the inaugural addresses of most of the US presidents from the 20th and 21st centuries. Let’s compare them using document vectors! First let’s generate parallel lists of documents, labels, and other metadata:</p>
@@ -433,7 +485,9 @@ dtype: object</code></pre>
 <span id="cb57-2"><a href="#cb57-2"></a><span class="cf">for</span> i <span class="kw">in</span> <span class="bu">range</span>(<span class="bu">len</span>(xs)): </span>
 <span id="cb57-3"><a href="#cb57-3"></a>    plt.scatter(xs[i], ys[i], c<span class="op">=</span>parties[i], s<span class="op">=</span>inauguralDates[i]<span class="op">-</span><span class="dv">1900</span>)</span>
 <span id="cb57-4"><a href="#cb57-4"></a>    plt.annotate(inauguralLabels[i], (xs[i], ys[i]))</span></code></pre></div>
-<p><img src="/images/word-embeddings/output_67_0.png" alt="png" /></p>
+<figure>
+<img src="/images/word-embeddings/output_67_0.png" alt="" /><figcaption>Presidential Inaugural Address Vectors</figcaption>
+</figure>
 <h1 id="detective-novels">Detective Novels</h1>
 <p>I’ve prepared a corpus of detective novels, using another notebook in this repository. It contains metadata and full texts of about 10 detective novels. Let’s compute their similarities to certain weapons! It seems the murder took place in the drawing room, with a candlestick, and the murderer was <a href="https://en.wikipedia.org/wiki/List_of_Cluedo_characters#Colonel_Mustard">Colonel Mustard</a>!</p>
 <div class="sourceCode" id="cb58"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb58-1"><a href="#cb58-1"></a>detectiveJSON <span class="op">=</span> <span class="bu">open</span>(<span class="st">&#39;detectives.json&#39;</span>)</span>
@@ -467,7 +521,9 @@ dtype: object</code></pre>
 <span id="cb69-2"><a href="#cb69-2"></a><span class="cf">for</span> i <span class="kw">in</span> <span class="bu">range</span>(<span class="bu">len</span>(xs)): </span>
 <span id="cb69-3"><a href="#cb69-3"></a>    plt.scatter(xs[i], ys[i])</span>
 <span id="cb69-4"><a href="#cb69-4"></a>    plt.annotate((detectiveLabels <span class="op">+</span> extraWords)[i], (xs[i], ys[i]))</span></code></pre></div>
-<p><img src="/images/word-embeddings/output_79_0.png" alt="png" /></p>
+<figure>
+<img src="/images/word-embeddings/output_79_0.png" alt="" /><figcaption>Detective Novel Vectors</figcaption>
+</figure>
 <p>If you read the summaries of some of these novels on Wikipedia, this isn’t terrible. To check, let’s just see how often these words occur in the novels.</p>
 <div class="sourceCode" id="cb70"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb70-1"><a href="#cb70-1"></a><span class="co"># Sanity check</span></span>
 <span id="cb70-2"><a href="#cb70-2"></a>counts <span class="op">=</span> {label: {w: <span class="dv">0</span> <span class="cf">for</span> w <span class="kw">in</span> extraWords} <span class="cf">for</span> label <span class="kw">in</span> detectiveLabels}</span>
@@ -476,7 +532,9 @@ dtype: object</code></pre>
 <span id="cb70-5"><a href="#cb70-5"></a>        <span class="cf">if</span> w.lemma_ <span class="kw">in</span> extraWords: </span>
 <span id="cb70-6"><a href="#cb70-6"></a>            counts[detectiveLabels[i]][w.lemma_] <span class="op">+=</span> <span class="dv">1</span></span></code></pre></div>
 <div class="sourceCode" id="cb71"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb71-1"><a href="#cb71-1"></a>pd.DataFrame(counts).T.plot(kind<span class="op">=</span><span class="st">&#39;bar&#39;</span>)</span></code></pre></div>
-<p><img src="/images/word-embeddings/output_82_1.png" alt="png" /></p></article></div><footer><div class="container"><div class="columns"><div class="column col-8"><p>I believe in openness. This work is licensed under a <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/">Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International License</a>, unless otherwise stated. All content ©Jonathan Reeve 2020. Hand-coded with love, using exclusively free and open-source software, including <a href="https://github.com/srid/rib">Rib</a> and <a href="https://haskell.org/">Haskell</a>. Hosted on <a href="https://github.com">GitHub</a> and served with <a href="https://netlify.com">Netlify</a>. Icons by Nhor, via <a href="https://thenounproject.com">The Noun Project</a>. <a href="https://www.buymeacoffee.com/vaIVQZH">Buy me a coffee</a> or support me <a href="https://liberapay.com/JonathanReeve/donate">via Libera Pay</a> or Bitcoin: 3Qvm1DwzFGk3L1Eb6yeg5Nbc6db8sZUnbK.</p></div><div class="column col-4"><div class="icons"><a href="http://github.com/JonathanReeve"><svg xmlns="http://www.w3.org/2000/svg" height="3em" viewBox="0 0 448 512" width="3em" fill="#fafafa"><path d="M400 32H48C21.5 32 0 53.5 0 80v352c0 26.5 21.5 48 48
+<figure>
+<img src="/images/word-embeddings/output_82_1.png" alt="" /><figcaption>Weapons By Novel</figcaption>
+</figure></article></div><footer><div class="container"><div class="columns"><div class="column col-8"><p>I believe in openness. This work is licensed under a <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/">Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International License</a>, unless otherwise stated. All content ©Jonathan Reeve 2020. Hand-coded with love, using exclusively free and open-source software, including <a href="https://github.com/srid/rib">Rib</a> and <a href="https://haskell.org/">Haskell</a>. Hosted on <a href="https://github.com">GitHub</a> and served with <a href="https://netlify.com">Netlify</a>. Icons by Nhor, via <a href="https://thenounproject.com">The Noun Project</a>. <a href="https://www.buymeacoffee.com/vaIVQZH">Buy me a coffee</a> or support me <a href="https://liberapay.com/JonathanReeve/donate">via Libera Pay</a> or Bitcoin: 3Qvm1DwzFGk3L1Eb6yeg5Nbc6db8sZUnbK.</p></div><div class="column col-4"><div class="icons"><a href="http://github.com/JonathanReeve"><svg xmlns="http://www.w3.org/2000/svg" height="3em" viewBox="0 0 448 512" width="3em" fill="#fafafa"><path d="M400 32H48C21.5 32 0 53.5 0 80v352c0 26.5 21.5 48 48
 48h352c26.5 0 48-21.5 48-48V80c0-26.5-21.5-48-48-48zM277.3 415.7c-8.4
 1.5-11.5-3.7-11.5-8 0-5.4.2-33 .2-55.3 0-15.6-5.2-25.5-11.3-30.7 37-4.1 76-9.2
 76-73.1 0-18.2-6.5-27.3-17.1-39 1.7-4.3 7.4-22-1.7-45-13.9-4.3-45.7 17.9-45.7
@@ -511,4 +569,4 @@ dtype: object</code></pre>
 25.894-14.503.218-35.367-18.227-45.883-25.895zM384 217.775V360c0 13.255-10.745
 24-24 24H88c-13.255 0-24-10.745-24-24V217.775c13.958 10.794 33.329 25.236 95.303
 70.214 14.162 10.341 37.975 32.145 64.694 32.01 26.887.134 51.037-22.041
-64.72-32.025 61.958-44.965 81.325-59.406 95.283-70.199z"></svg></a></div></div></div><script async data-goatcounter="https://jonreeve.goatcounter.com/count" src="//gc.zgo.at/count.js"></script><script src="/assets/js/jquery-3.5.1.min.js"></script><script src="/assets/js/main.js"></script><script async src="https://hypothes.is/embed.js"></script></div></footer></body></html>
+64.72-32.025 61.958-44.965 81.325-59.406 95.283-70.199z"></svg></a></div></div></div><script async data-goatcounter="https://jonreeve.goatcounter.com/count" src="//gc.zgo.at/count.js"></script><script src="/assets/js/jquery-3.5.1.min.js"></script><script async src="/assets/js/main.js"></script><script async src="https://hypothes.is/embed.js"></script><script src="//cdn.jsdelivr.net/gh/highlightjs/cdn-release@10.2.0/build/highlight.min.js"></script><script>hljs.initHighlightingOnLoad();</script></div></footer></body></html>

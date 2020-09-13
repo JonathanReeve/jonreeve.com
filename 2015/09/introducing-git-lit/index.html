@@ -1,5 +1,5 @@
 <html lang="en"><head><meta content="text/html; charset=utf-8" http-equiv="Content-Type"><title>Introducing Git-Lit
-</title><link href="/assets/css/spectre.min.css" rel="stylesheet"><link href="https://fonts.googleapis.com/css?family=Montserrat|Raleway" rel="stylesheet"><style type="text/css">
+</title><link href="/assets/css/spectre.min.css" rel="stylesheet"><link href="https://fonts.googleapis.com/css?family=Montserrat|Raleway" rel="stylesheet"><link href="//cdn.jsdelivr.net/gh/highlightjs/cdn-release@10.2.0/build/styles/default.min.css" rel="stylesheet"><link href="/images/favicon.svg" type="image/svg+xml" rel="icon" sizes="any"><style type="text/css">
 
 @media screen and (min-width: 1200px)
 {
@@ -46,12 +46,6 @@ body.has-docked-nav #main-header
   position : fixed;
 }
 
-.container
-{
-  max-width : 60em;
-  padding   : 3em 3em 3em 3em;
-}
-
 #headerWrapper
 {
   background-color : #ffffff;
@@ -71,6 +65,17 @@ body.has-docked-nav #main-header
 #headerWrapper header .nav
 {
   flex-direction : row;
+}
+
+#headerWrapper header .nav li
+{
+  margin-top : 0;
+}
+
+.container
+{
+  max-width : 55em;
+  padding   : 3em 3em 3em 3em;
 }
 
 .header
@@ -97,19 +102,29 @@ b
   font-size : 1.19999em;
 }
 
-p
-{
-  margin : 0 0 0 0;
-}
-
 main
 {
   font-family : "Raleway", sans-serif;
 }
 
-a.icon img
+main li
 {
-  width : 3em;
+  list-style-position : outside;
+}
+
+figure
+{
+  text-align : center;
+}
+
+figure figcaption
+{
+  text-align : center;
+}
+
+figure img
+{
+  max-width : 80%;
 }
 
 span.update p
@@ -133,21 +148,52 @@ footer a
   color : #ddddec;
 }
 
+footer a.icon img
+{
+  width : 3em;
+}
+
+footer .column
+{
+  display         : flex;
+  justify-content : center;
+  align-content   : center;
+}
+
+footer p
+{
+  margin-bottom : 0;
+}
+
 footer .icons
 {
-  color           : #fafafa;
-  display         : flex;
-  font-size       : 2em;
-  flex-direction  : row;
-  align-self      : center;
-  justify-content : space-between;
+  color      : #fafafa;
+  font-size  : 2em;
+  display    : flex;
+  align-self : center;
 }
 
 footer .icons svg:hover
 {
-  fill : #d3d3d3;
+  opacity : 0.8;
 }
 
+@media screen and (min-width: 576px)
+{
+footer .icons
+{
+  flex-direction : column;
+}
+
+}
+@media screen and (min-width: 992px)
+{
+footer .icons
+{
+  flex-direction : row;
+}
+
+}
 section#greeting
 {
   margin-top    : 4em;
@@ -183,13 +229,13 @@ section#postList .postTitle
 
 
 /* Generated with Clay, http://fvisser.nl/clay */</style></head><body><div id="headerWrapper"><header class="navbar"><section class="navbar-section"><a href="/" class="navbar-brand">Jonathan Reeve: <span>Computational Literary Analysis</span></a></section><section class="navbar-section"><ul class="nav"><li class="nav-item"><a href="/">posts</a></li><li class="nav-item"><a href="/cv.html">cv</a></li><li class="nav-item"><a href="/tags/">tags</a></li><li class="nav-item"><a href="/feed.xml">feed</a></li></ul></section></header></div><div class="container"><h1>Introducing Git-Lit
-</h1><article><p>A vibrant discussion followed <a href="http://jonreeve.com/2015/03/proposal-for-a-corpus-protocol/">my March 15th post, “A Proposal for a Corpus Sharing Protocol.”</a>. <a href="https://twitter.com/ctschroeder">Carrie Schroeder</a>, <a href="https://twitter.com/ariddell">Allen Riddel</a> and others on Twitter pointed out that, especially in non-English DH fields, many corpora are already on GitHub. These include texts from the <a href="https://github.com/cltk/chinese_text_cbeta_indices">Chinese Buddhist Electronic Text Association</a>, the <a href="http://github.com/OpenGreekAndLatin">Open Greek and Latin Project</a> at Leipzig, and papyri from the <a href="https://github.com/papyri/idp.data">Integrating Digital Papyrology Project</a>. The <a href="http://www.textcreationpartnership.org/">Text Creation Partnership</a> has released some 25,000 of their texts in January of this year, and <a href="https://github.com/textcreationpartnership">uploaded them to GitHub</a>. One of the more interesting Git corpus projects I became aware of following this discussion is <a href="http://gitenberg.github.io/">GITenberg</a>. Led by <a href="https://github.com/sethwoodworth">Seth Woodworth</a>, the project scrapes a text from Project Gutenberg, initializes a git repository for it, adds README and CONTRIBUTING files generated from the text’s metadata, and uploads the resulting repository to GitHub. They have gitified around 43,000 works this way. The project also converts Project Gutenberg vanilla plain text into <a href="https://en.wikipedia.org/wiki/AsciiDoc">ASCIIDOC</a>—a good example of this is the GITenberg edition of <a href="https://github.com/GITenberg/Adventures-of-Huckleberry-Finn_76/blob/master/book.asciidoc">The Adventures of Huckleberry Finn</a>. This is an amazingly ambitious project that holds the promise of wide-ranging applications for editing, versioning, and disseminating literature.</p>
+</h1><p>Posted 2015-09-08</p><article><p>A vibrant discussion followed <a href="http://jonreeve.com/2015/03/proposal-for-a-corpus-protocol/">my March 15th post, “A Proposal for a Corpus Sharing Protocol.”</a>. <a href="https://twitter.com/ctschroeder">Carrie Schroeder</a>, <a href="https://twitter.com/ariddell">Allen Riddel</a> and others on Twitter pointed out that, especially in non-English DH fields, many corpora are already on GitHub. These include texts from the <a href="https://github.com/cltk/chinese_text_cbeta_indices">Chinese Buddhist Electronic Text Association</a>, the <a href="http://github.com/OpenGreekAndLatin">Open Greek and Latin Project</a> at Leipzig, and papyri from the <a href="https://github.com/papyri/idp.data">Integrating Digital Papyrology Project</a>. The <a href="http://www.textcreationpartnership.org/">Text Creation Partnership</a> has released some 25,000 of their texts in January of this year, and <a href="https://github.com/textcreationpartnership">uploaded them to GitHub</a>. One of the more interesting Git corpus projects I became aware of following this discussion is <a href="http://gitenberg.github.io/">GITenberg</a>. Led by <a href="https://github.com/sethwoodworth">Seth Woodworth</a>, the project scrapes a text from Project Gutenberg, initializes a git repository for it, adds README and CONTRIBUTING files generated from the text’s metadata, and uploads the resulting repository to GitHub. They have gitified around 43,000 works this way. The project also converts Project Gutenberg vanilla plain text into <a href="https://en.wikipedia.org/wiki/AsciiDoc">ASCIIDOC</a>—a good example of this is the GITenberg edition of <a href="https://github.com/GITenberg/Adventures-of-Huckleberry-Finn_76/blob/master/book.asciidoc">The Adventures of Huckleberry Finn</a>. This is an amazingly ambitious project that holds the promise of wide-ranging applications for editing, versioning, and disseminating literature.</p>
 <p>One such application might lie with <a href="http://labs.bl.uk/Digital+Collections+-+Books+and+Text">the 68,000 digital texts recently created by the British Library</a>. James Baker, a digital curator of the British Library, left a comment on my original post, suggesting that the method I describe might be used to parse and post the Library’s texts. He sent me <a href="https://github.com/JonathanReeve/git-lit/tree/master/data">a few sample texts</a> of the ALTO XML documents that the Stanford Literary Lab had used. <a href="https://github.com/JonathanReeve/git-lit">I adapted some of the GITenberg code to read these texts, generate README files for them, and turn them into GitHub repositories</a>. I’m provisionally calling this project Git-Lit.</p>
 <h1 id="introducing-git-lit">Introducing Git-Lit</h1>
 <p>Git-Lit aims to parse, version control, and post each work in the British Library’s corpus of digital texts. Parsing the texts will transform the machine-readable metadata into human-readable prefatory material; version controlling the texts will allow for collaborative editing and revision of the texts, effectively crowdsourcing the correction of OCR errors; and posting the texts to GitHub will ensure the texts’ visibility to the greater community.</p>
 <h2 id="why-this-is-important">Why This is Important</h2>
 <p>Git-Lit addresses these issues:</p>
-<ol>
+<ol type="1">
 <li><strong>Electronic Texts are difficult to edit.</strong> Imagine you’re reading an e-text on a Kindle, and you notice an OCR error. How can you fix it? You can alert Amazon, who may or may not forward your message to the publisher. Since correcting the text would require the publisher to recompile and resubmit it, they will likely decide it isn’t worthwhile to make the correction. Similarly, if you notice an error in a Project Gutenberg text, it could take years for the correction to make its way back to the original text, even if you’re an active member of their Distributed Proofreaders collective. In both cases, there does not yet exist an efficient, streamlined way to improve the quality of electronic texts. What is needed, therefore, is an open-source, decentralized model for community-centered editing. This model already exists for software development in the form of <a href="https://git-scm.com/book/en/v2/Getting-Started-About-Version-Control">git</a>. By posting a text to GitHub, we can take advantage of the fork/revise/pull request workflow that programmers have long enjoyed for software collaboration.<br />
 </li>
 <li><strong>Textual corpora are difficult to assemble.</strong> With some exceptions (notably the NLTK corpus module), downloading a text corpus involves compiling texts from any number of heterogeneous sources. A would-be text analyst must click through a series of web pages to find the corpus he or she wants, and then either download a .zip file that must be expanded, or email the corpus assembler for a copy of the corpus. With multiple texts, this can be a labor-intensive process that is not easily scriptable or automated. Git provides an easy way to solve these problems. By making texts available through the git protocol on GitHub, anyone that wishes to download a text corpus can simply run <code>git clone</code> followed by the repository URL. Parent repositories can then be assembled for collections of texts using git submodules. That’s to say, a parent corpus repository might be created for nineteenth-century <em>Bildungsromane</em>, for instance, and that repository would contain pointers to individual texts that themselves are their own repositories.</li>
@@ -197,7 +243,7 @@ section#postList .postTitle
 </ol>
 <h2 id="how-it-works">How it Works</h2>
 <p>A British Library text contains ALTO XML textual data as well as a Library of Congress METS XML metadata file. Git-Lit does the following:</p>
-<ol>
+<ol type="1">
 <li>Reads the metadata file to determine the text’s title, author (if any), and other pertinent information.</li>
 <li>Initializes an empty git repository within the text directory, and makes an initial commit containing the text at its raw state.</li>
 <li>Generates a README file with the metadata, a CONTRIBUTING file explaining how to contribute towards improving the text, and a LICENSE file which, for now, is just the standard GNU Public License v3.</li>
@@ -244,4 +290,4 @@ section#postList .postTitle
 25.894-14.503.218-35.367-18.227-45.883-25.895zM384 217.775V360c0 13.255-10.745
 24-24 24H88c-13.255 0-24-10.745-24-24V217.775c13.958 10.794 33.329 25.236 95.303
 70.214 14.162 10.341 37.975 32.145 64.694 32.01 26.887.134 51.037-22.041
-64.72-32.025 61.958-44.965 81.325-59.406 95.283-70.199z"></svg></a></div></div></div><script async data-goatcounter="https://jonreeve.goatcounter.com/count" src="//gc.zgo.at/count.js"></script><script src="/assets/js/jquery-3.5.1.min.js"></script><script src="/assets/js/main.js"></script><script async src="https://hypothes.is/embed.js"></script></div></footer></body></html>
+64.72-32.025 61.958-44.965 81.325-59.406 95.283-70.199z"></svg></a></div></div></div><script async data-goatcounter="https://jonreeve.goatcounter.com/count" src="//gc.zgo.at/count.js"></script><script src="/assets/js/jquery-3.5.1.min.js"></script><script async src="/assets/js/main.js"></script><script async src="https://hypothes.is/embed.js"></script><script src="//cdn.jsdelivr.net/gh/highlightjs/cdn-release@10.2.0/build/highlight.min.js"></script><script>hljs.initHighlightingOnLoad();</script></div></footer></body></html>

@@ -1,6 +1,6 @@
 <html lang="en"><head><meta content="text/html; charset=utf-8" http-equiv="Content-Type"><title>Imperial Voices: Gender and Social Class among Shakespeare’s Characters,
 a Stylometric Approach
-</title><link href="/assets/css/spectre.min.css" rel="stylesheet"><link href="https://fonts.googleapis.com/css?family=Montserrat|Raleway" rel="stylesheet"><style type="text/css">
+</title><link href="/assets/css/spectre.min.css" rel="stylesheet"><link href="https://fonts.googleapis.com/css?family=Montserrat|Raleway" rel="stylesheet"><link href="//cdn.jsdelivr.net/gh/highlightjs/cdn-release@10.2.0/build/styles/default.min.css" rel="stylesheet"><link href="/images/favicon.svg" type="image/svg+xml" rel="icon" sizes="any"><style type="text/css">
 
 @media screen and (min-width: 1200px)
 {
@@ -47,12 +47,6 @@ body.has-docked-nav #main-header
   position : fixed;
 }
 
-.container
-{
-  max-width : 60em;
-  padding   : 3em 3em 3em 3em;
-}
-
 #headerWrapper
 {
   background-color : #ffffff;
@@ -72,6 +66,17 @@ body.has-docked-nav #main-header
 #headerWrapper header .nav
 {
   flex-direction : row;
+}
+
+#headerWrapper header .nav li
+{
+  margin-top : 0;
+}
+
+.container
+{
+  max-width : 55em;
+  padding   : 3em 3em 3em 3em;
 }
 
 .header
@@ -98,19 +103,29 @@ b
   font-size : 1.19999em;
 }
 
-p
-{
-  margin : 0 0 0 0;
-}
-
 main
 {
   font-family : "Raleway", sans-serif;
 }
 
-a.icon img
+main li
 {
-  width : 3em;
+  list-style-position : outside;
+}
+
+figure
+{
+  text-align : center;
+}
+
+figure figcaption
+{
+  text-align : center;
+}
+
+figure img
+{
+  max-width : 80%;
 }
 
 span.update p
@@ -134,21 +149,52 @@ footer a
   color : #ddddec;
 }
 
+footer a.icon img
+{
+  width : 3em;
+}
+
+footer .column
+{
+  display         : flex;
+  justify-content : center;
+  align-content   : center;
+}
+
+footer p
+{
+  margin-bottom : 0;
+}
+
 footer .icons
 {
-  color           : #fafafa;
-  display         : flex;
-  font-size       : 2em;
-  flex-direction  : row;
-  align-self      : center;
-  justify-content : space-between;
+  color      : #fafafa;
+  font-size  : 2em;
+  display    : flex;
+  align-self : center;
 }
 
 footer .icons svg:hover
 {
-  fill : #d3d3d3;
+  opacity : 0.8;
 }
 
+@media screen and (min-width: 576px)
+{
+footer .icons
+{
+  flex-direction : column;
+}
+
+}
+@media screen and (min-width: 992px)
+{
+footer .icons
+{
+  flex-direction : row;
+}
+
+}
 section#greeting
 {
   margin-top    : 4em;
@@ -185,7 +231,7 @@ section#postList .postTitle
 
 /* Generated with Clay, http://fvisser.nl/clay */</style></head><body><div id="headerWrapper"><header class="navbar"><section class="navbar-section"><a href="/" class="navbar-brand">Jonathan Reeve: <span>Computational Literary Analysis</span></a></section><section class="navbar-section"><ul class="nav"><li class="nav-item"><a href="/">posts</a></li><li class="nav-item"><a href="/cv.html">cv</a></li><li class="nav-item"><a href="/tags/">tags</a></li><li class="nav-item"><a href="/feed.xml">feed</a></li></ul></section></header></div><div class="container"><h1>Imperial Voices: Gender and Social Class among Shakespeare’s Characters,
 a Stylometric Approach
-</h1><article><blockquote>
+</h1><p>Posted 2015-03-12</p><article><blockquote>
 <p>“in the imitation of these twain–who as Ulysses says, opinion crowns with an imperial voice–many are infect.” –Nestor, <em>Troilus and Cressida</em>, Act 1, Scene 3.</p>
 </blockquote>
 <p>The following describes an experiment in digital literary analysis, wherein dialog from Shakespeare plays was extracted, categorized, and statistically analyzed using a variety of methods. Dialog from Shakespeare’s kings, for instance, such as that of Lear and Claudius, was statistically compared with dialog from a number of other groups, like Shakespeare’s queens, servants, and fools, in an effort to computationally identify characteristic trends in the language of each group. This investigation concludes that relationships between these groups may be divined through this analysis, even suggesting class hierarchies and gender relations, but that these results are tenuous at best, and more fine-tuned analysis is required.</p>
@@ -246,7 +292,9 @@ a Stylometric Approach
 <p>The “officers” category contains officers, soldiers, “gaolers,” a sheriff, and a sentinel. Although these are slightly different roles, they are treated here as a single group, since that is often the way they are treated in the cast of characters–in <em>Antony and Cleopatra</em>, the group is described as “Officers, Soldiers, Messengers, and other Attendants.” Messengers were not included in this category, however, and neither were “other attendants,” because the goal here was to aim for a group that will be relatively unified in tone, which is this case hopes to be paramilitary.</p>
 <p>The category “fools” was the most problematic. There aren’t enough fools in Shakespeare to make for a category large enough for statistical analysis, and so I’ve included both fools and clowns here. Although he admits they are related categories, Stanley Wells asserts that “Modern criticism distinguishes between the naturally comic characters, or clowns, such as Lance, Bottom, Dogberry. etc., and the professional fools, or jesters, such as Touchstone, Feste, and Lear’s Fool” (“Clown”). Whereas this may be a crucial distinction for criticism, I have nonetheless grouped the two together for pragmatic reasons. A more nuanced study might separate the two, but this investigation is focused on macro-categories for the sake of efficiency. Toward this end, I’ve used the list of fools from Wikipedia’s page (“Shakespearean Fools,” somewhat spurious, in parts, though inclusive), and supplemented it where necessary with search results for “fool” and “clown” from ELF.</p>
 <p>The biggest challenge with these categories is the variety of lengths among them. “Kings” was the largest category, containing 99,540 words, or over three <em>Hamlets</em> in length; “queens” is the second biggest, with 25,934 words; “gentlemen” is next, with 14,788; followed by “servants” at 9,554; “gentlewomen” at 3,530; and “officers” at 2,222.</p>
-<p><img src="/images/imperial-voices/words-per-category.png" alt="Words Per Category" /></p>
+<figure>
+<img src="/images/imperial-voices/words-per-category.png" alt="" /><figcaption>Words Per Category</figcaption>
+</figure>
 <p>That the smallest category contained only around two thousand words, and the largest contained almost 45 times that amount, meant that, for one, the probability of a given word appearing in the “kings” category did not depend solely on voice or stylistic concerns, but on the character’s opportunity to speak. We can say, (as I will soon, in fact, be saying) that certain words are characteristic of Shakespearean officers, and that there are certain words which they do not say, but much of this is dependent on the amount of text. Any judgement about the treatment of class or gender in Shakespeare, based on a computational analysis such as this, is in danger of conflating misrepresentation with underrepresentation. Servants may very well refer to their “master” and “mistress” frequently, but perhaps it is more that we rarely get a chance to hear them speak to the extent that we hear the kings and queens. Granted, a lot of this discrepancy can be attributed to the fact that so many of Shakespeare’s play are histories. One could hardly expect plays with titles like <em>Henry VIII</em> or <em>Antony and Cleopatra</em> to revolve around anyone but their titular roles.</p>
 <p>With <a href="https://github.com/JonathanReeve/shakespeare-dialog-extractor/tree/master/character-lists">the characters tabulated into categories</a>, the tables were then exported into CSV text files containing comma-separated lists of XML IDs. Here is, for example, the contents of <code>queens.csv</code>:</p>
 <pre><code>    Gertrude,Hippolyta,Titania,Cleopatra,CymbelineQ,
@@ -267,17 +315,27 @@ a Stylometric Approach
 <span id="cb9-3"><a href="#cb9-3"></a>    <span class="kw">done</span></span></code></pre></div>
 <p>This loops over all the extracted dialog text files, writes their contents to the standard output with <code>cat</code>, sorts the lines by random (<code>-R</code>) criteria with the <code>sort</code> command, and writes them to new files.</p>
 <p>All of these techniques are problematic in some way. If, say, the analysis shows that the word “and” is the most common word in the servants category, and that number is much lower or higher in another category, can we say with any certainty whether this phenomenon is an effect of style or voice? It seems equally as likely that, even despite these efforts to choose equally-sized random samples of each block of dialog, the fact that certain characters are given more time to speak will skew the results in ways that can’t be easily factored out. This caveat is seemingly supported by the fact that the results differ greatly when these methods of randomization and segmentation are changed. I will not pretend, then, that any of these results are definitive; rather, that they are useful as exploratory experiments only.</p>
-<p><img src="/images/imperial-voices/first-2000-800-mfw.png" alt="First 2000 Words of Each Text; 800 Most Frequent Words" /></p>
+<figure>
+<img src="/images/imperial-voices/first-2000-800-mfw.png" alt="" /><figcaption>First 2000 Words of Each Text; 800 Most Frequent Words</figcaption>
+</figure>
 <p>The above figure shows a dendrogram generated from a cluster observations analysis performed on the proportions of the 800 most frequently used words in each text, using the first 2000 words of each text. These results are very suggestive. Broadly, one could say that the leftmost group of six represents those employed at court, or in a royal, aristocratic setting, and the outlier, “officers,” represents those employed largely outside of court–members of the working class. Within the aristocratic group, there are two subgroups: a noble class and a servant class. That gentlewomen are paired with servants here is less of a statement about gender as it may seem–“gentlewomen” is a very sparse category, represented by only a few characters, all of whom seem to take a somewhat servile role by definition. (All but one of the gentlewomen are described as “attending on” a lady of some sort, such as Margaret, a “gentlewoman attending on Hero,” from <em>Much Ado About Nothing</em>.) As previously noted, however, the fact that this analysis only used the first non-randomized 2000-word segment from each text means that there’s a high likelihood that the larger categories only contain dialog from one or two plays. This can account for some, though not all, of this grouping.</p>
-<p><img src="/images/imperial-voices/4k-1k-300mfw-good.png" alt="First 4000 Words; 1000 Word Segments; 300 MFW" /></p>
+<figure>
+<img src="/images/imperial-voices/4k-1k-300mfw-good.png" alt="" /><figcaption>First 4000 Words; 1000 Word Segments; 300 MFW</figcaption>
+</figure>
 <p>This figure represents an experiment conducted with the first 4000 words of each text, with each text broken into 1000-word segments. The texts were segmented like this in order to verify that the statical analysis was working–if Shakespeare’s queens sound roughly alike, then they should appear in similar areas of these charts. Since the “gentlewomen” category only contained around half of the required 4000 words, both the “gentlemen” and “gentlewomen” categories were eliminated. Here, principal component analysis (PCA) was used to generate two factors based on the similarity of the 300 most frequently used words in each text. Again, the results are very suggestive. On the whole, there are four main areas, in which the characters appear next to each other rather nicely. In the lower left quadrant, there are all the “kings” texts; in the upper center, there are all the “queens” texts, and in the lower right, there is an area where an area of “fools” texts collides with one of servants. One way to interpret these axes is that they might represent class and gender. The location of the queens texts seems to say that the y-axis is showing gendered stylistic differences. Similarly, the location of the fools suggests that the x-axis represents class standing, with the kings at the far end of the aristocratic spectrum, the servants in the middle, and the fools (and, it should be remembered, clowns of all sorts) on the opposite end. These same experiments, when conducted with 800 of the most frequently used words, show similar trends.</p>
 <p>In an attempt to correct some of the skew caused by the differences in text length, a comparison was conducted between only the minor characters, all of whom have a similar amount of text. Although gentlemen are grouped closer to the servants than gentlewomen in this experiment, the remaining results, shown in Figure 4, are roughly the same as before. As one would expect, fools and officers, the two most anomalous groups according to their eccentricity and social standing, are the statistical outliers in this chart. Once again, however, the fools, owing perhaps to their standing within the court (though admittedly, this doesn’t apply to the clowns), are shown to be more similar to the gentlemen than are the officers.</p>
-<p><img src="/images/imperial-voices/dendro-minor.png" alt="Full Texts; Minor Characters" /></p>
+<figure>
+<img src="/images/imperial-voices/dendro-minor.png" alt="" /><figcaption>Full Texts; Minor Characters</figcaption>
+</figure>
 <p>When the texts of these categories were randomized (filtered through <code>sort -R</code>), a slightly different picture emerged, as shown in the figure above. Again, the first 2000 words of these texts were used, and then subdivided into 1000-word blocks, and the first 800 most frequently words of the resulting set were analyzed. On the whole, these parts appeared close to each other in the PCA score plot. The categories, however, showed different affinities. This time, kings and queens appeared much more similar. The outliers in this projection are again officers, but this time, also gentlewomen. That these two categories are the ones with the least text is perhaps telling–maybe these results have been skewed in some way as a result of that fact.</p>
 <p>A tempting way to interpret this cluster diagram is as a sphere of influence. With the kings and queens in the upper-right quadrant (the relative position is computed, whereas the absolute position is somewhat arbitrary), they are surrounded by an entourage of characters with varying degrees of influence on them. The officers have the least influence on the kings and queens, followed by the fools and gentlewomen.</p>
-<p><img src="/images/imperial-voices/rand-pca-800mfw.png" alt="Randomized Text; 800 MFW" /></p>
+<figure>
+<img src="/images/imperial-voices/rand-pca-800mfw.png" alt="" /><figcaption>Randomized Text; 800 MFW</figcaption>
+</figure>
 <p>A more convincing picture might be found in a cluster analysis of the same data set, shown in the figure above. As before, the kings, queens, and gentlemen all group together, and the gentlewomen and the servants make a pair. This time, though, the fools and clowns are the outliers, followed by the officers at the opposite end. This result is identical between sets of 800 and 300 of the most frequently used words. This seems to confirm most of the interpretation previously suggested of the first figure.</p>
-<p><img src="/images/imperial-voices/rand-all-800.png" alt="Randomized Text; 800 MFW" /></p>
+<figure>
+<img src="/images/imperial-voices/rand-all-800.png" alt="" /><figcaption>Randomized Text; 800 MFW</figcaption>
+</figure>
 <p>These results all vary considerably. This variation has the double purpose of highlighting recurring motifs as potential candidates for evidence, and showing the instability of these analyses. What almost all of these experiments show is that the dialog of Shakespeare’s kings and queens is statistically dissimilar to the dialog of other characters. In most cases, the kings are queens are more like each other than any other characters. Most of the statistical divisions shown here take place along class lines. A more in-depth analysis of the language characteristic of these categories might help to shed some light on the exact nature of this division.</p>
 <h1 id="distinctive-language-analysis">Distinctive Language Analysis</h1>
 <p>Next, the texts in these categories were compared with one another using David Hoover’s Full Spectrum Spreadsheet. This program identifies words that appear frequently in one text and rarely in another, and sorts them according to this ratio, in order to find words that are distinctive of each category. The resulting wordlists are indications of the language of their categories, insofar as they distinguish themselves from the categories with which they are being compared. The distinctive words of Shakespeare’s kings, for instance, when compared with that of fools, is very different from the words distinctive of kings when compared to queens. There are many place names and names of people in this former group, for instance–“Percy,” “Harry,” “Douglas,” “Wales,” “Westmoreland” and “Northumberland” all appear among the top 25 most distinctive words. These proper names appear much less frequently in comparison with other categories of characters. This would seem to suggest that the fools and clowns of Shakespeare speak more in abstractions than the kings. If one remembers the Fool’s song from King Lear, “Have more than thou showest, / Speak less than thou knowest,” this rings true.</p>
@@ -335,4 +393,4 @@ a Stylometric Approach
 25.894-14.503.218-35.367-18.227-45.883-25.895zM384 217.775V360c0 13.255-10.745
 24-24 24H88c-13.255 0-24-10.745-24-24V217.775c13.958 10.794 33.329 25.236 95.303
 70.214 14.162 10.341 37.975 32.145 64.694 32.01 26.887.134 51.037-22.041
-64.72-32.025 61.958-44.965 81.325-59.406 95.283-70.199z"></svg></a></div></div></div><script async data-goatcounter="https://jonreeve.goatcounter.com/count" src="//gc.zgo.at/count.js"></script><script src="/assets/js/jquery-3.5.1.min.js"></script><script src="/assets/js/main.js"></script><script async src="https://hypothes.is/embed.js"></script></div></footer></body></html>
+64.72-32.025 61.958-44.965 81.325-59.406 95.283-70.199z"></svg></a></div></div></div><script async data-goatcounter="https://jonreeve.goatcounter.com/count" src="//gc.zgo.at/count.js"></script><script src="/assets/js/jquery-3.5.1.min.js"></script><script async src="/assets/js/main.js"></script><script async src="https://hypothes.is/embed.js"></script><script src="//cdn.jsdelivr.net/gh/highlightjs/cdn-release@10.2.0/build/highlight.min.js"></script><script>hljs.initHighlightingOnLoad();</script></div></footer></body></html>
