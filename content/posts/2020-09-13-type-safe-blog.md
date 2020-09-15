@@ -97,3 +97,5 @@ And it's all validated at compile time, so when I press save in my text editor, 
 All of this I achieve using the wonderful static site generator [Rib](https://github.com/srid/rib), which built on the Haskell build tool [Shake](https://hackage.haskell.org/package/shake). So if there's anything else I need to do, which Rib doesn't provide out of the box, I don't need a plugin for it; I can just write a Shake action.
 
 There's still some complexity left over, though, in that I still have to manage Haskell packages. But with [Nix](https://nixos.org/) that's trivial. Nix is great at making reproducible builds possible.
+
+[Browse the source code for this site here.](https://github.com/JonathanReeve/jonreeve.com/blob/master/src/Main.hs)

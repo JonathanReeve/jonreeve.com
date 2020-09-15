@@ -27,6 +27,12 @@ projects = [
             desc = "Open-source, semantically annotated scholarly editions of literary texts.",
             dateRange = DateRange (date 2015 09) Present,
             updates = [
+              Update (date 2020 05) (Publication Article
+                                    "Open Editions Online (a collaboration with Hans Walter Gabler)"
+                                    "https://muse.jhu.edu/article/756836"
+                                    (Venue "James Joyce Quarterly" "https://jjq.utulsa.edu/"
+                                    "U Tulsa")
+                                    ),
               Update (date 2019 01) (Award "Second runner-up, Best DH Data Set"
                                      (Venue "2019 DH Awards" "http://dhawards.org/dhawards2019/results/" "")),
               Update (date 2019 01) (News "[Joycewords.com](http://joycewords.com) released"),

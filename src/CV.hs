@@ -76,7 +76,7 @@ formatEvent event = foldMap (span_ [ class_ "update" ]) $
                            , a_ [ href_ uri ] (toHtml talkTitle)
                            , formatVenue talkVenue
                            ]
-    Publication pubType pubTitle pubURI pubVenue -> [ toHtml $ chip $ (T.pack . show) pubType
+    Publication pubType pubTitle pubURI pubVenue -> [ toHtml $ chip $ T.toLower $ (T.pack . show) pubType
                                           , a_ [ href_ pubURI ] (toHtml pubTitle)
                                           , formatVenue pubVenue
                                           ]
