@@ -6,6 +6,7 @@ import Prelude hiding (take)
 import qualified Text.Atom.Feed as Atom
 import qualified Text.Atom.Feed.Export as Export
 
+import Data.Maybe
 import Data.Text
 import Data.Text.Lazy (toStrict)
 import Text.XML
@@ -13,7 +14,7 @@ import Data.XML.Types as XML
 import Text.XML as C
 
 
-atomFeed :: Maybe Text
+atomFeed :: Text
 atomFeed = renderFeed examplePosts
 
 data Post = Post
@@ -49,8 +50,8 @@ feed posts =
        Post latestPostDate _ _:_ -> latestPostDate
        _ -> "")
 
-renderFeed :: [Post] -> Maybe Text
-renderFeed posts =
+renderFeed :: [Post] -> Text
+renderFeed posts = fromMaybe "RSS feed broken! :(" $
   fmap (toStrict . renderText def) $
   elementToDoc $
   Export.xmlFeed $

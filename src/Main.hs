@@ -93,7 +93,6 @@ generateSite = do
                        ]
   let writeHtmlRoute :: Route a -> a -> Action ()
       writeHtmlRoute r = Rib.writeRoute r . Lucid.renderText . renderPage r
-      writeXmlRoute :: Route a -> a -> Action ()
       writeXmlRoute r = Rib.writeRoute r . RSS.renderFeed . toPosts r
   -- Build individual sources, generating .html for each.
   articles <-
@@ -105,18 +104,18 @@ generateSite = do
   writeHtmlRoute Route_CV articles
   writeHtmlRoute Route_Tags $ groupByTag articles
   writeHtmlRoute Route_Index $ reverse articles
-  writeXmlRoute Route_Feed articles
+  writeXmlRoute Route_Feed $ reverse articles
   where
     cleanPath path = drop 6 (take (length path - 3) path)
     groupByTag as =
       Map.fromListWith (<>) $ flip concatMap as $ \(r, doc) ->
         (,[(r, doc)]) <$> tags (getMeta doc)
 
-toPosts :: Route a -> Pandoc -> [Post]
-toPosts r doc = [toPost r doc]
+-- toPosts :: Route a -> a -> [Post]
+toPosts r docs = [toPost r doc | doc <- docs] where
+  toPost r doc = RSS.Post (date (getMeta doc)) (Rib.routeUrl r) $ pandocToText doc
 
-toPost :: Route a -> Pandoc -> Post
-toPost r doc = RSS.Post (date (getMeta doc)) (Rib.routeUrl r) $ pandocToText doc
+-- toPost :: Route a -> a -> Post
 
 pandocToText = LT.toStrict . Lucid.renderText . Pandoc.render
 
