@@ -17,8 +17,10 @@ import Data.Aeson (FromJSON, fromJSON)
 import qualified Data.Aeson as Aeson
 import Data.List (sortOn)
 import Data.Map (Map)
+import Data.Maybe (fromJust)
 import qualified Data.Map.Strict as Map
 import qualified Data.Text as T
+import qualified Data.Text.Lazy as LT
 import Data.Text (Text)
 import Development.Shake
 import GHC.Generics (Generic)
@@ -33,7 +35,9 @@ import PyF
 -- My modules
 import qualified CV
 import CSS
+import RSS
 import Pandoc
+import SiteData
 
 -- | Route corresponding to each generated static page.
 --
@@ -90,6 +94,7 @@ generateSite = do
                        ]
   let writeHtmlRoute :: Route a -> a -> Action ()
       writeHtmlRoute r = Rib.writeRoute r . Lucid.renderText . renderPage r
+      writeXmlRoute r = Rib.writeRoute r . RSS.renderFeed . toPosts r
   -- Build individual sources, generating .html for each.
   articles <-
     Rib.forEvery ["posts/*.md"] $ \srcPath -> do
@@ -100,15 +105,27 @@ generateSite = do
   writeHtmlRoute Route_CV articles
   writeHtmlRoute Route_Tags $ groupByTag articles
   writeHtmlRoute Route_Index $ reverse articles
-  writeHtmlRoute Route_Feed articles
+  writeXmlRoute Route_Feed $ articles
   where
     cleanPath path = drop 6 (take (length path - 3) path)
     groupByTag as =
       Map.fromListWith (<>) $ flip concatMap as $ \(r, doc) ->
         (,[(r, doc)]) <$> tags (getMeta doc)
 
-stylesheet url = link_ [rel_ "stylesheet", href_ url]
+-- | Convert the posts we've read into Post types that can be read
+-- by the RSS/Atom module.
+toPosts :: Route a -> [(Route Pandoc, Pandoc)] -> [Post]
+toPosts r docs = [toPost r doc | doc <- docs] where
+  toPost :: Route a -> (Route Pandoc, Pandoc) -> Post
+  toPost r (r', doc) = RSS.Post postDate postUrl postContent postTitle where
+    postDate = date (getMeta doc)
+    postUrl = SiteData.domain <> Rib.routeUrl r'
+    postContent = pandocToText doc
+    postTitle = title (getMeta doc)
+  pandocToText :: Pandoc -> T.Text
+  pandocToText doc = LT.toStrict $ Lucid.renderText $ Pandoc.render doc
 
+stylesheet url = link_ [rel_ "stylesheet", href_ url]
 script url = script_ [src_ url, async_ T.empty] T.empty
 
 -- | Define your site HTML here
@@ -118,7 +135,7 @@ renderPage route val = html_ [lang_ "en"] $ do
     meta_ [httpEquiv_ "Content-Type", content_ "text/html; charset=utf-8"]
     title_ routeTitle
     mapM_ stylesheet [ "/assets/css/spectre.min.css"
-                     , "https://fonts.googleapis.com/css?family=Montserrat|Raleway"
+                     , "//fonts.googleapis.com/css?family=Montserrat|Raleway"
                      , "//cdn.jsdelivr.net/gh/highlightjs/cdn-release@10.2.0/build/styles/default.min.css"
                      ]
     link_ [ rel_ "icon", href_ "/images/favicon.svg", sizes_ "any", type_ "image/svg+xml" ]
@@ -169,7 +186,7 @@ renderPage route val = html_ [lang_ "en"] $ do
     content = case route of
       Route_Index -> do
         section_ [id_ "greeting"] $ do
-          CV.md2Html greeting
+          CV.md2Html SiteData.greeting
           div_ [class_ "icons"] $ do
             img_ [src_ "assets/images/noun_Book_1593490.svg"]
             span_ [] "+"
@@ -180,12 +197,13 @@ renderPage route val = html_ [lang_ "en"] $ do
           section_ [id_ "postList"] $ do
             li_ [class_ "post" ] $ do
               let meta = getMeta src
-              h2_ [class_ "postTitle"] $ a_ [href_ (Rib.routeUrl r)] $ toHtml $ title meta
-              p_ [class_ "meta"] $ do
-                span_ [class_ "date"] $ toHtml $ T.concat ["(", date meta, ")"]
-                span_ [class_ "tags"] $ do
-                  " in"
-                  mapM_ (a_ [class_ "chip", href_ ""] . toHtml) (tags meta)
+              div_ [vocab_ "https://schema.org", typeof_ "blogPosting"] $ do
+                h2_ [class_ "postTitle", property_ "headline"] $ a_ [href_ (Rib.routeUrl r)] $ toHtml $ title meta
+                p_ [class_ "meta"] $ do
+                  span_ [class_ "date", property_ "datePublished", content_ (date meta)] $ toHtml $ T.concat ["(", date meta, ")"]
+                  span_ [class_ "tags", property_ "keywords", content_ (T.intercalate "," (tags meta))] $ do
+                    " in"
+                    mapM_ (a_ [class_ "chip", rel_ "tag", href_ ""] . toHtml) (tags meta)
       Route_Tags -> do
         h1_ routeTitle
         div_ $ forM_ (sortOn (T.toLower . fst) $ Map.toList val) $ \(tag, rs) -> do
@@ -226,27 +244,11 @@ getMeta src = case Pandoc.extractMeta src of
     Aeson.Error e -> error $ "JSON error: " <> e
     Aeson.Success v -> v
 
-greeting :: T.Text
-greeting = [fmt|Hi. My name is Jonathan Reeve. I'm a PhD candidate in
-                **computational literary analysis** at Columbia University. I write computer
-                programs that help us understand novels and poetry.|]
 
-coda :: T.Text
-coda = [fmt|I believe in openness. This work is licensed under a [Creative
-            Commons Attribution-NonCommercial-ShareAlike 4.0 International
-            License](https://creativecommons.org/licenses/by-nc-sa/4.0/), unless
-            otherwise stated. All content ©Jonathan Reeve 2020. Hand-coded with
-            love, using exclusively free and open-source software, including
-            [Rib](https://github.com/srid/rib) and
-            [Haskell](https://haskell.org/). Hosted on
-            [GitHub](https://github.com) and served with
-            [Netlify](https://netlify.com). Icons by Nhor, via [The Noun
-            Project](https://thenounproject.com). [Buy me a
-            coffee](https://www.buymeacoffee.com/vaIVQZH) or support me [via
-            Libera Pay](https://liberapay.com/JonathanReeve/donate) or Bitcoin:
-            3Qvm1DwzFGk3L1Eb6yeg5Nbc6db8sZUnbK.|]
-
-
+-- Schema.org RDFa
+vocab_ = makeAttribute "vocab"
+typeof_ = makeAttribute "typeof"
+property_ = makeAttribute "property"
 
 path_ :: Applicative m => [Attribute] -> HtmlT m ()
 path_ = with (makeElementNoEnd "path")

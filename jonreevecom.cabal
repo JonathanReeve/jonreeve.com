@@ -24,6 +24,7 @@ executable jonreevecom
         CV.Other
     build-depends:
         base,
+        base-compat,
         aeson,
         clay,
         filepath,
@@ -39,4 +40,6 @@ executable jonreevecom
         text,
         with-utf8,
         containers,
-        PyF
+        PyF,
+        xml-types,
+        xml-conduit
