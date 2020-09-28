@@ -13,29 +13,23 @@ import Text.XML
 import Data.XML.Types as XML
 import Text.XML as C
 
-
-atomFeed :: Text
-atomFeed = renderFeed examplePosts
+import SiteData
 
 data Post = Post
   { _postedOn :: Text
   , _url :: Text
   , _content :: Text
+  , _title :: Text
   }
-
-examplePosts :: [Post]
-examplePosts =
-  [ Post "2000-02-02T18:30:00Z" "http://example.com/2" "Bar."
-  , Post "2000-01-01T18:30:00Z" "http://example.com/1" "Foo."
-  ]
-
+ 
 toEntry :: Post -> Atom.Entry
-toEntry (Post date url content) =
+toEntry (Post date url content title) =
   (Atom.nullEntry
      url -- The ID field. Must be a link to validate.
-     (Atom.TextString (take 20 content)) -- Title
+     -- (Atom.TextString (take 20 content)) -- Title
+     (Atom.TextString title)
      date)
-    { Atom.entryAuthors = [Atom.nullPerson {Atom.personName = "J. Smith"}]
+    { Atom.entryAuthors = [Atom.nullPerson {Atom.personName = SiteData.name }]
     , Atom.entryLinks = [Atom.nullLink url]
     , Atom.entryContent = Just (Atom.HTMLContent content)
     }
@@ -43,11 +37,11 @@ toEntry (Post date url content) =
 feed :: [Post] -> Atom.Feed
 feed posts =
   Atom.nullFeed
-    "http://example.com/atom.xml" -- ID
-    (Atom.TextString "Example Website") -- Title
+    (SiteData.domain <> "/feed.xml") -- ID
+    (Atom.TextString SiteData.siteName) -- Title
     (case posts -- Updated
            of
-       Post latestPostDate _ _:_ -> latestPostDate
+       Post latestPostDate _ _ _:_ -> latestPostDate
        _ -> "")
 
 renderFeed :: [Post] -> Text
@@ -56,7 +50,7 @@ renderFeed posts = fromMaybe "RSS feed broken! :(" $
   elementToDoc $
   Export.xmlFeed $
   (feed posts)
-    {Atom.feedEntries = fmap toEntry posts, Atom.feedLinks = [Atom.nullLink "http://example.com/"]}
+    {Atom.feedEntries = fmap toEntry posts, Atom.feedLinks = [Atom.nullLink SiteData.domain]}
  
 elementToDoc :: XML.Element -> Maybe C.Document
 elementToDoc el =

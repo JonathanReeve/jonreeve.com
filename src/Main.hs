@@ -37,6 +37,7 @@ import qualified CV
 import CSS
 import RSS
 import Pandoc
+import SiteData
 
 -- | Route corresponding to each generated static page.
 --
@@ -111,16 +112,20 @@ generateSite = do
       Map.fromListWith (<>) $ flip concatMap as $ \(r, doc) ->
         (,[(r, doc)]) <$> tags (getMeta doc)
 
-toPosts :: Route a -> Pandoc -> [Post]
-toPosts r doc = [toPost r doc] where
-  toPost r doc = RSS.Post (date (getMeta doc)) (Rib.routeUrl r) $ pandocToText doc
-
--- toPost :: Route a -> a -> Post
-
-pandocToText = LT.toStrict . Lucid.renderText . Pandoc.render
+-- | Convert the posts we've read into Post types that can be read
+-- by the RSS/Atom module.
+toPosts :: Route a -> [(Route Pandoc, Pandoc)] -> [Post]
+toPosts r docs = [toPost r doc | doc <- docs] where
+  toPost :: Route a -> (Route Pandoc, Pandoc) -> Post
+  toPost r (r', doc) = RSS.Post postDate postUrl postContent postTitle where
+    postDate = date (getMeta doc)
+    postUrl = SiteData.domain <> Rib.routeUrl r'
+    postContent = pandocToText doc
+    postTitle = title (getMeta doc)
+  pandocToText :: Pandoc -> T.Text
+  pandocToText doc = LT.toStrict $ Lucid.renderText $ Pandoc.render doc
 
 stylesheet url = link_ [rel_ "stylesheet", href_ url]
-
 script url = script_ [src_ url, async_ T.empty] T.empty
 
 -- | Define your site HTML here
@@ -130,7 +135,7 @@ renderPage route val = html_ [lang_ "en"] $ do
     meta_ [httpEquiv_ "Content-Type", content_ "text/html; charset=utf-8"]
     title_ routeTitle
     mapM_ stylesheet [ "/assets/css/spectre.min.css"
-                     , "https://fonts.googleapis.com/css?family=Montserrat|Raleway"
+                     , "//fonts.googleapis.com/css?family=Montserrat|Raleway"
                      , "//cdn.jsdelivr.net/gh/highlightjs/cdn-release@10.2.0/build/styles/default.min.css"
                      ]
     link_ [ rel_ "icon", href_ "/images/favicon.svg", sizes_ "any", type_ "image/svg+xml" ]
@@ -185,7 +190,7 @@ renderPage route val = html_ [lang_ "en"] $ do
     content = case route of
       Route_Index -> do
         section_ [id_ "greeting"] $ do
-          CV.md2Html greeting
+          CV.md2Html SiteData.greeting
           div_ [class_ "icons"] $ do
             img_ [src_ "assets/images/noun_Book_1593490.svg"]
             span_ [] "+"
@@ -242,25 +247,6 @@ getMeta src = case Pandoc.extractMeta src of
     Aeson.Error e -> error $ "JSON error: " <> e
     Aeson.Success v -> v
 
-greeting :: T.Text
-greeting = [fmt|Hi. My name is Jonathan Reeve. I'm a PhD candidate in
-                **computational literary analysis** at Columbia University. I write computer
-                programs that help us understand novels and poetry.|]
-
-coda :: T.Text
-coda = [fmt|I believe in openness. This work is licensed under a [Creative
-            Commons Attribution-NonCommercial-ShareAlike 4.0 International
-            License](https://creativecommons.org/licenses/by-nc-sa/4.0/), unless
-            otherwise stated. All content ©Jonathan Reeve 2020. Hand-coded with
-            love, using exclusively free and open-source software, including
-            [Rib](https://github.com/srid/rib) and
-            [Haskell](https://haskell.org/). Hosted on
-            [GitHub](https://github.com) and served with
-            [Netlify](https://netlify.com). Icons by Nhor, via [The Noun
-            Project](https://thenounproject.com). [Buy me a
-            coffee](https://www.buymeacoffee.com/vaIVQZH) or support me [via
-            Libera Pay](https://liberapay.com/JonathanReeve/donate) or Bitcoin:
-            3Qvm1DwzFGk3L1Eb6yeg5Nbc6db8sZUnbK.|]
 
 -- Schema.org RDFa
 vocab_ = makeAttribute "vocab"
