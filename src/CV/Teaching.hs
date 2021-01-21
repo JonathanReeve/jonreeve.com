@@ -17,6 +17,7 @@ data Teaching = Workshop { dates :: [Date],
                          teachingRole :: TeachingRole,
                          venue :: Venue,
                          url :: URI,
+                         teachingUpdates :: [Update],
                          notes :: Maybe Text
                        } deriving Show
 
@@ -29,8 +30,14 @@ teaching :: [Teaching]
 teaching = [Course { dateRanges = [DateRange (date 2020 09) (date 2020 12)],
                       courseName = "Introduction to Computational Literary Analysis",
                       teachingRole = Instructor,
-                      url = "https://github.com/JonathanReeve/course-computational-literary-analysis",
+                      url = "https://icla2020b.jonreeve.com",
                       venue = cuEng,
+                      teachingUpdates = [
+                       Update (date 2020 11) (Talk
+                                              "Digital Teaching Alternatives to Zoom"
+                                              "https://blogs.cuit.columbia.edu/englishpedagogycolloquium/2020/11/20/digital-teaching-alternatives-to-zoom/"
+                                              (Venue "Pedagogy Colloquim, Department of English and Comparative Literature" "https://blogs.cuit.columbia.edu/englishpedagogycolloquium/" (uni "cu")))
+                         ],
                       notes = Nothing
                     },
             Course { dateRanges = [DateRange (date 2020 09) (date 2020 12)]
@@ -38,8 +45,25 @@ teaching = [Course { dateRanges = [DateRange (date 2020 09) (date 2020 12)],
                    , teachingRole = Instructor
                    , url = "https://scienceandsociety.columbia.edu/content/un1002-computing-context-cannon"
                    , venue = Venue "Department of Computer Science" "https://www.cs.columbia.edu/" (uni "cu")
+                   , teachingUpdates = []
                    , notes = Nothing
                    },
+            Course { dateRanges = [DateRange (date 2018 07) (date 2018 09),
+                                    DateRange (date 2019 07) (date 2019 08),
+                                    DateRange (date 2020 07) (date 2020 08)],
+                      courseName = "Introduction to Computational Literary Analysis",
+                      teachingRole = Instructor,
+                      url = "https://icla2020.jonreeve.com",
+                      venue = Venue "Digital Humanities Summer Minor Program" "https://summerdigitalhumanities.berkeley.edu/" (uni "ucb"),
+                      teachingUpdates = [
+                       Update (date 2020 12) (Publication Article
+                                              "Building STEAM for DH and Electronic Literature: An Educational Approach to Nurturing the STEAM Mindset in Higher Education"
+                                              "http://electronicbookreview.com/essay/building-steam-for-dh-and-electronic-literature-an-educational-approach-to-nurturing-the-steam-mindset-in-higher-education/"
+                                              (Venue "Electronic Book Review" "http://electronicbookreview.com/" "U Chicago")
+                                             )
+                         ],
+                      notes = Nothing
+                      },
             Workshop { dates = [date 2021 06, date 2021 06]
                      , workshopName = "Meaningful Text Analysis with Word Embeddings"
                      , url = "https://dhsi.org/course-offerings/"
@@ -63,15 +87,7 @@ teaching = [Course { dateRanges = [DateRange (date 2020 09) (date 2020 12)],
                       teachingRole = TAInstructor,
                       url = "",
                       venue = cuEng,
-                      notes = Nothing
-                      },
-             Course { dateRanges = [DateRange (date 2018 07) (date 2018 09),
-                                    DateRange (date 2019 07) (date 2019 08),
-                                    DateRange (date 2020 07) (date 2020 08)],
-                      courseName = "Introduction to Computational Literary Analysis",
-                      teachingRole = Instructor,
-                      url = "https://icla2020.jonreeve.com",
-                      venue = Venue "Digital Humanities Summer Minor Program" "https://summerdigitalhumanities.berkeley.edu/" (uni "ucb"),
+                      teachingUpdates = [],
                       notes = Nothing
                       },
              Workshop { dates = [date 2018 06, date 2019 06],
@@ -91,6 +107,7 @@ teaching = [Course { dateRanges = [DateRange (date 2020 09) (date 2020 12)],
                        courseName = "University Writing with Readings in the Data Sciences",
                        url = "",
                        venue = cuEng,
+                       teachingUpdates = [],
                        notes = Nothing
                       },
              Workshop { dates = [date 2017 11],
@@ -120,6 +137,7 @@ teaching = [Course { dateRanges = [DateRange (date 2020 09) (date 2020 12)],
                         venue = cuEng,
                         courseName =  "James Joyce",
                         url = "",
+                        teachingUpdates = [],
                         notes = Just "Led a weekly discussion section in Joyce’s _Ulysses_"
                       },
              Workshop { dates = [date 2016 04],
@@ -148,6 +166,7 @@ teaching = [Course { dateRanges = [DateRange (date 2020 09) (date 2020 12)],
                       courseName = "History of the English Language",
                       venue = cuEng,
                       url = "",
+                      teachingUpdates = [],
                       notes = Nothing
                     },
              Course { dateRanges = [ DateRange (date 2012 09) (date 2012 12) ],
@@ -155,6 +174,7 @@ teaching = [Course { dateRanges = [DateRange (date 2020 09) (date 2020 12)],
                       courseName = "Computing in the Humanities",
                       venue = Venue "English Department" "" (uni "nyu"),
                       url = "",
+                      teachingUpdates = [],
                       notes = Just "Lectured in BASH scripting, command-line image manipulation"
                     },
              Course { dateRanges = [ DateRange (date 2012 11) (date 2013 05) ],
@@ -162,6 +182,7 @@ teaching = [Course { dateRanges = [DateRange (date 2020 09) (date 2020 12)],
                       courseName = "Writing 300: Research Paper Writing",
                       venue = Venue "English Department" "" (uni "york"),
                       url = "",
+                      teachingUpdates = [],
                       notes = Just "Taught two sections per semester"
                     },
              Course { dateRanges = [ DateRange (date 2010 11) (date 2011 05) ],
@@ -169,6 +190,7 @@ teaching = [Course { dateRanges = [DateRange (date 2020 09) (date 2020 12)],
                       courseName = "Reading 100, Writing 100",
                       venue = Venue "International School" "" "Vietnam National U",
                       url = "",
+                      teachingUpdates = [],
                       notes = Nothing
                     },
              Course { dateRanges = [ DateRange (date 2009 08) (date 2009 12) ],
@@ -176,6 +198,7 @@ teaching = [Course { dateRanges = [DateRange (date 2020 09) (date 2020 12)],
                       courseName = "English 1 (composition, nonfiction readings)",
                       venue = Venue "English Department" "" (uni "bc"),
                       url = "",
+                      teachingUpdates = [],
                       notes = Nothing
                       },
              Course { dateRanges = [ DateRange (date 2010 01) (date 2010 06) ],
@@ -183,6 +206,7 @@ teaching = [Course { dateRanges = [DateRange (date 2020 09) (date 2020 12)],
                       courseName = "English 2 (composition, readings in literature)",
                       venue = Venue "English Department" "" (uni "bc"),
                       url = "",
+                      teachingUpdates = [],
                       notes = Nothing
                     },
              Course { dateRanges = [ DateRange (date 2005 03) (date 2006 01) ],
@@ -190,6 +214,7 @@ teaching = [Course { dateRanges = [DateRange (date 2020 09) (date 2020 12)],
                       courseName = "Reading 100, Writing 100",
                       url = "",
                       venue = Venue "English Department" "" "Missouri State U (Dalian, China Branch Campus)",
+                      teachingUpdates = [],
                       notes = Nothing
                     }
            ]

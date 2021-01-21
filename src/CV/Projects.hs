@@ -18,6 +18,8 @@ data Project = Project {
 
 data ProjectRole = Creator | CoCreator | Developer | Collaborator | ResearchAssistant deriving Show
 
+dh2020 = Venue "Digital Humanities 2020" "https://dh2020.adho.org/" "Ottawa, CA [Virtual]"
+
 projects :: [Project]
 projects = [
   Project { title = "Open-Editions",
@@ -27,6 +29,8 @@ projects = [
             desc = "Open-source, semantically annotated scholarly editions of literary texts.",
             dateRange = DateRange (date 2015 09) Present,
             updates = [
+              Update (date 2021 01) (Award "Honerable Mention, Emerging Open Scholarship Awards"
+                                     (Venue "Canadian Social Knowledge Institute" "" "")),
               Update (date 2020 05) (Publication Article
                                     "Open Editions Online (a collaboration with Hans Walter Gabler)"
                                     "https://muse.jhu.edu/article/756836"
@@ -59,15 +63,11 @@ projects = [
               Update (date 2020 08) (Publication Abstract
                 "Corpus-DB: a Scriptable Textual Corpus Database for Cultural Analytics"
                 "https://dh2020.adho.org/wp-content/uploads/2020/07/604_CorpusDBaScriptableTextualCorpusDatabaseforCulturalAnalytics.html"
-                (Venue "Digital Humanities 2020"
-                       "https://dh2020.adho.org/"
-                       "Ottawa, CA")),
+                dh2020),
               Update (date 2020 07) (Talk
                 "Corpus-DB: a Scriptable Textual Corpus Database for Cultural Analytics"
                 "https://dh2020.adho.org/wp-content/uploads/2020/07/604_CorpusDBaScriptableTextualCorpusDatabaseforCulturalAnalytics.html"
-                (Venue "Digital Humanities 2020"
-                       "https://dh2020.adho.org/"
-                       "Ottawa, CA")),
+                dh2020),
               -- Add CU Libraries talk here?
               Update (date 2018 01) (Award "micro-grant awarded" (Venue "NYC-DH" "https://nycdh.org/" "")),
                 Update (date 2017 10) (Award "winner"
@@ -87,17 +87,14 @@ projects = [
             dateRange = DateRange (date 2016 01) Present,
             desc  = "Computational analyses of the critical history of George Eliot's novel _Middlemarch_. In collaboration with Milan Terlunen, Sierra Eckert, Columbia University’s [Group for Experimental Methods in the Humanities](http://xpmethod.plaintext.in/), and the Stanford Literary Lab.",
             updates = [
-
+              Update (date 2017 10) (Publication Abstract
+                  "Frequently Cited Passages Across Time: New Methods for Studying the Critical Reception of Texts"
+                  "https://github.com/xpmethod/middlemarch-critical-histories/blob/1359d403c8c8655170babb6e1bf8f81bcb4bc0c9/dh2017-submission/middlemarch-abstract.pdf"
+                  (Venue "Proceedings of Digital Humanities 2017" "https://dh2017.adho.org/" "Mexico City")),
               Update (date 2017 08) (Talk
                 "Frequently Cited Passages Across Time: New Methods for Studying the Critical Reception of Texts"
                 "https://github.com/lit-mod-viz/middlemarch-critical-histories/blob/master/papers/dh2017-poster/main.pdf"
                 (Venue "Digital Humanities 2017" "https://dh2017.adho.org/" "Mexico City")),
-
-              Update (date 2017 10) (Publication Abstract
-                  "Frequently Cited Passages Across Time: New Methods for Studying the Critical Reception of Texts"
-                  "https://github.com/xpmethod/middlemarch-critical-histories/blob/1359d403c8c8655170babb6e1bf8f81bcb4bc0c9/dh2017-submission/middlemarch-abstract.pdf"
-                  (Venue "Proceedings of Digital Humanities 2017" "https://dh2017.adho.org/" "Mexico City")), -- TODO: Add url
-
               Update (date 2017 02) (Talk
                 "Middlemarch Critical Histories: Initial Findings" "" -- No URI
                 (Venue "Stanford Literary Lab"
@@ -207,8 +204,8 @@ projects = [
             pypi = Just "macroetym",
             updates = [
               Update (date 2016 01) $ Publication Chapter
-                "A Macro-Etymological Analysis of James Joyce's _A Portrait of the Artist as a Young Man_"
-                "" -- TODO: Add url
+                "A Macro-Etymological Analysis of James Joyce's A Portrait of the Artist as a Young Man"
+                "https://link.springer.com/chapter/10.1057/978-1-137-59569-0_9"
                 (Venue "Reading Modernism with Machines" "" "Palgrave Macmillan"),
               Update (date 2015 01) $ News "[Featured](http://www.tapor.ca/?id=470) in the [Text Analysis Portal for Research](http://www.tapor.ca/)",
               Update (date 2015 01) $ News "Listed in Alain Liu's directory of Digital Humanities Tools",
@@ -235,8 +232,9 @@ projects = [
             github = Just "JonathanReeve/text-matcher",
             pypi = Nothing,
             updates = [
-              Update (date 2016 10) $ News "[Released command-line tool on the Python Package Archive](https://pypi.python.org/pypi/text-matcher)",
-              Update (date 2015 05) $ News "[Modernism, Myth, and their Intertextualities: a Computational Detection of Biblical and Classical Allusion in the English-Language Novel, 1771-1930](https://github.com/JonathanReeve/allusion-detection/blob/master/paper/essay.pdf)"
+              Update (date 2020 09) $ News "Used in [\"Measuring Unreading,\" a study by Andrew Piper and TxtLab](https://txtlab.org/2020/09/measuring-unreading/)",
+              Update (date 2016 10) $ News "Released [command-line tool on the Python Package Archive](https://pypi.python.org/pypi/text-matcher)",
+              Update (date 2015 05) $ News "Developed for [Modernism, Myth, and their Intertextualities: a Computational Detection of Biblical and Classical Allusion in the English-Language Novel, 1771-1930](https://github.com/JonathanReeve/allusion-detection/blob/master/paper/essay.pdf)"
               ]
           },
 
@@ -248,6 +246,7 @@ projects = [
            github = Just "JonathanReeve/theme-customeka",
            pypi = Nothing,
            updates = [
+             Update (date 2017 01) $ News "Used in the photo archive of the Greenwich Village Society for Historic Preservation",
              Update (date 2016 08) $ Publication Tutorial "Installing Omeka"
                "https://programminghistorian.org/en/lessons/installing-omeka"
                 (Venue "The Programming Historian" "https://programminghistorian.org" ""),

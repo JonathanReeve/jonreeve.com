@@ -5,9 +5,11 @@
 module CSS where
 
 import Clay
-import Clay.Stylesheet (key)
+import Clay.Stylesheet -- (key, MediaType)
 import qualified Clay.Media as Media
 import Prelude hiding (rem, span)
+import qualified Data.Text.Lazy as TL
+import qualified Data.Text as T
 
 myBlue = "#494E8E"
 myLightgray = "#fafafa"
@@ -28,6 +30,9 @@ fontSizes :: Css
 fontSizes = mapM_ fontSizeFor [(xl, 23), (lg, 24), (md, 25), (sm, 27)]
 
 forMedia w = query Media.screen [Media.minWidth (px w)]
+
+pageMedia :: MediaType
+pageMedia = MediaType "page"
 
 -- | Define your site CSS here
 pageStyle :: Css
@@ -58,7 +63,7 @@ pageStyle = do
         li ? marginTop nil
   ".container" ? do
     maxWidth (em 55)
-    paddingAll (em 3)
+    sym padding (em 3)
   ".header" ? do
     marginBottom $ em 2
   "li.pages" ? do
@@ -113,9 +118,24 @@ pageStyle = do
       marginTop (em 5)
       listStyleType none
     ".postTitle" ? fontSize (em 2)
+  printCss
 
 fill :: Color -> Css
 fill = key "fill"
 
-paddingAll :: Size a -> Css
-paddingAll val = padding val val val val
+printCss :: Css
+printCss = query Media.print [] $ do
+  html ? fontSize (rem 0.9)
+  -- Don't display any buttons
+  "button" ? display none
+  -- Don't display header nav
+  "#headerWrapper" ? display none
+  "footer" ? display none
+  ".container" ? do
+    maxWidth none
+    sym padding (em 0)
+  "table" ? fontSize (rem 0.8)
+
+-- pageCss :: Css
+-- pageCss = query pageMedia [] $ do
+--   "margin" ? (cm 3)

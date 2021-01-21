@@ -105,13 +105,14 @@ formatTeaching teachingItem = li_ [ class_ "teaching" ] $
       span_ [ class_ "chip" ] "workshop"
       span_ [] $ strong_ $ a_ [ href_ workshopURL ] $ toHtml workshopName
       span_ [] $ formatVenue workshopVenue
-    Course dates name role venue url notes -> do
+    Course dates name role venue url updates notes -> do
       span_ [] $ toHtml $ formatDateRanges dates
       span_ [ class_ "chip" ] "course"
       span_ [] $ strong_ $ a_ [ href_ url ] $ toHtml name
       span_ [] ", "
       formatTeachingRole role
       span_ [] $ formatVenue venue
+      ul_ [ class_ "updates", style_ "margin-left: 1em" ] $ mapM_ formatUpdate $ updates
 
 formatTeachingRole :: TeachingRole -> Html ()
 formatTeachingRole r = span_ $ case r of
@@ -213,7 +214,14 @@ printStyle = T.concat ["@media print {"
 
 printCss :: Css
 printCss = do
+  -- Don't display any buttons
   "button" ? display none
+  -- Don't display header nav
+  "#headerWrapper" ? display none
+  "footer" ? display none
+  ".container" ? do
+    maxWidth none
+    sym padding none
 
 -- | Define your site CSS here
 pageStyle :: Css

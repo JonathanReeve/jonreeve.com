@@ -141,6 +141,7 @@ renderPage route val = html_ [lang_ "en"] $ do
     link_ [ rel_ "icon", href_ "/images/favicon.svg", sizes_ "any", type_ "image/svg+xml" ]
     -- <link rel="icon" href="images/favicon.svg" sizes="any" type="image/svg+xml">
     style_ [type_ "text/css"] $ C.render CSS.pageStyle
+    style_ [type_ "text/css"] ("@page{margin: 3cm;}" :: Html ())
   body_ $ do
     div_ [id_ "headerWrapper"] $ do
       header_ [class_ "navbar"] $ do
@@ -216,6 +217,7 @@ renderPage route val = html_ [lang_ "en"] $ do
       Route_CV -> do
         main_ [class_ "container" ] $ do
           h1_ "Curriculum Vitae"
+          h2_ "Jonathan Reeve"
           CV.cv
       Route_Article srcPath -> do
         h1_ routeTitle
@@ -244,8 +246,8 @@ getMeta src = case Pandoc.extractMeta src of
     Aeson.Error e -> error $ "JSON error: " <> e
     Aeson.Success v -> v
 
-
 -- Schema.org RDFa
+vocab_, typeof_, property_ :: Text -> Attribute
 vocab_ = makeAttribute "vocab"
 typeof_ = makeAttribute "typeof"
 property_ = makeAttribute "property"
