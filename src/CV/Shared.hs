@@ -27,12 +27,17 @@ formatDate d = let yy = year d
                in [fmt|{yy}-{mm}|]
 
 formatDates :: [Date] -> T.Text
-formatDates dates = T.intercalate "," $ map formatDate dates
+formatDates dates = T.intercalate ", " $ map formatDate dates
 
 formatDateRange :: DateRange -> T.Text
 formatDateRange dateRange = case dateRange of
   DateRange (Date _ _) Present -> [fmt|({startDate}–)|]
-  DateRange (Date _ _) (Date _ _) -> [fmt|({startDate}–{endDate})|]
+  DateRange (Date startY startM) (Date endY endM) ->
+    -- Sometimes a date range starts and ends at the same time.
+    -- In that case, we only need to show one of the dates.
+    if startY == endY && startM == endM
+    then [fmt|({startDate})|]
+    else [fmt|({startDate}–{endDate})|]
   DateRange _ _ -> error "Error reading date range."
   where startDate = formatDate $ start dateRange
         endDate = formatDate $ end dateRange

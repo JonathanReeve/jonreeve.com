@@ -12,6 +12,7 @@ import CV.Other
 
 import qualified Data.Text as T
 import qualified Data.Text.Lazy as TL
+import Data.List
 import Lucid
 import Clay hiding (title, Position, type_, header, html, filter)
 
@@ -28,6 +29,21 @@ educationSection = section_ [ class_ "education" ] $ do
 formatEducation :: Education -> Html ()
 formatEducation ed = tr_ [ class_ "ed" ] $ mapM_ ((td_ []) . toHtml) $
   sequence [ degree, field, university, formatDate . when ] ed
+
+awardsSection :: Html ()
+awardsSection = section_ [ class_ "awards" ] $ do
+  h1_ [] "Awards and Fellowships"
+  -- Attempt to sort
+  -- ul_ [] $ mconcat $ sort $ Data.List.map formatUpdate CV.Other.miscAwards <> Data.List.map formatAwards projects
+  ul_ [] $ foldMap formatUpdate CV.Other.miscAwards <> foldMap formatAwards projects
+
+-- | Get all publications from a project
+formatAwards :: Project -> Html ()
+formatAwards proj = foldMap formatUpdate publicationsOnly where
+    publicationsOnly = filter getPub $ updates proj
+    getPub update = case update of
+      Update _ (Award _ _) -> True
+      _ -> False
 
 projectSection :: Html ()
 projectSection = section_ [ class_ "projects" ] $ do
@@ -178,6 +194,16 @@ publicationsSection = section_ [ class_ "publications" ] $ do
   h1_ [] "Publications"
   ul_ [] $ foldMap formatPublication projects
 
+-- TODO
+-- formatTeachingPublication :: Teaching -> Html ()
+-- formatTeachingPublication teaching = foldMap formatUpdate withPublications where
+--     withPublications = filter getPub $ teaching
+--     getPub t = case t of
+--       Workshop -> False
+--       Course -> case
+--       Update _ (Publication _ _ _ _) -> True
+--       _ -> False
+
 -- | Get all publications from a project
 formatPublication :: Project -> Html ()
 formatPublication proj = foldMap formatUpdate publicationsOnly where
@@ -189,7 +215,9 @@ formatPublication proj = foldMap formatUpdate publicationsOnly where
 talksSection :: Html ()
 talksSection = section_ [ class_ "talks" ] $ do
   h1_ [] "Talks and Conference Presentations"
-  ul_ $ foldMap formatTalks projects
+  ul_ $ talks where
+    talks :: Html ()
+    talks = foldMap formatTalks projects
 
 formatTalks :: Project -> Html ()
 formatTalks proj = foldMap formatUpdate talksOnly where
@@ -197,6 +225,17 @@ formatTalks proj = foldMap formatUpdate talksOnly where
   getTalk update = case update of
     Update date (Talk title uri venue) -> True
     _ -> False
+
+languagesSection :: Html ()
+languagesSection = do
+  h1_ [] "Languages"
+  ul_ [] $ do
+    mapM_ langItem ["**Programming languages**: Python, Haskell, PHP. Some Ruby, JavaScript, Julia."
+                   , "**Markup and style languages**: TEI XML, HTML, Markdown, XSL, CSS."
+                   , "**Natural languages**: English, French, Chinese (Mandarin), Esperanto. Some Japanese, Italian, German, Spanish, and Irish."
+                   ] where
+      langItem :: T.Text -> Html ()
+      langItem item = li_ [] $ md2Html item
 
 header :: Html ()
 header = head_ [] $ do
@@ -240,8 +279,10 @@ cv = do
   projectSection
   publicationsSection
   talksSection
+  awardsSection
   teachingSection
   positionsSection
+  languagesSection
   affiliationsSection
 
 html :: Html ()

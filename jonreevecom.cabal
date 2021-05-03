@@ -22,6 +22,8 @@ executable jonreevecom
         CV.Shared
         CV.Teaching
         CV.Other
+        RSS
+        SiteData
     build-depends:
         base,
         base-compat,

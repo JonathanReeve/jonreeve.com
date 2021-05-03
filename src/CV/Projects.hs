@@ -29,7 +29,7 @@ projects = [
             desc = "Open-source, semantically annotated scholarly editions of literary texts.",
             dateRange = DateRange (date 2015 09) Present,
             updates = [
-              Update (date 2021 01) (Award "Honerable Mention, Emerging Open Scholarship Awards"
+              Update (date 2021 01) (Award "Honorable Mention, Emerging Open Scholarship Awards"
                                      (Venue "Canadian Social Knowledge Institute" "" "")),
               Update (date 2020 05) (Publication Article
                                     "Open Editions Online (a collaboration with Hans Walter Gabler)"

@@ -128,7 +128,8 @@ data Affiliation = Affiliation {affRole :: Text,
                                } deriving Show
 
 affiliations :: [Affiliation]
-affiliations = [Affiliation "Active member"
+affiliations = [
+                Affiliation "Active member"
                 (Venue "Literary Modeling and Visualization Lab"
                   "http://xpmethod.plaintext.in/projects/literary-modeling.html"
                   "Group for Experimental Methods in the Humanities, Columbia U")
@@ -140,12 +141,17 @@ affiliations = [Affiliation "Active member"
                 [DateRange (date 2017 05) Present],
 
                 Affiliation "Reviewer"
-                (Venue "Digital Humanities 2018" "https://dh2018.adho.org/en/" "Mexico City")
-                [DateRange (date 2017 12) (date 2017 12)],
+                (Venue "Interdisciplinary Digital Engagement in Arts & Humanities (IDEAH)"
+                 "https://ideah.pubpub.org/" "U Victoria")
+                [DateRange (date 2020 12) (date 2020 12)],
 
                 Affiliation "Reviewer"
                 (Venue "Digital Humanities 2020" "https://dh2019.adho.org/en/" "Ottawa, Canada")
                 [DateRange (date 2019 12) (date 2019 12)],
+
+                Affiliation "Reviewer"
+                (Venue "Digital Humanities 2018" "https://dh2018.adho.org/en/" "Mexico City")
+                [DateRange (date 2017 12) (date 2017 12)],
 
                  Affiliation "Reviewer"
                  (Venue "Journal of Data Mining and Digital Humanities"
@@ -177,3 +183,6 @@ affiliations = [Affiliation "Active member"
                  (Venue "HASTAC: Humanities, Arts, and Sciences Advanced Collaboratory" "https://www.hastac.org/" "")
                  [DateRange (date 2015 05) (date 2016 05)]
     ]
+
+miscAwards :: [Update]
+miscAwards = [Update (date 2020 03) (Award "Recipient, Marion E. Ponsford Fellowship" (Venue "" "" (uni "cu")))]
