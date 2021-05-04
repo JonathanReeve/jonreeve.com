@@ -97,9 +97,9 @@ generateSite = do
       writeXmlRoute r = Rib.writeRoute r . RSS.renderFeed . toPosts r
   -- Build individual sources, generating .html for each.
   articles <-
-    Rib.forEvery ["posts/*.md"] $ \srcPath -> do
+    Rib.forEvery ["posts/*.org"] $ \srcPath -> do
       let r = Route_Article $ cleanPath srcPath
-      doc <- Pandoc.parse Pandoc.readMarkdown srcPath
+      doc <- Pandoc.parse Pandoc.readOrg srcPath
       writeHtmlRoute r doc
       pure (r, doc)
   writeHtmlRoute Route_CV articles
