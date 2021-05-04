@@ -31,6 +31,7 @@ where
 
 import Control.Monad.Except (MonadError, liftEither, runExcept)
 import Data.Aeson
+import Data.Text (splitOn, isInfixOf)
 import Development.Shake (Action, readFile')
 import Lucid (HtmlT, toHtmlRaw)
 import Relude
@@ -140,7 +141,10 @@ flattenMeta (Meta meta) = fmap toJSON . traverse go <$> guarded (not . null) met
     go (MetaMap m) = toJSON <$> traverse go m
     go (MetaList m) = toJSONList <$> traverse go m
     go (MetaBool m) = pure $ toJSON m
-    go (MetaString m) = pure $ toJSON m
+    -- My org-mode tags are ";"-separated.
+    go (MetaString m) = if ";" `isInfixOf` m then
+      pure $ toJSONList $ Data.Text.splitOn "; " m
+      else pure $ toJSONList [m]
     go (MetaInlines m) =
       bimap show toJSON
         $ runPure . plainWriter
