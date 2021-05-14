@@ -204,7 +204,10 @@ renderPage route val = html_ [lang_ "en"] $ do
                   span_ [class_ "date", property_ "datePublished", content_ (date meta)] $ toHtml $ T.concat ["(", date meta, ")"]
                   span_ [class_ "tags", property_ "keywords", content_ (T.intercalate "," (tags meta))] $ do
                     " in"
-                    mapM_ (a_ [class_ "chip", rel_ "tag", href_ ""] . toHtml) (tags meta)
+                    mapM_ mkTag (tags meta) where
+                      mkTag :: Text -> Html ()
+                      mkTag tag = a_ [class_ "chip", rel_ "tag", href_ ("/tags/#" <> tag) ] $ toHtml tag
+
       Route_Tags -> do
         h1_ routeTitle
         div_ $ forM_ (sortOn (T.toLower . fst) $ Map.toList val) $ \(tag, rs) -> do
@@ -228,7 +231,7 @@ renderPage route val = html_ [lang_ "en"] $ do
         script_ [src_ "https://hypothes.is/embed.js" ] T.empty
       Route_Feed -> h1_ "RSS feed in development. Coming soon."
 
--- | Metadata in our markdown sources
+-- | Metadata in our sources
 data SrcMeta
   = SrcMeta
       { title :: Text,
