@@ -7,14 +7,14 @@ In 1887, [[https://en.wikipedia.org/wiki/Thomas_Corwin_Mendenhall][Thomas Menden
 Using primarily novels of Charles Dickens, Mendenhall counts the number of words per sentence, in chunks of a thousand words each, and plots their distribution in a histogram that looks like this:
 
 #+CAPTION: The "characteristic curve" of /Oliver Twist/
-[[/images/mendenhall/mendenhall.png]]
+[[../../../images/mendenhall/mendenhall.png]]
 
 According to Mendenhall, this is Dickens's "characteristic curve," that is, his stylistic signature, as expressed in the distribution of sentence lengths. The X axis here represents the number of words in a sentence, and the Y represents the number of sentences in that category. He shows that for other novels, this curve is roughly the same as in these samples from /Oliver Twist/. The curves of other writers, however, are somewhat different. Nonfiction, like John Stuart Mill's /Essay on Liberty/, is the most different, and other fiction is only slightly different.
 
 During the hackathon, we decided to compare two genres of literary text: gothic novels and epistolary novels. Since [[http://corpus-db.org][Corpus-DB]] allows for easy corpus generation from genre (via Library of Congress subject headings), I was able to quickly throw together a corpus of about eight gothic novels and ten epistolary novels. From there, I used SpaCy to compute the distribution of sentence lengths, and group them by genre. This is the result, the "characteristic curve" of these two corpora:
 
 #+CAPTION: Average sentence lengths, per genre
-[[/images/mendenhall/genres.png]]
+[[../../../images/mendenhall/genres.png]]
 
 I should've used a bar chart here, since this is a histogram with discrete values, but in an effort to be faithful to Mendenhall's method, I kept it as a line chart. I find it interesting that these two lines are so different from each other. The epistolary novels in this corpus have many more shorter sentences. I attribute this to formal features of the letter, like "Dear Sir," and "Sincerely." But then gothic novels have more longer sentences, that is, among sentences longer than twenty words.
 

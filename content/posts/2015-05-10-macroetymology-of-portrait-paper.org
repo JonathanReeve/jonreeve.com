@@ -35,10 +35,10 @@ Since Uncle Charles himself made only a momentary appearance in /Portrait/, a mo
 To find significance in these etymological signals, the Macro-Etymological Analyzer was trained on genres extracted from the Brown University Standard Corpus of Present-Day American English, a much-studied linguistic corpus of approximately one million words, created in the 1950s. The corpus is broken into genre categories such as "science fiction," "belles lettres," "humor," and "news." Each of these categories was [[https://gist.github.com/JonathanReeve/ac543e9541d1647c1c3b][extracted using the Python NLTK]] and analyzed. Figure 1 shows the occurrence of Latinate words in categories of the Brown Corpus. The genres are divided fairly cleanly between fiction and non-fiction, with the fiction genres "adventure" and "romance" on the low end of the spectrum, and the non-fiction genres "learned" and "government" on the high end. Strikingly, the genres "Lore" and "Religion," which are arguably of ambiguous fictionality, fall in the middle. "Science Fiction," which is probably the most non-fictional of the fiction genres, lies in the same quadrant, and exhibits the highest proportion of Latinate words of a fictional genre. Based on this calibration, we might say that high proportions of Latinate words (hereafter "L scores") in /Portrait/ would have a good chance of exhibiting styles similar to learned text, official documents, or non-fiction.
 
 #+CAPTION: Figure 1: Brown Corpus: Latinate Words
-[[/images/portrait-chapter/brown-lat.png]]
+[[../../../images/portrait-chapter/brown-lat.png]]
 
 #+CAPTION: Figure 2: Brown Corpus: Hellenic Words
-[[/images/portrait-chapter/brown-hel.png]]
+[[../../../images/portrait-chapter/brown-hel.png]]
 
 Among proportions of Hellenic words, as shown in Figure 2, the picture is similar, but with a few key differences. Here, "religion" has a higher rank, and "government" a lower. Since Hellenic words represent such a tiny percentage of any given text, however---a total of 66 words for /Portrait/---we cannot treat measurements of this category as equally statistically significant. The same is even more true for proportions of words of Celtic origin, since only a single word was detected in that category. Germanic etymologies were inversely correlated with Latinate etymologies, and so these values are already roughly represented by L scores. Each of these categories deserves an in-depth discussion.
 
@@ -57,12 +57,12 @@ The calibration experiments performed above suggest that high proportions of Lat
 As previously discussed, the hypothesis for the analysis of /Portrait/ was that there would be an increase in the L scores across chapters in the novel. Figure 3 shows that this hypothesis is partially confirmed. There is a significant rise in the proportions of Latinate words over chapters 1, 2, and 3, which would seem to correlate with the maturation of Stephen's thought and speech. The L score plateaus or drops in chapters 4 and 5, however. How might this be interpreted?
 
 #+CAPTION: Figure 3: Chapters, L Scores
-[[/images/portrait-chapter/portrait-2g-w-lat.png]]
+[[../../../images/portrait-chapter/portrait-2g-w-lat.png]]
 
 To answer this question, it is necessary to conduct a more granular analysis. Figure 4 shows the text is divided into sections based on John Paul Riquelme's structural divisions ("Structural Rhythm" 307). The L scores for these divisions exhibit much less of a simple progression from low to high. Where the climax of the chapter-based analysis seemed to be in Chapter 3, the climax here appears to be Chapter 4, Part 1. With the exception of Chapter 2, the longest and only five-section chapter, the highest L scores for each chapter come in the first section. The final sections of each chapter are among the lowest in L scores.
 
 #+CAPTION: Figure 4: Sections, L Scores
-[[/images/portrait-chapter/sections-latinate.png]]
+[[../../../images/portrait-chapter/sections-latinate.png]]
 
 Seen broadly, there is a pattern here suggestive of a what Riquelme calls a "structural rhythm"---a repeating sawtooth shape. A number of critics have noticed this cyclical structure. Sidney Bolt describes it thus:
 
@@ -117,7 +117,7 @@ The double alliterative structure here---a string of s- words interrupted by a s
 /Portrait/'s words of ancient Greek origin deserve a brief discussion. Greek words are some of the more difficult to quantify, since most of the Greek loanwords in English come to us through Latin, and a few (like "alchemy") through Arabic. When classical Greek works began to be rediscovered in 1453, after Greek scholars fled Turkish-occupied Constantinople, this brought with them a number of associated loanwords. This could explain why many Greek loanwords seem at home in Aristotle or Plato---/drama,/ /comedy,/ and /pathos/ recall the /Poetics/; /phenomenon,/ /noumenon,/ and /democracy/ seem appropriate to a Socratic dialogue. As the analysis of the Brown Corpus hints, religious words, too, are heavily Hellenic: /angel/, /evangelist/, /hagiography/, /bible,/ and so on, are all descended from Greek. We might find, therefore, that an aesthetic treatise of the kind Stephen presents in 5.1, or a religious sermon like Father Arnall's in 3.2, might contain a higher proportion of words of Hellenic origin.
 
 #+CAPTION: Figure 5: Sections, H Scores
-[[/images/portrait-chapter/sections-hellenic.png]]
+[[../../../images/portrait-chapter/sections-hellenic.png]]
 
 Figure 5 shows that those two sections have, respectively, the first and third highest H scores of any section. Father Arnall's sermon in section 3.2 features the emotionally-charged Hellenic words /agony,/ (which appears an amazing eight times in this section alone), /demon/ and /zealous,/ along with the more tame words /baptism,/ /poetry/, and /eon/. In section 5.1, those words are more befitting their setting in a physics classroom---/physics/, /energy/, and /kinetic/, along with /didactic/. These categories of religious and learned language are consistent with the analysis of the Brown corpus.[[#fn3][3]]
 

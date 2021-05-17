@@ -56,7 +56,7 @@ When I lower the cutoff similarity score, I can get even more interesting pairs.
 The chart below shows a PCA-reduced 2D vector space approximating the similarity between books 1-20. There are interesting clusters here: the American Constitution and Bill of Rights cluster together, along with the Declaration of Independence, the Federalist Papers, and Abraham Lincoln's first inaugural address. Lincoln's second address, however, clusters rather with his Gettysburg Address, and John F. Kennedy's inaugural address.
 
 #+CAPTION: PCA of PG Books 1-20
-[[/images/gutenberg/pg-vecs.png]]
+[[../../../images/gutenberg/pg-vecs.png]]
 
 Non-fiction seems to be clustered at the bottom of the chart, whereas fiction is at the top. Quasi-fictional works, like the /Book of Mormon/ and the Bible, are in between. Similarly, /Moby Dick/, a work of fiction that nonetheless contains long encyclopedic passages of non-fiction, lies in the same area. The most fantastical works, which are also the three children's books, /Peter Pan/ and the two Carroll novels, cluster together in the upper left.
 

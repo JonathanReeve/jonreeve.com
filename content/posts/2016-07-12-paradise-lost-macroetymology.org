@@ -67,7 +67,7 @@ In order to analyze the individual books of the poem, I wrote [[https://github.c
 
 Overall, once stopwords are removed, roughly 60% of the words of /Paradise Lost/ are Latinate, from Anglo-Norman, French, Middle French, Old French, and Latin, mostly. Another 35% are Germanic, from Old English, Old Norse, or German. The remaining few percentage points are divided between Hellenic (Ancient Greek, at around 1%), Semitic (Hebrew, 0.25%), and other language families. Since Latinate and Germanic proportions account for the majority of the total words of the poem, they correlate negatively with one another. A high proportion of Latinate words in a section almost always means a low proportion of Germanic words. For this reason, this study will mostly examine the proportions of Latinate words in /Paradise Lost/.
 
-[[/images/milton-macroetym/books-latinate.png]]
+[[../../../images/milton-macroetym/books-latinate.png]]
 
 #+BEGIN_HTML
   <p class="caption">
@@ -85,7 +85,7 @@ When this analysis is conducted on a finer scale, that is, when each book is bro
 
 In this finer analysis, the most Latinate passage is not in Book 6, in fact, but directly before it, in the penultimate section of Book 5, =ai= (sections are ordered =aa-aj=). This section starts at line 716 and continues through 815. It contains Satan's speech to his followers, where he attempts to convince them with "calumnious Art of counterfeited truth" (770-1), and to tempt them with "Thrones, Dominations, Princedoms, Virtues, Powers" (772), so long as "these magnific titles yet remain not merely titular" (773-4). With the exception of the Anglo-Saxon-derived "Princedoms," all of the words in this series are descended from Latin, and arrive either through French or through Anglo-Norman.
 
-[[/images/milton-macroetym//subsections-latinate.png]]
+[[../../../images/milton-macroetym//subsections-latinate.png]]
 
 #+BEGIN_HTML
   <p class="caption">
@@ -136,7 +136,7 @@ Before stopwords are removed, the resulting distinctive words are revealing abou
 
 Adam's most distinctive word, once stopwords were removed, however, is the word "sustain," descended from Latin and arriving in English via Anglo-Norman. There are the Latinate words "approve," "absence," and "favor," but also the distinctly Anglo-Saxon words "bone," "dust," "need," and "feel.". By contrast, Eve's most distinctive words are the Latinate "forbids," but also the Germanic "early," "dreamed," "glistering," and "help." The top distinctive words of God and the Son, at ranks #1 and #2, respectively, are the Latinate words "redeem" and "redeemed." One might hypothesize that these would be words distinctive of fallen angels eager to reenter heaven, so it is surprising that they should correlate instead with the heavenly monarchy.
 
-[[/images/milton-macroetym/speakers-latinate.png]]
+[[../../../images/milton-macroetym/speakers-latinate.png]]
 
 #+BEGIN_HTML
   <p class="caption">
@@ -150,7 +150,7 @@ Figure 3: Proportions of Latinate Words among Speakers
 
 One of the superficial features of Latinate words is that they are frequently composed of root words and affixes. The Latinate prefixes "con-," "dis-," "pre-," "un-," and "re-" are especially common in /Paradise Lost/. Figure 4 shows the distribution of these prefixes across the books of the poem. This distribution was generated using [[https://github.com/JonathanReeve/milton-analysis/blob/master/cfd-plots.ipynb][a simple Conditional Frequency Distribution]] from the Python Natural Language Toolkit (NLTK) module, which tests whether a word starts with the prefix. To account for words like "rest," which in fact begins with "re-" but is not etymologically composed of the "re-" prefix, I created a blacklist containing words like "regent," "reason," "prey," "under," and "union."
 
-[[/images/milton-macroetym/prefixes-books-notnormalized.png]]
+[[../../../images/milton-macroetym/prefixes-books-notnormalized.png]]
 
 #+BEGIN_HTML
   <p class="caption">
@@ -178,7 +178,7 @@ About this passage, Christopher Ricks comments that "one's interest in the phras
 
 The prefix "un-" operates in a similar way to "dis-," and is an even more important prefix for the poem, whose original title was "Adam Unpardis'd." "Un-" is furthermore the site of many of Milton's neologisms. As Flannagan observes: "Milton is especially fond of making up negative compound words, such as 'unbesought,' 'undelighted,' 'disespouse,' or 'inabstinence'" (Milton, /The Riverside Milton/ 316). These often occur in chains of three, such as in Belial's worry that the angels should be further "unrespited, unpitied, unreprieved" (2.184-5). Fowler notes that this is "asyndeton (omission of grammatical connections) ... combined with similarity or sameness of prefix," and locates precedents among the Greek tragedians, Spenser, and Shakespeare (Milton, /The Poems of John Milton/ 516). Thomas Corns calls this a common "stylistic motif" of Milton's (84--5). These chains happen two more times, with the narrator's "unprevented, unimplored, unsought" (3.231), and the Son's "unshaked, unseduced, unterrified"[fn:3](5.899).
 
-[[/images/milton-macroetym/prefixes-speakers-normalized.png]]
+[[../../../images/milton-macroetym/prefixes-speakers-normalized.png]]
 
 #+BEGIN_HTML
   <p class="caption">

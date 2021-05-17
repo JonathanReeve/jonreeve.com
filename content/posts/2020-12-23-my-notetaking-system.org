@@ -5,7 +5,7 @@
 Here's what my notetaking system currently looks like:
 
 #+CAPTION: Network visualization of my notes, via Org-roam-server
-[[/images/notetaking/org-roam.png]]
+[[../../../images/notetaking/org-roam.png]]
 
 And here's how I got there. In my 10+ years as a graduate student, at three different institutions, I've tried so many notetaking systems. I started on paper, with [[https://en.wikipedia.org/wiki/Cornell_Notes][the Cornell Note methodology.]]. Then, once I got a laptop, I moved to web-based utilities, like [[https://evernote.com/][Evernote]]. After one of these, [[https://en.wikipedia.org/wiki/Springpad][Springpad]], bit the dust as a company, I realized I needed my own solution for notes that didn't rely on an external web service. I quickly fell in love with [[https://en.wikipedia.org/wiki/Tomboy_(software)][Tomboy Notes]], which is like a superpowered Sticky Note system. The best feature of Tomboy, along with its later clone, [[https://en.wikipedia.org/wiki/Gnote][Gnote]], was that if you were writing one note, and happened to type the name of another note, it would automatically link to that other note. This meant you could have small, stickynote-sized notes and have them all relate to each other.
 

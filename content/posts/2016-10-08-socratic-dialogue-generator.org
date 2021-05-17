@@ -37,6 +37,6 @@ This is nonsense, of course, but you can still hear the voices of the characters
 Here's how it works. Figure 1 shows a graphical model that represents the probabilistic process of the algorithm. The user-supplied value of =M= denotes the number of lines to be generated (in the above example this is 4). This determines the number of character utterances that will be generated. Each of those utterances, =c=, are determined by the previous utterancẹ̣---Socrates will speak after Phaedrus, and vice versa. For each character choice, the length of each utterance, =l=, is probabilistically determined by the text. Each of those lengths is then fed into a Markov chain generator which is given a probability table of that character's speech. Using that table, words are generated, where the probability of each is determined by the preceding word.
 
 #+CAPTION: Figure 1
-[[/images/socratic-dialogue-generator/socrates-gm.png]]
+[[../../../images/socratic-dialogue-generator/socrates-gm.png]]
 
 The Socratic dialogue generator should work with any Platonic dialogue in the Perseus library. Just specify the filename, the two characters you want to have talk to each other, and how many lines of dialogue you want to generate.

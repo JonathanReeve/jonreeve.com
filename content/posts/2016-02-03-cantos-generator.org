@@ -382,7 +382,7 @@ Since that format is not very easy to read, it might be more helpful to visualiz
 #+END_SRC
 
 #+CAPTION: Stanza Lengths
-[[/images/cantos-generator/stanza-lengths.png]]
+[[../../../images/cantos-generator/stanza-lengths.png]]
 
 Judging from the number of stanza divisions and the variation in the lengths of the stanzas, Cantos I-IV appear to alternate between simple and complex line grouping systems. With this information, it might be best to design individual canto writer classes for each canto, rather than try to design a canto-agnostic generator.
 
@@ -394,7 +394,7 @@ Now let's examine the total line lengths of the first ten cantos.
 #+END_SRC
 
 #+CAPTION: Line Lengths
-[[/images/cantos-generator/line-lengths.png]]
+[[../../../images/cantos-generator/line-lengths.png]]
 
 Here again, the variation is immense, further solidifying the idea that individual subclasses need to be written for each canto. However, since it'd be best not to repeat code for a particular canto, it will be useful to write a parent class that will serve as a toolbox. The following class contains "helper" functions which will be used by the canto subclasses =CantoI=, =CantoII=, and so on.
 

@@ -13,7 +13,7 @@ There is a short phrase, an attribution with the word "said," and a continuation
 For this experiment, text files containing each of the characters' total speech were fed through the Macro-Etymological Analyzer. As the figure below shows, the macro-etymologies of the characters' speech are distinct, and separate by gender, with the male characters showing the highest proportions of Latinate words, and the female characters showing the lowest.
 
 #+CAPTION: The Waves by Narrator
-[[/images/macro-etym/waves-with-screen.png]]
+[[../../../images/macro-etym/waves-with-screen.png]]
 
 Bernard and Neville are the two university-educated characters, and the ones with the highest proportions of Latinate words. Bernard identifies with Shakespeare and is, according to Fogel, "a clear surrogate for Virginia Woolf herself" (157, quoted in Hussey, 25). Neville "anticipates becoming a classical scholar, exploring the writing of Virgil, Lucretius and Catallus" (Hussey 181-2). Early in the novel, Neville imagines entering the library where he "shall explore the exactitude of the Latin language" (31). That exactitude is invoked by Bernard later--during one of his conversations with Neville, he praises him thus:
 

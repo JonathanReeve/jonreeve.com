@@ -27,10 +27,10 @@ A manual, preliminary parameter search showed that character attribution worked 
 From there, I vectorized these documents using a TF-IDF vectorizer, which counts the frequency of each word, and reweights these according to how frequently they are used in the corpus. I set a maximum document frequency of 30% to ignore corpus-specific stop words, and then limited the vocabulary to the top 500 words (these are parameters suggested by the cross-validation search). The resulting vectors I then reduced to five dimensions using principal component analysis. This 19x5 matrix became the input for probabilistic inference. A two-dimensional projection of this matrix is shown in Figure 1A. Of note here is the apparent separation in this projection between the male and female characters, with the male characters in the upper right and the female characters in the lower left.
 
 #+CAPTION: Figure 1A: The Waves, Labeled
-[[/images/character-voice/waves-e2-labeled.png]]
+[[../../../images/character-voice/waves-e2-labeled.png]]
 
 #+CAPTION: Figure 1B: The Waves, Predicted
-[[/images/character-voice/waves-e2-final.png]]
+[[../../../images/character-voice/waves-e2-final.png]]
 
 The probabilistic model used for clustering assumes that the dimension-reduced, TF-IDF-weighted word frequencies can be modeled with a mixture of Gaussians. I performed inference using Scikit-Learn's =GaussianMixture= class, which uses the expectation-maximization (EM) algorithm to cluster the data. Given six components in which to cluster data, the algorithm clustered the data into the six groups shown in Figure 1B. The labels aren't identical with the original labels in Figure 1A, but the groupings are similar. The inference correctly groups together four out of five of Bernard's utterances, three out of four of Louis's, two out of three of Neville's, Rhoda's, and Susan's, but misidentifies Jinny's. After twenty trials with this configuration, the mean adjusted Rand score was 0.443, with a standard deviation of 0.076---performing much better than chance, although with room for improvement.[fn:2]
 
@@ -46,10 +46,10 @@ Curiously, the best parameters found by the grid search involved the configurati
 The final clustering is shown in Figure 2B. It incorrectly clusters together the correspondence of villains Lovelace and Belford, but forgivably, since these characters are friends and associates, and at most points in the novel partners in crime. It correctly identifies most of Anna's correspondence, but divides her best friend Clarissa's into two groups: one closer to Anna, and another closer to Lovelace. A closer analysis, which is perhaps beyond the scope of the present experiment, might reveal that those of Clarissa's letters closest to Anna's are letters in fact written to Anna, while her letters that appear closest to Belford and Lovelace might, in fact, be those written to them. In fact, the clustering here, though inaccurate, might be more useful to literary analysis than an accurate clustering: they might reveal not only the character voices themselves, but degrees or modes of these voices. They might show how voice changes according to addressee.
 
 #+CAPTION: Figure 2A: Clarissa, Labeled
-[[/images/character-voice/clarissa-e2-labeled.png]]
+[[../../../images/character-voice/clarissa-e2-labeled.png]]
 
 #+CAPTION: Figure 2B: Clarissa, Final
-[[/images/character-voice/clarissa-e2-final.png]]
+[[../../../images/character-voice/clarissa-e2-final.png]]
 
 The adjusted Rand score for this clustering is a slightly lower 0.357, faring much better than chance, but still worse than /The Waves/. Although these experiments used different parameters and clustering techniques, this discrepancy might be telling.
 
@@ -63,10 +63,10 @@ The experiments above all rely on word frequency representations of text, and of
 The best configuration for this representation, using documents from the top four characters, reducing the dimensions to 5 with PCA, and performing inference with a Gaussian mixture model with four components, showed a mean adjusted Rand score of 0.192, with a standard deviation of 0.023 after twenty trials. Figure 3B shows the results of that experiment. Here, the probabilistic inference manages to separate, at the 0.0 longitudinal line, protagonists from antagonists, and male from female characters, grouping Anna and Clarissa together, and Lovelace and Belford. It does not seem to be able to distinguish between those individual characters, however.
 
 #+CAPTION: Figure 3A: Clarissa Vectors, Labeled
-[[/images/character-voice/clarissa-vec1-labeled.png]]
+[[../../../images/character-voice/clarissa-vec1-labeled.png]]
 
 #+CAPTION: Figure 3B: Clarissa Vectors, Predicted
-[[/images/character-voice/clarissa-vec1-final.png]]
+[[../../../images/character-voice/clarissa-vec1-final.png]]
 
 I attempted other vectorizations, as well, without much success. A representation of a document as a vector of parts of speech frequencies produced scores roughly equal to those of chance. Another vectorization that represented documents as the frequencies of the root words in each sentence performed equally poorly. Since semantic word vectorizations performed only about half as well as the word frequency vectorizations described above, and similar representations even worse, we must conclude that character voice is most discernible in the frequencies of function words, rather than in the meanings of the words.
 

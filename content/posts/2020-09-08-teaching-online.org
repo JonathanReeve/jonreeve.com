@@ -16,14 +16,14 @@ I've had a lot of questions lately about my online teaching methods lately, so I
 As literary scholars, we talk about texts. We are often engaged in what one might call marginalia: writing, about another text, with reference to a very specific, page- or line-level passage of that text. Very rarely does this kind of writing actually take place in the margins of books, any more, but it recalls a time when conversations would happen in the margins. In the days when books were expensive, luxury items that were passed around among a coterie of friends, this would happen more often. But as books became cheaper, and were loaned around less frequently, conversational annotation became more of a rarity. Furthermore, the recent shift to digital textual media made this even harder: without electronic margins, and electronic pens to write in them, we have had difficulty recreating the experience of social annotation. Our writing has become increasingly divorced from the writing it discusses, and it has become less social, and more solitary.
 
 #+CAPTION: Mary Shelley's Annotated /Frankenstein/, via the Morgan Library
-[[/images/teaching-online/frankenstein.jpg]]
+[[../../../images/teaching-online/frankenstein.jpg]]
 
 This is where Web 2.0 technology comes in. Whereas Web 1.0 was static---you could read pages but not interact with them---Web 2.0 was dynamic: website visitors could interact with the pages, changing their content. Virtual "bulletin boards," as the old metaphor went, became possible, and with them, virtual margins.
 
 [[https://web.hypothes.is/][Hypothes.is]] is an open-source web annotation platform, designed to do just this. It allows for highlighting, commenting, and discussing a text, in the margins of the text itself. It is already in wide use for annotating news articles, scientific journal articles, and more, but its ideal use case, in my opinion, is for literary texts.
 
 #+CAPTION: Hypothes.is-annotated edition of /The Moonstone/, one of our course texts.
-[[/images/teaching-online/hypothesis.png]]
+[[../../../images/teaching-online/hypothesis.png]]
 
 ** Why Zulip?
    :PROPERTIES:

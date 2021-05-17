@@ -20,7 +20,7 @@ Word embeddings are among the most discussed subjects in natural language proces
 This figure shows off some of the things you can do with document vectors. Using just the averaged word vectors of each document, and projecting them onto PCA space, you can see a nice divide between fiction and nonfiction books. In fact, I like to think of the line connecting the upper-left and the lower-right as a vector of "fictionality," withthe upper-left corner as "highly fictional," and the lower right as "highly non-fictional." Curiously, religious texts are right in between.
 
 #+CAPTION: First 30 Books of Project Gutenberg
-[[/images/word-embeddings/example-gut.png]]
+[[../../../images/word-embeddings/example-gut.png]]
 
 There's more on this experiment [[http://jonreeve.com/2017/12/similar-documents-in-project-gutenberg/][in this 2015 post]].
 
@@ -316,7 +316,7 @@ Plot them interactively, in 3D, just for fun.
 #+END_SRC
 
 #+CAPTION: Pride and Prejudice Nouns
-[[/images/word-embeddings/pride-nouns.png]]
+[[../../../images/word-embeddings/pride-nouns.png]]
 
 Now we can rewrite the above function so that instead of cycling through all the words ever, it just looks through all the /Pride and Prejudice/ nouns:
 
@@ -379,7 +379,7 @@ If we treat words as documents, and put them in the same vector space as other d
 #+END_SRC
 
 #+CAPTION: Pride and Prejudice Nouns
-[[/images/word-embeddings/output_52_1.png]]
+[[../../../images/word-embeddings/output_52_1.png]]
 
 It looks like it correctly guesses that /symphony/ correlates with /sound/, and also does so with /crash/, but its guesses for /itchy/ (/smell/) and for /flower/ (/touch/) are less intuitive.
 
@@ -487,7 +487,7 @@ If we reduce the dimensions here using PCA, we can visualize the similarity in 2
 #+END_SRC
 
 #+CAPTION: Presidential Inaugural Address Vectors
-[[/images/word-embeddings/output_67_0.png]]
+[[../../../images/word-embeddings/output_67_0.png]]
 
 * Detective Novels
   :PROPERTIES:
@@ -565,7 +565,7 @@ We might want to truncate these texts, so that we're comparing the same amount o
 #+END_SRC
 
 #+CAPTION: Detective Novel Vectors
-[[/images/word-embeddings/output_79_0.png]]
+[[../../../images/word-embeddings/output_79_0.png]]
 
 If you read the summaries of some of these novels on Wikipedia, this isn't terrible. To check, let's just see how often these words occur in the novels.
 
@@ -583,4 +583,4 @@ If you read the summaries of some of these novels on Wikipedia, this isn't terri
 #+END_SRC
 
 #+CAPTION: Weapons By Novel
-[[/images/word-embeddings/output_82_1.png]]
+[[../../../images/word-embeddings/output_82_1.png]]

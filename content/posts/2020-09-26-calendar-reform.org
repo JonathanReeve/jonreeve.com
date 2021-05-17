@@ -32,10 +32,10 @@ One of the more valiant efforts at calendar reform came during [[https://en.wiki
 5. Best of all, *each day* gets a name. So instead of "July 31st," it's /abricot/, or /apricot/. "Why don't we grab a coffee on Apricot Day?" sounds so much nicer than "Why don't we grab a coffee on July 31st?". Furthermore, since each /quintidi/ rest day is an animal, and each /décadi/ is some kind of object or agricultural tool, you know what day of the week it is already. You don't have to think, "July 31st, is that a Saturday?"
 
 #+CAPTION: Germinal
-[[/images/calendar-reform/Germinal_commence_le_21_ou_22_mars.jpg]]
+[[../../../images/calendar-reform/Germinal_commence_le_21_ou_22_mars.jpg]]
 
 #+CAPTION: Names of Days
-[[/images/calendar-reform/day-names.jpg]]
+[[../../../images/calendar-reform/day-names.jpg]]
 
 * The Positivist Calendar
   :PROPERTIES:
