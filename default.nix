@@ -27,6 +27,7 @@ let
   # Add your Haskell package overrides here
   source-overrides = {
     with-utf8 = builtins.fetchTarball "https://github.com/serokell/haskell-with-utf8/archive/v1.0.0.0.tar.gz";
+    PyF = builtins.fetchTarball "https://github.com/guibou/PyF/archive/v0.9.0.3.tar.gz";
   };
 in import rib { 
   inherit root name source-overrides; 
