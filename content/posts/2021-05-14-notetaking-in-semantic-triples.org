@@ -1,0 +1,75 @@
+#+title: Notetaking In Semantic Triples
+#+date: 2021-05-14
+#+tags: notetaking; semantic web
+
+This is a continuation of my previous post, describing my notetaking system.
+
+I keep a Zettelkasten using org-roam. Notes are connected using links, which are actually just regular org-mode links. Those links look like this behind the scenes: ~[[URL][link title]]~. Thus, there is an implicit relation between two notes where, if a link to note B appears in note A, you could express that relationship as a subject-verb-object triple, like this:
+
+#+begin_src
+<Note A> <links to> <Note B>
+#+end_src
+
+Which is fine, for most purposes. But what if the relation between the two notes is more specific? For instance, if I have a note for T. S. Eliot, the poet, and a note for his poem, "The Waste Land," the relation is really more like this:
+
+#+begin_src
+<T.S. Eliot> <wrote> <The Waste Land>
+#+end_src
+
+So how can one achieve this? The linked notetaking strategy of org-roam and family gets us most of the way there. My note ~ts-eliot.org~ looks like this:
+
+#+begin_src or
+#+title: T. S. Eliot
+Wrote [[The Waste Land]]
+#+end_src
+
+Now all we have to do is to make the verb into a note.
+
+#+begin_src org
+,#+title: wrote
+,#+roam_tags: verb
+
+For when a writer writes a creative work.
+Example: T.S. Eliot wrote The Waste Land
+#+end_src
+
+So now we can write:
+
+#+begin_src org
+#+title: T. S. Eliot
+
+[[Wrote]] [[The Waste Land]]
+#+end_src
+
+And we can extend that format for multiple objects:
+
+
+#+begin_src org
+,#+title: T. S. Eliot
+
+[[Wrote]]:
+ - [[The Waste Land]]
+ - [[Four Quartets]]
+#+end_src
+
+This in itself isn't very useful yet, but now we have a structure that we can parse. In a separate parsing script, I can now write: if a line begins with a link to a verb, and is followed by a link to another (non-verb) note, that constitues a triple, which is then parsed as ~<T.S. Eliot> <wrote> <The Waste Land>~. If a line begins with a verb link and a colon, and it then followed by a list of links, that is then parsed into: ~<T.S. Eliot> <wrote> <The Waste Land>. <T.S. Eliot> <wrote> <Four Quartets>.~, i.e., two triples.
+
+At this point, I can now add more metadata to the note, which will link out to the greater semantic web—to Wikidata, for instance. "The Waste Land" note can now contain its Wikidata entity identifier, like this:
+
+#+begin_src org
+,#+title: The Waste Land
+,#+wikidata: https://www.wikidata.org/wiki/Q581458
+#+end_src
+
+And Wikidata maintains [[https://www.wikidata.org/wiki/Q581458][a huge amount of data]] about the poem: its first date of publication, its first line, and even its Project Gutenberg ID, from which you can derive the full text of the poem. For many texts, Wikidata also maintains Goodreads identifiers, as well, which allows one to then derive a number of opinions about the text, as well.
+
+You can imagine that this streamlines many aspects of research. I can now use [[https://www.wikidata.org/wiki/Wikidata:SPARQL_query_service/queries/examples#Goats][SPARQL queries]] to ask complex questions like:
+
+ - How long, in words, was the average line of poetry written in 1922?
+ - How many total books were written by H.G. Wells's lovers?
+ - What is the distribution of literary genres for the books written by T.S. Eliot's friends?
+
+I can also feed all my note triples into one of the many Linked Open Data visualization and manipulation platforms.
+
+However, it need be said that this is a little kludgey: it's hack on top of a hack. So really, for this to become viable at all, something like this should really be integrated into org-roam. Or become its own package. (BRB, learning Elisp.)
+

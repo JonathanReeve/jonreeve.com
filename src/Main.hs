@@ -59,6 +59,7 @@ instance IsRoute Route where
     Route_CV -> pure "cv.html"
     Route_Article srcPath -> do
       let (year, month, _day, slug) = parseJekyllFilename srcPath
+      let slug' = [ c | c <- slug, c `notElem` (",.?!-:;\"\'" :: String) ]
       pure $ year ++ "/" ++ month ++ "/" ++ slug ++ "/index.html"
     Route_Feed -> pure "feed.xml"
 
@@ -107,7 +108,7 @@ generateSite = do
   writeHtmlRoute Route_Index $ reverse articles
   writeXmlRoute Route_Feed $ articles
   where
-    cleanPath path = drop 6 (take (length path - 3) path)
+    cleanPath path = drop 6 (take (length path - 4) path)
     groupByTag as =
       Map.fromListWith (<>) $ flip concatMap as $ \(r, doc) ->
         (,[(r, doc)]) <$> tags (getMeta doc)
@@ -228,6 +229,8 @@ renderPage route val = html_ [lang_ "en"] $ do
         p_ [fmt|Posted {y}-{m}-{d}|]
         article_ $
           Pandoc.render val
+        hr_ []
+        p_ [] "I welcome your comments and annotations in the Hypothes.is sidebar to the right. →"
         script_ [src_ "https://hypothes.is/embed.js" ] T.empty
       Route_Feed -> h1_ "RSS feed in development. Coming soon."
 
