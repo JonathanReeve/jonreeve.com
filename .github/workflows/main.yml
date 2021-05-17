@@ -9,9 +9,9 @@ jobs:
       - name: Checkout 🛎️
         uses: actions/checkout@v2.3.4
       - name: Install Nix
-        uses: cachix/install-nix-action@v12
+        uses: cachix/install-nix-action@v13
       - name: Install Rib and Build
-        uses: cachix/cachix-action@v8  # This also runs nix-build.
+        uses: cachix/cachix-action@v10  # This also runs nix-build.
         with:
           name: srid
       - run: nix-build
@@ -19,8 +19,8 @@ jobs:
       - name: Build Site
         run: nix-shell --run "cabal run"
       - name: Deploy to GH Pages 🚀
-        uses: JamesIves/github-pages-deploy-action@3.7.1
+        uses: JamesIves/github-pages-deploy-action@4.1.3
         with:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-          BRANCH: gh-pages # The branch the action should deploy to.
-          FOLDER: dest # The folder the action should deploy.
+          branch: gh-pages # The branch the action should deploy to.
+          folder: dest # The folder the action should deploy.
