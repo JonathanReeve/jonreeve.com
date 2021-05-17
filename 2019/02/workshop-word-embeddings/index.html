@@ -276,7 +276,7 @@ table
 <h2 id="an-example-of-document-vectors-project-gutenberg">An Example of Document Vectors: Project Gutenberg</h2>
 <p>This figure shows off some of the things you can do with document vectors. Using just the averaged word vectors of each document, and projecting them onto PCA space, you can see a nice divide between fiction and nonfiction books. In fact, I like to think of the line connecting the upper-left and the lower-right as a vector of “fictionality,” withthe upper-left corner as “highly fictional,” and the lower right as “highly non-fictional.” Curiously, religious texts are right in between.</p>
 <figure>
-<img src="file:///images/word-embeddings/example-gut.png" alt="" /><figcaption>First 30 Books of Project Gutenberg</figcaption>
+<img src="../../../images/word-embeddings/example-gut.png" alt="" /><figcaption>First 30 Books of Project Gutenberg</figcaption>
 </figure>
 <p>There’s more on this experiment <a href="http://jonreeve.com/2017/12/similar-documents-in-project-gutenberg/">in this 2015 post</a>.</p>
 <h2 id="getting-started">Getting Started</h2>
@@ -435,7 +435,7 @@ However little known the feelings or views of such a man may be on his first ent
 <span id="cb37-9"><a href="#cb37-9"></a>        ax.text(df.loc[i][<span class="dv">0</span>], df.loc[i][<span class="dv">1</span>], df.loc[i][<span class="dv">2</span>], label)</span></code></pre></div>
 <div class="sourceCode" id="cb38"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb38-1"><a href="#cb38-1"></a>plotResults3D(prideDF, prideNounLabels)</span></code></pre></div>
 <figure>
-<img src="file:///images/word-embeddings/pride-nouns.png" alt="" /><figcaption>Pride and Prejudice Nouns</figcaption>
+<img src="../../../images/word-embeddings/pride-nouns.png" alt="" /><figcaption>Pride and Prejudice Nouns</figcaption>
 </figure>
 <p>Now we can rewrite the above function so that instead of cycling through all the words ever, it just looks through all the <em>Pride and Prejudice</em> nouns:</p>
 <div class="sourceCode" id="cb39"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb39-1"><a href="#cb39-1"></a><span class="co"># Redo this function with only nouns from Pride and Prejudice</span></span>
@@ -469,7 +469,7 @@ However little known the feelings or views of such a man may be on his first ent
 <div class="sourceCode" id="cb46"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb46-1"><a href="#cb46-1"></a>testWords <span class="op">=</span> <span class="st">&#39;symphony itchy flower crash&#39;</span>.split()</span>
 <span id="cb46-2"><a href="#cb46-2"></a>pd.DataFrame([whichSense(w) <span class="cf">for</span> w <span class="kw">in</span> testWords], index<span class="op">=</span>testWords).plot(kind<span class="op">=</span><span class="st">&#39;bar&#39;</span>)</span></code></pre></div>
 <figure>
-<img src="file:///images/word-embeddings/output_52_1.png" alt="" /><figcaption>Pride and Prejudice Nouns</figcaption>
+<img src="../../../images/word-embeddings/output_52_1.png" alt="" /><figcaption>Pride and Prejudice Nouns</figcaption>
 </figure>
 <p>It looks like it correctly guesses that <em>symphony</em> correlates with <em>sound</em>, and also does so with <em>crash</em>, but its guesses for <em>itchy</em> (<em>smell</em>) and for <em>flower</em> (<em>touch</em>) are less intuitive.</p>
 <h1 id="the-inaugural-address-corpus">The Inaugural Address Corpus</h1>
@@ -536,7 +536,7 @@ dtype: object
 <span id="cb57-3"><a href="#cb57-3"></a>    plt.scatter(xs[i], ys[i], c<span class="op">=</span>parties[i], s<span class="op">=</span>inauguralDates[i]<span class="op">-</span><span class="dv">1900</span>)</span>
 <span id="cb57-4"><a href="#cb57-4"></a>    plt.annotate(inauguralLabels[i], (xs[i], ys[i]))</span></code></pre></div>
 <figure>
-<img src="file:///images/word-embeddings/output_67_0.png" alt="" /><figcaption>Presidential Inaugural Address Vectors</figcaption>
+<img src="../../../images/word-embeddings/output_67_0.png" alt="" /><figcaption>Presidential Inaugural Address Vectors</figcaption>
 </figure>
 <h1 id="detective-novels">Detective Novels</h1>
 <p>I’ve prepared a corpus of detective novels, using another notebook in this repository. It contains metadata and full texts of about 10 detective novels. Let’s compute their similarities to certain weapons! It seems the murder took place in the drawing room, with a candlestick, and the murderer was <a href="https://en.wikipedia.org/wiki/List_of_Cluedo_characters#Colonel_Mustard">Colonel Mustard</a>!</p>
@@ -574,7 +574,7 @@ dtype: object
 <span id="cb69-3"><a href="#cb69-3"></a>    plt.scatter(xs[i], ys[i])</span>
 <span id="cb69-4"><a href="#cb69-4"></a>    plt.annotate((detectiveLabels <span class="op">+</span> extraWords)[i], (xs[i], ys[i]))</span></code></pre></div>
 <figure>
-<img src="file:///images/word-embeddings/output_79_0.png" alt="" /><figcaption>Detective Novel Vectors</figcaption>
+<img src="../../../images/word-embeddings/output_79_0.png" alt="" /><figcaption>Detective Novel Vectors</figcaption>
 </figure>
 <p>If you read the summaries of some of these novels on Wikipedia, this isn’t terrible. To check, let’s just see how often these words occur in the novels.</p>
 <div class="sourceCode" id="cb70"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb70-1"><a href="#cb70-1"></a><span class="co"># Sanity check</span></span>
@@ -585,7 +585,7 @@ dtype: object
 <span id="cb70-6"><a href="#cb70-6"></a>            counts[detectiveLabels[i]][w.lemma_] <span class="op">+=</span> <span class="dv">1</span></span></code></pre></div>
 <div class="sourceCode" id="cb71"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb71-1"><a href="#cb71-1"></a>pd.DataFrame(counts).T.plot(kind<span class="op">=</span><span class="st">&#39;bar&#39;</span>)</span></code></pre></div>
 <figure>
-<img src="file:///images/word-embeddings/output_82_1.png" alt="" /><figcaption>Weapons By Novel</figcaption>
+<img src="../../../images/word-embeddings/output_82_1.png" alt="" /><figcaption>Weapons By Novel</figcaption>
 </figure></article><hr><p>I welcome your comments and annotations in the Hypothes.is sidebar to the right. →</p><script src="https://hypothes.is/embed.js"></script></div><footer><div class="container"><div class="columns"><div class="column col-8"><p>I believe in openness. This work is licensed under a <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/">Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International License</a>, unless otherwise stated. All content ©Jonathan Reeve 2020. Hand-coded with love, using exclusively free and open-source software, including <a href="https://github.com/srid/rib">Rib</a> and <a href="https://haskell.org/">Haskell</a>. Hosted on <a href="https://github.com">GitHub</a> and served with <a href="https://netlify.com">Netlify</a>. Icons by Nhor, via <a href="https://thenounproject.com">The Noun Project</a>. <a href="https://www.buymeacoffee.com/vaIVQZH">Buy me a coffee</a> or support me <a href="https://liberapay.com/JonathanReeve/donate">via Libera Pay</a> or <a href="bitcoin:3Qvm1DwzFGk3L1Eb6yeg5Nbc6db8sZUnbK">Bitcoin</a>.</p></div><div class="column col-4"><div class="icons"><a href="http://github.com/JonathanReeve"><svg xmlns="http://www.w3.org/2000/svg" height="3em" viewBox="0 0 448 512" width="3em" fill="#fafafa"><path d="M400 32H48C21.5 32 0 53.5 0 80v352c0 26.5 21.5 48 48
 48h352c26.5 0 48-21.5 48-48V80c0-26.5-21.5-48-48-48zM277.3 415.7c-8.4
 1.5-11.5-3.7-11.5-8 0-5.4.2-33 .2-55.3 0-15.6-5.2-25.5-11.3-30.7 37-4.1 76-9.2
