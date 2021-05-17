@@ -1,2 +1,4 @@
 .shake
 dist-newstyle
+dist/
+dest/
