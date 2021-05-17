@@ -1,0 +1,358 @@
+<html lang="en"><head><meta content="text/html; charset=utf-8" http-equiv="Content-Type"><title>Probabilistic Detection of Character Voices in Fiction
+</title><link href="/assets/css/spectre.min.css" rel="stylesheet"><link href="//fonts.googleapis.com/css?family=Montserrat|Raleway" rel="stylesheet"><link href="//cdn.jsdelivr.net/gh/highlightjs/cdn-release@10.2.0/build/styles/default.min.css" rel="stylesheet"><link href="/images/favicon.svg" type="image/svg+xml" rel="icon" sizes="any"><style type="text/css">
+
+@media screen and (min-width: 1200px)
+{
+html
+{
+  font-size : 23px;
+}
+
+}
+@media screen and (min-width: 992px)
+{
+html
+{
+  font-size : 24px;
+}
+
+}
+@media screen and (min-width: 768px)
+{
+html
+{
+  font-size : 25px;
+}
+
+}
+@media screen and (min-width: 576px)
+{
+html
+{
+  font-size : 27px;
+}
+
+}
+body
+{
+  font-family : "Raleway", sans-serif;
+}
+
+body.has-docked-nav #main-header
+{
+  width    : 100%;
+  opacity  : 0.94999;
+  z-index  : 2;
+  position : fixed;
+}
+
+#headerWrapper
+{
+  background-color : #ffffff;
+  border-top       : solid 2px #494e8e;
+  border-bottom    : solid 2px #494e8e;
+}
+
+#headerWrapper header
+{
+  padding-top    : 0;
+  padding-bottom : 0;
+  min-height     : 4em;
+  margin         : auto auto auto auto;
+  max-width      : 65em;
+}
+
+#headerWrapper header .nav
+{
+  flex-direction : row;
+}
+
+#headerWrapper header .nav li
+{
+  margin-top : 0;
+}
+
+.container
+{
+  max-width : 55em;
+  padding   : 3em 3em 3em 3em;
+}
+
+.header
+{
+  margin-bottom : 2em;
+}
+
+li.pages
+{
+  list-style-type : none;
+  margin-top      : 1em;
+}
+
+h1,
+h2,
+h3,
+h4
+{
+  margin-top : 1em;
+}
+
+b
+{
+  font-size : 1.19999em;
+}
+
+main
+{
+  font-family : "Raleway", sans-serif;
+}
+
+main li
+{
+  list-style-position : outside;
+}
+
+figure
+{
+  text-align : center;
+}
+
+figure figcaption
+{
+  text-align : center;
+}
+
+figure img
+{
+  max-width : 80%;
+}
+
+span.update p
+{
+  display : inline;
+}
+
+.chip
+{
+  margin : 0.1rem 0.29999rem 0.1rem 0.29999rem;
+}
+
+footer
+{
+  background-color : #494e8e;
+  color            : #fafafa;
+}
+
+footer a
+{
+  color : #ddddec;
+}
+
+footer a.icon img
+{
+  width : 3em;
+}
+
+footer .column
+{
+  display         : flex;
+  justify-content : center;
+  align-content   : center;
+}
+
+footer p
+{
+  margin-bottom : 0;
+}
+
+footer .icons
+{
+  color      : #fafafa;
+  font-size  : 2em;
+  display    : flex;
+  align-self : center;
+}
+
+footer .icons svg:hover
+{
+  opacity : 0.8;
+}
+
+@media screen and (min-width: 576px)
+{
+footer .icons
+{
+  flex-direction : column;
+}
+
+}
+@media screen and (min-width: 992px)
+{
+footer .icons
+{
+  flex-direction : row;
+}
+
+}
+section#greeting
+{
+  margin-top    : 4em;
+  margin-bottom : 2em;
+  font-size     : 2em;
+}
+
+section#greeting .icons
+{
+  display         : flex;
+  justify-content : space-between;
+}
+
+section#greeting .icons span
+{
+  font-size     : 4em;
+  font-weight   : 600;
+  padding-left  : 5%;
+  padding-right : 5%;
+}
+
+
+section#postList li.post
+{
+  margin-top      : 5em;
+  list-style-type : none;
+}
+
+section#postList .postTitle
+{
+  font-size : 2em;
+}
+
+@media print
+{
+
+html
+{
+  font-size : 0.9rem;
+}
+
+button
+{
+  display : none;
+}
+
+#headerWrapper
+{
+  display : none;
+}
+
+footer
+{
+  display : none;
+}
+
+.container
+{
+  max-width : none;
+  padding   : 0em 0em 0em 0em;
+}
+
+table
+{
+  font-size : 0.8rem;
+}
+
+}
+
+/* Generated with Clay, http://fvisser.nl/clay */</style><style type="text/css">@page{margin: 3cm;}</style></head><body><div id="headerWrapper"><header class="navbar"><section class="navbar-section"><a href="/" class="navbar-brand">Jonathan Reeve: <span>Computational Literary Analysis</span></a></section><section class="navbar-section"><ul class="nav"><li class="nav-item"><a href="/">posts</a></li><li class="nav-item"><a href="/cv.html">cv</a></li><li class="nav-item"><a href="/tags/">tags</a></li><li class="nav-item"><a href="/feed.xml">feed</a></li></ul></section></header></div><div class="container"><h1>Probabilistic Detection of Character Voices in Fiction
+</h1><p>Posted 2017-01-04</p><article><p>In James Joyce’s novel <em>Ulysses</em>, the school headmaster Mr. Deasy quotes Shakespeare in a lecture in financial responsibility to his employee Stephen Dedalus. “[W]hat does Shakespeare say?” he asks, “Put but money in thy purse” (Joyce 1986, 25). As Stephen remembers it, however, this is not merely a saying of Shakespeare’s, but one spoken by Shakespeare’s infamous character Iago. So while Deasy thinks himself to be quoting the wisdom of the early modern playwright, he is, in fact, quoting the Bard’s most notorious arch-villain. This distinction—one between an author and the author’s fictional creations—is, it need not be said, crucial to the understanding of literature. It is that which the following experiment hopes to probabilistically detect.</p>
+<p>The problem of computational character attribution is one of literary knowledge production. In concrete terms, it is the difference between the sentence “Madam, I never eat muscatel grapes” and its TEI XML markup, <code>&lt;said who</code> “Edmond Dantès”&gt;Madam, I never eat muscatel grapes&lt;/said&gt;=. In the first case, a reader familiar with <em>The Count of Monte Cristo</em> might recognize it as spoken by Edmond Dantès; in the second case, the reader (human or machine) need not know the work to attribute the sentence to its speaker. When an entire novel is marked up in this way, this allows for answers to a wide range of questions, such as the size of the work’s cast of characters, the distribution of character speech, and stylistic properties of individual characters. These are queries that are useful for both close and distant reading—they can provide insight about particular characters and the novel as a whole. They are useful both to the close study of a single work and to the distant study of hundreds or thousands of novels at a time. Although the task of manually marking up a novel may be laborious for a human annotator, this information might be generated semi-automatically from stylistic signatures of the character. The following experiments will attempt to test this hypothesis.</p>
+<h1 id="experimental-design">Experimental Design</h1>
+<p>The design of this series of experiments is based on Box’s Loop, an iterative process for refining a probabilistic model based on its predictive performance (D. M. Blei 2014, 205). The meta-analysis, then, is one of model selection, analysis, criticism, and improvement, while the analysis itself consists of four steps: chunking, vectorizing, dimensionality reduction, and prediction. Chunking involves the choice of documents, and the modification of those documents to fit certain lengths. (Each document only contains text in one character’s voice, but these documents might be of varying length.) Vectorizing is the transformation of those documents into numeric representations, whether through traditional “bag-of-words” term frequency representations or more semantic techniques. Dimensionality reduction transforms those high-dimensional vectors into lower-dimensional ones that are more easily manipulable by the predictive step. Prediction takes the transformed set of vectors and performs probabilistic inference, effectively assigning character voices to each document.</p>
+<p>For each of these steps, there are many available techniques and parameters. To identify the best-performing ones, I used a cross-validation grid search that performs a meta-analysis by testing all permutations of these techniques.<a href="#fn1" class="footnote-ref" id="fnref1" role="doc-noteref"><sup>1</sup></a> The grid search tests each configuration against an adjusted Rand score, which compares the labeled data with its predicted clusters. This metric accounts for chance, so that a score close to zero indicates a parameter configuration that performs no better than chance, while a score close to 1 is a perfect clustering, identical with the clustering of the original labels, although not necessarily labeled identically.</p>
+<p>To test the efficacy of voice detection, I started with two TEI XML texts, distant from each other in time and genre: Virginia Woolf’s experimental 1931 novel, <em>The Waves</em> and Samuel Richardson’s classic 1748 epistolary novel <em>Clarissa</em>. <em>The Waves</em> is notable in that consists almost entirely of monologues spoken by six characters. Similarly, <em>Clarissa</em> is composed almost entirely of letters, mostly from four of the novel’s approximately 30 characters. These novels were chosen for their large proportions of character voices, and because they were already available in TEI XML format, which made possible the extraction of substantial amounts of labeled text.</p>
+<h1 id="the-waves">The Waves</h1>
+<p>A manual, preliminary parameter search showed that character attribution worked best with utterances longer than four thousand characters. Furthermore, very long utterances, such as Bernard’s 66,000-character speech that ends the novel, threw off the analysis. With this in mind, I restricted the total 240 utterances of <em>The Waves</em> to just the 19 that were between 2000 and 20000 characters in length. The lengths of these documents conform roughly to a normal distribution, with a mean length of 6487 characters, and a standard deviation of 1960.</p>
+<p>From there, I vectorized these documents using a TF-IDF vectorizer, which counts the frequency of each word, and reweights these according to how frequently they are used in the corpus. I set a maximum document frequency of 30% to ignore corpus-specific stop words, and then limited the vocabulary to the top 500 words (these are parameters suggested by the cross-validation search). The resulting vectors I then reduced to five dimensions using principal component analysis. This 19x5 matrix became the input for probabilistic inference. A two-dimensional projection of this matrix is shown in Figure 1A. Of note here is the apparent separation in this projection between the male and female characters, with the male characters in the upper right and the female characters in the lower left.</p>
+<figure>
+<img src="file:///images/character-voice/waves-e2-labeled.png" alt="" /><figcaption>Figure 1A: The Waves, Labeled</figcaption>
+</figure>
+<figure>
+<img src="file:///images/character-voice/waves-e2-final.png" alt="" /><figcaption>Figure 1B: The Waves, Predicted</figcaption>
+</figure>
+<p>The probabilistic model used for clustering assumes that the dimension-reduced, TF-IDF-weighted word frequencies can be modeled with a mixture of Gaussians. I performed inference using Scikit-Learn’s <code>GaussianMixture</code> class, which uses the expectation-maximization (EM) algorithm to cluster the data. Given six components in which to cluster data, the algorithm clustered the data into the six groups shown in Figure 1B. The labels aren’t identical with the original labels in Figure 1A, but the groupings are similar. The inference correctly groups together four out of five of Bernard’s utterances, three out of four of Louis’s, two out of three of Neville’s, Rhoda’s, and Susan’s, but misidentifies Jinny’s. After twenty trials with this configuration, the mean adjusted Rand score was 0.443, with a standard deviation of 0.076—performing much better than chance, although with room for improvement.<a href="#fn2" class="footnote-ref" id="fnref2" role="doc-noteref"><sup>2</sup></a></p>
+<h1 id="clarissa">Clarissa</h1>
+<p>After manually tagging and extracting character-labeled letters from Richardson’s <em>Clarissa</em>, I generated test documents by selecting only letters longer than 8,000 characters and shorter than 50,000 characters. This produced a corpus of 180 letters of varying lengths, the relative lengths of which are indicated by the sizes of the dots in Figure 2. I then vectorized these documents using the top 500 most frequently used words, and reduced the resulting matrix to 25 principal components using PCA, the first two dimensions of which are shown in Figure 2A. As in the <em>Waves</em> experiment, these were all parameters suggested by the cross-validation grid search. Unlike the <em>Waves</em> experiment, however, the grid search suggested a slightly different inference model: a Bayesian Gaussian mixture model. This model differs from the Gaussian mixture model in that it uses variational inference techniques (see D. Blei 2016). Additionally, it doesn’t always find means for all clusters requested—only no more than those requested.</p>
+<p>Curiously, the best parameters found by the grid search involved the configuration of the Bayesian Gaussian mixture model with four components, fewer than the number of characters. However, this turned out to have not been an error, since the amount of text represented by the relatively minor characters James and Morden (as evidenced by the paucity of green and red dots in Figure 2B) is very small, and it would almost be fair to assume that there are really only four characters represented here.</p>
+<p>The final clustering is shown in Figure 2B. It incorrectly clusters together the correspondence of villains Lovelace and Belford, but forgivably, since these characters are friends and associates, and at most points in the novel partners in crime. It correctly identifies most of Anna’s correspondence, but divides her best friend Clarissa’s into two groups: one closer to Anna, and another closer to Lovelace. A closer analysis, which is perhaps beyond the scope of the present experiment, might reveal that those of Clarissa’s letters closest to Anna’s are letters in fact written to Anna, while her letters that appear closest to Belford and Lovelace might, in fact, be those written to them. In fact, the clustering here, though inaccurate, might be more useful to literary analysis than an accurate clustering: they might reveal not only the character voices themselves, but degrees or modes of these voices. They might show how voice changes according to addressee.</p>
+<figure>
+<img src="file:///images/character-voice/clarissa-e2-labeled.png" alt="" /><figcaption>Figure 2A: Clarissa, Labeled</figcaption>
+</figure>
+<figure>
+<img src="file:///images/character-voice/clarissa-e2-final.png" alt="" /><figcaption>Figure 2B: Clarissa, Final</figcaption>
+</figure>
+<p>The adjusted Rand score for this clustering is a slightly lower 0.357, faring much better than chance, but still worse than <em>The Waves</em>. Although these experiments used different parameters and clustering techniques, this discrepancy might be telling.</p>
+<h1 id="semantic-vectorization">Semantic Vectorization</h1>
+<p>The experiments above all rely on word frequency representations of text, and often only on the frequencies of the top 500 words (most likely function words). But what if other properties of the words, such as their meanings, were taken into account? First, I tried transforming documents into 300-dimensional vector representations using the GloVe algorithm in the SpaCy natural language processing Python library.<a href="#fn3" class="footnote-ref" id="fnref3" role="doc-noteref"><sup>3</sup></a></p>
+<p>The best configuration for this representation, using documents from the top four characters, reducing the dimensions to 5 with PCA, and performing inference with a Gaussian mixture model with four components, showed a mean adjusted Rand score of 0.192, with a standard deviation of 0.023 after twenty trials. Figure 3B shows the results of that experiment. Here, the probabilistic inference manages to separate, at the 0.0 longitudinal line, protagonists from antagonists, and male from female characters, grouping Anna and Clarissa together, and Lovelace and Belford. It does not seem to be able to distinguish between those individual characters, however.</p>
+<figure>
+<img src="file:///images/character-voice/clarissa-vec1-labeled.png" alt="" /><figcaption>Figure 3A: Clarissa Vectors, Labeled</figcaption>
+</figure>
+<figure>
+<img src="file:///images/character-voice/clarissa-vec1-final.png" alt="" /><figcaption>Figure 3B: Clarissa Vectors, Predicted</figcaption>
+</figure>
+<p>I attempted other vectorizations, as well, without much success. A representation of a document as a vector of parts of speech frequencies produced scores roughly equal to those of chance. Another vectorization that represented documents as the frequencies of the root words in each sentence performed equally poorly. Since semantic word vectorizations performed only about half as well as the word frequency vectorizations described above, and similar representations even worse, we must conclude that character voice is most discernible in the frequencies of function words, rather than in the meanings of the words.</p>
+<h1 id="discussion">Discussion</h1>
+<p>The difference in the highest possible adjusted rand scores for each novel—0.443 for <em>The Waves</em>, and 0.357 for <em>Clarissa</em>—might be a useful observation, even though these scores were arrived at with very different processes. Perhaps the respective scores indicate the degree to which these novelists are able to write in the styles of their characters. Conversely, this difference might indicate the degree to which these writers chose the stylistic diversity of their characters. If that is the case, novelists with many classes of broadly-painted characters such as Charles Dickens might show higher scores than novelists like Jane Austen, who deal with social subtleties.</p>
+<p>Although the technique outlined in this paper might not be appropriate for fully unsupervised character voice attribution, semi-automatic attribution might be possible with some manual tagging of groups. In any case, attributions of very small utterances (with fewer than 2,000 characters) may not be possible with this word frequency representation.</p>
+<p>If these techniques do not prove to be very useful in automating character voice attributions, however, they might be useful to literary studies in other ways. By examining the confusion caused by certain probabilistic clusterings, for instance, we might be able to find groups of characters—male and female characters, for instance, or protagonists and antagonists. By using an unsupervised model such as the Bayesian Gaussian model used with <em>Clarissa</em>, we might also be able to infer, with some small degree of confidence, the numbers of main characters. In some cases, groupings among documents or utterances might reveal hidden affinities among characters, as well, or stylistic changes in a character’s voice correlated with his or her addressee(s).</p>
+<h1 id="note">Note</h1>
+<p>This paper is also available <a href="https://github.com/JonathanReeve/character-attribution/blob/master/paper/character-voice.pdf">as a PDF at the project’s GitHub repository</a>.</p>
+<h1 id="references">References</h1>
+<p>Blei, David. 2016. “Variational Inference: A Review for Statisticians,” November.</p>
+<p>Blei, David M. 2014. “Build, Compute, Critique, Repeat: Data Analysis with Latent Variable Models.” <em>Annual Review of Statistics and Its Application</em> 1: 203–32. <a href="http://www.annualreviews.org/doi/abs/10.1146/annurev-statistics-022513-115657">http://www.annualreviews.org/doi/abs/10.1146/annurev-statistics-022513-115657</a>.</p>
+<p>Joyce, James. 1986. <em>Ulysses</em>. Edited by Hans Walter Gabler. 1st edition. New York: Vintage.</p>
+<p>Pennington, Jeffrey, Richard Socher, and Christopher D. Manning. 2014. “GloVe: Global Vectors for Word Representation.” In <em>Empirical Methods in Natural Language Processing (EMNLP)</em>, 1532–43. <a href="http://www.aclweb.org/anthology/D14-1162">http://www.aclweb.org/anthology/D14-1162</a>.</p>
+<p>Turian, Joseph, Lev Ratinov, and Yoshua Bengio. 2010. “Word Representations: A Simple and General Method for Semi-Supervised Learning.” In <em>Proceedings of the 48th Annual Meeting of the Association for Computational Linguistics</em>, 384–94. Association for Computational Linguistics. <a href="http://dl.acm.org/citation.cfm?id=1858721">http://dl.acm.org/citation.cfm?id=1858721</a>.</p>
+<section class="footnotes" role="doc-endnotes">
+<hr />
+<ol>
+<li id="fn1" role="doc-endnote"><p>A full list of techniques and parameters tested may be found in the project repository, in <a href="https://github.com/JonathanReeve/character-attribution/blob/master/waves/waves-grid-search-meta.ipynb">the grid search notebooks for The Waves</a> and <a href="https://github.com/JonathanReeve/character-attribution/blob/master/clarissa/clarissa-grid-search.ipynb">for Clarissa</a>.<a href="#fnref1" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+<li id="fn2" role="doc-endnote"><p>The code used for this analysis, written in the Python programming language and using the Scikit-Learn machine learning library, is available at <a href="https://github.com/JonathanReeve/character-attribution/blob/master/clarissa/clarissa-grid-search.ipynb">this project’s GitHub repository</a>.<a href="#fnref2" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+<li id="fn3" role="doc-endnote"><p>See Pennington, Socher, and Manning (2014) for more on GloVe, and Turian, Ratinov, and Bengio (2010) for more on word vector embeddings in general.<a href="#fnref3" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+</ol>
+</section></article><hr><p>I welcome your comments and annotations in the Hypothes.is sidebar to the right. →</p><script src="https://hypothes.is/embed.js"></script></div><footer><div class="container"><div class="columns"><div class="column col-8"><p>I believe in openness. This work is licensed under a <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/">Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International License</a>, unless otherwise stated. All content ©Jonathan Reeve 2020. Hand-coded with love, using exclusively free and open-source software, including <a href="https://github.com/srid/rib">Rib</a> and <a href="https://haskell.org/">Haskell</a>. Hosted on <a href="https://github.com">GitHub</a> and served with <a href="https://netlify.com">Netlify</a>. Icons by Nhor, via <a href="https://thenounproject.com">The Noun Project</a>. <a href="https://www.buymeacoffee.com/vaIVQZH">Buy me a coffee</a> or support me <a href="https://liberapay.com/JonathanReeve/donate">via Libera Pay</a> or <a href="bitcoin:3Qvm1DwzFGk3L1Eb6yeg5Nbc6db8sZUnbK">Bitcoin</a>.</p></div><div class="column col-4"><div class="icons"><a href="http://github.com/JonathanReeve"><svg xmlns="http://www.w3.org/2000/svg" height="3em" viewBox="0 0 448 512" width="3em" fill="#fafafa"><path d="M400 32H48C21.5 32 0 53.5 0 80v352c0 26.5 21.5 48 48
+48h352c26.5 0 48-21.5 48-48V80c0-26.5-21.5-48-48-48zM277.3 415.7c-8.4
+1.5-11.5-3.7-11.5-8 0-5.4.2-33 .2-55.3 0-15.6-5.2-25.5-11.3-30.7 37-4.1 76-9.2
+76-73.1 0-18.2-6.5-27.3-17.1-39 1.7-4.3 7.4-22-1.7-45-13.9-4.3-45.7 17.9-45.7
+17.9-13.2-3.7-27.5-5.6-41.6-5.6-14.1 0-28.4 1.9-41.6 5.6 0
+0-31.8-22.2-45.7-17.9-9.1 22.9-3.5 40.6-1.7 45-10.6 11.7-15.6 20.8-15.6 39 0
+63.6 37.3 69 74.3 73.1-4.8 4.3-9.1 11.7-10.6 22.3-9.5 4.3-33.8
+11.7-48.3-13.9-9.1-15.8-25.5-17.1-25.5-17.1-16.2-.2-1.1 10.2-1.1 10.2 10.8 5
+18.4 24.2 18.4 24.2 9.7 29.7 56.1 19.7 56.1 19.7 0 13.9.2 36.5.2 40.6 0 4.3-3
+9.5-11.5 8-66-22.1-112.2-84.9-112.2-158.3 0-91.8 70.2-161.5 162-161.5S388 165.6
+388 257.4c.1 73.4-44.7 136.3-110.7
+158.3zm-98.1-61.1c-1.9.4-3.7-.4-3.9-1.7-.2-1.5 1.1-2.8 3-3.2 1.9-.2 3.7.6 3.9
+1.9.3 1.3-1 2.6-3 3zm-9.5-.9c0 1.3-1.5 2.4-3.5 2.4-2.2.2-3.7-.9-3.7-2.4 0-1.3
+1.5-2.4 3.5-2.4 1.9-.2 3.7.9 3.7 2.4zm-13.7-1.1c-.4 1.3-2.4 1.9-4.1
+1.3-1.9-.4-3.2-1.9-2.8-3.2.4-1.3 2.4-1.9 4.1-1.5 2 .6 3.3 2.1 2.8
+3.4zm-12.3-5.4c-.9 1.1-2.8.9-4.3-.6-1.5-1.3-1.9-3.2-.9-4.1.9-1.1 2.8-.9 4.3.6
+1.3 1.3 1.8 3.3.9 4.1zm-9.1-9.1c-.9.6-2.6 0-3.7-1.5s-1.1-3.2 0-3.9c1.1-.9 2.8-.2
+3.7 1.3 1.1 1.5 1.1 3.3 0
+4.1zm-6.5-9.7c-.9.9-2.4.4-3.5-.6-1.1-1.3-1.3-2.8-.4-3.5.9-.9 2.4-.4 3.5.6 1.1
+1.3 1.3 2.8.4 3.5zm-6.7-7.4c-.4.9-1.7 1.1-2.8.4-1.3-.6-1.9-1.7-1.5-2.6.4-.6
+1.5-.9 2.8-.4 1.3.7 1.9 1.8 1.5 2.6z"></svg></a><a href="http://twitter.com/j0_0n"><svg xmlns="http://www.w3.org/2000/svg" height="3em" viewBox="0 0 448 512" width="3em" fill="#fafafa"><path d="M400 32H48C21.5 32 0 53.5 0 80v352c0 26.5 21.5 48
+48 48h352c26.5 0 48-21.5 48-48V80c0-26.5-21.5-48-48-48zm-48.9 158.8c.2 2.8.2
+5.7.2 8.5 0 86.7-66 186.6-186.6 186.6-37.2 0-71.7-10.8-100.7-29.4 5.3.6 10.4.8
+15.8.8 30.7 0 58.9-10.4 81.4-28-28.8-.6-53-19.5-61.3-45.5 10.1 1.5 19.2 1.5
+29.6-1.2-30-6.1-52.5-32.5-52.5-64.4v-.8c8.7 4.9 18.9 7.9 29.6 8.3a65.447 65.447
+0 0 1-29.2-54.6c0-12.2 3.2-23.4 8.9-33.1 32.3 39.8 80.8 65.8 135.2 68.6-9.3-44.5
+24-80.6 64-80.6 18.9 0 35.9 7.9 47.9 20.7 14.8-2.8 29-8.3 41.6-15.8-4.9
+15.2-15.2 28-28.8 36.1 13.2-1.4 26-5.1 37.8-10.2-8.9 13.1-20.1 24.7-32.9 34z"></svg></a><a href="mailto:jonathan@jonreeve.com"><svg xmlns="http://www.w3.org/2000/svg" height="3em" viewBox="0 0 448 512" width="3em" fill="#fafafa"><path d="M400 32H48C21.49 32 0 53.49 0 80v352c0 26.51 21.49 48
+48 48h352c26.51 0 48-21.49 48-48V80c0-26.51-21.49-48-48-48zM178.117
+262.104C87.429 196.287 88.353 196.121 64 177.167V152c0-13.255 10.745-24
+24-24h272c13.255 0 24 10.745 24 24v25.167c-24.371 18.969-23.434 19.124-114.117
+84.938-10.5 7.655-31.392 26.12-45.883
+25.894-14.503.218-35.367-18.227-45.883-25.895zM384 217.775V360c0 13.255-10.745
+24-24 24H88c-13.255 0-24-10.745-24-24V217.775c13.958 10.794 33.329 25.236 95.303
+70.214 14.162 10.341 37.975 32.145 64.694 32.01 26.887.134 51.037-22.041
+64.72-32.025 61.958-44.965 81.325-59.406 95.283-70.199z"></svg></a></div></div></div><script async data-goatcounter="https://jonreeve.goatcounter.com/count" src="//gc.zgo.at/count.js"></script><script src="/assets/js/jquery-3.5.1.min.js"></script><script src="/assets/js/main.js"></script><script src="//cdn.jsdelivr.net/gh/highlightjs/cdn-release@10.2.0/build/highlight.min.js"></script><script>hljs.initHighlightingOnLoad();</script></div></footer></body></html>

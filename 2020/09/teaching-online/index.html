@@ -1,0 +1,326 @@
+<html lang="en"><head><meta content="text/html; charset=utf-8" http-equiv="Content-Type"><title>Notes on My Online Teaching Methodology
+</title><link href="/assets/css/spectre.min.css" rel="stylesheet"><link href="//fonts.googleapis.com/css?family=Montserrat|Raleway" rel="stylesheet"><link href="//cdn.jsdelivr.net/gh/highlightjs/cdn-release@10.2.0/build/styles/default.min.css" rel="stylesheet"><link href="/images/favicon.svg" type="image/svg+xml" rel="icon" sizes="any"><style type="text/css">
+
+@media screen and (min-width: 1200px)
+{
+html
+{
+  font-size : 23px;
+}
+
+}
+@media screen and (min-width: 992px)
+{
+html
+{
+  font-size : 24px;
+}
+
+}
+@media screen and (min-width: 768px)
+{
+html
+{
+  font-size : 25px;
+}
+
+}
+@media screen and (min-width: 576px)
+{
+html
+{
+  font-size : 27px;
+}
+
+}
+body
+{
+  font-family : "Raleway", sans-serif;
+}
+
+body.has-docked-nav #main-header
+{
+  width    : 100%;
+  opacity  : 0.94999;
+  z-index  : 2;
+  position : fixed;
+}
+
+#headerWrapper
+{
+  background-color : #ffffff;
+  border-top       : solid 2px #494e8e;
+  border-bottom    : solid 2px #494e8e;
+}
+
+#headerWrapper header
+{
+  padding-top    : 0;
+  padding-bottom : 0;
+  min-height     : 4em;
+  margin         : auto auto auto auto;
+  max-width      : 65em;
+}
+
+#headerWrapper header .nav
+{
+  flex-direction : row;
+}
+
+#headerWrapper header .nav li
+{
+  margin-top : 0;
+}
+
+.container
+{
+  max-width : 55em;
+  padding   : 3em 3em 3em 3em;
+}
+
+.header
+{
+  margin-bottom : 2em;
+}
+
+li.pages
+{
+  list-style-type : none;
+  margin-top      : 1em;
+}
+
+h1,
+h2,
+h3,
+h4
+{
+  margin-top : 1em;
+}
+
+b
+{
+  font-size : 1.19999em;
+}
+
+main
+{
+  font-family : "Raleway", sans-serif;
+}
+
+main li
+{
+  list-style-position : outside;
+}
+
+figure
+{
+  text-align : center;
+}
+
+figure figcaption
+{
+  text-align : center;
+}
+
+figure img
+{
+  max-width : 80%;
+}
+
+span.update p
+{
+  display : inline;
+}
+
+.chip
+{
+  margin : 0.1rem 0.29999rem 0.1rem 0.29999rem;
+}
+
+footer
+{
+  background-color : #494e8e;
+  color            : #fafafa;
+}
+
+footer a
+{
+  color : #ddddec;
+}
+
+footer a.icon img
+{
+  width : 3em;
+}
+
+footer .column
+{
+  display         : flex;
+  justify-content : center;
+  align-content   : center;
+}
+
+footer p
+{
+  margin-bottom : 0;
+}
+
+footer .icons
+{
+  color      : #fafafa;
+  font-size  : 2em;
+  display    : flex;
+  align-self : center;
+}
+
+footer .icons svg:hover
+{
+  opacity : 0.8;
+}
+
+@media screen and (min-width: 576px)
+{
+footer .icons
+{
+  flex-direction : column;
+}
+
+}
+@media screen and (min-width: 992px)
+{
+footer .icons
+{
+  flex-direction : row;
+}
+
+}
+section#greeting
+{
+  margin-top    : 4em;
+  margin-bottom : 2em;
+  font-size     : 2em;
+}
+
+section#greeting .icons
+{
+  display         : flex;
+  justify-content : space-between;
+}
+
+section#greeting .icons span
+{
+  font-size     : 4em;
+  font-weight   : 600;
+  padding-left  : 5%;
+  padding-right : 5%;
+}
+
+
+section#postList li.post
+{
+  margin-top      : 5em;
+  list-style-type : none;
+}
+
+section#postList .postTitle
+{
+  font-size : 2em;
+}
+
+@media print
+{
+
+html
+{
+  font-size : 0.9rem;
+}
+
+button
+{
+  display : none;
+}
+
+#headerWrapper
+{
+  display : none;
+}
+
+footer
+{
+  display : none;
+}
+
+.container
+{
+  max-width : none;
+  padding   : 0em 0em 0em 0em;
+}
+
+table
+{
+  font-size : 0.8rem;
+}
+
+}
+
+/* Generated with Clay, http://fvisser.nl/clay */</style><style type="text/css">@page{margin: 3cm;}</style></head><body><div id="headerWrapper"><header class="navbar"><section class="navbar-section"><a href="/" class="navbar-brand">Jonathan Reeve: <span>Computational Literary Analysis</span></a></section><section class="navbar-section"><ul class="nav"><li class="nav-item"><a href="/">posts</a></li><li class="nav-item"><a href="/cv.html">cv</a></li><li class="nav-item"><a href="/tags/">tags</a></li><li class="nav-item"><a href="/feed.xml">feed</a></li></ul></section></header></div><div class="container"><h1>Notes on My Online Teaching Methodology
+</h1><p>Posted 2020-09-08</p><article><p>I’ve had a lot of questions lately about my online teaching methods lately, so I thought I’d share my rationale behind them. The course I’m currently teaching, <a href="http://icla2020b.jonreeve.com">Introduction to Computational Literary Analysis</a>, in the Department of English and Comparative Literature at Columbia University, has a unique technological stack:</p>
+<ul>
+<li>A <a href="http://icla2020b.jonreeve">course website</a>. It’s built using <a href="https://www.haskell.org/">Haskell</a> and the static site generator <a href="https://rib.srid.ca/">Rib</a>, and styled with <a href="https://edwardtufte.github.io/tufte-css/">Tufte.css</a>, the CSS framework based on design concepts from <a href="https://en.wikipedia.org/wiki/Edward_Tufte">Edward Tufte</a></li>
+<li>A <a href="https://icla2020.jonreeve.com/texts/moonstone.html">course readings platform</a> made with Hypothes.is, open-source web annotation software</li>
+<li>A course communications system made with <a href="https://zulipchat.com/">Zulip, the open-source, threaded, text-based chat platform</a></li>
+</ul>
+<h2 id="why-use-hypothesis">Why use Hypothesis?</h2>
+<p>As literary scholars, we talk about texts. We are often engaged in what one might call marginalia: writing, about another text, with reference to a very specific, page- or line-level passage of that text. Very rarely does this kind of writing actually take place in the margins of books, any more, but it recalls a time when conversations would happen in the margins. In the days when books were expensive, luxury items that were passed around among a coterie of friends, this would happen more often. But as books became cheaper, and were loaned around less frequently, conversational annotation became more of a rarity. Furthermore, the recent shift to digital textual media made this even harder: without electronic margins, and electronic pens to write in them, we have had difficulty recreating the experience of social annotation. Our writing has become increasingly divorced from the writing it discusses, and it has become less social, and more solitary.</p>
+<figure>
+<img src="file:///images/teaching-online/frankenstein.jpg" alt="" /><figcaption>Mary Shelley’s Annotated <em>Frankenstein</em>, via the Morgan Library</figcaption>
+</figure>
+<p>This is where Web 2.0 technology comes in. Whereas Web 1.0 was static—you could read pages but not interact with them—Web 2.0 was dynamic: website visitors could interact with the pages, changing their content. Virtual “bulletin boards,” as the old metaphor went, became possible, and with them, virtual margins.</p>
+<p><a href="https://web.hypothes.is/">Hypothes.is</a> is an open-source web annotation platform, designed to do just this. It allows for highlighting, commenting, and discussing a text, in the margins of the text itself. It is already in wide use for annotating news articles, scientific journal articles, and more, but its ideal use case, in my opinion, is for literary texts.</p>
+<figure>
+<img src="file:///images/teaching-online/hypothesis.png" alt="" /><figcaption>Hypothes.is-annotated edition of <em>The Moonstone</em>, one of our course texts.</figcaption>
+</figure>
+<h2 id="why-zulip">Why Zulip?</h2>
+<p>Again, as literary scholars, teaching in literature classrooms, we talk about text. It only makes sense that we do that using text. Zulip is an open-source text-based chat service, akin to services like Slack, but open-source, and with a few added features, like threading. Threading allows for a non-linear, asynchronous way of sorting discussions by topic. It allows you to join a past discussion that has since moved on to a new topic, and to change the topic without derailing a previous conversation. This does the work, technologically, of a intructor/facilitator, whose labor consists so much of discussion moderating. “Let’s go back to that earlier point,” and “let’s not forget X” are common refrains in a classroom that shoehorns the multiple timelines of students’ thoughts into one linear narrative.</p>
+<h2 id="why-not-just-use-zoom">Why not just use Zoom?</h2>
+<p>Too often, we accept technological services as the necessary background of our lives, without considering their social and economic consequences. We want them to just work, and get out of the way, so that we can do our jobs. However, for literary critics, that is highly paradoxical–and hypocritical, even—since we are so conscious of the social implications of other phenomena. This is to say, if we write an article about latent colonial ideologies in Jane Austen’s <em>Persuasion</em>, but we do it in Microsoft Word, on a laptop running MacOS, which we bought on Amazon, there are economic implications for what we are doing, materially, that are analagous to what we criticize in our article. We’ve voted with our dollars in favor of giant corporations, to the detriment of community-based alternatives.</p>
+<p>Economics aside, there are serious ethical issues behind using proprietary software instead of open-source software. To borrow <a href="https://switching.software/articles/free-libre-open-software/">an analogy from switching.software</a>, using proprietary software is like eating a slice of cake at a diner: we can’t be sure what the ingredients really are, and we just have to trust that it’s going to be what we expect. Using open-source software, however, is more like eating a piece of homemade cake: we know the recipe, we trust the ingredients, and we can reproduce it ourselves, if we want. We can even modify the recipe to our liking, and make it better.</p>
+<p>Now, we can’t make conscious choices for everything in our lives. That would be exhausting. But some choices are easy to make, and software choices are among those. After the pandemic hit, we all swarmed to Zoom without stopping to consider whether it’s a good idea. Our universities and libraries gave the for-profit Zoom corporation millions of dollars, and its stock price skyrocketed. Meanwhile, we have largely ignored the endless stream of articles that have reported on Zoom-related security problems, the cultural phenomenon of “Zoombombing,” and more.</p>
+<p>In my course, I largely replace videoconferencing with text-based conferencing on Zulip. But for the times when we want to meet using video, I use <a href="https://meet.jit.si">Jitsi</a>, an open-source alternative that’s simpler, nicer, and more ethical.</p>
+<h2 id="why-host-videos-on-peertube">Why host videos on PeerTube?</h2>
+<p>University-based video hosting, like ours at Columbia, locks course videos behind a firewall, where they can only be accessed by other students within the university. This seems like it would be bad for the future life of the lectures: if students leave the university, for instance, and want to revisit the course material, they might no longer have access. The big video hosts, like YouTube, are even worse for course materials, since they’re ad-based. I won’t have my students watch ads just to get to my course material. So I opted to post my videos to <a href="https://us.tv">us.tv</a>, a PeerTube instance. <a href="https://joinpeertube.org/">PeerTube</a> is an ad-free, open-source, decentralized video hosting federation, where instances that follow one another share videos between them, using a Bittorrent-like protocol. My lecture videos are thus accessible across a wide variety of servers. This is important when we consider the potential that students might be calling in from countries with censored or restricted Internet: if one server has been blocked, the videos are still accessible on others that follow it.</p></article><hr><p>I welcome your comments and annotations in the Hypothes.is sidebar to the right. →</p><script src="https://hypothes.is/embed.js"></script></div><footer><div class="container"><div class="columns"><div class="column col-8"><p>I believe in openness. This work is licensed under a <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/">Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International License</a>, unless otherwise stated. All content ©Jonathan Reeve 2020. Hand-coded with love, using exclusively free and open-source software, including <a href="https://github.com/srid/rib">Rib</a> and <a href="https://haskell.org/">Haskell</a>. Hosted on <a href="https://github.com">GitHub</a> and served with <a href="https://netlify.com">Netlify</a>. Icons by Nhor, via <a href="https://thenounproject.com">The Noun Project</a>. <a href="https://www.buymeacoffee.com/vaIVQZH">Buy me a coffee</a> or support me <a href="https://liberapay.com/JonathanReeve/donate">via Libera Pay</a> or <a href="bitcoin:3Qvm1DwzFGk3L1Eb6yeg5Nbc6db8sZUnbK">Bitcoin</a>.</p></div><div class="column col-4"><div class="icons"><a href="http://github.com/JonathanReeve"><svg xmlns="http://www.w3.org/2000/svg" height="3em" viewBox="0 0 448 512" width="3em" fill="#fafafa"><path d="M400 32H48C21.5 32 0 53.5 0 80v352c0 26.5 21.5 48 48
+48h352c26.5 0 48-21.5 48-48V80c0-26.5-21.5-48-48-48zM277.3 415.7c-8.4
+1.5-11.5-3.7-11.5-8 0-5.4.2-33 .2-55.3 0-15.6-5.2-25.5-11.3-30.7 37-4.1 76-9.2
+76-73.1 0-18.2-6.5-27.3-17.1-39 1.7-4.3 7.4-22-1.7-45-13.9-4.3-45.7 17.9-45.7
+17.9-13.2-3.7-27.5-5.6-41.6-5.6-14.1 0-28.4 1.9-41.6 5.6 0
+0-31.8-22.2-45.7-17.9-9.1 22.9-3.5 40.6-1.7 45-10.6 11.7-15.6 20.8-15.6 39 0
+63.6 37.3 69 74.3 73.1-4.8 4.3-9.1 11.7-10.6 22.3-9.5 4.3-33.8
+11.7-48.3-13.9-9.1-15.8-25.5-17.1-25.5-17.1-16.2-.2-1.1 10.2-1.1 10.2 10.8 5
+18.4 24.2 18.4 24.2 9.7 29.7 56.1 19.7 56.1 19.7 0 13.9.2 36.5.2 40.6 0 4.3-3
+9.5-11.5 8-66-22.1-112.2-84.9-112.2-158.3 0-91.8 70.2-161.5 162-161.5S388 165.6
+388 257.4c.1 73.4-44.7 136.3-110.7
+158.3zm-98.1-61.1c-1.9.4-3.7-.4-3.9-1.7-.2-1.5 1.1-2.8 3-3.2 1.9-.2 3.7.6 3.9
+1.9.3 1.3-1 2.6-3 3zm-9.5-.9c0 1.3-1.5 2.4-3.5 2.4-2.2.2-3.7-.9-3.7-2.4 0-1.3
+1.5-2.4 3.5-2.4 1.9-.2 3.7.9 3.7 2.4zm-13.7-1.1c-.4 1.3-2.4 1.9-4.1
+1.3-1.9-.4-3.2-1.9-2.8-3.2.4-1.3 2.4-1.9 4.1-1.5 2 .6 3.3 2.1 2.8
+3.4zm-12.3-5.4c-.9 1.1-2.8.9-4.3-.6-1.5-1.3-1.9-3.2-.9-4.1.9-1.1 2.8-.9 4.3.6
+1.3 1.3 1.8 3.3.9 4.1zm-9.1-9.1c-.9.6-2.6 0-3.7-1.5s-1.1-3.2 0-3.9c1.1-.9 2.8-.2
+3.7 1.3 1.1 1.5 1.1 3.3 0
+4.1zm-6.5-9.7c-.9.9-2.4.4-3.5-.6-1.1-1.3-1.3-2.8-.4-3.5.9-.9 2.4-.4 3.5.6 1.1
+1.3 1.3 2.8.4 3.5zm-6.7-7.4c-.4.9-1.7 1.1-2.8.4-1.3-.6-1.9-1.7-1.5-2.6.4-.6
+1.5-.9 2.8-.4 1.3.7 1.9 1.8 1.5 2.6z"></svg></a><a href="http://twitter.com/j0_0n"><svg xmlns="http://www.w3.org/2000/svg" height="3em" viewBox="0 0 448 512" width="3em" fill="#fafafa"><path d="M400 32H48C21.5 32 0 53.5 0 80v352c0 26.5 21.5 48
+48 48h352c26.5 0 48-21.5 48-48V80c0-26.5-21.5-48-48-48zm-48.9 158.8c.2 2.8.2
+5.7.2 8.5 0 86.7-66 186.6-186.6 186.6-37.2 0-71.7-10.8-100.7-29.4 5.3.6 10.4.8
+15.8.8 30.7 0 58.9-10.4 81.4-28-28.8-.6-53-19.5-61.3-45.5 10.1 1.5 19.2 1.5
+29.6-1.2-30-6.1-52.5-32.5-52.5-64.4v-.8c8.7 4.9 18.9 7.9 29.6 8.3a65.447 65.447
+0 0 1-29.2-54.6c0-12.2 3.2-23.4 8.9-33.1 32.3 39.8 80.8 65.8 135.2 68.6-9.3-44.5
+24-80.6 64-80.6 18.9 0 35.9 7.9 47.9 20.7 14.8-2.8 29-8.3 41.6-15.8-4.9
+15.2-15.2 28-28.8 36.1 13.2-1.4 26-5.1 37.8-10.2-8.9 13.1-20.1 24.7-32.9 34z"></svg></a><a href="mailto:jonathan@jonreeve.com"><svg xmlns="http://www.w3.org/2000/svg" height="3em" viewBox="0 0 448 512" width="3em" fill="#fafafa"><path d="M400 32H48C21.49 32 0 53.49 0 80v352c0 26.51 21.49 48
+48 48h352c26.51 0 48-21.49 48-48V80c0-26.51-21.49-48-48-48zM178.117
+262.104C87.429 196.287 88.353 196.121 64 177.167V152c0-13.255 10.745-24
+24-24h272c13.255 0 24 10.745 24 24v25.167c-24.371 18.969-23.434 19.124-114.117
+84.938-10.5 7.655-31.392 26.12-45.883
+25.894-14.503.218-35.367-18.227-45.883-25.895zM384 217.775V360c0 13.255-10.745
+24-24 24H88c-13.255 0-24-10.745-24-24V217.775c13.958 10.794 33.329 25.236 95.303
+70.214 14.162 10.341 37.975 32.145 64.694 32.01 26.887.134 51.037-22.041
+64.72-32.025 61.958-44.965 81.325-59.406 95.283-70.199z"></svg></a></div></div></div><script async data-goatcounter="https://jonreeve.goatcounter.com/count" src="//gc.zgo.at/count.js"></script><script src="/assets/js/jquery-3.5.1.min.js"></script><script src="/assets/js/main.js"></script><script src="//cdn.jsdelivr.net/gh/highlightjs/cdn-release@10.2.0/build/highlight.min.js"></script><script>hljs.initHighlightingOnLoad();</script></div></footer></body></html>
