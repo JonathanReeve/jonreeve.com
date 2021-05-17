@@ -4,12 +4,12 @@ let
   # ChangeLog.md to check any notes on API migration.
   ribRevision = "3f790f22e477d4a833945a9ed4d6e04adbc34747";
 
-  inherit (import (builtins.fetchTarball "https://github.com/hercules-ci/gitignore/archive/7415c4f.tar.gz") { }) gitignoreSource;
+  # inherit (import (builtins.fetchTarball "https://github.com/hercules-ci/gitignore/archive/7415c4f.tar.gz") { }) gitignoreSource;
 in {
     # Rib library source to use
     rib ? builtins.fetchTarball "https://github.com/srid/rib/archive/${ribRevision}.tar.gz"
     # Cabal project root
-  , root ? gitignoreSource ./.
+  , root ? ./.
     # Cabal project name
   , name ? "jonreevecom"
   , ...
