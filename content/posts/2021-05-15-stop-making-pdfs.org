@@ -6,6 +6,7 @@ We should stop pretending that we're all still using paper. At least, speaking f
 
 Think about this: when you start writing a new document, using a word processor, you will usually see something like this:
 
+#+CAPTION: Google Docs: Paper UI
 [[../../../images/pdf/google-docs.png]]
 
 This UI emulates a paper page. Not just any page, but the 8.5 x 11 inch, letter-size paper common in the US. This made sense, at one point, when the printer was an essential part of the computer, and when computer documents were only designs for their paper versions. But now, in 2021, it is starting to go the way of the floppy disk save icon: it will become a vestigial organ of computer interaction. But not before costing us years of bad document interface design.
@@ -26,7 +27,7 @@ Now, we all know someone—that one colleague that insists on paper books, paper
 
 Well, how do we do that? The next time you make a document, make it in Markdown, Org, HTML, or plain text. Make it using Word, if you must, but save it HTML. That's really the universal format: anyone that has a computer, these days, has a web browser.
 
-Next, I'll describe [[file:20210426165942-rethinking_the_mla_style_research_paper.org][Rethinking the MLA Style Research Paper]], which will serve as a specification for replacing the classic MLA-style paper.
+Next, I'll describe rethinking the MLA-style research essay.
 
 Further reading:
 

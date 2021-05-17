@@ -7,9 +7,6 @@ What is a chapter, really? Inspired by Nicholas Dames's work on the history of t
 First, I gathered as many novels as I could. [[http://corpus-db.org][Corpus-DB]], the [[http://jonreeve.com/2017/06/project-gutenberg-the-database/][textual corpus database I've been developing]], makes it easy to get large numbers of plain text files that match certain categories. At the moment it contains all 50,000 or so texts from Project Gutenberg, and metadata about these books gathered from Wikipedia and other sources. Using this database, I was easily able to assemble corpora of several thousand chaptered novels. I then broke these novels into chapters using two methods. The first, using my tool [[https://github.com/JonathanReeve/chapterize][chapterize]], reads the plain text files of the novels, looks for markers like "Chapter I" using regular expressions, and divides the novels accordingly. The second leverages hidden metadata in Project Gutenberg HTML files. If you take [[https://github.com/GITenberg/Pride-and-Prejudice_1342/blob/master/1342-h/1342-h.htm][a peek at the source code of a Project Gutenberg HTML file]], you'll see named anchors that look like =<a name="c2" id="c2">=. These IDs correspond to the chapter numbers---in this case, Chapter 2. By counting the number of words of text that occur between these markers, we can measure the chapter lengths of thousands of novels at a time. And by extracting the text that begins and ends these chapters, we can find language patterns that define a chapter's boundaries. Here are some trends I found.
 
 * Chapter Statistics
-  :PROPERTIES:
-  :CUSTOM_ID: chapter-statistics
-  :END:
 
 Figure 1 shows the average number of chapters, the average text length, and the average chapter length for prose fiction works written by authors who were born in the decades shown. There is an amazing range of dates here, indicating the presence of some decidedly non-novelistic classical literature. (Project Gutenberg doesn't maintain metadata about its texts' original publication dates, but they do have author birth/death years, strangely, so I'm forced to use those as a proxy. This is a problem I'm trying to correct with Corpus-DB, but my solution isn't quite ready yet.) This seems to show that by around the 19th Century, chapters are about the same length. They get a little shorter around the 20th Century, and are extreme and erratic before 1700, but I attribute this to the relative paucity of early (pre-1700) and late (post-1920) texts in the corpus, owing to factors like textual availability, canonicity, and copyright restrictions. It appears that novels have been getting shorter, however, and so there are also fewer chapters.
 
@@ -28,9 +25,6 @@ Of course, there are many more things that can be said about this chart. Please 
 [[../../../images/chapters/numchaps-by-lcsh.png]]
 
 * Language Patterns of the Chapter
-  :PROPERTIES:
-  :CUSTOM_ID: language-patterns-of-the-chapter
-  :END:
 
 For the next experiment, I extracted the first paragraphs of each chapter from a few thousand novels, as well as middle paragraphs and final paragraphs. From there, I calculated TF-IDF scores for each word. TF-IDF just represents word frequencies, adjusted for the frequencies of those words in the corpus. In this case, it represents term distinctiveness to a paragraph group: how frequently a term occurs in first paragraph of a chapter, for instance, compared with how frequently it occurs in other paragraph categories. Here are the words distinctive of the first paragraphs of chapters:
 
@@ -59,11 +53,8 @@ Finally, here are the words distinctive of last paragraphs:
 
 There is a remarkably sad tone here in "sobbing," "wept," and "prayed." Lots of goodbyes are happening here, as well. "Pg" and "page," seem to be OCR artifacts, but is "chapter" a computing error, or the narrative voice, signaling the end of the chapter?
 
-What do you think defines a chapter? Let me know in the comments below.
+What do you think defines a chapter? Let me know in the comments.
 
 * Code
-  :PROPERTIES:
-  :CUSTOM_ID: code
-  :END:
 
 The code used to generate all this is in [[https://github.com/JonathanReeve/chapter-experiments][my GitHub repo called chapter-experiments]].

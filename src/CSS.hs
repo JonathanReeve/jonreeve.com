@@ -78,6 +78,8 @@ pageStyle = do
     textAlign center
     figcaption ? textAlign center
     img ? maxWidth (pct 80)
+  -- Repeating this temporarily, due to <figure> not working for org mode
+  article ? img ? maxWidth (pct 80)
   -- Sometimes markdown processing adds an additional paragraph we have to subsume
   "span.update p" ? display inline
   ".chip" ? margin (rem 0.1) (rem 0.3) (rem 0.1) (rem 0.3)

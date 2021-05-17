@@ -26,9 +26,6 @@ The next letters and numbers before the colon are the book code, optionally enco
 Next, there is a colon, followed by the location code. The location code is made up of chapter numbers, page numbers, or whatever you like. If you want to get super-specific---say, if you're annotating a particular word or phrase---add a line number or word number. If your book doesn't have page numbers (if you're reading an etext, for instance), you can index your location any way you want---by chapter and paragraph number, or even chapter, paragraph, and word. This is simple, intuitive, and human-readable. If your book code is =G105=, and you want to tweet about something that happens in Chapter XXIII, you can tweet "Oh no you di'n't, Captain Wentworth! #G105:c23". Because the annotag is only eight characters, you have another 130 or so for your witty, insightful commentary.
 
 ** List of Location Abbreviations:
-   :PROPERTIES:
-   :CUSTOM_ID: list-of-location-abbreviations
-   :END:
 
 - =d= = part ("division"), ex. d2c5 is Part II, Chapter 5.
 - =b= = book, ex. D3c7 is Book III, Chapter 7. For those books that are divided into "books."
@@ -41,9 +38,6 @@ Next, there is a colon, followed by the location code. The location code is made
 - =w= = word number, ex. p82l10w4 is the fourth word of the tenth line on page 82.
 
 ** Examples:
-   :PROPERTIES:
-   :CUSTOM_ID: examples
-   :END:
 
 - Not to be, man. Not to be. Get over it. #Hamlet #G1524:a3s1P24
 
@@ -58,9 +52,6 @@ Next, there is a colon, followed by the location code. The location code is made
   - The Collected Poems of Wallace Stevens, "Thirteen Ways of Looking at a Blackbird," page 94, second stanza.
 
 ** Advantages of Annotagging:
-   :PROPERTIES:
-   :CUSTOM_ID: advantages-of-annotagging
-   :END:
 
 - It's decentralized, so it's not contingent on any one particular institution or website.
 - Annotations are owned by their writers, not by the website that hosts them.
@@ -71,9 +62,6 @@ Next, there is a colon, followed by the location code. The location code is made
 - If you use Annotags in your blog posts, you aren't restricted to the 140-character limit of microblogging platforms. You can even Annotag your scholarly papers.
 
 ** Future Applications
-   :PROPERTIES:
-   :CUSTOM_ID: future-applications
-   :END:
 
 There are lots of ways that apps could interface with this type of protocol. Here are some ideas:
 
