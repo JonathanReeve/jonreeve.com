@@ -191,9 +191,9 @@ renderPage route val = html_ [lang_ "en"] $ do
           CV.md2Html SiteData.greeting
           div_ [class_ "icons"] $ do
             img_ [src_ "assets/images/noun_Book_1593490.svg"]
-            span_ [] "+"
+            img_ [src_ "assets/images/plus.svg"]
             img_ [src_ "assets/images/noun_retro computer_1905469.svg"]
-            span_ [] "="
+            img_ [src_ "assets/images/equal.svg"]
             img_ [src_ "assets/images/noun_education_1909997.svg"]
         main_ [class_ "container" ] $ forM_ val $ \(r, src) -> do
           section_ [id_ "postList"] $ do

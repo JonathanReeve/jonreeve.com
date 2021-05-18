@@ -110,11 +110,9 @@ pageStyle = do
     ".icons" ? do
       display flex
       justifyContent spaceBetween
-      span ? do
-        fontSize (em 4)
-        fontWeight (weight 600)
-        paddingLeft (pct 5)
-        paddingRight (pct 5)
+      img ? do
+        height (em 4)
+        marginTop (em 2)
   "section#postList" ? do
     "li.post" ? do
       marginTop (em 5)
