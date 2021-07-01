@@ -9,6 +9,8 @@ This uses the wonderful static site generator [[https://github.com/srid/rib/][Ri
 
 ** Running
 
-```
+If you want to build this site locally, make sure you have [[https://nixos.org/][the Nix package manager]] installed, and then run:
+
+#+BEGIN_SRC sh
 nix-shell --run 'ghcid -WT ":main -wS"'
-```
+#+END_SRC
