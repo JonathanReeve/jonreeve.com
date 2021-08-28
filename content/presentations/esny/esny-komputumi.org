@@ -1,0 +1,50 @@
+:PROPERTIES:
+:ID:       3c5ae5c1-b6e3-4a8e-b7dc-bee11559ad70
+:END:
+#+title: Kiel, kaj Kial, Komputumi Esperante
+
+#+BEGIN_COMMENT
+La plej granda Esperanto-lando en la mondo nun estas: la Interreto. Kaj post la pandemio, Esperantistoj komunikas pli kaj pli interrete. Do, kiel, (kaj kial) ni povas komuniki, kaj komputumi, pli Esperante? Eble vi jam scias ke Fejsbuku kaj Guglo havas Esperantajn versiojn, sed ĉu vi scias ke vi povas komputumi Esperante, preskaŭ komplete? Dum ĉi tiu prelego, vi lernos pri multajn metodojn per kio vi povas vivi pli Esperante, uzante vian komputilon.
+#+END_COMMENT
+
+* La Problemo
+- Esperanto ne havas
+
+* Kial
+
+** Por vi
+** Por Esperantujo
+
+* Kiel: Komuniki
+
+** Telegramo (telegramo.org)
+
+** Fejsbuko (facebook.com)
+** Mastodono
+  + Havas du Esperantajn servilojn: [[https://esperanto.masto.host/][Esperanto.masto.host]] kaj [[https://tvitero.com/][Tvitero.com]]
+** Redito (reddit.com)
+  + /r/Esperanto
+  + /r/Esperante
+  + /r/bonajmemeoj
+
+* Kiel: Retumi
+
+** Firefox (Fajrovulpo)
+
+* Kiel: Serĉi
+
+** Guglo (Google.com)
+** Duckduckgo.com
+duckduckgo.com
+
+* Kiel: Ludi
+- [[https://store.steampowered.com/app/1291340/Townscaper/][Townscaper]]
+- [[https://www.openttd.org/][OpenTTD]]
+- Minecraft
+  + Servilo: [[http://esperamondo.net/][Espera Mondo]]
+- "The Expression Amrilato"
+
+* Kiel: Operaciumi
+
+** Linukso
+- Uzu linukso anstataŭ Vindozo aŭ MakOSo.
