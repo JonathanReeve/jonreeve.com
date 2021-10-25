@@ -3,9 +3,6 @@
 #+TAGS: text analysis; python; generation; poetry; modernism
 
 ** Or, Computational Poetic Generation as Literary Analysis
-   :PROPERTIES:
-   :CUSTOM_ID: or-computational-poetic-generation-as-literary-analysis
-   :END:
 
 Note: this project may also be found [[http://jonreeve.com/projects/cantos-generator/][here, in its original format as an iPython notebook]].
 
@@ -18,9 +15,6 @@ Ezra Pound's /Cantos/, whether understood as vorticist, imagist, ideogrammatic, 
 Among the many analogies critics have made between the /Cantos/ and the visual arts, Jacob Korg compares the poem's techniques to those of collage. "The literary equivalent of the painter's collage is," he explains, "quotation---not conventional quotation, but the kind that presents itself as an interpolation, interrupting the text, and even conflicting with the writer's purposes, as if it were an eruption of raw reality" (96). Since algorithmically generated language is still in its infancy, mostly belonging to the domain of semantically agnostic probabilistic models, the collage technique of the /Cantos/, and in particular Pound's use of direct quotation, is what makes the epic one of the most appropriate poems to attempt to programmatically emulate. As John Childs puts it, "hardly a page of the /Draft of XXX Cantos/ goes by without the insertion into the poem of a word or phrase drawn from an author other than Pound" (18). By identifying these source materials, and designing functions to extract from them and mix them in appropriate ways, we might be able to create poems similar to Pound's.
 
 ** The Experiment
-   :PROPERTIES:
-   :CUSTOM_ID: the-experiment
-   :END:
 
 The following is a experiment along the borders of computational and critical methodologies. The format of this investigation, an [[http://ipython.org/notebook.html][IPython notebook]] containing text and code, represents an attempt to problematize the distinction between computer science and literary criticism by intentionally combining the language of both. Some might argue that this paper is already at least half obscure for its intended audience, since most literary scholars are unfamiliar with programming languages, and most coders are unfamiliar with the language of literary study. To help dissolve this linguistic barrier, I have used the Python programming language, whose idioms are closest to English, and I have explained some of the logic behind the program's functions using interpolated or inline comments (text following the =#= symbol) wherever possible. However, a few key concepts of Python are necessary to explain here briefly, in order to explain the fundamental programmatic structures below. This table shows a few types of Python expressions, along with their explanations in English:
 

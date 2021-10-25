@@ -14,6 +14,7 @@ import qualified Data.Text as T
 import qualified Data.Text.Lazy as TL
 import Data.List
 import Lucid
+import Lucid.Base (makeAttribute)
 import Clay hiding (title, Position, type_, header, html, filter)
 
 import Rib.Parser.Pandoc
@@ -85,7 +86,7 @@ formatEvent event = foldMap (span_ [ class_ "update" ]) $
                , md2Html md
                ]
     Award awardAward awardVenue -> [ toHtml (chip "award")
-                        , toHtml awardAward
+                        , span_ [property_ "award" ] $ toHtml awardAward
                         , formatVenue awardVenue
                         ]
     Talk talkTitle uri talkVenue -> [ toHtml (chip "talk")
@@ -194,7 +195,6 @@ publicationsSection = section_ [ class_ "publications" ] $ do
   h1_ [] "Publications"
   ul_ [] $ foldMap formatPublication projects
 
--- TODO
 -- formatTeachingPublication :: Teaching -> Html ()
 -- formatTeachingPublication teaching = foldMap formatUpdate withPublications where
 --     withPublications = filter getPub $ teaching
@@ -232,7 +232,7 @@ languagesSection = do
   ul_ [] $ do
     mapM_ langItem ["**Programming languages**: Python, Haskell, PHP. Some Ruby, JavaScript, Julia."
                    , "**Markup and style languages**: TEI XML, HTML, Markdown, XSL, CSS."
-                   , "**Natural languages**: English, French, Chinese (Mandarin), Esperanto. Some Japanese, Italian, German, Spanish, and Irish."
+                   , "**Natural languages**: English, French, Chinese (Mandarin), Esperanto. Some Japanese, Italian, German, Spanish, Irish."
                    ] where
       langItem :: T.Text -> Html ()
       langItem item = li_ [] $ md2Html item
@@ -272,6 +272,13 @@ pageStyle = do
     marginBottom (em 2)
   ".update p" ? display inline
   ".desc p" ? display inline
+
+
+-- Schema.org RDFa
+vocab_, typeof_, property_ :: T.Text -> Attribute
+vocab_ = makeAttribute "vocab"
+typeof_ = makeAttribute "typeof"
+property_ = makeAttribute "property"
 
 cv :: Html ()
 cv = do

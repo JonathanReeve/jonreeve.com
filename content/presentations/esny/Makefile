@@ -1,6 +1,6 @@
-index.html: esny-komputumi.org
+index.html: esny-komputumi.org revealjs.template
 	pandoc -o $@ $< \
-	-s -t revealjs \
-	-V revealjs-url=../../assets/js/vendor/reveal.js \
+	-s -t revealjs --template=revealjs.template \
+	-V revealjs-url=../../assets/js/vendor/revealjs \
 	-V theme=moon
-	chromium $@ &
+	firefox $@ &

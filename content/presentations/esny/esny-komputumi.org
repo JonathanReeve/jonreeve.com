@@ -8,43 +8,74 @@ La plej granda Esperanto-lando en la mondo nun estas: la Interreto. Kaj post la 
 #+END_COMMENT
 
 * La Problemo
-- Esperanto ne havas
 
-* Kial
+** Tro da Esperantistoj komputumas en nacioj lingvoj
+
+* Kial Komputumi Esperante?
 
 ** Por vi
+- Pliboniĝas vian vortprovizon
+- Plifacilas tajpi Esperante
 ** Por Esperantujo
-
+- Fejsbuko, ekzemple, scias kiom da uzantoj uzas divesajn lingvojn
+- Ju pli da Esperantaj uzantoj, des pli da lingvaj subtenoj
+  
 * Kiel: Komuniki
 
 ** Telegramo (telegramo.org)
-
+[[./img/telegram1.png]]
 ** Fejsbuko (facebook.com)
+[[./img/fb1.png]]
+** Fejsbuko
+[[./img/fb2.png]]
+
 ** Mastodono
   + Havas du Esperantajn servilojn: [[https://esperanto.masto.host/][Esperanto.masto.host]] kaj [[https://tvitero.com/][Tvitero.com]]
+** Mastodono
+[[./img/mastodono.png]]
 ** Redito (reddit.com)
   + /r/Esperanto
   + /r/Esperante
   + /r/bonajmemeoj
+** Redito
+[[./img/redito.png]]
 
 * Kiel: Retumi
 
 ** Firefox (Fajrovulpo)
+[[./img/firefox.png]]
+** Firefox
+[[./img/firefox2.png]]
+** Kiel agordi
+[[./img/fajrovulpo-agordo.png]]
 
 * Kiel: Serĉi
 
 ** Guglo (Google.com)
+[[./img/guglo1.png]]
 ** Duckduckgo.com
-duckduckgo.com
-
+[[./img/ddg.png]]
 * Kiel: Ludi
+** Ludoj
+- Lichess
 - [[https://store.steampowered.com/app/1291340/Townscaper/][Townscaper]]
 - [[https://www.openttd.org/][OpenTTD]]
-- Minecraft
-  + Servilo: [[http://esperamondo.net/][Espera Mondo]]
+- Minecraft (Servilo: [[http://esperamondo.net/][Espera Mondo]])
 - "The Expression Amrilato"
 
 * Kiel: Operaciumi
 
 ** Linukso
-- Uzu linukso anstataŭ Vindozo aŭ MakOSo.
+- Uzu linukso anstataŭ Windows (Vindozo) aŭ MacOSo.
+
+** Specoj de Linuksoj
+- Ubuntu
+- Fedora
+- Pop!_OS
+** Eĉ en poŝtelefonoj!
+- Pinephone ($150)
+** GNOMEo
+- Traduko 90% kompleta
+** GNOMEo
+[[./img/vetero.png]]
+

@@ -219,9 +219,9 @@ renderPage route val = html_ [lang_ "en"] $ do
               let meta = getMeta src
               b_ $ a_ [href_ (Rib.routeUrl r)] $ toHtml $ title meta
       Route_CV -> do
-        main_ [class_ "container" ] $ do
+        main_ [class_ "container", vocab_ "https://schema.org/", typeof_ "Person"] $ do
           h1_ "Curriculum Vitae"
-          h2_ "Jonathan Reeve"
+          h2_ [property_ "name"] "Jonathan Reeve"
           CV.cv
       Route_Article srcPath -> do
         h1_ routeTitle
