@@ -16,75 +16,43 @@
         "type": "github"
       }
     },
-    "flake-compat_2": {
+    "myRib": {
       "flake": false,
       "locked": {
-        "lastModified": 1627913399,
-        "narHash": "sha256-hY8g6H2KFL8ownSiFeMOjwPC8P0ueXpCVEbxgda3pko=",
-        "owner": "edolstra",
-        "repo": "flake-compat",
-        "rev": "12c64ca55c1014cdc1b16ed5a804aa8576601ff2",
-        "type": "github"
+        "lastModified": 1636772346,
+        "narHash": "sha256-uclD3RZmWPDij+ZL/60xklNXjmIPG4YgjUkvwFBJ1Lk=",
+        "ref": "master",
+        "rev": "0e9db0bb8aa7010ab7ee46f58a4dad7744fc35d9",
+        "revCount": 417,
+        "type": "git",
+        "url": "file:///home/jon/Code/rib"
       },
       "original": {
-        "owner": "edolstra",
-        "repo": "flake-compat",
-        "type": "github"
+        "type": "git",
+        "url": "file:///home/jon/Code/rib"
       }
     },
     "nixpkgs": {
       "flake": false,
       "locked": {
-        "lastModified": 1636769377,
-        "narHash": "sha256-Gs1POj60wXlOS9acZEpgf+2rR5hhuEXhn3BCiV80x4U=",
+        "lastModified": 1636770518,
+        "narHash": "sha256-+P1joBPitofDDjTaX6NQVv8DJCPRel2T/tzTdYM/kGo=",
         "owner": "NixOS",
         "repo": "nixpkgs",
-        "rev": "c696ab65ce952b369ef67d65cd8dcaa4e7326d25",
+        "rev": "3f5767d09e05e3ceb6cbe7fe16c326b68c7e025c",
         "type": "github"
       },
       "original": {
         "owner": "NixOS",
         "repo": "nixpkgs",
         "type": "github"
-      }
-    },
-    "nixpkgs_2": {
-      "flake": false,
-      "locked": {
-        "lastModified": 1636769377,
-        "narHash": "sha256-Gs1POj60wXlOS9acZEpgf+2rR5hhuEXhn3BCiV80x4U=",
-        "owner": "NixOS",
-        "repo": "nixpkgs",
-        "rev": "c696ab65ce952b369ef67d65cd8dcaa4e7326d25",
-        "type": "github"
-      },
-      "original": {
-        "owner": "NixOS",
-        "repo": "nixpkgs",
-        "type": "github"
-      }
-    },
-    "rib": {
-      "inputs": {
-        "flake-compat": "flake-compat_2",
-        "nixpkgs": "nixpkgs_2"
-      },
-      "locked": {
-        "lastModified": 1636769489,
-        "narHash": "sha256-xtiYxf+QG2lU+EMJGfgUNQVi0fVf6mZ1csgnUwOnGd0=",
-        "type": "git",
-        "url": "file:///home/jon/Code/rib"
-      },
-      "original": {
-        "type": "git",
-        "url": "file:///home/jon/Code/rib"
       }
     },
     "root": {
       "inputs": {
         "flake-compat": "flake-compat",
-        "nixpkgs": "nixpkgs",
-        "rib": "rib"
+        "myRib": "myRib",
+        "nixpkgs": "nixpkgs"
       }
     }
   },

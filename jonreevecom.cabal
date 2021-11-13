@@ -38,6 +38,7 @@ executable jonreevecom
         path,
         relude,
         rib,
+        rib-core,
         shake,
         text,
         with-utf8,

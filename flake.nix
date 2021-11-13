@@ -2,14 +2,14 @@
   description = "Jonreeve.com: Personal website for Jonathan Reeve.";
   inputs = {
     flake-compat = { url = "github:edolstra/flake-compat"; flake = false; };
-    rib = { url = "/home/jon/Code/rib"; };
+    myRib = { url = "/home/jon/Code/rib"; flake = false; };
     # Pin nixpkgs
     # nixpkgs = { url = "github:NixOS/nixpkgs/5272327b81ed355bbed5659b8d303cf2979b6953"; flake = false; }; # 20.03
     # nixpkgs = { url = "github:NixOS/nixpkgs/cd63096d6d887d689543a0b97743d28995bc9bc3"; flake = false; }; # 20.09
     # nixpkgs = { url = "github:NixOS/nixpkgs/7e9b0dff974c89e070da1ad85713ff3c20b0ca97"; flake = false; }; # 21.05
     nixpkgs = { url = "github:NixOS/nixpkgs"; flake = false; }; # Master
   };
-  outputs = { self, nixpkgs, ... }@inputs: {
+  outputs = { self, nixpkgs, myRib, ... }@inputs: {
     packages.x86_64-linux.jonreevecom =
       with import nixpkgs { system = "x86_64-linux"; config = { allowBroken = true; doCheck = false; }; };
       pkgs.haskellPackages.developPackage {
@@ -35,6 +35,8 @@
           lucid = pkgs.haskell.lib.dontCheck super.lucid;
         };
         source-overrides = {
+          rib = myRib + "/rib";
+          rib-core = myRib + "/rib-core";
         };
       };
     defaultPackage.x86_64-linux = self.packages.x86_64-linux.jonreevecom;
