@@ -2,7 +2,7 @@
   description = "Jonreeve.com: Personal website for Jonathan Reeve.";
   inputs = {
     flake-compat = { url = "github:edolstra/flake-compat"; flake = false; };
-    myRib = { url = "/home/jon/Code/rib"; flake = false; };
+    myRib = { url = "/home/jon/Code/rib"; flake = true; };
     # Pin nixpkgs
     # nixpkgs = { url = "github:NixOS/nixpkgs/5272327b81ed355bbed5659b8d303cf2979b6953"; flake = false; }; # 20.03
     # nixpkgs = { url = "github:NixOS/nixpkgs/cd63096d6d887d689543a0b97743d28995bc9bc3"; flake = false; }; # 20.09
@@ -25,7 +25,6 @@
               ormolu
               haskell-language-server
               zlib
-              lua51Packages.lpeg
             ]);
         overrides = self: super: {
           mmark-ext = pkgs.haskell.lib.dontCheck super.mmark-ext;
@@ -40,6 +39,6 @@
         };
       };
     defaultPackage.x86_64-linux = self.packages.x86_64-linux.jonreevecom;
-    devShell = true;
+    devShell = self.packages.x86_64-linux.jonreevecom;
   };
 }

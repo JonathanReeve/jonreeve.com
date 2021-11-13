@@ -16,14 +16,33 @@
         "type": "github"
       }
     },
-    "myRib": {
+    "flake-compat_2": {
       "flake": false,
       "locked": {
-        "lastModified": 1636772346,
-        "narHash": "sha256-uclD3RZmWPDij+ZL/60xklNXjmIPG4YgjUkvwFBJ1Lk=",
+        "lastModified": 1627913399,
+        "narHash": "sha256-hY8g6H2KFL8ownSiFeMOjwPC8P0ueXpCVEbxgda3pko=",
+        "owner": "edolstra",
+        "repo": "flake-compat",
+        "rev": "12c64ca55c1014cdc1b16ed5a804aa8576601ff2",
+        "type": "github"
+      },
+      "original": {
+        "owner": "edolstra",
+        "repo": "flake-compat",
+        "type": "github"
+      }
+    },
+    "myRib": {
+      "inputs": {
+        "flake-compat": "flake-compat_2",
+        "nixpkgs": "nixpkgs"
+      },
+      "locked": {
+        "lastModified": 1636773243,
+        "narHash": "sha256-I2mmakqDe7ZB/1GsObA1tqtdcv6NPr7Ad51ZfL/8xB8=",
         "ref": "master",
-        "rev": "0e9db0bb8aa7010ab7ee46f58a4dad7744fc35d9",
-        "revCount": 417,
+        "rev": "fc40379cd0edda603f4355bd67df415d52e402ff",
+        "revCount": 418,
         "type": "git",
         "url": "file:///home/jon/Code/rib"
       },
@@ -48,11 +67,27 @@
         "type": "github"
       }
     },
+    "nixpkgs_2": {
+      "flake": false,
+      "locked": {
+        "lastModified": 1636773247,
+        "narHash": "sha256-pK3xqSjp7gvtfLfasybH7cS96ioS/SNYpMwBDErzsdo=",
+        "owner": "NixOS",
+        "repo": "nixpkgs",
+        "rev": "d372457bf00a6f32f9cf4df8b66f3a1074ebba77",
+        "type": "github"
+      },
+      "original": {
+        "owner": "NixOS",
+        "repo": "nixpkgs",
+        "type": "github"
+      }
+    },
     "root": {
       "inputs": {
         "flake-compat": "flake-compat",
         "myRib": "myRib",
-        "nixpkgs": "nixpkgs"
+        "nixpkgs": "nixpkgs_2"
       }
     }
   },
