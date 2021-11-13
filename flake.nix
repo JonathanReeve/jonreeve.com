@@ -2,7 +2,7 @@
   description = "Jonreeve.com: Personal website for Jonathan Reeve.";
   inputs = {
     flake-compat = { url = "github:edolstra/flake-compat"; flake = false; };
-    myRib = { url = "/home/jon/Code/rib"; flake = true; };
+    myRib = { url = "github:JonathanReeve/rib"; };
     # Pin nixpkgs
     # nixpkgs = { url = "github:NixOS/nixpkgs/5272327b81ed355bbed5659b8d303cf2979b6953"; flake = false; }; # 20.03
     # nixpkgs = { url = "github:NixOS/nixpkgs/cd63096d6d887d689543a0b97743d28995bc9bc3"; flake = false; }; # 20.09

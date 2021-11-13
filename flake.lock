@@ -40,15 +40,15 @@
       "locked": {
         "lastModified": 1636773243,
         "narHash": "sha256-I2mmakqDe7ZB/1GsObA1tqtdcv6NPr7Ad51ZfL/8xB8=",
-        "ref": "master",
+        "owner": "JonathanReeve",
+        "repo": "rib",
         "rev": "fc40379cd0edda603f4355bd67df415d52e402ff",
-        "revCount": 418,
-        "type": "git",
-        "url": "file:///home/jon/Code/rib"
+        "type": "github"
       },
       "original": {
-        "type": "git",
-        "url": "file:///home/jon/Code/rib"
+        "owner": "JonathanReeve",
+        "repo": "rib",
+        "type": "github"
       }
     },
     "nixpkgs": {
