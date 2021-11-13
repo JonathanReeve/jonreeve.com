@@ -33,17 +33,17 @@
     "rib": {
       "flake": false,
       "locked": {
-        "lastModified": 1636763216,
-        "narHash": "sha256-i1CemGQmHyhrr5EUkLyJNAPxdpLy2Tqj/Y8BnrBZLxE=",
-        "ref": "master",
-        "rev": "f80a4a2ff54e20d1d16f14bdd2b04b1be37d5e5d",
-        "revCount": 414,
-        "type": "git",
-        "url": "file:///home/jon/Code/rib"
+        "lastModified": 1619654749,
+        "narHash": "sha256-tLhBEpUCGpBokJA9cHOWKeONRL6v4eTJlT29dYZFoHw=",
+        "owner": "srid",
+        "repo": "rib",
+        "rev": "db26bcde09364849683736bc1dc30acdff5d6cc0",
+        "type": "github"
       },
       "original": {
-        "type": "git",
-        "url": "file:///home/jon/Code/rib"
+        "owner": "srid",
+        "repo": "rib",
+        "type": "github"
       }
     },
     "root": {
