@@ -41,6 +41,7 @@ import Text.Pandoc
 import qualified Text.Pandoc.Readers
 import Text.Pandoc.Walk (query)
 import Text.Pandoc.Writers.Shared (toTableOfContents)
+import Text.Pandoc.Citeproc (processCitations)
 
 -- | Pure version of `parse`
 parsePure ::
@@ -70,6 +71,7 @@ render doc =
   either error id $ first show $ runExcept $ do
     runPure'
     $ fmap toHtmlRaw
+    -- $ processCitations
     $ writeHtml5String writerSettings doc
 
 -- | Extract the Pandoc metadata as JSON value

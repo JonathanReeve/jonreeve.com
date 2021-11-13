@@ -1,3 +1,18 @@
+
+# (import
+#   (
+#     let
+#       lock = builtins.fromJSON (builtins.readFile ./flake.lock);
+#     in
+#     fetchTarball {
+#       url = "https://github.com/edolstra/flake-compat/archive/${lock.nodes.flake-compat.locked.rev}.tar.gz";
+#       sha256 = lock.nodes.flake-compat.locked.narHash;
+#     }
+#   )
+#   {
+#     src = ./.;
+#   }).defaultNix
+
 let
   # To upgrade rib, go to https://github.com/srid/rib/commits/master, select the
   # revision you would like to upgrade to and set it here. Consult rib's
@@ -17,6 +32,7 @@ in {
 
 let
   source-overrides = {
+    # with-utf8 = builtins.fetchTarball "https://github.com/serokell/haskell-with-utf8/archive/v1.0.0.0.tar.gz";
   };
 in import rib {
   inherit root name source-overrides;

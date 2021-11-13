@@ -167,6 +167,7 @@ renderPage route val = html_ [lang_ "en"] $ do
               a_ [href_ "http://github.com/JonathanReeve"] gitHubIcon
               a_ [href_ "http://twitter.com/j0_0n"] twitterIcon
               a_ [href_ "mailto:jonathan@jonreeve.com"] emailIcon
+              a_ [href_ "https://matrix.to/#/@jon.reeve:matrix.org"] chatIcon
         script_ [ makeAttribute "data-goatcounter" "https://jonreeve.goatcounter.com/count"
                 , async_ T.empty, src_ "//gc.zgo.at/count.js" ] T.empty
         script_ [ src_ "/assets/js/jquery-3.5.1.min.js" ] T.empty
@@ -322,3 +323,10 @@ emailIcon = svgIcon_ [fmt|M400 32H48C21.49 32 0 53.49 0 80v352c0 26.51 21.49 48
 24-24 24H88c-13.255 0-24-10.745-24-24V217.775c13.958 10.794 33.329 25.236 95.303
 70.214 14.162 10.341 37.975 32.145 64.694 32.01 26.887.134 51.037-22.041
 64.72-32.025 61.958-44.965 81.325-59.406 95.283-70.199z|]
+
+chatIcon :: Html ()
+chatIcon = svgIcon_ [fmt|M448 0H64C28.7 0 0 28.7 0 64v288c0 35.3 28.7 64 64
+64h96v84c0 7.1 5.8 12 12 12 2.4 0 4.9-.7 7.1-2.4L304 416h144c35.3 0 64-28.7
+64-64V64c0-35.3-28.7-64-64-64zm16 352c0 8.8-7.2 16-16 16H288l-12.8 9.6L208
+428v-60H64c-8.8 0-16-7.2-16-16V64c0-8.8 7.2-16 16-16h384c8.8 0 16 7.2 16
+16v288z|]
