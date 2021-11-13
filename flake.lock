@@ -17,37 +17,33 @@
       }
     },
     "nixpkgs": {
-      "flake": false,
       "locked": {
-        "lastModified": 1587398327,
-        "narHash": "sha256-mEKkeLgUrzAsdEaJ/1wdvYn0YZBAKEG3AN21koD2AgU=",
+        "lastModified": 1636756956,
+        "narHash": "sha256-IpqA/8LaEOnaooYg2nS5Jm7+wMhT0Fydy3omvHe0fD0=",
         "owner": "NixOS",
         "repo": "nixpkgs",
-        "rev": "5272327b81ed355bbed5659b8d303cf2979b6953",
+        "rev": "9f0523f13c84bce1b6381a8287eb2a5ad1edb2aa",
         "type": "github"
       },
       "original": {
-        "owner": "NixOS",
-        "repo": "nixpkgs",
-        "rev": "5272327b81ed355bbed5659b8d303cf2979b6953",
-        "type": "github"
+        "id": "nixpkgs",
+        "type": "indirect"
       }
     },
     "rib": {
       "flake": false,
       "locked": {
-        "lastModified": 1593301200,
-        "narHash": "sha256-w1VZobLIIi017GcDJAamp4bZCsWtSzMV7camE9nXnLY=",
-        "owner": "srid",
-        "repo": "rib",
-        "rev": "3f790f22e477d4a833945a9ed4d6e04adbc34747",
-        "type": "github"
+        "lastModified": 1636763216,
+        "narHash": "sha256-i1CemGQmHyhrr5EUkLyJNAPxdpLy2Tqj/Y8BnrBZLxE=",
+        "ref": "master",
+        "rev": "f80a4a2ff54e20d1d16f14bdd2b04b1be37d5e5d",
+        "revCount": 414,
+        "type": "git",
+        "url": "file:///home/jon/Code/rib"
       },
       "original": {
-        "owner": "srid",
-        "repo": "rib",
-        "rev": "3f790f22e477d4a833945a9ed4d6e04adbc34747",
-        "type": "github"
+        "type": "git",
+        "url": "file:///home/jon/Code/rib"
       }
     },
     "root": {
