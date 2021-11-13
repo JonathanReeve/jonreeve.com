@@ -39,7 +39,8 @@
             withHoogle = false;
             overrides = self: super: with pkgs.haskell.lib; {
               ema = disableCabalFlag inputs.ema.defaultPackage.${system} "with-examples";
-	      mmark = dontCheck super.mmark;
+              mmark = dontCheck super.mmark;
+              mmark-ext = dontCheck super.mmark-ext;
               # lvar = self.callCabal2nix "lvar" inputs.ema.inputs.lvar { }; # Until lvar gets into nixpkgs
             };
             modifier = drv:

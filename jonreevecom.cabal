@@ -42,10 +42,10 @@ executable jonv2
     , pandoc
     , pandoc-types
     , path
-    , PyF,
+    , PyF
     , relude
-    , rib
-    , rib-core
+    -- , rib
+    -- , rib-core
     , shake
     , shower
     , tagged
