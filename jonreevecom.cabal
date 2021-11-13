@@ -1,10 +1,10 @@
 cabal-version:      2.4
-name:               jonv2
-version:            0.1.0.0
-license:            AGPL-3.0-only
-copyright:          2021 Sridhar Ratnakumar
-maintainer:         srid@srid.ca
-author:             Sridhar Ratnakumar
+name:               jonreevecom
+version:            4.0.0.0
+license:            CC-BY-NC-SA-4.0
+copyright:          2021 Jonathan Reeve
+maintainer:         jonathan@jonreeve.com
+author:             Jonathan Reeve
 category:           Web
 
 -- A short (one-line) description of the package.
@@ -24,46 +24,37 @@ executable jonv2
   build-depends:
     , aeson
     , async
-    , clay
-    , rib
-    , rib-core
-    , shake
-    , PyF,
-        aeson,
-        clay,
-        filepath,
-        feed,
-        lucid,
-        mtl,
-        pandoc,
-        pandoc-types,
-        path,
-        relude,
-        text,
-        with-utf8,
-        containers,
-        PyF,
-        xml-types,
-        xml-conduit
     , base
     , blaze-html
     , blaze-markup
+    , clay
     , containers
     , data-default
     , directory
     , ema                 >=0.2
+    , feed
     , filepath
+    , lucid
     , lvar
     , monad-logger
+    , mtl
     , neat-interpolation
+    , pandoc
     , pandoc-types
+    , path
+    , PyF,
     , relude
+    , rib
+    , rib-core
+    , shake
     , shower
     , tagged
     , text
     , time
     , unliftio
-
+    , with-utf8
+    , xml-conduit
+    , xml-types
   mixins:
     base hiding (Prelude),
     relude (Relude as Prelude, Relude.Container.One),
