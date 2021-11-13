@@ -1,0 +1,70 @@
+#+title: Rethinking the MLA Style Research Paper
+#+date: 2021-05-16
+#+tags: media
+
+In my last post, I argued that PDFs, Word documents, and similar electronic file formats are stuck trying to mimic paper, and that we should consider replacing these with screen-first file formats which liberate them from the constraints of pagination. So where does that put the famous MLA-style research paper, the standard format for English departments nationwide? Here, I argue for a new style for student papers in the humanities.
+
+As a student, instructor, and developer, I'm unusually intimate with the MLA-style paper. I've written dozens of these papers, for university seminars, across fifteen years, and at three universities. As an instructor, I've taught the MLA style for almost ten years, at five universities, and have graded thousands of pages of these things. And as a web developer at the MLA, I've mediated between the MLA's electronic publishing conventions and the technological constraints of the World Wide Web. I've wrestled at length with formatting these papers using Google Docs, Libreoffice, and LaTeX, and I even authored the [[https://github.com/JonathanReeve/md2mla][md2mla]] script, which compiles Markdown to an MLA-style paper. But don't get me wrong—I haven't hated /all/ of it. There are some things to like about the style. It's simple, cleanly designed, and very legible. Here's what the top of the first page usually looks like:
+
+[[../../../images/mla/mla.png]]
+
+Yet there are problems with it, too. One of the first things one learns about the MLA-style research paper is that it should have one-inch margins. This is already a red flag, because it presupposes a paginated medium, for an 8.5 by 11 inch (American letter) page, which uses the Imperial measurement system. Since the only countries that use the ancient imperial system are the US and Liberia, this choice is unfriendly to international uses. (Try printing out an American-authored paper on /any/ printer outside the US.) This choice is also unfriendly to international students, who now have to learn a new system. And of course, the MLA-style paper also suffers from the same limitations as the file format which frames it.
+
+So the time has come to rethink the MLA-style paper. What would be the necessary features of such a style? It should be:
+
+  1. Easy.
+  2. Free.
+  3. Mistake-proof.
+  4. Clean-looking.
+  5. Semantic.
+  6. Widely interoperable.
+
+I'll discuss ways to achieve all of these goals. First, it should be remarkably easy. Students shouldn't have to learn how to be programmers to use it, or typesetters. It should get out of the way, so that students can focus on writing.
+
+Next, it should be free to write and read. That is, students shouldn't have to buy expensive software, like Microsoft Word or Adobe Acrobat, in order to create it. Everything should run on open-source software.
+
+Then, it should be designed to minimize the possibility of student error. It's easy to mistake the four fields at the top of the current MLA paper. Is it the professor's name, and then the course title? Or vice-versa? Adding labels to each of these fields greatly reduces mistakes like this, and shipping a stylesheet eliminates design mistakes.
+
+The resulting paper should be at least as clean-looking as the current format. This means that it should have a stable stylesheet, with whitespace, typography, line spacing, and all other details already decided. That's to say, students should not have to learn the intricacies of LaTeX page placement, of hand-coding CSS, or worse—of pushing around tiny slide-rule-like graphical ruler widgets in a word processing program, just to emulate hanging indentation. Everything should just work.
+
+It should, of course, contain all the metadata you usually find in a regular MLA-style paper: the student's name, the course name, the course instructor, and the date of composition. But that metadata should be formatted in a semantic way, both to minimize student error, and to enhance the document's usability.
+
+The file format should be one that can easily be converted to a commonly-used legacy format, like PDF or Word, in case the student has ambitions to publish the paper at a journal that only accepts legacy formats. But its native format should be HTML, targeting web publishing.
+
+Finally, it should be neither the student's nor the instructor's responsibility to handle formatting the bibliography. These are menial tasks better suited to a computer. Thus, the bibliography should be automatically generated, from bibliographic metadata.
+
+Thus, here's my first attempt at a new format:
+
+ - A plain-text document,
+ - with an .md file extension,
+ - written with [[https://commonmark.org/][Commonmark]] markup, which has:
+   + a YAML metadata header with these fields:
+     - Essay title
+     - Student's name
+     - Course name, if the paper was written for a course
+     - Instructor's name, if applicable
+     - A bibliography in CSL YAML, included in the metadata header
+   + citations formatted using [[https://pandoc.org/MANUAL.html#citations-in-note-styles][Pandoc's citation style]]
+   + any equations included in LaTeX, enclosed in ~$$~
+   + any images included as hyperlinks
+
+The student wouldn't need to "know" YAML, Commonmark, or Markdown—a web interface may be used to generate all of this. Then, upon submission, the file may be validated, ensuring that all the required fields are included. That can even happen before submission.
+
+Here's a minimal example:
+
+#+begin_src markdown
+---
+title: My Amazing Research Paper
+author: Jonathan Reeve
+course: Introduction to Essay Writing
+instructor: Professor Foobius
+---
+
+Here is my first paragraph.
+#+end_src
+
+The file may then be compiled to HTML (preferred), Docx, or PDF, using Pandoc and a template. Citations may be automatically verified, using the bibliographic data, and are automatically formatted as [[https://www.chicagomanualofstyle.org/tools_citationguide/citation-guide-1.html][Chicago notes-and-bibliography style]]. Instructors may even be able to data-mine their students' papers for the most frequently cited papers. The possibilities that plain-text submissions grant to instructors is limitless.
+
+The compiled HTML file uses [[https://edwardtufte.github.io/tufte-css/][Tufte CSS]] by default, and therefore uses sidenotes instead of footnotes. A Works Cited page is thus unnecessary.
+
+I've created [[https://github.com/JonathanReeve/template-research-paper][a template repository]] for this style of research paper, along with a script to convert it to HTML.

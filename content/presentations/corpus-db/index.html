@@ -1,0 +1,391 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="generator" content="pandoc">
+  <title>Corpus-DB</title>
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
+  <link rel="stylesheet" href="../../assets/js/vendor/reveal.js/css/reveal.css">
+  <style type="text/css">
+      code{white-space: pre-wrap;}
+      span.smallcaps{font-variant: small-caps;}
+      span.underline{text-decoration: underline;}
+      div.column{display: inline-block; vertical-align: top; width: 50%;}
+  </style>
+  <style type="text/css">
+a.sourceLine { display: inline-block; line-height: 1.25; }
+a.sourceLine { pointer-events: none; color: inherit; text-decoration: inherit; }
+a.sourceLine:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode { white-space: pre; position: relative; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+code.sourceCode { white-space: pre-wrap; }
+a.sourceLine { text-indent: -1em; padding-left: 1em; }
+}
+pre.numberSource a.sourceLine
+  { position: relative; left: -4em; }
+pre.numberSource a.sourceLine::before
+  { content: attr(title);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; pointer-events: all; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+    color: #aaaaaa;
+  }
+pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+div.sourceCode
+  {  }
+@media screen {
+a.sourceLine::before { text-decoration: underline; }
+}
+code span.al { color: #ff0000; font-weight: bold; } /* Alert */
+code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+code span.at { color: #7d9029; } /* Attribute */
+code span.bn { color: #40a070; } /* BaseN */
+code span.bu { } /* BuiltIn */
+code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+code span.ch { color: #4070a0; } /* Char */
+code span.cn { color: #880000; } /* Constant */
+code span.co { color: #60a0b0; font-style: italic; } /* Comment */
+code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+code span.do { color: #ba2121; font-style: italic; } /* Documentation */
+code span.dt { color: #902000; } /* DataType */
+code span.dv { color: #40a070; } /* DecVal */
+code span.er { color: #ff0000; font-weight: bold; } /* Error */
+code span.ex { } /* Extension */
+code span.fl { color: #40a070; } /* Float */
+code span.fu { color: #06287e; } /* Function */
+code span.im { } /* Import */
+code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+code span.kw { color: #007020; font-weight: bold; } /* Keyword */
+code span.op { color: #666666; } /* Operator */
+code span.ot { color: #007020; } /* Other */
+code span.pp { color: #bc7a00; } /* Preprocessor */
+code span.sc { color: #4070a0; } /* SpecialChar */
+code span.ss { color: #bb6688; } /* SpecialString */
+code span.st { color: #4070a0; } /* String */
+code span.va { color: #19177c; } /* Variable */
+code span.vs { color: #4070a0; } /* VerbatimString */
+code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+  </style>
+  <link rel="stylesheet" href="../../assets/js/vendor/reveal.js/css/theme/league.css" id="theme">
+  <!-- Printing and PDF exports -->
+  <script>
+    var link = document.createElement( 'link' );
+    link.rel = 'stylesheet';
+    link.type = 'text/css';
+    link.href = window.location.search.match( /print-pdf/gi ) ? '../../assets/js/vendor/reveal.js/css/print/pdf.css' : '../../assets/js/vendor/reveal.js/css/print/paper.css';
+    document.getElementsByTagName( 'head' )[0].appendChild( link );
+  </script>
+  <!--[if lt IE 9]>
+  <script src="../../assets/js/vendor/reveal.js/lib/js/html5shiv.js"></script>
+  <![endif]-->
+</head>
+<body>
+  <div class="reveal">
+    <div class="slides">
+
+<section id="title-slide">
+  <h1 class="title">Corpus-DB</h1>
+</section>
+
+<section class="slide level2">
+
+<p>Jonathan Reeve</p>
+<p>Literary Modeling and Visualization Lab</p>
+<p>Department of English and Comparative Literature</p>
+<p>Columbia University</p>
+</section>
+<section><section id="problem" class="title-slide slide level1"><h1>Problem</h1></section><section class="slide level2">
+
+<p>How can I download all the Charles Dickens novels?</p>
+<p><img data-src="images/dickens-portrait.jpg" /></p>
+</section><section class="slide level2">
+
+<figure>
+<img data-src="images/dickens.jpg" alt="There are lots of them." /><figcaption>There are lots of them.</figcaption>
+</figure>
+</section><section class="slide level2">
+
+<figure>
+<img data-src="images/gutenberg-dickens.png" alt="Charles Dickens Books on Project Gutenberg" /><figcaption>Charles Dickens Books on Project Gutenberg</figcaption>
+</figure>
+</section><section id="poor-solution" class="slide level2">
+<h2>Poor Solution</h2>
+</section><section class="slide level2">
+
+<p><img data-src="images/click.jpg" /></p>
+</section><section id="project-gutenberg-problems" class="slide level2">
+<h2>Project Gutenberg Problems</h2>
+<ul>
+<li>Server bans robots</li>
+<li>Many duplicate texts</li>
+<li>Texts contain paratext, licenses</li>
+</ul>
+</section><section id="metadata-problems" class="slide level2">
+<h2>Metadata Problems</h2>
+<ul>
+<li>No publication dates</li>
+<li>Little other metadata.</li>
+</ul>
+</section><section id="wikipedia-has-metadata" class="slide level2">
+<h2>Wikipedia Has Metadata</h2>
+<ul>
+<li>Novel setting (London, Paris)</li>
+<li>Genre, category (Bildungsroman)</li>
+</ul>
+</section><section class="slide level2">
+
+<p><img data-src="images/bleak-wiki.png" /></p>
+</section><section class="slide level2">
+
+<p><img data-src="images/bleak2.png" /></p>
+</section><section id="book-databases-have-metadata" class="slide level2">
+<h2>Book Databases Have Metadata</h2>
+<ul>
+<li>Google Books</li>
+<li>Amazon</li>
+<li>Goodreads</li>
+</ul>
+</section></section>
+<section><section id="solution" class="title-slide slide level1"><h1>Solution</h1></section><section class="slide level2">
+
+<p><img data-src="images/aggregate.png" /></p>
+</section><section id="solution-1" class="slide level2">
+<h2>Solution</h2>
+<p>Programmatically combine metadata from:</p>
+<ul>
+<li>Project Gutenberg</li>
+<li>Wikipedia</li>
+<li>Google Books</li>
+<li>Amazon</li>
+<li>Goodreads</li>
+</ul>
+</section><section id="solution-clean-texts" class="slide level2">
+<h2>Solution: Clean Texts</h2>
+<ul>
+<li>Strip legal licenses</li>
+<li>Strip paratexts (tables of contents, indices)</li>
+</ul>
+</section><section id="solution-vector-based-deduplication" class="slide level2">
+<h2>Solution: Vector-Based Deduplication</h2>
+<ul>
+<li>Use word embeddings to identify possible duplicates</li>
+<li>(Also finds texts that belong to the same series)</li>
+</ul>
+</section><section id="solution-combine-archives" class="slide level2">
+<h2>Solution: Combine Archives</h2>
+<ul>
+<li>Project Gutenburg</li>
+<li>Oxford Text Archive (Public Domain)</li>
+<li>British Library (Public Domain)</li>
+<li>UVA Etext Archive</li>
+<li>Others</li>
+</ul>
+</section></section>
+<section><section id="corpus-db" class="title-slide slide level1"><h1>Corpus-DB</h1></section><section id="corpus-db-is-not" class="slide level2">
+<h2>Corpus-DB Is Not</h2>
+<ul>
+<li>Not pretty</li>
+<li>Not user-friendly</li>
+<li>Not meant for humans</li>
+</ul>
+</section><section id="corpus-db-1" class="slide level2">
+<h2>Corpus-DB</h2>
+<ul>
+<li>A textual corpus database</li>
+<li>With awesome metadata</li>
+<li>And an API wrapper for it</li>
+<li>For robots!</li>
+</ul>
+</section><section id="process" class="slide level2">
+<h2>Process</h2>
+<p><img data-src="graph.svg" style="width: 40%; background-color: #eee" /></p>
+</section><section id="db-example-a-single-author-corpus" class="slide level2">
+<h2>DB Example: a Single-Author Corpus</h2>
+<div class="sourceCode" id="cb1"><pre class="sourceCode sql"><code class="sourceCode sql"><a class="sourceLine" id="cb1-1" title="1"><span class="kw">SELECT</span> fullText <span class="kw">from</span> corpusDB</a>
+<a class="sourceLine" id="cb1-2" title="2"><span class="kw">WHERE</span> author <span class="op">=</span> <span class="ot">&quot;Charles Dickens&quot;</span></a></code></pre></div>
+</section><section id="db-example-novels-set-in-london" class="slide level2">
+<h2>DB Example: Novels Set in London</h2>
+<div class="sourceCode" id="cb2"><pre class="sourceCode sql"><code class="sourceCode sql"><a class="sourceLine" id="cb2-1" title="1"><span class="kw">SELECT</span> <span class="op">*</span> <span class="kw">from</span> corpusDB</a>
+<a class="sourceLine" id="cb2-2" title="2"><span class="kw">WHERE</span> genre <span class="op">=</span> <span class="ot">&quot;Novel&quot;</span> </a>
+<a class="sourceLine" id="cb2-3" title="3"><span class="kw">AND</span> setting <span class="op">=</span> <span class="ot">&quot;London&quot;</span></a></code></pre></div>
+</section><section id="db-example-british-literature" class="slide level2">
+<h2>DB Example: British Literature</h2>
+<div class="sourceCode" id="cb3"><pre class="sourceCode sql"><code class="sourceCode sql"><a class="sourceLine" id="cb3-1" title="1"><span class="kw">SELECT</span> <span class="op">*</span> <span class="kw">from</span> corpusDB</a>
+<a class="sourceLine" id="cb3-2" title="2"><span class="kw">WHERE</span> LCC <span class="op">=</span> <span class="ot">&quot;PR&quot;</span></a></code></pre></div>
+</section><section id="db-example-novels-published-in-britain-between-1900-1930" class="slide level2">
+<h2>DB Example: Novels Published in Britain Between 1900-1930</h2>
+<div class="sourceCode" id="cb4"><pre class="sourceCode sql"><code class="sourceCode sql"><a class="sourceLine" id="cb4-1" title="1"><span class="kw">SELECT</span> <span class="op">*</span> <span class="kw">from</span> corpusDB</a>
+<a class="sourceLine" id="cb4-2" title="2"><span class="kw">WHERE</span> genre <span class="op">=</span> <span class="ot">&quot;Novel&quot;</span> </a>
+<a class="sourceLine" id="cb4-3" title="3"><span class="kw">AND</span> LCC <span class="op">=</span> <span class="ot">&quot;PR&quot;</span></a>
+<a class="sourceLine" id="cb4-4" title="4"><span class="kw">AND</span> pubYear <span class="kw">BETWEEN</span> <span class="dv">1900</span> <span class="kw">AND</span> <span class="dv">1930</span></a></code></pre></div>
+</section><section id="db-example-bildungsromane" class="slide level2">
+<h2>DB Example: Bildungsromane</h2>
+<div class="sourceCode" id="cb5"><pre class="sourceCode sql"><code class="sourceCode sql"><a class="sourceLine" id="cb5-1" title="1"><span class="kw">SELECT</span> <span class="op">*</span> <span class="kw">from</span> corpusDB</a>
+<a class="sourceLine" id="cb5-2" title="2"><span class="kw">WHERE</span> genre <span class="op">=</span> <span class="ot">&quot;Novel&quot;</span> </a>
+<a class="sourceLine" id="cb5-3" title="3"><span class="kw">AND</span> wikipediaCategory <span class="kw">LIKE</span> <span class="ot">&quot;%Bildungsromans%&quot;</span></a></code></pre></div>
+</section></section>
+<section><section id="api" class="title-slide slide level1"><h1>API</h1></section><section class="slide level2">
+
+<ul>
+<li>RESTful</li>
+<li>Query over HTTP using mnemonic URLs</li>
+<li>Returns JSON</li>
+</ul>
+</section><section id="api-example-all-metadata-for-single-author-corpus" class="slide level2">
+<h2>API Example: All Metadata for Single-Author Corpus</h2>
+<p>corpus-db.org/api/author/Dickens</p>
+</section><section id="api-example-get-the-full-text" class="slide level2">
+<h2>API Example: Get the Full Text</h2>
+<p>corpus-db.org/api/id/9.0/fulltext</p>
+</section><section id="api-example-all-books-with-lcsh" class="slide level2">
+<h2>API Example: All Books with LCSH</h2>
+<p>corpus-db.org/api/subject/Detective and mystery stories</p>
+</section><section id="api-example-wikipedia-category" class="slide level2">
+<h2>API Example: Wikipedia Category</h2>
+<ul>
+<li>corpus-db.org/api/adaptedTo/comics</li>
+<li>corpus-db.org/api/adaptedTo/films</li>
+<li>(coming soon!)</li>
+</ul>
+</section><section class="slide level2">
+
+<figure>
+<img data-src="images/subcorpora.png" alt="WikiPedia Categories" /><figcaption>WikiPedia Categories</figcaption>
+</figure>
+</section></section>
+<section><section id="analysis" class="title-slide slide level1"><h1>Analysis</h1></section><section id="vector-deduplication" class="slide level2">
+<h2>Vector Deduplication</h2>
+<p><img data-src="images/pg-vecs.png" /></p>
+</section><section id="vector-similarities" class="slide level2">
+<h2>Vector Similarities</h2>
+<p><img data-src="images/pg-similar.png" /></p>
+</section><section id="lcsh-vs.-goodreads-ratings" class="slide level2">
+<h2>LCSH vs. Goodreads Ratings</h2>
+<p><img data-src="images/subject-ratings.png" /></p>
+</section><section id="paris-vs.-london-novels-goodreads-ratings" class="slide level2">
+<h2>Paris vs. London Novels (GoodReads Ratings)</h2>
+<li class="fragment">
+London: 3.35
+</li>
+<li class="fragment">
+Paris: 3.8
+</li>
+</section><section id="austen-v.-eliot-comparative-stylometry" class="slide level2">
+<h2>Austen v. Eliot: Comparative Stylometry</h2>
+<p><img data-src="images/austen-eliot.png" /></p>
+</section><section id="most-common-lcsh-for-dickens" class="slide level2">
+<h2>Most Common LCSH for Dickens?</h2>
+<div class="sourceCode" id="cb6"><pre class="sourceCode python"><code class="sourceCode python"><a class="sourceLine" id="cb6-1" title="1">[(<span class="st">&#39;England -- Fiction&#39;</span>, <span class="dv">20</span>),</a>
+<a class="sourceLine" id="cb6-2" title="2"> (<span class="st">&#39;Bildungsromans&#39;</span>, <span class="dv">19</span>),</a>
+<a class="sourceLine" id="cb6-3" title="3"> (<span class="st">&#39;London (England) -- Fiction&#39;</span>, <span class="dv">18</span>),</a>
+<a class="sourceLine" id="cb6-4" title="4"> (<span class="st">&#39;Orphans -- Fiction&#39;</span>, <span class="dv">17</span>),</a>
+<a class="sourceLine" id="cb6-5" title="5"> (<span class="st">&#39;England -- Social life and customs -- 19th century -- Fiction&#39;</span>, <span class="dv">16</span>),</a>
+<a class="sourceLine" id="cb6-6" title="6"> (<span class="st">&#39;Boys -- Fiction&#39;</span>, <span class="dv">14</span>),</a>
+<a class="sourceLine" id="cb6-7" title="7"> (<span class="st">&#39;Christmas stories&#39;</span>, <span class="dv">13</span>),</a>
+<a class="sourceLine" id="cb6-8" title="8"> (<span class="st">&#39;Ghost stories&#39;</span>, <span class="dv">11</span>),</a>
+<a class="sourceLine" id="cb6-9" title="9"> (<span class="st">&#39;Young men -- Fiction&#39;</span>, <span class="dv">11</span>),</a>
+<a class="sourceLine" id="cb6-10" title="10"> (<span class="st">&#39;Poor families -- Fiction&#39;</span>, <span class="dv">10</span>),</a>
+<a class="sourceLine" id="cb6-11" title="11"> (<span class="st">&#39;Christmas stories, English&#39;</span>, <span class="dv">9</span>),</a>
+<a class="sourceLine" id="cb6-12" title="12"> (<span class="st">&#39;Misers -- Fiction&#39;</span>, <span class="dv">8</span>),</a>
+<a class="sourceLine" id="cb6-13" title="13"> (<span class="st">&#39;Scrooge, Ebenezer (Fictitious character) -- Fiction&#39;</span>, <span class="dv">8</span>),</a>
+<a class="sourceLine" id="cb6-14" title="14"> (<span class="st">&#39;Sick children -- Fiction&#39;</span>, <span class="dv">8</span>),</a>
+<a class="sourceLine" id="cb6-15" title="15"> (<span class="st">&#39;Holidays -- Fiction&#39;</span>, <span class="dv">7</span>),</a>
+<a class="sourceLine" id="cb6-16" title="16"> (<span class="st">&#39;Domestic fiction&#39;</span>, <span class="dv">7</span>),</a>
+<a class="sourceLine" id="cb6-17" title="17"> (<span class="st">&#39;Kidnapping victims -- Fiction&#39;</span>, <span class="dv">7</span>),</a>
+<a class="sourceLine" id="cb6-18" title="18"> (<span class="st">&#39;Criminals -- Fiction&#39;</span>, <span class="dv">7</span>),</a>
+<a class="sourceLine" id="cb6-19" title="19"> (<span class="st">&#39;Autobiographical fiction&#39;</span>, <span class="dv">7</span>),</a>
+<a class="sourceLine" id="cb6-20" title="20"> (<span class="st">&#39;Child labor -- Fiction&#39;</span>, <span class="dv">7</span>)]</a></code></pre></div>
+</section><section id="wikipedia-categories-for-austen-novels" class="slide level2">
+<h2>Wikipedia Categories for Austen Novels</h2>
+<div class="sourceCode" id="cb7"><pre class="sourceCode python"><code class="sourceCode python"><a class="sourceLine" id="cb7-1" title="1">[(<span class="st">&#39;Novels_by_Jane_Austen&#39;</span>, <span class="dv">10</span>),</a>
+<a class="sourceLine" id="cb7-2" title="2"> (<span class="st">&#39;Novels_about_nobility&#39;</span>, <span class="dv">9</span>),</a>
+<a class="sourceLine" id="cb7-3" title="3"> (<span class="st">&#39;British_novels_adapted_into_films&#39;</span>, <span class="dv">6</span>),</a>
+<a class="sourceLine" id="cb7-4" title="4"> (<span class="st">&#39;British_novels&#39;</span>, <span class="dv">5</span>),</a>
+<a class="sourceLine" id="cb7-5" title="5"> (<span class="st">&#39;Novels_adapted_into_plays&#39;</span>, <span class="dv">5</span>),</a>
+<a class="sourceLine" id="cb7-6" title="6"> (<span class="st">&#39;Love_stories&#39;</span>, <span class="dv">4</span>),</a>
+<a class="sourceLine" id="cb7-7" title="7"> (<span class="st">&#39;19th-century_novels&#39;</span>, <span class="dv">4</span>),</a>
+<a class="sourceLine" id="cb7-8" title="8"> (<span class="st">&#39;John_Murray_(publisher)_books&#39;</span>, <span class="dv">3</span>),</a>
+<a class="sourceLine" id="cb7-9" title="9"> (<span class="st">&#39;Novels_published_posthumously&#39;</span>, <span class="dv">3</span>),</a>
+<a class="sourceLine" id="cb7-10" title="10"> (<span class="st">&#39;Novels_set_in_Somerset&#39;</span>, <span class="dv">3</span>),</a>
+<a class="sourceLine" id="cb7-11" title="11"> (<span class="st">&#39;Novels_set_in_England&#39;</span>, <span class="dv">3</span>),</a>
+<a class="sourceLine" id="cb7-12" title="12"> (<span class="st">&#39;1818_novels&#39;</span>, <span class="dv">2</span>),</a>
+<a class="sourceLine" id="cb7-13" title="13"> (<span class="st">&#39;Books_about_persuasion&#39;</span>, <span class="dv">2</span>),</a>
+<a class="sourceLine" id="cb7-14" title="14"> (<span class="st">&#39;British_bildungsromans&#39;</span>, <span class="dv">2</span>),</a>
+<a class="sourceLine" id="cb7-15" title="15"> (<span class="st">&#39;Parodies&#39;</span>, <span class="dv">2</span>),</a>
+<a class="sourceLine" id="cb7-16" title="16"> (<span class="st">&#39;Debut_novels&#39;</span>, <span class="dv">2</span>),</a>
+<a class="sourceLine" id="cb7-17" title="17"> (<span class="st">&#39;Works_published_under_a_pseudonym&#39;</span>, <span class="dv">2</span>),</a>
+<a class="sourceLine" id="cb7-18" title="18"> (<span class="st">&#39;1811_novels&#39;</span>, <span class="dv">2</span>),</a>
+<a class="sourceLine" id="cb7-19" title="19"> (<span class="st">&#39;Novels_set_in_Hertfordshire&#39;</span>, <span class="dv">2</span>),</a>
+<a class="sourceLine" id="cb7-20" title="20"> (<span class="st">&#39;1813_novels&#39;</span>, <span class="dv">2</span>)]</a></code></pre></div>
+</section></section>
+<section><section id="about" class="title-slide slide level1"><h1>About</h1></section><section id="current-status" class="slide level2">
+<h2>Current Status</h2>
+<ul>
+<li>DB complete, needs cleaning</li>
+<li>API functional, new endpoints all the time</li>
+<li>Please help!</li>
+</ul>
+</section><section id="contribution" class="slide level2">
+<h2>Contribution</h2>
+<ul>
+<li>Add example analysis notebooks (any language)</li>
+<li>Help to clean and expand the DB (any language)</li>
+<li>Contribute code to the project (Haskell)</li>
+<li>Make the website better (CSS)</li>
+</ul>
+</section><section id="future-work" class="slide level2">
+<h2>Future Work</h2>
+<ul>
+<li>Dynamic ingestion of new texts from original sources</li>
+<li>More API endpoints</li>
+<li>More Analyses</li>
+</ul>
+</section><section id="thanks" class="slide level2">
+<h2>Thanks!</h2>
+<p>Funding provided by a NYC-DH Graduate Student Project Award (2017) and a Columbia University Libraries Digital Centers Internship (2017-2018).</p>
+</section><section id="links" class="slide level2">
+<h2>Links</h2>
+<ul>
+<li><a href="corpus-db.org">corpus-db.org</a>: the API</li>
+<li><a href="jonreeve.com">jonreeve.com</a>: my website</li>
+<li><a href="http://twitter.com/j0_0n">twitter.com/j0_0n</a>: my twitter feed</li>
+<li><a href="http://xpmethod.plaintext.in/">xpmethod.plaintext.in</a>: our lab</li>
+<li><a href="https://github.com/JonathanReeve/corpus-db">github.com/JonathanReeve/corpus-db</a>: project home</li>
+<li><a href="jonreeve.com/presentations/corpus-db">jonreeve.com/presentations/corpus-db</a>: this presentation</li>
+</ul>
+</section></section>
+    </div>
+  </div>
+
+  <script src="../../assets/js/vendor/reveal.js/lib/js/head.min.js"></script>
+  <script src="../../assets/js/vendor/reveal.js/js/reveal.js"></script>
+
+  <script>
+
+      // Full list of configuration options available at:
+      // https://github.com/hakimel/reveal.js#configuration
+      Reveal.initialize({
+        // Push each slide change to the browser history
+        history: true,
+
+        // Optional reveal.js plugins
+        dependencies: [
+          { src: '../../assets/js/vendor/reveal.js/lib/js/classList.js', condition: function() { return !document.body.classList; } },
+          { src: '../../assets/js/vendor/reveal.js/plugin/zoom-js/zoom.js', async: true },
+          { src: '../../assets/js/vendor/reveal.js/plugin/notes/notes.js', async: true }
+        ]
+      });
+    </script>
+    </body>
+</html>
