@@ -63,6 +63,33 @@ instance IsRoute Route where
       pure $ year ++ "/" ++ month ++ "/" ++ slug ++ "/index.html"
     Route_Feed -> pure "feed.xml"
 
+-- | Try to rewrite the above using Ema.
+-- Adapted from this example: https://ema.srid.ca/guide/class
+class Ema MyModel Route where
+  -- Where to generate this route?
+  encodeRoute _model = \case
+    Index -> "index.html"
+    Tags -> "tags/index.html"
+    CV -> "cv.html"
+    Article srcPath -> do
+      let (year, month, _day, slug) = parseJekyllFilename srcPath
+      let slug' = [ c | c <- slug, c `notElem` (",.?!-:;\"\'" :: String) ]
+      pure $ year ++ "/" ++ month ++ "/" ++ slug ++ "/index.html"
+    Feed -> "feed.xml"
+
+  -- Which route does this filepath correspond to?
+  decodeRoute _model = \case
+    "index.html" -> Just Index
+    "tags/index.html" -> Just Tags
+    "cv.html" -> Just CV
+    -- TODO add some pattern for articles in the Jekyll form /yyyy/mm/slug/index.html
+    _ -> Nothing
+
+  -- The third method is optional, and used by the `gen` command (not live-server)
+  -- By default, Enum & Bounded will be used to determine this list.
+  allRoutes model =
+    [Index, Tags, CV, Article, Feed]
+
 parseJekyllFilename :: FilePath -> (String, String, String, String)
 parseJekyllFilename fn =
   case T.splitOn "-" (T.pack fn) of
