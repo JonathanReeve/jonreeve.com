@@ -164,10 +164,10 @@ renderPage route val = html_ [lang_ "en"] $ do
           div_ [ class_ "column col-8" ] $ CV.md2Html coda
           div_ [ class_ "column col-4" ] $ do
             div_ [ class_ "icons" ] $ do
-              a_ [href_ "http://github.com/JonathanReeve"] gitHubIcon
-              a_ [href_ "http://twitter.com/j0_0n"] twitterIcon
-              a_ [href_ "mailto:jonathan@jonreeve.com"] emailIcon
-              a_ [href_ "https://matrix.to/#/@jon.reeve:matrix.org"] chatIcon
+              a_ [href_ "http://github.com/JonathanReeve", rel_ "me"] gitHubIcon
+              a_ [href_ "http://twitter.com/j0_0n", rel_ "me"] twitterIcon
+              a_ [href_ "mailto:jonathan@jonreeve.com", rel_ "me"] emailIcon
+              a_ [href_ "https://matrix.to/#/@jon.reeve:matrix.org", rel_ "me"] chatIcon
         script_ [ makeAttribute "data-goatcounter" "https://jonreeve.goatcounter.com/count"
                 , async_ T.empty, src_ "//gc.zgo.at/count.js" ] T.empty
         script_ [ src_ "/assets/js/jquery-3.5.1.min.js" ] T.empty
