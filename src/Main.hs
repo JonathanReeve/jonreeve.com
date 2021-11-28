@@ -79,23 +79,24 @@ modelDelete k model =
 -- Adapted from this example: https://ema.srid.ca/guide/class
 class Ema MyModel Route where
   -- Where to generate this route?
-  encodeRoute _model = \case
+  encodeRoute _model fp = \case
     Index -> "index.html"
     Tags -> "tags/index.html"
     CV -> "cv.html"
-    Article srcPath -> do
+    Article fp -> do
       let (year, month, _day, slug) = parseJekyllFilename srcPath
       let slug' = [ c | c <- slug, c `notElem` (",.?!-:;\"\'" :: String) ]
       pure $ year ++ "/" ++ month ++ "/" ++ slug ++ "/index.html"
     Feed -> "feed.xml"
 
   -- Which route does this filepath correspond to?
-  decodeRoute _model = \case
+  decodeRoute _model fp = \case
     "index.html" -> Just Index
     "tags/index.html" -> Just Tags
     "cv.html" -> Just CV
-    -- TODO "static/"
+    "static/" `T.isPrefixOf` toText fp -> pure $ Left fp
     -- TODO add some pattern for articles in the Jekyll form /yyyy/mm/slug/index.html
+    -- parseJekyllFilename fp ???
     _ -> Nothing
 
   -- The third method is optional, and used by the `gen` command (not live-server)
