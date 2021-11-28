@@ -39,29 +39,41 @@ import RSS
 import Pandoc
 import SiteData
 
--- | Route corresponding to each generated static page.
---
--- The `a` parameter specifies the data (typically Markdown document) used to
--- generate the final page text.
-data Route a where
-  Route_Index :: Route [(Route Pandoc, Pandoc)]
-  Route_CV :: Route [(Route Pandoc, Pandoc)]
-  Route_Tags :: Route (Map Text [(Route Pandoc, Pandoc)])
-  Route_Article :: FilePath -> Route Pandoc
-  Route_Feed :: Route [(Route Pandoc, Pandoc)]
 
--- | The `IsRoute` instance allows us to determine the target .html path for
--- each route. This affects what `routeUrl` will return.
-instance IsRoute Route where
-  routeFile = \case
-    Route_Index -> pure "index.html"
-    Route_Tags -> pure "tags/index.html"
-    Route_CV -> pure "cv.html"
-    Route_Article srcPath -> do
-      let (year, month, _day, slug) = parseJekyllFilename srcPath
-      let slug' = [ c | c <- slug, c `notElem` (",.?!-:;\"\'" :: String) ]
-      pure $ year ++ "/" ++ month ++ "/" ++ slug ++ "/index.html"
-    Route_Feed -> pure "feed.xml"
+newtype Model = Model {unModel :: Text}
+
+data Model = Model {
+  modelDocs :: Map Route (Meta, Pandoc),
+  modelNav :: [Tree Slug]
+  } deriving (Eq, Show)
+
+instance Default Model where
+  def = Model mempty mempty
+
+data Route = Index | CV | Tags | Article | Feed
+
+modelLookup :: Route -> Model -> Maybe Pandoc
+modelLookup k = fmap snd . Map.lookup k . modelDocs
+
+modelMember :: Route -> Model -> Bool
+modelMember k =
+  Map.member k . modelDocs
+
+modelInsert :: Route -> Pandoc -> Model -> Model
+modelINsert k v model =
+  let modelDocs' = Map.insert k v (modelDocs model)
+  in model { modelDocs = modelDocs',
+             modelNav = PathTree.treeInsertPathMaintainingOrder
+              (\k' -> order $ maybe def fst $ Map.lookup (MarkdownRoute k') modelDocs')
+              (unMarkdownRoute k)
+              (modelNav model)
+           }
+
+modelDelete :: Route -> Model -> Model
+modelDelete k model =
+  model { modelDocs = Map.delete k (modelDocs model),
+          modelNav = PathTree.treeDeletePath (unRoute k) (modelNav model)
+        }
 
 -- | Try to rewrite the above using Ema.
 -- Adapted from this example: https://ema.srid.ca/guide/class
@@ -82,13 +94,14 @@ class Ema MyModel Route where
     "index.html" -> Just Index
     "tags/index.html" -> Just Tags
     "cv.html" -> Just CV
+    -- TODO "static/"
     -- TODO add some pattern for articles in the Jekyll form /yyyy/mm/slug/index.html
     _ -> Nothing
 
   -- The third method is optional, and used by the `gen` command (not live-server)
   -- By default, Enum & Bounded will be used to determine this list.
-  allRoutes model =
-    [Index, Tags, CV, Article, Feed]
+  -- allRoutes model =
+  --   [Index, Tags, CV, Article, Feed]
 
 parseJekyllFilename :: FilePath -> (String, String, String, String)
 parseJekyllFilename fn =
@@ -98,18 +111,14 @@ parseJekyllFilename fn =
     _ ->
       error "Malformed filename"
 
--- | Main entry point to our generator.
---
--- `Rib.run` handles CLI arguments, and takes three parameters here.
---
--- 1. Directory `content`, from which static files will be read.
--- 2. Directory `dest`, under which target files will be generated.
--- 3. Shake action to run.
---
--- In the shake action you would expect to use the utility functions
--- provided by Rib to do the actual generation of your static site.
 main :: IO ()
-main = withUtf8 $ Rib.run "content" "dest" generateSite
+main =
+  Ema.runEma (\act m -> Ema.AssetGenerated Ema.Html . render act m) $ \act model -> do
+    LVar.set model $ Model "Hello World. "
+    when (act == CLI.Run) $
+      liftIO $ threadDelay maxBound
+
+-- withUtf8 $ Rib.run "content" "dest" generateSite
 
 -- | Shake action for generating the static site
 generateSite :: Action ()
