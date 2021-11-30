@@ -15,7 +15,7 @@
         packages.x86_64-linux.jonreeve-com =
           pkgs.haskellPackages.developPackage {
             root = ./.;
-            name = "jonreeve-com";
+            # name = "jonreeve-com";
             modifier = drv:
               pkgs.haskell.lib.addBuildTools drv (with pkgs.haskellPackages;
                 [
