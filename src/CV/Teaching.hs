@@ -2,7 +2,8 @@
 
 module CV.Teaching where
 
-import Data.Text
+import Data.Text hiding (reverse)
+import Data.List (sortOn, reverse)
 import CV.Shared hiding (url)
 
 type Markdown = Text
@@ -32,8 +33,21 @@ cuCS = Venue "Department of Computer Science" "https://www.cs.columbia.edu/" (un
 cuFoundations :: Venue
 cuFoundations = Venue "Foundations for Research Computing" "https://rcfoundations.research.columbia.edu/" (uni "cu")
 
+sortedTeaching = reverse $ sortOn getSortDate teaching
+
+getSortDate :: Teaching -> Date
+getSortDate t = case t of
+  Workshop d _ _ _ _ -> Prelude.head d
+  Course d _ _ _ _ _ _ -> start $ Prelude.head d
+
 teaching :: [Teaching]
 teaching = [Workshop { dates = [date 2021 06]
+                     , workshopName = "NYU Institute in Public Interest Technology"
+                     , url = "https://pit2021.hosting.nyu.edu"
+                     , venue = Venue "New York University" "https://www.nyu.edu/" "New York, New York"
+                     , notes = Nothing
+                     },
+            Workshop { dates = [date 2021 06]
                      , workshopName = "Meaningful Text Analysis with Word Embeddings"
                      , url = "https://dhsi.org/course-offerings/"
                      , venue = Venue "Digital Humanities Summer Institute" "https://dhsi.org" "U Victoria, Canada"

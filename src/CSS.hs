@@ -8,8 +8,6 @@ import Clay
 import Clay.Stylesheet -- (key, MediaType)
 import qualified Clay.Media as Media
 import Prelude hiding (rem, span)
-import qualified Data.Text.Lazy as TL
-import qualified Data.Text as T
 
 myBlue = "#494E8E"
 myLightgray = "#fafafa"

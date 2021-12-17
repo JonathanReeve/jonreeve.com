@@ -9,11 +9,11 @@ import PyF
 
 data Date = Present | Date { year :: Int
                            , month :: Int
-                           } deriving Show
+                           } deriving (Show, Eq, Ord)
 
 data DateRange = DateRange { start :: Date
                            , end :: Date
-                           } deriving Show
+                           } deriving (Show, Eq, Ord)
 
 -- Validate the dates.
 date :: Int -> Int -> Date

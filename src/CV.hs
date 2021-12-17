@@ -108,7 +108,7 @@ formatRole r = chip $ case r of
 teachingSection :: Html ()
 teachingSection = section_ [ class_ "teaching" ] $ do
   h1_ [] "Teaching"
-  ul_ [] $ foldMap formatTeaching teaching
+  ul_ [] $ foldMap formatTeaching sortedTeaching
 
 chip :: T.Text -> Html ()
 chip chipText = span_ [ class_ "chip" ] $ toHtml chipText
