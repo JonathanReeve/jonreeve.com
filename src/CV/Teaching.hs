@@ -2,24 +2,24 @@
 
 module CV.Teaching where
 
-import Data.Text hiding (reverse)
+import qualified Data.Text as T hiding (reverse)
 import Data.List (sortOn, reverse)
 import CV.Shared hiding (url)
 
-type Markdown = Text
+type Markdown = T.Text
 
 data Teaching = Workshop { dates :: [Date],
-                           workshopName :: Text,
+                           workshopName :: T.Text,
                            venue :: Venue,
                            url :: URI,
-                           notes :: Maybe Text}
+                           notes :: Maybe T.Text}
               | Course { dateRanges :: [DateRange],
-                         courseName :: Text,
+                         courseName :: T.Text,
                          teachingRole :: TeachingRole,
                          venue :: Venue,
                          url :: URI,
                          teachingUpdates :: [Update],
-                         notes :: Maybe Text
+                         notes :: Maybe T.Text
                        } deriving Show
 
 data TeachingRole = Instructor | TA | TAInstructor deriving Show
@@ -33,12 +33,25 @@ cuCS = Venue "Department of Computer Science" "https://www.cs.columbia.edu/" (un
 cuFoundations :: Venue
 cuFoundations = Venue "Foundations for Research Computing" "https://rcfoundations.research.columbia.edu/" (uni "cu")
 
-sortedTeaching = reverse $ sortOn getSortDate teaching
+sortedTeaching = reverse $ sortOn getSortDate $ expandedTeaching teaching
 
 getSortDate :: Teaching -> Date
 getSortDate t = case t of
-  Workshop d _ _ _ _ -> Prelude.head d
-  Course d _ _ _ _ _ _ -> start $ Prelude.head d
+  Workshop d _ _ _ _ -> head d
+  Course d _ _ _ _ _ _ -> start $ head d
+
+-- | Convert entries with multiple dates/dateranges to individual entries.
+expandedTeaching :: [Teaching] -> [Teaching]
+expandedTeaching = concatMap repeatTeachingItem
+
+repeatTeachingItem :: Teaching -> [Teaching]
+repeatTeachingItem teachingItem = case teachingItem of
+    Workshop ds w u v n -> if length ds > 1
+      then [Workshop [d'] w u v n | d' <- ds]
+      else [Workshop ds w u v n]
+    Course drs c r u v t n -> if length drs > 1
+      then [Course [dr'] c r u v [] n | dr' <- drs]
+      else [Course drs c r u v t n]
 
 teaching :: [Teaching]
 teaching = [Workshop { dates = [date 2021 06]
