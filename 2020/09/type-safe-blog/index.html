@@ -285,37 +285,37 @@ table
 </code></pre>
 <p>This was a big step forward for my deduplication problem, since I could now write a template that could extract all <code>publication</code> types and display those in a different section, without having to maintain those in two different places in the data. There is an <em>implicit</em> schema here: every project has a title, a url, and so on. But there was no way to keep this from breaking in an unexpected way, since I just had to remember that my template expects there to be certain fields in the YAML data.</p>
 <p>This is where Haskell comes in. Haskell allows me to define algebraic data types, like this:</p>
-<div class="sourceCode" id="cb2"><pre class="sourceCode haskell"><code class="sourceCode haskell"><span id="cb2-1"><a href="#cb2-1"></a><span class="kw">data</span> <span class="dt">Project</span> <span class="ot">=</span> <span class="dt">Project</span> {</span>
-<span id="cb2-2"><a href="#cb2-2"></a><span class="ot">  title ::</span> <span class="dt">Text</span>,</span>
-<span id="cb2-3"><a href="#cb2-3"></a><span class="ot">  role ::</span> <span class="dt">ProjectRole</span>,</span>
-<span id="cb2-4"><a href="#cb2-4"></a><span class="ot">  homepage ::</span> <span class="dt">URI</span>,</span>
-<span id="cb2-5"><a href="#cb2-5"></a><span class="ot">  github ::</span> <span class="dt">Maybe</span> <span class="dt">Text</span>,</span>
-<span id="cb2-6"><a href="#cb2-6"></a><span class="ot">  pypi ::</span> <span class="dt">Maybe</span> <span class="dt">Text</span>,</span>
-<span id="cb2-7"><a href="#cb2-7"></a><span class="ot">  dateRange ::</span> <span class="dt">DateRange</span>,</span>
-<span id="cb2-8"><a href="#cb2-8"></a><span class="ot">  desc ::</span> <span class="dt">Markdown</span>,</span>
-<span id="cb2-9"><a href="#cb2-9"></a><span class="ot">  updates ::</span> [ <span class="dt">Update</span> ]</span>
-<span id="cb2-10"><a href="#cb2-10"></a>  } <span class="kw">deriving</span> <span class="dt">Show</span></span>
-<span id="cb2-11"><a href="#cb2-11"></a></span>
-<span id="cb2-12"><a href="#cb2-12"></a><span class="kw">data</span> <span class="dt">ProjectRole</span> <span class="ot">=</span> <span class="dt">Creator</span> <span class="op">|</span> <span class="dt">CoCreator</span> <span class="op">|</span> <span class="dt">Developer</span> <span class="op">|</span> <span class="dt">Collaborator</span> <span class="op">|</span> <span class="dt">ResearchAssistant</span> <span class="kw">deriving</span> <span class="dt">Show</span></span></code></pre></div>
+<div class="sourceCode" id="cb2"><pre class="sourceCode haskell"><code class="sourceCode haskell"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true"></a><span class="kw">data</span> <span class="dt">Project</span> <span class="ot">=</span> <span class="dt">Project</span> {</span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true"></a><span class="ot">  title ::</span> <span class="dt">Text</span>,</span>
+<span id="cb2-3"><a href="#cb2-3" aria-hidden="true"></a><span class="ot">  role ::</span> <span class="dt">ProjectRole</span>,</span>
+<span id="cb2-4"><a href="#cb2-4" aria-hidden="true"></a><span class="ot">  homepage ::</span> <span class="dt">URI</span>,</span>
+<span id="cb2-5"><a href="#cb2-5" aria-hidden="true"></a><span class="ot">  github ::</span> <span class="dt">Maybe</span> <span class="dt">Text</span>,</span>
+<span id="cb2-6"><a href="#cb2-6" aria-hidden="true"></a><span class="ot">  pypi ::</span> <span class="dt">Maybe</span> <span class="dt">Text</span>,</span>
+<span id="cb2-7"><a href="#cb2-7" aria-hidden="true"></a><span class="ot">  dateRange ::</span> <span class="dt">DateRange</span>,</span>
+<span id="cb2-8"><a href="#cb2-8" aria-hidden="true"></a><span class="ot">  desc ::</span> <span class="dt">Markdown</span>,</span>
+<span id="cb2-9"><a href="#cb2-9" aria-hidden="true"></a><span class="ot">  updates ::</span> [ <span class="dt">Update</span> ]</span>
+<span id="cb2-10"><a href="#cb2-10" aria-hidden="true"></a>  } <span class="kw">deriving</span> <span class="dt">Show</span></span>
+<span id="cb2-11"><a href="#cb2-11" aria-hidden="true"></a></span>
+<span id="cb2-12"><a href="#cb2-12" aria-hidden="true"></a><span class="kw">data</span> <span class="dt">ProjectRole</span> <span class="ot">=</span> <span class="dt">Creator</span> <span class="op">|</span> <span class="dt">CoCreator</span> <span class="op">|</span> <span class="dt">Developer</span> <span class="op">|</span> <span class="dt">Collaborator</span> <span class="op">|</span> <span class="dt">ResearchAssistant</span> <span class="kw">deriving</span> <span class="dt">Show</span></span></code></pre></div>
 <p>What this says is: every project has a title, which is text, but the role I have in the project must come from a set list. Similarly, the URIs for the project must be URI types, which I can then validate and extract in predictable ways. This way, I can write an entry like this:</p>
-<div class="sourceCode" id="cb3"><pre class="sourceCode haskell"><code class="sourceCode haskell"><span id="cb3-1"><a href="#cb3-1"></a></span>
-<span id="cb3-2"><a href="#cb3-2"></a><span class="dt">Project</span> { title <span class="ot">=</span> <span class="st">&quot;Corpus-DB&quot;</span>,</span>
-<span id="cb3-3"><a href="#cb3-3"></a>          role <span class="ot">=</span> <span class="dt">Creator</span>,</span>
-<span id="cb3-4"><a href="#cb3-4"></a>          homepage <span class="ot">=</span> <span class="st">&quot;https://github.com/JonathanReeve/corpus-db&quot;</span>,</span>
-<span id="cb3-5"><a href="#cb3-5"></a>          github <span class="ot">=</span> <span class="dt">Just</span> <span class="st">&quot;JonathanReeve/corpus-db&quot;</span>,</span>
-<span id="cb3-6"><a href="#cb3-6"></a>          dateRange <span class="ot">=</span> <span class="dt">DateRange</span> (date <span class="dv">2017</span> <span class="dv">03</span>) <span class="dt">Present</span>,</span>
-<span id="cb3-7"><a href="#cb3-7"></a>          desc  <span class="ot">=</span> <span class="st">&quot;A database and API for plain text archives, for digital humanities research.&quot;</span>,</span>
-<span id="cb3-8"><a href="#cb3-8"></a>          updates <span class="ot">=</span> [</span>
-<span id="cb3-9"><a href="#cb3-9"></a>            <span class="dt">Update</span> (date <span class="dv">2020</span> <span class="dv">08</span>) (<span class="dt">Publication</span> <span class="dt">Abstract</span></span>
-<span id="cb3-10"><a href="#cb3-10"></a>              <span class="st">&quot;Corpus-DB: a Scriptable Textual Corpus Database for Cultural Analytics&quot;</span></span>
-<span id="cb3-11"><a href="#cb3-11"></a>              <span class="st">&quot;https://dh2020.adho.org/wp-content/uploads/2020/07/604_CorpusDBaScriptableTextualCorpusDatabaseforCulturalAnalytics.html&quot;</span></span>
-<span id="cb3-12"><a href="#cb3-12"></a>              (<span class="dt">Venue</span> <span class="st">&quot;Digital Humanities 2020&quot;</span></span>
-<span id="cb3-13"><a href="#cb3-13"></a>                     <span class="st">&quot;https://dh2020.adho.org/&quot;</span></span>
-<span id="cb3-14"><a href="#cb3-14"></a>                     <span class="st">&quot;Ottawa, CA&quot;</span>)),</span></code></pre></div>
+<div class="sourceCode" id="cb3"><pre class="sourceCode haskell"><code class="sourceCode haskell"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true"></a></span>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true"></a><span class="dt">Project</span> { title <span class="ot">=</span> <span class="st">&quot;Corpus-DB&quot;</span>,</span>
+<span id="cb3-3"><a href="#cb3-3" aria-hidden="true"></a>          role <span class="ot">=</span> <span class="dt">Creator</span>,</span>
+<span id="cb3-4"><a href="#cb3-4" aria-hidden="true"></a>          homepage <span class="ot">=</span> <span class="st">&quot;https://github.com/JonathanReeve/corpus-db&quot;</span>,</span>
+<span id="cb3-5"><a href="#cb3-5" aria-hidden="true"></a>          github <span class="ot">=</span> <span class="dt">Just</span> <span class="st">&quot;JonathanReeve/corpus-db&quot;</span>,</span>
+<span id="cb3-6"><a href="#cb3-6" aria-hidden="true"></a>          dateRange <span class="ot">=</span> <span class="dt">DateRange</span> (date <span class="dv">2017</span> <span class="dv">03</span>) <span class="dt">Present</span>,</span>
+<span id="cb3-7"><a href="#cb3-7" aria-hidden="true"></a>          desc  <span class="ot">=</span> <span class="st">&quot;A database and API for plain text archives, for digital humanities research.&quot;</span>,</span>
+<span id="cb3-8"><a href="#cb3-8" aria-hidden="true"></a>          updates <span class="ot">=</span> [</span>
+<span id="cb3-9"><a href="#cb3-9" aria-hidden="true"></a>            <span class="dt">Update</span> (date <span class="dv">2020</span> <span class="dv">08</span>) (<span class="dt">Publication</span> <span class="dt">Abstract</span></span>
+<span id="cb3-10"><a href="#cb3-10" aria-hidden="true"></a>              <span class="st">&quot;Corpus-DB: a Scriptable Textual Corpus Database for Cultural Analytics&quot;</span></span>
+<span id="cb3-11"><a href="#cb3-11" aria-hidden="true"></a>              <span class="st">&quot;https://dh2020.adho.org/wp-content/uploads/2020/07/604_CorpusDBaScriptableTextualCorpusDatabaseforCulturalAnalytics.html&quot;</span></span>
+<span id="cb3-12"><a href="#cb3-12" aria-hidden="true"></a>              (<span class="dt">Venue</span> <span class="st">&quot;Digital Humanities 2020&quot;</span></span>
+<span id="cb3-13"><a href="#cb3-13" aria-hidden="true"></a>                     <span class="st">&quot;https://dh2020.adho.org/&quot;</span></span>
+<span id="cb3-14"><a href="#cb3-14" aria-hidden="true"></a>                     <span class="st">&quot;Ottawa, CA&quot;</span>)),</span></code></pre></div>
 <p>At first glance, this may seem like an abuse of a programming language. Programming languages are for logic, the argument goes, and configuration belongs to configuration files, in formats like JSON, TOML, or YAML. We must separate logic and data, right? Actually, it turns out there are tons of advantages to writing data in Haskell.</p>
 <p>For one, it is compile-time type safe, meaning that my text editor actually checks that this compiles, as I’m writing it. If it were just plain text in YAML, there’s nothing stopping a <code>date</code> from being something else entirely, like <code>foo</code>. But in Haskell, if I write a <code>date</code> that isn’t two integers, (a year followed by a month), it’ll raise an error immediately.</p>
 <p>Another advantage is composability. If I find myself repeating a given entry, I can just abstract it away into its own function. For instance, I have a <code>Venue</code> entry that looks like this:</p>
-<div class="sourceCode" id="cb4"><pre class="sourceCode haskell"><code class="sourceCode haskell"><span id="cb4-1"><a href="#cb4-1"></a>cuEng <span class="ot">=</span> <span class="dt">Venue</span> <span class="st">&quot;Department of English and Comparative Literature&quot;</span> <span class="st">&quot;https://english.columbia.edu/&quot;</span> (uni <span class="st">&quot;cu&quot;</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb4"><pre class="sourceCode haskell"><code class="sourceCode haskell"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true"></a>cuEng <span class="ot">=</span> <span class="dt">Venue</span> <span class="st">&quot;Department of English and Comparative Literature&quot;</span> <span class="st">&quot;https://english.columbia.edu/&quot;</span> (uni <span class="st">&quot;cu&quot;</span>)</span></code></pre></div>
 <p>And whenever I want to use that, I can just call <code>venue = cuEng</code>, and save myself some typing. That also means that, should the name or URL of any of these entries change, I can change them in one place, without having to change them in seven.</p>
 <p>In addition to making everything type-safe, though, I greatly reduce the technologies involved. I’m still writing posts in Markdown, but have collapsed all the other templating languages to just Haskell. The HTML, CSS, and data, instead of being written in Liquid, Sass, YAML, and so forth, are all just in Haskell, which allows me to use the full power of the programming language to do whatever I need it to. For instance, if I’m doing something repeatedly, like adding a bunch of scripts:</p>
 <pre class="example"><code>&lt;script src=&quot;script1.js&quot;/&gt;
@@ -324,8 +324,8 @@ table
 &lt;script src=&quot;script4.js&quot;/&gt;
 </code></pre>
 <p>I can write that in Haskell like this:</p>
-<div class="sourceCode" id="cb6"><pre class="sourceCode haskell"><code class="sourceCode haskell"><span id="cb6-1"><a href="#cb6-1"></a>script n <span class="ot">=</span> script_ [src_ <span class="st">&quot;script&quot;</span> <span class="op">++</span> n <span class="op">++</span> <span class="st">&quot;.js&quot;</span>]</span>
-<span id="cb6-2"><a href="#cb6-2"></a><span class="fu">map</span> script [<span class="dv">1</span><span class="op">..</span><span class="dv">4</span>]</span></code></pre></div>
+<div class="sourceCode" id="cb6"><pre class="sourceCode haskell"><code class="sourceCode haskell"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true"></a>script n <span class="ot">=</span> script_ [src_ <span class="st">&quot;script&quot;</span> <span class="op">++</span> n <span class="op">++</span> <span class="st">&quot;.js&quot;</span>]</span>
+<span id="cb6-2"><a href="#cb6-2" aria-hidden="true"></a><span class="fu">map</span> script [<span class="dv">1</span><span class="op">..</span><span class="dv">4</span>]</span></code></pre></div>
 <p>And it’s all validated at compile time, so when I press save in my text editor, it checks to make sure everything works. Because Haskell is a purely functional language, there are no runtime exceptions.</p>
 <p>All of this I achieve using the wonderful static site generator <a href="https://github.com/srid/rib">Rib</a>, which built on the Haskell build tool <a href="https://hackage.haskell.org/package/shake">Shake</a>. So if there’s anything else I need to do, which Rib doesn’t provide out of the box, I don’t need a plugin for it; I can just write a Shake action.</p>
 <p>There’s still some complexity left over, though, in that I still have to manage Haskell packages. But with <a href="https://nixos.org/">Nix</a> that’s trivial. Nix is great at making reproducible builds possible.</p>

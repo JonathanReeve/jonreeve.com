@@ -273,7 +273,7 @@ table
 <h1 id="chapter-statistics">Chapter Statistics</h1>
 <p>Figure 1 shows the average number of chapters, the average text length, and the average chapter length for prose fiction works written by authors who were born in the decades shown. There is an amazing range of dates here, indicating the presence of some decidedly non-novelistic classical literature. (Project Gutenberg doesn’t maintain metadata about its texts’ original publication dates, but they do have author birth/death years, strangely, so I’m forced to use those as a proxy. This is a problem I’m trying to correct with Corpus-DB, but my solution isn’t quite ready yet.) This seems to show that by around the 19th Century, chapters are about the same length. They get a little shorter around the 20th Century, and are extreme and erratic before 1700, but I attribute this to the relative paucity of early (pre-1700) and late (post-1920) texts in the corpus, owing to factors like textual availability, canonicity, and copyright restrictions. It appears that novels have been getting shorter, however, and so there are also fewer chapters.</p>
 <figure>
-<img src="../../../images/chapters/chap-stats-by-author-dob.png" alt="" /><figcaption>Figure 1: Chapter statistics by author date of birth</figcaption>
+<img src="../../../images/chapters/chap-stats-by-author-dob.png" alt="Figure 1: Chapter statistics by author date of birth" /><figcaption aria-hidden="true">Figure 1: Chapter statistics by author date of birth</figcaption>
 </figure>
 <p>Figure 2 shows the average number of chapters per novel, sorted by the novel’s Library of Congress subject headings. Subjects with the most number of chapters are on the left, and subjects with the least are on the right. There are a few things of note here:</p>
 <ol>
@@ -283,7 +283,7 @@ table
 </ol>
 <p>Of course, there are many more things that can be said about this chart. Please feel free to chime in, in the comments below!</p>
 <figure>
-<img src="../../../images/chapters/numchaps-by-lcsh.png" alt="" /><figcaption>Figure 2: Average number of chapters by Library of Congress subject heading</figcaption>
+<img src="../../../images/chapters/numchaps-by-lcsh.png" alt="Figure 2: Average number of chapters by Library of Congress subject heading" /><figcaption aria-hidden="true">Figure 2: Average number of chapters by Library of Congress subject heading</figcaption>
 </figure>
 <h1 id="language-patterns-of-the-chapter">Language Patterns of the Chapter</h1>
 <p>For the next experiment, I extracted the first paragraphs of each chapter from a few thousand novels, as well as middle paragraphs and final paragraphs. From there, I calculated TF-IDF scores for each word. TF-IDF just represents word frequencies, adjusted for the frequencies of those words in the corpus. In this case, it represents term distinctiveness to a paragraph group: how frequently a term occurs in first paragraph of a chapter, for instance, compared with how frequently it occurs in other paragraph categories. Here are the words distinctive of the first paragraphs of chapters:</p>
@@ -292,7 +292,7 @@ table
 </blockquote>
 <p>It seems that the first paragraphs of chapters set the scene: the season, the month, and the time of day (usually the morning). Just for fun, I computed the relative mentions of certain months from this small sample, and found that my intuition was correct: spring is over-represented in the beginnings of chapters, and winter is under-represented, with May as the most mentioned month, and January the least, as shown in Figure 3.</p>
 <figure>
-<img src="../../../images/chapters/months.png" alt="" /><figcaption>Figure 3: Months mentioned in the first paragraphs of chapters</figcaption>
+<img src="../../../images/chapters/months.png" alt="Figure 3: Months mentioned in the first paragraphs of chapters" /><figcaption aria-hidden="true">Figure 3: Months mentioned in the first paragraphs of chapters</figcaption>
 </figure>
 <p>Here are the words distinctive of middle paragraphs:</p>
 <blockquote>

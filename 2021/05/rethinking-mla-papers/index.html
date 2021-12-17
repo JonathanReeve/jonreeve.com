@@ -309,14 +309,14 @@ table
 </ul>
 <p>The student wouldn’t need to “know” YAML, Commonmark, or Markdown—a web interface may be used to generate all of this. Then, upon submission, the file may be validated, ensuring that all the required fields are included. That can even happen before submission.</p>
 <p>Here’s a minimal example:</p>
-<div class="sourceCode" id="cb1"><pre class="sourceCode markdown"><code class="sourceCode markdown"><span id="cb1-1"><a href="#cb1-1"></a><span class="co">---</span></span>
-<span id="cb1-2"><a href="#cb1-2"></a><span class="an">title:</span><span class="co"> My Amazing Research Paper</span></span>
-<span id="cb1-3"><a href="#cb1-3"></a><span class="an">author:</span><span class="co"> Jonathan Reeve</span></span>
-<span id="cb1-4"><a href="#cb1-4"></a><span class="an">course:</span><span class="co"> Introduction to Essay Writing</span></span>
-<span id="cb1-5"><a href="#cb1-5"></a><span class="an">instructor:</span><span class="co"> Professor Foobius</span></span>
-<span id="cb1-6"><a href="#cb1-6"></a><span class="co">---</span></span>
-<span id="cb1-7"><a href="#cb1-7"></a></span>
-<span id="cb1-8"><a href="#cb1-8"></a>Here is my first paragraph.</span></code></pre></div>
+<div class="sourceCode" id="cb1"><pre class="sourceCode markdown"><code class="sourceCode markdown"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true"></a><span class="co">---</span></span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true"></a><span class="an">title:</span><span class="co"> My Amazing Research Paper</span></span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true"></a><span class="an">author:</span><span class="co"> Jonathan Reeve</span></span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true"></a><span class="an">course:</span><span class="co"> Introduction to Essay Writing</span></span>
+<span id="cb1-5"><a href="#cb1-5" aria-hidden="true"></a><span class="an">instructor:</span><span class="co"> Professor Foobius</span></span>
+<span id="cb1-6"><a href="#cb1-6" aria-hidden="true"></a><span class="co">---</span></span>
+<span id="cb1-7"><a href="#cb1-7" aria-hidden="true"></a></span>
+<span id="cb1-8"><a href="#cb1-8" aria-hidden="true"></a>Here is my first paragraph.</span></code></pre></div>
 <p>The file may then be compiled to HTML (preferred), Docx, or PDF, using Pandoc and a template. Citations may be automatically verified, using the bibliographic data, and are automatically formatted as <a href="https://www.chicagomanualofstyle.org/tools_citationguide/citation-guide-1.html">Chicago notes-and-bibliography style</a>. Instructors may even be able to data-mine their students’ papers for the most frequently cited papers. The possibilities that plain-text submissions grant to instructors is limitless.</p>
 <p>The compiled HTML file uses <a href="https://edwardtufte.github.io/tufte-css/">Tufte CSS</a> by default, and therefore uses sidenotes instead of footnotes. A Works Cited page is thus unnecessary.</p>
 <p>I’ve created <a href="https://github.com/JonathanReeve/template-research-paper">a template repository</a> for this style of research paper, along with a script to convert it to HTML.</p></article><hr><p>I welcome your comments and annotations in the Hypothes.is sidebar to the right. →</p><script src="https://hypothes.is/embed.js"></script></div><footer><div class="container"><div class="columns"><div class="column col-8"><p>I believe in openness. This work is licensed under a <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/">Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International License</a>, unless otherwise stated. All content ©Jonathan Reeve 2020. Hand-coded with love, using exclusively free and open-source software, including <a href="https://github.com/srid/rib">Rib</a> and <a href="https://haskell.org/">Haskell</a>. Hosted on <a href="https://github.com">GitHub</a> and served with <a href="https://netlify.com">Netlify</a>. Icons by Nhor, via <a href="https://thenounproject.com">The Noun Project</a>. <a href="https://www.buymeacoffee.com/vaIVQZH">Buy me a coffee</a> or support me <a href="https://liberapay.com/JonathanReeve/donate">via Libera Pay</a> or <a href="bitcoin:3Qvm1DwzFGk3L1Eb6yeg5Nbc6db8sZUnbK">Bitcoin</a>.</p></div><div class="column col-4"><div class="icons"><a href="http://github.com/JonathanReeve"><svg xmlns="http://www.w3.org/2000/svg" height="3em" viewBox="0 0 448 512" width="3em" fill="#fafafa"><path d="M400 32H48C21.5 32 0 53.5 0 80v352c0 26.5 21.5 48 48
