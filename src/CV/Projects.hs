@@ -22,6 +22,27 @@ dh2020 = Venue "Digital Humanities 2020" "https://dh2020.adho.org/" "Ottawa, CA 
 
 projects :: [Project]
 projects = [
+  Project {
+      title = "Mapping Data Ethics",
+      role = Collaborator,
+      homepage = "https://data-ethics.tech",
+      github = Just "https://github.com/JonathanReeve/data-ethics-literature-review",
+      desc = "A survey of literature and curricula surrounding data science ethics.",
+      dateRange = DateRange (date 2021 01) Present,
+      updates = [
+          Update (date 2021 12) (Publication Article
+                                "Mapping Data Ethics Curricula [Preprint]"
+                                "https://github.com/JonathanReeve/data-ethics-literature-review/blob/main/paper/jices-paper.pdf" -- TODO: Add URL
+                                (Venue "[Under Review at Journal of Information, Communication, and Ethics in Society]"
+                                 "https://www.emeraldgrouppublishing.com/journal/jices?id=jices"
+                                 "")),
+          Update (date 2021 07) (Talk
+                                "Teaching Data Ethics on the Bleeding Edge"
+                                "https://github.com/JonathanReeve/data-ethics-literature-review/blob/main/conferences/aoir-abstract/abstract.pdf" -- TODO: Add URL
+                                (Venue "Association of Internet Researchers Conference, 2021" "https://aoir.org/aoir2021confinfo/aoir2021cfp/" ""))
+                ],
+      pypi = Nothing
+          },
   Project { title = "Open-Editions",
             role = Creator,
             homepage = "https://github.com/open-editions/",
