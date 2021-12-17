@@ -1,6 +1,6 @@
 #+TITLE: My Type-Safe Blog in Haskell
 #+DATE: 2020-09-13
-#+TAGS: haskell
+#+keywords: haskell
 
 Like most, my first step into the blogging world was through WordPress. But after a few years of wrangling plugins, handing endless updates, dealing with custom CSS issues, and paying for shared web hosting, the idea of using a static site generator seemed more attractive. Whereas WordPress sites are dynamically generated on a web server, static sites are just made up of good old HTML pages, and are therefore much simpler, more secure, and easier to maintain. Plus, you can serve those pages using a free service like GitHub pages. I switched to Jekyll.
 

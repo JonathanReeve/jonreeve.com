@@ -1,6 +1,6 @@
 #+TITLE: Imperial Voices: Gender and Social Class among Shakespeare's Characters, a Stylometric Approach
 #+DATE: 2015-03-12
-#+TAGS: python; BASH; PCA; early moderns; Shakespeare; paper
+#+keywords: python; BASH; PCA; early moderns; Shakespeare; paper
 
 #+BEGIN_QUOTE
   "in the imitation of these twain--who as Ulysses says, opinion crowns with an imperial voice--many are infect." --Nestor, /Troilus and Cressida/, Act 1, Scene 3.

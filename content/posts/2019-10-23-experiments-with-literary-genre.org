@@ -1,6 +1,6 @@
 #+TITLE: Adventures in Reproducing 19th Century Digital Humanities Projects
 #+DATE: 2019-10-23
-#+TAGS: genre
+#+keywords: genre
 
 In 1887, [[https://en.wikipedia.org/wiki/Thomas_Corwin_Mendenhall][Thomas Mendenhall]], a self-taught physicist, published an article in /Science/ called [[https://archive.org/details/jstor-1764604/page/n1]["The Characteristic Curve of Composition,"]] in which he studies mathematical properties of sentences written by fiction writers of the day. As an early work of quantitative literary analysis which preexisted the field of digital humanities by many decades, I like to think of it as nonetheless a "digital" study in the literal sense, even if Mendenhall was counting on his fingers instead of using a computer. Of course, what would have been a laborious process for Mendenhall and, presumably, his assistants---counting the number of words in each sentence in a novel---is now just a matter of a few lines of code. So during [[http://xpmethod.plaintext.in/events/digital-lit-studies-net.html][a hackathon at the Literary Modeling and Visualization Lab]], I decided to try to implement his algorithm.
 

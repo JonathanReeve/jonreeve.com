@@ -1,6 +1,6 @@
 #+TITLE: Probabilistic Detection of Character Voices in Fiction
 #+DATE: 2017-01-04
-#+TAGS: natural language processing; PCA; statistics; text analysis; Woolf; Richardson; modernism
+#+keywords: natural language processing; PCA; statistics; text analysis; Woolf; Richardson; modernism
 
 In James Joyce's novel /Ulysses/, the school headmaster Mr. Deasy quotes Shakespeare in a lecture in financial responsibility to his employee Stephen Dedalus. "[W]hat does Shakespeare say?" he asks, "Put but money in thy purse" (Joyce 1986, 25). As Stephen remembers it, however, this is not merely a saying of Shakespeare's, but one spoken by Shakespeare's infamous character Iago. So while Deasy thinks himself to be quoting the wisdom of the early modern playwright, he is, in fact, quoting the Bard's most notorious arch-villain. This distinction---one between an author and the author's fictional creations---is, it need not be said, crucial to the understanding of literature. It is that which the following experiment hopes to probabilistically detect.
 

@@ -1,6 +1,6 @@
 #+TITLE: The Henry James Sentence: New Quantitative Approaches
 #+DATE: 2017-06-07
-#+TAGS: syntax; sentences; James
+#+keywords: syntax; sentences; James
 
 #+BEGIN_QUOTE
   The house had a name and a history; the old gentleman taking his tea would have been delighted to tell you these things: how it had been built under Edward the Sixth, had offered a night's hospitality to the great Elizabeth (whose august person had extended itself upon a huge, magnificent and terribly angular bed which still formed the principal honour of the sleeping apartments), had been a good deal bruised and defaced in Cromwell's wars, and then, under the Restoration, repaired and much enlarged; and how, finally, after having been remodelled and disfigured in the eighteenth century, it had passed into the careful keeping of a shrewd American banker, who had bought it originally because (owing to circumstances too complicated to set forth) it was offered at a great bargain: bought it with much grumbling at its ugliness, its antiquity, its incommodity, and who now, at the end of twenty years, had become conscious of a real aesthetic passion for it, so that he knew all its points and would tell you just where to stand to see them in combination and just the hour when the shadows of its various protuberances---which fell so softly upon the warm, weary brickwork---were of the right measure. (James 2003, 60)

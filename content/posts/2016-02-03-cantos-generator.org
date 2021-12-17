@@ -1,6 +1,6 @@
 #+TITLE: A Programmatic Generator for Pound's Cantos
 #+DATE: 2016-02-03
-#+TAGS: text analysis; python; generation; poetry; modernism
+#+keywords: text analysis; python; generation; poetry; modernism
 
 ** Or, Computational Poetic Generation as Literary Analysis
    :PROPERTIES:

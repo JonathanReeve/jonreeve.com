@@ -1,6 +1,6 @@
 #+TITLE: My Notetaking System
 #+DATE: 2020-12-23
-#+TAGS: notetaking
+#+keywords: notetaking
 
 Here's what my notetaking system currently looks like:
 

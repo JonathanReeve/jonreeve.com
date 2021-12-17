@@ -1,6 +1,6 @@
 #+TITLE: A Macro-Etymological Analysis of James Joyce's A Portrait of the Artist as a Young Man
 #+DATE: 2015-05-10
-#+TAGS: etymology; Joyce; paper; modernism
+#+keywords: etymology; Joyce; paper; modernism
 
 [This is a preprint of my paper, published in [[http://www.palgrave.com/us/book/9781137595683#otherversion=9781137595690][/Reading Modernism with Machines/]], by Palgrave Macmillan in December 2016, reposted from the original draft.]
 

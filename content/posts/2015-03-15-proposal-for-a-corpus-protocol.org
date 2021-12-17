@@ -1,6 +1,6 @@
 #+TITLE: A Proposal for a Corpus Sharing Protocol
 #+DATE: 2015-03-15
-#+TAGS: text analysis; corpus linguistics; corpora; open source
+#+keywords: text analysis; corpus linguistics; corpora; open source
 
 Digital humanists working in computational text analysis need a better way to share corpora. Following is a rough sketch of a way to share texts in way that facilitates collaboration, provides for easy error correction, and adheres as much as possible to decentralized, open-source, and open-access models.
 

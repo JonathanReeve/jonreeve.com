@@ -1,6 +1,6 @@
 #+TITLE: Workshop Notebook: Advanced Topics in Word Embeddings
 #+DATE: 2019-02-20
-#+TAGS: text analysis; python; word embeddings; tutorials; Austen
+#+keywords: text analysis; python; word embeddings; tutorials; Austen
 
 [[https://github.com/JonathanReeve/workshop-word-embeddings/blob/master/workshop-word-embeddings.ipynb][This notebook]] originally accompanied a workshop I gave at NYCDH Week, in February of 2019, called "Advanced Topics in Word Embeddings." (In truth, it's only somewhat advanced. With a little background in NLP, this could even serve as an introduction to the subject.) You can [[https://mybinder.org/v2/gh/JonathanReeve/workshop-word-embeddings/master][run the code in a Binder, here]].
 

@@ -1,6 +1,6 @@
 #+TITLE: A Macro-Etymological Analysis of The Canterbury Tales
 #+DATE: 2017-06-06
-#+TAGS: etymology; medieval; Chaucer
+#+keywords: etymology; medieval; Chaucer
 
 Chaucer's /Canterbury Tales/ exhibits one of the richest vocabularies of Middle English literature, a vocabulary that reveals influences from a number of native and foreign languages: Old English, French, Latin, Greek, and Hebrew, among others. While some of this foreign influence may be attributed simply to the history of the English language---the Roman Empire, the Norman conquest of 1066, and several waves of Scandinavian immigrants are each responsible for the addition of new linguistic layers---some of it is attributable to Chaucer's own knowledge of languages: as a well-traveled member of a quasi-courtier class, he had a good knowledge of European languages. Regardless of whether the poet's word choices were consciously foreign at the time of writing in the fourteenth century, however, there are etymological resonances in each word that evoke levels of formality, social class, and genre. A commonly-discussed group of words that illustrates this phenomenon is the triplet /kingly, royal/, and /regal/. The first is of Old English origin; the second, of French, and the third, of Latin. Each possesses a set of associations with their etymological registers that make these words imperfect synonyms. The following experiment will attempt to computationally detect these registers, by quantifying the etymologies of all the words of the /Canterbury Tales/.
 

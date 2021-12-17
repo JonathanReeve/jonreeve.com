@@ -1,6 +1,6 @@
 #+TITLE: Fingerprinting the Chapter
 #+DATE: 2018-03-07
-#+TAGS: corpus-db; text analysis; python
+#+keywords: corpus-db; text analysis; python
 
 What is a chapter, really? Inspired by Nicholas Dames's work on the history of the chapter ([[https://www.newyorker.com/books/page-turner/chapter-history][some of which appeared in the /New Yorker/ a few years ago as "The Chapter: A History"]]), I've started investigating this question. We all have an intuition about chapters---how long they should be, their temporal scope, what they generally contain. Most of us, if given a paragraph chosen at random from a novel, could probably tell whether it began a chapter, ended a chapter, or fell somewhere in between. Yet could we say why? Could we explain our intuition to a computer? Sure, if we read a line like "and they rode off into the setting sun" we might guess that it belongs to the end of a chapter. But is the presence of a setting sun a distinguishing criterion for the end of a chapter? Do chapters usually represent a single day in narrative time? I decided to compute the linguistic fingerprint of the chapter, to get closer to understanding what it is.
 

@@ -1,6 +1,6 @@
 #+title: Rethinking the MLA Style Research Paper
 #+date: 2021-05-16
-#+tags: media
+#+keywords: media
 
 In my last post, I argued that PDFs, Word documents, and similar electronic file formats are stuck trying to mimic paper, and that we should consider replacing these with screen-first file formats which liberate them from the constraints of pagination. So where does that put the famous MLA-style research paper, the standard format for English departments nationwide? Here, I argue for a new style for student papers in the humanities.
 

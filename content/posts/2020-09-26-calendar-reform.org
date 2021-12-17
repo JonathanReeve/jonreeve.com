@@ -1,6 +1,6 @@
 #+TITLE: A Proposal for a New Calendar
 #+DATE: 2020-09-26
-#+TAGS: calendar
+#+keywords: calendar
 
 * On Calendar Reform
   :PROPERTIES:

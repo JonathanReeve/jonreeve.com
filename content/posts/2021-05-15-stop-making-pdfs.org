@@ -1,6 +1,6 @@
 #+title: Stop Making PDFs
 #+date: 2021-05-15
-#+tags: media
+#+keywords: media
 
 We should stop pretending that we're all still using paper. At least, speaking for myself and my academic work, email is much more common than paper mail, ebooks are rapidly growing in popularity, and journals are mostly accessed electronically. The global pandemic has driven us even further in digitization. More and more, we sign contracts, pay our electrical bills, and even get our drivers' licenses renewed, electronically, over the Internet. So then why do we insist on using electronic file formats that mimic the constraints of physical paper, which we no longer use?
 

@@ -1,6 +1,6 @@
 #+TITLE: Annotag Calculator 1.0
 #+DATE: 2014-09-28
-#+TAGS: annotation
+#+keywords: annotation
 
 Following [[/projects/annotags/about.html][my initial spec for Annotags]], a decentralized literary annotation protocol, I've just posted [[/projects/annotags/][the first rough version of a webapp]] designed to encode and decode the tags. Now you can annotweet books, plays, poems, and other texts with shortened ISBNs, thus saving precious microblogging characters.
 

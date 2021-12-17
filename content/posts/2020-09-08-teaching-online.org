@@ -1,6 +1,6 @@
 #+TITLE: Notes on My Online Teaching Methodology
 #+DATE: 2020-09-08
-#+TAGS: pedagogy
+#+keywords: pedagogy
 
 I've had a lot of questions lately about my online teaching methods lately, so I thought I'd share my rationale behind them. The course I'm currently teaching, [[http://icla2020b.jonreeve.com][Introduction to Computational Literary Analysis]], in the Department of English and Comparative Literature at Columbia University, has a unique technological stack:
 

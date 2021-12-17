@@ -1,6 +1,6 @@
+#+keywords: notetaking; semantic web
 #+title: Notetaking In Semantic Triples
 #+date: 2021-05-14
-#+tags: notetaking; semantic web
 
 This is a continuation of my previous post, describing my notetaking system.
 

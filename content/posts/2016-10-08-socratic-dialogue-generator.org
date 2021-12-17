@@ -1,6 +1,6 @@
 #+TITLE: A Generator of Socratic Dialogues
 #+DATE: 2016-10-08
-#+TAGS: natural language processing; tutorials
+#+keywords: natural language processing; tutorials
 
 In the influential 1948 paper [[http://ieeexplore.ieee.org/xpl/articleDetails.jsp?arnumber=6773024]["A Mathematical Theory of Communication,"]] the mathematician Claude Shannon conducts a thought experiment to construct an algorithmic approximation of language. The algorithm can be described like this:
 

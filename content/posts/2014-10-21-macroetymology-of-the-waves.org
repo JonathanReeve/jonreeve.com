@@ -1,6 +1,6 @@
 #+TITLE: A Macro-Etymological Analysis of Character Dialog in Virginia Woolf's The Waves
 #+DATE: 2014-10-21
-#+TAGS: etymology; Woolf; gender
+#+keywords: etymology; Woolf; gender
 
 Virginia Woolf's experimental novel /The Waves/ is structured as a series of dialogues and monologues by six characters. Some of these speeches are as short as a line, but most are between a few paragraphs and a chapter in length. Their extremely regular structure takes this form:
 

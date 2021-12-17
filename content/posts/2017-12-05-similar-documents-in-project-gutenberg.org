@@ -1,6 +1,6 @@
 #+TITLE: Computationally Identifying Similar Books in Project Gutenberg
 #+DATE: 2017-12-05
-#+TAGS: corpora; python
+#+keywords: corpora; python
 
 As one of the first digital libraries, Project Gutenberg has lived through a few generations of computers, digitization techniques, and textual infrastructures. It's not surprising, then, that the corpus is fairly messy. Early transcriptions of some electronic texts, hand-keyed using only uppercase letters, were succeeded by better transcriptions, but without replacing the early versions. As such, working with the corpus as a whole means working with a soup of duplicates. To make matters worse, some early versions of text were broken into many parts, presumably as a means to mitigate historical bandwidth limitations. Complete versions were then later created, but without removing the original parts. I needed a way to deduplicate Project Gutenberg books.
 

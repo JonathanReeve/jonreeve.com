@@ -1,6 +1,6 @@
 #+TITLE: Chapterize: a Tool for Automatically Splitting Electronic Texts into Chapters
 #+DATE: 2016-08-23
-#+TAGS: tools; natural language processing
+#+keywords: tools; natural language processing
 
 If you do computational analyses of books, and need to break up the book's text file into its constituent chapters, I've just released a tool that you might find useful. It's called [[https://github.com/JonathanReeve/chapterize][chapterize]], and it breaks a book into chapters. This is how it works:
 

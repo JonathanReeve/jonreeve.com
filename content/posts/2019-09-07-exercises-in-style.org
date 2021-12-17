@@ -1,6 +1,6 @@
 #+TITLE: Isolating Literary Style with Raymond Queneau
 #+DATE: 2019-09-07
-#+TAGS: style; Queneau
+#+keywords: style; Queneau
 
 Recently, I've become interested in the problem of literary style. One of its great difficulties involves the separation of a writer's stylistic signal from that of his or her era, nation, idiom, dialect, or chosen literary genre. Ideally, one might construct a corpus that controls for most of these variables, so that the style itself can be studied more easily. But since such corpora are hard to come by, I had the crazy idea to analyze a book that tells the same story over and over, but in different styles each time. One such book is /Exercises in Style/, and Raymond Queneau, celebrated literary experimenter, and founder of the famed OULIPO group, wrote it in 1947. Barbara Wright translated it into English in 1958, and because the English NLP toolchain is the most well developed, I chose to analyze the English translation.
 
