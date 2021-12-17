@@ -234,14 +234,24 @@ renderPage route val = html_ [lang_ "en"] $ do
         script_ [src_ "https://hypothes.is/embed.js" ] T.empty
       Route_Feed -> h1_ "RSS feed in development. Coming soon."
 
--- | Metadata in our sources
+-- | This is rather complicated.
+-- @#+tags:@ and @#+filetags:@ aren't recognized by Pandoc as metadata tags.
+-- But @keywords@ is. So we'll use keywords but then parse them here as tags.
 data SrcMeta
   = SrcMeta
       { title :: Text,
         date :: Text,
         tags :: [Text]
       }
-  deriving (Show, Eq, Generic, FromJSON)
+  deriving (Show, Eq, Generic)
+
+instance FromJSON SrcMeta where
+  parseJSON (Aeson.Object v) = do
+    title <- v Aeson..: "title"
+    date <- v Aeson..: "date"
+    tags <- v Aeson..: "keywords"
+    return SrcMeta { title = title, date = date, tags = map T.strip (T.splitOn ";" tags) }
+
 
 -- | Get metadata from Markdown's YAML block
 getMeta :: Pandoc -> SrcMeta
@@ -249,7 +259,8 @@ getMeta src = case Pandoc.extractMeta src of
   Nothing -> error "No YAML metadata"
   Just (Left e) -> error $ T.unpack e
   Just (Right val) -> case fromJSON val of
-    Aeson.Error e -> error $ "JSON error: " <> e
+    Aeson.Error e -> do
+      error $ "JSON error: " <> e
     Aeson.Success v -> v
 
 -- Schema.org RDFa
