@@ -1,6 +1,6 @@
 #+TITLE: Introducing the Macro-Etymological Analyzer
 #+DATE: 2013-11-01
-#+TAGS: etymology; text analysis; PHP
+#+keywords: etymology; text analysis; PHP
 
 *Note: this post refers to an older version of macro-etym, a text analysis tool [[https://github.com/JonathanReeve/macro-etym][which is now a CLI utility, here]].*
 
