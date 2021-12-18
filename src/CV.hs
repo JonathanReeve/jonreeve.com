@@ -192,17 +192,12 @@ positionsSection = section_ [ class_ "positions" ] $ do
 publicationsSection :: Html ()
 publicationsSection = section_ [ class_ "publications" ] $ do
   h1_ [] "Publications"
-  ul_ [] $ foldMap formatPublication projects
+  ul_ [] $ foldMap formatPublication projects -- <> foldMap formatTeachingPublication sortedTeaching
 
 -- TODO
 -- formatTeachingPublication :: Teaching -> Html ()
--- formatTeachingPublication teaching = foldMap formatUpdate withPublications where
---     withPublications = filter getPub $ teaching
---     getPub t = case t of
---       Workshop -> False
---       Course -> case
---       Update _ (Publication _ _ _ _) -> True
---       _ -> False
+-- formatTeachingPublication teachingItems = foldMap formatUpdate teachingPublications where
+--   teachingPublications = concatMap teachingUpdates $ hasPub teachingItems
 
 -- | Get all publications from a project
 formatPublication :: Project -> Html ()
