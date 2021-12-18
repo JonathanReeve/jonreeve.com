@@ -168,6 +168,10 @@ affiliations = [
                  [DateRange (date 2014 01) Present],
 
                  Affiliation "Member"
+                 (Venue "Association of Internet Researchers" "https://aoir.org" "")
+                 [DateRange (date 2021 01) Present],
+
+                 Affiliation "Member"
                  (Venue "Modern Language Association" "https://mla.org" "")
                  [DateRange (date 2010 01) Present],
 
