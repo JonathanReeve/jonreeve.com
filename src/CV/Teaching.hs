@@ -97,7 +97,7 @@ teaching = [Workshop { dates = [date 2021 06]
                          ],
                       notes = Nothing
                     },
-            Course { dateRanges = [DateRange (date 2020 09) (date 2020 12)]
+            Course { dateRanges = [DateRange (date 2020 09) (date 2020 12), DateRange (date 2021 09) (date 2021 12)]
                    , courseName = "Computing in Context: Computational Linguistics"
                    , teachingRole = Instructor
                    , url = "https://scienceandsociety.columbia.edu/content/un1002-computing-context-cannon"
