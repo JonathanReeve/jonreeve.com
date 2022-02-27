@@ -1,14 +1,15 @@
 {
   description = "Jonreeve.com. My personal website.";
   inputs = {
-    nixpkgs = "github:nixpkgs/nixpkgs/22dc22f8cedc58fcb11afe1acb08e9999e78be9c"
+    nixpkgs.url = "github:nixpkgs/nixpkgs/22dc22f8cedc58fcb11afe1acb08e9999e78be9c";
     flake-utils.url = "github:numtide/flake-utils";
     flake-compat = {
       url = "github:edolstra/flake-compat";
       flake = false;
     };
+    rib.url = "/home/jon/Code/rib";
   };
-  outputs = inputs@{ self, nixpkgs, flake-utils, ... }:
+  outputs = inputs@{ self, nixpkgs, flake-utils, rib, ... }:
     flake-utils.lib.eachSystem [ "x86_64-linux" ] (system:
       let
         name = "jonvreeve-com";
@@ -37,6 +38,7 @@
             overrides = self: super: with pkgs.haskell.lib; {
               # ema = disableCabalFlag inputs.ema.defaultPackage.${system} "with-examples";
               # lvar = self.callCabal2nix "lvar" inputs.ema.inputs.lvar { }; # Until lvar gets into nixpkgs
+              rib = inputs.rib.defaultPackage.${system};
             };
             modifier = drv:
               pkgs.haskell.lib.addBuildTools drv (with pkgs.haskellPackages;
