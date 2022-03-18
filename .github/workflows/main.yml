@@ -7,19 +7,14 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout 🛎️
-        uses: actions/checkout@v2.3.4
+        uses: actions/checkout@v3
       - name: Install Nix
-        uses: cachix/install-nix-action@v13
+        uses: cachix/install-nix-action@v15
         with:
           nix_path: nixpkgs=channel:nixos-unstable
-      - name: Install Rib and Build
-        uses: cachix/cachix-action@v10  # This also runs nix-build.
-        with:
-          name: srid
-      - run: nix-build
-      - run: nix-shell --run "echo OK"
-      - name: Build Site
-        run: nix-shell --run "cabal run"
+      - run: nix build
+      - run: nix flake check
+      - run: ./result/bin/jonreevecom
       - name: Deploy to GH Pages 🚀
         uses: JamesIves/github-pages-deploy-action@4.1.3
         with:
