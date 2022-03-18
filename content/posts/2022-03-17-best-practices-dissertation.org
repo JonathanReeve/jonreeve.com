@@ -73,4 +73,4 @@ If yours doesn't, I prefer [[https://zenodo.org/][Zenodo]], since they accept Gi
 
 ** Template
 
-[[https://github.com/JonathanReeve/template-dissertation][Here is a template you can use.]]
+[[https://github.com/JonathanReeve/template-dissertation][Here is a template you can use.]] I've incorporated almost all of these recommendations, so far.
