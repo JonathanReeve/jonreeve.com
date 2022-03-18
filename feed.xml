@@ -8024,7 +8024,7 @@ Example: T.S. Eliot wrote The Waste Land
 &lt;li&gt;Automatic generation of your bibliography, in whatever bibliographic format you want, using &lt;a href=&#34;https://pandoc.org/MANUAL.html#citations&#34;&gt;Pandoc’s Citeproc&lt;/a&gt;. You should never have to write these things out by hand.&lt;/li&gt;
 &lt;li&gt;Annotations using &lt;a href=&#34;https://web.hypothes.is/&#34;&gt;Hypothes.is&lt;/a&gt;.&lt;/li&gt;
 &lt;li&gt;Support for a powerful markdown derivative, &lt;a href=&#34;https://pandoc.org/MANUAL.html#pandocs-markdown&#34;&gt;Pandoc’s markdown&lt;/a&gt;, with tons of features useful to scholarly writing.&lt;/li&gt;
-&lt;li&gt;Layout in &lt;a href=&#34;https://edwardtufte.github.io/tufte-css/&#34;&gt;Tufte.css&lt;/a&gt; for beautiful typography and layout.&lt;/li&gt;
+&lt;li&gt;Layout in &lt;a href=&#34;https://edwardtufte.github.io/tufte-css/&#34;&gt;Tufte.css&lt;/a&gt; for beautiful typography.&lt;/li&gt;
 &lt;li&gt;Sidenotes by default, rather than footnotes or endnotes. (See Tufte for more on this.)&lt;/li&gt;
 &lt;li&gt;Support for figures and images, automatically numbered sequentially, with captions in the margins.&lt;/li&gt;
 &lt;li&gt;Support for LaTeX-style math and MathML, via &lt;a href=&#34;https://www.mathjax.org/&#34;&gt;MathJax&lt;/a&gt;.&lt;/li&gt;
