@@ -1,30 +1,19 @@
 #+title: Measuring Canonicity
 #+date: 2021-10-25
 #+keywords: canonicity
+#+tangle: yes
 
-At a celebration of Sarah Cole's new book, /Inventing Tomorrow: H. G. Wells and the Twentieth Century/, Prof. Cole shared a Google Books Ngrams Viewer chart, showing declining appearances of Wells's name in books, compared with increasing instances of Virginia Woolf's:
+How can we measure how canonical a book is? A good amount of recent research tries to tackle this problem. Several [[https://litlab.stanford.edu/pamphlets/][pamphlets of the Stanford Literary Lab]] deal with operationalizing canonicity: [[https://litlab.stanford.edu/LiteraryLabPamphlet8.pdf][Pamphlet 8, "Between Canon and Corpus"]]; [[https://litlab.stanford.edu/LiteraryLabPamphlet11.pdf][Pamphlet 11, "Canon/Archive,"]] and [[https://litlab.stanford.edu/LiteraryLabPamphlet17.pdf][Pamphlet 17 "Popularity/Prestige"]]. A recent article in ... [[https://www.sciencedirect.com/science/article/pii/S0306457310000087?casa_token=lDqXFpdQRtoAAAAA:SYmQxvk9CuyKMh3NrWIsYvcHhQCx5n-gj30ogrARg6fjf-kL_rF8yA5uLmLPA9iFIszJzTQI][Popular and/or prestigious? measures of scholarly esteem]] complicates the dichotomy. And an [[https://culturalanalytics.org/article/21599-measuring-canonicity-graduate-read-ing-lists-in-departments-of-hispanic-studies][article in the Journal of Cultural Analytics, "Measuring Canonicity,"]] takes a curricular approach, and tracks graduate reading lists in Hispanic Studies departments.
 
-[[../images/canonicity/wells-ngrams.png]]
-
-Cole's comment in the book is that "an easy Google Books tabulation of references in its vast archive to Wells and to Woolf illustrates the story in graphic form, pinpointing the year in which the trends reverse—when references to Woolf begin to exceed those of Wells—at 1955" [[[cite:cole20_inven_h]] 29]. (Full disclosure: Prof. Cole is one of my advisors, and I worked on this book as a research assistant, so naturally I think it's wonderful.) This features into Cole's larger argument about Well's canonicity, or lack thereof, which sets the background for her work in this book.
-
-This got me thinking whether it were possible to improve on the measurement of canonicity.
-
-A good amount of recent research tries to tackle this problem. Several [[https://litlab.stanford.edu/pamphlets/][pamphlets of the Stanford Literary Lab]] deal with operationalizing canonicity. Pamphlet 8, "Between Canon and Corpus"; Pamphlet 11, "Canon/Archive," and Pamphlet 17 "Popularity/Prestige" [[[cite:&algee-hewitt_between_2015-1]]; [[cite:&algee2016canon]]; [[cite:&porter2018popularity]]].
-
-Some more:
-
- - [[https://culturalanalytics.org/article/21599-measuring-canonicity-graduate-read-ing-lists-in-departments-of-hispanic-studies][Measuring Canonicity: Graduate Reading Lists in Departments of Hispanic Studies | Published in Journal of Cultural Analytics]]
- - [[id:bfbe6b7a-de22-470b-9146-f39afb851888][Popular and/or prestigious? measures of scholarly esteem]]
-
-What if we were to model canonicity according to the ratio between the number of books published /by/ a given writer, and the number of books published /about/ that author? It turns out this is achievable through book metadata APIs, like that of Open Library.
+But what if we were to model canonicity using bibliographic metadata? Since this is data made readily available through APIs like that at [[https://openlibrary.org/developers/api][Open Library]], it should be straightforward.
 
 Let's define canonicity $C$ as the ratio between /books authored by the writer/ $B_a$ and /books discussing the writer/ $B_d$:
 
 $$C = \frac{B_a}{B_d}$$
 
-To be fair, we should specify that $B_a$ is not just books or editions, but /works/. That will make sure that we're not over-counting books that have more than one edition. Thankfully, Open Library does
+To be fair, we should specify that $B_a$ is not just books or editions, but /works/. That will make sure that we're not over-counting books that have more than one edition. Thankfully, Open Library does make this distinction.
 
+#+BEGIN_COMMENT
 Open Library has URLs that look like this:
 
 https://openlibrary.org/subjects/person:john_galsworthy_(1867-1933)
@@ -41,6 +30,8 @@ https://openlibrary.org/authors/OL31827A/James_Joyce
 
 The source file for this blog post is a
 
+#+END_COMMENT
+
 #+BEGIN_SRC python :session session-init
 import requests
 import json
@@ -55,25 +46,29 @@ First, look up the author
 
 https://openlibrary.org/search/authors.json?q=james+joyce
 
-Then, Get the number of works by author:
-
-https://openlibrary.org/search/authors.json?q=OL31827A
-
 
 #+BEGIN_SRC python :results output :session session-init
 def apiCall(url):
     response = requests.get(url)
     parsed = json.loads(response.text)
     return parsed
+#+END_SRC
 
+#+RESULTS:
+
+Then, Get the number of works by author:
+
+https://openlibrary.org/search/authors.json?q=OL31827A
+
+#+BEGIN_SRC python :results output :session session-init
 def lookupAuthor(name):
     name = name.lower().replace(' ', '+')
     url = f'https://openlibrary.org/search/authors.json?q={name}'
     parsed = apiCall(url)
-    try:
-      return parsed['docs'][0]['key']
-    except IndexError:
-      return
+    # try:
+    return parsed['docs'][0]['key']
+    # except IndexError:
+    #   return
 
 def numWorksByAuthorKey(authorKey):
     url = "https://openlibrary.org/search/authors.json?q=" + authorKey
@@ -82,7 +77,17 @@ def numWorksByAuthorKey(authorKey):
 
 def numWorksByAuthor(name):
     return numWorksByAuthorKey(lookupAuthor(name))
+#+END_SRC
 
+#+RESULTS:
+
+#+BEGIN_SRC python :results output :session session-init
+lookupAuthor("James Joyce")
+#+END_SRC
+
+#+RESULTS:
+
+#+BEGIN_SRC python :session session_init
 # Find subject heading for authorKey
 # https://openlibrary.org/search/subjects.json?q=James+Joyce&subject_type=person
 def authorSubjectKey(name):
@@ -158,3 +163,5 @@ print(df)
 #+END_SRC
 
 #+RESULTS:
+
+* Works Cited
