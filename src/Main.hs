@@ -107,7 +107,8 @@ generateSite = do
       let r = Route_Article $ cleanPath srcPath
       doc <- Pandoc.parse Pandoc.readOrg srcPath
       let docWithMeta = setMeta (T.pack "bibliography") (T.pack "content/bibliography.bib") doc :: Pandoc
-      docProcessed <- liftIO $ runIO $ processCitations docWithMeta
+      let docWithMeta' = setMeta (T.pack "csl") (T.pack "content/modern-language-association.csl") docWithMeta :: Pandoc
+      docProcessed <- liftIO $ runIO $ processCitations docWithMeta'
       -- liftIO $ print docProcessed
       docMaybe <- liftIO $ handleError docProcessed
 

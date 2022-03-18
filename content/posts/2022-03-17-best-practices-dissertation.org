@@ -2,11 +2,13 @@
 #+date: 2021-10-25
 #+keywords: dissertation
 
-There's a lot of talk these days about "next-generation dissertations" and "digital dissertations." Syracuse University, along with Katina Rogers, recently launched [[https://nextgendiss.hcommons.org/what-why-how/][an NEH-funded project, called /Next Generation Dissertations/]], where they define them as: "any doctoral project whose form goes beyond the traditional written monograph. It can be a website or other digital product, it can be a graphic novel, a documentary, or a rap album."
+There's a lot of talk these days about "next-generation dissertations" and "digital dissertations." See, for example, /Electronic Theses and Dissertations/, /The Sage Handbook of Digital Dissertations and Theses/, and /Shaping the Digital Dissertation: Knowledge Production in the Arts and Humanities/ ([cite:@fox2004electronic;@andrews2012the;@kuhn2021shaping]). Syracuse University and Katina Rogers recently launched [[https://nextgendiss.hcommons.org/what-why-how/][an NEH-funded project, called /Next Generation Dissertations/]], where they define the genre as: "any doctoral project whose form goes beyond the traditional written monograph. It can be a website or other digital product, it can be a graphic novel, a documentary, or a rap album."
 
-One example is Amanda Visconti's dissertation, which involved the creation of an interactive website called [[http://infiniteulysses.com/][Infinite Ulysses]]—an annotated and annotatable edition of James Joyce's /Ulysses/. (Which I love, by the way—I'm trying to do something similar with [[https://github.com/open-editions/corpus-joyce-ulysses-tei][my Open Editions edition of /Ulysses]].) I'd often heard this called a "digital dissertation," since [[https://github.com/amandavisconti/infinite-ulysses-dissertation][much of the content of the dissertation is behind the scenes, as it were, in PHP and Drupal]].
+One often-cited example is Amanda Visconti's dissertation, which involved the creation of an interactive website called [[http://infiniteulysses.com/][Infinite Ulysses]]—an annotated and annotatable edition of James Joyce's /Ulysses/. (Which I love, by the way—I'm trying to do something similar with [[https://github.com/open-editions/corpus-joyce-ulysses-tei][my Open Editions edition of /Ulysses/]].) I'd often heard this called a "digital dissertation," since [[https://github.com/amandavisconti/infinite-ulysses-dissertation][much of the content of the dissertation is behind the scenes, in PHP and Drupal]].
 
-But, I want to problematize the term "digital dissertation." Practically speaking, aren't all dissertations digital, these days? Virtually no grad student, in the US at least, is depositing a handwritten dissertation, which is never emailed to anyone, or uploaded to the web. Even if it /were/ handwritten, it would still need to be archived digitally. I also want to prolematize the idea that a dissertation that is a website is in some way nontraditional. If a traditional, monographic dissertation is uploaded to a digital repository, and is available for scholars to read over the web, is that not, then, a website? At the very least, it's a digital product, no?
+But I would like to problematize the term "digital dissertation." Practically speaking, aren't all dissertations digital, these days? Virtually no grad student, in the US at least, is depositing a handwritten dissertation, which is never emailed to anyone, or uploaded to the web. Even if it /were/ handwritten, it would still need to be archived digitally.
+
+I would also like to prolematize the idea that a dissertation that is a website is in some way nontraditional. If a traditional, monographic dissertation is uploaded to a digital repository, and is available for scholars to read over the web, is that not, then, a website? At the very least, it's a digital product, no?
 
 If doctoral candidates are writing dissertations that will never be printed—which is very common these days, since libraries and departments are making fewer and fewer hard copies of dissertations—then what's the use of the paper-shaped digital document? I've written about this in [[https://jonreeve.com/2021/05/stop-making-pdfs/][a previous post]], already, where I argue that almost any format is better than PDF and Word, when it comes to born-digital documents that stay digital. For one, if you're making endnotes, or even footnotes, in a document, in 2022, you're purposefully making it harder on your readers, since they have to navigate back and forth in a very long document to try to find your notes.
 
@@ -14,12 +16,14 @@ So I wanted to propose a set of best practices, for 21st century dissertations. 
 
 I list these recommendations in order of importance. At the bottom of the page, I also provide a template which doctoral students can use to bootstrap their own dissertation.
 
-** 1. It should be always-already public.
+** 1. It should be always-already public
 The dissertation should be always-already public. Not made public when it's finished. Not made public a year or more after it's been deposited ("embargoed"). Public from the very beginning. Why? Scholarship isn't performed in a vacuum. We need comments, ideas, help, cross-pollination. This is seemingly a given in the sciences, where dissertations are often assembled from a number of already published papers, but is less common in the humanities. Part of reason for that, I've gathered from talking to colleagues, that is there is a fear that, if your dissertation is public, it will somehow be "stolen": that a struggling scholar will take your work, slap their name on it, and make a career out of it. It's a ridiculous fear, the second you examine it. For one, accounts of this happening are rare and anecdotal, and don't represent anything statistically likely. For another, making your dissertation public is actually a way to /protect/ it against theft. If there is ever any question as to who wrote what, it's essential to have a verifiable public record of it, already online.
+
+See an excellent response to fears about a public dissertation in Kathleen Fitzpatrick's "Dissertating in Public" ([cite:@fitzpatrick2021]).
 
 The best way to make your work public is to push it to a public version-control hub like GitHub or GitLab. That leads me to the second recommendation.
 
-** 2. It should be always-already version-controlled.
+** 2. It should be always-already version-controlled
 The best way to make a public record of your dissertation is to put it under version control from the very beginning. Version control systems like Git keep track of your dissertation in all its revisions and states, across the history of its composition. They can include not only your prose, but your data, code, and everything else.
 
 This is not only a great way of backing up your work, but it's a great method for collaboration and project management. Once you sync your work to a Git-based cloud service like GitHub or GitLab, you'll have access to bug trackers, wikis, kanban boards, and automated build systems (CI/CD).
@@ -84,3 +88,5 @@ If yours doesn't, I prefer [[https://zenodo.org/][Zenodo]], since they accept Gi
 7. Support for LaTeX-style math and MathML, via [[https://www.mathjax.org/][MathJax]].
 8. Modern, standards-compliant CSS and HTML. 9.  Excellent, machine-readable metadata for the semantic web, using [[https://schema.org/][Schema.org]].
 9. GitHub Actions and GitHub Pages integration, for automatic builds and deploys. Serve to the web at no cost to you.
+
+** References
