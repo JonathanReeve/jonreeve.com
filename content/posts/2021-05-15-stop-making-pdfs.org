@@ -1,4 +1,4 @@
-#+title: Stop Making PDFs
+#+title: The Case Against PDFs
 #+date: 2021-05-15
 #+keywords: media
 
