@@ -9,6 +9,7 @@ This uses the wonderful static site generator [[https://github.com/srid/rib/][Ri
 
 ** Running
 
-```
-nix-shell --run 'ghcid -WT ":main -wS"'
-```
+#+BEGIN_SRC bash
+nix develop
+
+#+END_SRC
