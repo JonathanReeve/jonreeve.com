@@ -41,6 +41,7 @@ import Text.Pandoc
 import qualified Text.Pandoc.Readers
 import Text.Pandoc.Walk (query)
 import Text.Pandoc.Writers.Shared (toTableOfContents)
+import Text.Pandoc.Citeproc (processCitations)
 
 import Text.Pandoc.Citeproc (processCitations)
 
@@ -70,9 +71,7 @@ parse textReader f =
 render :: Monad m => Pandoc -> HtmlT m ()
 render doc =
   either error id $ first show $ runExcept $ do
-    runPure'
-    $ fmap toHtmlRaw
-    $ writeHtml5String writerSettings doc
+    runPure' $ toHtmlRaw <$> writeHtml5String writerSettings doc
 
 -- | Extract the Pandoc metadata as JSON value
 extractMeta :: Pandoc -> Maybe (Either Text Value)
@@ -87,22 +86,22 @@ runIO' = liftEither <=< liftIO . runIO
 -- | Render a list of Pandoc `Text.Pandoc.Inline` values as Lucid HTML
 --
 -- Useful when working with `Text.Pandoc.Meta` values from the document metadata.
-renderPandocInlines :: Monad m => [Inline] -> HtmlT m ()
+renderPandocInlines :: (Monad m, PandocMonad Identity) => [Inline] -> HtmlT m ()
 renderPandocInlines =
   renderPandocBlocks . pure . Plain
 
-renderPandocBlocks :: Monad m => [Block] -> HtmlT m ()
+renderPandocBlocks :: (Monad m, PandocMonad Identity) => [Block] -> HtmlT m ()
 renderPandocBlocks =
   toHtmlRaw . render . Pandoc mempty
 
 -- | Get the top-level heading as Lucid HTML
-getH1 :: Monad m => Pandoc -> Maybe (HtmlT m ())
+getH1 :: (Monad m, PandocMonad Identity) => Pandoc -> Maybe (HtmlT m ())
 getH1 (Pandoc _ bs) = fmap renderPandocInlines $ flip query bs $ \case
   Header 1 _ xs -> Just xs
   _ -> Nothing
 
 -- | Get the document table of contents
-getToC :: Monad m => Pandoc -> HtmlT m ()
+getToC :: (Monad m, PandocMonad Identity) => Pandoc -> HtmlT m ()
 getToC (Pandoc _ bs) = renderPandocBlocks [toc]
   where
     toc = toTableOfContents writerSettings bs

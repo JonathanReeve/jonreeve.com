@@ -17,7 +17,6 @@ import Data.Aeson (FromJSON, fromJSON)
 import qualified Data.Aeson as Aeson
 import Data.List (sortOn)
 import Data.Map (Map)
-import Data.Maybe (fromJust)
 import qualified Data.Map.Strict as Map
 import qualified Data.Text as T
 import qualified Data.Text.Lazy as LT
@@ -34,6 +33,9 @@ import PyF
 import Text.Pandoc.Citeproc (processCitations)
 import Text.Pandoc (runIO, handleError)
 import Text.Pandoc.Builder (setMeta)
+-- Needed for citation processing
+import Text.Pandoc.Class (PandocMonad)
+import Control.Monad.Identity (Identity)
 
 -- My modules
 import qualified CV
