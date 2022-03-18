@@ -119,14 +119,17 @@
         "nixpkgs": "nixpkgs_2"
       },
       "locked": {
-        "lastModified": 1645996697,
-        "narHash": "sha256-4H0jDki3zs2ULKGFXUhMUrEwXQTPlySEvSnlqBn1U3U=",
-        "type": "git",
-        "url": "file:///home/jon/Code/rib"
+        "lastModified": 1647637438,
+        "narHash": "sha256-K+a4jmAHi6/UnHgtkqOyxb2dGEAQBunnpfhlqHRLYzw=",
+        "owner": "JonathanReeve",
+        "repo": "rib",
+        "rev": "f4411e27569609384312dc392e4eb4f62681ee25",
+        "type": "github"
       },
       "original": {
-        "type": "git",
-        "url": "file:///home/jon/Code/rib"
+        "owner": "JonathanReeve",
+        "repo": "rib",
+        "type": "github"
       }
     },
     "root": {

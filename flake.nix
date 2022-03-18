@@ -7,7 +7,8 @@
       url = "github:edolstra/flake-compat";
       flake = false;
     };
-    rib.url = "/home/jon/Code/rib";
+    # rib.url = "/home/jon/Code/rib";
+    rib.url = "github:JonathanReeve/rib";
   };
   outputs = inputs@{ self, nixpkgs, flake-utils, rib, ... }:
     flake-utils.lib.eachSystem [ "x86_64-linux" ] (system:
