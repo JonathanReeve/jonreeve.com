@@ -72,6 +72,9 @@ pageStyle = do
   main_ ? do
     fontFamily ["Raleway"] [sansSerif]
     li ? listStylePosition outside
+  ".csl-entry" ? do
+    marginLeft (em 2)
+    textIndent (indent (em (-2)))
   figure ? do
     textAlign center
     figcaption ? textAlign center
