@@ -42,6 +42,8 @@ import qualified Text.Pandoc.Readers
 import Text.Pandoc.Walk (query)
 import Text.Pandoc.Writers.Shared (toTableOfContents)
 
+import Text.Pandoc.Citeproc (processCitations)
+
 -- | Pure version of `parse`
 parsePure ::
   (ReaderOptions -> Text -> PandocPure Pandoc) ->
@@ -114,20 +116,26 @@ getFirstImg (Pandoc _ bs) = listToMaybe $ flip query bs $ \case
   Image _ _ (url, _) -> [toText url]
   _ -> []
 
--- exts :: Extensions
--- exts = extensionsFromList [ Ext_yaml_metadata_block
---                           , Ext_fenced_code_attributes
---                           , Ext_auto_identifiers
---                           , Ext_smart
---                           , Ext_implicit_figures
---                           ]
+exts :: Extensions
+exts = extensionsFromList [ Ext_yaml_metadata_block
+                          , Ext_fenced_code_attributes
+                          , Ext_auto_identifiers
+                          , Ext_smart
+                          , Ext_implicit_figures
+                          , Ext_footnotes
+                          , Ext_citations
+                          , Ext_table_captions
+                          , Ext_fenced_code_blocks
+                          , Ext_fenced_code_attributes
+                          , Ext_auto_identifiers
+                          ]
 
 
 readerSettings :: ReaderOptions
-readerSettings = def {readerExtensions = pandocExtensions}
+readerSettings = def {readerExtensions = exts}
 
 writerSettings :: WriterOptions
-writerSettings = def {writerExtensions = pandocExtensions}
+writerSettings = def {writerExtensions = exts}
 
 -- Internal code
 

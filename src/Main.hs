@@ -31,6 +31,9 @@ import Rib (IsRoute)
 import qualified Rib
 --import qualified Rib.Parser.Pandoc as Pandoc
 import PyF
+import Text.Pandoc.Citeproc (processCitations)
+import Text.Pandoc (runIO, handleError)
+import Text.Pandoc.Builder (setMeta)
 
 -- My modules
 import qualified CV
@@ -101,7 +104,12 @@ generateSite = do
     Rib.forEvery ["posts/*.org"] $ \srcPath -> do
       let r = Route_Article $ cleanPath srcPath
       doc <- Pandoc.parse Pandoc.readOrg srcPath
-      writeHtmlRoute r doc
+      let docWithMeta = setMeta (T.pack "bibliography") (T.pack "content/bibliography.bib") doc :: Pandoc
+      docProcessed <- liftIO $ runIO $ processCitations docWithMeta
+      -- liftIO $ print docProcessed
+      docMaybe <- liftIO $ handleError docProcessed
+
+      writeHtmlRoute r docMaybe
       pure (r, doc)
   writeHtmlRoute Route_CV articles
   writeHtmlRoute Route_Tags $ groupByTag articles
@@ -173,6 +181,8 @@ renderPage route val = html_ [lang_ "en"] $ do
         script_ [ src_ "/assets/js/jquery-3.5.1.min.js" ] T.empty
         script_ [ src_ "/assets/js/main.js" ] T.empty
         script_ [src_ "//cdn.jsdelivr.net/gh/highlightjs/cdn-release@10.2.0/build/highlight.min.js"] T.empty
+        script_ [src_ "https://polyfill.io/v3/polyfill.min.js?features=es6"] T.empty
+        script_ [id_ "MathJax-script", async_ "", src_"https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"] T.empty
         script_ [] ("hljs.initHighlightingOnLoad();" :: Html ())
   where
     navItem :: Route a -> Html () -> Html ()
