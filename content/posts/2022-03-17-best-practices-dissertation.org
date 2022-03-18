@@ -82,7 +82,7 @@ If yours doesn't, I prefer [[https://zenodo.org/][Zenodo]], since they accept Gi
 1. Automatic generation of your bibliography, in whatever bibliographic format you want, using [[https://pandoc.org/MANUAL.html#citations][Pandoc's Citeproc]]. You should never have to write these things out by hand.
 2. Annotations using [[https://web.hypothes.is/][Hypothes.is]].
 3. Support for a powerful markdown derivative, [[https://pandoc.org/MANUAL.html#pandocs-markdown][Pandoc's markdown]], with tons of features useful to scholarly writing.
-4. Layout in [[https://edwardtufte.github.io/tufte-css/][Tufte.css]] for beautiful typography and layout.
+4. Layout in [[https://edwardtufte.github.io/tufte-css/][Tufte.css]] for beautiful typography.
 5. Sidenotes by default, rather than footnotes or endnotes. (See Tufte for more on this.)
 6. Support for figures and images, automatically numbered sequentially, with captions in the margins.
 7. Support for LaTeX-style math and MathML, via [[https://www.mathjax.org/][MathJax]].
