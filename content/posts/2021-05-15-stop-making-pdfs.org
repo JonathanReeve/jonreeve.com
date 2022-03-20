@@ -1,0 +1,36 @@
+#+title: The Case Against PDFs
+#+date: 2021-05-15
+#+keywords: media
+
+We should stop pretending that we're all still using paper. At least, speaking for myself and my academic work, email is much more common than paper mail, ebooks are rapidly growing in popularity, and journals are mostly accessed electronically. The global pandemic has driven us even further in digitization. More and more, we sign contracts, pay our electrical bills, and even get our drivers' licenses renewed, electronically, over the Internet. So then why do we insist on using electronic file formats that mimic the constraints of physical paper, which we no longer use?
+
+Think about this: when you start writing a new document, using a word processor, you will usually see something like this:
+
+#+CAPTION: Google Docs: Paper UI
+[[../../../images/pdf/google-docs.png]]
+
+This UI emulates a paper page. Not just any page, but the 8.5 x 11 inch, letter-size paper common in the US. This made sense, at one point, when the printer was an essential part of the computer, and when computer documents were only designs for their paper versions. But now, in 2021, it is starting to go the way of the floppy disk save icon: it will become a vestigial organ of computer interaction. But not before costing us years of bad document interface design.
+
+Case in point: I have to fill out some forms ("paperwork") with my department, in order to get on the payroll. The department office doesn't have a row of filing cabinets. They're not printing out these forms. Yet the form is composed in Microsoft Word, using a string of underscores to indicate the fields I'm meant to fill in: ~Name: _______~. So I open the Word file on my computer, and type my name among the underscores: ~Name: ____Jonathan Reeve____~. Presumably, some unfortunate intern then has to receive my form—a Word document attached to an email—and copy-paste, or retype, each field into some spreadsheet. This is an ugly and unnecessary workflow for 2021. Why do we insist on trying to mimic early 20th Century paper-based offices?
+
+It's not that we don't /have/ better technologies, ones better suited to our tasks. HTML, for instance, has had form capabilities since the '90s, and the ~<form>~ tag set [[https://www.w3schools.com/html/html_forms.asp][remains easy to write, even for novices]]. For those with an aversion to code, there are plenty of free commercial options, like [[https://workspace.google.com/products/forms/][Google Forms,]] [[https://www.typeform.com/][Typeform]], and others. All of these solutions take user input and insert it directly into a database or spreadsheet. No word processing necessary. And you don't have to decide on a page size, either, for your nonexistent pages.
+
+Here's another example: I'm writing my dissertation. The Graduate School's submission process is totally electronic, so there will be no printed copies of my dissertation, unless someone chooses to print it. But it must still be submitted in either PDF or Word format. There must be page numbers at the bottom of every virtual "page," and a table of contents. One-inch margins around each "page." This probably doesn't sound like a problem, to many of you reading this—aren't these margins just the same as margins on a webpage?—but I'll explain. There are a number of fundamental problems with PDFs.
+
+First, pagination is not only unnecessary in electronic documents, but detracts from their usability. Indices and tables of contents, for instance, are inefficient, and are much better handled with hyperlinks. Pagination also makes figures and images appear far from where they're described: a reader shouldn't have to flip through several pages to find a figure referenced on another page. Finally, the reader, rather than the writer, should have control over the margins, text width, line spacing, and so on. The fact that our libraries are filled with large-print editions of books is a testament to the need for variable font sizes. We can customize our preferred font sizes dynamically in most web browsers, with Ctrl-+ or equivalent, but only a raw zoom is possible with PDFs—the font sizes cannot be changed.
+
+Second, PDF file bloat is ridiculous. As [[https://www.sup.org/books/title/?id=26821][Dennis Tenen has shown, in /Plain Text/]], try making a PDF with only the words "hello world," and then try doing the same in plain text, and compare the file sizes of each. The PDF takes up /two thousand times/ more space than its plain text equivalent. And before you dismiss this as a problem mitigated by modern computers, capable of storing many gigabytes of data, consider that there is a real-world cost to computational inefficiency, when scaled to the level of a nation or the world. When millions of our computers are working to compute the displays of PDF files of many megabytes each, this adds up to significant electricity usage, and thus carbon emissions.
+
+PDFs also lack many of the features of modern electronic documents. Interactive charts, diagrams, and so on, have been possible since the early days of JavaScript, but remain impossible with PDFs. One of my favorite features of the modern web, [[https://web.hypothes.is/][social annotation with the likes of hypothes.is]], is also impossible with PDFs. For academic publishing, especially, consider that citations and bibliographic references are kinds of hyperlinks, and hyperlinks work best in web browsers, where they are a native technology. Sure, you can put links in a PDF, and it will open a browser, but this is not always a very seamless experience. Sadly, the fact remains that the vast majority of PDF documents published today have textual, rather than hypertextual, bibliographic references. Why would anyone want to make it /more/ difficult to look up the papers one cites? Actually, nevermind, don't answer that.
+
+Now, we all know someone—that one colleague that insists on paper books, paper journals, who even prints out emails. And they're not wrong—research shows that we remember more of what we read when we read it on paper. But this alone is not enough to reverse the digitization trend. You might love the feeling of pen on paper, and prefer to take notes by hand, but that's not going to convince all your coworkers to give up their email, in favor of writing letters. So we need to embrace computers as communication devices in their own right, and divorce ourselves of the outdated idea that they're only fancy typewriters, meant for creating paper documents.
+
+Well, how do we do that? The next time you make a document, make it in Markdown, Org, HTML, or plain text. Make it using Word, if you must, but save it HTML. That's really the universal format: anyone that has a computer, these days, has a web browser.
+
+Next, I'll describe rethinking the MLA-style research essay.
+
+Further reading:
+
+- [[https://practicaltypography.com/how-to-make-a-pdf.html][How to make a PDF | Butterick’s Practical Typography]]
+- [[https://pressbooks.library.ryerson.ca/docs/chapter/the-case-against-pdfs/][The Case Against PDFs – Understanding Document Accessibility]]
+- [[https://gds.blog.gov.uk/2018/07/16/why-gov-uk-content-should-be-published-in-html-and-not-pdf/][Why GOV.UK content should be published in HTML and not PDF - Government Digital Service]]

@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="generator" content="pandoc">
+  <title></title>
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
+  <link rel="stylesheet" href="../../assets/js/vendor/reveal.js/css/reveal.css">
+  <style type="text/css">code{white-space: pre;}</style>
+  <style type="text/css">
+div.sourceCode { overflow-x: auto; }
+table.sourceCode, tr.sourceCode, td.lineNumbers, td.sourceCode {
+  margin: 0; padding: 0; vertical-align: baseline; border: none; }
+table.sourceCode { width: 100%; line-height: 100%; }
+td.lineNumbers { text-align: right; padding-right: 4px; padding-left: 4px; color: #aaaaaa; border-right: 1px solid #aaaaaa; }
+td.sourceCode { padding-left: 5px; }
+code > span.kw { color: #007020; font-weight: bold; } /* Keyword */
+code > span.dt { color: #902000; } /* DataType */
+code > span.dv { color: #40a070; } /* DecVal */
+code > span.bn { color: #40a070; } /* BaseN */
+code > span.fl { color: #40a070; } /* Float */
+code > span.ch { color: #4070a0; } /* Char */
+code > span.st { color: #4070a0; } /* String */
+code > span.co { color: #60a0b0; font-style: italic; } /* Comment */
+code > span.ot { color: #007020; } /* Other */
+code > span.al { color: #ff0000; font-weight: bold; } /* Alert */
+code > span.fu { color: #06287e; } /* Function */
+code > span.er { color: #ff0000; font-weight: bold; } /* Error */
+code > span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+code > span.cn { color: #880000; } /* Constant */
+code > span.sc { color: #4070a0; } /* SpecialChar */
+code > span.vs { color: #4070a0; } /* VerbatimString */
+code > span.ss { color: #bb6688; } /* SpecialString */
+code > span.im { } /* Import */
+code > span.va { color: #19177c; } /* Variable */
+code > span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+code > span.op { color: #666666; } /* Operator */
+code > span.bu { } /* BuiltIn */
+code > span.ex { } /* Extension */
+code > span.pp { color: #bc7a00; } /* Preprocessor */
+code > span.at { color: #7d9029; } /* Attribute */
+code > span.do { color: #ba2121; font-style: italic; } /* Documentation */
+code > span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+code > span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+  </style>
+  <link rel="stylesheet" href="../../assets/js/vendor/reveal.js/css/theme/moon.css" id="theme">
+  <!-- Printing and PDF exports -->
+  <script>
+    var link = document.createElement( 'link' );
+    link.rel = 'stylesheet';
+    link.type = 'text/css';
+    link.href = window.location.search.match( /print-pdf/gi ) ? '../../assets/js/vendor/reveal.js/css/print/pdf.css' : '../../assets/js/vendor/reveal.js/css/print/paper.css';
+    document.getElementsByTagName( 'head' )[0].appendChild( link );
+  </script>
+  <!--[if lt IE 9]>
+  <script src="../../assets/js/vendor/reveal.js/lib/js/html5shiv.js"></script>
+  <![endif]-->
+</head>
+<body>
+  <div class="reveal">
+    <div class="slides">
+
+
+<section id="collaborative-open-source-creation-of-digital-editions" class="slide level1">
+<h1>Collaborative, Open-Source Creation of Digital Editions</h1>
+</section>
+<section id="principles" class="slide level1">
+<h1>Principles</h1>
+<ul>
+<li>Archive-ready and future-proof texts.</li>
+<li>Open-source development.</li>
+<li>Simple software stack.</li>
+<li>Repeatable software stack.</li>
+<li>Open-access annotation.</li>
+</ul>
+</section>
+<section id="problem-markup" class="slide level1">
+<h1>Problem: Markup</h1>
+<ul>
+<li>Most digital editions integrate form and content in a way that prohibits future derivative editions.</li>
+<li>Consider this HTML 3.0 markup:</li>
+</ul>
+<div class="sourceCode"><pre class="sourceCode html"><code class="sourceCode html">There are very few <span class="kw">&lt;i&gt;</span>risqué<span class="kw">&lt;/i&gt;</span> passages in <span class="kw">&lt;i&gt;</span>Paradise Lost<span class="kw">&lt;/i&gt;</span></code></pre></div>
+<ul>
+<li>doesn't differentiate between the two types of italicized text</li>
+<li>this is a major future-proofing problem</li>
+</ul>
+</section>
+<section id="markup-solution" class="slide level1">
+<h1>Markup Solution</h1>
+<ul>
+<li>TEI XML is a <em>semantic</em> markup language.</li>
+<li>It doesn't describe how text should look, but what the text <em>is</em>.</li>
+<li>&quot;Teaches the computer to read the text.&quot; --- crucial step for computational literary criticism</li>
+<li>This makes it easier to handle in the future.</li>
+</ul>
+</section>
+<section id="tei-xml-example" class="slide level1">
+<h1>TEI XML Example</h1>
+<div class="sourceCode"><pre class="sourceCode xml"><code class="sourceCode xml">There are very few <span class="kw">&lt;foreign&gt;</span>risqué<span class="kw">&lt;/foreign&gt;</span> 
+passages in <span class="kw">&lt;title&gt;</span>Paradise Lost<span class="kw">&lt;/title&gt;</span> </code></pre></div>
+</section>
+<section id="problem-closed-source" class="slide level1">
+<h1>Problem: Closed-Source</h1>
+<ul>
+<li>Many digital editions are centralized, closed-source, and locked down, unable to be edited by third parties.</li>
+<li>If the project dies (loses funding, gets hacked, loses its hosting provider, becomes obsolete), the edition also dies.</li>
+</ul>
+</section>
+<section id="open-source-solution" class="slide level1">
+<h1>Open-Source Solution</h1>
+<ul>
+<li>Make digital editions that are open-source and open-access (e.g. available on GitHub from the beginning).</li>
+<li>Allows anyone to fork (copy) the edition, make a change, and submit the change back to the original project, if desired.</li>
+<li>Allows for community-based improvement of the quality of the edition, crowdsourcing its creation.</li>
+<li>If the project dies, anyone may make a copy of the edition and continue it for themselves.</li>
+</ul>
+</section>
+<section id="problem-data-storage" class="slide level1">
+<h1>Problem: Data Storage</h1>
+<ul>
+<li>Most digital editions have their annotations and other features locked away in a database.</li>
+<li>Most WordPress, CommentPress, and Drupal editions have this problem.</li>
+<li>Difficult to download, difficult for text analysis, difficult to extract for future derivative editions.</li>
+</ul>
+</section>
+<section id="data-storage-solution" class="slide level1">
+<h1>Data Storage Solution</h1>
+<ul>
+<li>Encode annotations in TEI XML, and programmatically export them to an annotation interface like Hypothesis.</li>
+<li>Allows for parallel static (TEI) and dynamic (database) data storage.</li>
+<li>Unlike WordPress, XML is future-proof, easily exportable to other formats (e.g. EPUB, PDF, etc).</li>
+</ul>
+</section>
+<section id="problem-repeatability" class="slide level1">
+<h1>Problem: Repeatability</h1>
+<ul>
+<li>Most digital edition projects are limited to one text or author.</li>
+<li>Whitman Archive, Rosetti Archive, Etc.</li>
+<li>Technology created for these editions must be heavily adapted or re-created to be used with other editions.</li>
+</ul>
+</section>
+<section id="repeatability-solution" class="slide level1">
+<h1>Repeatability Solution</h1>
+<ul>
+<li>Create a standard-compliant, abstracted technological framework and workflow that can easily be reused in the creation of other digital editions.</li>
+</ul>
+</section>
+<section id="problem-interface" class="slide level1">
+<h1>Problem: Interface</h1>
+<ul>
+<li>Many critical editions are so rich with notes and features that it becomes difficult to read the text.</li>
+</ul>
+<figure>
+<img src="ship-of-theseus-3.jpg" />
+</figure>
+</section>
+<section id="interface-solution" class="slide level1">
+<h1>Interface Solution</h1>
+<ul>
+<li>TEI (with XSLT, jQuery) allows for programmatic selection of these extra features, allowing the user to control what he or she sees.</li>
+<li>Everything can be turned on or off.</li>
+</ul>
+</section>
+<section id="annotation-platforms" class="slide level1">
+<h1>Annotation Platforms</h1>
+<ul>
+<li>OpenBook (obsolete)</li>
+<li>CommentPress (based on WordPress)</li>
+<li>Genius (proprietary)</li>
+<li>Drupal Annotate (requires Drupal)</li>
+<li>Annotator.js (not bad)<br />
+</li>
+<li>Hypothesis h (not bad)</li>
+</ul>
+</section>
+<section id="a-proposed-digital-edition-stack" class="slide level1">
+<h1>A (Proposed) Digital Edition Stack</h1>
+<ul>
+<li><strong>The text</strong>: TEI XML</li>
+<li><strong>The interface</strong>: repeatable XSLT, jQuery</li>
+<li><strong>Version control</strong>: git</li>
+<li><strong>Project management platform, open-source platform for crowdsourcing community contributions</strong>: GitHub or analogous git-based platform</li>
+<li><strong>Open-access annotation platform</strong>: locally installed Hypothesis <code>h</code> container</li>
+</ul>
+</section>
+<section id="what-to-do-about-pdfs-facsimile-editions" class="slide level1">
+<h1>What to do about PDFs / Facsimile Editions?</h1>
+<ul>
+<li>Two methods. Not mutually exclusive, but may be chained.</li>
+</ul>
+</section>
+<section id="best-method" class="slide level1">
+<h1>Best Method</h1>
+<ul>
+<li>Extract text from PDF, maintaining page location information.</li>
+<li>Encode into TEI XML.</li>
+<li>Write XSL to display words according to their locations on the original page.</li>
+<li>Extract images from PDF, and overlay on TEI (XSL -&gt; HTML).</li>
+<li>Import existing footnotes into a local instance of Hypothesis H using the H HTTP API.</li>
+</ul>
+</section>
+<section id="fastest-method" class="slide level1">
+<h1>Fastest Method</h1>
+<ul>
+<li>Skip TEI encoding for now.</li>
+<li>Import existing footnotes into a local instance of Hypothesis H, but associate the annotations with the PDF rather than the TEI text.</li>
+</ul>
+</section>
+<section id="links" class="slide level1">
+<h1>Links</h1>
+<ul>
+<li><a href="http://git.io/v4kIw" class="uri">http://git.io/v4kIw</a> (the edition homepage)</li>
+<li><a href="http://github.com/JonathanReeve/corpus-joyce-portrait-tei" class="uri">http://github.com/JonathanReeve/corpus-joyce-portrait-tei</a> (long form for the edition homepage)</li>
+<li><a href="http://jonreeve.com/portrait/portrait.xml" class="uri">http://jonreeve.com/portrait/portrait.xml</a> (an alpha display build)</li>
+<li><a href="http://jonreeve.com/presentations/digital-editions" class="uri">http://jonreeve.com/presentations/digital-editions</a> (this presentation)</li>
+</ul>
+</section>
+    </div>
+  </div>
+
+  <script src="../../assets/js/vendor/reveal.js/lib/js/head.min.js"></script>
+  <script src="../../assets/js/vendor/reveal.js/js/reveal.js"></script>
+
+  <script>
+
+      // Full list of configuration options available at:
+      // https://github.com/hakimel/reveal.js#configuration
+      Reveal.initialize({
+
+        // Optional reveal.js plugins
+        dependencies: [
+          { src: '../../assets/js/vendor/reveal.js/lib/js/classList.js', condition: function() { return !document.body.classList; } },
+          { src: '../../assets/js/vendor/reveal.js/plugin/zoom-js/zoom.js', async: true },
+          { src: '../../assets/js/vendor/reveal.js/plugin/notes/notes.js', async: true }
+        ]
+      });
+    </script>
+    </body>
+</html>
