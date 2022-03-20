@@ -25,21 +25,22 @@ executable jonreeve
     , aeson
     , async
     , base
-    , blaze-html
-    , blaze-markup
-    , commonmark-simple
+    , clay
     , containers
     , data-default
     , dependent-sum
     , directory
-    , ema                 >=0.6
+    , ema            >=0.6
+    , feed
     , filepath
+    , lucid
     , lvar
     , monad-logger
-    , neat-interpolation
+    , mtl
     , pandoc
     , pandoc-types
-    , pathtree
+    , path
+    , PyF
     , relude
     , shower
     , some
@@ -50,6 +51,9 @@ executable jonreeve
     , unliftio
     , url-slug
     , uuid
+    , with-utf8
+    , xml-conduit
+    , xml-types
 
   mixins:
     base hiding (Prelude),
