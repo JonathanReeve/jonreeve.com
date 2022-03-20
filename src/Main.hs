@@ -45,12 +45,15 @@ instance Ema Model (Either FilePath SR) where
           else
             if fp == "tags.html"
               then pure $ Right $ SR_Html R_Tags
-              else do
-                if null fp
-                  then pure $ Right $ SR_Html R_Index
+              else
+                if fp == "cv.html"
+                  then pure $ Right $ SR_Html R_CV
                   else do
-                    basePath <- toString <$> T.stripSuffix ".html" (toText fp)
-                    pure $ Right $ SR_Html $ R_BlogPost $ basePath <> ".org"
+                    if null fp
+                      then pure $ Right $ SR_Html R_Index
+                      else do
+                        basePath <- toString <$> T.stripSuffix ".html" (toText fp)
+                        pure $ Right $ SR_Html $ R_BlogPost $ basePath <> ".org"
 
   -- Routes to write when generating the static site.
   allRoutes (Map.keys . modelPosts -> posts) =
