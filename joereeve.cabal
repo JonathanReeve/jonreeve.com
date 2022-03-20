@@ -4,7 +4,7 @@ version:            0.1.0.0
 license:            AGPL-3.0-only
 copyright:          2021 Sridhar Ratnakumar
 maintainer:         srid@srid.ca
-author:             Sridhar Ratnakumar
+author:             Jon
 category:           Web
 
 -- A short (one-line) description of the package.
