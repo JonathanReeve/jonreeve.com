@@ -30,7 +30,7 @@ instance Ema Model (Either FilePath SR) where
             Nothing -> error "404"
             Just doc ->
               -- TODO: get date from pandoc
-              "post/" <> fp -<.> "html"
+              "posts/" <> fp -<.> "html"
         R_Tags -> "tags.html"
         R_CV -> "cv.html"
     Right SR_Feed -> "feed.xml"
@@ -39,12 +39,15 @@ instance Ema Model (Either FilePath SR) where
     -- TODO: other static toplevels
     if "assets/" `T.isPrefixOf` toText fp
       then pure $ Left fp
-      else do
-        if null fp
-          then pure $ Right $ SR_Html R_Index
+      else
+        if "images/" `T.isPrefixOf` toText fp
+          then pure $ Left fp
           else do
-            basePath <- toString <$> T.stripSuffix ".html" (toText fp)
-            pure $ Right $ SR_Html $ R_BlogPost $ basePath <> ".org"
+            if null fp
+              then pure $ Right $ SR_Html R_Index
+              else do
+                basePath <- toString <$> T.stripSuffix ".html" (toText fp)
+                pure $ Right $ SR_Html $ R_BlogPost $ basePath <> ".org"
 
   -- Routes to write when generating the static site.
   allRoutes (Map.keys . modelPosts -> posts) =
