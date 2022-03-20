@@ -7,19 +7,21 @@
 
 module JoeReeve.CV where
 
-import CV.Other
-import CV.Projects
-import CV.Shared
-import CV.Teaching
 import Clay hiding (Position, filter, header, html, title, type_)
 import Data.List
 import Data.Text qualified as T
 import Data.Text.Lazy qualified as TL
+import JoeReeve.CV.Other as Other
+import JoeReeve.CV.Projects as Projects
+import JoeReeve.CV.Shared as Shared
+import JoeReeve.CV.Teaching
 import Lucid
-import Rib.Parser.Pandoc
 
-md2Html :: CV.Shared.Markdown -> Html ()
-md2Html md = Rib.Parser.Pandoc.render $ Rib.Parser.Pandoc.parsePure readMarkdown md
+md2Html :: Shared.Markdown -> Html ()
+md2Html md =
+  -- Rib.Parser.Pandoc.render $ Rib.Parser.Pandoc.parsePure readMarkdown md
+  -- TODO: Lucid's unsafe string
+  undefined
 
 educationSection :: Html ()
 educationSection = section_ [class_ "education"] $ do
@@ -30,14 +32,14 @@ formatEducation :: Education -> Html ()
 formatEducation ed =
   tr_ [class_ "ed"] $
     mapM_ ((td_ []) . toHtml) $
-      sequence [degree, field, university, formatDate . when] ed
+      sequence [degree, field, university, formatDate . Other.when] ed
 
 awardsSection :: Html ()
 awardsSection = section_ [class_ "awards"] $ do
   h1_ [] "Awards and Fellowships"
   -- Attempt to sort
   -- ul_ [] $ mconcat $ sort $ Data.List.map formatUpdate CV.Other.miscAwards <> Data.List.map formatAwards projects
-  ul_ [] $ foldMap formatUpdate CV.Other.miscAwards <> foldMap formatAwards projects
+  ul_ [] $ foldMap formatUpdate Other.miscAwards <> foldMap formatAwards projects
 
 -- | Get all publications from a project
 formatAwards :: Project -> Html ()
@@ -64,7 +66,7 @@ formatProject proj = section_ [class_ "project"] $ do
     span_ [] $ toHtml $ formatDateRange (dateRange proj)
     span_ [class_ "role"] $ formatRole $ role proj
     span_ [class_ "desc"] $ md2Html $ desc proj
-  ul_ [class_ "updates", style_ "margin-left: 1em"] $ mapM_ formatUpdate $ CV.Projects.updates proj
+  ul_ [class_ "updates", style_ "margin-left: 1em"] $ mapM_ formatUpdate $ Projects.updates proj
 
 badges :: URI -> Html ()
 badges repo =

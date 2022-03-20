@@ -6,8 +6,8 @@ module JoeReeve.CV.Other where
 
 -- import Formatting
 
-import CV.Shared
 import Data.Text
+import JoeReeve.CV.Shared
 
 data Education = Education
   { when :: Date,

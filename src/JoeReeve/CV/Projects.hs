@@ -2,8 +2,7 @@
 
 module JoeReeve.CV.Projects where
 
-import CV.Shared
-import Data.Text
+import JoeReeve.CV.Shared
 
 data Project = Project
   { title :: Text,
@@ -15,7 +14,7 @@ data Project = Project
     desc :: Markdown,
     updates :: [Update]
   }
-  deriving (Show)
+  deriving stock (Show)
 
 data ProjectRole = Creator | CoCreator | Developer | Collaborator | ResearchAssistant deriving (Show)
 

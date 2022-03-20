@@ -6,7 +6,7 @@ import Data.Maybe
 import Data.Text
 import Data.Text.Lazy (toStrict)
 import Data.XML.Types as XML
-import SiteData
+import JoeReeve.SiteData as SiteData
 import Text.Atom.Feed qualified as Atom
 import Text.Atom.Feed.Export qualified as Export
 import Text.XML
@@ -46,7 +46,7 @@ feed posts =
 renderFeed :: [Post] -> Text
 renderFeed posts =
   fromMaybe "RSS feed broken! :(" $
-    fmap (toStrict . renderText def) $
+    fmap (Data.Text.Lazy.toStrict . renderText def) $
       elementToDoc $
         Export.xmlFeed $
           (feed posts)

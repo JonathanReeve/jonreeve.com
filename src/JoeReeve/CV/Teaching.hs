@@ -2,9 +2,9 @@
 
 module JoeReeve.CV.Teaching where
 
-import CV.Shared hiding (url)
 import Data.List (reverse, sortOn)
 import Data.Text qualified as T hiding (reverse)
+import JoeReeve.CV.Shared hiding (url)
 
 type Markdown = T.Text
 
@@ -42,8 +42,8 @@ sortedTeaching = reverse $ sortOn getSortDate $ expandedTeaching teaching
 
 getSortDate :: Teaching -> Date
 getSortDate t = case t of
-  Workshop d _ _ _ _ -> head d
-  Course d _ _ _ _ _ _ -> start $ head d
+  Workshop d _ _ _ _ -> maybe (error "empty!") head $ nonEmpty d
+  Course d _ _ _ _ _ _ -> start $ maybe (error "empty!") head $ nonEmpty d
 
 -- | Convert entries with multiple dates/dateranges to individual entries.
 expandedTeaching :: [Teaching] -> [Teaching]

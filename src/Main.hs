@@ -9,6 +9,7 @@ import Data.Text qualified as T
 import Ema (Ema (..))
 import Ema qualified
 import Ema.CLI qualified
+import JoeReeve.Main ()
 import System.FilePath ((</>))
 import System.UnionMount qualified as UnionMount
 import Text.Pandoc.Definition (Pandoc (..))

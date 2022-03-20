@@ -4,7 +4,6 @@
 -- | Site-wide config and data.
 module JoeReeve.SiteData where
 
-import Data.Text
 import PyF
 
 domain :: Text

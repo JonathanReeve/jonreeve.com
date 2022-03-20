@@ -17,8 +17,6 @@ module JoeReeve.Main where
 
 -- My modules
 
-import CSS
-import CV qualified
 import Clay qualified as C
 import Control.Monad
 import Control.Monad.Identity (Identity)
@@ -30,18 +28,17 @@ import Data.Map.Strict qualified as Map
 import Data.Text (Text)
 import Data.Text qualified as T
 import Data.Text.Lazy qualified as LT
-import Development.Shake
 import GHC.Generics (Generic)
+import JoeReeve.CSS qualified as CSS
+import JoeReeve.CV qualified as CV
+import JoeReeve.Pandoc qualified as Pandoc
+import JoeReeve.RSS qualified as RSS
+import JoeReeve.SiteData qualified as SiteData
 import Lucid
 import Lucid.Base
 import Main.Utf8
-import Pandoc
 import PyF
-import RSS
-import Rib (IsRoute)
-import Rib qualified
-import SiteData
-import Text.Pandoc (handleError, runIO)
+import Text.Pandoc (Pandoc, handleError, runIO)
 import Text.Pandoc.Builder (setMeta)
 import Text.Pandoc.Citeproc (processCitations)
 import Text.Pandoc.Class (PandocMonad)
@@ -59,16 +56,16 @@ data Route a where
 
 -- | The `IsRoute` instance allows us to determine the target .html path for
 -- each route. This affects what `routeUrl` will return.
-instance IsRoute Route where
-  routeFile = \case
-    Route_Index -> pure "index.html"
-    Route_Tags -> pure "tags/index.html"
-    Route_CV -> pure "cv.html"
-    Route_Article srcPath -> do
-      let (year, month, _day, slug) = parseJekyllFilename srcPath
-      let slug' = [c | c <- slug, c `notElem` (",.?!-:;\"\'" :: String)]
-      pure $ year ++ "/" ++ month ++ "/" ++ slug ++ "/index.html"
-    Route_Feed -> pure "feed.xml"
+routeFile :: Applicative m => Route a -> m String
+routeFile = \case
+  Route_Index -> pure "index.html"
+  Route_Tags -> pure "tags/index.html"
+  Route_CV -> pure "cv.html"
+  Route_Article srcPath -> do
+    let (year, month, _day, slug) = parseJekyllFilename srcPath
+    let slug' = [c | c <- slug, c `notElem` (",.?!-:;\"\'" :: String)]
+    pure $ year ++ "/" ++ month ++ "/" ++ slug ++ "/index.html"
+  Route_Feed -> pure "feed.xml"
 
 parseJekyllFilename :: FilePath -> (String, String, String, String)
 parseJekyllFilename fn =
@@ -78,22 +75,12 @@ parseJekyllFilename fn =
     _ ->
       error "Malformed filename"
 
--- | Main entry point to our generator.
---
--- `Rib.run` handles CLI arguments, and takes three parameters here.
---
--- 1. Directory `content`, from which static files will be read.
--- 2. Directory `dest`, under which target files will be generated.
--- 3. Shake action to run.
---
--- In the shake action you would expect to use the utility functions
--- provided by Rib to do the actual generation of your static site.
-main :: IO ()
-main = withUtf8 $ Rib.run "content" "dest" generateSite
-
 -- | Shake action for generating the static site
-generateSite :: Action ()
+generateSite :: IO ()
 generateSite = do
+  pure undefined
+
+{-
   -- Copy over the static files
   Rib.buildStaticFiles
     [ "assets/**",
@@ -127,17 +114,18 @@ generateSite = do
       Map.fromListWith (<>) $
         flip concatMap as $ \(r, doc) ->
           (,[(r, doc)]) <$> tags (getMeta doc)
+-}
 
 -- | Convert the posts we've read into Post types that can be read
 -- by the RSS/Atom module.
-toPosts :: Route a -> [(Route Pandoc, Pandoc)] -> [Post]
+toPosts :: Route a -> [(Route Pandoc, Pandoc)] -> [RSS.Post]
 toPosts r docs = [toPost r doc | doc <- docs]
   where
-    toPost :: Route a -> (Route Pandoc, Pandoc) -> Post
+    toPost :: Route a -> (Route Pandoc, Pandoc) -> RSS.Post
     toPost r (r', doc) = RSS.Post postDate postUrl postContent postTitle
       where
         postDate = date (getMeta doc)
-        postUrl = SiteData.domain <> Rib.routeUrl r'
+        postUrl = SiteData.domain <> undefined -- Rib.routeUrl r'
         postContent = pandocToText doc
         postTitle = title (getMeta doc)
     pandocToText :: Pandoc -> T.Text
@@ -167,7 +155,7 @@ renderPage route val = html_ [lang_ "en"] $ do
     div_ [id_ "headerWrapper"] $ do
       header_ [class_ "navbar"] $ do
         section_ [class_ "navbar-section"] $ do
-          a_ [class_ "navbar-brand", href_ $ Rib.routeUrl Route_Index] $ do
+          a_ [class_ "navbar-brand", href_ $ routeUrl Route_Index] $ do
             "Jonathan Reeve: "
             span_ [] "Computational Literary Analysis"
         section_ [class_ "navbar-section"] $ do
@@ -181,7 +169,7 @@ renderPage route val = html_ [lang_ "en"] $ do
     footer_ [] $ do
       div_ [class_ "container"] $ do
         div_ [class_ "columns"] $ do
-          div_ [class_ "column col-8"] $ CV.md2Html coda
+          div_ [class_ "column col-8"] $ CV.md2Html SiteData.coda
           div_ [class_ "column col-4"] $ do
             div_ [class_ "icons"] $ do
               a_ [href_ "http://github.com/JonathanReeve"] gitHubIcon
@@ -202,7 +190,7 @@ renderPage route val = html_ [lang_ "en"] $ do
         script_ [] ("hljs.initHighlightingOnLoad();" :: Html ())
   where
     navItem :: Route a -> Html () -> Html ()
-    navItem navRoute label = li_ [class_ "nav-item"] $ a_ [href_ $ Rib.routeUrl navRoute] label
+    navItem navRoute label = li_ [class_ "nav-item"] $ a_ [href_ $ routeUrl navRoute] label
 
     routeTitle :: Html ()
     routeTitle = case route of
@@ -228,7 +216,7 @@ renderPage route val = html_ [lang_ "en"] $ do
               li_ [class_ "post"] $ do
                 let meta = getMeta src
                 div_ [vocab_ "https://schema.org", typeof_ "blogPosting"] $ do
-                  h2_ [class_ "postTitle", property_ "headline"] $ a_ [href_ (Rib.routeUrl r)] $ toHtml $ title meta
+                  h2_ [class_ "postTitle", property_ "headline"] $ a_ [href_ (routeUrl r)] $ toHtml $ title meta
                   p_ [class_ "meta"] $ do
                     span_ [class_ "date", property_ "datePublished", content_ (date meta)] $ toHtml $ T.concat ["(", date meta, ")"]
                     span_ [class_ "tags", property_ "keywords", content_ (T.intercalate "," (tags meta))] $ do
@@ -247,7 +235,7 @@ renderPage route val = html_ [lang_ "en"] $ do
               forM_ rs $ \(r, src) -> do
                 li_ [class_ "pages"] $ do
                   let meta = getMeta src
-                  b_ $ a_ [href_ (Rib.routeUrl r)] $ toHtml $ title meta
+                  b_ $ a_ [href_ (routeUrl r)] $ toHtml $ title meta
       Route_CV -> do
         main_ [class_ "container"] $ do
           h1_ "Curriculum Vitae"
@@ -285,10 +273,10 @@ instance FromJSON SrcMeta where
 getMeta :: Pandoc -> SrcMeta
 getMeta src = case Pandoc.extractMeta src of
   Nothing -> error "No YAML metadata"
-  Just (Left e) -> error $ T.unpack e
+  Just (Left e) -> error e
   Just (Right val) -> case fromJSON val of
     Aeson.Error e -> do
-      error $ "JSON error: " <> e
+      error $ "JSON error: " <> show e
     Aeson.Success v -> v
 
 -- Schema.org RDFa
@@ -381,3 +369,5 @@ chatIcon =
 0 64-28.75 64-63.1V63.1C511.1 28.75 483.2 0 447.1 0zM464 352c0 8.75-7.25 16-16
 16h-160l-80 60v-60H64c-8.75 0-16-7.25-16-16V64c0-8.75 7.25-16 16-16h384c8.75 0
 16 7.25 16 16V352z|]
+
+routeUrl = undefined

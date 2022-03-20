@@ -109,3 +109,15 @@ executable jonreeve
   main-is:            Main.hs
   hs-source-dirs:     src
   default-language:   Haskell2010
+
+  other-modules:
+    JoeReeve.Main
+    JoeReeve.Pandoc
+    JoeReeve.RSS
+    JoeReeve.SiteData
+    JoeReeve.CV
+    JoeReeve.CSS
+    JoeReeve.CV.Other
+    JoeReeve.CV.Projects
+    JoeReeve.CV.Shared
+    JoeReeve.CV.Teaching
