@@ -17,30 +17,17 @@ To develop with full IDE support in Visual Studio Code, follow these steps:
 
 All but the final step need to be done only once. Check [the Ema tutorial](https://ema.srid.ca/start/tutorial) next.
 
-## Note
+## Instructions
 
-- This project uses [relude](https://github.com/kowainik/relude) as its prelude, as well as Tailwind+Blaze as CSS utility and HTML DSL. Even though the author highly recommends them, you are of course free to swap them out for the library of your choice.
-- As a first step to using this template, 
-  - change the project name in .cabal, flake.nix and hie.yaml files; then commit changes to Git.
-      - To automate this, `mv jonreeve.cabal myproject.cabal; nix run nixpkgs#sd -- jonreeve myproject * */* .github/*/*`
-- Configuration:
-  - To change the port, see `./.ghcid`
-  - To change the CLI arguments used by bin/run, see file .ghcid
-  - To update Ema to latest Git revision, run `nix flake lock --update-input ema`
-  - To add/remove Haskell dependencies, see the .cabal file. If a dependency is unavailable in nixpkgs, you can override it (to point to say a Git repo) in the `overrides` attribute of flake.nix. You can imitate the manner in which the `ema` (or `lvar`) package itself is overriden.
-- To generate static site, run:
-  ```sh
-  mkdir ../output 
-  cd content && nix run .. -- gen ../../output
-  ```
-  - You might want to change or remove the `<base>` tag in `Main.hs` depending where you will be deploying the site.
+To run locally,
 
-## Non-Nix workflow
+```
+bin/run
+```
 
-In order to use this repository without Nix, such as with plain Cabal or Stack, you need to have the following installed manually:
+To generate static site
 
-- ghcid (used by `bin/run-haskell` which `./Procfile` invokes)
-- [tailwind runner](https://hackage.haskell.org/package/tailwind) along with [tailwind CLI](https://tailwindcss.com/docs/installation)
-- [foreman](http://ddollar.github.io/foreman/) (or one of its rewrites)
-
-Once all the above are installed, run `foreman start` to start the Ema live server.
+```
+nix build
+./result/bin/joereeve gen /tmp
+```

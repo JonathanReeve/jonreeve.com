@@ -57,8 +57,17 @@ instance Ema Model (Either FilePath SR) where
 
   -- Routes to write when generating the static site.
   allRoutes (Map.keys . modelPosts -> posts) =
-    [Left "assets"]
-      <> fmap Right []
+    (fmap (Left . ("content" </>)) ["assets", "images"])
+      <> fmap
+        ( Right
+            . SR_Html
+        )
+        ( [ R_Index,
+            R_CV,
+            R_Tags
+          ]
+            <> fmap R_BlogPost posts
+        )
 
 -- ------------------------
 -- Main entry point
