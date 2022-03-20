@@ -110,7 +110,7 @@ generateSite = do
 
 -- | Convert the posts we've read into Post types that can be read
 -- by the RSS/Atom module.
-toPosts :: Ema.Ema Model (Either FilePath SR) => Model -> [RSS.Post]
+toPosts :: Model -> [RSS.Post]
 toPosts model =
   flip fmap (Map.toList $ modelPosts model) $ \(fp, doc) ->
     let r = R_BlogPost fp
@@ -131,7 +131,7 @@ stylesheet url = link_ [rel_ "stylesheet", href_ url]
 script url = script_ [src_ url, async_ T.empty] T.empty
 
 -- | Define your site HTML here
-renderPage :: Ema.Ema Model (Either FilePath SR) => R -> Model -> Html ()
+renderPage :: R -> Model -> Html ()
 renderPage route val = html_ [lang_ "en"] $ do
   head_ $ do
     meta_ [httpEquiv_ "Content-Type", content_ "text/html; charset=utf-8"]
@@ -374,6 +374,6 @@ chatIcon =
 16h-160l-80 60v-60H64c-8.75 0-16-7.25-16-16V64c0-8.75 7.25-16 16-16h384c8.75 0
 16 7.25 16 16V352z|]
 
-routeUrl :: Ema.Ema Model (Either FilePath SR) => Model -> R -> Text
+routeUrl :: Model -> R -> Text
 routeUrl m htmlR =
   Ema.routeUrl @(Either FilePath SR) m $ Right $ SR_Html htmlR
