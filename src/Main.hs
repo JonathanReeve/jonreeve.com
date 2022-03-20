@@ -10,6 +10,7 @@ import Ema (Ema (..))
 import Ema qualified
 import Ema.CLI qualified
 import JoeReeve.Main ()
+import JoeReeve.Pandoc qualified as Pandoc
 import System.FilePath ((</>))
 import System.UnionMount qualified as UnionMount
 import Text.Pandoc.Definition (Pandoc (..))
@@ -119,20 +120,22 @@ main =
       void . UnionMount.mountOnLVar contentDir pats ignorePats model model0 $ \() fp action -> do
         logD $ "fsnotify changed: " <> toText fp
         case action of
+          -- Add or update this file to the model.
           UnionMount.Refresh _ () -> do
-            mData <- readSource $ contentDir </> fp
+            mData <- readOrgFile $ contentDir </> fp
             pure $ maybe id (\d -> modelInsert fp d) mData
+          -- Remove this file from the model.
           UnionMount.Delete ->
             pure $ modelDelete fp
   where
     -- Parse .org -> Pandoc
-    readSource :: (MonadIO m, MonadLogger m) => FilePath -> m (Maybe Pandoc)
-    readSource fp =
+    readOrgFile :: (MonadIO m, MonadLogger m) => FilePath -> m (Maybe Pandoc)
+    readOrgFile fp =
       runMaybeT $ do
         logD $ "Reading " <> toText fp
-        s <- readFileText fp
+        doc <- liftIO $ Pandoc.parse Pandoc.readOrg fp
         -- TODO: pandoc parser  for org
-        pure $ Pandoc mempty mempty
+        pure doc
 
 newtype BadMarkdown = BadMarkdown Text
   deriving stock (Show)
@@ -153,5 +156,5 @@ render act model = \case
     Ema.AssetGenerated Ema.Html $ renderHtml act model r
 
 renderHtml :: Some Ema.CLI.Action -> Model -> SR -> LByteString
-renderHtml emaAction model r = do
+renderHtml _emaAction model r = do
   show model
