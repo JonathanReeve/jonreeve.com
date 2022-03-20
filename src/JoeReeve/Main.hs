@@ -18,30 +18,22 @@ module JoeReeve.Main where
 -- My modules
 
 import Clay qualified as C
-import Control.Monad
-import Control.Monad.Identity (Identity)
 import Data.Aeson (FromJSON, fromJSON)
 import Data.Aeson qualified as Aeson
-import Data.List (sortOn)
-import Data.Map (Map)
 import Data.Map.Strict qualified as Map
-import Data.Text (Text)
 import Data.Text qualified as T
 import Data.Text.Lazy qualified as LT
-import GHC.Generics (Generic)
+import Ema qualified
 import JoeReeve.CSS qualified as CSS
 import JoeReeve.CV qualified as CV
 import JoeReeve.Pandoc qualified as Pandoc
 import JoeReeve.RSS qualified as RSS
 import JoeReeve.SiteData qualified as SiteData
+import JoeReeve.Types
 import Lucid
 import Lucid.Base
-import Main.Utf8
 import PyF
-import Text.Pandoc (Pandoc, handleError, runIO)
-import Text.Pandoc.Builder (setMeta)
-import Text.Pandoc.Citeproc (processCitations)
-import Text.Pandoc.Class (PandocMonad)
+import Text.Pandoc (Pandoc)
 
 -- | Route corresponding to each generated static page.
 --
@@ -136,7 +128,7 @@ stylesheet url = link_ [rel_ "stylesheet", href_ url]
 script url = script_ [src_ url, async_ T.empty] T.empty
 
 -- | Define your site HTML here
-renderPage :: Route a -> a -> Html ()
+renderPage :: Ema.Ema Model (Either FilePath SR) => R -> Model -> Html ()
 renderPage route val = html_ [lang_ "en"] $ do
   head_ $ do
     meta_ [httpEquiv_ "Content-Type", content_ "text/html; charset=utf-8"]
@@ -155,15 +147,14 @@ renderPage route val = html_ [lang_ "en"] $ do
     div_ [id_ "headerWrapper"] $ do
       header_ [class_ "navbar"] $ do
         section_ [class_ "navbar-section"] $ do
-          a_ [class_ "navbar-brand", href_ $ routeUrl Route_Index] $ do
+          a_ [class_ "navbar-brand", href_ $ routeUrl val R_Index] $ do
             "Jonathan Reeve: "
             span_ [] "Computational Literary Analysis"
         section_ [class_ "navbar-section"] $ do
           ul_ [class_ "nav"] $ do
-            navItem Route_Index "posts"
-            navItem Route_CV "cv"
-            navItem Route_Tags "tags"
-            navItem Route_Feed "feed"
+            navItem R_Index "posts"
+            navItem R_CV "cv"
+            navItem R_Tags "tags"
     div_ [class_ "container"] $ do
       content
     footer_ [] $ do
@@ -189,19 +180,19 @@ renderPage route val = html_ [lang_ "en"] $ do
         script_ [id_ "MathJax-script", async_ "", src_ "https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"] T.empty
         script_ [] ("hljs.initHighlightingOnLoad();" :: Html ())
   where
-    navItem :: Route a -> Html () -> Html ()
-    navItem navRoute label = li_ [class_ "nav-item"] $ a_ [href_ $ routeUrl navRoute] label
+    navItem :: R -> Html () -> Html ()
+    navItem navRoute label = li_ [class_ "nav-item"] $ a_ [href_ $ routeUrl val navRoute] label
 
     routeTitle :: Html ()
     routeTitle = case route of
-      Route_Index -> "Posts"
-      Route_Tags -> "Tags"
-      Route_CV -> "CV"
-      Route_Article _ -> toHtml $ title $ getMeta val
-      Route_Feed -> "Feed"
+      R_Index -> "Posts"
+      R_Tags -> "Tags"
+      R_CV -> "CV"
+      R_BlogPost k ->
+        toHtml $ title $ maybe (error "missing!") getMeta $ modelLookup (traceShowId k) val
     content :: Html ()
     content = case route of
-      Route_Index -> do
+      R_Index -> do
         section_ [id_ "greeting"] $ do
           CV.md2Html SiteData.greeting
           div_ [class_ "icons"] $ do
@@ -211,12 +202,12 @@ renderPage route val = html_ [lang_ "en"] $ do
             img_ [src_ "assets/images/equal.svg"]
             img_ [src_ "assets/images/noun_education_1909997.svg"]
         main_ [class_ "container"] $
-          forM_ val $ \(r, src) -> do
+          forM_ (Map.toList $ modelPosts val) $ \(r, src) -> do
             section_ [id_ "postList"] $ do
               li_ [class_ "post"] $ do
                 let meta = getMeta src
                 div_ [vocab_ "https://schema.org", typeof_ "blogPosting"] $ do
-                  h2_ [class_ "postTitle", property_ "headline"] $ a_ [href_ (routeUrl r)] $ toHtml $ title meta
+                  h2_ [class_ "postTitle", property_ "headline"] $ a_ [href_ (routeUrl val $ R_BlogPost r)] $ toHtml $ title meta
                   p_ [class_ "meta"] $ do
                     span_ [class_ "date", property_ "datePublished", content_ (date meta)] $ toHtml $ T.concat ["(", date meta, ")"]
                     span_ [class_ "tags", property_ "keywords", content_ (T.intercalate "," (tags meta))] $ do
@@ -225,32 +216,41 @@ renderPage route val = html_ [lang_ "en"] $ do
         where
           mkTag :: Text -> Html ()
           mkTag tag = a_ [class_ "chip", rel_ "tag", href_ ("/tags/#" <> tag)] $ toHtml tag
-      Route_Tags -> do
+      R_Tags -> do
         h1_ routeTitle
+        let rposts = Map.toList $ modelPosts val
+            tags = groupByTag rposts
         div_ $
-          forM_ (sortOn (T.toLower . fst) $ Map.toList val) $ \(tag, rs) -> do
+          forM_ (sortOn (T.toLower . fst) $ Map.toList tags) $ \(tag, rs) -> do
             a_ [id_ tag] mempty
             h2_ $ toHtml tag
             ul_ $
               forM_ rs $ \(r, src) -> do
                 li_ [class_ "pages"] $ do
                   let meta = getMeta src
-                  b_ $ a_ [href_ (routeUrl r)] $ toHtml $ title meta
-      Route_CV -> do
+                  b_ $ a_ [href_ (routeUrl val $ R_BlogPost r)] $ toHtml $ title meta
+      R_CV -> do
         main_ [class_ "container"] $ do
           h1_ "Curriculum Vitae"
           h2_ "Jonathan Reeve"
           CV.cv
-      Route_Article srcPath -> do
+      R_BlogPost srcPath -> do
         h1_ routeTitle
         let (y, m, d, _) = parseJekyllFilename srcPath
         p_ [fmt|Posted {y}-{m}-{d}|]
         article_ $
-          Pandoc.render val
+          case modelLookup srcPath val of
+            Nothing -> error "missing"
+            Just doc -> Pandoc.render doc
         hr_ []
         p_ [] "I welcome your comments and annotations in the Hypothes.is sidebar to the right. →"
         script_ [src_ "https://hypothes.is/embed.js"] T.empty
-      Route_Feed -> h1_ "RSS feed in development. Coming soon."
+
+groupByTag :: Foldable t => t (a, Pandoc) -> Map Text [(a, Pandoc)]
+groupByTag as =
+  Map.fromListWith (<>) $
+    flip concatMap as $ \(r, doc) ->
+      (,[(r, doc)]) <$> tags (getMeta doc)
 
 -- | This is rather complicated.
 -- @#+tags:@ and @#+filetags:@ aren't recognized by Pandoc as metadata tags.
@@ -276,7 +276,7 @@ getMeta src = case Pandoc.extractMeta src of
   Just (Left e) -> error e
   Just (Right val) -> case fromJSON val of
     Aeson.Error e -> do
-      error $ "JSON error: " <> show e
+      error $ "JSON error: " <> show e <> " in " <> show val
     Aeson.Success v -> v
 
 -- Schema.org RDFa
@@ -370,4 +370,6 @@ chatIcon =
 16h-160l-80 60v-60H64c-8.75 0-16-7.25-16-16V64c0-8.75 7.25-16 16-16h384c8.75 0
 16 7.25 16 16V352z|]
 
-routeUrl = undefined
+routeUrl :: Ema.Ema Model (Either FilePath SR) => Model -> R -> Text
+routeUrl m htmlR =
+  Ema.routeUrl @(Either FilePath SR) m $ Right $ SR_Html htmlR

@@ -3,7 +3,6 @@
 module JoeReeve.Types where
 
 import Data.Map.Strict qualified as Map
-import JoeReeve.Main ()
 import Text.Pandoc.Definition (Pandoc (..))
 
 -- ------------------------

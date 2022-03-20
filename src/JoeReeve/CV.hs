@@ -21,7 +21,7 @@ md2Html :: Shared.Markdown -> Html ()
 md2Html md =
   -- Rib.Parser.Pandoc.render $ Rib.Parser.Pandoc.parsePure readMarkdown md
   -- TODO: Lucid's unsafe string
-  undefined
+  "TODO: markdown"
 
 educationSection :: Html ()
 educationSection = section_ [class_ "education"] $ do

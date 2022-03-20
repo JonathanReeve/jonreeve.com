@@ -10,19 +10,30 @@ import Data.Text qualified as T
 import Ema (Ema (..))
 import Ema qualified
 import Ema.CLI qualified
-import JoeReeve.Main ()
+import JoeReeve.Main (renderPage)
 import JoeReeve.Pandoc qualified as Pandoc
 import JoeReeve.Types
-import System.FilePath ((</>))
+import Lucid qualified
+import System.FilePath ((-<.>), (</>))
 import System.UnionMount qualified as UnionMount
 import Text.Pandoc.Definition (Pandoc (..))
 
 instance Ema Model (Either FilePath SR) where
-  encodeRoute _model = \case
+  encodeRoute model = \case
     Left fp -> fp
-    Right sr ->
+    Right (SR_Html r) ->
       -- TODO:  toString $ T.intercalate "/" (Slug.unSlug <$> toList slugs) <> ".html"
-      undefined
+      case r of
+        R_Index -> "index.html"
+        R_BlogPost fp ->
+          case modelLookup fp model of
+            Nothing -> error "404"
+            Just doc ->
+              -- TODO: get date from pandoc
+              "post/" <> fp -<.> "html"
+        R_Tags -> "tags.html"
+        R_CV -> "cv.html"
+    Right SR_Feed -> "feed.xml"
 
   decodeRoute _model fp = do
     -- TODO: other static toplevels
@@ -33,7 +44,7 @@ instance Ema Model (Either FilePath SR) where
           then pure $ Right $ SR_Html R_Index
           else do
             basePath <- toString <$> T.stripSuffix ".html" (toText fp)
-            pure $ Right $ SR_Html $ R_BlogPost $ basePath <> ".md"
+            pure $ Right $ SR_Html $ R_BlogPost $ basePath <> ".org"
 
   -- Routes to write when generating the static site.
   allRoutes (Map.keys . modelPosts -> posts) =
@@ -65,7 +76,7 @@ main =
       --
       -- We use the FileSystem helper to directly "mount" our files on to the
       -- LVar.
-      let pats = [((), "**/*.org")]
+      let pats = [((), "posts/*.org")]
           ignorePats = [".*"]
           contentDir = "content"
       void . UnionMount.mountOnLVar contentDir pats ignorePats model model0 $ \() fp action -> do
@@ -102,10 +113,12 @@ render act model = \case
     -- This instructs ema to treat this route "as is" (ie. a static file; no generation)
     -- The argument `fp` refers to the absolute path to the static file.
     Ema.AssetStatic fp
-  Right r ->
+  Right (SR_Html r) ->
     -- Generate a Html route; hot-reload is enabled.
     Ema.AssetGenerated Ema.Html $ renderHtml act model r
+  Right SR_Feed ->
+    Ema.AssetGenerated Ema.Other "TODO"
 
-renderHtml :: Some Ema.CLI.Action -> Model -> SR -> LByteString
+renderHtml :: Some Ema.CLI.Action -> Model -> R -> LByteString
 renderHtml _emaAction model r = do
-  show model
+  Lucid.renderBS $ renderPage r model
