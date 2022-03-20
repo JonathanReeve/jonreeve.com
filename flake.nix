@@ -18,7 +18,7 @@
   outputs = inputs@{ self, nixpkgs, flake-utils, ... }:
     flake-utils.lib.eachDefaultSystem (system:
       let
-        name = "ema-template";
+        name = "jonreeve";
         overlays = [ ];
         pkgs = import nixpkgs { inherit system overlays; config.allowBroken = true; };
         tailwind-haskell = inputs.tailwind-haskell.defaultPackage.${system};
