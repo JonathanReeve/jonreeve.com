@@ -110,14 +110,17 @@ generateSite = do
 
 -- | Convert the posts we've read into Post types that can be read
 -- by the RSS/Atom module.
-toPosts :: Route a -> [(Route Pandoc, Pandoc)] -> [RSS.Post]
-toPosts r docs = [toPost r doc | doc <- docs]
+toPosts :: Ema.Ema Model (Either FilePath SR) => Model -> [RSS.Post]
+toPosts model =
+  flip fmap (Map.toList $ modelPosts model) $ \(fp, doc) ->
+    let r = R_BlogPost fp
+     in toPost r doc
   where
-    toPost :: Route a -> (Route Pandoc, Pandoc) -> RSS.Post
-    toPost r (r', doc) = RSS.Post postDate postUrl postContent postTitle
+    toPost :: R -> Pandoc -> RSS.Post
+    toPost r doc = RSS.Post postDate postUrl postContent postTitle
       where
         postDate = date (getMeta doc)
-        postUrl = SiteData.domain <> undefined -- Rib.routeUrl r'
+        postUrl = SiteData.domain <> routeUrl model r
         postContent = pandocToText doc
         postTitle = title (getMeta doc)
     pandocToText :: Pandoc -> T.Text

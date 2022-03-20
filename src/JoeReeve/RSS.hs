@@ -43,10 +43,10 @@ feed posts =
         _ -> ""
     )
 
-renderFeed :: [Post] -> Text
+renderFeed :: [Post] -> LByteString
 renderFeed posts =
   fromMaybe "RSS feed broken! :(" $
-    fmap (Data.Text.Lazy.toStrict . renderText def) $
+    fmap (renderLBS def) $
       elementToDoc $
         Export.xmlFeed $
           (feed posts)

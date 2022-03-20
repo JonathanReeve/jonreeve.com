@@ -10,8 +10,9 @@ import Data.Text qualified as T
 import Ema (Ema (..))
 import Ema qualified
 import Ema.CLI qualified
-import JoeReeve.Main (renderPage)
+import JoeReeve.Main (renderPage, toPosts)
 import JoeReeve.Pandoc qualified as Pandoc
+import JoeReeve.RSS qualified as RSS
 import JoeReeve.Types
 import Lucid qualified
 import System.FilePath ((-<.>), (</>))
@@ -48,12 +49,15 @@ instance Ema Model (Either FilePath SR) where
               else
                 if fp == "cv.html"
                   then pure $ Right $ SR_Html R_CV
-                  else do
-                    if null fp
-                      then pure $ Right $ SR_Html R_Index
+                  else
+                    if fp == "feed.xml"
+                      then pure $ Right $ SR_Feed
                       else do
-                        basePath <- toString <$> T.stripSuffix ".html" (toText fp)
-                        pure $ Right $ SR_Html $ R_BlogPost $ basePath <> ".org"
+                        if null fp
+                          then pure $ Right $ SR_Html R_Index
+                          else do
+                            basePath <- toString <$> T.stripSuffix ".html" (toText fp)
+                            pure $ Right $ SR_Html $ R_BlogPost $ basePath <> ".org"
 
   -- Routes to write when generating the static site.
   allRoutes (Map.keys . modelPosts -> posts) =
@@ -124,7 +128,7 @@ render act model = \case
     -- Generate a Html route; hot-reload is enabled.
     Ema.AssetGenerated Ema.Html $ renderHtml act model r
   Right SR_Feed ->
-    Ema.AssetGenerated Ema.Other "TODO"
+    Ema.AssetGenerated Ema.Other $ RSS.renderFeed $ toPosts model
 
 renderHtml :: Some Ema.CLI.Action -> Model -> R -> LByteString
 renderHtml _emaAction model r = do
