@@ -9,6 +9,7 @@ import Data.Text qualified as T
 import Ema (Ema (..))
 import Ema qualified
 import Ema.CLI qualified
+import System.FilePath ((</>))
 import System.UnionMount qualified as UnionMount
 import Text.Pandoc.Definition (Pandoc (..))
 
@@ -113,10 +114,12 @@ main =
       -- LVar.
       let pats = [((), "**/*.org")]
           ignorePats = [".*"]
-      void . UnionMount.mountOnLVar "content" pats ignorePats model model0 $ \() fp action -> do
+          contentDir = "content"
+      void . UnionMount.mountOnLVar contentDir pats ignorePats model model0 $ \() fp action -> do
+        logD $ "fsnotify changed: " <> toText fp
         case action of
           UnionMount.Refresh _ () -> do
-            mData <- readSource fp
+            mData <- readSource $ contentDir </> fp
             pure $ maybe id (\d -> modelInsert fp d) mData
           UnionMount.Delete ->
             pure $ modelDelete fp
@@ -128,7 +131,7 @@ main =
         logD $ "Reading " <> toText fp
         s <- readFileText fp
         -- TODO: pandoc parser  for org
-        pure undefined
+        pure $ Pandoc mempty mempty
 
 newtype BadMarkdown = BadMarkdown Text
   deriving stock (Show)
@@ -150,4 +153,4 @@ render act model = \case
 
 renderHtml :: Some Ema.CLI.Action -> Model -> SR -> LByteString
 renderHtml emaAction model r = do
-  "TODO"
+  show model
