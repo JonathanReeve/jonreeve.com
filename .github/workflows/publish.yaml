@@ -1,0 +1,32 @@
+name: "Publish site"
+on:
+  # Run only when pushing to master branch
+  push:
+    branches:
+      - master
+jobs:
+  docs:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - uses: cachix/install-nix-action@v13
+        with:
+          install_url: https://nixos-nix-install-tests.cachix.org/serve/i6laym9jw3wg9mw6ncyrk6gjx4l34vvx/install
+          install_options: "--tarball-url-prefix https://nixos-nix-install-tests.cachix.org/serve"
+          extra_nix_config: |
+            experimental-features = nix-command flakes
+      - name: Build sources 🔧
+        run: |
+          nix build
+      - name: Generate HTML 🔧
+        run: |
+          mkdir ./output
+          export TARGET=$(pwd)/output
+          nix develop -c tailwind-run -o content/static/tailwind.css 'src/**/*.hs' 
+          cd ./content
+          ../result/bin/ema-template gen $TARGET
+      - name: Deploy to gh-pages 🚀
+        uses: peaceiris/actions-gh-pages@v3
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: output
