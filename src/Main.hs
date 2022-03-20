@@ -58,12 +58,6 @@ instance Ema Model (Either FilePath SR) where
 -- Main entry point
 -- ------------------------
 
-log :: MonadLogger m => Text -> m ()
-log = logInfoNS "jonreeve"
-
-logD :: MonadLogger m => Text -> m ()
-logD = logDebugNS "jonreeve"
-
 main :: IO ()
 main =
   -- runEma handles the CLI and starts the dev server (or generate static site
@@ -79,7 +73,7 @@ main =
       --
       -- We use the FileSystem helper to directly "mount" our files on to the
       -- LVar.
-      let pats = [((), "posts/*.org")]
+      let pats = [((), "posts/**/*.org")]
           ignorePats = [".*"]
           contentDir = "content"
       void . UnionMount.mountOnLVar contentDir pats ignorePats model model0 $ \() fp action -> do
@@ -99,12 +93,7 @@ main =
       runMaybeT $ do
         logD $ "Reading " <> toText fp
         doc <- liftIO $ Pandoc.parse Pandoc.readOrg fp
-        -- TODO: pandoc parser  for org
         pure doc
-
-newtype BadMarkdown = BadMarkdown Text
-  deriving stock (Show)
-  deriving anyclass (Exception)
 
 -- ------------------------
 -- Our site HTML
@@ -125,3 +114,9 @@ render act model = \case
 renderHtml :: Some Ema.CLI.Action -> Model -> R -> LByteString
 renderHtml _emaAction model r = do
   Lucid.renderBS $ renderPage r model
+
+log :: MonadLogger m => Text -> m ()
+log = logInfoNS "jonreeve"
+
+logD :: MonadLogger m => Text -> m ()
+logD = logDebugNS "jonreeve"

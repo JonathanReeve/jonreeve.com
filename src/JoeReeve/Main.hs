@@ -133,6 +133,7 @@ renderPage route val = html_ [lang_ "en"] $ do
   head_ $ do
     meta_ [httpEquiv_ "Content-Type", content_ "text/html; charset=utf-8"]
     title_ routeTitle
+    base_ [href_ "/"]
     mapM_
       stylesheet
       [ "/assets/css/spectre.min.css",
