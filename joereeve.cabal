@@ -115,6 +115,7 @@ executable jonreeve
     JoeReeve.Pandoc
     JoeReeve.RSS
     JoeReeve.SiteData
+    JoeReeve.Types
     JoeReeve.CV
     JoeReeve.CSS
     JoeReeve.CV.Other

@@ -1,4 +1,5 @@
 {-# LANGUAGE DeriveAnyClass #-}
+{-# OPTIONS_GHC -Wno-orphans #-}
 
 module Main where
 
@@ -11,61 +12,11 @@ import Ema qualified
 import Ema.CLI qualified
 import JoeReeve.Main ()
 import JoeReeve.Pandoc qualified as Pandoc
+import JoeReeve.Types
 import System.FilePath ((</>))
 import System.UnionMount qualified as UnionMount
 import Text.Pandoc.Definition (Pandoc (..))
 
--- ------------------------
--- Our site route
--- ------------------------
-
--- | Site Route
-data SR = SR_Html R | SR_Feed
-  deriving (Eq, Show)
-
--- | Html route
-data R
-  = R_Index
-  | R_BlogPost FilePath
-  | R_Tags
-  | R_CV
-  deriving (Eq, Show)
-
--- ------------------------
--- Our site model
--- ------------------------
-
-data Model = Model
-  { modelPosts :: Map FilePath Pandoc
-  }
-  deriving stock (Eq, Show)
-
-emptyModel :: Model
-emptyModel = Model mempty
-
-modelLookup :: FilePath -> Model -> Maybe Pandoc
-modelLookup k =
-  Map.lookup k . modelPosts
-
-modelInsert :: FilePath -> Pandoc -> Model -> Model
-modelInsert k v model =
-  let xs = Map.insert k v (modelPosts model)
-   in model
-        { modelPosts = xs
-        }
-
-modelDelete :: FilePath -> Model -> Model
-modelDelete k model =
-  model
-    { modelPosts = Map.delete k (modelPosts model)
-    }
-
--- | Once we have a "model" and "route" (as defined above), we should define the
--- @Ema@ typeclass to tell Ema how to decode/encode our routes, as well as the
--- list of routes to generate the static site with.
---
--- We use `Either` to represent either a static file route or a Markdown
--- generated route.
 instance Ema Model (Either FilePath SR) where
   encodeRoute _model = \case
     Left fp -> fp
