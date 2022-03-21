@@ -73,10 +73,10 @@ instance Ema Model (Either FilePath SR) where
   decodeRoute _model fp = do
     -- TODO: other static toplevels
     if "assets/" `T.isPrefixOf` toText fp
-      then pure $ Left fp
+      then pure $ Left $ "content" </> fp
       else
         if "images/" `T.isPrefixOf` toText fp
-          then pure $ Left fp
+          then pure $ Left $ "content" </> fp
           else
             if fp == "tags.html"
               then pure $ Right $ SR_Html R_Tags
