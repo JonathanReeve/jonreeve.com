@@ -1,7 +1,7 @@
 {-# LANGUAGE OverloadedStrings #-}
 
 -- | This is the CSS for the site.
-module JoeReeve.CSS where
+module JonReeve.CSS where
 
 import Clay
 -- (key, MediaType)

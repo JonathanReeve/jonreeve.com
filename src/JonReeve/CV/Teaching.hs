@@ -1,10 +1,10 @@
 {-# LANGUAGE OverloadedStrings #-}
 
-module JoeReeve.CV.Teaching where
+module JonReeve.CV.Teaching where
 
 import Data.List (reverse, sortOn)
 import Data.Text qualified as T hiding (reverse)
-import JoeReeve.CV.Shared hiding (url)
+import JonReeve.CV.Shared hiding (url)
 
 type Markdown = T.Text
 

@@ -1,8 +1,8 @@
 {-# LANGUAGE OverloadedStrings #-}
 
-module JoeReeve.CV.Projects where
+module JonReeve.CV.Projects where
 
-import JoeReeve.CV.Shared
+import JonReeve.CV.Shared
 
 data Project = Project
   { title :: Text,

@@ -9,7 +9,7 @@
 {-# LANGUAGE TemplateHaskell #-}
 {-# LANGUAGE TupleSections #-}
 
-module JoeReeve.Main where
+module JonReeve.Main where
 
 --import qualified Rib.Parser.Pandoc as Pandoc
 
@@ -24,12 +24,12 @@ import Data.Map.Strict qualified as Map
 import Data.Text qualified as T
 import Data.Text.Lazy qualified as LT
 import Ema qualified
-import JoeReeve.CSS qualified as CSS
-import JoeReeve.CV qualified as CV
-import JoeReeve.Pandoc qualified as Pandoc
-import JoeReeve.RSS qualified as RSS
-import JoeReeve.SiteData qualified as SiteData
-import JoeReeve.Types
+import JonReeve.CSS qualified as CSS
+import JonReeve.CV qualified as CV
+import JonReeve.Pandoc qualified as Pandoc
+import JonReeve.RSS qualified as RSS
+import JonReeve.SiteData qualified as SiteData
+import JonReeve.Types
 import Lucid
 import Lucid.Base
 import PyF

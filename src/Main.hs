@@ -7,10 +7,10 @@ import Control.Monad.Logger
 import Data.Some (Some)
 import Ema qualified
 import Ema.CLI qualified
-import JoeReeve.Main (renderPage, toPosts)
-import JoeReeve.Pandoc qualified as Pandoc
-import JoeReeve.RSS qualified as RSS
-import JoeReeve.Types
+import JonReeve.Main (renderPage, toPosts)
+import JonReeve.Pandoc qualified as Pandoc
+import JonReeve.RSS qualified as RSS
+import JonReeve.Types
 import Lucid qualified
 import System.FilePath ((</>))
 import System.UnionMount qualified as UnionMount

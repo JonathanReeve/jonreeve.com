@@ -1,12 +1,12 @@
 {-# LANGUAGE OverloadedStrings #-}
 
-module JoeReeve.RSS where
+module JonReeve.RSS where
 
 import Data.Maybe
 import Data.Text
 import Data.Text.Lazy (toStrict)
 import Data.XML.Types as XML
-import JoeReeve.SiteData as SiteData
+import JonReeve.SiteData as SiteData
 import Text.Atom.Feed qualified as Atom
 import Text.Atom.Feed.Export qualified as Export
 import Text.XML

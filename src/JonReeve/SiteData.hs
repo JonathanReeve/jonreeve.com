@@ -2,7 +2,7 @@
 {-# LANGUAGE QuasiQuotes #-}
 
 -- | Site-wide config and data.
-module JoeReeve.SiteData where
+module JonReeve.SiteData where
 
 import PyF
 

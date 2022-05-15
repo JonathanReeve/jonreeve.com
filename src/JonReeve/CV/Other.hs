@@ -1,13 +1,13 @@
 {-# LANGUAGE OverloadedStrings #-}
 
-module JoeReeve.CV.Other where
+module JonReeve.CV.Other where
 
 -- import Network.URI
 
 -- import Formatting
 
 import Data.Text
-import JoeReeve.CV.Shared
+import JonReeve.CV.Shared
 
 data Education = Education
   { when :: Date,

@@ -5,16 +5,16 @@
 -- needed for PyF
 {-# LANGUAGE QuasiQuotes #-}
 
-module JoeReeve.CV where
+module JonReeve.CV where
 
 import Clay hiding (Position, filter, header, html, title, type_)
 import Data.List
 import Data.Text qualified as T
 import Data.Text.Lazy qualified as TL
-import JoeReeve.CV.Other as Other
-import JoeReeve.CV.Projects as Projects
-import JoeReeve.CV.Shared as Shared
-import JoeReeve.CV.Teaching
+import JonReeve.CV.Other as Other
+import JonReeve.CV.Projects as Projects
+import JonReeve.CV.Shared as Shared
+import JonReeve.CV.Teaching
 import Lucid
 
 md2Html :: Shared.Markdown -> Html ()

@@ -8,7 +8,7 @@
 -- | Helpers for working with Pandoc documents
 -- This is adapted from the module in Rib, with only
 -- minor changes, to enable new Pandoc extensions.
-module JoeReeve.Pandoc
+module JonReeve.Pandoc
   ( -- * Parsing
     parse,
     parsePure,

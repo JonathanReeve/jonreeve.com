@@ -1,7 +1,7 @@
 {-# LANGUAGE OverloadedStrings #-}
 {-# LANGUAGE QuasiQuotes #-}
 
-module JoeReeve.CV.Shared where
+module JonReeve.CV.Shared where
 
 import Data.Text qualified as T
 import PyF

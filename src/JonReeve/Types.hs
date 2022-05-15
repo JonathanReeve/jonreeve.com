@@ -1,9 +1,10 @@
 {-# LANGUAGE DeriveAnyClass #-}
+{-# LANGUAGE LambdaCase #-}
 
-module JoeReeve.Types where
+module JonReeve.Types where
 
-import Data.Map.Strict qualified as Map
-import Data.Text qualified as T
+import qualified Data.Map.Strict as Map
+import qualified Data.Text as T
 import Ema
 import System.FilePath ((-<.>), (</>))
 import Text.Pandoc.Definition (Pandoc (..))
