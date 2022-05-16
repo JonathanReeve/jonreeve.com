@@ -8,7 +8,6 @@
 module JonReeve.CV where
 
 import Clay hiding (Position, filter, header, html, title, type_)
-import Data.List
 import Data.Text qualified as T
 import Data.Text.Lazy qualified as TL
 import JonReeve.CV.Other as Other
@@ -18,7 +17,7 @@ import JonReeve.CV.Teaching
 import Lucid
 
 md2Html :: Shared.Markdown -> Html ()
-md2Html md =
+md2Html _ =
   -- Rib.Parser.Pandoc.render $ Rib.Parser.Pandoc.parsePure readMarkdown md
   -- TODO: Lucid's unsafe string
   "TODO: markdown"
@@ -82,8 +81,8 @@ badge path repo = img_ [src_ badgeURL]
 
 -- data Update = Update Date Event deriving Show
 formatUpdate :: Update -> Html ()
-formatUpdate (Update date event) = li_ [class_ "update"] $ do
-  span_ [] $ toHtml $ formatDate date
+formatUpdate (Update updateDate event) = li_ [class_ "update"] $ do
+  span_ [] $ toHtml $ formatDate updateDate
   span_ [] $ formatEvent event
 
 formatEvent :: Event -> Html ()

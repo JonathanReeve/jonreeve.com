@@ -4,7 +4,6 @@ module JonReeve.RSS where
 
 import Data.Maybe
 import Data.Text
-import Data.Text.Lazy (toStrict)
 import Data.XML.Types as XML
 import JonReeve.SiteData as SiteData
 import Text.Atom.Feed qualified as Atom

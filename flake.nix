@@ -1,7 +1,7 @@
 {
-  description = "Ema documentation source";
+  description = "Jonreeve.com website source";
   inputs = {
-    ema.url = "github:srid/ema/master";
+    ema.url = "github:srid/ema/0.6.0.0";
     tailwind-haskell.url = "github:srid/tailwind-haskell/master";
     # Use the nixpkgs used by the pinned ema.
     nixpkgs.follows = "ema/nixpkgs";

@@ -7,10 +7,12 @@ import Clay
 -- (key, MediaType)
 import Clay.Media qualified as Media
 import Clay.Stylesheet
-import Prelude hiding (rem, span)
+import Prelude hiding (rem)
 
+myBlue :: Color
 myBlue = "#494E8E"
 
+myLightgray :: Color
 myLightgray = "#fafafa"
 
 -- lightblue = "#705E9E"
@@ -18,19 +20,26 @@ myLightgray = "#fafafa"
 -- mediumGray = "#333"
 
 -- Define sizes of screens
+xl :: Double
 xl = 1200
 
+lg :: Double
 lg = 992
 
+md :: Double
 md = 768
 
+sm :: Double
 sm = 576
 
-fontSizeFor (w, s) = query Media.screen [Media.minWidth (px w)] $ fontSize (px s)
+fontSizeFor :: (Double, Double) -> Css
+fontSizeFor (thisWidth, thisSize) = query Media.screen [Media.minWidth (px thisWidth)] $
+  fontSize (px thisSize)
 
 fontSizes :: Css
 fontSizes = mapM_ fontSizeFor [(xl, 23), (lg, 24), (md, 25), (sm, 27)]
 
+forMedia :: Double -> Css -> Css
 forMedia w = query Media.screen [Media.minWidth (px w)]
 
 pageMedia :: MediaType

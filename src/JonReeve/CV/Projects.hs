@@ -16,8 +16,9 @@ data Project = Project
   }
   deriving stock (Show)
 
-data ProjectRole = Creator | CoCreator | Developer | Collaborator | ResearchAssistant deriving (Show)
+data ProjectRole = Creator | CoCreator | Developer | Collaborator | ResearchAssistant deriving stock (Show)
 
+dh2020 :: Venue
 dh2020 = Venue "Digital Humanities 2020" "https://dh2020.adho.org/" "Ottawa, CA [Virtual]"
 
 projects :: [Project]
@@ -37,7 +38,7 @@ projects =
                   "Mapping Data Ethics Curricula [Preprint]"
                   "https://github.com/JonathanReeve/data-ethics-literature-review/blob/main/paper/jices-paper.pdf" -- TODO: Add URL
                   ( Venue
-                      "[Under Review at Journal of Information, Communication, and Ethics in Society]"
+                      "[Accepted, at Journal of Information, Communication, and Ethics in Society]"
                       "https://www.emeraldgrouppublishing.com/journal/jices?id=jices"
                       ""
                   )

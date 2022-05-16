@@ -6,7 +6,6 @@ module JonReeve.CV.Other where
 
 -- import Formatting
 
-import Data.Text
 import JonReeve.CV.Shared
 
 data Education = Education
@@ -15,7 +14,7 @@ data Education = Education
     degree :: Text,
     field :: Text
   }
-  deriving (Show)
+  deriving stock (Show)
 
 education :: [Education]
 education =
@@ -35,7 +34,7 @@ data Position = Position
     posUrl :: URI,
     posUpdates :: [Update]
   }
-  deriving (Show)
+  deriving stock (Show)
 
 positions :: [Position]
 positions =
@@ -145,7 +144,7 @@ data Affiliation = Affiliation
     society :: Venue,
     dateRanges :: [DateRange]
   }
-  deriving (Show)
+  deriving stock (Show)
 
 affiliations :: [Affiliation]
 affiliations =

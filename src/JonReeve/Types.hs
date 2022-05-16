@@ -15,7 +15,7 @@ import Text.Pandoc.Definition (Pandoc (..))
 
 -- | Site Route
 data SR = SR_Html R | SR_Feed
-  deriving (Eq, Show)
+  deriving stock (Eq, Show)
 
 -- | Html route
 data R
@@ -23,7 +23,7 @@ data R
   | R_BlogPost FilePath
   | R_Tags
   | R_CV
-  deriving (Eq, Show)
+  deriving stock (Eq, Show)
 
 -- ------------------------
 -- Our site model

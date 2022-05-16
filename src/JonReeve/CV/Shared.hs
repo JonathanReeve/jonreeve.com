@@ -12,13 +12,13 @@ data Date
       { year :: Int,
         month :: Int
       }
-  deriving (Show, Eq, Ord)
+  deriving stock (Show, Eq, Ord)
 
 data DateRange = DateRange
   { start :: Date,
     end :: Date
   }
-  deriving (Show, Eq, Ord)
+  deriving stock (Show, Eq, Ord)
 
 -- Validate the dates.
 date :: Int -> Int -> Date
@@ -59,20 +59,20 @@ type Markdown = T.Text
 -- TODO: validate URIs
 type URI = T.Text
 
-data Link = Link {url :: URI, text :: T.Text} deriving (Show)
+data Link = Link {url :: URI, text :: T.Text} deriving stock (Show)
 
-data Update = Update Date Event deriving (Show)
+data Update = Update Date Event deriving stock (Show)
 
 data Event
   = News Markdown
   | Award T.Text Venue
   | Talk Title URI Venue
   | Publication PublicationType Title URI Venue
-  deriving (Show)
+  deriving stock (Show)
 
 type Title = T.Text
 
-data PublicationType = Tutorial | Article | Chapter | Abstract deriving (Show)
+data PublicationType = Tutorial | Article | Chapter | Abstract deriving stock (Show)
 
 uni :: T.Text -> T.Text
 uni abbr = case abbr of
@@ -91,4 +91,4 @@ data Venue = Venue
     venueUrl :: URI,
     location :: T.Text
   }
-  deriving (Show)
+  deriving stock (Show)

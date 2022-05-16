@@ -2,7 +2,6 @@
 
 module JonReeve.CV.Teaching where
 
-import Data.List (reverse, sortOn)
 import Data.Text qualified as T hiding (reverse)
 import JonReeve.CV.Shared hiding (url)
 
@@ -25,9 +24,9 @@ data Teaching
         teachingUpdates :: [Update],
         notes :: Maybe T.Text
       }
-  deriving (Show)
+  deriving stock (Show)
 
-data TeachingRole = Instructor | TA | TAInstructor deriving (Show)
+data TeachingRole = Instructor | TA | TAInstructor deriving stock (Show)
 
 cuEng :: Venue
 cuEng = Venue "Department of English and Comparative Literature" "https://english.columbia.edu/" (uni "cu")
@@ -38,6 +37,7 @@ cuCS = Venue "Department of Computer Science" "https://www.cs.columbia.edu/" (un
 cuFoundations :: Venue
 cuFoundations = Venue "Foundations for Research Computing" "https://rcfoundations.research.columbia.edu/" (uni "cu")
 
+sortedTeaching :: [Teaching]
 sortedTeaching = reverse $ sortOn getSortDate $ expandedTeaching teaching
 
 getSortDate :: Teaching -> Date
