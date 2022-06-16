@@ -1,4 +1,5 @@
 {-# LANGUAGE DeriveAnyClass #-}
+{-# LANGUAGE ImportQualifiedPost #-}
 {-# OPTIONS_GHC -Wno-orphans #-}
 
 module Main where

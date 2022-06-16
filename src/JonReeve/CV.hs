@@ -14,13 +14,14 @@ import JonReeve.CV.Other as Other
 import JonReeve.CV.Projects as Projects
 import JonReeve.CV.Shared as Shared
 import JonReeve.CV.Teaching
+import JonReeve.Pandoc
 import Lucid
 
 md2Html :: Shared.Markdown -> Html ()
-md2Html _ =
-  -- Rib.Parser.Pandoc.render $ Rib.Parser.Pandoc.parsePure readMarkdown md
-  -- TODO: Lucid's unsafe string
-  "TODO: markdown"
+md2Html md =
+  JonReeve.Pandoc.render $ JonReeve.Pandoc.parsePure readMarkdown md
+  -- -- TODO: Lucid's unsafe string
+  -- "TODO: markdown"
 
 educationSection :: Html ()
 educationSection = section_ [class_ "education"] $ do

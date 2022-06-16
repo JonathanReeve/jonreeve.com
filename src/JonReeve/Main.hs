@@ -21,6 +21,7 @@ import Clay qualified as C
 import Data.Aeson (FromJSON, fromJSON)
 import Data.Aeson qualified as Aeson
 import Data.Map.Strict qualified as Map
+import Data.List qualified as List
 import Data.Text qualified as T
 import Data.Text.Lazy qualified as LT
 import Ema qualified
@@ -206,7 +207,7 @@ renderPage route val = html_ [lang_ "en"] $ do
             img_ [src_ "assets/images/equal.svg"]
             img_ [src_ "assets/images/noun_education_1909997.svg"]
         main_ [class_ "container"] $
-          forM_ (Map.toList $ modelPosts val) $ \(r, src) -> do
+          forM_ (List.reverse $ Map.toList $ modelPosts val) $ \(r, src) -> do
             section_ [id_ "postList"] $ do
               li_ [class_ "post"] $ do
                 let meta = getMeta src
