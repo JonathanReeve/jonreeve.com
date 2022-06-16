@@ -11,8 +11,6 @@
 
 module JonReeve.Main where
 
---import qualified Rib.Parser.Pandoc as Pandoc
-
 -- Needed for citation processing
 
 -- My modules
@@ -67,47 +65,6 @@ parseJekyllFilename fn =
       (T.unpack y, T.unpack m, T.unpack d, T.unpack $ T.intercalate "-" rest)
     _ ->
       error "Malformed filename"
-
--- | Shake action for generating the static site
-generateSite :: IO ()
-generateSite = do
-  pure undefined
-
-{-
-  -- Copy over the static files
-  Rib.buildStaticFiles
-    [ "assets/**",
-      "images/**",
-      "projects/**",
-      "presentations/**"
-    ]
-  let writeHtmlRoute :: Route a -> a -> Action ()
-      writeHtmlRoute r = Rib.writeRoute r . Lucid.renderText . renderPage r
-      writeXmlRoute r = Rib.writeRoute r . RSS.renderFeed . toPosts r
-  -- Build individual sources, generating .html for each.
-  articles <-
-    Rib.forEvery ["posts/*.org"] $ \srcPath -> do
-      let r = Route_Article $ cleanPath srcPath
-      doc <- Pandoc.parse Pandoc.readOrg srcPath
-      let docWithMeta = setMeta (T.pack "bibliography") (T.pack "content/bibliography.bib") doc :: Pandoc
-      let docWithMeta' = setMeta (T.pack "csl") (T.pack "content/modern-language-association.csl") docWithMeta :: Pandoc
-      docProcessed <- liftIO $ runIO $ processCitations docWithMeta'
-      -- liftIO $ print docProcessed
-      docMaybe <- liftIO $ handleError docProcessed
-
-      writeHtmlRoute r docMaybe
-      pure (r, doc)
-  writeHtmlRoute Route_CV articles
-  writeHtmlRoute Route_Tags $ groupByTag articles
-  writeHtmlRoute Route_Index $ reverse articles
-  writeXmlRoute Route_Feed $ articles
-  where
-    cleanPath path = drop 6 (take (length path - 4) path)
-    groupByTag as =
-      Map.fromListWith (<>) $
-        flip concatMap as $ \(r, doc) ->
-          (,[(r, doc)]) <$> tags (getMeta doc)
--}
 
 -- | Convert the posts we've read into Post types that can be read
 -- by the RSS/Atom module.
