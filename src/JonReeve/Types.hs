@@ -6,7 +6,7 @@ module JonReeve.Types where
 import qualified Data.Map.Strict as Map
 import qualified Data.Text as T
 import Ema
-import System.FilePath ((-<.>), (</>))
+import System.FilePath ((-<.>), (</>), takeFileName)
 import Text.Pandoc.Definition (Pandoc (..))
 
 -- ------------------------
@@ -54,6 +54,19 @@ modelDelete k model =
     { modelPosts = Map.delete k (modelPosts model)
     }
 
+-- | Convert "posts/2022-03-12-rethinking.org" to "2022/03/rethinking.html"
+-- for backwards compatibility with my existing URLs.
+permalink :: FilePath -> FilePath
+permalink fp = year </> month </> rest -<.> ".html" where
+  (year, month, _, rest) = case T.splitOn "-" (T.pack (takeFileName fp)) of
+    y : m : d : title -> (T.unpack y, T.unpack m, T.unpack d, T.unpack $ T.intercalate "-" title)
+    _                 -> error "Malformed filename"
+
+-- | Convert "2022/03/rethinking.html" to "posts/2022-03-12-rethinking.org"
+-- | XXX: wait, nevermind, this is impossible
+unPermalink :: FilePath -> FilePath
+unPermaLink fp = error
+
 instance Ema Model (Either FilePath SR) where
   encodeRoute model = \case
     Left fp -> fp
@@ -64,9 +77,7 @@ instance Ema Model (Either FilePath SR) where
         R_BlogPost fp ->
           case modelLookup fp model of
             Nothing -> error "404"
-            Just doc ->
-              -- TODO: get date from pandoc
-              fp -<.> "html"
+            Just doc -> permalink fp
         R_Tags -> "tags.html"
         R_CV -> "cv.html"
     Right SR_Feed -> "feed.xml"
