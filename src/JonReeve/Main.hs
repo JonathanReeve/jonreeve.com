@@ -34,30 +34,6 @@ import Lucid.Base
 import PyF
 import Text.Pandoc (Pandoc)
 
--- | Route corresponding to each generated static page.
---
--- The `a` parameter specifies the data (typically Markdown document) used to
--- generate the final page text.
-data Route a where
-  Route_Index :: Route [(Route Pandoc, Pandoc)]
-  Route_CV :: Route [(Route Pandoc, Pandoc)]
-  Route_Tags :: Route (Map Text [(Route Pandoc, Pandoc)])
-  Route_Article :: FilePath -> Route Pandoc
-  Route_Feed :: Route [(Route Pandoc, Pandoc)]
-
--- | The `IsRoute` instance allows us to determine the target .html path for
--- each route. This affects what `routeUrl` will return.
-routeFile :: Applicative m => Route a -> m String
-routeFile = \case
-  Route_Index -> pure "index.html"
-  Route_Tags -> pure "tags/index.html"
-  Route_CV -> pure "cv.html"
-  Route_Article srcPath -> do
-    let (year, month, _day, slug) = parseJekyllFilename srcPath
-    let slug' = [c | c <- slug, c `notElem` (",.?!-:;\"\'" :: String)]
-    pure $ year ++ "/" ++ month ++ "/" ++ slug ++ "/index.html"
-  Route_Feed -> pure "feed.xml"
-
 parseJekyllFilename :: FilePath -> (String, String, String, String)
 parseJekyllFilename fn =
   case T.splitOn "-" (T.pack fn) of
@@ -114,9 +90,10 @@ renderPage route val = html_ [lang_ "en"] $ do
             span_ [] "Computational Literary Analysis"
         section_ [class_ "navbar-section"] $ do
           ul_ [class_ "nav"] $ do
-            navItem R_Index "posts"
-            navItem R_CV "cv"
-            navItem R_Tags "tags"
+            navItem (SR_Html R_Index) "posts"
+            navItem (SR_Html R_CV) "cv"
+            navItem (SR_Html R_Tags) "tags"
+            navItem SR_Feed "feed"
     div_ [class_ "container"] $ do
       content
     footer_ [] $ do
@@ -142,8 +119,10 @@ renderPage route val = html_ [lang_ "en"] $ do
         script_ [id_ "MathJax-script", async_ "", src_ "https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"] T.empty
         script_ [] ("hljs.initHighlightingOnLoad();" :: Html ())
   where
-    navItem :: R -> Html () -> Html ()
-    navItem navRoute label = li_ [class_ "nav-item"] $ a_ [href_ $ routeUrl val navRoute] label
+    navItem :: SR -> Html () -> Html ()
+    navItem navRoute label = li_ [class_ "nav-item"] $ a_ [href_ $ url] label where
+      url = case navRoute of SR_Html r -> routeUrl val r
+                             SR_Feed -> "feed.xml"
 
     routeTitle :: Html ()
     routeTitle = case route of
