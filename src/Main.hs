@@ -26,9 +26,9 @@ main =
   -- runEma handles the CLI and starts the dev server (or generate static site
   -- if `gen` argument is passed).  It is designed to work well with ghcid
   -- (which is what the bin/run script uses).
-  Ema.runSite_ @(Either FilePath SR) ()
+  Ema.runSite_ @SR ()
 
-instance EmaSite (Either FilePath SR) where
+instance EmaSite SR where
   siteInput _ _ = do
     -- This is the place where we can load and continue to modify our "model".
     -- You will use `LVar.set` and `LVar.modify` to modify the model.
@@ -64,19 +64,19 @@ instance EmaSite (Either FilePath SR) where
 -- Our site HTML
 -- ------------------------
 
-render :: Prism' FilePath (Either FilePath SR) -> Model -> Either FilePath SR -> Ema.Asset LByteString
+render :: Prism' FilePath SR -> Model -> SR -> Ema.Asset LByteString
 render rp model = \case
-  Left fp ->
+  SR_Static fp ->
     -- This instructs ema to treat this route "as is" (ie. a static file; no generation)
     -- The argument `fp` refers to the absolute path to the static file.
     Ema.AssetStatic $ "content" </> fp
-  Right (SR_Html r) ->
+  SR_Html r ->
     -- Generate a Html route; hot-reload is enabled.
     Ema.AssetGenerated Ema.Html $ renderHtml rp model r
-  Right SR_Feed ->
+  SR_Feed ->
     Ema.AssetGenerated Ema.Other $ RSS.renderFeed $ toPosts rp model
 
-renderHtml :: Prism' FilePath (Either FilePath SR) -> Model -> R -> LByteString
+renderHtml :: Prism' FilePath SR -> Model -> R -> LByteString
 renderHtml rp model r = do
   Lucid.renderBS $ renderPage rp r model
 

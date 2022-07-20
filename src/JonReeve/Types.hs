@@ -16,7 +16,10 @@ import Text.Pandoc.Definition (Pandoc (..))
 -- ------------------------
 
 -- | Site Route
-data SR = SR_Html R | SR_Feed
+data SR
+  = SR_Html R
+  | SR_Feed
+  | SR_Static FilePath
   deriving stock (Eq, Show)
 
 -- | Html route
@@ -74,14 +77,14 @@ unPermaLink :: FilePath -> FilePath
 unPermaLink fp = undefined
 
 -- TODO: Use generics for this
-instance IsRoute (Either FilePath SR) where
-  type RouteModel (Either FilePath SR) = Model
+instance IsRoute SR where
+  type RouteModel SR = Model
   routePrism model =
     toPrism_ $ prism' encodeRoute decodeRoute
     where
       encodeRoute = \case
-        Left fp -> fp
-        Right (SR_Html r) ->
+        SR_Static fp -> fp
+        SR_Html r ->
           -- TODO:  toString $ T.intercalate "/" (Slug.unSlug <$> toList slugs) <> ".html"
           case r of
             R_Index -> "index.html"
@@ -91,38 +94,36 @@ instance IsRoute (Either FilePath SR) where
                 Just doc -> permalink fp
             R_Tags -> "tags.html"
             R_CV -> "cv.html"
-        Right SR_Feed -> "feed.xml"
+        SR_Feed -> "feed.xml"
 
       decodeRoute fp = do
         -- TODO: other static toplevels
         if "assets/" `T.isPrefixOf` toText fp
-          then pure $ Left fp
+          then pure $ SR_Static fp
           else
             if "images/" `T.isPrefixOf` toText fp
-              then pure $ Left $ "content" </> fp
+              then pure $ SR_Static fp
               else
                 if fp == "tags.html"
-                  then pure $ Right $ SR_Html R_Tags
+                  then pure $ SR_Html R_Tags
                   else
                     if fp == "cv.html"
-                      then pure $ Right $ SR_Html R_CV
+                      then pure $ SR_Html R_CV
                       else
                         if fp == "feed.xml"
-                          then pure $ Right $ SR_Feed
+                          then pure $ SR_Feed
                           else do
                             if fp == "index.html" || fp == "" -- FIXME
-                              then pure $ Right $ SR_Html R_Index
+                              then pure $ SR_Html R_Index
                               else do
                                 basePath <- toString <$> T.stripSuffix ".html" (toText fp)
-                                pure $ Right $ SR_Html $ R_BlogPost $ basePath <> ".org"
+                                pure $ SR_Html $ R_BlogPost $ basePath <> ".org"
 
   -- Routes to write when generating the static site.
   routeUniverse (Map.keys . modelPosts -> posts) =
-    (fmap (Left . ("content" </>)) ["assets", "images"])
+    (fmap SR_Static ["assets", "images"])
       <> fmap
-        ( Right
-            . SR_Html
-        )
+        SR_Html
         ( [ R_Index,
             R_CV,
             R_Tags
