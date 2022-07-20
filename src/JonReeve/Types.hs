@@ -10,7 +10,7 @@ import Data.Text qualified as T
 import Ema
 import Ema.Route.Generic.TH
 import Optics.Core (preview, prism', review)
-import System.FilePath (takeFileName, (-<.>), (</>))
+import System.FilePath ((</>))
 import Text.Pandoc.Definition (Pandoc (..))
 
 -- ------------------------
@@ -33,14 +33,33 @@ data R
   deriving stock (Eq, Show)
 
 newtype BlogPostR = BlogPostR FilePath
-  deriving stock (Eq, Show, Generic)
+  deriving stock (Eq, Show, Ord, Generic)
+
+mkBlogPostR :: FilePath -> Maybe BlogPostR
+mkBlogPostR fp = do
+  ["posts", fn] <- pure $ T.splitOn "/" $ T.pack fp
+  (year : month : _ : slug) <- pure $ T.splitOn "-" fn
+  slugWithoutExt <- T.stripSuffix ".org" $ T.intercalate "-" slug
+  pure $ BlogPostR $ toString $ T.intercalate "-" [year, month, slugWithoutExt]
+
+instance IsRoute BlogPostR where
+  type RouteModel BlogPostR = Map BlogPostR (FilePath, Pandoc)
+  routePrism model =
+    toPrism_ $ prism' encode decode
+    where
+      encode (BlogPostR slug) = slug </> "index.html"
+      decode fp = do
+        r <- BlogPostR . toString <$> T.stripSuffix "/index.html" (toText fp)
+        guard $ Map.member r model
+        pure r
+  routeUniverse = Map.keys
 
 -- ------------------------
 -- Our site model
 -- ------------------------
 
 data Model = Model
-  { modelPosts :: Map FilePath Pandoc
+  { modelPosts :: Map BlogPostR (FilePath, Pandoc)
   }
   deriving stock (Eq, Show, Generic)
 
@@ -64,48 +83,22 @@ instance Default Model where
 emptyModel :: Model
 emptyModel = Model mempty
 
-modelLookup :: FilePath -> Model -> Maybe Pandoc
+modelLookup :: BlogPostR -> Model -> Maybe (FilePath, Pandoc)
 modelLookup k =
   Map.lookup k . modelPosts
 
-modelInsert :: FilePath -> Pandoc -> Model -> Model
+modelInsert :: BlogPostR -> (FilePath, Pandoc) -> Model -> Model
 modelInsert k v model =
   let xs = Map.insert k v (modelPosts model)
    in model
         { modelPosts = xs
         }
 
-modelDelete :: FilePath -> Model -> Model
+modelDelete :: BlogPostR -> Model -> Model
 modelDelete k model =
   model
     { modelPosts = Map.delete k (modelPosts model)
     }
-
-instance IsRoute BlogPostR where
-  type RouteModel BlogPostR = Map FilePath Pandoc
-  routePrism _model =
-    toPrism_ $ prism' encode decode
-    where
-      encode (BlogPostR slug) = slug -<.> "" </> "index.html"
-      decode fp = do
-        _ <- T.stripPrefix "posts" (toText fp) -- HACK: check that it is inside posts
-        baseFile <- toString <$> T.stripSuffix "/index.html" (toText fp)
-        pure $ BlogPostR $ baseFile -<.> ".org"
-  routeUniverse = fmap BlogPostR . Map.keys
-
--- | Convert "posts/2022-03-12-rethinking.org" to "2022/03/rethinking.html"
--- for backwards compatibility with my existing URLs.
-permalink :: FilePath -> FilePath
-permalink fp = year </> month </> rest -<.> "" </> "index.html"
-  where
-    (year, month, _, rest) = case T.splitOn "-" (T.pack (takeFileName fp)) of
-      y : m : d : title -> (T.unpack y, T.unpack m, T.unpack d, T.unpack $ T.intercalate "-" title)
-      _ -> error "Malformed filename"
-
--- | Convert "2022/03/rethinking.html" to "posts/2022-03-12-rethinking.org"
--- | XXX: wait, nevermind, this is impossible
-unPermaLink :: FilePath -> FilePath
-unPermaLink fp = undefined
 
 -- TODO: Use generics for this
 instance IsRoute SR where

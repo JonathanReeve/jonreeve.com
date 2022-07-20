@@ -43,14 +43,16 @@ instance EmaSite SR where
     where
       handleUpdate contentDir fp action = do
         logD $ "fsnotify changed: " <> toText fp
-        case action of
-          -- Add or update this file to the model.
-          UnionMount.Refresh _ () -> do
-            mData <- readOrgFile $ contentDir </> fp
-            pure $ maybe id (\d -> modelInsert fp d) mData
-          -- Remove this file from the model.
-          UnionMount.Delete ->
-            pure $ modelDelete fp
+        case mkBlogPostR fp of
+          Nothing -> pure id
+          Just blogR -> case action of
+            -- Add or update this file to the model.
+            UnionMount.Refresh _ () -> do
+              mData <- readOrgFile $ contentDir </> fp
+              pure $ maybe id (\d -> modelInsert blogR (fp, d)) mData
+            -- Remove this file from the model.
+            UnionMount.Delete ->
+              pure $ modelDelete blogR
       -- Parse .org -> Pandoc
       readOrgFile :: (MonadIO m, MonadLogger m) => FilePath -> m (Maybe Pandoc)
       readOrgFile fp =

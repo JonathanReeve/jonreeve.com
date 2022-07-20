@@ -6,7 +6,6 @@
 {-# LANGUAGE OverloadedStrings #-}
 {-# LANGUAGE QuasiQuotes #-}
 {-# LANGUAGE ScopedTypeVariables #-}
-{-# LANGUAGE TemplateHaskell #-}
 {-# LANGUAGE TupleSections #-}
 
 module JonReeve.Main where
@@ -47,8 +46,8 @@ parseJekyllFilename fn =
 -- by the RSS/Atom module.
 toPosts :: Prism' FilePath SR -> Model -> [RSS.Post]
 toPosts rp model =
-  flip fmap (Map.toList $ modelPosts model) $ \(fp, doc) ->
-    let r = R_BlogPost $ BlogPostR fp
+  flip fmap (Map.toList $ modelPosts model) $ \(br, (_, doc)) ->
+    let r = R_BlogPost br
      in toPost r doc
   where
     toPost :: R -> Pandoc -> RSS.Post
@@ -130,8 +129,8 @@ renderPage rp route val = html_ [lang_ "en"] $ do
       R_Index -> "Posts"
       R_Tags -> "Tags"
       R_CV -> "CV"
-      R_BlogPost (BlogPostR k) ->
-        toHtml $ title $ maybe (error "missing!") getMeta $ modelLookup k val
+      R_BlogPost k ->
+        toHtml $ title $ maybe (error "missing!") (getMeta . snd) $ modelLookup k val
     content :: Html ()
     content = case route of
       R_Index -> do
@@ -144,12 +143,12 @@ renderPage rp route val = html_ [lang_ "en"] $ do
             img_ [src_ "assets/images/equal.svg"]
             img_ [src_ "assets/images/noun_education_1909997.svg"]
         main_ [class_ "container"] $
-          forM_ (List.reverse $ Map.toList $ modelPosts val) $ \(r, src) -> do
+          forM_ (List.reverse $ Map.toList $ modelPosts val) $ \(r, (_, src)) -> do
             section_ [id_ "postList"] $ do
               li_ [class_ "post"] $ do
                 let meta = getMeta src
                 div_ [vocab_ "https://schema.org", typeof_ "blogPosting"] $ do
-                  h2_ [class_ "postTitle", property_ "headline"] $ a_ [href_ (Ema.routeUrl rp $ SR_Html $ R_BlogPost $ BlogPostR r)] $ toHtml $ title meta
+                  h2_ [class_ "postTitle", property_ "headline"] $ a_ [href_ (Ema.routeUrl rp $ SR_Html $ R_BlogPost r)] $ toHtml $ title meta
                   p_ [class_ "meta"] $ do
                     span_ [class_ "date", property_ "datePublished", content_ (date meta)] $ toHtml $ T.concat ["(", date meta, ")"]
                     span_ [class_ "tags", property_ "keywords", content_ (T.intercalate "," (tags meta))] $ do
@@ -161,7 +160,7 @@ renderPage rp route val = html_ [lang_ "en"] $ do
       R_Tags -> do
         h1_ routeTitle
         let rposts = Map.toList $ modelPosts val
-            tags = groupByTag rposts
+            tags = groupByTag $ fmap (fmap snd) rposts
         div_ $
           forM_ (sortOn (T.toLower . fst) $ Map.toList tags) $ \(tag, rs) -> do
             a_ [id_ tag] mempty
@@ -170,20 +169,21 @@ renderPage rp route val = html_ [lang_ "en"] $ do
               forM_ rs $ \(r, src) -> do
                 li_ [class_ "pages"] $ do
                   let meta = getMeta src
-                  b_ $ a_ [href_ (Ema.routeUrl rp $ SR_Html $ R_BlogPost $ BlogPostR r)] $ toHtml $ title meta
+                  b_ $ a_ [href_ (Ema.routeUrl rp $ SR_Html $ R_BlogPost r)] $ toHtml $ title meta
       R_CV -> do
         main_ [class_ "container"] $ do
           h1_ "Curriculum Vitae"
           h2_ "Jonathan Reeve"
           CV.cv
-      R_BlogPost (BlogPostR srcPath) -> do
+      R_BlogPost srcPath -> do
         h1_ routeTitle
-        let (y, m, d, _) = parseJekyllFilename srcPath
-        p_ [fmt|Posted {y}-{m}-{d}|]
         article_ $
           case modelLookup srcPath val of
             Nothing -> error "missing"
-            Just doc -> Pandoc.render doc
+            Just (fp, doc) -> do
+              let (y, m, d, _) = parseJekyllFilename fp
+              p_ [fmt|Posted {y}-{m}-{d}|]
+              Pandoc.render doc
         hr_ []
         p_ [] "I welcome your comments and annotations in the Hypothes.is sidebar to the right. →"
         script_ [src_ "https://hypothes.is/embed.js"] T.empty
