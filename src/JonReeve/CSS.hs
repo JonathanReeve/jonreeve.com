@@ -33,8 +33,9 @@ sm :: Double
 sm = 576
 
 fontSizeFor :: (Double, Double) -> Css
-fontSizeFor (thisWidth, thisSize) = query Media.screen [Media.minWidth (px thisWidth)] $
-  fontSize (px thisSize)
+fontSizeFor (thisWidth, thisSize) =
+  query Media.screen [Media.minWidth (px thisWidth)] $
+    fontSize (px thisSize)
 
 fontSizes :: Css
 fontSizes = mapM_ fontSizeFor [(xl, 23), (lg, 24), (md, 25), (sm, 27)]
@@ -61,8 +62,8 @@ pageStyle = do
   -- left 0
   "#headerWrapper" ? do
     backgroundColor white
-    borderTop solid (px 2) myBlue
-    borderBottom solid (px 2) myBlue
+    borderTop (px 2) solid myBlue
+    borderBottom (px 2) solid myBlue
     header ? do
       paddingTop nil
       paddingBottom nil

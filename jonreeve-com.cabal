@@ -38,6 +38,7 @@ executable jonreeve
     , monad-logger
     , mtl
     , pandoc
+    , optics-core
     , pandoc-types
     , path
     , PyF

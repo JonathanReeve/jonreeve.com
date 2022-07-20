@@ -18,8 +18,8 @@ module JonReeve.Main where
 import Clay qualified as C
 import Data.Aeson (FromJSON, fromJSON)
 import Data.Aeson qualified as Aeson
-import Data.Map.Strict qualified as Map
 import Data.List qualified as List
+import Data.Map.Strict qualified as Map
 import Data.Text qualified as T
 import Data.Text.Lazy qualified as LT
 import Ema qualified
@@ -31,6 +31,7 @@ import JonReeve.SiteData qualified as SiteData
 import JonReeve.Types
 import Lucid
 import Lucid.Base
+import Optics.Core (Prism')
 import PyF
 import Text.Pandoc (Pandoc)
 
@@ -44,8 +45,8 @@ parseJekyllFilename fn =
 
 -- | Convert the posts we've read into Post types that can be read
 -- by the RSS/Atom module.
-toPosts :: Model -> [RSS.Post]
-toPosts model =
+toPosts :: Prism' FilePath (Either FilePath SR) -> Model -> [RSS.Post]
+toPosts rp model =
   flip fmap (Map.toList $ modelPosts model) $ \(fp, doc) ->
     let r = R_BlogPost fp
      in toPost r doc
@@ -54,7 +55,7 @@ toPosts model =
     toPost r doc = RSS.Post postDate postUrl postContent postTitle
       where
         postDate = date (getMeta doc)
-        postUrl = SiteData.domain <> routeUrl model r
+        postUrl = SiteData.domain <> routeUrl rp r
         postContent = pandocToText doc
         postTitle = title (getMeta doc)
     pandocToText :: Pandoc -> T.Text
@@ -65,8 +66,8 @@ stylesheet url = link_ [rel_ "stylesheet", href_ url]
 script url = script_ [src_ url, async_ T.empty] T.empty
 
 -- | Define your site HTML here
-renderPage :: R -> Model -> Html ()
-renderPage route val = html_ [lang_ "en"] $ do
+renderPage :: Prism' FilePath (Either FilePath SR) -> R -> Model -> Html ()
+renderPage rp route val = html_ [lang_ "en"] $ do
   head_ $ do
     meta_ [httpEquiv_ "Content-Type", content_ "text/html; charset=utf-8"]
     title_ routeTitle
@@ -85,7 +86,7 @@ renderPage route val = html_ [lang_ "en"] $ do
     div_ [id_ "headerWrapper"] $ do
       header_ [class_ "navbar"] $ do
         section_ [class_ "navbar-section"] $ do
-          a_ [class_ "navbar-brand", href_ $ routeUrl val R_Index] $ do
+          a_ [class_ "navbar-brand", href_ $ routeUrl rp R_Index] $ do
             "Jonathan Reeve: "
             span_ [] "Computational Literary Analysis"
         section_ [class_ "navbar-section"] $ do
@@ -120,9 +121,11 @@ renderPage route val = html_ [lang_ "en"] $ do
         script_ [] ("hljs.initHighlightingOnLoad();" :: Html ())
   where
     navItem :: SR -> Html () -> Html ()
-    navItem navRoute label = li_ [class_ "nav-item"] $ a_ [href_ $ url] label where
-      url = case navRoute of SR_Html r -> routeUrl val r
-                             SR_Feed -> "feed.xml"
+    navItem navRoute label = li_ [class_ "nav-item"] $ a_ [href_ url] label
+      where
+        url = case navRoute of
+          SR_Html r -> routeUrl rp r
+          SR_Feed -> "feed.xml"
 
     routeTitle :: Html ()
     routeTitle = case route of
@@ -148,7 +151,7 @@ renderPage route val = html_ [lang_ "en"] $ do
               li_ [class_ "post"] $ do
                 let meta = getMeta src
                 div_ [vocab_ "https://schema.org", typeof_ "blogPosting"] $ do
-                  h2_ [class_ "postTitle", property_ "headline"] $ a_ [href_ (routeUrl val $ R_BlogPost r)] $ toHtml $ title meta
+                  h2_ [class_ "postTitle", property_ "headline"] $ a_ [href_ (routeUrl rp $ R_BlogPost r)] $ toHtml $ title meta
                   p_ [class_ "meta"] $ do
                     span_ [class_ "date", property_ "datePublished", content_ (date meta)] $ toHtml $ T.concat ["(", date meta, ")"]
                     span_ [class_ "tags", property_ "keywords", content_ (T.intercalate "," (tags meta))] $ do
@@ -169,7 +172,7 @@ renderPage route val = html_ [lang_ "en"] $ do
               forM_ rs $ \(r, src) -> do
                 li_ [class_ "pages"] $ do
                   let meta = getMeta src
-                  b_ $ a_ [href_ (routeUrl val $ R_BlogPost r)] $ toHtml $ title meta
+                  b_ $ a_ [href_ (routeUrl rp $ R_BlogPost r)] $ toHtml $ title meta
       R_CV -> do
         main_ [class_ "container"] $ do
           h1_ "Curriculum Vitae"
@@ -311,6 +314,6 @@ chatIcon =
 16h-160l-80 60v-60H64c-8.75 0-16-7.25-16-16V64c0-8.75 7.25-16 16-16h384c8.75 0
 16 7.25 16 16V352z|]
 
-routeUrl :: Model -> R -> Text
-routeUrl m htmlR =
-  Ema.routeUrl @(Either FilePath SR) m $ Right $ SR_Html htmlR
+routeUrl :: Prism' FilePath (Either FilePath SR) -> R -> Text
+routeUrl rp htmlR =
+  Ema.routeUrl @(Either FilePath SR) rp $ Right $ SR_Html htmlR

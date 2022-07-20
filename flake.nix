@@ -1,51 +1,48 @@
 {
   description = "Jonreeve.com website source";
   inputs = {
-    ema.url = "github:srid/ema/0.6.0.0";
-    tailwind-haskell.url = "github:srid/tailwind-haskell/master";
-    # Use the nixpkgs used by the pinned ema.
-    nixpkgs.follows = "ema/nixpkgs";
-    flake-utils.follows = "ema/flake-utils";
-    flake-compat.follows = "ema/flake-compat";
+    nixpkgs.url = "github:nixos/nixpkgs/nixpkgs-unstable";
+    flake-parts.url = "github:hercules-ci/flake-parts";
+    flake-parts.inputs.nixpkgs.follows = "nixpkgs";
+    haskell-flake.url = "github:srid/haskell-flake";
 
-    url-slug.url = "github:srid/url-slug";
-    url-slug.inputs.nixpkgs.follows = "ema/nixpkgs";
+    # Haskell overrides
+    ema.url = "github:srid/ema/multisite";
+    ema.flake = false;
+    tailwind-haskell.url = "github:srid/tailwind-haskell";
+    tailwind-haskell.inputs.nixpkgs.follows = "nixpkgs";
   };
-  outputs = inputs@{ self, nixpkgs, flake-utils, ... }:
-    flake-utils.lib.eachDefaultSystem (system:
-      let
-        name = "jonreeve-com";
-        overlays = [ ];
-        pkgs = import nixpkgs { inherit system overlays; config.allowBroken = true; };
-        tailwind-haskell = inputs.tailwind-haskell.defaultPackage.${system};
-        project = returnShellEnv:
-          pkgs.haskellPackages.developPackage {
-            inherit returnShellEnv name;
-            root = ./.;
-            withHoogle = false;
-            overrides = self: super: with pkgs.haskell.lib; {
-              ema = self.callCabal2nix "ema" inputs.ema { };
-              url-slug = self.callCabal2nix "url-slug" inputs.url-slug { };
-            };
-            modifier = drv:
-              pkgs.haskell.lib.addBuildTools drv
-                (with pkgs.haskellPackages; [
-                  cabal-fmt
-                  cabal-install
-                  ghcid
-                  haskell-language-server
-                  ormolu
-                  pkgs.nixpkgs-fmt
-                  tailwind-haskell
-                  pkgs.foreman
-                ]);
+  outputs = inputs@{ self, nixpkgs, flake-parts, haskell-flake, ... }:
+    flake-parts.lib.mkFlake { inherit self; } {
+      systems = nixpkgs.lib.systems.flakeExposed;
+      imports = [
+        haskell-flake.flakeModule
+      ];
+      perSystem = { self', inputs', pkgs, ... }: {
+        # "haskellProjects" comes from https://github.com/srid/haskell-flake
+        haskellProjects.default = {
+          root = ./.;
+          buildTools = hp: {
+            inherit (pkgs)
+              treefmt
+              nixpkgs-fmt
+              foreman;
+            inherit (hp)
+              cabal-fmt
+              ormolu;
+            inherit (inputs'.tailwind-haskell.packages)
+              tailwind;
           };
-      in
-      {
-        # Used by `nix build` & `nix run`
-        defaultPackage = project false;
-
-        # Used by `nix develop`
-        devShell = project true;
-      });
+          source-overrides = {
+            inherit (inputs)
+              ema;
+          };
+          overrides = self: super: with pkgs.haskell.lib; {
+            inherit (inputs'.tailwind-haskell.packages)
+              tailwind;
+            PyF = dontCheck super.PyF;  # Tests fail
+          };
+        };
+      };
+    };
 }

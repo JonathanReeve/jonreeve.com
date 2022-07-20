@@ -3,10 +3,12 @@
 
 module JonReeve.Types where
 
-import qualified Data.Map.Strict as Map
-import qualified Data.Text as T
+import Data.Default
+import Data.Map.Strict qualified as Map
+import Data.Text qualified as T
 import Ema
-import System.FilePath ((-<.>), (</>), takeFileName)
+import Optics.Core (prism')
+import System.FilePath (takeFileName, (-<.>), (</>))
 import Text.Pandoc.Definition (Pandoc (..))
 
 -- ------------------------
@@ -34,6 +36,9 @@ data Model = Model
   }
   deriving stock (Eq, Show)
 
+instance Default Model where
+  def = Model mempty
+
 emptyModel :: Model
 emptyModel = Model mempty
 
@@ -57,56 +62,62 @@ modelDelete k model =
 -- | Convert "posts/2022-03-12-rethinking.org" to "2022/03/rethinking.html"
 -- for backwards compatibility with my existing URLs.
 permalink :: FilePath -> FilePath
-permalink fp = year </> month </> rest -<.> ".html" where
-  (year, month, _, rest) = case T.splitOn "-" (T.pack (takeFileName fp)) of
-    y : m : d : title -> (T.unpack y, T.unpack m, T.unpack d, T.unpack $ T.intercalate "-" title)
-    _                 -> error "Malformed filename"
+permalink fp = year </> month </> rest -<.> ".html"
+  where
+    (year, month, _, rest) = case T.splitOn "-" (T.pack (takeFileName fp)) of
+      y : m : d : title -> (T.unpack y, T.unpack m, T.unpack d, T.unpack $ T.intercalate "-" title)
+      _ -> error "Malformed filename"
 
 -- | Convert "2022/03/rethinking.html" to "posts/2022-03-12-rethinking.org"
 -- | XXX: wait, nevermind, this is impossible
-unPermalink :: FilePath -> FilePath
-unPermaLink fp = error
+unPermaLink :: FilePath -> FilePath
+unPermaLink fp = undefined
 
-instance Ema Model (Either FilePath SR) where
-  encodeRoute model = \case
-    Left fp -> fp
-    Right (SR_Html r) ->
-      -- TODO:  toString $ T.intercalate "/" (Slug.unSlug <$> toList slugs) <> ".html"
-      case r of
-        R_Index -> "index.html"
-        R_BlogPost fp ->
-          case modelLookup fp model of
-            Nothing -> error "404"
-            Just doc -> permalink fp
-        R_Tags -> "tags.html"
-        R_CV -> "cv.html"
-    Right SR_Feed -> "feed.xml"
+-- TODO: Use generics for this
+instance IsRoute (Either FilePath SR) where
+  type RouteModel (Either FilePath SR) = Model
+  routePrism model =
+    toPrism_ $ prism' encodeRoute decodeRoute
+    where
+      encodeRoute = \case
+        Left fp -> fp
+        Right (SR_Html r) ->
+          -- TODO:  toString $ T.intercalate "/" (Slug.unSlug <$> toList slugs) <> ".html"
+          case r of
+            R_Index -> "index.html"
+            R_BlogPost fp ->
+              case modelLookup fp model of
+                Nothing -> error "404"
+                Just doc -> permalink fp
+            R_Tags -> "tags.html"
+            R_CV -> "cv.html"
+        Right SR_Feed -> "feed.xml"
 
-  decodeRoute _model fp = do
-    -- TODO: other static toplevels
-    if "assets/" `T.isPrefixOf` toText fp
-      then pure $ Left $ "content" </> fp
-      else
-        if "images/" `T.isPrefixOf` toText fp
+      decodeRoute fp = do
+        -- TODO: other static toplevels
+        if "assets/" `T.isPrefixOf` toText fp
           then pure $ Left $ "content" </> fp
           else
-            if fp == "tags.html"
-              then pure $ Right $ SR_Html R_Tags
+            if "images/" `T.isPrefixOf` toText fp
+              then pure $ Left $ "content" </> fp
               else
-                if fp == "cv.html"
-                  then pure $ Right $ SR_Html R_CV
+                if fp == "tags.html"
+                  then pure $ Right $ SR_Html R_Tags
                   else
-                    if fp == "feed.xml"
-                      then pure $ Right $ SR_Feed
-                      else do
-                        if null fp
-                          then pure $ Right $ SR_Html R_Index
+                    if fp == "cv.html"
+                      then pure $ Right $ SR_Html R_CV
+                      else
+                        if fp == "feed.xml"
+                          then pure $ Right $ SR_Feed
                           else do
-                            basePath <- toString <$> T.stripSuffix ".html" (toText fp)
-                            pure $ Right $ SR_Html $ R_BlogPost $ basePath <> ".org"
+                            if null fp
+                              then pure $ Right $ SR_Html R_Index
+                              else do
+                                basePath <- toString <$> T.stripSuffix ".html" (toText fp)
+                                pure $ Right $ SR_Html $ R_BlogPost $ basePath <> ".org"
 
   -- Routes to write when generating the static site.
-  allRoutes (Map.keys . modelPosts -> posts) =
+  routeUniverse (Map.keys . modelPosts -> posts) =
     (fmap (Left . ("content" </>)) ["assets", "images"])
       <> fmap
         ( Right
