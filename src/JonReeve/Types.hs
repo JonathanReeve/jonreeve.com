@@ -100,7 +100,6 @@ data SR
   | SR_Static FilePath
   deriving stock (Eq, Show)
 
--- TODO: Use generics for this
 instance IsRoute SR where
   type RouteModel SR = Model
   routePrism model =
@@ -113,30 +112,19 @@ instance IsRoute SR where
         SR_Feed -> "feed.xml"
 
       decodeRoute fp = do
-        -- TODO: other static toplevels
-        if "assets/" `T.isPrefixOf` toText fp
-          then pure $ SR_Static fp
-          else
-            if "images/" `T.isPrefixOf` toText fp
-              then pure $ SR_Static fp
-              else
-                if fp == "tags.html"
-                  then pure $ SR_Html R_Tags
-                  else
-                    if fp == "cv.html"
-                      then pure $ SR_Html R_CV
-                      else
-                        if fp == "feed.xml"
-                          then pure $ SR_Feed
-                          else do
-                            if fp == "index.html" || fp == "" -- FIXME
-                              then pure $ SR_Html R_Index
-                              else do
-                                SR_Html <$> preview (fromPrism_ $ routePrism @R model) fp
+        asum
+          [ SR_Html <$> preview (fromPrism_ $ routePrism @R model) fp,
+            SR_Feed <$ guard (fp == "feed.xml"),
+            SR_Static
+              <$> ( do
+                      _ <- asum $ allowedStaticFolders <&> \dir -> T.stripPrefix (toText dir) (toText fp)
+                      pure fp
+                  )
+          ]
 
   -- Routes to write when generating the static site.
   routeUniverse m =
-    fmap SR_Static ["assets", "images"]
+    fmap SR_Static allowedStaticFolders
       <> fmap
         SR_Html
         ( [ R_Index,
@@ -145,3 +133,7 @@ instance IsRoute SR where
           ]
             <> fmap R_BlogPost (routeUniverse $ modelPosts m)
         )
+
+-- | Folders under ./content to serve as static content
+allowedStaticFolders :: [FilePath]
+allowedStaticFolders = ["assets", "images"]
