@@ -9,7 +9,7 @@ import Data.Map.Strict qualified as Map
 import Data.Text qualified as T
 import Ema
 import Ema.Route.Generic.TH
-import Optics.Core (preview, prism', review)
+import Optics.Core (prism')
 import System.FilePath ((</>))
 import Text.Pandoc.Definition (Pandoc (..))
 
@@ -24,9 +24,6 @@ data Model = Model
 
 instance Default Model where
   def = Model mempty
-
-emptyModel :: Model
-emptyModel = Model mempty
 
 modelLookup :: BlogPostR -> Model -> Maybe (FilePath, Pandoc)
 modelLookup k =
@@ -57,7 +54,7 @@ mkBlogPostR fp = do
   ["posts", fn] <- pure $ T.splitOn "/" $ T.pack fp
   (year : month : _ : slug) <- pure $ T.splitOn "-" fn
   slugWithoutExt <- T.stripSuffix ".org" $ T.intercalate "-" slug
-  pure $ BlogPostR $ toString $ T.intercalate "-" [year, month, slugWithoutExt]
+  pure $ BlogPostR $ toString $ T.intercalate "/" [year, month, slugWithoutExt]
 
 instance IsRoute BlogPostR where
   type RouteModel BlogPostR = Map BlogPostR (FilePath, Pandoc)
