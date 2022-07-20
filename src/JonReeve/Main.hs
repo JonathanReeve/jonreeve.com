@@ -48,14 +48,14 @@ parseJekyllFilename fn =
 toPosts :: Prism' FilePath SR -> Model -> [RSS.Post]
 toPosts rp model =
   flip fmap (Map.toList $ modelPosts model) $ \(fp, doc) ->
-    let r = R_BlogPost fp
+    let r = R_BlogPost $ BlogPostR fp
      in toPost r doc
   where
     toPost :: R -> Pandoc -> RSS.Post
     toPost r doc = RSS.Post postDate postUrl postContent postTitle
       where
         postDate = date (getMeta doc)
-        postUrl = SiteData.domain <> routeUrl rp r
+        postUrl = SiteData.domain <> Ema.routeUrl rp (SR_Html r)
         postContent = pandocToText doc
         postTitle = title (getMeta doc)
     pandocToText :: Pandoc -> T.Text
@@ -86,7 +86,7 @@ renderPage rp route val = html_ [lang_ "en"] $ do
     div_ [id_ "headerWrapper"] $ do
       header_ [class_ "navbar"] $ do
         section_ [class_ "navbar-section"] $ do
-          a_ [class_ "navbar-brand", href_ $ routeUrl rp R_Index] $ do
+          a_ [class_ "navbar-brand", href_ $ Ema.routeUrl rp (SR_Html R_Index)] $ do
             "Jonathan Reeve: "
             span_ [] "Computational Literary Analysis"
         section_ [class_ "navbar-section"] $ do
@@ -121,19 +121,17 @@ renderPage rp route val = html_ [lang_ "en"] $ do
         script_ [] ("hljs.initHighlightingOnLoad();" :: Html ())
   where
     navItem :: SR -> Html () -> Html ()
-    navItem navRoute label = li_ [class_ "nav-item"] $ a_ [href_ url] label
+    navItem r label = li_ [class_ "nav-item"] $ a_ [href_ url] label
       where
-        url = case navRoute of
-          SR_Html r -> routeUrl rp r
-          SR_Feed -> "feed.xml"
+        url = Ema.routeUrl rp r
 
     routeTitle :: Html ()
     routeTitle = case route of
       R_Index -> "Posts"
       R_Tags -> "Tags"
       R_CV -> "CV"
-      R_BlogPost k ->
-        toHtml $ title $ maybe (error "missing!") getMeta $ modelLookup (traceShowId k) val
+      R_BlogPost (BlogPostR k) ->
+        toHtml $ title $ maybe (error "missing!") getMeta $ modelLookup k val
     content :: Html ()
     content = case route of
       R_Index -> do
@@ -151,7 +149,7 @@ renderPage rp route val = html_ [lang_ "en"] $ do
               li_ [class_ "post"] $ do
                 let meta = getMeta src
                 div_ [vocab_ "https://schema.org", typeof_ "blogPosting"] $ do
-                  h2_ [class_ "postTitle", property_ "headline"] $ a_ [href_ (routeUrl rp $ R_BlogPost r)] $ toHtml $ title meta
+                  h2_ [class_ "postTitle", property_ "headline"] $ a_ [href_ (Ema.routeUrl rp $ SR_Html $ R_BlogPost $ BlogPostR r)] $ toHtml $ title meta
                   p_ [class_ "meta"] $ do
                     span_ [class_ "date", property_ "datePublished", content_ (date meta)] $ toHtml $ T.concat ["(", date meta, ")"]
                     span_ [class_ "tags", property_ "keywords", content_ (T.intercalate "," (tags meta))] $ do
@@ -172,13 +170,13 @@ renderPage rp route val = html_ [lang_ "en"] $ do
               forM_ rs $ \(r, src) -> do
                 li_ [class_ "pages"] $ do
                   let meta = getMeta src
-                  b_ $ a_ [href_ (routeUrl rp $ R_BlogPost r)] $ toHtml $ title meta
+                  b_ $ a_ [href_ (Ema.routeUrl rp $ SR_Html $ R_BlogPost $ BlogPostR r)] $ toHtml $ title meta
       R_CV -> do
         main_ [class_ "container"] $ do
           h1_ "Curriculum Vitae"
           h2_ "Jonathan Reeve"
           CV.cv
-      R_BlogPost srcPath -> do
+      R_BlogPost (BlogPostR srcPath) -> do
         h1_ routeTitle
         let (y, m, d, _) = parseJekyllFilename srcPath
         p_ [fmt|Posted {y}-{m}-{d}|]
@@ -313,7 +311,3 @@ chatIcon =
 0 64-28.75 64-63.1V63.1C511.1 28.75 483.2 0 447.1 0zM464 352c0 8.75-7.25 16-16
 16h-160l-80 60v-60H64c-8.75 0-16-7.25-16-16V64c0-8.75 7.25-16 16-16h384c8.75 0
 16 7.25 16 16V352z|]
-
-routeUrl :: Prism' FilePath SR -> R -> Text
-routeUrl rp htmlR =
-  Ema.routeUrl rp $ SR_Html htmlR

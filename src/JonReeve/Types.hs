@@ -1,5 +1,6 @@
-{-# LANGUAGE DeriveAnyClass #-}
 {-# LANGUAGE LambdaCase #-}
+{-# LANGUAGE TemplateHaskell #-}
+{-# LANGUAGE UndecidableInstances #-}
 
 module JonReeve.Types where
 
@@ -7,7 +8,8 @@ import Data.Default
 import Data.Map.Strict qualified as Map
 import Data.Text qualified as T
 import Ema
-import Optics.Core (prism')
+import Ema.Route.Generic.TH
+import Optics.Core (preview, prism', review)
 import System.FilePath (takeFileName, (-<.>), (</>))
 import Text.Pandoc.Definition (Pandoc (..))
 
@@ -25,10 +27,13 @@ data SR
 -- | Html route
 data R
   = R_Index
-  | R_BlogPost FilePath
   | R_Tags
   | R_CV
+  | R_BlogPost BlogPostR
   deriving stock (Eq, Show)
+
+newtype BlogPostR = BlogPostR FilePath
+  deriving stock (Eq, Show, Generic)
 
 -- ------------------------
 -- Our site model
@@ -37,7 +42,21 @@ data R
 data Model = Model
   { modelPosts :: Map FilePath Pandoc
   }
-  deriving stock (Eq, Show)
+  deriving stock (Eq, Show, Generic)
+
+deriveGeneric ''R
+deriveIsRoute
+  ''R
+  [t|
+    '[ WithModel Model,
+       WithSubRoutes
+         '[ FileRoute "index.html",
+            FileRoute "tags.html",
+            FileRoute "cv.html",
+            BlogPostR
+          ]
+     ]
+    |]
 
 instance Default Model where
   def = Model mempty
@@ -62,10 +81,22 @@ modelDelete k model =
     { modelPosts = Map.delete k (modelPosts model)
     }
 
+instance IsRoute BlogPostR where
+  type RouteModel BlogPostR = Map FilePath Pandoc
+  routePrism _model =
+    toPrism_ $ prism' encode decode
+    where
+      encode (BlogPostR slug) = slug -<.> "" </> "index.html"
+      decode fp = do
+        _ <- T.stripPrefix "posts" (toText fp) -- HACK: check that it is inside posts
+        baseFile <- toString <$> T.stripSuffix "/index.html" (toText fp)
+        pure $ BlogPostR $ baseFile -<.> ".org"
+  routeUniverse = fmap BlogPostR . Map.keys
+
 -- | Convert "posts/2022-03-12-rethinking.org" to "2022/03/rethinking.html"
 -- for backwards compatibility with my existing URLs.
 permalink :: FilePath -> FilePath
-permalink fp = year </> month </> rest -<.> ".html"
+permalink fp = year </> month </> rest -<.> "" </> "index.html"
   where
     (year, month, _, rest) = case T.splitOn "-" (T.pack (takeFileName fp)) of
       y : m : d : title -> (T.unpack y, T.unpack m, T.unpack d, T.unpack $ T.intercalate "-" title)
@@ -85,15 +116,7 @@ instance IsRoute SR where
       encodeRoute = \case
         SR_Static fp -> fp
         SR_Html r ->
-          -- TODO:  toString $ T.intercalate "/" (Slug.unSlug <$> toList slugs) <> ".html"
-          case r of
-            R_Index -> "index.html"
-            R_BlogPost fp ->
-              case modelLookup (traceShowId fp) model of
-                Nothing -> error "404"
-                Just doc -> permalink fp
-            R_Tags -> "tags.html"
-            R_CV -> "cv.html"
+          review (fromPrism_ $ routePrism @R model) r
         SR_Feed -> "feed.xml"
 
       decodeRoute fp = do
@@ -116,17 +139,16 @@ instance IsRoute SR where
                             if fp == "index.html" || fp == "" -- FIXME
                               then pure $ SR_Html R_Index
                               else do
-                                basePath <- toString <$> T.stripSuffix ".html" (toText fp)
-                                pure $ SR_Html $ R_BlogPost $ basePath <> ".org"
+                                SR_Html <$> preview (fromPrism_ $ routePrism @R model) fp
 
   -- Routes to write when generating the static site.
-  routeUniverse (Map.keys . modelPosts -> posts) =
-    (fmap SR_Static ["assets", "images"])
+  routeUniverse m =
+    fmap SR_Static ["assets", "images"]
       <> fmap
         SR_Html
         ( [ R_Index,
             R_CV,
             R_Tags
           ]
-            <> fmap R_BlogPost posts
+            <> fmap R_BlogPost (routeUniverse $ modelPosts m)
         )
