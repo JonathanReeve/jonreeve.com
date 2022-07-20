@@ -69,7 +69,7 @@ render rp model = \case
   Left fp ->
     -- This instructs ema to treat this route "as is" (ie. a static file; no generation)
     -- The argument `fp` refers to the absolute path to the static file.
-    Ema.AssetStatic fp
+    Ema.AssetStatic $ "content" </> fp
   Right (SR_Html r) ->
     -- Generate a Html route; hot-reload is enabled.
     Ema.AssetGenerated Ema.Html $ renderHtml rp model r

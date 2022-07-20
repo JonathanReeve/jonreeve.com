@@ -86,7 +86,7 @@ instance IsRoute (Either FilePath SR) where
           case r of
             R_Index -> "index.html"
             R_BlogPost fp ->
-              case modelLookup fp model of
+              case modelLookup (traceShowId fp) model of
                 Nothing -> error "404"
                 Just doc -> permalink fp
             R_Tags -> "tags.html"
@@ -96,7 +96,7 @@ instance IsRoute (Either FilePath SR) where
       decodeRoute fp = do
         -- TODO: other static toplevels
         if "assets/" `T.isPrefixOf` toText fp
-          then pure $ Left $ "content" </> fp
+          then pure $ Left fp
           else
             if "images/" `T.isPrefixOf` toText fp
               then pure $ Left $ "content" </> fp
@@ -110,7 +110,7 @@ instance IsRoute (Either FilePath SR) where
                         if fp == "feed.xml"
                           then pure $ Right $ SR_Feed
                           else do
-                            if null fp
+                            if fp == "index.html" || fp == "" -- FIXME
                               then pure $ Right $ SR_Html R_Index
                               else do
                                 basePath <- toString <$> T.stripSuffix ".html" (toText fp)
