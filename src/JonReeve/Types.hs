@@ -1,120 +1,128 @@
-{-# LANGUAGE DeriveAnyClass #-}
 {-# LANGUAGE LambdaCase #-}
+{-# LANGUAGE TemplateHaskell #-}
+{-# LANGUAGE UndecidableInstances #-}
 
 module JonReeve.Types where
 
-import qualified Data.Map.Strict as Map
-import qualified Data.Text as T
+import Data.Default
+import Data.Map.Strict qualified as Map
+import Data.Text qualified as T
 import Ema
-import System.FilePath ((-<.>), (</>), takeFileName)
+import Ema.Route.Generic.TH
+import Optics.Core (prism')
+import System.FilePath ((</>))
 import Text.Pandoc.Definition (Pandoc (..))
-
--- ------------------------
--- Our site route
--- ------------------------
-
--- | Site Route
-data SR = SR_Html R | SR_Feed
-  deriving stock (Eq, Show)
-
--- | Html route
-data R
-  = R_Index
-  | R_BlogPost FilePath
-  | R_Tags
-  | R_CV
-  deriving stock (Eq, Show)
 
 -- ------------------------
 -- Our site model
 -- ------------------------
 
 data Model = Model
-  { modelPosts :: Map FilePath Pandoc
+  { modelPosts :: Map BlogPostR (FilePath, Pandoc)
   }
-  deriving stock (Eq, Show)
+  deriving stock (Eq, Show, Generic)
 
-emptyModel :: Model
-emptyModel = Model mempty
+instance Default Model where
+  def = Model mempty
 
-modelLookup :: FilePath -> Model -> Maybe Pandoc
+modelLookup :: BlogPostR -> Model -> Maybe (FilePath, Pandoc)
 modelLookup k =
   Map.lookup k . modelPosts
 
-modelInsert :: FilePath -> Pandoc -> Model -> Model
+modelInsert :: BlogPostR -> (FilePath, Pandoc) -> Model -> Model
 modelInsert k v model =
   let xs = Map.insert k v (modelPosts model)
    in model
         { modelPosts = xs
         }
 
-modelDelete :: FilePath -> Model -> Model
+modelDelete :: BlogPostR -> Model -> Model
 modelDelete k model =
   model
     { modelPosts = Map.delete k (modelPosts model)
     }
 
--- | Convert "posts/2022-03-12-rethinking.org" to "2022/03/rethinking.html"
--- for backwards compatibility with my existing URLs.
-permalink :: FilePath -> FilePath
-permalink fp = year </> month </> rest -<.> ".html" where
-  (year, month, _, rest) = case T.splitOn "-" (T.pack (takeFileName fp)) of
-    y : m : d : title -> (T.unpack y, T.unpack m, T.unpack d, T.unpack $ T.intercalate "-" title)
-    _                 -> error "Malformed filename"
+-- ------------------------
+-- Our site route types
+-- ------------------------
 
--- | Convert "2022/03/rethinking.html" to "posts/2022-03-12-rethinking.org"
--- | XXX: wait, nevermind, this is impossible
-unPermalink :: FilePath -> FilePath
-unPermaLink fp = error
+newtype BlogPostR = BlogPostR FilePath
+  deriving stock (Eq, Show, Ord, Generic)
 
-instance Ema Model (Either FilePath SR) where
-  encodeRoute model = \case
-    Left fp -> fp
-    Right (SR_Html r) ->
-      -- TODO:  toString $ T.intercalate "/" (Slug.unSlug <$> toList slugs) <> ".html"
-      case r of
-        R_Index -> "index.html"
-        R_BlogPost fp ->
-          case modelLookup fp model of
-            Nothing -> error "404"
-            Just doc -> permalink fp
-        R_Tags -> "tags.html"
-        R_CV -> "cv.html"
-    Right SR_Feed -> "feed.xml"
+mkBlogPostR :: FilePath -> Maybe BlogPostR
+mkBlogPostR fp = do
+  ["posts", fn] <- pure $ T.splitOn "/" $ T.pack fp
+  (year : month : _ : slug) <- pure $ T.splitOn "-" fn
+  slugWithoutExt <- T.stripSuffix ".org" $ T.intercalate "-" slug
+  pure $ BlogPostR $ toString $ T.intercalate "/" [year, month, slugWithoutExt]
 
-  decodeRoute _model fp = do
-    -- TODO: other static toplevels
-    if "assets/" `T.isPrefixOf` toText fp
-      then pure $ Left $ "content" </> fp
-      else
-        if "images/" `T.isPrefixOf` toText fp
-          then pure $ Left $ "content" </> fp
-          else
-            if fp == "tags.html"
-              then pure $ Right $ SR_Html R_Tags
-              else
-                if fp == "cv.html"
-                  then pure $ Right $ SR_Html R_CV
-                  else
-                    if fp == "feed.xml"
-                      then pure $ Right $ SR_Feed
-                      else do
-                        if null fp
-                          then pure $ Right $ SR_Html R_Index
-                          else do
-                            basePath <- toString <$> T.stripSuffix ".html" (toText fp)
-                            pure $ Right $ SR_Html $ R_BlogPost $ basePath <> ".org"
+instance IsRoute BlogPostR where
+  type RouteModel BlogPostR = Map BlogPostR (FilePath, Pandoc)
+  routePrism model =
+    toPrism_ $ prism' encode decode
+    where
+      encode (BlogPostR slug) = slug </> "index.html"
+      decode fp = do
+        r <- BlogPostR . toString <$> T.stripSuffix "/index.html" (toText fp)
+        guard $ Map.member r model
+        pure r
+  routeUniverse = Map.keys
 
-  -- Routes to write when generating the static site.
-  allRoutes (Map.keys . modelPosts -> posts) =
-    (fmap (Left . ("content" </>)) ["assets", "images"])
-      <> fmap
-        ( Right
-            . SR_Html
-        )
-        ( [ R_Index,
-            R_CV,
-            R_Tags
+-- | Html route
+data R
+  = R_Index
+  | R_Tags
+  | R_CV
+  | R_BlogPost BlogPostR
+  deriving stock (Eq, Show, Generic)
+
+deriveGeneric ''R
+deriveIsRoute
+  ''R
+  [t|
+    '[ WithModel Model,
+       WithSubRoutes
+         '[ FileRoute "index.html",
+            FileRoute "tags.html",
+            FileRoute "cv.html",
+            BlogPostR
           ]
-            <> fmap R_BlogPost posts
-        )
+     ]
+    |]
+
+-- | Static file route
+newtype StaticR = StaticR {unStaticR :: FilePath}
+  deriving stock (Eq, Show, Ord, Generic)
+
+instance IsRoute StaticR where
+  type RouteModel StaticR = ()
+  routePrism () =
+    toPrism_ . prism' unStaticR $ \fp -> do
+      _ <- asum $ allowedStaticFolders <&> \dir -> T.stripPrefix (toText dir) (toText fp)
+      pure $ StaticR fp
+  routeUniverse () =
+    fmap StaticR allowedStaticFolders
+
+-- | Folders under ./content to serve as static content
+allowedStaticFolders :: [FilePath]
+allowedStaticFolders = ["assets", "images"]
+
+-- | Site Route
+data SR
+  = SR_Html R
+  | SR_Feed
+  | SR_Static StaticR
+  deriving stock (Eq, Show, Generic)
+
+deriveGeneric ''SR
+deriveIsRoute
+  ''SR
+  [t|
+    '[ WithModel Model,
+       WithSubRoutes
+         '[ R,
+            FileRoute "feed.xml",
+            StaticR
+          ]
+     ]
+    |]

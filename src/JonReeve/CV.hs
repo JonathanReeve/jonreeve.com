@@ -2,8 +2,8 @@
 -- needed for Lucid
 {-# LANGUAGE ExtendedDefaultRules #-}
 {-# LANGUAGE OverloadedStrings #-}
+
 -- needed for PyF
-{-# LANGUAGE QuasiQuotes #-}
 
 module JonReeve.CV where
 
@@ -20,8 +20,9 @@ import Lucid
 md2Html :: Shared.Markdown -> Html ()
 md2Html md =
   JonReeve.Pandoc.render $ JonReeve.Pandoc.parsePure readMarkdown md
-  -- -- TODO: Lucid's unsafe string
-  -- "TODO: markdown"
+
+-- -- TODO: Lucid's unsafe string
+-- "TODO: markdown"
 
 educationSection :: Html ()
 educationSection = section_ [class_ "education"] $ do

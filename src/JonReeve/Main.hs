@@ -6,7 +6,6 @@
 {-# LANGUAGE OverloadedStrings #-}
 {-# LANGUAGE QuasiQuotes #-}
 {-# LANGUAGE ScopedTypeVariables #-}
-{-# LANGUAGE TemplateHaskell #-}
 {-# LANGUAGE TupleSections #-}
 
 module JonReeve.Main where
@@ -18,8 +17,8 @@ module JonReeve.Main where
 import Clay qualified as C
 import Data.Aeson (FromJSON, fromJSON)
 import Data.Aeson qualified as Aeson
-import Data.Map.Strict qualified as Map
 import Data.List qualified as List
+import Data.Map.Strict qualified as Map
 import Data.Text qualified as T
 import Data.Text.Lazy qualified as LT
 import Ema qualified
@@ -31,6 +30,7 @@ import JonReeve.SiteData qualified as SiteData
 import JonReeve.Types
 import Lucid
 import Lucid.Base
+import Optics.Core (Prism')
 import PyF
 import Text.Pandoc (Pandoc)
 
@@ -44,17 +44,17 @@ parseJekyllFilename fn =
 
 -- | Convert the posts we've read into Post types that can be read
 -- by the RSS/Atom module.
-toPosts :: Model -> [RSS.Post]
-toPosts model =
-  flip fmap (Map.toList $ modelPosts model) $ \(fp, doc) ->
-    let r = R_BlogPost fp
+toPosts :: Prism' FilePath SR -> Model -> [RSS.Post]
+toPosts rp model =
+  flip fmap (Map.toList $ modelPosts model) $ \(br, (_, doc)) ->
+    let r = R_BlogPost br
      in toPost r doc
   where
     toPost :: R -> Pandoc -> RSS.Post
     toPost r doc = RSS.Post postDate postUrl postContent postTitle
       where
         postDate = date (getMeta doc)
-        postUrl = SiteData.domain <> routeUrl model r
+        postUrl = SiteData.domain <> Ema.routeUrl rp (SR_Html r)
         postContent = pandocToText doc
         postTitle = title (getMeta doc)
     pandocToText :: Pandoc -> T.Text
@@ -65,8 +65,8 @@ stylesheet url = link_ [rel_ "stylesheet", href_ url]
 script url = script_ [src_ url, async_ T.empty] T.empty
 
 -- | Define your site HTML here
-renderPage :: R -> Model -> Html ()
-renderPage route val = html_ [lang_ "en"] $ do
+renderPage :: Prism' FilePath SR -> R -> Model -> Html ()
+renderPage rp route val = html_ [lang_ "en"] $ do
   head_ $ do
     meta_ [httpEquiv_ "Content-Type", content_ "text/html; charset=utf-8"]
     title_ routeTitle
@@ -85,7 +85,7 @@ renderPage route val = html_ [lang_ "en"] $ do
     div_ [id_ "headerWrapper"] $ do
       header_ [class_ "navbar"] $ do
         section_ [class_ "navbar-section"] $ do
-          a_ [class_ "navbar-brand", href_ $ routeUrl val R_Index] $ do
+          a_ [class_ "navbar-brand", href_ $ Ema.routeUrl rp (SR_Html R_Index)] $ do
             "Jonathan Reeve: "
             span_ [] "Computational Literary Analysis"
         section_ [class_ "navbar-section"] $ do
@@ -120,9 +120,9 @@ renderPage route val = html_ [lang_ "en"] $ do
         script_ [] ("hljs.initHighlightingOnLoad();" :: Html ())
   where
     navItem :: SR -> Html () -> Html ()
-    navItem navRoute label = li_ [class_ "nav-item"] $ a_ [href_ $ url] label where
-      url = case navRoute of SR_Html r -> routeUrl val r
-                             SR_Feed -> "feed.xml"
+    navItem r label = li_ [class_ "nav-item"] $ a_ [href_ url] label
+      where
+        url = Ema.routeUrl rp r
 
     routeTitle :: Html ()
     routeTitle = case route of
@@ -130,7 +130,7 @@ renderPage route val = html_ [lang_ "en"] $ do
       R_Tags -> "Tags"
       R_CV -> "CV"
       R_BlogPost k ->
-        toHtml $ title $ maybe (error "missing!") getMeta $ modelLookup (traceShowId k) val
+        toHtml $ title $ maybe (error "missing!") (getMeta . snd) $ modelLookup k val
     content :: Html ()
     content = case route of
       R_Index -> do
@@ -143,12 +143,12 @@ renderPage route val = html_ [lang_ "en"] $ do
             img_ [src_ "assets/images/equal.svg"]
             img_ [src_ "assets/images/noun_education_1909997.svg"]
         main_ [class_ "container"] $
-          forM_ (List.reverse $ Map.toList $ modelPosts val) $ \(r, src) -> do
+          forM_ (List.reverse $ Map.toList $ modelPosts val) $ \(r, (_, src)) -> do
             section_ [id_ "postList"] $ do
               li_ [class_ "post"] $ do
                 let meta = getMeta src
                 div_ [vocab_ "https://schema.org", typeof_ "blogPosting"] $ do
-                  h2_ [class_ "postTitle", property_ "headline"] $ a_ [href_ (routeUrl val $ R_BlogPost r)] $ toHtml $ title meta
+                  h2_ [class_ "postTitle", property_ "headline"] $ a_ [href_ (Ema.routeUrl rp $ SR_Html $ R_BlogPost r)] $ toHtml $ title meta
                   p_ [class_ "meta"] $ do
                     span_ [class_ "date", property_ "datePublished", content_ (date meta)] $ toHtml $ T.concat ["(", date meta, ")"]
                     span_ [class_ "tags", property_ "keywords", content_ (T.intercalate "," (tags meta))] $ do
@@ -160,7 +160,7 @@ renderPage route val = html_ [lang_ "en"] $ do
       R_Tags -> do
         h1_ routeTitle
         let rposts = Map.toList $ modelPosts val
-            tags = groupByTag rposts
+            tags = groupByTag $ fmap (fmap snd) rposts
         div_ $
           forM_ (sortOn (T.toLower . fst) $ Map.toList tags) $ \(tag, rs) -> do
             a_ [id_ tag] mempty
@@ -169,7 +169,7 @@ renderPage route val = html_ [lang_ "en"] $ do
               forM_ rs $ \(r, src) -> do
                 li_ [class_ "pages"] $ do
                   let meta = getMeta src
-                  b_ $ a_ [href_ (routeUrl val $ R_BlogPost r)] $ toHtml $ title meta
+                  b_ $ a_ [href_ (Ema.routeUrl rp $ SR_Html $ R_BlogPost r)] $ toHtml $ title meta
       R_CV -> do
         main_ [class_ "container"] $ do
           h1_ "Curriculum Vitae"
@@ -177,12 +177,13 @@ renderPage route val = html_ [lang_ "en"] $ do
           CV.cv
       R_BlogPost srcPath -> do
         h1_ routeTitle
-        let (y, m, d, _) = parseJekyllFilename srcPath
-        p_ [fmt|Posted {y}-{m}-{d}|]
         article_ $
           case modelLookup srcPath val of
             Nothing -> error "missing"
-            Just doc -> Pandoc.render doc
+            Just (fp, doc) -> do
+              let (y, m, d, _) = parseJekyllFilename fp
+              p_ [fmt|Posted {y}-{m}-{d}|]
+              Pandoc.render doc
         hr_ []
         p_ [] "I welcome your comments and annotations in the Hypothes.is sidebar to the right. →"
         script_ [src_ "https://hypothes.is/embed.js"] T.empty
@@ -310,7 +311,3 @@ chatIcon =
 0 64-28.75 64-63.1V63.1C511.1 28.75 483.2 0 447.1 0zM464 352c0 8.75-7.25 16-16
 16h-160l-80 60v-60H64c-8.75 0-16-7.25-16-16V64c0-8.75 7.25-16 16-16h384c8.75 0
 16 7.25 16 16V352z|]
-
-routeUrl :: Model -> R -> Text
-routeUrl m htmlR =
-  Ema.routeUrl @(Either FilePath SR) m $ Right $ SR_Html htmlR
