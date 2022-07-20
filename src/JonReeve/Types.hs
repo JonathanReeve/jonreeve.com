@@ -77,7 +77,7 @@ data R
   | R_Tags
   | R_CV
   | R_BlogPost BlogPostR
-  deriving stock (Eq, Show)
+  deriving stock (Eq, Show, Generic)
 
 deriveGeneric ''R
 deriveIsRoute
@@ -93,47 +93,39 @@ deriveIsRoute
      ]
     |]
 
--- | Site Route
-data SR
-  = SR_Html R
-  | SR_Feed
-  | SR_Static FilePath
-  deriving stock (Eq, Show)
+-- | Static file route
+newtype StaticR = StaticR {unStaticR :: FilePath}
+  deriving stock (Eq, Show, Ord, Generic)
 
-instance IsRoute SR where
-  type RouteModel SR = Model
-  routePrism model =
-    toPrism_ $ prism' encodeRoute decodeRoute
-    where
-      encodeRoute = \case
-        SR_Static fp -> fp
-        SR_Html r ->
-          review (fromPrism_ $ routePrism @R model) r
-        SR_Feed -> "feed.xml"
-
-      decodeRoute fp = do
-        asum
-          [ SR_Html <$> preview (fromPrism_ $ routePrism @R model) fp,
-            SR_Feed <$ guard (fp == "feed.xml"),
-            SR_Static
-              <$> ( do
-                      _ <- asum $ allowedStaticFolders <&> \dir -> T.stripPrefix (toText dir) (toText fp)
-                      pure fp
-                  )
-          ]
-
-  -- Routes to write when generating the static site.
-  routeUniverse m =
-    fmap SR_Static allowedStaticFolders
-      <> fmap
-        SR_Html
-        ( [ R_Index,
-            R_CV,
-            R_Tags
-          ]
-            <> fmap R_BlogPost (routeUniverse $ modelPosts m)
-        )
+instance IsRoute StaticR where
+  type RouteModel StaticR = ()
+  routePrism () =
+    toPrism_ . prism' unStaticR $ \fp -> do
+      _ <- asum $ allowedStaticFolders <&> \dir -> T.stripPrefix (toText dir) (toText fp)
+      pure $ StaticR fp
+  routeUniverse () =
+    fmap StaticR allowedStaticFolders
 
 -- | Folders under ./content to serve as static content
 allowedStaticFolders :: [FilePath]
 allowedStaticFolders = ["assets", "images"]
+
+-- | Site Route
+data SR
+  = SR_Html R
+  | SR_Feed
+  | SR_Static StaticR
+  deriving stock (Eq, Show, Generic)
+
+deriveGeneric ''SR
+deriveIsRoute
+  ''SR
+  [t|
+    '[ WithModel Model,
+       WithSubRoutes
+         '[ R,
+            FileRoute "feed.xml",
+            StaticR
+          ]
+     ]
+    |]

@@ -67,7 +67,7 @@ instance EmaSite SR where
 
 render :: Prism' FilePath SR -> Model -> SR -> Ema.Asset LByteString
 render rp model = \case
-  SR_Static fp ->
+  SR_Static (StaticR fp) ->
     -- This instructs ema to treat this route "as is" (ie. a static file; no generation)
     -- The argument `fp` refers to the absolute path to the static file.
     Ema.AssetStatic $ "content" </> fp
