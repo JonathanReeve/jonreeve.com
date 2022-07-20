@@ -33,10 +33,11 @@ import Lucid.Base
 import Optics.Core (Prism')
 import PyF
 import Text.Pandoc (Pandoc)
+import System.FilePath (takeFileName)
 
 parseJekyllFilename :: FilePath -> (String, String, String, String)
 parseJekyllFilename fn =
-  case T.splitOn "-" (T.pack fn) of
+  case T.splitOn "-" (T.pack (takeFileName fn)) of
     y : m : d : rest ->
       (T.unpack y, T.unpack m, T.unpack d, T.unpack $ T.intercalate "-" rest)
     _ ->
