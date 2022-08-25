@@ -1,0 +1,26 @@
+* Jonreeve.com
+
+I'm Jonathan Reeve, and this is my personal website, [[https://jonreeve.com/][jonreeve.com]]. It's written in Haskell, and built with [[https://github.com/srid/ema][Ema]].
+
+** Hacking
+
+You won't need to do this unless you're me. But to run locally,
+
+#+begin_src sh
+bin/run
+#+end_src
+
+To generate the static site:
+
+#+begin_src sh
+nix build
+./result/bin/jonreeve gen dist/
+#+end_sh
+
+** Changelog
+
+- v0.0.0: WordPress site (not associated with this repo)
+- v1.0.0: [[https://jekyllrb.com/][Jekyll]]-built static site
+- v2.0.0: [[https://metalsmith.io/][Metalsmith]]-built static site
+- v3.0.0: [[https://github.com/srid/rib][Rib]]-built static site in Haskell. Described [[https://jonreeve.com/2020/09/type-safe-blog/][in this blog post.]]
+- v4.0.0: [[https://ema.srid.ca/][Ema]]-built static site in Haskell.
