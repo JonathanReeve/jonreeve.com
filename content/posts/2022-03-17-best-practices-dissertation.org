@@ -1,0 +1,92 @@
+#+title: Best Practices for Dissertations in the 21st Century
+#+date: 2021-10-25
+#+keywords: dissertation
+
+There's a lot of talk these days about "next-generation dissertations" and "digital dissertations." See, for example, /Electronic Theses and Dissertations/, /The Sage Handbook of Digital Dissertations and Theses/, and /Shaping the Digital Dissertation: Knowledge Production in the Arts and Humanities/ [cite:@fox2004electronic;@andrews2012the;@kuhn2021shaping]. Syracuse University and Katina Rogers recently launched [[https://nextgendiss.hcommons.org/what-why-how/][an NEH-funded project, called /Next Generation Dissertations/]], where they define the genre as: "any doctoral project whose form goes beyond the traditional written monograph. It can be a website or other digital product, it can be a graphic novel, a documentary, or a rap album."
+
+One often-cited example is Amanda Visconti's dissertation, which involved the creation of an interactive website called [[http://infiniteulysses.com/][Infinite Ulysses]]—an annotated and annotatable edition of James Joyce's /Ulysses/. (Which I love, by the way—I'm trying to do something similar with [[https://github.com/open-editions/corpus-joyce-ulysses-tei][my Open Editions edition of /Ulysses/]].) I'd often heard this called a "digital dissertation," since [[https://github.com/amandavisconti/infinite-ulysses-dissertation][much of the content of the dissertation is behind the scenes, in PHP and Drupal]].
+
+But I would like to problematize the term "digital dissertation." Practically speaking, aren't all dissertations digital, these days? Virtually no grad student, in the US at least, is depositing a handwritten dissertation, which is never emailed to anyone, or uploaded to the web. Even if it /were/ handwritten, it would still need to be archived digitally.
+
+I would also like to problematize the idea that a dissertation that is a website is in some way nontraditional. If a traditional, monographic dissertation is uploaded to a digital repository, and is available for scholars to read over the web, is that not, then, a website? At the very least, it's a digital product, no?
+
+If doctoral candidates are writing dissertations that will never be printed—which is very common these days, since libraries and departments are making fewer and fewer hard copies of dissertations—then what's the use of the paper-shaped digital document? I've written about this in [[https://jonreeve.com/2021/05/stop-making-pdfs/][a previous post]], already, where I argue that almost any format is better than PDF and Word, when it comes to born-digital documents that stay digital. For one, if you're making endnotes, or even footnotes, in a document, in 2022, you're purposefully making it harder on your readers, since they have to navigate back and forth in a very long document to try to find your notes.
+
+So I wanted to propose a set of best practices, for 21st century dissertations. This doesn't apply to documentary films or rap albums---/as much/---but rather is a way to make sane defaults for traditional, monographic dissertations. These recommendations have been informed by a number of inputs: [[https://nextgendiss.hcommons.org/examples/][Next-Generation Dissertations' Project Examples]]; [[https://humetricshss.org/our-work/values/][the values framework of the Humane Metrics Initiative]]; the [[https://www.mla.org/About-Us/Governance/Committees/Committee-Listings/Professional-Issues/Committee-on-Information-Technology/Guidelines-for-Evaluating-Work-in-Digital-Humanities-and-Digital-Media][the MLA's Guidelines for Evaluating Work in Digital Humanities and Digital Media]], [[https://www.mla.org/About-Us/Governance/Committees/Committee-Listings/Professional-Issues/Committee-on-Information-Technology/Guidelines-for-Authors-of-Digital-Resources][their Guidelines for Authors of Digital Resources]]; and [[https://libguides.gc.cuny.edu/dissertations/digital-dissertations][the research guide for dissertations and theses at the CUNY Graduate Center]].
+
+I list these recommendations in order of importance. At the bottom of the page, I also provide a template which doctoral students can use to bootstrap their own dissertation.
+
+** 1. It should be always-already public
+The dissertation should be always-already public. Not made public when it's finished. Not made public a year or more after it's been deposited ("embargoed"). Public from the very beginning. Why? Scholarship isn't performed in a vacuum. We need comments, ideas, help, cross-pollination. This is seemingly a given in the sciences, where dissertations are often assembled from a number of already published papers, but is less common in the humanities. Part of reason for that, I've gathered from talking to colleagues, that is there is a fear that, if your dissertation is public, it will somehow be "stolen": that a struggling scholar will take your work, slap their name on it, and make a career out of it. It's a ridiculous fear, the second you examine it. For one, accounts of this happening are rare and anecdotal, and don't represent anything statistically likely. For another, making your dissertation public is actually a way to /protect/ it against theft. If there is ever any question as to who wrote what, it's essential to have a verifiable public record of it, already online.
+
+See an excellent response to fears about a public dissertation in Kathleen Fitzpatrick's "Dissertating in Public" ([cite:@fitzpatrick2021]).
+
+The best way to make your work public is to push it to a public version-control hub like GitHub or GitLab. That leads me to the second recommendation.
+
+** 2. It should be always-already version-controlled
+The best way to make a public record of your dissertation is to put it under version control from the very beginning. Version control systems like Git keep track of your dissertation in all its revisions and states, across the history of its composition. They can include not only your prose, but your data, code, and everything else.
+
+This is not only a great way of backing up your work, but it's a great method for collaboration and project management. Once you sync your work to a Git-based cloud service like GitHub or GitLab, you'll have access to bug trackers, wikis, kanban boards, and automated build systems (CI/CD).
+
+My recommendation for this is to check in your work using a version control system like Git, and push it regularly to a cloud service like GitHub or GitLab.
+
+** 3. It should be licensed under a copyleft license
+Anyone should be able to use your work, download a copy of it to their computer, and share it with others, provided that they credit you, and promise to pass on those same freedoms to others. This is a foundational practice for open knowledge creation, and it's especially necessary if your work includes something reusable, like computer programs. Again, new knowledge isn't created in a vacuum—it must be available to others. I prefer the [[https://creativecommons.org/licenses/by-nc-sa/4.0/][Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International License, or CC BY-NC-SA 4.0]], for prose, and the [[https://www.gnu.org/licenses/gpl-3.0.en.html][GNU Public License, version 3]], for code.
+
+** 4. It should be formatted in HTML by default
+HTML is the most future-proof format, apart from plain text. Since it's the backbone of the whole Internet, it's the most widely-supported format, and the one which is the most likely to outlast them all.
+
+If your university requires PDF, however, you can easily "print" a webpage to PDF just by using the print function in the browser. If it doesn't look great, [[https://www.sitepoint.com/css-printer-friendly-pages/][a print stylesheet in CSS]] goes a long way. But if you do print it, it will lose a lot of functionality, so print stylesheets should expose warnings which point readers to the canonical version of the document, on the web.
+
+Your dissertation doesn't need to be written in HTML, however. Plenty of plain-text formats exist which compile to HTML: markdown, org (which is what my dissertation is written in), and Asciidoc, just to name a few. There are also more esoteric ones [[https://docs.racket-lang.org/pollen/][like Pollen]] which are exciting departures.
+
+** 5. It should be easy on your reader
+At minimum, it should meet accessibility standards. Using ~alt~ tags on images is a good first step, and aids those using screen-readers to read your work.
+
+Next, it should use sidenotes rather than footnotes or endnotes: notes in the margins, rather than notes at the bottom of the page. Your readers shouldn't have to flip to a different page, or even a different part of the page, to read your footnotes.  My template uses the wonderful [[https://edwardtufte.github.io/tufte-css/][Tufte.css]] to accomplish this.
+
+In-text citations should be hyperlinks for, where possible. Readers shouldn't have to manually jump back and forth between an in-text citation and a bibliography.
+
+In the bibliography, references should also contain, or be, hyperlinks, where possible. If you found a source online, your readers should be able to visit that same source. Using DOIs in your bibliography is a good idea, since these are stable URLs.
+
+I should also note that URLs are not hyperlinks. Don't muddy your references with long URLs, which were never meant to be used as link text.
+
+** 6. It should be easy to annotate
+Without the ability to annotate a document, it becomes monolithic in an undesirable way---you remove yourself from any possible conversation that could help your arguments.
+
+Thus, I recommend adding an annotation layer to your dissertation, to allow for the free exchange of ideas. I recommend [[https://web.hypothes.is/][Hypothes.is]]. You can add a hypothes.is layer to your HTML just by dropping in a single line of code to the header.
+
+** 7. It should be machine-readable
+Humans aren't the only ones who need to be able to read your dissertation. To make it available to search engines, databases, and other collections, you should have should have good, standards-compliant, machine-readable metadata.
+
+I recommend using semantic web standards, like those used in [[https://schema.org/][schema.org]]. Schema.org provides [[https://schema.org/Thesis][a Thesis class]] which can describe a dissertation. Make sure that this metadata appears in ~<meta>~ tags in your HTML output.
+
+Your dissertation should also include a machine-readable bibliographic file, so that software and services that track citations can read this file, without having to parse your references section.
+
+** 8. It should be reproducible
+If your work involves data or code, this should be included in the repository. This ensures that your work is reproducible.
+
+The software environment you use should be declared somewhere, as well. This means, for example, what version of ~jupyter~ you are using. For your work to be reproducible, all this information should be declared somewhere. For Python, ~pipenv~ and ~poetry~ have lockfiles which track the versions of the software you're using. Just include those files in your repository. Even if you're not coding, but just using software like ~pandoc~, make sure it's declared in your environment somewhere.
+
+I use Nix for this, and declare all the software I'm using, and the versions, in a ~shell.nix~. Even beyond experimental reproducibility, a nice side effect of declaring your environment is that you can distill your whole build process into one command. So, converting all your source files to HTML, optimizing all your images, and everything else, can just be done all in one go. Then that process can happen automatically in CI/CD (continuous integration / continuous deployment)---you can set it up so that GitHub Actions, or GitLab CI builds your dissertation on each commit, so you don't have to.
+
+** 9. It should be archive-ready
+Your dissertation should be archived at a future-proof document repository. Many universities already have such a digital repository.
+
+If yours doesn't, I prefer [[https://zenodo.org/][Zenodo]], since they accept Git repositories, and provide a DOI, which may represent the state of your dissertation at that time.
+
+** Template
+
+[[https://github.com/JonathanReeve/template-dissertation][Here is a template you can use.]] I've incorporated almost all of these recommendations, so far. Its features include:
+
+1. Automatic generation of your bibliography, in whatever bibliographic format you want, using [[https://pandoc.org/MANUAL.html#citations][Pandoc's Citeproc]]. You should never have to write these things out by hand.
+2. Annotations using [[https://web.hypothes.is/][Hypothes.is]].
+3. Support for a powerful markdown derivative, [[https://pandoc.org/MANUAL.html#pandocs-markdown][Pandoc's markdown]], with tons of features useful to scholarly writing.
+4. Layout in [[https://edwardtufte.github.io/tufte-css/][Tufte.css]] for beautiful typography.
+5. Sidenotes by default, rather than footnotes or endnotes. (See Tufte for more on this.)
+6. Support for figures and images, automatically numbered sequentially, with captions in the margins.
+7. Support for LaTeX-style math and MathML, via [[https://www.mathjax.org/][MathJax]].
+8. Modern, standards-compliant CSS and HTML. 9.  Excellent, machine-readable metadata for the semantic web, using [[https://schema.org/][Schema.org]].
+9. GitHub Actions and GitHub Pages integration, for automatic builds and deploys. Serve to the web at no cost to you.
+
+** References

@@ -1,0 +1,125 @@
+cabal-version:      2.4
+name:               jonreeve-com
+version:            0.1.0.1
+license:            AGPL-3.0-only
+copyright:          2022 Jonathan Reeve
+maintainer:         jonathan@jonreeve.com
+author:             Jonathan Reeve
+category:           Web
+
+-- A short (one-line) description of the package.
+-- synopsis:
+
+-- A longer description of the package.
+-- description:
+
+-- A URL where users can report bugs.
+-- bug-reports:
+
+extra-source-files:
+  LICENSE
+  README.md
+
+executable jonreeve
+  build-depends:
+    , aeson
+    , async
+    , base
+    , clay
+    , containers
+    , data-default
+    , dependent-sum
+    , directory
+    , ema            >=0.6
+    , feed
+    , filepath
+    , lucid
+    , lvar
+    , monad-logger
+    , mtl
+    , pandoc
+    , optics-core
+    , pandoc-types
+    , path
+    , PyF
+    , relude
+    , shower
+    , some
+    , tagged
+    , text
+    , time
+    , unionmount
+    , unliftio
+    , url-slug
+    , uuid
+    , with-utf8
+    , xml-conduit
+    , xml-types
+
+  mixins:
+    base hiding (Prelude),
+    relude (Relude as Prelude, Relude.Container.One),
+    relude
+
+  ghc-options:
+    -Wall -Wincomplete-record-updates -Wincomplete-uni-patterns
+    -Wmissing-deriving-strategies -Wunused-foralls -Wunused-foralls
+    -fprint-explicit-foralls -fprint-explicit-kinds
+
+  default-extensions:
+    NoStarIsType
+    BangPatterns
+    ConstraintKinds
+    DataKinds
+    DeriveDataTypeable
+    DeriveFoldable
+    DeriveFunctor
+    DeriveGeneric
+    DeriveLift
+    DeriveTraversable
+    DerivingStrategies
+    DerivingVia
+    EmptyCase
+    EmptyDataDecls
+    EmptyDataDeriving
+    ExistentialQuantification
+    ExplicitForAll
+    FlexibleContexts
+    FlexibleInstances
+    GADTSyntax
+    GeneralisedNewtypeDeriving
+    ImportQualifiedPost
+    KindSignatures
+    LambdaCase
+    MultiParamTypeClasses
+    MultiWayIf
+    NumericUnderscores
+    OverloadedStrings
+    PolyKinds
+    PostfixOperators
+    RankNTypes
+    ScopedTypeVariables
+    StandaloneDeriving
+    StandaloneKindSignatures
+    TupleSections
+    TypeApplications
+    TypeFamilies
+    TypeOperators
+    ViewPatterns
+
+  main-is:            Main.hs
+  hs-source-dirs:     src
+  default-language:   Haskell2010
+
+  other-modules:
+    JonReeve.Main
+    JonReeve.Pandoc
+    JonReeve.RSS
+    JonReeve.SiteData
+    JonReeve.Types
+    JonReeve.CV
+    JonReeve.CSS
+    JonReeve.CV.Other
+    JonReeve.CV.Projects
+    JonReeve.CV.Shared
+    JonReeve.CV.Teaching

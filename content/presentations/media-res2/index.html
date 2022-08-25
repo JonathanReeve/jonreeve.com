@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="generator" content="pandoc">
+  <title></title>
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
+  <link rel="stylesheet" href="../../assets/js/vendor/reveal.js/css/reveal.css">
+  <style type="text/css">code{white-space: pre;}</style>
+  <style type="text/css">
+div.sourceCode { overflow-x: auto; }
+table.sourceCode, tr.sourceCode, td.lineNumbers, td.sourceCode {
+  margin: 0; padding: 0; vertical-align: baseline; border: none; }
+table.sourceCode { width: 100%; line-height: 100%; }
+td.lineNumbers { text-align: right; padding-right: 4px; padding-left: 4px; color: #aaaaaa; border-right: 1px solid #aaaaaa; }
+td.sourceCode { padding-left: 5px; }
+code > span.kw { color: #007020; font-weight: bold; } /* Keyword */
+code > span.dt { color: #902000; } /* DataType */
+code > span.dv { color: #40a070; } /* DecVal */
+code > span.bn { color: #40a070; } /* BaseN */
+code > span.fl { color: #40a070; } /* Float */
+code > span.ch { color: #4070a0; } /* Char */
+code > span.st { color: #4070a0; } /* String */
+code > span.co { color: #60a0b0; font-style: italic; } /* Comment */
+code > span.ot { color: #007020; } /* Other */
+code > span.al { color: #ff0000; font-weight: bold; } /* Alert */
+code > span.fu { color: #06287e; } /* Function */
+code > span.er { color: #ff0000; font-weight: bold; } /* Error */
+code > span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+code > span.cn { color: #880000; } /* Constant */
+code > span.sc { color: #4070a0; } /* SpecialChar */
+code > span.vs { color: #4070a0; } /* VerbatimString */
+code > span.ss { color: #bb6688; } /* SpecialString */
+code > span.im { } /* Import */
+code > span.va { color: #19177c; } /* Variable */
+code > span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+code > span.op { color: #666666; } /* Operator */
+code > span.bu { } /* BuiltIn */
+code > span.ex { } /* Extension */
+code > span.pp { color: #bc7a00; } /* Preprocessor */
+code > span.at { color: #7d9029; } /* Attribute */
+code > span.do { color: #ba2121; font-style: italic; } /* Documentation */
+code > span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+code > span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+  </style>
+  <link rel="stylesheet" href="../../assets/js/vendor/reveal.js/css/theme/moon.css" id="theme">
+  <!-- Printing and PDF exports -->
+  <script>
+    var link = document.createElement( 'link' );
+    link.rel = 'stylesheet';
+    link.type = 'text/css';
+    link.href = window.location.search.match( /print-pdf/gi ) ? '../../assets/js/vendor/reveal.js/css/print/pdf.css' : '../../assets/js/vendor/reveal.js/css/print/paper.css';
+    document.getElementsByTagName( 'head' )[0].appendChild( link );
+  </script>
+  <!--[if lt IE 9]>
+  <script src="../../assets/js/vendor/reveal.js/lib/js/html5shiv.js"></script>
+  <![endif]-->
+</head>
+<body>
+  <div class="reveal">
+    <div class="slides">
+
+
+<section id="git-lit" class="slide level1">
+<h1>Git-Lit</h1>
+<p>an Application of Distributed Version Control Technology toward the Creation of 50,000 Digital Scholarly Editions</p>
+<p>Jonathan Reeve</p>
+<p>Columbia University</p>
+</section>
+<section id="the-british-library-corpus" class="slide level1">
+<h1>The British Library Corpus</h1>
+<ul>
+<li>~49,500 scanned and OCRed books from the British Library</li>
+<li>ALTO XML</li>
+<li>Not available online—shipped through the mail on a hard drive</li>
+<li>Largest ever (soon-to-be) downloadable digital literary corpus?</li>
+<li>Enormous potential for text mining, digital literary studies</li>
+</ul>
+</section>
+<section class="slide level1">
+
+<figure>
+<img src="years.png" alt="Histogram of Publication Years" /><figcaption>Histogram of Publication Years</figcaption>
+</figure>
+</section>
+<section id="problem" class="slide level1">
+<h1>Problem:</h1>
+<h2 id="unshared-corpora">Unshared corpora</h2>
+<ul>
+<li>Corpora are not often shared in DH</li>
+<li>This makes DH experiments unrepeatable</li>
+<li>Bad science!</li>
+</ul>
+</section>
+<section id="problem-1" class="slide level1">
+<h1>Problem:</h1>
+<h2 id="etexts-lack-editorial-history">Etexts lack editorial history</h2>
+<ul>
+<li>Especially early Project Gutenberg texts</li>
+<li>Who edited a text? When? Where?</li>
+<li>What edits were made?</li>
+</ul>
+</section>
+<section id="problem-2" class="slide level1">
+<h1>Problem:</h1>
+<h2 id="corpora-are-difficult-to-assemble">Corpora are difficult to assemble</h2>
+<ul>
+<li>Compiling a corpus of, say, 19th century <em>Bildungsromane</em>, traditionally requires manually assembling and cleaning texts</li>
+<li>This process should be automated</li>
+</ul>
+</section>
+<section id="problem-3" class="slide level1">
+<h1>Problem</h1>
+<h2 id="centralized-data-stores-data-silos">Centralized data stores (&quot;data silos&quot;)</h2>
+<ul>
+<li>What happens when the site goes down?</li>
+<li>When the project loses funding?</li>
+<li>e.g. TextGrid</li>
+</ul>
+</section>
+<section class="slide level1">
+
+<figure>
+<img src="silos-gonna-silo.png" />
+</figure>
+</section>
+<section id="problem-4" class="slide level1">
+<h1>Problem</h1>
+<h2 id="alto-xml">ALTO XML</h2>
+<div class="sourceCode"><pre class="sourceCode xml"><code class="sourceCode xml"><span class="kw">&lt;String</span><span class="ot"> ID=</span><span class="st">&quot;P21_ST00004&quot;</span><span class="ot"> HPOS=</span><span class="st">&quot;138&quot;</span><span class="ot"> VPOS=</span><span class="st">&quot;151&quot;</span> 
+<span class="ot">WIDTH=</span><span class="st">&quot;67&quot;</span><span class="ot"> HEIGHT=</span><span class="st">&quot;34&quot;</span><span class="ot"> CONTENT=</span><span class="st">&quot;Thy&quot;</span><span class="ot"> WC=</span><span class="st">&quot;1.00&quot;</span><span class="ot"> CC=</span><span class="st">&quot;000&quot;</span><span class="kw">/&gt;</span>
+<span class="kw">&lt;SP</span><span class="ot"> ID=</span><span class="st">&quot;P21_SP00002&quot;</span><span class="ot"> HPOS=</span><span class="st">&quot;205&quot;</span><span class="ot"> VPOS=</span><span class="st">&quot;185&quot;</span><span class="ot"> WIDTH=</span><span class="st">&quot;21&quot;</span><span class="kw">/&gt;</span>
+<span class="kw">&lt;String</span><span class="ot"> ID=</span><span class="st">&quot;P21_ST00005&quot;</span><span class="ot"> HPOS=</span><span class="st">&quot;226&quot;</span><span class="ot"> VPOS=</span><span class="st">&quot;152&quot;</span> 
+<span class="ot">WIDTH=</span><span class="st">&quot;210&quot;</span><span class="ot"> HEIGHT=</span><span class="st">&quot;28&quot;</span><span class="ot"> CONTENT=</span><span class="st">&quot;self-oblation&quot;</span><span class="ot"> WC=</span><span class="st">&quot;0.87&quot;</span><span class="ot"> CC=</span><span class="st">&quot;0030010105102&quot;</span><span class="kw">/&gt;</span>
+<span class="kw">&lt;SP</span><span class="ot"> ID=</span><span class="st">&quot;P21_SP00003&quot;</span><span class="ot"> HPOS=</span><span class="st">&quot;436&quot;</span><span class="ot"> VPOS=</span><span class="st">&quot;185&quot;</span><span class="ot"> WIDTH=</span><span class="st">&quot;19&quot;</span><span class="kw">/&gt;</span>
+<span class="kw">&lt;String</span><span class="ot"> ID=</span><span class="st">&quot;P21_ST00006&quot;</span><span class="ot"> HPOS=</span><span class="st">&quot;455&quot;</span><span class="ot"> VPOS=</span><span class="st">&quot;155&quot;</span><span class="ot"> WIDTH=</span><span class="st">&quot;114&quot;</span> 
+<span class="ot">HEIGHT=</span><span class="st">&quot;26&quot;</span><span class="ot"> CONTENT=</span><span class="st">&quot;earned&quot;</span><span class="ot"> WC=</span><span class="st">&quot;0.95&quot;</span><span class="ot"> CC=</span><span class="st">&quot;000200&quot;</span><span class="kw">/&gt;</span>
+<span class="kw">&lt;SP</span><span class="ot"> ID=</span><span class="st">&quot;P21_SP00004&quot;</span><span class="ot"> HPOS=</span><span class="st">&quot;569&quot;</span><span class="ot"> VPOS=</span><span class="st">&quot;185&quot;</span><span class="ot"> WIDTH=</span><span class="st">&quot;18&quot;</span><span class="kw">/&gt;</span>
+<span class="kw">&lt;String</span><span class="ot"> ID=</span><span class="st">&quot;P21_ST00007&quot;</span><span class="ot"> HPOS=</span><span class="st">&quot;587&quot;</span><span class="ot"> VPOS=</span><span class="st">&quot;155&quot;</span><span class="ot"> WIDTH=</span><span class="st">&quot;49&quot;</span> 
+<span class="ot">HEIGHT=</span><span class="st">&quot;27&quot;</span><span class="ot"> CONTENT=</span><span class="st">&quot;the&quot;</span><span class="ot"> WC=</span><span class="st">&quot;1.00&quot;</span><span class="ot"> CC=</span><span class="st">&quot;000&quot;</span><span class="kw">/&gt;</span>
+<span class="kw">&lt;SP</span><span class="ot"> ID=</span><span class="st">&quot;P21_SP00005&quot;</span><span class="ot"> HPOS=</span><span class="st">&quot;636&quot;</span><span class="ot"> VPOS=</span><span class="st">&quot;185&quot;</span><span class="ot"> WIDTH=</span><span class="st">&quot;21&quot;</span><span class="kw">/&gt;</span>
+<span class="kw">&lt;String</span><span class="ot"> ID=</span><span class="st">&quot;P21_ST00008&quot;</span><span class="ot"> HPOS=</span><span class="st">&quot;657&quot;</span><span class="ot"> VPOS=</span><span class="st">&quot;155&quot;</span><span class="ot"> WIDTH=</span><span class="st">&quot;63&quot;</span> 
+<span class="ot">HEIGHT=</span><span class="st">&quot;27&quot;</span><span class="ot"> CONTENT=</span><span class="st">&quot;love&quot;</span><span class="ot"> WC=</span><span class="st">&quot;0.83&quot;</span><span class="ot"> CC=</span><span class="st">&quot;0600&quot;</span><span class="kw">/&gt;</span></code></pre></div>
+</section>
+<section id="solution" class="slide level1">
+<h1>Solution</h1>
+<h2 id="distributed-version-control-git">Distributed Version Control (Git)</h2>
+<ul>
+<li>Logs the history of every edit, editor, revision</li>
+<li>Stores the complete state of the text at every revision</li>
+<li>Decentralized: repository-agnostic</li>
+<li>Allows for democratic scholarly editing</li>
+</ul>
+</section>
+<section id="git-is-macgyver" class="slide level1">
+<h1>Git is MacGyver</h1>
+<figure>
+<img src="macgyver.jpg" alt="Git is MacGyver" /><figcaption>Git is MacGyver</figcaption>
+</figure>
+</section>
+<section id="solution-1" class="slide level1">
+<h1>Solution</h1>
+<h2 id="git-submodules">Git Submodules</h2>
+<ul>
+<li>Allow arbitrary curation of texts into collections</li>
+<li>E.g. 18th Century British poetry</li>
+<li>Collections aren't necessarily mutually exclusive</li>
+</ul>
+</section>
+<section id="solution-2" class="slide level1">
+<h1>Solution</h1>
+<h2 id="github">GitHub</h2>
+<ul>
+<li>Allows for easy discoverability of corpora</li>
+<li>Enables issue tracking, charting of contributor networks</li>
+<li>Allows for viewing and editing files directly in the browser</li>
+</ul>
+</section>
+<section class="slide level1">
+
+<figure>
+<img src="silos-gonna-macgyver.png" />
+</figure>
+</section>
+<section id="solution-3" class="slide level1">
+<h1>Solution</h1>
+<h2 id="alto---markdown---jekyll---github.io">ALTO -&gt; Markdown -&gt; Jekyll -&gt; GitHub.io</h2>
+<ul>
+<li>Allows casual editing of the text in markdown</li>
+<li>Creates beautiful web editions for each text via github.io</li>
+</ul>
+</section>
+<section id="call-for-contributions" class="slide level1">
+<h1>Call for Contributions</h1>
+<ul>
+<li>Git-Lit is an open project: anyone can get involved</li>
+<li>Even non-coders! Also a good way to learn coding</li>
+<li>Community-based; benefits everyone</li>
+<li>Visit <a href="https://github.com/git-lit" class="uri">https://github.com/git-lit</a> to get started</li>
+<li>Or email me: jonathan.reeve@columbia.edu</li>
+<li>These slides: <a href="http://jonreeve.com/presentations/media-res2/" class="uri">http://jonreeve.com/presentations/media-res2/</a></li>
+</ul>
+</section>
+    </div>
+  </div>
+
+  <script src="../../assets/js/vendor/reveal.js/lib/js/head.min.js"></script>
+  <script src="../../assets/js/vendor/reveal.js/js/reveal.js"></script>
+
+  <script>
+
+      // Full list of configuration options available at:
+      // https://github.com/hakimel/reveal.js#configuration
+      Reveal.initialize({
+
+        // Optional reveal.js plugins
+        dependencies: [
+          { src: '../../assets/js/vendor/reveal.js/lib/js/classList.js', condition: function() { return !document.body.classList; } },
+          { src: '../../assets/js/vendor/reveal.js/plugin/zoom-js/zoom.js', async: true },
+          { src: '../../assets/js/vendor/reveal.js/plugin/notes/notes.js', async: true }
+        ]
+      });
+    </script>
+    </body>
+</html>
