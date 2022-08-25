@@ -33,6 +33,7 @@ import Lucid.Base
 import Optics.Core (Prism')
 import PyF
 import Text.Pandoc (Pandoc)
+import Text.Pandoc.Citeproc (processCitations)
 import System.FilePath (takeFileName)
 
 parseJekyllFilename :: FilePath -> (String, String, String, String)
