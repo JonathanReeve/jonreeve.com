@@ -84,7 +84,7 @@ deriveIsRoute
        WithSubRoutes
          '[ FileRoute "index.html",
             FileRoute "tags.html",
-            FileRoute "cv.html",
+            FileRoute "cv/index.html",
             BlogPostR
           ]
      ]

@@ -15,6 +15,12 @@ import Optics.Core
 import System.FilePath ((</>))
 import System.UnionMount qualified as UnionMount
 import Text.Pandoc.Definition (Pandoc (..))
+import qualified Data.Text as T
+import Text.Pandoc.Builder (setMeta)
+import Text.Pandoc (handleError)
+import Text.Pandoc.Class (runIO)
+import Text.Pandoc.Citeproc (processCitations)
+import Data.Maybe (fromJust)
 
 -- ------------------------
 -- Main entry point
@@ -58,7 +64,13 @@ instance EmaSite SR where
       readOrgFile fp =
         runMaybeT $ do
           logD $ "Reading " <> toText fp
-          liftIO $ Pandoc.parse Pandoc.readOrg fp
+          -- liftIO $ Pandoc.parse Pandoc.readOrg fp
+          doc <- liftIO $ Pandoc.parse Pandoc.readOrg fp
+          let docWithMeta = setMeta (T.pack "bibliography") (T.pack "content/bibliography.bib") doc :: Pandoc
+          let docWithMeta' = setMeta (T.pack "csl") (T.pack "content/modern-language-association.csl") docWithMeta :: Pandoc
+          docProcessed <- liftIO $ runIO $ processCitations docWithMeta'
+          -- liftIO $ print docProcessed
+          liftIO $ handleError docProcessed
   siteOutput = render
 
 -- ------------------------
