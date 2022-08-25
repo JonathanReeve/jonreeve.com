@@ -105,7 +105,7 @@ instance IsRoute StaticR where
 
 -- | Folders under ./content to serve as static content
 allowedStaticFolders :: [FilePath]
-allowedStaticFolders = ["assets", "images"]
+allowedStaticFolders = ["assets", "images", "presentations", "projects"]
 
 -- | Site Route
 data SR

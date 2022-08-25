@@ -33,7 +33,6 @@ import Lucid.Base
 import Optics.Core (Prism')
 import PyF
 import Text.Pandoc (Pandoc)
-import Text.Pandoc.Citeproc (processCitations)
 import System.FilePath (takeFileName)
 
 parseJekyllFilename :: FilePath -> (String, String, String, String)
@@ -62,8 +61,10 @@ toPosts rp model =
     pandocToText :: Pandoc -> T.Text
     pandocToText doc = LT.toStrict $ Lucid.renderText $ Pandoc.render doc
 
+stylesheet :: forall {m :: Type -> Type}. Applicative m => Text -> HtmlT m ()
 stylesheet url = link_ [rel_ "stylesheet", href_ url]
 
+script :: forall {t}. TermRaw [Attribute] (Text -> t) => Text -> t
 script url = script_ [src_ url, async_ T.empty] T.empty
 
 -- | Define your site HTML here
