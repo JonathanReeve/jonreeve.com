@@ -15,7 +15,7 @@ To generate the static site:
 #+begin_src sh
 nix build
 ./result/bin/jonreeve gen dist/
-#+end_sh
+#+end_src
 
 ** Changelog
 
