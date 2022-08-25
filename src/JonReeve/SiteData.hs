@@ -1,11 +1,10 @@
-{-# LANGUAGE QuasiQuotes #-}
 {-# LANGUAGE OverloadedStrings #-}
--- | Site-wide config and data.
+{-# LANGUAGE QuasiQuotes #-}
 
-module SiteData where
+-- | Site-wide config and data.
+module JonReeve.SiteData where
 
 import PyF
-import Data.Text
 
 domain :: Text
 domain = "https://jonreeve.com"
@@ -17,12 +16,14 @@ name :: Text
 name = "Jonathan Reeve"
 
 greeting :: Text
-greeting = [fmt|Hi. My name is Jonathan Reeve. I'm a PhD candidate in
+greeting =
+  [fmt|Hi. My name is Jonathan Reeve. I'm a PhD candidate in
                 **computational literary analysis** at Columbia University. I write computer
                 programs that help us understand novels and poetry.|]
 
 coda :: Text
-coda = [fmt|I believe in openness. This work is licensed under a [Creative
+coda =
+  [fmt|I believe in openness. This work is licensed under a [Creative
             Commons Attribution-NonCommercial-ShareAlike 4.0 International
             License](https://creativecommons.org/licenses/by-nc-sa/4.0/), unless
             otherwise stated. All content ©Jonathan Reeve 2020. Hand-coded with

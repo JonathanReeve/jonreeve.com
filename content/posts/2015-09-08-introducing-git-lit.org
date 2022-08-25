@@ -7,9 +7,6 @@ A vibrant discussion followed [[http://jonreeve.com/2015/03/proposal-for-a-corpu
 One such application might lie with [[http://labs.bl.uk/Digital+Collections+-+Books+and+Text][the 68,000 digital texts recently created by the British Library]]. James Baker, a digital curator of the British Library, left a comment on my original post, suggesting that the method I describe might be used to parse and post the Library's texts. He sent me [[https://github.com/JonathanReeve/git-lit/tree/master/data][a few sample texts]] of the ALTO XML documents that the Stanford Literary Lab had used. [[https://github.com/JonathanReeve/git-lit][I adapted some of the GITenberg code to read these texts, generate README files for them, and turn them into GitHub repositories]]. I'm provisionally calling this project Git-Lit.
 
 * Introducing Git-Lit
-  :PROPERTIES:
-  :CUSTOM_ID: introducing-git-lit
-  :END:
 
 Git-Lit aims to parse, version control, and post each work in the British Library's corpus of digital texts. Parsing the texts will transform the machine-readable metadata into human-readable prefatory material; version controlling the texts will allow for collaborative editing and revision of the texts, effectively crowdsourcing the correction of OCR errors; and posting the texts to GitHub will ensure the texts' visibility to the greater community.
 
