@@ -1,6 +1,6 @@
 <html lang="en"><head><meta http-equiv="Content-Type" content="text/html; charset=utf-8"><title>Chapterize: a Tool for Automatically Splitting Electronic Texts into
 Chapters
-</title><link rel="stylesheet" href="/assets/css/spectre.min.css"><link rel="stylesheet" href="//fonts.googleapis.com/css?family=Montserrat|Raleway"><link rel="stylesheet" href="//cdn.jsdelivr.net/gh/highlightjs/cdn-release@10.2.0/build/styles/default.min.css"><link rel="icon" href="/images/favicon.svg" sizes="any" type="image/svg+xml"><style type="text/css">
+</title><base href="/"><link rel="stylesheet" href="/assets/css/spectre.min.css"><link rel="stylesheet" href="//fonts.googleapis.com/css?family=Montserrat|Raleway"><link rel="stylesheet" href="//cdn.jsdelivr.net/gh/highlightjs/cdn-release@10.2.0/build/styles/default.min.css"><link rel="icon" href="/images/favicon.svg" sizes="any" type="image/svg+xml"><style type="text/css">
 
 @media screen and (min-width: 1200px)
 {
@@ -50,8 +50,8 @@ body.has-docked-nav #main-header
 #headerWrapper
 {
   background-color : #ffffff;
-  border-top       : solid 2px #494e8e;
-  border-bottom    : solid 2px #494e8e;
+  border-top       : 2px solid #494e8e;
+  border-bottom    : 2px solid #494e8e;
 }
 
 #headerWrapper header
@@ -274,9 +274,13 @@ table
 
 }
 
-/* Generated with Clay, http://fvisser.nl/clay */</style><style type="text/css">@page{margin: 3cm;}</style></head><body><div id="headerWrapper"><header class="navbar"><section class="navbar-section"><a class="navbar-brand" href="/">Jonathan Reeve: <span>Computational Literary Analysis</span></a></section><section class="navbar-section"><ul class="nav"><li class="nav-item"><a href="/">posts</a></li><li class="nav-item"><a href="/cv.html">cv</a></li><li class="nav-item"><a href="/tags/">tags</a></li><li class="nav-item"><a href="/feed.xml">feed</a></li></ul></section></header></div><div class="container"><h1>Chapterize: a Tool for Automatically Splitting Electronic Texts into
+/* Generated with Clay, http://fvisser.nl/clay */</style><style type="text/css">@page{margin: 3cm;}</style></head><body><div id="headerWrapper"><header class="navbar"><section class="navbar-section"><a class="navbar-brand" href>Jonathan Reeve: <span>Computational Literary Analysis</span></a></section><section class="navbar-section"><ul class="nav"><li class="nav-item"><a href>posts</a></li><li class="nav-item"><a href="cv">cv</a></li><li class="nav-item"><a href="tags.html">tags</a></li><li class="nav-item"><a href="feed.xml">feed</a></li></ul></section></header></div><div class="container"><h1>Chapterize: a Tool for Automatically Splitting Electronic Texts into
 Chapters
-</h1><p>Posted 2016-08-23</p><article><p>If you do computational analyses of books, and need to break up the book’s text file into its constituent chapters, I’ve just released a tool that you might find useful. It’s called <a href="https://github.com/JonathanReeve/chapterize">chapterize</a>, and it breaks a book into chapters. This is how it works:</p>
+</h1><article><p>Posted 2016-08-23</p><p>If you do computational analyses of books, and need to break up the
+book’s text file into its constituent chapters, I’ve just released a
+tool that you might find useful. It’s called <a
+href="https://github.com/JonathanReeve/chapterize">chapterize</a>, and
+it breaks a book into chapters. This is how it works:</p>
 <pre class="example"><code># First, get a copy of Chapterize: 
 git clone https://github.com/JonathanReeve/chapterize.git
 
@@ -292,7 +296,12 @@ mv pg1342.txt pride-and-prejudice.txt
 # Run Chapterize on it:  
 python chapterize.py pride-and-prejudice.txt
 </code></pre>
-<p>This will create a directory called <code class="verbatim">pride-and-prejudice-chapters</code>, containing chapters 1-61 of Pride and Prejudice, named with leading zeros. Now you can run analyses on each of these chapters. For instance, to compute the macro-etymology of each chapter using my <code class="verbatim">macroetym</code> tool:</p>
+<p>This will create a directory called <code
+class="verbatim">pride-and-prejudice-chapters</code>, containing
+chapters 1-61 of Pride and Prejudice, named with leading zeros. Now you
+can run analyses on each of these chapters. For instance, to compute the
+macro-etymology of each chapter using my <code
+class="verbatim">macroetym</code> tool:</p>
 <pre class="example"><code># Change into the chapters directory
 cd pride-and-prejudice-chapters
 
@@ -302,14 +311,43 @@ git clone https://github.com/JonathanReeve/macro-etym
 # Run macroetym on each chapter
 python macro-etym/macroetym/main.py *.txt
 </code></pre>
-<p>Because <code class="verbatim">chapterize</code> removes metatext (introductions, tables of contents, Project Gutenberg fine print), it can also be used to clean up book data in preparation for text analysis. If you don’t actually need to break up a book into its chapters, but just want to extract its text, use the <code class="verbatim">--nochapters</code> flag:</p>
+<p>Because <code class="verbatim">chapterize</code> removes metatext
+(introductions, tables of contents, Project Gutenberg fine print), it
+can also be used to clean up book data in preparation for text analysis.
+If you don’t actually need to break up a book into its chapters, but
+just want to extract its text, use the <code
+class="verbatim">--nochapters</code> flag:</p>
 <pre class="example"><code>python chapterize.py --nochapters pride-and-prejudice.txt
 </code></pre>
-<p>This command will create <code class="verbatim">pride-and-prejudice-extracted.txt</code>, containing just the inner text of the novel. So whereas <code class="verbatim">pride-and-prejudice.txt</code> begins with “the Project Gutenberg EBook of Pride and Prejudice, by Jane Austen,” <code class="verbatim">pride-and-prejudice-extracted.txt</code> begins with “it is a truth universally acknowledged.”</p>
-<p>Since <code class="verbatim">chapterize</code> is a command-line tool, it’s easily scriptable. Let’s say you have a directory of 100 novels, and you want to remove all their metatext. That’s easily done with a simple shell loop:</p>
+<p>This command will create <code
+class="verbatim">pride-and-prejudice-extracted.txt</code>, containing
+just the inner text of the novel. So whereas <code
+class="verbatim">pride-and-prejudice.txt</code> begins with “the Project
+Gutenberg EBook of Pride and Prejudice, by Jane Austen,” <code
+class="verbatim">pride-and-prejudice-extracted.txt</code> begins with
+“it is a truth universally acknowledged.”</p>
+<p>Since <code class="verbatim">chapterize</code> is a command-line
+tool, it’s easily scriptable. Let’s say you have a directory of 100
+novels, and you want to remove all their metatext. That’s easily done
+with a simple shell loop:</p>
 <pre class="example"><code>for f in *.txt; do python chapterize --nochapters $f; done
 </code></pre>
-<p>If you use <code class="verbatim">chapterize</code>, let me know how it works for you. If you get any errors with a particular book, send me a copy of the book, and I’ll try to make it work.</p></article><hr><p>I welcome your comments and annotations in the Hypothes.is sidebar to the right. →</p><script src="https://hypothes.is/embed.js"></script></div><footer><div class="container"><div class="columns"><div class="column col-8"><p>I believe in openness. This work is licensed under a <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/">Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International License</a>, unless otherwise stated. All content ©Jonathan Reeve 2020. Hand-coded with love, using exclusively free and open-source software, including <a href="https://github.com/srid/rib">Rib</a> and <a href="https://haskell.org/">Haskell</a>. Hosted on <a href="https://github.com">GitHub</a> and served with <a href="https://netlify.com">Netlify</a>. Icons by Nhor, via <a href="https://thenounproject.com">The Noun Project</a>. <a href="https://www.buymeacoffee.com/vaIVQZH">Buy me a coffee</a> or support me <a href="https://liberapay.com/JonathanReeve/donate">via Libera Pay</a> or <a href="bitcoin:3Qvm1DwzFGk3L1Eb6yeg5Nbc6db8sZUnbK">Bitcoin</a>.</p></div><div class="column col-4"><div class="icons"><a href="http://github.com/JonathanReeve"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512" fill="#fafafa" width="3em" height="3em"><path d="M400 32H48C21.5 32 0 53.5 0 80v352c0 26.5 21.5 48 48
+<p>If you use <code class="verbatim">chapterize</code>, let me know how
+it works for you. If you get any errors with a particular book, send me
+a copy of the book, and I’ll try to make it work.</p></article><hr><p>I welcome your comments and annotations in the Hypothes.is sidebar to the right. →</p><script src="https://hypothes.is/embed.js"></script></div><footer><div class="container"><div class="columns"><div class="column col-8"><p>I believe in openness. This work is licensed under a <a
+href="https://creativecommons.org/licenses/by-nc-sa/4.0/">Creative
+Commons Attribution-NonCommercial-ShareAlike 4.0 International
+License</a>, unless otherwise stated. All content ©Jonathan Reeve 2020.
+Hand-coded with love, using exclusively free and open-source software,
+including <a href="https://github.com/srid/rib">Rib</a> and <a
+href="https://haskell.org/">Haskell</a>. Hosted on <a
+href="https://github.com">GitHub</a> and served with <a
+href="https://netlify.com">Netlify</a>. Icons by Nhor, via <a
+href="https://thenounproject.com">The Noun Project</a>. <a
+href="https://www.buymeacoffee.com/vaIVQZH">Buy me a coffee</a> or
+support me <a href="https://liberapay.com/JonathanReeve/donate">via
+Libera Pay</a> or <a
+href="bitcoin:3Qvm1DwzFGk3L1Eb6yeg5Nbc6db8sZUnbK">Bitcoin</a>.</p></div><div class="column col-4"><div class="icons"><a href="http://github.com/JonathanReeve"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512" fill="#fafafa" width="3em" height="3em"><path d="M400 32H48C21.5 32 0 53.5 0 80v352c0 26.5 21.5 48 48
 48h352c26.5 0 48-21.5 48-48V80c0-26.5-21.5-48-48-48zM277.3 415.7c-8.4
 1.5-11.5-3.7-11.5-8 0-5.4.2-33 .2-55.3 0-15.6-5.2-25.5-11.3-30.7 37-4.1 76-9.2
 76-73.1 0-18.2-6.5-27.3-17.1-39 1.7-4.3 7.4-22-1.7-45-13.9-4.3-45.7 17.9-45.7

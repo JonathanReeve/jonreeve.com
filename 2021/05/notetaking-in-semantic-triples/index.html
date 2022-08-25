@@ -1,5 +1,5 @@
 <html lang="en"><head><meta http-equiv="Content-Type" content="text/html; charset=utf-8"><title>Notetaking In Semantic Triples
-</title><link rel="stylesheet" href="/assets/css/spectre.min.css"><link rel="stylesheet" href="//fonts.googleapis.com/css?family=Montserrat|Raleway"><link rel="stylesheet" href="//cdn.jsdelivr.net/gh/highlightjs/cdn-release@10.2.0/build/styles/default.min.css"><link rel="icon" href="/images/favicon.svg" sizes="any" type="image/svg+xml"><style type="text/css">
+</title><base href="/"><link rel="stylesheet" href="/assets/css/spectre.min.css"><link rel="stylesheet" href="//fonts.googleapis.com/css?family=Montserrat|Raleway"><link rel="stylesheet" href="//cdn.jsdelivr.net/gh/highlightjs/cdn-release@10.2.0/build/styles/default.min.css"><link rel="icon" href="/images/favicon.svg" sizes="any" type="image/svg+xml"><style type="text/css">
 
 @media screen and (min-width: 1200px)
 {
@@ -49,8 +49,8 @@ body.has-docked-nav #main-header
 #headerWrapper
 {
   background-color : #ffffff;
-  border-top       : solid 2px #494e8e;
-  border-bottom    : solid 2px #494e8e;
+  border-top       : 2px solid #494e8e;
+  border-bottom    : 2px solid #494e8e;
 }
 
 #headerWrapper header
@@ -273,51 +273,101 @@ table
 
 }
 
-/* Generated with Clay, http://fvisser.nl/clay */</style><style type="text/css">@page{margin: 3cm;}</style></head><body><div id="headerWrapper"><header class="navbar"><section class="navbar-section"><a class="navbar-brand" href="/">Jonathan Reeve: <span>Computational Literary Analysis</span></a></section><section class="navbar-section"><ul class="nav"><li class="nav-item"><a href="/">posts</a></li><li class="nav-item"><a href="/cv.html">cv</a></li><li class="nav-item"><a href="/tags/">tags</a></li><li class="nav-item"><a href="/feed.xml">feed</a></li></ul></section></header></div><div class="container"><h1>Notetaking In Semantic Triples
-</h1><p>Posted 2021-05-14</p><article><p>This is a continuation of my previous post, describing my notetaking system.</p>
-<p>I keep a Zettelkasten using org-roam. Notes are connected using links, which are actually just regular org-mode links. Those links look like this behind the scenes: <code>[[URL][link title]]</code>. Thus, there is an implicit relation between two notes where, if a link to note B appears in note A, you could express that relationship as a subject-verb-object triple, like this:</p>
+/* Generated with Clay, http://fvisser.nl/clay */</style><style type="text/css">@page{margin: 3cm;}</style></head><body><div id="headerWrapper"><header class="navbar"><section class="navbar-section"><a class="navbar-brand" href>Jonathan Reeve: <span>Computational Literary Analysis</span></a></section><section class="navbar-section"><ul class="nav"><li class="nav-item"><a href>posts</a></li><li class="nav-item"><a href="cv">cv</a></li><li class="nav-item"><a href="tags.html">tags</a></li><li class="nav-item"><a href="feed.xml">feed</a></li></ul></section></header></div><div class="container"><h1>Notetaking In Semantic Triples
+</h1><article><p>Posted 2021-05-14</p><p>This is a continuation of my previous post, describing my notetaking
+system.</p>
+<p>I keep a Zettelkasten using org-roam. Notes are connected using
+links, which are actually just regular org-mode links. Those links look
+like this behind the scenes: <code>[[URL][link title]]</code>. Thus,
+there is an implicit relation between two notes where, if a link to note
+B appears in note A, you could express that relationship as a
+subject-verb-object triple, like this:</p>
 <pre><code>&lt;Note A&gt; &lt;links to&gt; &lt;Note B&gt;
 </code></pre>
-<p>Which is fine, for most purposes. But what if the relation between the two notes is more specific? For instance, if I have a note for T. S. Eliot, the poet, and a note for his poem, “The Waste Land,” the relation is really more like this:</p>
+<p>Which is fine, for most purposes. But what if the relation between
+the two notes is more specific? For instance, if I have a note for T. S.
+Eliot, the poet, and a note for his poem, “The Waste Land,” the relation
+is really more like this:</p>
 <pre><code>&lt;T.S. Eliot&gt; &lt;wrote&gt; &lt;The Waste Land&gt;
 </code></pre>
-<p>So how can one achieve this? The linked notetaking strategy of org-roam and family gets us most of the way there. My note <code>ts-eliot.org</code> looks like this:</p>
+<p>So how can one achieve this? The linked notetaking strategy of
+org-roam and family gets us most of the way there. My note
+<code>ts-eliot.org</code> looks like this:</p>
 <pre class="or"><code>#+title: T. S. Eliot
 Wrote [[The Waste Land]]
 </code></pre>
 <p>Now all we have to do is to make the verb into a note.</p>
-<pre class="org"><code>#+title: wrote
-#+roam_tags: verb
-
-For when a writer writes a creative work.
-Example: T.S. Eliot wrote The Waste Land
-</code></pre>
+<div class="sourceCode" id="cb4"><pre
+class="sourceCode org"><code class="sourceCode orgmode"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a>#+title: wrote</span>
+<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a>#+roam_tags: verb</span>
+<span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-4"><a href="#cb4-4" aria-hidden="true" tabindex="-1"></a>For when a writer writes a creative work.</span>
+<span id="cb4-5"><a href="#cb4-5" aria-hidden="true" tabindex="-1"></a>Example: T.S. Eliot wrote The Waste Land</span></code></pre></div>
 <p>So now we can write:</p>
-<pre class="org"><code>#+title: T. S. Eliot
-
-[[Wrote]] [[The Waste Land]]
-</code></pre>
+<div class="sourceCode" id="cb5"><pre
+class="sourceCode org"><code class="sourceCode orgmode"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a>#+title: T. S. Eliot</span>
+<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a><span class="ot">[[Wrote]]</span> <span class="ot">[[The Waste Land]]</span></span></code></pre></div>
 <p>And we can extend that format for multiple objects:</p>
-<pre class="org"><code>#+title: T. S. Eliot
-
-[[Wrote]]:
- - [[The Waste Land]]
- - [[Four Quartets]]
-</code></pre>
-<p>This in itself isn’t very useful yet, but now we have a structure that we can parse. In a separate parsing script, I can now write: if a line begins with a link to a verb, and is followed by a link to another (non-verb) note, that constitues a triple, which is then parsed as <code>&lt;T.S. Eliot&gt; &lt;wrote&gt; &lt;The Waste Land&gt;</code>. If a line begins with a verb link and a colon, and it then followed by a list of links, that is then parsed into: <code>&lt;T.S. Eliot&gt; &lt;wrote&gt; &lt;The Waste Land&gt;. &lt;T.S. Eliot&gt; &lt;wrote&gt; &lt;Four Quartets&gt;.</code>, i.e., two triples.</p>
-<p>At this point, I can now add more metadata to the note, which will link out to the greater semantic web—to Wikidata, for instance. “The Waste Land” note can now contain its Wikidata entity identifier, like this:</p>
-<pre class="org"><code>#+title: The Waste Land
-#+wikidata: https://www.wikidata.org/wiki/Q581458
-</code></pre>
-<p>And Wikidata maintains <a href="https://www.wikidata.org/wiki/Q581458">a huge amount of data</a> about the poem: its first date of publication, its first line, and even its Project Gutenberg ID, from which you can derive the full text of the poem. For many texts, Wikidata also maintains Goodreads identifiers, as well, which allows one to then derive a number of opinions about the text, as well.</p>
-<p>You can imagine that this streamlines many aspects of research. I can now use <a href="https://www.wikidata.org/wiki/Wikidata:SPARQL_query_service/queries/examples#Goats">SPARQL queries</a> to ask complex questions like:</p>
+<div class="sourceCode" id="cb6"><pre
+class="sourceCode org"><code class="sourceCode orgmode"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a>#+title: T. S. Eliot</span>
+<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a><span class="ot">[[Wrote]]</span>:</span>
+<span id="cb6-4"><a href="#cb6-4" aria-hidden="true" tabindex="-1"></a><span class="ss"> - </span>[[The Waste Land]]</span>
+<span id="cb6-5"><a href="#cb6-5" aria-hidden="true" tabindex="-1"></a><span class="ss"> - </span>[[Four Quartets]]</span></code></pre></div>
+<p>This in itself isn’t very useful yet, but now we have a structure
+that we can parse. In a separate parsing script, I can now write: if a
+line begins with a link to a verb, and is followed by a link to another
+(non-verb) note, that constitues a triple, which is then parsed as
+<code>&lt;T.S. Eliot&gt; &lt;wrote&gt; &lt;The Waste Land&gt;</code>. If
+a line begins with a verb link and a colon, and it then followed by a
+list of links, that is then parsed into:
+<code>&lt;T.S. Eliot&gt; &lt;wrote&gt; &lt;The Waste Land&gt;. &lt;T.S. Eliot&gt; &lt;wrote&gt; &lt;Four Quartets&gt;.</code>,
+i.e., two triples.</p>
+<p>At this point, I can now add more metadata to the note, which will
+link out to the greater semantic web—to Wikidata, for instance. “The
+Waste Land” note can now contain its Wikidata entity identifier, like
+this:</p>
+<div class="sourceCode" id="cb7"><pre
+class="sourceCode org"><code class="sourceCode orgmode"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a>#+title: The Waste Land</span>
+<span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a>#+wikidata: https://www.wikidata.org/wiki/Q581458</span></code></pre></div>
+<p>And Wikidata maintains <a
+href="https://www.wikidata.org/wiki/Q581458">a huge amount of data</a>
+about the poem: its first date of publication, its first line, and even
+its Project Gutenberg ID, from which you can derive the full text of the
+poem. For many texts, Wikidata also maintains Goodreads identifiers, as
+well, which allows one to then derive a number of opinions about the
+text, as well.</p>
+<p>You can imagine that this streamlines many aspects of research. I can
+now use <a
+href="https://www.wikidata.org/wiki/Wikidata:SPARQL_query_service/queries/examples#Goats">SPARQL
+queries</a> to ask complex questions like:</p>
 <ul>
-<li>How long, in words, was the average line of poetry written in 1922?</li>
+<li>How long, in words, was the average line of poetry written in
+1922?</li>
 <li>How many total books were written by H.G. Wells’s lovers?</li>
-<li>What is the distribution of literary genres for the books written by T.S. Eliot’s friends?</li>
+<li>What is the distribution of literary genres for the books written by
+T.S. Eliot’s friends?</li>
 </ul>
-<p>I can also feed all my note triples into one of the many Linked Open Data visualization and manipulation platforms.</p>
-<p>However, it need be said that this is a little kludgey: it’s hack on top of a hack. So really, for this to become viable at all, something like this should really be integrated into org-roam. Or become its own package. (BRB, learning Elisp.)</p></article><hr><p>I welcome your comments and annotations in the Hypothes.is sidebar to the right. →</p><script src="https://hypothes.is/embed.js"></script></div><footer><div class="container"><div class="columns"><div class="column col-8"><p>I believe in openness. This work is licensed under a <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/">Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International License</a>, unless otherwise stated. All content ©Jonathan Reeve 2020. Hand-coded with love, using exclusively free and open-source software, including <a href="https://github.com/srid/rib">Rib</a> and <a href="https://haskell.org/">Haskell</a>. Hosted on <a href="https://github.com">GitHub</a> and served with <a href="https://netlify.com">Netlify</a>. Icons by Nhor, via <a href="https://thenounproject.com">The Noun Project</a>. <a href="https://www.buymeacoffee.com/vaIVQZH">Buy me a coffee</a> or support me <a href="https://liberapay.com/JonathanReeve/donate">via Libera Pay</a> or <a href="bitcoin:3Qvm1DwzFGk3L1Eb6yeg5Nbc6db8sZUnbK">Bitcoin</a>.</p></div><div class="column col-4"><div class="icons"><a href="http://github.com/JonathanReeve"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512" fill="#fafafa" width="3em" height="3em"><path d="M400 32H48C21.5 32 0 53.5 0 80v352c0 26.5 21.5 48 48
+<p>I can also feed all my note triples into one of the many Linked Open
+Data visualization and manipulation platforms.</p>
+<p>However, it need be said that this is a little kludgey: it’s hack on
+top of a hack. So really, for this to become viable at all, something
+like this should really be integrated into org-roam. Or become its own
+package. (BRB, learning Elisp.)</p></article><hr><p>I welcome your comments and annotations in the Hypothes.is sidebar to the right. →</p><script src="https://hypothes.is/embed.js"></script></div><footer><div class="container"><div class="columns"><div class="column col-8"><p>I believe in openness. This work is licensed under a <a
+href="https://creativecommons.org/licenses/by-nc-sa/4.0/">Creative
+Commons Attribution-NonCommercial-ShareAlike 4.0 International
+License</a>, unless otherwise stated. All content ©Jonathan Reeve 2020.
+Hand-coded with love, using exclusively free and open-source software,
+including <a href="https://github.com/srid/rib">Rib</a> and <a
+href="https://haskell.org/">Haskell</a>. Hosted on <a
+href="https://github.com">GitHub</a> and served with <a
+href="https://netlify.com">Netlify</a>. Icons by Nhor, via <a
+href="https://thenounproject.com">The Noun Project</a>. <a
+href="https://www.buymeacoffee.com/vaIVQZH">Buy me a coffee</a> or
+support me <a href="https://liberapay.com/JonathanReeve/donate">via
+Libera Pay</a> or <a
+href="bitcoin:3Qvm1DwzFGk3L1Eb6yeg5Nbc6db8sZUnbK">Bitcoin</a>.</p></div><div class="column col-4"><div class="icons"><a href="http://github.com/JonathanReeve"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512" fill="#fafafa" width="3em" height="3em"><path d="M400 32H48C21.5 32 0 53.5 0 80v352c0 26.5 21.5 48 48
 48h352c26.5 0 48-21.5 48-48V80c0-26.5-21.5-48-48-48zM277.3 415.7c-8.4
 1.5-11.5-3.7-11.5-8 0-5.4.2-33 .2-55.3 0-15.6-5.2-25.5-11.3-30.7 37-4.1 76-9.2
 76-73.1 0-18.2-6.5-27.3-17.1-39 1.7-4.3 7.4-22-1.7-45-13.9-4.3-45.7 17.9-45.7

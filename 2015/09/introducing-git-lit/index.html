@@ -1,5 +1,5 @@
 <html lang="en"><head><meta http-equiv="Content-Type" content="text/html; charset=utf-8"><title>Introducing Git-Lit
-</title><link rel="stylesheet" href="/assets/css/spectre.min.css"><link rel="stylesheet" href="//fonts.googleapis.com/css?family=Montserrat|Raleway"><link rel="stylesheet" href="//cdn.jsdelivr.net/gh/highlightjs/cdn-release@10.2.0/build/styles/default.min.css"><link rel="icon" href="/images/favicon.svg" sizes="any" type="image/svg+xml"><style type="text/css">
+</title><base href="/"><link rel="stylesheet" href="/assets/css/spectre.min.css"><link rel="stylesheet" href="//fonts.googleapis.com/css?family=Montserrat|Raleway"><link rel="stylesheet" href="//cdn.jsdelivr.net/gh/highlightjs/cdn-release@10.2.0/build/styles/default.min.css"><link rel="icon" href="/images/favicon.svg" sizes="any" type="image/svg+xml"><style type="text/css">
 
 @media screen and (min-width: 1200px)
 {
@@ -49,8 +49,8 @@ body.has-docked-nav #main-header
 #headerWrapper
 {
   background-color : #ffffff;
-  border-top       : solid 2px #494e8e;
-  border-bottom    : solid 2px #494e8e;
+  border-top       : 2px solid #494e8e;
+  border-bottom    : 2px solid #494e8e;
 }
 
 #headerWrapper header
@@ -273,34 +273,164 @@ table
 
 }
 
-/* Generated with Clay, http://fvisser.nl/clay */</style><style type="text/css">@page{margin: 3cm;}</style></head><body><div id="headerWrapper"><header class="navbar"><section class="navbar-section"><a class="navbar-brand" href="/">Jonathan Reeve: <span>Computational Literary Analysis</span></a></section><section class="navbar-section"><ul class="nav"><li class="nav-item"><a href="/">posts</a></li><li class="nav-item"><a href="/cv.html">cv</a></li><li class="nav-item"><a href="/tags/">tags</a></li><li class="nav-item"><a href="/feed.xml">feed</a></li></ul></section></header></div><div class="container"><h1>Introducing Git-Lit
-</h1><p>Posted 2015-09-08</p><article><p>A vibrant discussion followed <a href="http://jonreeve.com/2015/03/proposal-for-a-corpus-protocol/">my March 15th post, “A Proposal for a Corpus Sharing Protocol.”</a>. <a href="https://twitter.com/ctschroeder">Carrie Schroeder</a>, <a href="https://twitter.com/ariddell">Allen Riddel</a> and others on Twitter pointed out that, especially in non-English DH fields, many corpora are already on GitHub. These include texts from the <a href="https://github.com/cltk/chinese_text_cbeta_indices">Chinese Buddhist Electronic Text Association</a>, the <a href="http://github.com/OpenGreekAndLatin">Open Greek and Latin Project</a> at Leipzig, and papyri from the <a href="https://github.com/papyri/idp.data">Integrating Digital Papyrology Project</a>. The <a href="http://www.textcreationpartnership.org/">Text Creation Partnership</a> has released some 25,000 of their texts in January of this year, and <a href="https://github.com/textcreationpartnership">uploaded them to GitHub</a>. One of the more interesting Git corpus projects I became aware of following this discussion is <a href="http://gitenberg.github.io/">GITenberg</a>. Led by <a href="https://github.com/sethwoodworth">Seth Woodworth</a>, the project scrapes a text from Project Gutenberg, initializes a git repository for it, adds README and CONTRIBUTING files generated from the text’s metadata, and uploads the resulting repository to GitHub. They have gitified around 43,000 works this way. The project also converts Project Gutenberg vanilla plain text into <a href="https://en.wikipedia.org/wiki/AsciiDoc">ASCIIDOC</a>—a good example of this is the GITenberg edition of <a href="https://github.com/GITenberg/Adventures-of-Huckleberry-Finn_76/blob/master/book.asciidoc">The Adventures of Huckleberry Finn</a>. This is an amazingly ambitious project that holds the promise of wide-ranging applications for editing, versioning, and disseminating literature.</p>
-<p>One such application might lie with <a href="http://labs.bl.uk/Digital+Collections+-+Books+and+Text">the 68,000 digital texts recently created by the British Library</a>. James Baker, a digital curator of the British Library, left a comment on my original post, suggesting that the method I describe might be used to parse and post the Library’s texts. He sent me <a href="https://github.com/JonathanReeve/git-lit/tree/master/data">a few sample texts</a> of the ALTO XML documents that the Stanford Literary Lab had used. <a href="https://github.com/JonathanReeve/git-lit">I adapted some of the GITenberg code to read these texts, generate README files for them, and turn them into GitHub repositories</a>. I’m provisionally calling this project Git-Lit.</p>
-<h1 id="introducing-git-lit">Introducing Git-Lit</h1>
-<p>Git-Lit aims to parse, version control, and post each work in the British Library’s corpus of digital texts. Parsing the texts will transform the machine-readable metadata into human-readable prefatory material; version controlling the texts will allow for collaborative editing and revision of the texts, effectively crowdsourcing the correction of OCR errors; and posting the texts to GitHub will ensure the texts’ visibility to the greater community.</p>
+/* Generated with Clay, http://fvisser.nl/clay */</style><style type="text/css">@page{margin: 3cm;}</style></head><body><div id="headerWrapper"><header class="navbar"><section class="navbar-section"><a class="navbar-brand" href>Jonathan Reeve: <span>Computational Literary Analysis</span></a></section><section class="navbar-section"><ul class="nav"><li class="nav-item"><a href>posts</a></li><li class="nav-item"><a href="cv">cv</a></li><li class="nav-item"><a href="tags.html">tags</a></li><li class="nav-item"><a href="feed.xml">feed</a></li></ul></section></header></div><div class="container"><h1>Introducing Git-Lit
+</h1><article><p>Posted 2015-09-08</p><p>A vibrant discussion followed <a
+href="http://jonreeve.com/2015/03/proposal-for-a-corpus-protocol/">my
+March 15th post, “A Proposal for a Corpus Sharing Protocol.”</a>. <a
+href="https://twitter.com/ctschroeder">Carrie Schroeder</a>, <a
+href="https://twitter.com/ariddell">Allen Riddel</a> and others on
+Twitter pointed out that, especially in non-English DH fields, many
+corpora are already on GitHub. These include texts from the <a
+href="https://github.com/cltk/chinese_text_cbeta_indices">Chinese
+Buddhist Electronic Text Association</a>, the <a
+href="http://github.com/OpenGreekAndLatin">Open Greek and Latin
+Project</a> at Leipzig, and papyri from the <a
+href="https://github.com/papyri/idp.data">Integrating Digital Papyrology
+Project</a>. The <a href="http://www.textcreationpartnership.org/">Text
+Creation Partnership</a> has released some 25,000 of their texts in
+January of this year, and <a
+href="https://github.com/textcreationpartnership">uploaded them to
+GitHub</a>. One of the more interesting Git corpus projects I became
+aware of following this discussion is <a
+href="http://gitenberg.github.io/">GITenberg</a>. Led by <a
+href="https://github.com/sethwoodworth">Seth Woodworth</a>, the project
+scrapes a text from Project Gutenberg, initializes a git repository for
+it, adds README and CONTRIBUTING files generated from the text’s
+metadata, and uploads the resulting repository to GitHub. They have
+gitified around 43,000 works this way. The project also converts Project
+Gutenberg vanilla plain text into <a
+href="https://en.wikipedia.org/wiki/AsciiDoc">ASCIIDOC</a>—a good
+example of this is the GITenberg edition of <a
+href="https://github.com/GITenberg/Adventures-of-Huckleberry-Finn_76/blob/master/book.asciidoc">The
+Adventures of Huckleberry Finn</a>. This is an amazingly ambitious
+project that holds the promise of wide-ranging applications for editing,
+versioning, and disseminating literature.</p>
+<p>One such application might lie with <a
+href="http://labs.bl.uk/Digital+Collections+-+Books+and+Text">the 68,000
+digital texts recently created by the British Library</a>. James Baker,
+a digital curator of the British Library, left a comment on my original
+post, suggesting that the method I describe might be used to parse and
+post the Library’s texts. He sent me <a
+href="https://github.com/JonathanReeve/git-lit/tree/master/data">a few
+sample texts</a> of the ALTO XML documents that the Stanford Literary
+Lab had used. <a href="https://github.com/JonathanReeve/git-lit">I
+adapted some of the GITenberg code to read these texts, generate README
+files for them, and turn them into GitHub repositories</a>. I’m
+provisionally calling this project Git-Lit.</p>
+<h1 id="introducing-git-lit-1">Introducing Git-Lit</h1>
+<p>Git-Lit aims to parse, version control, and post each work in the
+British Library’s corpus of digital texts. Parsing the texts will
+transform the machine-readable metadata into human-readable prefatory
+material; version controlling the texts will allow for collaborative
+editing and revision of the texts, effectively crowdsourcing the
+correction of OCR errors; and posting the texts to GitHub will ensure
+the texts’ visibility to the greater community.</p>
 <h2 id="why-this-is-important">Why This is Important</h2>
 <p>Git-Lit addresses these issues:</p>
 <ol>
-<li><strong>Electronic Texts are difficult to edit.</strong> Imagine you’re reading an e-text on a Kindle, and you notice an OCR error. How can you fix it? You can alert Amazon, who may or may not forward your message to the publisher. Since correcting the text would require the publisher to recompile and resubmit it, they will likely decide it isn’t worthwhile to make the correction. Similarly, if you notice an error in a Project Gutenberg text, it could take years for the correction to make its way back to the original text, even if you’re an active member of their Distributed Proofreaders collective. In both cases, there does not yet exist an efficient, streamlined way to improve the quality of electronic texts. What is needed, therefore, is an open-source, decentralized model for community-centered editing. This model already exists for software development in the form of <a href="https://git-scm.com/book/en/v2/Getting-Started-About-Version-Control">git</a>. By posting a text to GitHub, we can take advantage of the fork/revise/pull request workflow that programmers have long enjoyed for software collaboration.<br />
+<li><strong>Electronic Texts are difficult to edit.</strong> Imagine
+you’re reading an e-text on a Kindle, and you notice an OCR error. How
+can you fix it? You can alert Amazon, who may or may not forward your
+message to the publisher. Since correcting the text would require the
+publisher to recompile and resubmit it, they will likely decide it isn’t
+worthwhile to make the correction. Similarly, if you notice an error in
+a Project Gutenberg text, it could take years for the correction to make
+its way back to the original text, even if you’re an active member of
+their Distributed Proofreaders collective. In both cases, there does not
+yet exist an efficient, streamlined way to improve the quality of
+electronic texts. What is needed, therefore, is an open-source,
+decentralized model for community-centered editing. This model already
+exists for software development in the form of <a
+href="https://git-scm.com/book/en/v2/Getting-Started-About-Version-Control">git</a>.
+By posting a text to GitHub, we can take advantage of the
+fork/revise/pull request workflow that programmers have long enjoyed for
+software collaboration.<br />
 </li>
-<li><strong>Textual corpora are difficult to assemble.</strong> With some exceptions (notably the NLTK corpus module), downloading a text corpus involves compiling texts from any number of heterogeneous sources. A would-be text analyst must click through a series of web pages to find the corpus he or she wants, and then either download a .zip file that must be expanded, or email the corpus assembler for a copy of the corpus. With multiple texts, this can be a labor-intensive process that is not easily scriptable or automated. Git provides an easy way to solve these problems. By making texts available through the git protocol on GitHub, anyone that wishes to download a text corpus can simply run <code class="verbatim">git clone</code> followed by the repository URL. Parent repositories can then be assembled for collections of texts using git submodules. That’s to say, a parent corpus repository might be created for nineteenth-century <em>Bildungsromane</em>, for instance, and that repository would contain pointers to individual texts that themselves are their own repositories.</li>
-<li><strong>ALTO XML is not very human-readable.</strong> ALTO XML, the OCR output format used by the British Library, the Library of Congress, and others, is extremely verbose. It encodes the location of each OCRed word, and often gives the OCR certainty for each word. This is great for archival purposes, but isn’t an ideal starting-point for the kinds of text analysis typically done in the digital humanities. What we need is a script to transform this verbose XML into a human-readable format like ASCIIDOC that maintains as many of the original features of the text as possible.</li>
+<li><strong>Textual corpora are difficult to assemble.</strong> With
+some exceptions (notably the NLTK corpus module), downloading a text
+corpus involves compiling texts from any number of heterogeneous
+sources. A would-be text analyst must click through a series of web
+pages to find the corpus he or she wants, and then either download a
+.zip file that must be expanded, or email the corpus assembler for a
+copy of the corpus. With multiple texts, this can be a labor-intensive
+process that is not easily scriptable or automated. Git provides an easy
+way to solve these problems. By making texts available through the git
+protocol on GitHub, anyone that wishes to download a text corpus can
+simply run <code class="verbatim">git clone</code> followed by the
+repository URL. Parent repositories can then be assembled for
+collections of texts using git submodules. That’s to say, a parent
+corpus repository might be created for nineteenth-century
+<em>Bildungsromane</em>, for instance, and that repository would contain
+pointers to individual texts that themselves are their own
+repositories.</li>
+<li><strong>ALTO XML is not very human-readable.</strong> ALTO XML, the
+OCR output format used by the British Library, the Library of Congress,
+and others, is extremely verbose. It encodes the location of each OCRed
+word, and often gives the OCR certainty for each word. This is great for
+archival purposes, but isn’t an ideal starting-point for the kinds of
+text analysis typically done in the digital humanities. What we need is
+a script to transform this verbose XML into a human-readable format like
+ASCIIDOC that maintains as many of the original features of the text as
+possible.</li>
 </ol>
 <h2 id="how-it-works">How it Works</h2>
-<p>A British Library text contains ALTO XML textual data as well as a Library of Congress METS XML metadata file. Git-Lit does the following:</p>
+<p>A British Library text contains ALTO XML textual data as well as a
+Library of Congress METS XML metadata file. Git-Lit does the
+following:</p>
 <ol>
-<li>Reads the metadata file to determine the text’s title, author (if any), and other pertinent information.</li>
-<li>Initializes an empty git repository within the text directory, and makes an initial commit containing the text at its raw state.</li>
-<li>Generates a README file with the metadata, a CONTRIBUTING file explaining how to contribute towards improving the text, and a LICENSE file which, for now, is just the standard GNU Public License v3.</li>
-<li>Commits these new files to the git repository, effectively creating a new version.</li>
+<li>Reads the metadata file to determine the text’s title, author (if
+any), and other pertinent information.</li>
+<li>Initializes an empty git repository within the text directory, and
+makes an initial commit containing the text at its raw state.</li>
+<li>Generates a README file with the metadata, a CONTRIBUTING file
+explaining how to contribute towards improving the text, and a LICENSE
+file which, for now, is just the standard GNU Public License v3.</li>
+<li>Commits these new files to the git repository, effectively creating
+a new version.</li>
 <li>Creates and pushes a new GitHub repository for the text.</li>
 </ol>
-<p>I ran Git-Lit on <a href="https://github.com/JonathanReeve/git-lit/tree/master/data">the four sample texts in the <code class="verbatim">data</code> directory</a>, and generated the four GitHub repositories that can be found on <a href="https://github.com/Git-Lit">the Git-Lit organization</a>. You can read, fork, modify, or comment on <a href="https://github.com/JonathanReeve/git-lit/blob/master/main.ipynb">the IPython Notebook that does this</a> on <a href="https://github.com/JonathanReeve/git-lit">the project repository at GitHub</a>.</p>
-<h2 id="future-phases-of-this-project">Future Phases of this Project</h2>
-<p>As this project develops, we’ll create indices for the texts in the form of submodule pointers. Category-based parent repositories might include “17th Century Novels,” “18th Century Correspondence,” or simply “Poetry,” but the categories are not mutually exclusive by necessity. This will allow a literary scholar interested in a particular category to instantly assemble a corpus by <code class="verbatim">git clone=ing the parent repository and checking out its submodules with =git submodule update --init --recursive</code>.</p>
-<p>Later, we’ll write a scripts to transform the texts in more useful formats, like ASCIIDOC and TEI XML. This will make archival-quality versions of the texts, and will allow for rich scholarly markup.</p>
+<p>I ran Git-Lit on <a
+href="https://github.com/JonathanReeve/git-lit/tree/master/data">the
+four sample texts in the <code class="verbatim">data</code>
+directory</a>, and generated the four GitHub repositories that can be
+found on <a href="https://github.com/Git-Lit">the Git-Lit
+organization</a>. You can read, fork, modify, or comment on <a
+href="https://github.com/JonathanReeve/git-lit/blob/master/main.ipynb">the
+IPython Notebook that does this</a> on <a
+href="https://github.com/JonathanReeve/git-lit">the project repository
+at GitHub</a>.</p>
+<h2 id="future-phases-of-this-project">Future Phases of this
+Project</h2>
+<p>As this project develops, we’ll create indices for the texts in the
+form of submodule pointers. Category-based parent repositories might
+include “17th Century Novels,” “18th Century Correspondence,” or simply
+“Poetry,” but the categories are not mutually exclusive by necessity.
+This will allow a literary scholar interested in a particular category
+to instantly assemble a corpus by <code
+class="verbatim">git clone=ing the parent repository and checking out its submodules with =git submodule update --init --recursive</code>.</p>
+<p>Later, we’ll write a scripts to transform the texts in more useful
+formats, like ASCIIDOC and TEI XML. This will make archival-quality
+versions of the texts, and will allow for rich scholarly markup.</p>
 <h2 id="how-to-contribute">How to Contribute</h2>
-<p>Please join this initiative! To contribute, contact me, or find an issue you can tackle on <a href="https://github.com/JonathanReeve/git-lit/issues">the project issue tracker</a>. Also, feel free to add your own features, restructure the code, or make any other improvements. Pull requests are very welcome!</p></article><hr><p>I welcome your comments and annotations in the Hypothes.is sidebar to the right. →</p><script src="https://hypothes.is/embed.js"></script></div><footer><div class="container"><div class="columns"><div class="column col-8"><p>I believe in openness. This work is licensed under a <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/">Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International License</a>, unless otherwise stated. All content ©Jonathan Reeve 2020. Hand-coded with love, using exclusively free and open-source software, including <a href="https://github.com/srid/rib">Rib</a> and <a href="https://haskell.org/">Haskell</a>. Hosted on <a href="https://github.com">GitHub</a> and served with <a href="https://netlify.com">Netlify</a>. Icons by Nhor, via <a href="https://thenounproject.com">The Noun Project</a>. <a href="https://www.buymeacoffee.com/vaIVQZH">Buy me a coffee</a> or support me <a href="https://liberapay.com/JonathanReeve/donate">via Libera Pay</a> or <a href="bitcoin:3Qvm1DwzFGk3L1Eb6yeg5Nbc6db8sZUnbK">Bitcoin</a>.</p></div><div class="column col-4"><div class="icons"><a href="http://github.com/JonathanReeve"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512" fill="#fafafa" width="3em" height="3em"><path d="M400 32H48C21.5 32 0 53.5 0 80v352c0 26.5 21.5 48 48
+<p>Please join this initiative! To contribute, contact me, or find an
+issue you can tackle on <a
+href="https://github.com/JonathanReeve/git-lit/issues">the project issue
+tracker</a>. Also, feel free to add your own features, restructure the
+code, or make any other improvements. Pull requests are very
+welcome!</p></article><hr><p>I welcome your comments and annotations in the Hypothes.is sidebar to the right. →</p><script src="https://hypothes.is/embed.js"></script></div><footer><div class="container"><div class="columns"><div class="column col-8"><p>I believe in openness. This work is licensed under a <a
+href="https://creativecommons.org/licenses/by-nc-sa/4.0/">Creative
+Commons Attribution-NonCommercial-ShareAlike 4.0 International
+License</a>, unless otherwise stated. All content ©Jonathan Reeve 2020.
+Hand-coded with love, using exclusively free and open-source software,
+including <a href="https://github.com/srid/rib">Rib</a> and <a
+href="https://haskell.org/">Haskell</a>. Hosted on <a
+href="https://github.com">GitHub</a> and served with <a
+href="https://netlify.com">Netlify</a>. Icons by Nhor, via <a
+href="https://thenounproject.com">The Noun Project</a>. <a
+href="https://www.buymeacoffee.com/vaIVQZH">Buy me a coffee</a> or
+support me <a href="https://liberapay.com/JonathanReeve/donate">via
+Libera Pay</a> or <a
+href="bitcoin:3Qvm1DwzFGk3L1Eb6yeg5Nbc6db8sZUnbK">Bitcoin</a>.</p></div><div class="column col-4"><div class="icons"><a href="http://github.com/JonathanReeve"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512" fill="#fafafa" width="3em" height="3em"><path d="M400 32H48C21.5 32 0 53.5 0 80v352c0 26.5 21.5 48 48
 48h352c26.5 0 48-21.5 48-48V80c0-26.5-21.5-48-48-48zM277.3 415.7c-8.4
 1.5-11.5-3.7-11.5-8 0-5.4.2-33 .2-55.3 0-15.6-5.2-25.5-11.3-30.7 37-4.1 76-9.2
 76-73.1 0-18.2-6.5-27.3-17.1-39 1.7-4.3 7.4-22-1.7-45-13.9-4.3-45.7 17.9-45.7

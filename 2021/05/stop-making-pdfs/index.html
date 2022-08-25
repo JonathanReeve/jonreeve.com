@@ -1,5 +1,5 @@
 <html lang="en"><head><meta http-equiv="Content-Type" content="text/html; charset=utf-8"><title>The Case Against PDFs
-</title><link rel="stylesheet" href="/assets/css/spectre.min.css"><link rel="stylesheet" href="//fonts.googleapis.com/css?family=Montserrat|Raleway"><link rel="stylesheet" href="//cdn.jsdelivr.net/gh/highlightjs/cdn-release@10.2.0/build/styles/default.min.css"><link rel="icon" href="/images/favicon.svg" sizes="any" type="image/svg+xml"><style type="text/css">
+</title><base href="/"><link rel="stylesheet" href="/assets/css/spectre.min.css"><link rel="stylesheet" href="//fonts.googleapis.com/css?family=Montserrat|Raleway"><link rel="stylesheet" href="//cdn.jsdelivr.net/gh/highlightjs/cdn-release@10.2.0/build/styles/default.min.css"><link rel="icon" href="/images/favicon.svg" sizes="any" type="image/svg+xml"><style type="text/css">
 
 @media screen and (min-width: 1200px)
 {
@@ -49,8 +49,8 @@ body.has-docked-nav #main-header
 #headerWrapper
 {
   background-color : #ffffff;
-  border-top       : solid 2px #494e8e;
-  border-bottom    : solid 2px #494e8e;
+  border-top       : 2px solid #494e8e;
+  border-bottom    : 2px solid #494e8e;
 }
 
 #headerWrapper header
@@ -273,28 +273,141 @@ table
 
 }
 
-/* Generated with Clay, http://fvisser.nl/clay */</style><style type="text/css">@page{margin: 3cm;}</style></head><body><div id="headerWrapper"><header class="navbar"><section class="navbar-section"><a class="navbar-brand" href="/">Jonathan Reeve: <span>Computational Literary Analysis</span></a></section><section class="navbar-section"><ul class="nav"><li class="nav-item"><a href="/">posts</a></li><li class="nav-item"><a href="/cv.html">cv</a></li><li class="nav-item"><a href="/tags/">tags</a></li><li class="nav-item"><a href="/feed.xml">feed</a></li></ul></section></header></div><div class="container"><h1>The Case Against PDFs
-</h1><p>Posted 2021-05-15</p><article><p>We should stop pretending that we’re all still using paper. At least, speaking for myself and my academic work, email is much more common than paper mail, ebooks are rapidly growing in popularity, and journals are mostly accessed electronically. The global pandemic has driven us even further in digitization. More and more, we sign contracts, pay our electrical bills, and even get our drivers’ licenses renewed, electronically, over the Internet. So then why do we insist on using electronic file formats that mimic the constraints of physical paper, which we no longer use?</p>
-<p>Think about this: when you start writing a new document, using a word processor, you will usually see something like this:</p>
+/* Generated with Clay, http://fvisser.nl/clay */</style><style type="text/css">@page{margin: 3cm;}</style></head><body><div id="headerWrapper"><header class="navbar"><section class="navbar-section"><a class="navbar-brand" href>Jonathan Reeve: <span>Computational Literary Analysis</span></a></section><section class="navbar-section"><ul class="nav"><li class="nav-item"><a href>posts</a></li><li class="nav-item"><a href="cv">cv</a></li><li class="nav-item"><a href="tags.html">tags</a></li><li class="nav-item"><a href="feed.xml">feed</a></li></ul></section></header></div><div class="container"><h1>The Case Against PDFs
+</h1><article><p>Posted 2021-05-15</p><p>We should stop pretending that we’re all still using paper. At least,
+speaking for myself and my academic work, email is much more common than
+paper mail, ebooks are rapidly growing in popularity, and journals are
+mostly accessed electronically. The global pandemic has driven us even
+further in digitization. More and more, we sign contracts, pay our
+electrical bills, and even get our drivers’ licenses renewed,
+electronically, over the Internet. So then why do we insist on using
+electronic file formats that mimic the constraints of physical paper,
+which we no longer use?</p>
+<p>Think about this: when you start writing a new document, using a word
+processor, you will usually see something like this:</p>
 <figure>
-<img src="../../../images/pdf/google-docs.png" alt="Google Docs: Paper UI" /><figcaption aria-hidden="true">Google Docs: Paper UI</figcaption>
+<img src="../../../images/pdf/google-docs.png"
+alt="Google Docs: Paper UI" />
+<figcaption aria-hidden="true">Google Docs: Paper UI</figcaption>
 </figure>
-<p>This UI emulates a paper page. Not just any page, but the 8.5 x 11 inch, letter-size paper common in the US. This made sense, at one point, when the printer was an essential part of the computer, and when computer documents were only designs for their paper versions. But now, in 2021, it is starting to go the way of the floppy disk save icon: it will become a vestigial organ of computer interaction. But not before costing us years of bad document interface design.</p>
-<p>Case in point: I have to fill out some forms (“paperwork”) with my department, in order to get on the payroll. The department office doesn’t have a row of filing cabinets. They’re not printing out these forms. Yet the form is composed in Microsoft Word, using a string of underscores to indicate the fields I’m meant to fill in: <code>Name: _______</code>. So I open the Word file on my computer, and type my name among the underscores: <code>Name: ____Jonathan Reeve____</code>. Presumably, some unfortunate intern then has to receive my form—a Word document attached to an email—and copy-paste, or retype, each field into some spreadsheet. This is an ugly and unnecessary workflow for 2021. Why do we insist on trying to mimic early 20th Century paper-based offices?</p>
-<p>It’s not that we don’t <em>have</em> better technologies, ones better suited to our tasks. HTML, for instance, has had form capabilities since the ’90s, and the <code>&lt;form&gt;</code> tag set <a href="https://www.w3schools.com/html/html_forms.asp">remains easy to write, even for novices</a>. For those with an aversion to code, there are plenty of free commercial options, like <a href="https://workspace.google.com/products/forms/">Google Forms,</a> <a href="https://www.typeform.com/">Typeform</a>, and others. All of these solutions take user input and insert it directly into a database or spreadsheet. No word processing necessary. And you don’t have to decide on a page size, either, for your nonexistent pages.</p>
-<p>Here’s another example: I’m writing my dissertation. The Graduate School’s submission process is totally electronic, so there will be no printed copies of my dissertation, unless someone chooses to print it. But it must still be submitted in either PDF or Word format. There must be page numbers at the bottom of every virtual “page,” and a table of contents. One-inch margins around each “page.” This probably doesn’t sound like a problem, to many of you reading this—aren’t these margins just the same as margins on a webpage?—but I’ll explain. There are a number of fundamental problems with PDFs.</p>
-<p>First, pagination is not only unnecessary in electronic documents, but detracts from their usability. Indices and tables of contents, for instance, are inefficient, and are much better handled with hyperlinks. Pagination also makes figures and images appear far from where they’re described: a reader shouldn’t have to flip through several pages to find a figure referenced on another page. Finally, the reader, rather than the writer, should have control over the margins, text width, line spacing, and so on. The fact that our libraries are filled with large-print editions of books is a testament to the need for variable font sizes. We can customize our preferred font sizes dynamically in most web browsers, with Ctrl-+ or equivalent, but only a raw zoom is possible with PDFs—the font sizes cannot be changed.</p>
-<p>Second, PDF file bloat is ridiculous. As <a href="https://www.sup.org/books/title/?id=26821">Dennis Tenen has shown, in <em>Plain Text</em></a>, try making a PDF with only the words “hello world,” and then try doing the same in plain text, and compare the file sizes of each. The PDF takes up <em>two thousand times</em> more space than its plain text equivalent. And before you dismiss this as a problem mitigated by modern computers, capable of storing many gigabytes of data, consider that there is a real-world cost to computational inefficiency, when scaled to the level of a nation or the world. When millions of our computers are working to compute the displays of PDF files of many megabytes each, this adds up to significant electricity usage, and thus carbon emissions.</p>
-<p>PDFs also lack many of the features of modern electronic documents. Interactive charts, diagrams, and so on, have been possible since the early days of JavaScript, but remain impossible with PDFs. One of my favorite features of the modern web, <a href="https://web.hypothes.is/">social annotation with the likes of hypothes.is</a>, is also impossible with PDFs. For academic publishing, especially, consider that citations and bibliographic references are kinds of hyperlinks, and hyperlinks work best in web browsers, where they are a native technology. Sure, you can put links in a PDF, and it will open a browser, but this is not always a very seamless experience. Sadly, the fact remains that the vast majority of PDF documents published today have textual, rather than hypertextual, bibliographic references. Why would anyone want to make it <em>more</em> difficult to look up the papers one cites? Actually, nevermind, don’t answer that.</p>
-<p>Now, we all know someone—that one colleague that insists on paper books, paper journals, who even prints out emails. And they’re not wrong—research shows that we remember more of what we read when we read it on paper. But this alone is not enough to reverse the digitization trend. You might love the feeling of pen on paper, and prefer to take notes by hand, but that’s not going to convince all your coworkers to give up their email, in favor of writing letters. So we need to embrace computers as communication devices in their own right, and divorce ourselves of the outdated idea that they’re only fancy typewriters, meant for creating paper documents.</p>
-<p>Well, how do we do that? The next time you make a document, make it in Markdown, Org, HTML, or plain text. Make it using Word, if you must, but save it HTML. That’s really the universal format: anyone that has a computer, these days, has a web browser.</p>
+<p>This UI emulates a paper page. Not just any page, but the 8.5 x 11
+inch, letter-size paper common in the US. This made sense, at one point,
+when the printer was an essential part of the computer, and when
+computer documents were only designs for their paper versions. But now,
+in 2021, it is starting to go the way of the floppy disk save icon: it
+will become a vestigial organ of computer interaction. But not before
+costing us years of bad document interface design.</p>
+<p>Case in point: I have to fill out some forms (“paperwork”) with my
+department, in order to get on the payroll. The department office
+doesn’t have a row of filing cabinets. They’re not printing out these
+forms. Yet the form is composed in Microsoft Word, using a string of
+underscores to indicate the fields I’m meant to fill in:
+<code>Name: _______</code>. So I open the Word file on my computer, and
+type my name among the underscores:
+<code>Name: ____Jonathan Reeve____</code>. Presumably, some unfortunate
+intern then has to receive my form—a Word document attached to an
+email—and copy-paste, or retype, each field into some spreadsheet. This
+is an ugly and unnecessary workflow for 2021. Why do we insist on trying
+to mimic early 20th Century paper-based offices?</p>
+<p>It’s not that we don’t <em>have</em> better technologies, ones better
+suited to our tasks. HTML, for instance, has had form capabilities since
+the ’90s, and the <code>&lt;form&gt;</code> tag set <a
+href="https://www.w3schools.com/html/html_forms.asp">remains easy to
+write, even for novices</a>. For those with an aversion to code, there
+are plenty of free commercial options, like <a
+href="https://workspace.google.com/products/forms/">Google Forms,</a> <a
+href="https://www.typeform.com/">Typeform</a>, and others. All of these
+solutions take user input and insert it directly into a database or
+spreadsheet. No word processing necessary. And you don’t have to decide
+on a page size, either, for your nonexistent pages.</p>
+<p>Here’s another example: I’m writing my dissertation. The Graduate
+School’s submission process is totally electronic, so there will be no
+printed copies of my dissertation, unless someone chooses to print it.
+But it must still be submitted in either PDF or Word format. There must
+be page numbers at the bottom of every virtual “page,” and a table of
+contents. One-inch margins around each “page.” This probably doesn’t
+sound like a problem, to many of you reading this—aren’t these margins
+just the same as margins on a webpage?—but I’ll explain. There are a
+number of fundamental problems with PDFs.</p>
+<p>First, pagination is not only unnecessary in electronic documents,
+but detracts from their usability. Indices and tables of contents, for
+instance, are inefficient, and are much better handled with hyperlinks.
+Pagination also makes figures and images appear far from where they’re
+described: a reader shouldn’t have to flip through several pages to find
+a figure referenced on another page. Finally, the reader, rather than
+the writer, should have control over the margins, text width, line
+spacing, and so on. The fact that our libraries are filled with
+large-print editions of books is a testament to the need for variable
+font sizes. We can customize our preferred font sizes dynamically in
+most web browsers, with Ctrl-+ or equivalent, but only a raw zoom is
+possible with PDFs—the font sizes cannot be changed.</p>
+<p>Second, PDF file bloat is ridiculous. As <a
+href="https://www.sup.org/books/title/?id=26821">Dennis Tenen has shown,
+in <em>Plain Text</em></a>, try making a PDF with only the words “hello
+world,” and then try doing the same in plain text, and compare the file
+sizes of each. The PDF takes up <em>two thousand times</em> more space
+than its plain text equivalent. And before you dismiss this as a problem
+mitigated by modern computers, capable of storing many gigabytes of
+data, consider that there is a real-world cost to computational
+inefficiency, when scaled to the level of a nation or the world. When
+millions of our computers are working to compute the displays of PDF
+files of many megabytes each, this adds up to significant electricity
+usage, and thus carbon emissions.</p>
+<p>PDFs also lack many of the features of modern electronic documents.
+Interactive charts, diagrams, and so on, have been possible since the
+early days of JavaScript, but remain impossible with PDFs. One of my
+favorite features of the modern web, <a
+href="https://web.hypothes.is/">social annotation with the likes of
+hypothes.is</a>, is also impossible with PDFs. For academic publishing,
+especially, consider that citations and bibliographic references are
+kinds of hyperlinks, and hyperlinks work best in web browsers, where
+they are a native technology. Sure, you can put links in a PDF, and it
+will open a browser, but this is not always a very seamless experience.
+Sadly, the fact remains that the vast majority of PDF documents
+published today have textual, rather than hypertextual, bibliographic
+references. Why would anyone want to make it <em>more</em> difficult to
+look up the papers one cites? Actually, nevermind, don’t answer
+that.</p>
+<p>Now, we all know someone—that one colleague that insists on paper
+books, paper journals, who even prints out emails. And they’re not
+wrong—research shows that we remember more of what we read when we read
+it on paper. But this alone is not enough to reverse the digitization
+trend. You might love the feeling of pen on paper, and prefer to take
+notes by hand, but that’s not going to convince all your coworkers to
+give up their email, in favor of writing letters. So we need to embrace
+computers as communication devices in their own right, and divorce
+ourselves of the outdated idea that they’re only fancy typewriters,
+meant for creating paper documents.</p>
+<p>Well, how do we do that? The next time you make a document, make it
+in Markdown, Org, HTML, or plain text. Make it using Word, if you must,
+but save it HTML. That’s really the universal format: anyone that has a
+computer, these days, has a web browser.</p>
 <p>Next, I’ll describe rethinking the MLA-style research essay.</p>
 <p>Further reading:</p>
 <ul>
-<li><a href="https://practicaltypography.com/how-to-make-a-pdf.html">How to make a PDF | Butterick’s Practical Typography</a></li>
-<li><a href="https://pressbooks.library.ryerson.ca/docs/chapter/the-case-against-pdfs/">The Case Against PDFs – Understanding Document Accessibility</a></li>
-<li><a href="https://gds.blog.gov.uk/2018/07/16/why-gov-uk-content-should-be-published-in-html-and-not-pdf/">Why GOV.UK content should be published in HTML and not PDF - Government Digital Service</a></li>
-</ul></article><hr><p>I welcome your comments and annotations in the Hypothes.is sidebar to the right. →</p><script src="https://hypothes.is/embed.js"></script></div><footer><div class="container"><div class="columns"><div class="column col-8"><p>I believe in openness. This work is licensed under a <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/">Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International License</a>, unless otherwise stated. All content ©Jonathan Reeve 2020. Hand-coded with love, using exclusively free and open-source software, including <a href="https://github.com/srid/rib">Rib</a> and <a href="https://haskell.org/">Haskell</a>. Hosted on <a href="https://github.com">GitHub</a> and served with <a href="https://netlify.com">Netlify</a>. Icons by Nhor, via <a href="https://thenounproject.com">The Noun Project</a>. <a href="https://www.buymeacoffee.com/vaIVQZH">Buy me a coffee</a> or support me <a href="https://liberapay.com/JonathanReeve/donate">via Libera Pay</a> or <a href="bitcoin:3Qvm1DwzFGk3L1Eb6yeg5Nbc6db8sZUnbK">Bitcoin</a>.</p></div><div class="column col-4"><div class="icons"><a href="http://github.com/JonathanReeve"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512" fill="#fafafa" width="3em" height="3em"><path d="M400 32H48C21.5 32 0 53.5 0 80v352c0 26.5 21.5 48 48
+<li><a href="https://practicaltypography.com/how-to-make-a-pdf.html">How
+to make a PDF | Butterick’s Practical Typography</a></li>
+<li><a
+href="https://pressbooks.library.ryerson.ca/docs/chapter/the-case-against-pdfs/">The
+Case Against PDFs – Understanding Document Accessibility</a></li>
+<li><a
+href="https://gds.blog.gov.uk/2018/07/16/why-gov-uk-content-should-be-published-in-html-and-not-pdf/">Why
+GOV.UK content should be published in HTML and not PDF - Government
+Digital Service</a></li>
+</ul></article><hr><p>I welcome your comments and annotations in the Hypothes.is sidebar to the right. →</p><script src="https://hypothes.is/embed.js"></script></div><footer><div class="container"><div class="columns"><div class="column col-8"><p>I believe in openness. This work is licensed under a <a
+href="https://creativecommons.org/licenses/by-nc-sa/4.0/">Creative
+Commons Attribution-NonCommercial-ShareAlike 4.0 International
+License</a>, unless otherwise stated. All content ©Jonathan Reeve 2020.
+Hand-coded with love, using exclusively free and open-source software,
+including <a href="https://github.com/srid/rib">Rib</a> and <a
+href="https://haskell.org/">Haskell</a>. Hosted on <a
+href="https://github.com">GitHub</a> and served with <a
+href="https://netlify.com">Netlify</a>. Icons by Nhor, via <a
+href="https://thenounproject.com">The Noun Project</a>. <a
+href="https://www.buymeacoffee.com/vaIVQZH">Buy me a coffee</a> or
+support me <a href="https://liberapay.com/JonathanReeve/donate">via
+Libera Pay</a> or <a
+href="bitcoin:3Qvm1DwzFGk3L1Eb6yeg5Nbc6db8sZUnbK">Bitcoin</a>.</p></div><div class="column col-4"><div class="icons"><a href="http://github.com/JonathanReeve"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512" fill="#fafafa" width="3em" height="3em"><path d="M400 32H48C21.5 32 0 53.5 0 80v352c0 26.5 21.5 48 48
 48h352c26.5 0 48-21.5 48-48V80c0-26.5-21.5-48-48-48zM277.3 415.7c-8.4
 1.5-11.5-3.7-11.5-8 0-5.4.2-33 .2-55.3 0-15.6-5.2-25.5-11.3-30.7 37-4.1 76-9.2
 76-73.1 0-18.2-6.5-27.3-17.1-39 1.7-4.3 7.4-22-1.7-45-13.9-4.3-45.7 17.9-45.7

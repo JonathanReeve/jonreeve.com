@@ -1,5 +1,5 @@
 <html lang="en"><head><meta http-equiv="Content-Type" content="text/html; charset=utf-8"><title>A Generator of Socratic Dialogues
-</title><link rel="stylesheet" href="/assets/css/spectre.min.css"><link rel="stylesheet" href="//fonts.googleapis.com/css?family=Montserrat|Raleway"><link rel="stylesheet" href="//cdn.jsdelivr.net/gh/highlightjs/cdn-release@10.2.0/build/styles/default.min.css"><link rel="icon" href="/images/favicon.svg" sizes="any" type="image/svg+xml"><style type="text/css">
+</title><base href="/"><link rel="stylesheet" href="/assets/css/spectre.min.css"><link rel="stylesheet" href="//fonts.googleapis.com/css?family=Montserrat|Raleway"><link rel="stylesheet" href="//cdn.jsdelivr.net/gh/highlightjs/cdn-release@10.2.0/build/styles/default.min.css"><link rel="icon" href="/images/favicon.svg" sizes="any" type="image/svg+xml"><style type="text/css">
 
 @media screen and (min-width: 1200px)
 {
@@ -49,8 +49,8 @@ body.has-docked-nav #main-header
 #headerWrapper
 {
   background-color : #ffffff;
-  border-top       : solid 2px #494e8e;
-  border-bottom    : solid 2px #494e8e;
+  border-top       : 2px solid #494e8e;
+  border-bottom    : 2px solid #494e8e;
 }
 
 #headerWrapper header
@@ -273,21 +273,48 @@ table
 
 }
 
-/* Generated with Clay, http://fvisser.nl/clay */</style><style type="text/css">@page{margin: 3cm;}</style></head><body><div id="headerWrapper"><header class="navbar"><section class="navbar-section"><a class="navbar-brand" href="/">Jonathan Reeve: <span>Computational Literary Analysis</span></a></section><section class="navbar-section"><ul class="nav"><li class="nav-item"><a href="/">posts</a></li><li class="nav-item"><a href="/cv.html">cv</a></li><li class="nav-item"><a href="/tags/">tags</a></li><li class="nav-item"><a href="/feed.xml">feed</a></li></ul></section></header></div><div class="container"><h1>A Generator of Socratic Dialogues
-</h1><p>Posted 2016-10-08</p><article><p>In the influential 1948 paper <a href="http://ieeexplore.ieee.org/xpl/articleDetails.jsp?arnumber=6773024">“A Mathematical Theory of Communication,”</a> the mathematician Claude Shannon conducts a thought experiment to construct an algorithmic approximation of language. The algorithm can be described like this:</p>
+/* Generated with Clay, http://fvisser.nl/clay */</style><style type="text/css">@page{margin: 3cm;}</style></head><body><div id="headerWrapper"><header class="navbar"><section class="navbar-section"><a class="navbar-brand" href>Jonathan Reeve: <span>Computational Literary Analysis</span></a></section><section class="navbar-section"><ul class="nav"><li class="nav-item"><a href>posts</a></li><li class="nav-item"><a href="cv">cv</a></li><li class="nav-item"><a href="tags.html">tags</a></li><li class="nav-item"><a href="feed.xml">feed</a></li></ul></section></header></div><div class="container"><h1>A Generator of Socratic Dialogues
+</h1><article><p>Posted 2016-10-08</p><p>In the influential 1948 paper <a
+href="http://ieeexplore.ieee.org/xpl/articleDetails.jsp?arnumber=6773024">“A
+Mathematical Theory of Communication,”</a> the mathematician Claude
+Shannon conducts a thought experiment to construct an algorithmic
+approximation of language. The algorithm can be described like this:</p>
 <ol>
-<li><p>Choose a book at random from your bookshelf, and open to a random page. Choose a random word on that page. Record this word.</p></li>
-<li><p>Open another book at random, and read until you find the word you just recorded. Record the word that follows this word. Repeat this step as many times as you like.</p></li>
+<li><p>Choose a book at random from your bookshelf, and open to a random
+page. Choose a random word on that page. Record this word.</p></li>
+<li><p>Open another book at random, and read until you find the word you
+just recorded. Record the word that follows this word. Repeat this step
+as many times as you like.</p></li>
 </ol>
-<p>This process, when applied to the speech of a particular character or author, can mathematically approximate that character’s speech. While that may be a difficult task to accomplish manually, it’s a trivial computational task using semantically encoded texts. For texts that are encoded in TEI XML, such as the Platonic dialogues available through the <a href="http://www.perseus.tufts.edu/hopper/">Perseus Digital Library</a>, a character’s speech is encoded like this:</p>
+<p>This process, when applied to the speech of a particular character or
+author, can mathematically approximate that character’s speech. While
+that may be a difficult task to accomplish manually, it’s a trivial
+computational task using semantically encoded texts. For texts that are
+encoded in TEI XML, such as the Platonic dialogues available through the
+<a href="http://www.perseus.tufts.edu/hopper/">Perseus Digital
+Library</a>, a character’s speech is encoded like this:</p>
 <pre class="example"><code>&lt;sp&gt;&lt;speaker&gt;Socrates&lt;/speaker&gt;&lt;p&gt;Dear Phaedrus, whither away, and where do you come from?&lt;/p&gt;&lt;/sp&gt;
 </code></pre>
-<p>This markup makes it trivial to exact all of a character’s speech using an XPATH expression like <code class="verbatim">.//sp[speaker</code>’Socrates’]/p=. Once that speech is extracted, this same probabilistic process can then be abstracted and applied to the metasyntactic or textual level, so that it can generate not only strings of words, but textual structures like dialogues. I recently wrote <a href="https://github.com/JonathanReeve/plato-analysis/blob/master/plato-characters-Markov.ipynb">a program that implements this idea</a>. Here’s a dialogue that the program generated, in which it tries to emulate the Platonic dialogue <em>Phaedrus</em>, and also emulate the speech of each character in the dialogue:</p>
+<p>This markup makes it trivial to exact all of a character’s speech
+using an XPATH expression like <code
+class="verbatim">.//sp[speaker</code>’Socrates’]/p=. Once that speech is
+extracted, this same probabilistic process can then be abstracted and
+applied to the metasyntactic or textual level, so that it can generate
+not only strings of words, but textual structures like dialogues. I
+recently wrote <a
+href="https://github.com/JonathanReeve/plato-analysis/blob/master/plato-characters-Markov.ipynb">a
+program that implements this idea</a>. Here’s a dialogue that the
+program generated, in which it tries to emulate the Platonic dialogue
+<em>Phaedrus</em>, and also emulate the speech of each character in the
+dialogue:</p>
 <blockquote>
-<p><strong>Socrates</strong>: Do you came down, attain immortality as we must first make the longest ears—No, Phaedrus, then pray to agree and writing speeches.</p>
+<p><strong>Socrates</strong>: Do you came down, attain immortality as we
+must first make the longest ears—No, Phaedrus, then pray to agree and
+writing speeches.</p>
 </blockquote>
 <blockquote>
-<p><strong>Phaedrus</strong>: Certainly. Yes, certainly. What he must speak then I think he speaks is being guided about, which you mean?</p>
+<p><strong>Phaedrus</strong>: Certainly. Yes, certainly. What he must
+speak then I think he speaks is being guided about, which you mean?</p>
 </blockquote>
 <blockquote>
 <p><strong>Socrates</strong>: Do you seem less sense about rhetoric.</p>
@@ -295,12 +322,44 @@ table
 <blockquote>
 <p><strong>Phaedrus</strong>: True. What?</p>
 </blockquote>
-<p>This is nonsense, of course, but you can still hear the voices of the characters come through. Socrates sounds vaguely like Socrates, and Phaedrus sounds vaguely like Phaedrus.</p>
-<p>Here’s how it works. Figure 1 shows a graphical model that represents the probabilistic process of the algorithm. The user-supplied value of <code class="verbatim">M</code> denotes the number of lines to be generated (in the above example this is 4). This determines the number of character utterances that will be generated. Each of those utterances, <code class="verbatim">c</code>, are determined by the previous utterancẹ̣—Socrates will speak after Phaedrus, and vice versa. For each character choice, the length of each utterance, <code class="verbatim">l</code>, is probabilistically determined by the text. Each of those lengths is then fed into a Markov chain generator which is given a probability table of that character’s speech. Using that table, words are generated, where the probability of each is determined by the preceding word.</p>
+<p>This is nonsense, of course, but you can still hear the voices of the
+characters come through. Socrates sounds vaguely like Socrates, and
+Phaedrus sounds vaguely like Phaedrus.</p>
+<p>Here’s how it works. Figure 1 shows a graphical model that represents
+the probabilistic process of the algorithm. The user-supplied value of
+<code class="verbatim">M</code> denotes the number of lines to be
+generated (in the above example this is 4). This determines the number
+of character utterances that will be generated. Each of those
+utterances, <code class="verbatim">c</code>, are determined by the
+previous utterancẹ̣—Socrates will speak after Phaedrus, and vice versa.
+For each character choice, the length of each utterance, <code
+class="verbatim">l</code>, is probabilistically determined by the text.
+Each of those lengths is then fed into a Markov chain generator which is
+given a probability table of that character’s speech. Using that table,
+words are generated, where the probability of each is determined by the
+preceding word.</p>
 <figure>
-<img src="../../../images/socratic-dialogue-generator/socrates-gm.png" alt="Figure 1" /><figcaption aria-hidden="true">Figure 1</figcaption>
+<img src="../../../images/socratic-dialogue-generator/socrates-gm.png"
+alt="Figure 1" />
+<figcaption aria-hidden="true">Figure 1</figcaption>
 </figure>
-<p>The Socratic dialogue generator should work with any Platonic dialogue in the Perseus library. Just specify the filename, the two characters you want to have talk to each other, and how many lines of dialogue you want to generate.</p></article><hr><p>I welcome your comments and annotations in the Hypothes.is sidebar to the right. →</p><script src="https://hypothes.is/embed.js"></script></div><footer><div class="container"><div class="columns"><div class="column col-8"><p>I believe in openness. This work is licensed under a <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/">Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International License</a>, unless otherwise stated. All content ©Jonathan Reeve 2020. Hand-coded with love, using exclusively free and open-source software, including <a href="https://github.com/srid/rib">Rib</a> and <a href="https://haskell.org/">Haskell</a>. Hosted on <a href="https://github.com">GitHub</a> and served with <a href="https://netlify.com">Netlify</a>. Icons by Nhor, via <a href="https://thenounproject.com">The Noun Project</a>. <a href="https://www.buymeacoffee.com/vaIVQZH">Buy me a coffee</a> or support me <a href="https://liberapay.com/JonathanReeve/donate">via Libera Pay</a> or <a href="bitcoin:3Qvm1DwzFGk3L1Eb6yeg5Nbc6db8sZUnbK">Bitcoin</a>.</p></div><div class="column col-4"><div class="icons"><a href="http://github.com/JonathanReeve"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512" fill="#fafafa" width="3em" height="3em"><path d="M400 32H48C21.5 32 0 53.5 0 80v352c0 26.5 21.5 48 48
+<p>The Socratic dialogue generator should work with any Platonic
+dialogue in the Perseus library. Just specify the filename, the two
+characters you want to have talk to each other, and how many lines of
+dialogue you want to generate.</p></article><hr><p>I welcome your comments and annotations in the Hypothes.is sidebar to the right. →</p><script src="https://hypothes.is/embed.js"></script></div><footer><div class="container"><div class="columns"><div class="column col-8"><p>I believe in openness. This work is licensed under a <a
+href="https://creativecommons.org/licenses/by-nc-sa/4.0/">Creative
+Commons Attribution-NonCommercial-ShareAlike 4.0 International
+License</a>, unless otherwise stated. All content ©Jonathan Reeve 2020.
+Hand-coded with love, using exclusively free and open-source software,
+including <a href="https://github.com/srid/rib">Rib</a> and <a
+href="https://haskell.org/">Haskell</a>. Hosted on <a
+href="https://github.com">GitHub</a> and served with <a
+href="https://netlify.com">Netlify</a>. Icons by Nhor, via <a
+href="https://thenounproject.com">The Noun Project</a>. <a
+href="https://www.buymeacoffee.com/vaIVQZH">Buy me a coffee</a> or
+support me <a href="https://liberapay.com/JonathanReeve/donate">via
+Libera Pay</a> or <a
+href="bitcoin:3Qvm1DwzFGk3L1Eb6yeg5Nbc6db8sZUnbK">Bitcoin</a>.</p></div><div class="column col-4"><div class="icons"><a href="http://github.com/JonathanReeve"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512" fill="#fafafa" width="3em" height="3em"><path d="M400 32H48C21.5 32 0 53.5 0 80v352c0 26.5 21.5 48 48
 48h352c26.5 0 48-21.5 48-48V80c0-26.5-21.5-48-48-48zM277.3 415.7c-8.4
 1.5-11.5-3.7-11.5-8 0-5.4.2-33 .2-55.3 0-15.6-5.2-25.5-11.3-30.7 37-4.1 76-9.2
 76-73.1 0-18.2-6.5-27.3-17.1-39 1.7-4.3 7.4-22-1.7-45-13.9-4.3-45.7 17.9-45.7

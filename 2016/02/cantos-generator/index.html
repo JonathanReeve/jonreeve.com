@@ -1,5 +1,5 @@
 <html lang="en"><head><meta http-equiv="Content-Type" content="text/html; charset=utf-8"><title>A Programmatic Generator for Pound’s Cantos
-</title><link rel="stylesheet" href="/assets/css/spectre.min.css"><link rel="stylesheet" href="//fonts.googleapis.com/css?family=Montserrat|Raleway"><link rel="stylesheet" href="//cdn.jsdelivr.net/gh/highlightjs/cdn-release@10.2.0/build/styles/default.min.css"><link rel="icon" href="/images/favicon.svg" sizes="any" type="image/svg+xml"><style type="text/css">
+</title><base href="/"><link rel="stylesheet" href="/assets/css/spectre.min.css"><link rel="stylesheet" href="//fonts.googleapis.com/css?family=Montserrat|Raleway"><link rel="stylesheet" href="//cdn.jsdelivr.net/gh/highlightjs/cdn-release@10.2.0/build/styles/default.min.css"><link rel="icon" href="/images/favicon.svg" sizes="any" type="image/svg+xml"><style type="text/css">
 
 @media screen and (min-width: 1200px)
 {
@@ -49,8 +49,8 @@ body.has-docked-nav #main-header
 #headerWrapper
 {
   background-color : #ffffff;
-  border-top       : solid 2px #494e8e;
-  border-bottom    : solid 2px #494e8e;
+  border-top       : 2px solid #494e8e;
+  border-bottom    : 2px solid #494e8e;
 }
 
 #headerWrapper header
@@ -273,16 +273,75 @@ table
 
 }
 
-/* Generated with Clay, http://fvisser.nl/clay */</style><style type="text/css">@page{margin: 3cm;}</style></head><body><div id="headerWrapper"><header class="navbar"><section class="navbar-section"><a class="navbar-brand" href="/">Jonathan Reeve: <span>Computational Literary Analysis</span></a></section><section class="navbar-section"><ul class="nav"><li class="nav-item"><a href="/">posts</a></li><li class="nav-item"><a href="/cv.html">cv</a></li><li class="nav-item"><a href="/tags/">tags</a></li><li class="nav-item"><a href="/feed.xml">feed</a></li></ul></section></header></div><div class="container"><h1>A Programmatic Generator for Pound’s Cantos
-</h1><p>Posted 2016-02-03</p><article><h2 id="or-computational-poetic-generation-as-literary-analysis">Or, Computational Poetic Generation as Literary Analysis</h2>
-<p>Note: this project may also be found <a href="http://jonreeve.com/projects/cantos-generator/">here, in its original format as an iPython notebook</a>.</p>
+/* Generated with Clay, http://fvisser.nl/clay */</style><style type="text/css">@page{margin: 3cm;}</style></head><body><div id="headerWrapper"><header class="navbar"><section class="navbar-section"><a class="navbar-brand" href>Jonathan Reeve: <span>Computational Literary Analysis</span></a></section><section class="navbar-section"><ul class="nav"><li class="nav-item"><a href>posts</a></li><li class="nav-item"><a href="cv">cv</a></li><li class="nav-item"><a href="tags.html">tags</a></li><li class="nav-item"><a href="feed.xml">feed</a></li></ul></section></header></div><div class="container"><h1>A Programmatic Generator for Pound’s Cantos
+</h1><article><p>Posted 2016-02-03</p><h2 id="or-computational-poetic-generation-as-literary-analysis">Or,
+Computational Poetic Generation as Literary Analysis</h2>
+<p>Note: this project may also be found <a
+href="http://jonreeve.com/projects/cantos-generator/">here, in its
+original format as an iPython notebook</a>.</p>
 <blockquote>
-<p>“In so far as it represented man’s harnessing of energy through craft, the machine became the most characteristic emblem of the Vorticist movement, more significant … than the vortex itself.” (Bush 36)</p>
+<p>“In so far as it represented man’s harnessing of energy through
+craft, the machine became the most characteristic emblem of the
+Vorticist movement, more significant … than the vortex itself.” (Bush
+36)</p>
 </blockquote>
-<p>Ezra Pound’s <em>Cantos</em>, whether understood as vorticist, imagist, ideogrammatic, or otherwise, is a poem that is the product of those schools, modes, and procedures. Since the techniques of the Cantos, like those of a cubist painting, are often foregrounded, critical works have been able to postulate about their composition in great detail, in some cases pinpointing the exact source materials for Pound’s collages and translations. With the exception of a few other highly allusory works—“The Wasteland,” for instance—few other modern poems are as richly and thoroughly annotated. One might even venture that there is almost enough metatextual data in the many handbooks to the <em>Cantos</em>—William Cookson’s, Roland’s John’s, George Kerns’s, or Carroll Terrell’s, just to name a few—to reconstruct the poem itself. Given the source materials, composition techniques, themes, meter, and style, it might just be possible to design an algorithm to combine these elements in just the right way to generate a canto. Although the generated canto is unlikely to be a work of great artistic merit, the process of translating the procedure of poetic composition into an algorithm will help us to understand its minute machinations. The following describes an experiment to attempt just that—the translation of literary criticism into a generative algorithm, which hopes to be revealing about the structure of the <em>Cantos</em>, the shape of its critical response, and the limitations of algorithmic composition.</p>
-<p>Among the many analogies critics have made between the <em>Cantos</em> and the visual arts, Jacob Korg compares the poem’s techniques to those of collage. “The literary equivalent of the painter’s collage is,” he explains, “quotation—not conventional quotation, but the kind that presents itself as an interpolation, interrupting the text, and even conflicting with the writer’s purposes, as if it were an eruption of raw reality” (96). Since algorithmically generated language is still in its infancy, mostly belonging to the domain of semantically agnostic probabilistic models, the collage technique of the <em>Cantos</em>, and in particular Pound’s use of direct quotation, is what makes the epic one of the most appropriate poems to attempt to programmatically emulate. As John Childs puts it, “hardly a page of the <em>Draft of XXX Cantos</em> goes by without the insertion into the poem of a word or phrase drawn from an author other than Pound” (18). By identifying these source materials, and designing functions to extract from them and mix them in appropriate ways, we might be able to create poems similar to Pound’s.</p>
+<p>Ezra Pound’s <em>Cantos</em>, whether understood as vorticist,
+imagist, ideogrammatic, or otherwise, is a poem that is the product of
+those schools, modes, and procedures. Since the techniques of the
+Cantos, like those of a cubist painting, are often foregrounded,
+critical works have been able to postulate about their composition in
+great detail, in some cases pinpointing the exact source materials for
+Pound’s collages and translations. With the exception of a few other
+highly allusory works—“The Wasteland,” for instance—few other modern
+poems are as richly and thoroughly annotated. One might even venture
+that there is almost enough metatextual data in the many handbooks to
+the <em>Cantos</em>—William Cookson’s, Roland’s John’s, George Kerns’s,
+or Carroll Terrell’s, just to name a few—to reconstruct the poem itself.
+Given the source materials, composition techniques, themes, meter, and
+style, it might just be possible to design an algorithm to combine these
+elements in just the right way to generate a canto. Although the
+generated canto is unlikely to be a work of great artistic merit, the
+process of translating the procedure of poetic composition into an
+algorithm will help us to understand its minute machinations. The
+following describes an experiment to attempt just that—the translation
+of literary criticism into a generative algorithm, which hopes to be
+revealing about the structure of the <em>Cantos</em>, the shape of its
+critical response, and the limitations of algorithmic composition.</p>
+<p>Among the many analogies critics have made between the
+<em>Cantos</em> and the visual arts, Jacob Korg compares the poem’s
+techniques to those of collage. “The literary equivalent of the
+painter’s collage is,” he explains, “quotation—not conventional
+quotation, but the kind that presents itself as an interpolation,
+interrupting the text, and even conflicting with the writer’s purposes,
+as if it were an eruption of raw reality” (96). Since algorithmically
+generated language is still in its infancy, mostly belonging to the
+domain of semantically agnostic probabilistic models, the collage
+technique of the <em>Cantos</em>, and in particular Pound’s use of
+direct quotation, is what makes the epic one of the most appropriate
+poems to attempt to programmatically emulate. As John Childs puts it,
+“hardly a page of the <em>Draft of XXX Cantos</em> goes by without the
+insertion into the poem of a word or phrase drawn from an author other
+than Pound” (18). By identifying these source materials, and designing
+functions to extract from them and mix them in appropriate ways, we
+might be able to create poems similar to Pound’s.</p>
 <h2 id="the-experiment">The Experiment</h2>
-<p>The following is a experiment along the borders of computational and critical methodologies. The format of this investigation, an <a href="http://ipython.org/notebook.html">IPython notebook</a> containing text and code, represents an attempt to problematize the distinction between computer science and literary criticism by intentionally combining the language of both. Some might argue that this paper is already at least half obscure for its intended audience, since most literary scholars are unfamiliar with programming languages, and most coders are unfamiliar with the language of literary study. To help dissolve this linguistic barrier, I have used the Python programming language, whose idioms are closest to English, and I have explained some of the logic behind the program’s functions using interpolated or inline comments (text following the <code class="verbatim">#</code> symbol) wherever possible. However, a few key concepts of Python are necessary to explain here briefly, in order to explain the fundamental programmatic structures below. This table shows a few types of Python expressions, along with their explanations in English:</p>
+<p>The following is a experiment along the borders of computational and
+critical methodologies. The format of this investigation, an <a
+href="http://ipython.org/notebook.html">IPython notebook</a> containing
+text and code, represents an attempt to problematize the distinction
+between computer science and literary criticism by intentionally
+combining the language of both. Some might argue that this paper is
+already at least half obscure for its intended audience, since most
+literary scholars are unfamiliar with programming languages, and most
+coders are unfamiliar with the language of literary study. To help
+dissolve this linguistic barrier, I have used the Python programming
+language, whose idioms are closest to English, and I have explained some
+of the logic behind the program’s functions using interpolated or inline
+comments (text following the <code class="verbatim">#</code> symbol)
+wherever possible. However, a few key concepts of Python are necessary
+to explain here briefly, in order to explain the fundamental
+programmatic structures below. This table shows a few types of Python
+expressions, along with their explanations in English:</p>
 <table>
 <thead>
 <tr class="header">
@@ -293,24 +352,36 @@ table
 <tbody>
 <tr class="odd">
 <td><code class="verbatim">myVariable = "a " + "test"</code></td>
-<td>This concatenates the text “a” and “test” and stores the result in a variable called <code class="verbatim">myVariable</code>. Now <code class="verbatim">myVariable</code> contains the text “a test.”</td>
+<td>This concatenates the text “a” and “test” and stores the result in a
+variable called <code class="verbatim">myVariable</code>. Now <code
+class="verbatim">myVariable</code> contains the text “a test.”</td>
 </tr>
 <tr class="even">
 <td><code class="verbatim">def myFunction(x): ... return y</code></td>
-<td>This defines the function <code class="verbatim">myFunction</code>, accepts the input X, and returns the output Y.</td>
+<td>This defines the function <code class="verbatim">myFunction</code>,
+accepts the input X, and returns the output Y.</td>
 </tr>
 <tr class="odd">
 <td><code class="verbatim">myList[0]</code></td>
-<td>The brackets here indicate an index of the list. This expression returns the 0th, i.e. first, element of the list myList.</td>
+<td>The brackets here indicate an index of the list. This expression
+returns the 0th, i.e. first, element of the list myList.</td>
 </tr>
 <tr class="even">
 <td><code class="verbatim">[x/2 for x in myList]</code></td>
-<td>This list comprehension defines a new list generated from an operation performed on every element of another list. This list represents half of every element X in the list <code class="verbatim">myList</code>.</td>
+<td>This list comprehension defines a new list generated from an
+operation performed on every element of another list. This list
+represents half of every element X in the list <code
+class="verbatim">myList</code>.</td>
 </tr>
 </tbody>
 </table>
-<p>With these foundations and the interlinear explanations, it should be possible to read the algorithms below. Additionally, text following a pound sign (<code class="verbatim">#</code>) and text enclosed in triple quotes (<code class="verbatim">"""</code>) is typically explanatory commentary.</p>
-<div class="sourceCode" id="cb1"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="co">&quot;&quot;&quot;</span></span>
+<p>With these foundations and the interlinear explanations, it should be
+possible to read the algorithms below. Additionally, text following a
+pound sign (<code class="verbatim">#</code>) and text enclosed in triple
+quotes (<code class="verbatim">"""</code>) is typically explanatory
+commentary.</p>
+<div class="sourceCode" id="cb1"><pre
+class="sourceCode python"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="co">&quot;&quot;&quot;</span></span>
 <span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="co">In this section, we will declare the software libraries that we will</span></span>
 <span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="co">need for the code to follow.</span></span>
 <span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a><span class="co">&quot;&quot;&quot;</span></span>
@@ -365,8 +436,16 @@ table
 <span id="cb1-53"><a href="#cb1-53" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb1-54"><a href="#cb1-54" aria-hidden="true" tabindex="-1"></a><span class="co"># This library allows for text wrapping (e.g. line breaks).</span></span>
 <span id="cb1-55"><a href="#cb1-55" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> textwrap</span></code></pre></div>
-<p>In order to generate cantos, we’ll first need to study their form. We’ll need to determine the length of a canto, its numbers of stanzas, and its indentation fingerprint. I’ve prepared a markdown-formatted text file, <code class="verbatim">cantosI-X.md</code> below, which contains the text of Canto I through Canto X from <em>A Draft of XXX Cantos</em>, so that the text might be programmatically analyzed. This first class, <code class="verbatim">CantosFile</code>, reads this text, breaks it up by header, and stores it in memory.</p>
-<div class="sourceCode" id="cb2"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="kw">class</span> CantosFile():</span>
+<p>In order to generate cantos, we’ll first need to study their form.
+We’ll need to determine the length of a canto, its numbers of stanzas,
+and its indentation fingerprint. I’ve prepared a markdown-formatted text
+file, <code class="verbatim">cantosI-X.md</code> below, which contains
+the text of Canto I through Canto X from <em>A Draft of XXX Cantos</em>,
+so that the text might be programmatically analyzed. This first class,
+<code class="verbatim">CantosFile</code>, reads this text, breaks it up
+by header, and stores it in memory.</p>
+<div class="sourceCode" id="cb2"><pre
+class="sourceCode python"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="kw">class</span> CantosFile():</span>
 <span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a>    <span class="co">&quot;&quot;&quot;</span></span>
 <span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a><span class="co">    Deals with the file containing transcriptions of the original</span></span>
 <span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a><span class="co">    Cantos.</span></span>
@@ -381,8 +460,13 @@ table
 <span id="cb2-13"><a href="#cb2-13" aria-hidden="true" tabindex="-1"></a>    <span class="co"># Count the number of cantos in this file by counting these text</span></span>
 <span id="cb2-14"><a href="#cb2-14" aria-hidden="true" tabindex="-1"></a>    <span class="co"># segments.</span></span>
 <span id="cb2-15"><a href="#cb2-15" aria-hidden="true" tabindex="-1"></a>    numCantos <span class="op">=</span> <span class="bu">len</span>(cantosList)</span></code></pre></div>
-<p>Now that the file has been read into memory, we will study each canto individually with the <code class="verbatim">CantoReader</code> class below, which will read an individual canto and return information about it, such as the number of lines, number of stanzas, proportions of each, and information about the canto’s indentation.</p>
-<div class="sourceCode" id="cb3"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="kw">class</span> CantoReader(CantosFile):</span>
+<p>Now that the file has been read into memory, we will study each canto
+individually with the <code class="verbatim">CantoReader</code> class
+below, which will read an individual canto and return information about
+it, such as the number of lines, number of stanzas, proportions of each,
+and information about the canto’s indentation.</p>
+<div class="sourceCode" id="cb3"><pre
+class="sourceCode python"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="kw">class</span> CantoReader(CantosFile):</span>
 <span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a>    <span class="co">&quot;&quot;&quot;</span></span>
 <span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a><span class="co">    A class to read individual cantos and return statistics about them</span></span>
 <span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a><span class="co">    that will be used by the CantoWriter class. This class accepts the</span></span>
@@ -514,8 +598,12 @@ table
 <span id="cb3-130"><a href="#cb3-130" aria-hidden="true" tabindex="-1"></a>        <span class="bu">print</span>(<span class="st">&#39;Length of stanzas: &#39;</span>, <span class="va">self</span>.stanzaLengths)</span>
 <span id="cb3-131"><a href="#cb3-131" aria-hidden="true" tabindex="-1"></a>        <span class="bu">print</span>(<span class="st">&#39;Stanza Percentages&#39;</span>, <span class="va">self</span>.stanzaPercentages)</span>
 <span id="cb3-132"><a href="#cb3-132" aria-hidden="true" tabindex="-1"></a>        <span class="bu">print</span>(<span class="st">&#39;Indentation statistics: &#39;</span>, <span class="va">self</span>.indentationStats)</span></code></pre></div>
-<p>Now we’ll need a set of functions for reading multiple cantos at a time, so that we don’t have to read them each individually. The following class automates the bulk analysis of cantos, so that information about all of the cantos is easily available.</p>
-<div class="sourceCode" id="cb4"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="kw">class</span> CantosReader(CantosFile):  </span>
+<p>Now we’ll need a set of functions for reading multiple cantos at a
+time, so that we don’t have to read them each individually. The
+following class automates the bulk analysis of cantos, so that
+information about all of the cantos is easily available.</p>
+<div class="sourceCode" id="cb4"><pre
+class="sourceCode python"><code class="sourceCode python"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="kw">class</span> CantosReader(CantosFile):  </span>
 <span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a>    <span class="kw">def</span> <span class="fu">__init__</span>(<span class="va">self</span>):</span>
 <span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a>        <span class="co">&quot;&quot;&quot;</span></span>
 <span id="cb4-4"><a href="#cb4-4" aria-hidden="true" tabindex="-1"></a><span class="co">        When this class is instantiated, use the `cantoReader` class to</span></span>
@@ -549,8 +637,10 @@ table
 <span id="cb4-32"><a href="#cb4-32" aria-hidden="true" tabindex="-1"></a>        <span class="cf">for</span> cantoObject <span class="kw">in</span> <span class="va">self</span>.cantoObjects:</span>
 <span id="cb4-33"><a href="#cb4-33" aria-hidden="true" tabindex="-1"></a>            stanzaList.append(cantoObject.stanzaLengths)</span>
 <span id="cb4-34"><a href="#cb4-34" aria-hidden="true" tabindex="-1"></a>        <span class="cf">return</span> stanzaList</span></code></pre></div>
-<p>Now let’s use these functions to find information about cantos I-X.</p>
-<div class="sourceCode" id="cb5"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a>CantosReader().getAllInfo()</span></code></pre></div>
+<p>Now let’s use these functions to find information about cantos
+I-X.</p>
+<div class="sourceCode" id="cb5"><pre
+class="sourceCode python"><code class="sourceCode python"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a>CantosReader().getAllInfo()</span></code></pre></div>
 <pre class="example"><code>Canto number:  1
 Number of lines:  77
 Number of stanzas:  2
@@ -630,21 +720,42 @@ Length of stanzas:  [60, 27, 11, 10, 5, 3, 2, 11, 8, 4, 2, 12, 18, 8]
 Stanza Percentages [0.30927835051546393, 0.13917525773195877, 0.05670103092783505, 0.05154639175257732, 0.02577319587628866, 0.015463917525773196, 0.010309278350515464, 0.05670103092783505, 0.041237113402061855, 0.020618556701030927, 0.010309278350515464, 0.061855670103092786, 0.09278350515463918, 0.041237113402061855]
 Indentation statistics:  {8: [34, 0.17525773195876287], 1: [1, 0.005154639175257732], 19: [1, 0.005154639175257732], 31: [2, 0.010309278350515464], 39: [1, 0.005154639175257732]}
 </code></pre>
-<p>Since that format is not very easy to read, it might be more helpful to visualize some of this information. First, let’s examine stanza lengths, to get an idea of how long our generated stanzas need to be, and how variable stanza lengths will be. The chart below represents Canto I - Canto V.</p>
-<div class="sourceCode" id="cb7"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a>df <span class="op">=</span> pd.DataFrame(CantosReader().stanzaLengths)[:<span class="dv">4</span>]</span>
+<p>Since that format is not very easy to read, it might be more helpful
+to visualize some of this information. First, let’s examine stanza
+lengths, to get an idea of how long our generated stanzas need to be,
+and how variable stanza lengths will be. The chart below represents
+Canto I - Canto V.</p>
+<div class="sourceCode" id="cb7"><pre
+class="sourceCode python"><code class="sourceCode python"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a>df <span class="op">=</span> pd.DataFrame(CantosReader().stanzaLengths)[:<span class="dv">4</span>]</span>
 <span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a>df.plot(kind<span class="op">=</span><span class="st">&#39;bar&#39;</span>, figsize<span class="op">=</span>(<span class="dv">16</span>,<span class="dv">8</span>), alpha<span class="op">=</span><span class="fl">0.5</span>)</span></code></pre></div>
 <figure>
-<img src="../../../images/cantos-generator/stanza-lengths.png" alt="Stanza Lengths" /><figcaption aria-hidden="true">Stanza Lengths</figcaption>
+<img src="../../../images/cantos-generator/stanza-lengths.png"
+alt="Stanza Lengths" />
+<figcaption aria-hidden="true">Stanza Lengths</figcaption>
 </figure>
-<p>Judging from the number of stanza divisions and the variation in the lengths of the stanzas, Cantos I-IV appear to alternate between simple and complex line grouping systems. With this information, it might be best to design individual canto writer classes for each canto, rather than try to design a canto-agnostic generator.</p>
+<p>Judging from the number of stanza divisions and the variation in the
+lengths of the stanzas, Cantos I-IV appear to alternate between simple
+and complex line grouping systems. With this information, it might be
+best to design individual canto writer classes for each canto, rather
+than try to design a canto-agnostic generator.</p>
 <p>Now let’s examine the total line lengths of the first ten cantos.</p>
-<div class="sourceCode" id="cb8"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a>df <span class="op">=</span> pd.DataFrame(CantosReader().lineLengths)</span>
+<div class="sourceCode" id="cb8"><pre
+class="sourceCode python"><code class="sourceCode python"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a>df <span class="op">=</span> pd.DataFrame(CantosReader().lineLengths)</span>
 <span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a>df.plot(kind<span class="op">=</span><span class="st">&#39;bar&#39;</span>, figsize<span class="op">=</span>(<span class="dv">16</span>,<span class="dv">8</span>), alpha<span class="op">=</span><span class="fl">0.5</span>)</span></code></pre></div>
 <figure>
-<img src="../../../images/cantos-generator/line-lengths.png" alt="Line Lengths" /><figcaption aria-hidden="true">Line Lengths</figcaption>
+<img src="../../../images/cantos-generator/line-lengths.png"
+alt="Line Lengths" />
+<figcaption aria-hidden="true">Line Lengths</figcaption>
 </figure>
-<p>Here again, the variation is immense, further solidifying the idea that individual subclasses need to be written for each canto. However, since it’d be best not to repeat code for a particular canto, it will be useful to write a parent class that will serve as a toolbox. The following class contains “helper” functions which will be used by the canto subclasses <code class="verbatim">CantoI</code>, <code class="verbatim">CantoII</code>, and so on.</p>
-<div class="sourceCode" id="cb9"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="kw">class</span> CantoWriter:</span>
+<p>Here again, the variation is immense, further solidifying the idea
+that individual subclasses need to be written for each canto. However,
+since it’d be best not to repeat code for a particular canto, it will be
+useful to write a parent class that will serve as a toolbox. The
+following class contains “helper” functions which will be used by the
+canto subclasses <code class="verbatim">CantoI</code>, <code
+class="verbatim">CantoII</code>, and so on.</p>
+<div class="sourceCode" id="cb9"><pre
+class="sourceCode python"><code class="sourceCode python"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="kw">class</span> CantoWriter:</span>
 <span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a>    <span class="co">&quot;&quot;&quot;</span></span>
 <span id="cb9-3"><a href="#cb9-3" aria-hidden="true" tabindex="-1"></a><span class="co">    This class contains &quot;helper&quot; functions which will be used by the CantoI,</span></span>
 <span id="cb9-4"><a href="#cb9-4" aria-hidden="true" tabindex="-1"></a><span class="co">    CantoII, etc, subclasses. Underscores in the function names indicate</span></span>
@@ -780,11 +891,56 @@ Indentation statistics:  {8: [34, 0.17525773195876287], 1: [1, 0.005154639175257
 <span id="cb9-134"><a href="#cb9-134" aria-hidden="true" tabindex="-1"></a>            <span class="cf">else</span>:</span>
 <span id="cb9-135"><a href="#cb9-135" aria-hidden="true" tabindex="-1"></a>                <span class="bu">print</span>(<span class="st">&#39;   &#39;</span> <span class="op">+</span> line)</span></code></pre></div>
 <h1 id="canto-i">Canto I</h1>
-<p>In Canto I, Pound translates from Book XI of a renaissance Latin translation of <em>The Odyssey</em>. As he describes it, “I picked from the Paris quais a Latin version of the <em>Odyssey</em> by Andreas Divus Justinopolitanus (Parisiis, In officina Christiani Wecheli, MDXXXVIII)” (“Literary Essays,” 259). Roland John posits that he uses this particular translation, “from an obscure Latin version,” in order to “confirm that he is writing an epic. … [and as an] homage to Homer as the maker of Europe’s first epic” (11). There is more to this canto, of course—additional Homeric material, as well as Pound’s bibliographic commentary—but the Divus translation is the bulk of the canto, and so this is a good place to start.</p>
-<p>In the <code class="verbatim">CantoI</code> class below, the variable <code class="verbatim">source_divus</code> is populated with the first seventy lines of Divus’s translation, originally transcribed from Kenner’s facsimile in <em>The Pound Era</em> (352), but corrected with <a href="http://bildsuche.digitale-sammlungen.de/index.html?c=viewer&amp;bandnummer=bsb00013847&amp;pimage=00025&amp;v=pdf&amp;nav=&amp;l=en">a copy at the <em>Bayerische StaatsBibliothek</em></a> and Pound’s own transcription (<em>Literary Essays</em> 259). Pound’s transcription expands Divus’s abbreviations and modernizes much of the spelling, but there are still irregularities in the Latin, some of which Pound discusses in “Early Translation of Homer” (ibid. 264). In order to mimic the translation of Divus, the Latin text is machine-translated using an API connected to Google Translate, with the function <code class="verbatim">translateFromLatin</code>. Since Google Translate typically assumes that a word is a proper name if it cannot be found in its dictionaries, and preserves the word as such, this helps to explain the presence of the Latin words that still appear in the generated text below. (Although this could be considered a defect of the translator application, the presence of a few Latin words certainly comes across as Poundian.)</p>
-<p>The style of Canto I is alliterative, not unlike Old English verse. John explains that it is a “modified alliterative line similar to that used in [Pound’s] translation of the Early English poem ‘The Seafarer,’ chosen because it is an example of the earliest form of English verse.” William Cookson further identifies this style as “the first example of the overlaying of times and traditions in <em>The Cantos</em>” (4). To achieve this effect, an alliteration function was written.</p>
-<p>The alliteration algorithm, <code class="verbatim">alliterate()</code>, possibly the first of its kind, begins by attempting to guess the parts of speech of every word in a line, using the NLTK. From there, it retrieves all synonyms and hyponyms for the words using Princeton University’s WordNet, a thesaurus-like “lexical database” of English words that organizes words into hierarchical relations. These synonyms and hyponyms are then filtered by part of speech, and the function chooses those with the highest numbers of shared first letters. This constructs some veritably alliterative verse, and some surprising lines, as well.</p>
-<div class="sourceCode" id="cb10"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a><span class="kw">class</span> CantoI(CantoWriter):</span>
+<p>In Canto I, Pound translates from Book XI of a renaissance Latin
+translation of <em>The Odyssey</em>. As he describes it, “I picked from
+the Paris quais a Latin version of the <em>Odyssey</em> by Andreas Divus
+Justinopolitanus (Parisiis, In officina Christiani Wecheli, MDXXXVIII)”
+(“Literary Essays,” 259). Roland John posits that he uses this
+particular translation, “from an obscure Latin version,” in order to
+“confirm that he is writing an epic. … [and as an] homage to Homer as
+the maker of Europe’s first epic” (11). There is more to this canto, of
+course—additional Homeric material, as well as Pound’s bibliographic
+commentary—but the Divus translation is the bulk of the canto, and so
+this is a good place to start.</p>
+<p>In the <code class="verbatim">CantoI</code> class below, the variable
+<code class="verbatim">source_divus</code> is populated with the first
+seventy lines of Divus’s translation, originally transcribed from
+Kenner’s facsimile in <em>The Pound Era</em> (352), but corrected with
+<a
+href="http://bildsuche.digitale-sammlungen.de/index.html?c=viewer&amp;bandnummer=bsb00013847&amp;pimage=00025&amp;v=pdf&amp;nav=&amp;l=en">a
+copy at the <em>Bayerische StaatsBibliothek</em></a> and Pound’s own
+transcription (<em>Literary Essays</em> 259). Pound’s transcription
+expands Divus’s abbreviations and modernizes much of the spelling, but
+there are still irregularities in the Latin, some of which Pound
+discusses in “Early Translation of Homer” (ibid. 264). In order to mimic
+the translation of Divus, the Latin text is machine-translated using an
+API connected to Google Translate, with the function <code
+class="verbatim">translateFromLatin</code>. Since Google Translate
+typically assumes that a word is a proper name if it cannot be found in
+its dictionaries, and preserves the word as such, this helps to explain
+the presence of the Latin words that still appear in the generated text
+below. (Although this could be considered a defect of the translator
+application, the presence of a few Latin words certainly comes across as
+Poundian.)</p>
+<p>The style of Canto I is alliterative, not unlike Old English verse.
+John explains that it is a “modified alliterative line similar to that
+used in [Pound’s] translation of the Early English poem ‘The Seafarer,’
+chosen because it is an example of the earliest form of English verse.”
+William Cookson further identifies this style as “the first example of
+the overlaying of times and traditions in <em>The Cantos</em>” (4). To
+achieve this effect, an alliteration function was written.</p>
+<p>The alliteration algorithm, <code
+class="verbatim">alliterate()</code>, possibly the first of its kind,
+begins by attempting to guess the parts of speech of every word in a
+line, using the NLTK. From there, it retrieves all synonyms and hyponyms
+for the words using Princeton University’s WordNet, a thesaurus-like
+“lexical database” of English words that organizes words into
+hierarchical relations. These synonyms and hyponyms are then filtered by
+part of speech, and the function chooses those with the highest numbers
+of shared first letters. This constructs some veritably alliterative
+verse, and some surprising lines, as well.</p>
+<div class="sourceCode" id="cb10"><pre
+class="sourceCode python"><code class="sourceCode python"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a><span class="kw">class</span> CantoI(CantoWriter):</span>
 <span id="cb10-2"><a href="#cb10-2" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb10-3"><a href="#cb10-3" aria-hidden="true" tabindex="-1"></a>    <span class="co"># Get a copy of the source text, a Latin translation of the Odyssey XI.</span></span>
 <span id="cb10-4"><a href="#cb10-4" aria-hidden="true" tabindex="-1"></a>    source_divus <span class="op">=</span> <span class="bu">open</span>(<span class="st">&#39;divus2.md&#39;</span>).read()</span>
@@ -882,7 +1038,8 @@ Indentation statistics:  {8: [34, 0.17525773195876287], 1: [1, 0.005154639175257
 <span id="cb10-96"><a href="#cb10-96" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb10-97"><a href="#cb10-97" aria-hidden="true" tabindex="-1"></a>        <span class="co"># Display the result.</span></span>
 <span id="cb10-98"><a href="#cb10-98" aria-hidden="true" tabindex="-1"></a>        <span class="cf">return</span> <span class="va">self</span>.show(broken, <span class="dv">1</span>)</span></code></pre></div>
-<div class="sourceCode" id="cb11"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Instantiate a new copy of the CantoI object defined</span></span>
+<div class="sourceCode" id="cb11"><pre
+class="sourceCode python"><code class="sourceCode python"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Instantiate a new copy of the CantoI object defined</span></span>
 <span id="cb11-2"><a href="#cb11-2" aria-hidden="true" tabindex="-1"></a><span class="co"># in the class above.</span></span>
 <span id="cb11-3"><a href="#cb11-3" aria-hidden="true" tabindex="-1"></a>c1 <span class="op">=</span> CantoI()</span>
 <span id="cb11-4"><a href="#cb11-4" aria-hidden="true" tabindex="-1"></a></span>
@@ -962,26 +1119,121 @@ Indentation statistics:  {8: [34, 0.17525773195876287], 1: [1, 0.005154639175257
 70 I know that this house is going to the pits
            Aeaeam imellens benefabricatam island in the boat:
 </code></pre>
-<p>A brief comparison of this generated Canto with Pound’s original might be useful here. Pound’s canto begins with the line “and then went down to the ship” (<em>A Draft of XXX Cantos</em>, 3); the generated canto begins “yet, when I came down to the ship, and the sea”—Pound’s version exhibits much more economy of language, with 30% fewer words in the line. The character represented by “I” in the generated version is removed in Pound’s, which might serve to blur who is meant by the “I”—is it Odysseus? Pound? (This economy of speech is something we will try to correct in the generation of Canto II, using the <code class="verbatim">meonymize</code> function.) While line 3 in Pound is alliterated with “s” words—“we set up mast and sail on that swart ship,” the generator apparently alliterates on “w” words: “and that which was wickedness in the ship, we set.” In line 5 in this generated version, we see, mysteriously, “tears pouring Hubert” in place of Pound’s “heavy with weeping.” (Who is this Hubert? One can only suspect that this is either a translation error or an unusually distant hyponym that the <code class="verbatim">alliterate</code> function is inserting.) In at least one case, the <code class="verbatim">alliterate</code> function is alliterating even more than Pound does—Pound’s “with glitter of sun-rays” is rendered here as “looks bright sun beam” (line 16).</p>
-<p>In some cases, the function alliterates until the line makes no sense—line 24, for instance, reads “did atomic number 53 have a sharp blade pulling a thigh,” which corresponds to Pound’s line “drawing sword from my hip.” The alliteration algorithm, trying to alliterate with words beginning with “a,” is looking for synonyms for the word “I.” Not realizing that it is a personal pronoun, it guesses that the word is the chemical symbol for iodine, and suggests the possible synonym “atomic number 53,” which starts with the letter “a.” To fix this issue, we will try to find synonyms for Canto II with a word sense disambiguation algorithm in place.</p>
+<p>A brief comparison of this generated Canto with Pound’s original
+might be useful here. Pound’s canto begins with the line “and then went
+down to the ship” (<em>A Draft of XXX Cantos</em>, 3); the generated
+canto begins “yet, when I came down to the ship, and the sea”—Pound’s
+version exhibits much more economy of language, with 30% fewer words in
+the line. The character represented by “I” in the generated version is
+removed in Pound’s, which might serve to blur who is meant by the “I”—is
+it Odysseus? Pound? (This economy of speech is something we will try to
+correct in the generation of Canto II, using the <code
+class="verbatim">meonymize</code> function.) While line 3 in Pound is
+alliterated with “s” words—“we set up mast and sail on that swart ship,”
+the generator apparently alliterates on “w” words: “and that which was
+wickedness in the ship, we set.” In line 5 in this generated version, we
+see, mysteriously, “tears pouring Hubert” in place of Pound’s “heavy
+with weeping.” (Who is this Hubert? One can only suspect that this is
+either a translation error or an unusually distant hyponym that the
+<code class="verbatim">alliterate</code> function is inserting.) In at
+least one case, the <code class="verbatim">alliterate</code> function is
+alliterating even more than Pound does—Pound’s “with glitter of
+sun-rays” is rendered here as “looks bright sun beam” (line 16).</p>
+<p>In some cases, the function alliterates until the line makes no
+sense—line 24, for instance, reads “did atomic number 53 have a sharp
+blade pulling a thigh,” which corresponds to Pound’s line “drawing sword
+from my hip.” The alliteration algorithm, trying to alliterate with
+words beginning with “a,” is looking for synonyms for the word “I.” Not
+realizing that it is a personal pronoun, it guesses that the word is the
+chemical symbol for iodine, and suggests the possible synonym “atomic
+number 53,” which starts with the letter “a.” To fix this issue, we will
+try to find synonyms for Canto II with a word sense disambiguation
+algorithm in place.</p>
 <h2 id="canto-ii">Canto II</h2>
-<p>Canto II presents a very different challenge than Canto I. As John Childs puts it, “Since Canto 1 is largely given over to discourse in its retelling of a portion of the <em>Odyssey</em>, the devices of imagism are largely absent, and, in fact, <em>The Cantos</em> seem to alternate between the two poles of Imagist”lyricism" and discursive “historicism”; Cantos 1 and 2 are representative of such alternation" (44). One of the characteristic features of this second imagist mode of Canto II, Childs argues, is metonymy. In fact, he continues, it is the use of metonymy that distinguishes imagism from symbolism. The algorithm that will be used to generate Canto II, then, will apply metonymic principles to a mix of Pound’s source materials.</p>
-<p>Broadly, metonymy is, in M.H. Abrams’s definition, a process by which “the literal term for one thing is applied to another with which it has become closely associated because of a current relation in common experience” (120). A common example is “the crown” as a term meaning a king. One type of metonymy is a synechdoche, where “a part of something is used to signify the whole, or (more rarely) the whole is used to signify a part” (ibid.). Using the Princeton WordNet, we might be able to emulate metonymy to a small degree by navigating its hierarchy of word relations. The NLTK WordNet API provides functions for finding meronyms for words, for instance. A meronym is a word that is a component of another word, and WordNet charts both “part” and “substance” meronyms. Here are some example meronyms for the word “tree”:</p>
-<div class="sourceCode" id="cb13"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a>wn.synset(<span class="st">&#39;tree.n.01&#39;</span>).part_meronyms()</span></code></pre></div>
+<p>Canto II presents a very different challenge than Canto I. As John
+Childs puts it, “Since Canto 1 is largely given over to discourse in its
+retelling of a portion of the <em>Odyssey</em>, the devices of imagism
+are largely absent, and, in fact, <em>The Cantos</em> seem to alternate
+between the two poles of Imagist”lyricism" and discursive “historicism”;
+Cantos 1 and 2 are representative of such alternation" (44). One of the
+characteristic features of this second imagist mode of Canto II, Childs
+argues, is metonymy. In fact, he continues, it is the use of metonymy
+that distinguishes imagism from symbolism. The algorithm that will be
+used to generate Canto II, then, will apply metonymic principles to a
+mix of Pound’s source materials.</p>
+<p>Broadly, metonymy is, in M.H. Abrams’s definition, a process by which
+“the literal term for one thing is applied to another with which it has
+become closely associated because of a current relation in common
+experience” (120). A common example is “the crown” as a term meaning a
+king. One type of metonymy is a synechdoche, where “a part of something
+is used to signify the whole, or (more rarely) the whole is used to
+signify a part” (ibid.). Using the Princeton WordNet, we might be able
+to emulate metonymy to a small degree by navigating its hierarchy of
+word relations. The NLTK WordNet API provides functions for finding
+meronyms for words, for instance. A meronym is a word that is a
+component of another word, and WordNet charts both “part” and
+“substance” meronyms. Here are some example meronyms for the word
+“tree”:</p>
+<div class="sourceCode" id="cb13"><pre
+class="sourceCode python"><code class="sourceCode python"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a>wn.synset(<span class="st">&#39;tree.n.01&#39;</span>).part_meronyms()</span></code></pre></div>
 <pre class="example"><code>[Synset(&#39;burl.n.02&#39;),
  Synset(&#39;crown.n.07&#39;),
  Synset(&#39;limb.n.02&#39;),
  Synset(&#39;stump.n.01&#39;),
  Synset(&#39;trunk.n.01&#39;)]
 </code></pre>
-<div class="sourceCode" id="cb15"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a>wn.synset(<span class="st">&#39;tree.n.01&#39;</span>).substance_meronyms()</span></code></pre></div>
+<div class="sourceCode" id="cb15"><pre
+class="sourceCode python"><code class="sourceCode python"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a>wn.synset(<span class="st">&#39;tree.n.01&#39;</span>).substance_meronyms()</span></code></pre></div>
 <pre class="example"><code>[Synset(&#39;heartwood.n.01&#39;), Synset(&#39;sapwood.n.01&#39;)]
 </code></pre>
-<p>The <code class="verbatim">metonymy</code> function below starts by determining the part of speech of a word, attempts to disambiguate its sense using the Lesk algorithm for word sense disambiguation (WSD), and with the resulting word sense or “synset,” searches for meronyms. If none are found, it will try searching for other ways to convert the line into a more metonymic line.</p>
-<p>Another way that metonymy functions is, as David Lodge explains, as a “condensation of contexture,” effected by a “transformation of a notional sentence … by means of deletion of portions of the syntagm” (quoted in Childs 36). A simple instance of this deletion is the removal of the word “like” that can transform a simile into a (metonymic) metaphor. Pound’s affinities for the economy of words of ancient Chinese poetry, coupled with his terse haiku-like experiments, makes deletion an obvious choice for Poundian generative poetics. In fact, in an early essay on the Chinese poem “The Jewel-Stairs Grievance,” he explains that despite the fact that he has “never found any occidental who could ‘make much’ of that poem,” still “everything is there, not merely by ‘suggestion’ but by a sort of mathematical process of reduction” (<em>Early Writings</em>, “Chinese Poetry”). What we shall be attempting here is literally a mathematical process of reduction.</p>
-<p>Rather than delete words at random, however, we will design an informed algorithm for metonymic deletion. Citing William E. Baker, Childs argues that one of the syntactic modes of this metonymic deletion is “nominalization,” that deletion “gives primary emphasis to the noun, and that the great majority of fragments are classified as such because they contain a noun or noun phrase which lacks a finite verb to provide grammatical ‘sense’ to the structure” (quoted in Childs, 58-9). With this in mind, the function <code class="verbatim">metonymize</code> will call the function <code class="verbatim">deleteVerbs</code> in order to delete a small proportion of verbs in each line.</p>
-<p>The algorithm below will start with eight of Pound’s sources, taken from Carroll Terrell’s <em>Companion to the Cantos</em>. These include selections from Ovid’s <em>Metamorphoses</em> books III and X, Euripedes’s <em>Bacchae</em>, Homer’s hymn to Dionysos, and selections from the <em>Odyssey</em> and <em>Iliad</em>. The Ovid translations are those of Brookes More, and the Homer translations are those of Samuel Butler; both were downloaded from <a href="http://www.perseus.tufts.edu/hopper/"><em>Perseus</em></a>. The text of Robert Browning’s <em>Sordello</em> was downloaded from Wikisource, and the Mabinogion was downloaded from Project Gutenberg. These sources are “mixed” together with the function <code class="verbatim">sourceMix</code>, which interpolates the source texts every X number of lines. That mix is then “metonymized” with the <code class="verbatim">metonymize</code> function previously described. From there, line breaks are added, and the text is formatted with stanza breaks and indentation to resemble the original Canto II.</p>
-<div class="sourceCode" id="cb17"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb17-1"><a href="#cb17-1" aria-hidden="true" tabindex="-1"></a><span class="kw">class</span> CantoII(CantoWriter):</span>
+<p>The <code class="verbatim">metonymy</code> function below starts by
+determining the part of speech of a word, attempts to disambiguate its
+sense using the Lesk algorithm for word sense disambiguation (WSD), and
+with the resulting word sense or “synset,” searches for meronyms. If
+none are found, it will try searching for other ways to convert the line
+into a more metonymic line.</p>
+<p>Another way that metonymy functions is, as David Lodge explains, as a
+“condensation of contexture,” effected by a “transformation of a
+notional sentence … by means of deletion of portions of the syntagm”
+(quoted in Childs 36). A simple instance of this deletion is the removal
+of the word “like” that can transform a simile into a (metonymic)
+metaphor. Pound’s affinities for the economy of words of ancient Chinese
+poetry, coupled with his terse haiku-like experiments, makes deletion an
+obvious choice for Poundian generative poetics. In fact, in an early
+essay on the Chinese poem “The Jewel-Stairs Grievance,” he explains that
+despite the fact that he has “never found any occidental who could ‘make
+much’ of that poem,” still “everything is there, not merely by
+‘suggestion’ but by a sort of mathematical process of reduction”
+(<em>Early Writings</em>, “Chinese Poetry”). What we shall be attempting
+here is literally a mathematical process of reduction.</p>
+<p>Rather than delete words at random, however, we will design an
+informed algorithm for metonymic deletion. Citing William E. Baker,
+Childs argues that one of the syntactic modes of this metonymic deletion
+is “nominalization,” that deletion “gives primary emphasis to the noun,
+and that the great majority of fragments are classified as such because
+they contain a noun or noun phrase which lacks a finite verb to provide
+grammatical ‘sense’ to the structure” (quoted in Childs, 58-9). With
+this in mind, the function <code class="verbatim">metonymize</code> will
+call the function <code class="verbatim">deleteVerbs</code> in order to
+delete a small proportion of verbs in each line.</p>
+<p>The algorithm below will start with eight of Pound’s sources, taken
+from Carroll Terrell’s <em>Companion to the Cantos</em>. These include
+selections from Ovid’s <em>Metamorphoses</em> books III and X,
+Euripedes’s <em>Bacchae</em>, Homer’s hymn to Dionysos, and selections
+from the <em>Odyssey</em> and <em>Iliad</em>. The Ovid translations are
+those of Brookes More, and the Homer translations are those of Samuel
+Butler; both were downloaded from <a
+href="http://www.perseus.tufts.edu/hopper/"><em>Perseus</em></a>. The
+text of Robert Browning’s <em>Sordello</em> was downloaded from
+Wikisource, and the Mabinogion was downloaded from Project Gutenberg.
+These sources are “mixed” together with the function <code
+class="verbatim">sourceMix</code>, which interpolates the source texts
+every X number of lines. That mix is then “metonymized” with the <code
+class="verbatim">metonymize</code> function previously described. From
+there, line breaks are added, and the text is formatted with stanza
+breaks and indentation to resemble the original Canto II.</p>
+<div class="sourceCode" id="cb17"><pre
+class="sourceCode python"><code class="sourceCode python"><span id="cb17-1"><a href="#cb17-1" aria-hidden="true" tabindex="-1"></a><span class="kw">class</span> CantoII(CantoWriter):</span>
 <span id="cb17-2"><a href="#cb17-2" aria-hidden="true" tabindex="-1"></a>    <span class="co"># Gather text files of some of Pound&#39;s sources for Canto II.  </span></span>
 <span id="cb17-3"><a href="#cb17-3" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb17-4"><a href="#cb17-4" aria-hidden="true" tabindex="-1"></a>                    <span class="co"># Robert Browning&#39;s epic poem _Sordello_</span></span>
@@ -1147,7 +1399,8 @@ Indentation statistics:  {8: [34, 0.17525773195876287], 1: [1, 0.005154639175257
 <span id="cb17-164"><a href="#cb17-164" aria-hidden="true" tabindex="-1"></a>        wrapped <span class="op">=</span> textwrap.wrap(metonymized, <span class="dv">50</span>)</span>
 <span id="cb17-165"><a href="#cb17-165" aria-hidden="true" tabindex="-1"></a>        formatted <span class="op">=</span> <span class="va">self</span>.formatLines(wrapped, <span class="dv">2</span>)</span>
 <span id="cb17-166"><a href="#cb17-166" aria-hidden="true" tabindex="-1"></a>        <span class="va">self</span>.show(formatted, <span class="dv">2</span>)</span></code></pre></div>
-<div class="sourceCode" id="cb18"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb18-1"><a href="#cb18-1" aria-hidden="true" tabindex="-1"></a>c2 <span class="op">=</span> CantoII()</span>
+<div class="sourceCode" id="cb18"><pre
+class="sourceCode python"><code class="sourceCode python"><span id="cb18-1"><a href="#cb18-1" aria-hidden="true" tabindex="-1"></a>c2 <span class="op">=</span> CantoII()</span>
 <span id="cb18-2"><a href="#cb18-2" aria-hidden="true" tabindex="-1"></a>c2.write()</span></code></pre></div>
 <pre class="example"><code>Canto 2
 
@@ -1271,22 +1524,87 @@ Indentation statistics:  {8: [34, 0.17525773195876287], 1: [1, 0.005154639175257
    Achaeans to meet up with him in single bind,
    strong that he is? Not even the well-built
 </code></pre>
-<p>Unlike the generated Canto I, the Canto II generated above bears almost no resemblance to Pound’s original canto, despite the use of many of Pound’s sources. It is not without its moments of surprisingly vivid imagery, however: “dark meat whooping crane or raindrop and midwinter / strive them over the airflow branch water” (l. 19-20). “Branch water” is, somewhat mysteriously, a meronym of “water,” but is surprisingly Poundean in resonance if we recall his “wet black bough” from “In a Station of the Metro.” As in Canto I, the appearance of isotopes (“uranium 235” in line 27, and “iodine 125” in line 39) signals a word sense disambiguation error, despite the use of the Lesk algorithm used in the <code class="verbatim">CantoII</code> class. (A future version of this program might try to filter out all chemical elements from the hyponym tree.) At the very least, it ends <em>in medias res</em>, like Pound’s canto. Where his ends “and…,” this canto ends with the sentence fragment “not even the well-built.”</p>
+<p>Unlike the generated Canto I, the Canto II generated above bears
+almost no resemblance to Pound’s original canto, despite the use of many
+of Pound’s sources. It is not without its moments of surprisingly vivid
+imagery, however: “dark meat whooping crane or raindrop and midwinter /
+strive them over the airflow branch water” (l. 19-20). “Branch water”
+is, somewhat mysteriously, a meronym of “water,” but is surprisingly
+Poundean in resonance if we recall his “wet black bough” from “In a
+Station of the Metro.” As in Canto I, the appearance of isotopes
+(“uranium 235” in line 27, and “iodine 125” in line 39) signals a word
+sense disambiguation error, despite the use of the Lesk algorithm used
+in the <code class="verbatim">CantoII</code> class. (A future version of
+this program might try to filter out all chemical elements from the
+hyponym tree.) At the very least, it ends <em>in medias res</em>, like
+Pound’s canto. Where his ends “and…,” this canto ends with the sentence
+fragment “not even the well-built.”</p>
 <h2 id="conclusions">Conclusions</h2>
-<p>While the translation-and-alliteration technique of Canto I was reasonably successful, the mix-and-metonymize method of Canto II exhibited mixed success. In both cases, a more sophisticated set of functions would be needed to pass a poetic Turing test. For instance, a future version of this program might not only subsitute hypo/meronyms and delete verbs while metonymizing, but might translate “NN1 of a NN2” syntactic constructions into NN2-NN1 forms that would more closely resemble the Anglo-Saxon metaphoric compound words that Pound uses. It could also further nominalize a line by converting some verbs into nouns by traversing the lexical hierarchy, looking for nouns that are the smallest distance away. Given the time constraints of this project, however, this experiment proved to be a useful exercise in translating literary analysis into an algorithm, or, put differently, using the algorithm as a mode of literary analysis.</p>
-<p>It is sometimes sufficient to analyze a poem by saying that it employs certain literary devices, but it is quite another to explain to a computer exactly how those devices work, on the level of the word, or even the letter. The process of analyzing a poem in order to reconstruct it is, in some small ways, a much more involved task than simply analyzing the poem for the sake of analysis. If we are to contend, for instance, that Pound employs metonymy in <em>The Cantos</em>, then to explain it to a computer, we have to specify exactly what we mean by metonymy, and exactly how it functions, lexically and syntactically. In that sense, although this experiment does not discover anything wildly new about Pound’s work, and neither does it succeed in creating a great poem, it nonetheless paves the way for more experiments of this kind.</p>
+<p>While the translation-and-alliteration technique of Canto I was
+reasonably successful, the mix-and-metonymize method of Canto II
+exhibited mixed success. In both cases, a more sophisticated set of
+functions would be needed to pass a poetic Turing test. For instance, a
+future version of this program might not only subsitute hypo/meronyms
+and delete verbs while metonymizing, but might translate “NN1 of a NN2”
+syntactic constructions into NN2-NN1 forms that would more closely
+resemble the Anglo-Saxon metaphoric compound words that Pound uses. It
+could also further nominalize a line by converting some verbs into nouns
+by traversing the lexical hierarchy, looking for nouns that are the
+smallest distance away. Given the time constraints of this project,
+however, this experiment proved to be a useful exercise in translating
+literary analysis into an algorithm, or, put differently, using the
+algorithm as a mode of literary analysis.</p>
+<p>It is sometimes sufficient to analyze a poem by saying that it
+employs certain literary devices, but it is quite another to explain to
+a computer exactly how those devices work, on the level of the word, or
+even the letter. The process of analyzing a poem in order to reconstruct
+it is, in some small ways, a much more involved task than simply
+analyzing the poem for the sake of analysis. If we are to contend, for
+instance, that Pound employs metonymy in <em>The Cantos</em>, then to
+explain it to a computer, we have to specify exactly what we mean by
+metonymy, and exactly how it functions, lexically and syntactically. In
+that sense, although this experiment does not discover anything wildly
+new about Pound’s work, and neither does it succeed in creating a great
+poem, it nonetheless paves the way for more experiments of this
+kind.</p>
 <h2 id="works-cited">Works Cited</h2>
-<p>Bush, Ronald. <em>The Genesis of Ezra Pound’s Cantos</em>. Princeton, N.J.: Princeton University Press, 1989. Print.</p>
-<p>Childs, John Steven. <em>Modernist Form : Pound’s Style in the Early Cantos</em>. London: Associated University Press, c1986. Print.</p>
-<p>Cookson, William. <em>A Guide to the Cantos of Ezra Pound</em>. London: Anvil Press Poetry, 2001. Print.</p>
-<p>John, Roland. <em>A Beginner’s Guide to the Cantos of Ezra Pound</em>. Salzburg, Austria: Institut für Anglistik und Amerikanistik, 1995. Print.</p>
-<p>Kearns, George. <em>Guide to Ezra Pound’s Selected Cantos</em>. New Brunswick, N.J.: Rutgers University Press, c1980. Print.</p>
-<p>Kenner, Hugh. <em>The Pound Era</em>. Berkeley: University of California Press, 1971. Print.</p>
-<p>Korg, Jacob. “The Dialogic Nature of Collage in Pound’s Cantos.” <em>Mosaic: A Journal for the Interdisciplinary Study of Literature</em> 22.2 (1989): 95. Print.</p>
-<p>Pound, Ezra. <em>A Draft of XXX Cantos</em>. New York: New Directions, 1940. Print.</p>
-<p>——. <em>Early Writings</em>: Poems and Prose. Penguin, 2005. Print.</p>
-<p>——. <em>Literary Essays of Ezra Pound</em>. New Directions Publishing, 1968. Print.</p>
-<p>Terrell, Carroll Franklin. <em>A Companion to the Cantos of Ezra Pound</em>. Berkeley: University of California Press, c1980-. Print.</p></article><hr><p>I welcome your comments and annotations in the Hypothes.is sidebar to the right. →</p><script src="https://hypothes.is/embed.js"></script></div><footer><div class="container"><div class="columns"><div class="column col-8"><p>I believe in openness. This work is licensed under a <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/">Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International License</a>, unless otherwise stated. All content ©Jonathan Reeve 2020. Hand-coded with love, using exclusively free and open-source software, including <a href="https://github.com/srid/rib">Rib</a> and <a href="https://haskell.org/">Haskell</a>. Hosted on <a href="https://github.com">GitHub</a> and served with <a href="https://netlify.com">Netlify</a>. Icons by Nhor, via <a href="https://thenounproject.com">The Noun Project</a>. <a href="https://www.buymeacoffee.com/vaIVQZH">Buy me a coffee</a> or support me <a href="https://liberapay.com/JonathanReeve/donate">via Libera Pay</a> or <a href="bitcoin:3Qvm1DwzFGk3L1Eb6yeg5Nbc6db8sZUnbK">Bitcoin</a>.</p></div><div class="column col-4"><div class="icons"><a href="http://github.com/JonathanReeve"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512" fill="#fafafa" width="3em" height="3em"><path d="M400 32H48C21.5 32 0 53.5 0 80v352c0 26.5 21.5 48 48
+<p>Bush, Ronald. <em>The Genesis of Ezra Pound’s Cantos</em>. Princeton,
+N.J.: Princeton University Press, 1989. Print.</p>
+<p>Childs, John Steven. <em>Modernist Form : Pound’s Style in the Early
+Cantos</em>. London: Associated University Press, c1986. Print.</p>
+<p>Cookson, William. <em>A Guide to the Cantos of Ezra Pound</em>.
+London: Anvil Press Poetry, 2001. Print.</p>
+<p>John, Roland. <em>A Beginner’s Guide to the Cantos of Ezra
+Pound</em>. Salzburg, Austria: Institut für Anglistik und Amerikanistik,
+1995. Print.</p>
+<p>Kearns, George. <em>Guide to Ezra Pound’s Selected Cantos</em>. New
+Brunswick, N.J.: Rutgers University Press, c1980. Print.</p>
+<p>Kenner, Hugh. <em>The Pound Era</em>. Berkeley: University of
+California Press, 1971. Print.</p>
+<p>Korg, Jacob. “The Dialogic Nature of Collage in Pound’s Cantos.”
+<em>Mosaic: A Journal for the Interdisciplinary Study of Literature</em>
+22.2 (1989): 95. Print.</p>
+<p>Pound, Ezra. <em>A Draft of XXX Cantos</em>. New York: New
+Directions, 1940. Print.</p>
+<p>——. <em>Early Writings</em>: Poems and Prose. Penguin, 2005.
+Print.</p>
+<p>——. <em>Literary Essays of Ezra Pound</em>. New Directions
+Publishing, 1968. Print.</p>
+<p>Terrell, Carroll Franklin. <em>A Companion to the Cantos of Ezra
+Pound</em>. Berkeley: University of California Press, c1980-. Print.</p></article><hr><p>I welcome your comments and annotations in the Hypothes.is sidebar to the right. →</p><script src="https://hypothes.is/embed.js"></script></div><footer><div class="container"><div class="columns"><div class="column col-8"><p>I believe in openness. This work is licensed under a <a
+href="https://creativecommons.org/licenses/by-nc-sa/4.0/">Creative
+Commons Attribution-NonCommercial-ShareAlike 4.0 International
+License</a>, unless otherwise stated. All content ©Jonathan Reeve 2020.
+Hand-coded with love, using exclusively free and open-source software,
+including <a href="https://github.com/srid/rib">Rib</a> and <a
+href="https://haskell.org/">Haskell</a>. Hosted on <a
+href="https://github.com">GitHub</a> and served with <a
+href="https://netlify.com">Netlify</a>. Icons by Nhor, via <a
+href="https://thenounproject.com">The Noun Project</a>. <a
+href="https://www.buymeacoffee.com/vaIVQZH">Buy me a coffee</a> or
+support me <a href="https://liberapay.com/JonathanReeve/donate">via
+Libera Pay</a> or <a
+href="bitcoin:3Qvm1DwzFGk3L1Eb6yeg5Nbc6db8sZUnbK">Bitcoin</a>.</p></div><div class="column col-4"><div class="icons"><a href="http://github.com/JonathanReeve"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512" fill="#fafafa" width="3em" height="3em"><path d="M400 32H48C21.5 32 0 53.5 0 80v352c0 26.5 21.5 48 48
 48h352c26.5 0 48-21.5 48-48V80c0-26.5-21.5-48-48-48zM277.3 415.7c-8.4
 1.5-11.5-3.7-11.5-8 0-5.4.2-33 .2-55.3 0-15.6-5.2-25.5-11.3-30.7 37-4.1 76-9.2
 76-73.1 0-18.2-6.5-27.3-17.1-39 1.7-4.3 7.4-22-1.7-45-13.9-4.3-45.7 17.9-45.7

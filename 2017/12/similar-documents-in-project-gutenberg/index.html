@@ -1,5 +1,5 @@
 <html lang="en"><head><meta http-equiv="Content-Type" content="text/html; charset=utf-8"><title>Computationally Identifying Similar Books in Project Gutenberg
-</title><link rel="stylesheet" href="/assets/css/spectre.min.css"><link rel="stylesheet" href="//fonts.googleapis.com/css?family=Montserrat|Raleway"><link rel="stylesheet" href="//cdn.jsdelivr.net/gh/highlightjs/cdn-release@10.2.0/build/styles/default.min.css"><link rel="icon" href="/images/favicon.svg" sizes="any" type="image/svg+xml"><style type="text/css">
+</title><base href="/"><link rel="stylesheet" href="/assets/css/spectre.min.css"><link rel="stylesheet" href="//fonts.googleapis.com/css?family=Montserrat|Raleway"><link rel="stylesheet" href="//cdn.jsdelivr.net/gh/highlightjs/cdn-release@10.2.0/build/styles/default.min.css"><link rel="icon" href="/images/favicon.svg" sizes="any" type="image/svg+xml"><style type="text/css">
 
 @media screen and (min-width: 1200px)
 {
@@ -49,8 +49,8 @@ body.has-docked-nav #main-header
 #headerWrapper
 {
   background-color : #ffffff;
-  border-top       : solid 2px #494e8e;
-  border-bottom    : solid 2px #494e8e;
+  border-top       : 2px solid #494e8e;
+  border-bottom    : 2px solid #494e8e;
 }
 
 #headerWrapper header
@@ -273,10 +273,32 @@ table
 
 }
 
-/* Generated with Clay, http://fvisser.nl/clay */</style><style type="text/css">@page{margin: 3cm;}</style></head><body><div id="headerWrapper"><header class="navbar"><section class="navbar-section"><a class="navbar-brand" href="/">Jonathan Reeve: <span>Computational Literary Analysis</span></a></section><section class="navbar-section"><ul class="nav"><li class="nav-item"><a href="/">posts</a></li><li class="nav-item"><a href="/cv.html">cv</a></li><li class="nav-item"><a href="/tags/">tags</a></li><li class="nav-item"><a href="/feed.xml">feed</a></li></ul></section></header></div><div class="container"><h1>Computationally Identifying Similar Books in Project Gutenberg
-</h1><p>Posted 2017-12-05</p><article><p>As one of the first digital libraries, Project Gutenberg has lived through a few generations of computers, digitization techniques, and textual infrastructures. It’s not surprising, then, that the corpus is fairly messy. Early transcriptions of some electronic texts, hand-keyed using only uppercase letters, were succeeded by better transcriptions, but without replacing the early versions. As such, working with the corpus as a whole means working with a soup of duplicates. To make matters worse, some early versions of text were broken into many parts, presumably as a means to mitigate historical bandwidth limitations. Complete versions were then later created, but without removing the original parts. I needed a way to deduplicate Project Gutenberg books.</p>
-<p>To do this, I used a suggestion from Ben Schmidt and vectorized each text, using the new Python-based natural language processing suite SpaCy. <a href="https://spacy.io/usage/vectors-similarity">SpaCy creates document vectors by averaging word vectors from its model containing about 1.1M 300-dimensional vectors</a>. These document vectors can then be compared using cosine similarity to determine the semantic similarities of the documents. It turns out that this is a fairly good way to identify duplicates, but has some interesting side-effects.</p>
-<p>Here, for instance, are high-ranking similarities (99.99% vector similarity or above) for the first 100 works in Project Gutenberg. The numbers are the Project Gutenberg book IDs (see, for instance, <a href="http://www.gutenberg.org/dirs/GUTINDEX.1996">this index</a> of the first 768 works).</p>
+/* Generated with Clay, http://fvisser.nl/clay */</style><style type="text/css">@page{margin: 3cm;}</style></head><body><div id="headerWrapper"><header class="navbar"><section class="navbar-section"><a class="navbar-brand" href>Jonathan Reeve: <span>Computational Literary Analysis</span></a></section><section class="navbar-section"><ul class="nav"><li class="nav-item"><a href>posts</a></li><li class="nav-item"><a href="cv">cv</a></li><li class="nav-item"><a href="tags.html">tags</a></li><li class="nav-item"><a href="feed.xml">feed</a></li></ul></section></header></div><div class="container"><h1>Computationally Identifying Similar Books in Project Gutenberg
+</h1><article><p>Posted 2017-12-05</p><p>As one of the first digital libraries, Project Gutenberg has lived
+through a few generations of computers, digitization techniques, and
+textual infrastructures. It’s not surprising, then, that the corpus is
+fairly messy. Early transcriptions of some electronic texts, hand-keyed
+using only uppercase letters, were succeeded by better transcriptions,
+but without replacing the early versions. As such, working with the
+corpus as a whole means working with a soup of duplicates. To make
+matters worse, some early versions of text were broken into many parts,
+presumably as a means to mitigate historical bandwidth limitations.
+Complete versions were then later created, but without removing the
+original parts. I needed a way to deduplicate Project Gutenberg
+books.</p>
+<p>To do this, I used a suggestion from Ben Schmidt and vectorized each
+text, using the new Python-based natural language processing suite
+SpaCy. <a href="https://spacy.io/usage/vectors-similarity">SpaCy creates
+document vectors by averaging word vectors from its model containing
+about 1.1M 300-dimensional vectors</a>. These document vectors can then
+be compared using cosine similarity to determine the semantic
+similarities of the documents. It turns out that this is a fairly good
+way to identify duplicates, but has some interesting side-effects.</p>
+<p>Here, for instance, are high-ranking similarities (99.99% vector
+similarity or above) for the first 100 works in Project Gutenberg. The
+numbers are the Project Gutenberg book IDs (see, for instance, <a
+href="http://www.gutenberg.org/dirs/GUTINDEX.1996">this index</a> of the
+first 768 works).</p>
 <pre class="example"><code>1.  The King James Version of (10) -similar to- The Bible, King James Ver (30)
 2.  Alice&#39;s Adventures in Won (11) -similar to- Through the Looking-Glass (12)
 3.  Through the Looking-Glass (12) -similar to- Alice&#39;s Adventures in Won (11)
@@ -316,14 +338,59 @@ table
 37. Alexander&#39;s Bridge        (91) -similar to- O Pioneers!               (24)
 38. Alexander&#39;s Bridge        (91) -similar to- The Song of the Lark      (44)
 </code></pre>
-<p>The first pair here is of duplicates: both are King James Versions of the Bible. The same is true of lines 5 and 8, and lines 12-13: they’re just duplicates. All the other works are members of a novelistic series. Lines 2 and 3 are <em>Alice in Wonderland</em> and its sequel. Lines 6 and 7 are Willa Cather novels of the Great Plains trilogy. Lines 16-19, and 22-23 identify the <em>Anne of Green Gables</em> novels. Lines 24-29 are a cluster of Edgar Rice Burroughs of the <em>Mars</em> series, and there is also another cluster of Burroughs novels, the <em>Tarzan</em> series, at 31-33. Line 35 shows Mark Twain novels of the Tom Sawyer and Huck Finn world. The algorithm even identifies the two 90s CIA World Factbooks as part of a series.</p>
-<p>When I lower the cutoff similarity score, I can get even more interesting pairs. Less-recognizable series, like <em>Paradise Lost</em> and <em>Paradise Regained</em>, have similarity scores of around 97%. At that level, completely unrelated novels with the same settings, or written in around the same time period (Victorian novels, for instance), begin to cluster together.</p>
-<p>The chart below shows a PCA-reduced 2D vector space approximating the similarity between books 1-20. There are interesting clusters here: the American Constitution and Bill of Rights cluster together, along with the Declaration of Independence, the Federalist Papers, and Abraham Lincoln’s first inaugural address. Lincoln’s second address, however, clusters rather with his Gettysburg Address, and John F. Kennedy’s inaugural address.</p>
+<p>The first pair here is of duplicates: both are King James Versions of
+the Bible. The same is true of lines 5 and 8, and lines 12-13: they’re
+just duplicates. All the other works are members of a novelistic series.
+Lines 2 and 3 are <em>Alice in Wonderland</em> and its sequel. Lines 6
+and 7 are Willa Cather novels of the Great Plains trilogy. Lines 16-19,
+and 22-23 identify the <em>Anne of Green Gables</em> novels. Lines 24-29
+are a cluster of Edgar Rice Burroughs of the <em>Mars</em> series, and
+there is also another cluster of Burroughs novels, the <em>Tarzan</em>
+series, at 31-33. Line 35 shows Mark Twain novels of the Tom Sawyer and
+Huck Finn world. The algorithm even identifies the two 90s CIA World
+Factbooks as part of a series.</p>
+<p>When I lower the cutoff similarity score, I can get even more
+interesting pairs. Less-recognizable series, like <em>Paradise Lost</em>
+and <em>Paradise Regained</em>, have similarity scores of around 97%. At
+that level, completely unrelated novels with the same settings, or
+written in around the same time period (Victorian novels, for instance),
+begin to cluster together.</p>
+<p>The chart below shows a PCA-reduced 2D vector space approximating the
+similarity between books 1-20. There are interesting clusters here: the
+American Constitution and Bill of Rights cluster together, along with
+the Declaration of Independence, the Federalist Papers, and Abraham
+Lincoln’s first inaugural address. Lincoln’s second address, however,
+clusters rather with his Gettysburg Address, and John F. Kennedy’s
+inaugural address.</p>
 <figure>
-<img src="../../../images/gutenberg/pg-vecs.png" alt="PCA of PG Books 1-20" /><figcaption aria-hidden="true">PCA of PG Books 1-20</figcaption>
+<img src="../../../images/gutenberg/pg-vecs.png"
+alt="PCA of PG Books 1-20" />
+<figcaption aria-hidden="true">PCA of PG Books 1-20</figcaption>
 </figure>
-<p>Non-fiction seems to be clustered at the bottom of the chart, whereas fiction is at the top. Quasi-fictional works, like the <em>Book of Mormon</em> and the Bible, are in between. Similarly, <em>Moby Dick</em>, a work of fiction that nonetheless contains long encyclopedic passages of non-fiction, lies in the same area. The most fantastical works, which are also the three children’s books, <em>Peter Pan</em> and the two Carroll novels, cluster together in the upper left.</p>
-<p>As always, <a href="https://github.com/JonathanReeve/gitenberg-experiments/blob/master/pg-vectorize2.ipynb">the code used to create all of this is on GitHub</a>. I welcome your comments and suggestions below!</p></article><hr><p>I welcome your comments and annotations in the Hypothes.is sidebar to the right. →</p><script src="https://hypothes.is/embed.js"></script></div><footer><div class="container"><div class="columns"><div class="column col-8"><p>I believe in openness. This work is licensed under a <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/">Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International License</a>, unless otherwise stated. All content ©Jonathan Reeve 2020. Hand-coded with love, using exclusively free and open-source software, including <a href="https://github.com/srid/rib">Rib</a> and <a href="https://haskell.org/">Haskell</a>. Hosted on <a href="https://github.com">GitHub</a> and served with <a href="https://netlify.com">Netlify</a>. Icons by Nhor, via <a href="https://thenounproject.com">The Noun Project</a>. <a href="https://www.buymeacoffee.com/vaIVQZH">Buy me a coffee</a> or support me <a href="https://liberapay.com/JonathanReeve/donate">via Libera Pay</a> or <a href="bitcoin:3Qvm1DwzFGk3L1Eb6yeg5Nbc6db8sZUnbK">Bitcoin</a>.</p></div><div class="column col-4"><div class="icons"><a href="http://github.com/JonathanReeve"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512" fill="#fafafa" width="3em" height="3em"><path d="M400 32H48C21.5 32 0 53.5 0 80v352c0 26.5 21.5 48 48
+<p>Non-fiction seems to be clustered at the bottom of the chart, whereas
+fiction is at the top. Quasi-fictional works, like the <em>Book of
+Mormon</em> and the Bible, are in between. Similarly, <em>Moby
+Dick</em>, a work of fiction that nonetheless contains long encyclopedic
+passages of non-fiction, lies in the same area. The most fantastical
+works, which are also the three children’s books, <em>Peter Pan</em> and
+the two Carroll novels, cluster together in the upper left.</p>
+<p>As always, <a
+href="https://github.com/JonathanReeve/gitenberg-experiments/blob/master/pg-vectorize2.ipynb">the
+code used to create all of this is on GitHub</a>. I welcome your
+comments and suggestions below!</p></article><hr><p>I welcome your comments and annotations in the Hypothes.is sidebar to the right. →</p><script src="https://hypothes.is/embed.js"></script></div><footer><div class="container"><div class="columns"><div class="column col-8"><p>I believe in openness. This work is licensed under a <a
+href="https://creativecommons.org/licenses/by-nc-sa/4.0/">Creative
+Commons Attribution-NonCommercial-ShareAlike 4.0 International
+License</a>, unless otherwise stated. All content ©Jonathan Reeve 2020.
+Hand-coded with love, using exclusively free and open-source software,
+including <a href="https://github.com/srid/rib">Rib</a> and <a
+href="https://haskell.org/">Haskell</a>. Hosted on <a
+href="https://github.com">GitHub</a> and served with <a
+href="https://netlify.com">Netlify</a>. Icons by Nhor, via <a
+href="https://thenounproject.com">The Noun Project</a>. <a
+href="https://www.buymeacoffee.com/vaIVQZH">Buy me a coffee</a> or
+support me <a href="https://liberapay.com/JonathanReeve/donate">via
+Libera Pay</a> or <a
+href="bitcoin:3Qvm1DwzFGk3L1Eb6yeg5Nbc6db8sZUnbK">Bitcoin</a>.</p></div><div class="column col-4"><div class="icons"><a href="http://github.com/JonathanReeve"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512" fill="#fafafa" width="3em" height="3em"><path d="M400 32H48C21.5 32 0 53.5 0 80v352c0 26.5 21.5 48 48
 48h352c26.5 0 48-21.5 48-48V80c0-26.5-21.5-48-48-48zM277.3 415.7c-8.4
 1.5-11.5-3.7-11.5-8 0-5.4.2-33 .2-55.3 0-15.6-5.2-25.5-11.3-30.7 37-4.1 76-9.2
 76-73.1 0-18.2-6.5-27.3-17.1-39 1.7-4.3 7.4-22-1.7-45-13.9-4.3-45.7 17.9-45.7

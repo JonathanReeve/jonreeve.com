@@ -1,5 +1,5 @@
 <html lang="en"><head><meta http-equiv="Content-Type" content="text/html; charset=utf-8"><title>My Type-Safe Blog in Haskell
-</title><link rel="stylesheet" href="/assets/css/spectre.min.css"><link rel="stylesheet" href="//fonts.googleapis.com/css?family=Montserrat|Raleway"><link rel="stylesheet" href="//cdn.jsdelivr.net/gh/highlightjs/cdn-release@10.2.0/build/styles/default.min.css"><link rel="icon" href="/images/favicon.svg" sizes="any" type="image/svg+xml"><style type="text/css">
+</title><base href="/"><link rel="stylesheet" href="/assets/css/spectre.min.css"><link rel="stylesheet" href="//fonts.googleapis.com/css?family=Montserrat|Raleway"><link rel="stylesheet" href="//cdn.jsdelivr.net/gh/highlightjs/cdn-release@10.2.0/build/styles/default.min.css"><link rel="icon" href="/images/favicon.svg" sizes="any" type="image/svg+xml"><style type="text/css">
 
 @media screen and (min-width: 1200px)
 {
@@ -49,8 +49,8 @@ body.has-docked-nav #main-header
 #headerWrapper
 {
   background-color : #ffffff;
-  border-top       : solid 2px #494e8e;
-  border-bottom    : solid 2px #494e8e;
+  border-top       : 2px solid #494e8e;
+  border-bottom    : 2px solid #494e8e;
 }
 
 #headerWrapper header
@@ -273,11 +273,56 @@ table
 
 }
 
-/* Generated with Clay, http://fvisser.nl/clay */</style><style type="text/css">@page{margin: 3cm;}</style></head><body><div id="headerWrapper"><header class="navbar"><section class="navbar-section"><a class="navbar-brand" href="/">Jonathan Reeve: <span>Computational Literary Analysis</span></a></section><section class="navbar-section"><ul class="nav"><li class="nav-item"><a href="/">posts</a></li><li class="nav-item"><a href="/cv.html">cv</a></li><li class="nav-item"><a href="/tags/">tags</a></li><li class="nav-item"><a href="/feed.xml">feed</a></li></ul></section></header></div><div class="container"><h1>My Type-Safe Blog in Haskell
-</h1><p>Posted 2020-09-13</p><article><p>Like most, my first step into the blogging world was through WordPress. But after a few years of wrangling plugins, handing endless updates, dealing with custom CSS issues, and paying for shared web hosting, the idea of using a static site generator seemed more attractive. Whereas WordPress sites are dynamically generated on a web server, static sites are just made up of good old HTML pages, and are therefore much simpler, more secure, and easier to maintain. Plus, you can serve those pages using a free service like GitHub pages. I switched to Jekyll.</p>
-<p>But <a href="https://github.com/JonathanReeve/jonreeve.com/tree/816a19ff4454313a27f14a5ba9c7f5a5a5fc2d11">my first step</a> into the world of static site generators quickly grew in complexity. Jekyll allows you to avoid writing HTML by writing in Markdown instead, which is a real improvement. And to avoid the tedium of writing CSS, you can write in Sass instead. Then there’s Coffeescript, which compiles to JavaScript. You can template together all your pages using the templating language Liquid. But for each of these conveniences, there is some technical overhead. First, all of these micro-languages are compiled using a stack of Ruby gems. To manage those gems, you need Bundler, which puts them all together, and probably also a manager which juggles all your versions of Ruby. And in the end, you have to remember lots of syntax: what does a variable look like in Sass, again? What about Coffeescript? Liquid?</p>
-<p>For my <a href="https://github.com/JonathanReeve/jonreeve.com/tree/36b7520fb9c71ffc09b6eec3007994b1c32c3e01">second time around</a>, I wanted to solve a problem with my CV, which was that I wanted to avoid repeating myself in situations where I had a publication related to a project that was listed in both the <em>Projects</em> section and the <em>Publications</em> section. So I decided to put all that data in a data format, YAML, and then display it using templates. To do all that, I chose the simplest tool I could find. <a href="https://metalsmith.io/">Metalsmith</a> bills itself as “an extremely simple, pluggable static site generator.” And it is. Everything in Metalsmith is a plugin, and so getting the perfect blog set up was just a matter of assembling the right plugins. I even <a href="https://github.com/JonathanReeve/metalsmith-markdown-metadata">wrote one myself, to handle parsing Markdown within Yaml data</a>. But in the end, I found the JavaScript and node.js world to be really fickle. My dozen Metalsmith plugins had hundreds of dependencies, in total, and updating one would often break another. I kept getting Dependabot security alerts on GitHub for dependencies I didn’t even know I had. I <em>was</em> able to rewrite <a href="https://github.com/JonathanReeve/jonreeve.com/blob/36b7520fb9c71ffc09b6eec3007994b1c32c3e01/src/cv.yaml">my CV as YAML data</a>, though, and <a href="https://github.com/JonathanReeve/jonreeve.com/blob/36b7520fb9c71ffc09b6eec3007994b1c32c3e01/layouts/cv.pug">format it using the satisfyingly minimalist templating language Pug</a>. But I was still really in the same situation as before.</p>
-<p>So this most recent time I thought hard about semantic data. YAML had allowed me to write my CV like this:</p>
+/* Generated with Clay, http://fvisser.nl/clay */</style><style type="text/css">@page{margin: 3cm;}</style></head><body><div id="headerWrapper"><header class="navbar"><section class="navbar-section"><a class="navbar-brand" href>Jonathan Reeve: <span>Computational Literary Analysis</span></a></section><section class="navbar-section"><ul class="nav"><li class="nav-item"><a href>posts</a></li><li class="nav-item"><a href="cv">cv</a></li><li class="nav-item"><a href="tags.html">tags</a></li><li class="nav-item"><a href="feed.xml">feed</a></li></ul></section></header></div><div class="container"><h1>My Type-Safe Blog in Haskell
+</h1><article><p>Posted 2020-09-13</p><p>Like most, my first step into the blogging world was through
+WordPress. But after a few years of wrangling plugins, handing endless
+updates, dealing with custom CSS issues, and paying for shared web
+hosting, the idea of using a static site generator seemed more
+attractive. Whereas WordPress sites are dynamically generated on a web
+server, static sites are just made up of good old HTML pages, and are
+therefore much simpler, more secure, and easier to maintain. Plus, you
+can serve those pages using a free service like GitHub pages. I switched
+to Jekyll.</p>
+<p>But <a
+href="https://github.com/JonathanReeve/jonreeve.com/tree/816a19ff4454313a27f14a5ba9c7f5a5a5fc2d11">my
+first step</a> into the world of static site generators quickly grew in
+complexity. Jekyll allows you to avoid writing HTML by writing in
+Markdown instead, which is a real improvement. And to avoid the tedium
+of writing CSS, you can write in Sass instead. Then there’s
+Coffeescript, which compiles to JavaScript. You can template together
+all your pages using the templating language Liquid. But for each of
+these conveniences, there is some technical overhead. First, all of
+these micro-languages are compiled using a stack of Ruby gems. To manage
+those gems, you need Bundler, which puts them all together, and probably
+also a manager which juggles all your versions of Ruby. And in the end,
+you have to remember lots of syntax: what does a variable look like in
+Sass, again? What about Coffeescript? Liquid?</p>
+<p>For my <a
+href="https://github.com/JonathanReeve/jonreeve.com/tree/36b7520fb9c71ffc09b6eec3007994b1c32c3e01">second
+time around</a>, I wanted to solve a problem with my CV, which was that
+I wanted to avoid repeating myself in situations where I had a
+publication related to a project that was listed in both the
+<em>Projects</em> section and the <em>Publications</em> section. So I
+decided to put all that data in a data format, YAML, and then display it
+using templates. To do all that, I chose the simplest tool I could find.
+<a href="https://metalsmith.io/">Metalsmith</a> bills itself as “an
+extremely simple, pluggable static site generator.” And it is.
+Everything in Metalsmith is a plugin, and so getting the perfect blog
+set up was just a matter of assembling the right plugins. I even <a
+href="https://github.com/JonathanReeve/metalsmith-markdown-metadata">wrote
+one myself, to handle parsing Markdown within Yaml data</a>. But in the
+end, I found the JavaScript and node.js world to be really fickle. My
+dozen Metalsmith plugins had hundreds of dependencies, in total, and
+updating one would often break another. I kept getting Dependabot
+security alerts on GitHub for dependencies I didn’t even know I had. I
+<em>was</em> able to rewrite <a
+href="https://github.com/JonathanReeve/jonreeve.com/blob/36b7520fb9c71ffc09b6eec3007994b1c32c3e01/src/cv.yaml">my
+CV as YAML data</a>, though, and <a
+href="https://github.com/JonathanReeve/jonreeve.com/blob/36b7520fb9c71ffc09b6eec3007994b1c32c3e01/layouts/cv.pug">format
+it using the satisfyingly minimalist templating language Pug</a>. But I
+was still really in the same situation as before.</p>
+<p>So this most recent time I thought hard about semantic data. YAML had
+allowed me to write my CV like this:</p>
 <pre class="example"><code>projects:
   - title: Corpus-DB
     url: https://github.com/JonathanReeve/corpus-db
@@ -289,9 +334,18 @@ table
         type: award
         description: Winner, [2017 NYCDH Graduate Student Project Award](https://nycdh.org/groups/nycdh-announcements-71439400/forum/topic/2017-nycdh-graduate-student-project-award-recipients/) 
 </code></pre>
-<p>This was a big step forward for my deduplication problem, since I could now write a template that could extract all <code class="verbatim">publication</code> types and display those in a different section, without having to maintain those in two different places in the data. There is an <em>implicit</em> schema here: every project has a title, a url, and so on. But there was no way to keep this from breaking in an unexpected way, since I just had to remember that my template expects there to be certain fields in the YAML data.</p>
-<p>This is where Haskell comes in. Haskell allows me to define algebraic data types, like this:</p>
-<div class="sourceCode" id="cb2"><pre class="sourceCode haskell"><code class="sourceCode haskell"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="kw">data</span> <span class="dt">Project</span> <span class="ot">=</span> <span class="dt">Project</span> {</span>
+<p>This was a big step forward for my deduplication problem, since I
+could now write a template that could extract all <code
+class="verbatim">publication</code> types and display those in a
+different section, without having to maintain those in two different
+places in the data. There is an <em>implicit</em> schema here: every
+project has a title, a url, and so on. But there was no way to keep this
+from breaking in an unexpected way, since I just had to remember that my
+template expects there to be certain fields in the YAML data.</p>
+<p>This is where Haskell comes in. Haskell allows me to define algebraic
+data types, like this:</p>
+<div class="sourceCode" id="cb2"><pre
+class="sourceCode haskell"><code class="sourceCode haskell"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="kw">data</span> <span class="dt">Project</span> <span class="ot">=</span> <span class="dt">Project</span> {</span>
 <span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a><span class="ot">  title ::</span> <span class="dt">Text</span>,</span>
 <span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a><span class="ot">  role ::</span> <span class="dt">ProjectRole</span>,</span>
 <span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a><span class="ot">  homepage ::</span> <span class="dt">URI</span>,</span>
@@ -303,8 +357,13 @@ table
 <span id="cb2-10"><a href="#cb2-10" aria-hidden="true" tabindex="-1"></a>  } <span class="kw">deriving</span> <span class="dt">Show</span></span>
 <span id="cb2-11"><a href="#cb2-11" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb2-12"><a href="#cb2-12" aria-hidden="true" tabindex="-1"></a><span class="kw">data</span> <span class="dt">ProjectRole</span> <span class="ot">=</span> <span class="dt">Creator</span> <span class="op">|</span> <span class="dt">CoCreator</span> <span class="op">|</span> <span class="dt">Developer</span> <span class="op">|</span> <span class="dt">Collaborator</span> <span class="op">|</span> <span class="dt">ResearchAssistant</span> <span class="kw">deriving</span> <span class="dt">Show</span></span></code></pre></div>
-<p>What this says is: every project has a title, which is text, but the role I have in the project must come from a set list. Similarly, the URIs for the project must be URI types, which I can then validate and extract in predictable ways. This way, I can write an entry like this:</p>
-<div class="sourceCode" id="cb3"><pre class="sourceCode haskell"><code class="sourceCode haskell"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a></span>
+<p>What this says is: every project has a title, which is text, but the
+role I have in the project must come from a set list. Similarly, the
+URIs for the project must be URI types, which I can then validate and
+extract in predictable ways. This way, I can write an entry like
+this:</p>
+<div class="sourceCode" id="cb3"><pre
+class="sourceCode haskell"><code class="sourceCode haskell"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a><span class="dt">Project</span> { title <span class="ot">=</span> <span class="st">&quot;Corpus-DB&quot;</span>,</span>
 <span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a>          role <span class="ot">=</span> <span class="dt">Creator</span>,</span>
 <span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a>          homepage <span class="ot">=</span> <span class="st">&quot;https://github.com/JonathanReeve/corpus-db&quot;</span>,</span>
@@ -318,24 +377,74 @@ table
 <span id="cb3-12"><a href="#cb3-12" aria-hidden="true" tabindex="-1"></a>              (<span class="dt">Venue</span> <span class="st">&quot;Digital Humanities 2020&quot;</span></span>
 <span id="cb3-13"><a href="#cb3-13" aria-hidden="true" tabindex="-1"></a>                     <span class="st">&quot;https://dh2020.adho.org/&quot;</span></span>
 <span id="cb3-14"><a href="#cb3-14" aria-hidden="true" tabindex="-1"></a>                     <span class="st">&quot;Ottawa, CA&quot;</span>)),</span></code></pre></div>
-<p>At first glance, this may seem like an abuse of a programming language. Programming languages are for logic, the argument goes, and configuration belongs to configuration files, in formats like JSON, TOML, or YAML. We must separate logic and data, right? Actually, it turns out there are tons of advantages to writing data in Haskell.</p>
-<p>For one, it is compile-time type safe, meaning that my text editor actually checks that this compiles, as I’m writing it. If it were just plain text in YAML, there’s nothing stopping a <code class="verbatim">date</code> from being something else entirely, like <code class="verbatim">foo</code>. But in Haskell, if I write a <code class="verbatim">date</code> that isn’t two integers, (a year followed by a month), it’ll raise an error immediately.</p>
-<p>Another advantage is composability. If I find myself repeating a given entry, I can just abstract it away into its own function. For instance, I have a <code class="verbatim">Venue</code> entry that looks like this:</p>
-<div class="sourceCode" id="cb4"><pre class="sourceCode haskell"><code class="sourceCode haskell"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a>cuEng <span class="ot">=</span> <span class="dt">Venue</span> <span class="st">&quot;Department of English and Comparative Literature&quot;</span> <span class="st">&quot;https://english.columbia.edu/&quot;</span> (uni <span class="st">&quot;cu&quot;</span>)</span></code></pre></div>
-<p>And whenever I want to use that, I can just call <code class="verbatim">venue = cuEng</code>, and save myself some typing. That also means that, should the name or URL of any of these entries change, I can change them in one place, without having to change them in seven.</p>
-<p>In addition to making everything type-safe, though, I greatly reduce the technologies involved. I’m still writing posts in Markdown, but have collapsed all the other templating languages to just Haskell. The HTML, CSS, and data, instead of being written in Liquid, Sass, YAML, and so forth, are all just in Haskell, which allows me to use the full power of the programming language to do whatever I need it to. For instance, if I’m doing something repeatedly, like adding a bunch of scripts:</p>
+<p>At first glance, this may seem like an abuse of a programming
+language. Programming languages are for logic, the argument goes, and
+configuration belongs to configuration files, in formats like JSON,
+TOML, or YAML. We must separate logic and data, right? Actually, it
+turns out there are tons of advantages to writing data in Haskell.</p>
+<p>For one, it is compile-time type safe, meaning that my text editor
+actually checks that this compiles, as I’m writing it. If it were just
+plain text in YAML, there’s nothing stopping a <code
+class="verbatim">date</code> from being something else entirely, like
+<code class="verbatim">foo</code>. But in Haskell, if I write a <code
+class="verbatim">date</code> that isn’t two integers, (a year followed
+by a month), it’ll raise an error immediately.</p>
+<p>Another advantage is composability. If I find myself repeating a
+given entry, I can just abstract it away into its own function. For
+instance, I have a <code class="verbatim">Venue</code> entry that looks
+like this:</p>
+<div class="sourceCode" id="cb4"><pre
+class="sourceCode haskell"><code class="sourceCode haskell"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a>cuEng <span class="ot">=</span> <span class="dt">Venue</span> <span class="st">&quot;Department of English and Comparative Literature&quot;</span> <span class="st">&quot;https://english.columbia.edu/&quot;</span> (uni <span class="st">&quot;cu&quot;</span>)</span></code></pre></div>
+<p>And whenever I want to use that, I can just call <code
+class="verbatim">venue = cuEng</code>, and save myself some typing. That
+also means that, should the name or URL of any of these entries change,
+I can change them in one place, without having to change them in
+seven.</p>
+<p>In addition to making everything type-safe, though, I greatly reduce
+the technologies involved. I’m still writing posts in Markdown, but have
+collapsed all the other templating languages to just Haskell. The HTML,
+CSS, and data, instead of being written in Liquid, Sass, YAML, and so
+forth, are all just in Haskell, which allows me to use the full power of
+the programming language to do whatever I need it to. For instance, if
+I’m doing something repeatedly, like adding a bunch of scripts:</p>
 <pre class="example"><code>&lt;script src=&quot;script1.js&quot;/&gt;
 &lt;script src=&quot;script2.js&quot;/&gt;
 &lt;script src=&quot;script3.js&quot;/&gt;
 &lt;script src=&quot;script4.js&quot;/&gt;
 </code></pre>
 <p>I can write that in Haskell like this:</p>
-<div class="sourceCode" id="cb6"><pre class="sourceCode haskell"><code class="sourceCode haskell"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a>script n <span class="ot">=</span> script_ [src_ <span class="st">&quot;script&quot;</span> <span class="op">++</span> n <span class="op">++</span> <span class="st">&quot;.js&quot;</span>]</span>
+<div class="sourceCode" id="cb6"><pre
+class="sourceCode haskell"><code class="sourceCode haskell"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a>script n <span class="ot">=</span> script_ [src_ <span class="st">&quot;script&quot;</span> <span class="op">++</span> n <span class="op">++</span> <span class="st">&quot;.js&quot;</span>]</span>
 <span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a><span class="fu">map</span> script [<span class="dv">1</span><span class="op">..</span><span class="dv">4</span>]</span></code></pre></div>
-<p>And it’s all validated at compile time, so when I press save in my text editor, it checks to make sure everything works. Because Haskell is a purely functional language, there are no runtime exceptions.</p>
-<p>All of this I achieve using the wonderful static site generator <a href="https://github.com/srid/rib">Rib</a>, which built on the Haskell build tool <a href="https://hackage.haskell.org/package/shake">Shake</a>. So if there’s anything else I need to do, which Rib doesn’t provide out of the box, I don’t need a plugin for it; I can just write a Shake action.</p>
-<p>There’s still some complexity left over, though, in that I still have to manage Haskell packages. But with <a href="https://nixos.org/">Nix</a> that’s trivial. Nix is great at making reproducible builds possible.</p>
-<p><a href="https://github.com/JonathanReeve/jonreeve.com/blob/master/src/Main.hs">Browse the source code for this site here.</a></p></article><hr><p>I welcome your comments and annotations in the Hypothes.is sidebar to the right. →</p><script src="https://hypothes.is/embed.js"></script></div><footer><div class="container"><div class="columns"><div class="column col-8"><p>I believe in openness. This work is licensed under a <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/">Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International License</a>, unless otherwise stated. All content ©Jonathan Reeve 2020. Hand-coded with love, using exclusively free and open-source software, including <a href="https://github.com/srid/rib">Rib</a> and <a href="https://haskell.org/">Haskell</a>. Hosted on <a href="https://github.com">GitHub</a> and served with <a href="https://netlify.com">Netlify</a>. Icons by Nhor, via <a href="https://thenounproject.com">The Noun Project</a>. <a href="https://www.buymeacoffee.com/vaIVQZH">Buy me a coffee</a> or support me <a href="https://liberapay.com/JonathanReeve/donate">via Libera Pay</a> or <a href="bitcoin:3Qvm1DwzFGk3L1Eb6yeg5Nbc6db8sZUnbK">Bitcoin</a>.</p></div><div class="column col-4"><div class="icons"><a href="http://github.com/JonathanReeve"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512" fill="#fafafa" width="3em" height="3em"><path d="M400 32H48C21.5 32 0 53.5 0 80v352c0 26.5 21.5 48 48
+<p>And it’s all validated at compile time, so when I press save in my
+text editor, it checks to make sure everything works. Because Haskell is
+a purely functional language, there are no runtime exceptions.</p>
+<p>All of this I achieve using the wonderful static site generator <a
+href="https://github.com/srid/rib">Rib</a>, which built on the Haskell
+build tool <a
+href="https://hackage.haskell.org/package/shake">Shake</a>. So if
+there’s anything else I need to do, which Rib doesn’t provide out of the
+box, I don’t need a plugin for it; I can just write a Shake action.</p>
+<p>There’s still some complexity left over, though, in that I still have
+to manage Haskell packages. But with <a
+href="https://nixos.org/">Nix</a> that’s trivial. Nix is great at making
+reproducible builds possible.</p>
+<p><a
+href="https://github.com/JonathanReeve/jonreeve.com/blob/master/src/Main.hs">Browse
+the source code for this site here.</a></p></article><hr><p>I welcome your comments and annotations in the Hypothes.is sidebar to the right. →</p><script src="https://hypothes.is/embed.js"></script></div><footer><div class="container"><div class="columns"><div class="column col-8"><p>I believe in openness. This work is licensed under a <a
+href="https://creativecommons.org/licenses/by-nc-sa/4.0/">Creative
+Commons Attribution-NonCommercial-ShareAlike 4.0 International
+License</a>, unless otherwise stated. All content ©Jonathan Reeve 2020.
+Hand-coded with love, using exclusively free and open-source software,
+including <a href="https://github.com/srid/rib">Rib</a> and <a
+href="https://haskell.org/">Haskell</a>. Hosted on <a
+href="https://github.com">GitHub</a> and served with <a
+href="https://netlify.com">Netlify</a>. Icons by Nhor, via <a
+href="https://thenounproject.com">The Noun Project</a>. <a
+href="https://www.buymeacoffee.com/vaIVQZH">Buy me a coffee</a> or
+support me <a href="https://liberapay.com/JonathanReeve/donate">via
+Libera Pay</a> or <a
+href="bitcoin:3Qvm1DwzFGk3L1Eb6yeg5Nbc6db8sZUnbK">Bitcoin</a>.</p></div><div class="column col-4"><div class="icons"><a href="http://github.com/JonathanReeve"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512" fill="#fafafa" width="3em" height="3em"><path d="M400 32H48C21.5 32 0 53.5 0 80v352c0 26.5 21.5 48 48
 48h352c26.5 0 48-21.5 48-48V80c0-26.5-21.5-48-48-48zM277.3 415.7c-8.4
 1.5-11.5-3.7-11.5-8 0-5.4.2-33 .2-55.3 0-15.6-5.2-25.5-11.3-30.7 37-4.1 76-9.2
 76-73.1 0-18.2-6.5-27.3-17.1-39 1.7-4.3 7.4-22-1.7-45-13.9-4.3-45.7 17.9-45.7

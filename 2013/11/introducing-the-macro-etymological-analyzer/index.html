@@ -1,5 +1,5 @@
 <html lang="en"><head><meta http-equiv="Content-Type" content="text/html; charset=utf-8"><title>Introducing the Macro-Etymological Analyzer
-</title><link rel="stylesheet" href="/assets/css/spectre.min.css"><link rel="stylesheet" href="//fonts.googleapis.com/css?family=Montserrat|Raleway"><link rel="stylesheet" href="//cdn.jsdelivr.net/gh/highlightjs/cdn-release@10.2.0/build/styles/default.min.css"><link rel="icon" href="/images/favicon.svg" sizes="any" type="image/svg+xml"><style type="text/css">
+</title><base href="/"><link rel="stylesheet" href="/assets/css/spectre.min.css"><link rel="stylesheet" href="//fonts.googleapis.com/css?family=Montserrat|Raleway"><link rel="stylesheet" href="//cdn.jsdelivr.net/gh/highlightjs/cdn-release@10.2.0/build/styles/default.min.css"><link rel="icon" href="/images/favicon.svg" sizes="any" type="image/svg+xml"><style type="text/css">
 
 @media screen and (min-width: 1200px)
 {
@@ -49,8 +49,8 @@ body.has-docked-nav #main-header
 #headerWrapper
 {
   background-color : #ffffff;
-  border-top       : solid 2px #494e8e;
-  border-bottom    : solid 2px #494e8e;
+  border-top       : 2px solid #494e8e;
+  border-bottom    : 2px solid #494e8e;
 }
 
 #headerWrapper header
@@ -273,36 +273,165 @@ table
 
 }
 
-/* Generated with Clay, http://fvisser.nl/clay */</style><style type="text/css">@page{margin: 3cm;}</style></head><body><div id="headerWrapper"><header class="navbar"><section class="navbar-section"><a class="navbar-brand" href="/">Jonathan Reeve: <span>Computational Literary Analysis</span></a></section><section class="navbar-section"><ul class="nav"><li class="nav-item"><a href="/">posts</a></li><li class="nav-item"><a href="/cv.html">cv</a></li><li class="nav-item"><a href="/tags/">tags</a></li><li class="nav-item"><a href="/feed.xml">feed</a></li></ul></section></header></div><div class="container"><h1>Introducing the Macro-Etymological Analyzer
-</h1><p>Posted 2013-11-01</p><article><p><strong>Note: this post refers to an older version of macro-etym, a text analysis tool <a href="https://github.com/JonathanReeve/macro-etym">which is now a CLI utility, here</a>.</strong></p>
-<p>Here’s a sneak preview of my latest project, <a href="http://jonreeve.com/etym">a macro-etymological textual analyzer web app</a>. It’s an abstract, complete with preliminary results, which I recently prepared to submit to <a href="http://dh2014.org/">DH2014</a>. Here’s a PDF file version: Abstract: Macro-Etymological Analyzer (237K PDF), and the full text of the abstract is below the cut.</p>
-<p>The English language has continually borrowed from foreign languages—close to 30% of modern English words are loanwords from French, and another 30% are borrowed from Latin. These words are often concentrated in semantic frames associated with their origin languages—legal vocabulary contains a preponderance of words of French origin, and the vocabulary of the natural sciences contains many words of Latin and Greek origin. The etymology of words in a text, therefore, may be suggestive of its context or its level of discourse. Should a writer choose the Latinate term “masticate” over the Anglo-Saxon term “chew,” for instance, one might assume a scientific context or a high level of discursive formality. By computing the proportion of origin languages for all the words of a given text, we may quantify stylistic properties that are potentially revealing about the text and its rhetorical modes.</p>
-<p>The Macro-Etymological Analyzer is a computer program that I wrote for this purpose. Written in PHP on a LAMP stack, it is a web app accessible at <a href="http://jonreeve.com/etym">http://jonreeve.com/etym</a>, and is freely available for all to use, modify, and distribute under the GPLv3. It accepts as input a user-uploaded text file, and looks up each word in Gerard de Melo’s Etymological Wordnet database. These words are then counted by language of origin using two generations of language ancestry, and then categorized by language family. The results are displayed as a pie chart made with the Google Data Visualization API, along with a CSV log file which can be used for comparative analyses. Currently, the program accepts only English texts, but the database supports queries from any source language, and plans are in place to make the program fully multilingual.</p>
-<p>Figure 1 shows the proportions of Latinate words—words descended from Latin or romance languages—for each of the 15 genres in the Brown Corpus. Learned texts and government documents show the highest proportions of Latinate words, whereas romance and adventure stories show the lowest. The same textual categories sorted by proportion of Hellenic words (words of ancient Greek origin) show changes in certain categories—religious language exhibits a higher rank, and that of mystery stories is ranked lower than in the Latinate scale. These data suggest that a high proportion of Hellenic words is correlated with religious language, among other genres, and that a high proportion of Latinate words is correlated with learned language. Once literary works are analyzed with this method, these hypothetical correlations become potentially useful as literary critical tools.</p>
+/* Generated with Clay, http://fvisser.nl/clay */</style><style type="text/css">@page{margin: 3cm;}</style></head><body><div id="headerWrapper"><header class="navbar"><section class="navbar-section"><a class="navbar-brand" href>Jonathan Reeve: <span>Computational Literary Analysis</span></a></section><section class="navbar-section"><ul class="nav"><li class="nav-item"><a href>posts</a></li><li class="nav-item"><a href="cv">cv</a></li><li class="nav-item"><a href="tags.html">tags</a></li><li class="nav-item"><a href="feed.xml">feed</a></li></ul></section></header></div><div class="container"><h1>Introducing the Macro-Etymological Analyzer
+</h1><article><p>Posted 2013-11-01</p><p><strong>Note: this post refers to an older version of macro-etym, a
+text analysis tool <a
+href="https://github.com/JonathanReeve/macro-etym">which is now a CLI
+utility, here</a>.</strong></p>
+<p>Here’s a sneak preview of my latest project, <a
+href="http://jonreeve.com/etym">a macro-etymological textual analyzer
+web app</a>. It’s an abstract, complete with preliminary results, which
+I recently prepared to submit to <a
+href="http://dh2014.org/">DH2014</a>. Here’s a PDF file version:
+Abstract: Macro-Etymological Analyzer (237K PDF), and the full text of
+the abstract is below the cut.</p>
+<p>The English language has continually borrowed from foreign
+languages—close to 30% of modern English words are loanwords from
+French, and another 30% are borrowed from Latin. These words are often
+concentrated in semantic frames associated with their origin
+languages—legal vocabulary contains a preponderance of words of French
+origin, and the vocabulary of the natural sciences contains many words
+of Latin and Greek origin. The etymology of words in a text, therefore,
+may be suggestive of its context or its level of discourse. Should a
+writer choose the Latinate term “masticate” over the Anglo-Saxon term
+“chew,” for instance, one might assume a scientific context or a high
+level of discursive formality. By computing the proportion of origin
+languages for all the words of a given text, we may quantify stylistic
+properties that are potentially revealing about the text and its
+rhetorical modes.</p>
+<p>The Macro-Etymological Analyzer is a computer program that I wrote
+for this purpose. Written in PHP on a LAMP stack, it is a web app
+accessible at <a
+href="http://jonreeve.com/etym">http://jonreeve.com/etym</a>, and is
+freely available for all to use, modify, and distribute under the GPLv3.
+It accepts as input a user-uploaded text file, and looks up each word in
+Gerard de Melo’s Etymological Wordnet database. These words are then
+counted by language of origin using two generations of language
+ancestry, and then categorized by language family. The results are
+displayed as a pie chart made with the Google Data Visualization API,
+along with a CSV log file which can be used for comparative analyses.
+Currently, the program accepts only English texts, but the database
+supports queries from any source language, and plans are in place to
+make the program fully multilingual.</p>
+<p>Figure 1 shows the proportions of Latinate words—words descended from
+Latin or romance languages—for each of the 15 genres in the Brown
+Corpus. Learned texts and government documents show the highest
+proportions of Latinate words, whereas romance and adventure stories
+show the lowest. The same textual categories sorted by proportion of
+Hellenic words (words of ancient Greek origin) show changes in certain
+categories—religious language exhibits a higher rank, and that of
+mystery stories is ranked lower than in the Latinate scale. These data
+suggest that a high proportion of Hellenic words is correlated with
+religious language, among other genres, and that a high proportion of
+Latinate words is correlated with learned language. Once literary works
+are analyzed with this method, these hypothetical correlations become
+potentially useful as literary critical tools.</p>
 <figure>
-<img src="../../../images/macro-etym/brown-latinate-with-sorted.jpg" alt="Figure 1: Brown Corpus Genres" /><figcaption aria-hidden="true">Figure 1: Brown Corpus Genres</figcaption>
+<img src="../../../images/macro-etym/brown-latinate-with-sorted.jpg"
+alt="Figure 1: Brown Corpus Genres" />
+<figcaption aria-hidden="true">Figure 1: Brown Corpus
+Genres</figcaption>
 </figure>
-<p>In one such analysis, the chapters of <em>A Portrait of the Artist as a Young Man</em> were run through the Macro-Etymological Analyzer. This novel, James Joyce’s Bildungsroman, is known for its style—one that mimics each progressive age of its protagonist Stephen Dedalus. Early chapters, when he is young, are written with infantile language; later chapters are written with more elevated language. The program’s results quantify this stylistic mode, to some degree—Chapters 1 and 2 show low proportions of Latinate words, whereas later chapters show higher proportions, as shown here in Figure 2. The fact that the proportion of Latinate words begins to plateau starting with Chapter 3 might be used to argue that Stephen has at this young age already reached a precocious maturity of vocabulary, which may reflect his study of Latin.</p>
+<p>In one such analysis, the chapters of <em>A Portrait of the Artist as
+a Young Man</em> were run through the Macro-Etymological Analyzer. This
+novel, James Joyce’s Bildungsroman, is known for its style—one that
+mimics each progressive age of its protagonist Stephen Dedalus. Early
+chapters, when he is young, are written with infantile language; later
+chapters are written with more elevated language. The program’s results
+quantify this stylistic mode, to some degree—Chapters 1 and 2 show low
+proportions of Latinate words, whereas later chapters show higher
+proportions, as shown here in Figure 2. The fact that the proportion of
+Latinate words begins to plateau starting with Chapter 3 might be used
+to argue that Stephen has at this young age already reached a precocious
+maturity of vocabulary, which may reflect his study of Latin.</p>
 <figure>
-<img src="../../../images/macro-etym/portrait-with.jpg" alt="A Portrait of the Artist as a Young Man" /><figcaption aria-hidden="true"><em>A Portrait of the Artist as a Young Man</em></figcaption>
+<img src="../../../images/macro-etym/portrait-with.jpg"
+alt="A Portrait of the Artist as a Young Man" />
+<figcaption aria-hidden="true"><em>A Portrait of the Artist as a Young
+Man</em></figcaption>
 </figure>
-<p>In another analysis, the extracted monologues of the seven narrators of Virginia Woolf’s novel <em>The Waves</em> were computed with this program. As shown in Figure 3, the two university-educated characters, Bernard and Neville, show the highest proportions of Latinate words, while the housewife Susan shows the lowest. In fact, the male characters rank higher for Latinate words than the female characters—this would be an interesting starting-point for a discussion of gender in <em>The Waves</em>, especially framed by Woolf’s much-discussed writings on gender politics.</p>
-<p>The Macro-Etymological Analyzer was also used to chart variations between editions of a text. The seven revisions of Whitman’s <em>Leaves of Grass</em> made available by the Whitman Archive were analyzed with this program. The results show a gradual increase in Latinate words from the 1855 edition to that of 1891-2. This might be used to argue that Whitman inflated his style with each revision, introduced foreign loanwords as he gained a more international reputation, or used a greater breadth of words as his vocabulary increased.</p>
+<p>In another analysis, the extracted monologues of the seven narrators
+of Virginia Woolf’s novel <em>The Waves</em> were computed with this
+program. As shown in Figure 3, the two university-educated characters,
+Bernard and Neville, show the highest proportions of Latinate words,
+while the housewife Susan shows the lowest. In fact, the male characters
+rank higher for Latinate words than the female characters—this would be
+an interesting starting-point for a discussion of gender in <em>The
+Waves</em>, especially framed by Woolf’s much-discussed writings on
+gender politics.</p>
+<p>The Macro-Etymological Analyzer was also used to chart variations
+between editions of a text. The seven revisions of Whitman’s <em>Leaves
+of Grass</em> made available by the Whitman Archive were analyzed with
+this program. The results show a gradual increase in Latinate words from
+the 1855 edition to that of 1891-2. This might be used to argue that
+Whitman inflated his style with each revision, introduced foreign
+loanwords as he gained a more international reputation, or used a
+greater breadth of words as his vocabulary increased.</p>
 <figure>
-<img src="../../../images/macro-etym/waves-with-screen.png" alt="The Waves Narrators" /><figcaption aria-hidden="true">The Waves Narrators</figcaption>
+<img src="../../../images/macro-etym/waves-with-screen.png"
+alt="The Waves Narrators" />
+<figcaption aria-hidden="true">The Waves Narrators</figcaption>
 </figure>
-<p>These experiments were not without their surprises, of course. An early test of selected books of the King James Bible seemed promising, as it revealed the gospels Matthew, Mark, Luke, and John to have much higher proportions of Hellenic words than other books (see Figure 4). Unlike the books of the Old Testament, which were mostly written in Hebrew, these books were translated from the Greek—a fact which might seem to explain the presence of Hellenic words. Upon closer examination, however, the program was discovered to be counting the etymology of frequently-mentioned names like “Jesus” among words of Hellenic origin, and it was these names that accounted for most of the Hellenic words. Although the language of the source text did not prove to be the determinant here, this discovery may yet be valuable for other reasons—the synoptic gospels of Matthew, Mark, and Luke show similar portions of Hellenic words, whereas that of John is 100% greater. This would seem to support the hypothesis that the synoptic gospels were adapted from a common source text, whereas that of John had an independent source.</p>
+<p>These experiments were not without their surprises, of course. An
+early test of selected books of the King James Bible seemed promising,
+as it revealed the gospels Matthew, Mark, Luke, and John to have much
+higher proportions of Hellenic words than other books (see Figure 4).
+Unlike the books of the Old Testament, which were mostly written in
+Hebrew, these books were translated from the Greek—a fact which might
+seem to explain the presence of Hellenic words. Upon closer examination,
+however, the program was discovered to be counting the etymology of
+frequently-mentioned names like “Jesus” among words of Hellenic origin,
+and it was these names that accounted for most of the Hellenic words.
+Although the language of the source text did not prove to be the
+determinant here, this discovery may yet be valuable for other
+reasons—the synoptic gospels of Matthew, Mark, and Luke show similar
+portions of Hellenic words, whereas that of John is 100% greater. This
+would seem to support the hypothesis that the synoptic gospels were
+adapted from a common source text, whereas that of John had an
+independent source.</p>
 <figure>
-<img src="../../../images/macro-etym/bible-kjv-with.jpg" alt="KJV Bible" /><figcaption aria-hidden="true">KJV Bible</figcaption>
+<img src="../../../images/macro-etym/bible-kjv-with.jpg"
+alt="KJV Bible" />
+<figcaption aria-hidden="true">KJV Bible</figcaption>
 </figure>
-<p>A number of other experiments were also conducted, and are described in this paper. Included among texts analyzed by the Macro-Etymological Analyzer were: selected Canterbury tales (in modern English translation), a series of early and late Henry James novels, a collection of Victorian novels compared with a collection of modernist novels, and groups of French and German novels in English translation. Questions to be explored include:</p>
+<p>A number of other experiments were also conducted, and are described
+in this paper. Included among texts analyzed by the Macro-Etymological
+Analyzer were: selected Canterbury tales (in modern English
+translation), a series of early and late Henry James novels, a
+collection of Victorian novels compared with a collection of modernist
+novels, and groups of French and German novels in English translation.
+Questions to be explored include:</p>
 <ul>
-<li>Do translated works show a larger-than-normal proportion of words with etymological origins in the language of the source text?</li>
-<li>Given a large enough data set, can linguistic trends (such as a general decrease in the use of Latinate words) be detected with this program? Can macro-historical events such as the Scientific Revolution be detected?</li>
-<li>Do male and female writers of the 19th century differ in the origin-types of words they use?</li>
-<li>Can the semantic frames in which these etymological groups of words are concentrated be explained historically, such as through the habits of the French-speaking English aristocracy in the era following the Norman Conquest?</li>
+<li>Do translated works show a larger-than-normal proportion of words
+with etymological origins in the language of the source text?</li>
+<li>Given a large enough data set, can linguistic trends (such as a
+general decrease in the use of Latinate words) be detected with this
+program? Can macro-historical events such as the Scientific Revolution
+be detected?</li>
+<li>Do male and female writers of the 19th century differ in the
+origin-types of words they use?</li>
+<li>Can the semantic frames in which these etymological groups of words
+are concentrated be explained historically, such as through the habits
+of the French-speaking English aristocracy in the era following the
+Norman Conquest?</li>
 </ul>
-<p>Finally, this paper will discuss how this new tool might contribute to the suite of computational stylistics tools already available, and how macro-etymology might constitute a new metric that could be used towards stylistic fingerprinting or authorial detection.</p></article><hr><p>I welcome your comments and annotations in the Hypothes.is sidebar to the right. →</p><script src="https://hypothes.is/embed.js"></script></div><footer><div class="container"><div class="columns"><div class="column col-8"><p>I believe in openness. This work is licensed under a <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/">Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International License</a>, unless otherwise stated. All content ©Jonathan Reeve 2020. Hand-coded with love, using exclusively free and open-source software, including <a href="https://github.com/srid/rib">Rib</a> and <a href="https://haskell.org/">Haskell</a>. Hosted on <a href="https://github.com">GitHub</a> and served with <a href="https://netlify.com">Netlify</a>. Icons by Nhor, via <a href="https://thenounproject.com">The Noun Project</a>. <a href="https://www.buymeacoffee.com/vaIVQZH">Buy me a coffee</a> or support me <a href="https://liberapay.com/JonathanReeve/donate">via Libera Pay</a> or <a href="bitcoin:3Qvm1DwzFGk3L1Eb6yeg5Nbc6db8sZUnbK">Bitcoin</a>.</p></div><div class="column col-4"><div class="icons"><a href="http://github.com/JonathanReeve"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512" fill="#fafafa" width="3em" height="3em"><path d="M400 32H48C21.5 32 0 53.5 0 80v352c0 26.5 21.5 48 48
+<p>Finally, this paper will discuss how this new tool might contribute
+to the suite of computational stylistics tools already available, and
+how macro-etymology might constitute a new metric that could be used
+towards stylistic fingerprinting or authorial detection.</p></article><hr><p>I welcome your comments and annotations in the Hypothes.is sidebar to the right. →</p><script src="https://hypothes.is/embed.js"></script></div><footer><div class="container"><div class="columns"><div class="column col-8"><p>I believe in openness. This work is licensed under a <a
+href="https://creativecommons.org/licenses/by-nc-sa/4.0/">Creative
+Commons Attribution-NonCommercial-ShareAlike 4.0 International
+License</a>, unless otherwise stated. All content ©Jonathan Reeve 2020.
+Hand-coded with love, using exclusively free and open-source software,
+including <a href="https://github.com/srid/rib">Rib</a> and <a
+href="https://haskell.org/">Haskell</a>. Hosted on <a
+href="https://github.com">GitHub</a> and served with <a
+href="https://netlify.com">Netlify</a>. Icons by Nhor, via <a
+href="https://thenounproject.com">The Noun Project</a>. <a
+href="https://www.buymeacoffee.com/vaIVQZH">Buy me a coffee</a> or
+support me <a href="https://liberapay.com/JonathanReeve/donate">via
+Libera Pay</a> or <a
+href="bitcoin:3Qvm1DwzFGk3L1Eb6yeg5Nbc6db8sZUnbK">Bitcoin</a>.</p></div><div class="column col-4"><div class="icons"><a href="http://github.com/JonathanReeve"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512" fill="#fafafa" width="3em" height="3em"><path d="M400 32H48C21.5 32 0 53.5 0 80v352c0 26.5 21.5 48 48
 48h352c26.5 0 48-21.5 48-48V80c0-26.5-21.5-48-48-48zM277.3 415.7c-8.4
 1.5-11.5-3.7-11.5-8 0-5.4.2-33 .2-55.3 0-15.6-5.2-25.5-11.3-30.7 37-4.1 76-9.2
 76-73.1 0-18.2-6.5-27.3-17.1-39 1.7-4.3 7.4-22-1.7-45-13.9-4.3-45.7 17.9-45.7

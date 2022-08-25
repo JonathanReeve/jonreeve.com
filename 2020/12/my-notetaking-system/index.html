@@ -1,5 +1,5 @@
 <html lang="en"><head><meta http-equiv="Content-Type" content="text/html; charset=utf-8"><title>My Notetaking System
-</title><link rel="stylesheet" href="/assets/css/spectre.min.css"><link rel="stylesheet" href="//fonts.googleapis.com/css?family=Montserrat|Raleway"><link rel="stylesheet" href="//cdn.jsdelivr.net/gh/highlightjs/cdn-release@10.2.0/build/styles/default.min.css"><link rel="icon" href="/images/favicon.svg" sizes="any" type="image/svg+xml"><style type="text/css">
+</title><base href="/"><link rel="stylesheet" href="/assets/css/spectre.min.css"><link rel="stylesheet" href="//fonts.googleapis.com/css?family=Montserrat|Raleway"><link rel="stylesheet" href="//cdn.jsdelivr.net/gh/highlightjs/cdn-release@10.2.0/build/styles/default.min.css"><link rel="icon" href="/images/favicon.svg" sizes="any" type="image/svg+xml"><style type="text/css">
 
 @media screen and (min-width: 1200px)
 {
@@ -49,8 +49,8 @@ body.has-docked-nav #main-header
 #headerWrapper
 {
   background-color : #ffffff;
-  border-top       : solid 2px #494e8e;
-  border-bottom    : solid 2px #494e8e;
+  border-top       : 2px solid #494e8e;
+  border-bottom    : 2px solid #494e8e;
 }
 
 #headerWrapper header
@@ -273,25 +273,109 @@ table
 
 }
 
-/* Generated with Clay, http://fvisser.nl/clay */</style><style type="text/css">@page{margin: 3cm;}</style></head><body><div id="headerWrapper"><header class="navbar"><section class="navbar-section"><a class="navbar-brand" href="/">Jonathan Reeve: <span>Computational Literary Analysis</span></a></section><section class="navbar-section"><ul class="nav"><li class="nav-item"><a href="/">posts</a></li><li class="nav-item"><a href="/cv.html">cv</a></li><li class="nav-item"><a href="/tags/">tags</a></li><li class="nav-item"><a href="/feed.xml">feed</a></li></ul></section></header></div><div class="container"><h1>My Notetaking System
-</h1><p>Posted 2020-12-23</p><article><p>Here’s what my notetaking system currently looks like:</p>
+/* Generated with Clay, http://fvisser.nl/clay */</style><style type="text/css">@page{margin: 3cm;}</style></head><body><div id="headerWrapper"><header class="navbar"><section class="navbar-section"><a class="navbar-brand" href>Jonathan Reeve: <span>Computational Literary Analysis</span></a></section><section class="navbar-section"><ul class="nav"><li class="nav-item"><a href>posts</a></li><li class="nav-item"><a href="cv">cv</a></li><li class="nav-item"><a href="tags.html">tags</a></li><li class="nav-item"><a href="feed.xml">feed</a></li></ul></section></header></div><div class="container"><h1>My Notetaking System
+</h1><article><p>Posted 2020-12-23</p><p>Here’s what my notetaking system currently looks like:</p>
 <figure>
-<img src="../../../images/notetaking/org-roam.png" alt="Network visualization of my notes, via Org-roam-server" /><figcaption aria-hidden="true">Network visualization of my notes, via Org-roam-server</figcaption>
+<img src="../../../images/notetaking/org-roam.png"
+alt="Network visualization of my notes, via Org-roam-server" />
+<figcaption aria-hidden="true">Network visualization of my notes, via
+Org-roam-server</figcaption>
 </figure>
-<p>And here’s how I got there. In my 10+ years as a graduate student, at three different institutions, I’ve tried so many notetaking systems. I started on paper, with <a href="https://en.wikipedia.org/wiki/Cornell_Notes">the Cornell Note methodology.</a>. Then, once I got a laptop, I moved to web-based utilities, like <a href="https://evernote.com/">Evernote</a>. After one of these, <a href="https://en.wikipedia.org/wiki/Springpad">Springpad</a>, bit the dust as a company, I realized I needed my own solution for notes that didn’t rely on an external web service. I quickly fell in love with <a href="https://en.wikipedia.org/wiki/Tomboy_(software)">Tomboy Notes</a>, which is like a superpowered Sticky Note system. The best feature of Tomboy, along with its later clone, <a href="https://en.wikipedia.org/wiki/Gnote">Gnote</a>, was that if you were writing one note, and happened to type the name of another note, it would automatically link to that other note. This meant you could have small, stickynote-sized notes and have them all relate to each other.</p>
-<p>This was amazingly empowering, because the notes I was taking were really all interconnected. Especially as a student of early 20th Century British literature: so many of the canonical figures of the field knew each other, published each other, and influenced each other. But Tomboy had its limitations, and really started to choke with a larger amount of notes, edits, and syncs with its server. Here again, I was in a similar situation as before: I had developed a huge note database in software that wasn’t totally reliable.</p>
-<p>So I switched to plain-text notes. There’s not much that can go wrong when you’re just editing a plain text file with a text editor. At that same time, I was also learning <a href="https://en.wikipedia.org/wiki/Vim_(text_editor)">Vim</a>, the modal text editor, and suddenly writing in any other program felt clunky and inefficient in comparison. So I moved all my notes into plain text. Then I discovered <a href="https://github.com/xolox/vim-notes">vim-notes</a>, the wonderful Tomboy-like system. But vim-notes used its own brand of markup, which wasn’t <em>quite</em> Markdown, and wasn’t quite any other format, either, which made export and compatibility with external programs a little unweildy. Around that time, I heard about <a href="https://en.wikipedia.org/wiki/Org-mode">Org-mode</a>.</p>
-<p>I say this without exaggeration: <em>org-mode is the best organizational software</em>. It’s a personal information manager, notetaking system, calendar, time tracker, and much more. There’s really nothing like it. If you’ve never heard of it, I’d recommend watching <a href="https://www.youtube.com/results?search_query=org+mode">one of the many introductory videos out there</a>. Org-mode was the reason I switched from Vim to Emacs (although I got to keep my familiar keybindings, via <a href="https://www.spacemacs.org/">Spacemacs</a> and eventually <a href="https://github.com/hlissner/doom-emacs">Doom Emacs</a>).</p>
-<p>Soon, I discovered that there are a lot of extensions to Org, and some of them help with academic notetaking. One of them, <a href="https://www.orgroam.com/">org-roam</a>, emulates <a href="https://en.wikipedia.org/wiki/Zettelkasten">Zettelkasten-style</a> notetaking programs like <a href="https://roamresearch.com/">Roam Research</a>. In short, it extends org-mode, by adding backlinks, tags, and search functionality to one’s collection of org notes. It’s a killer app, when considered as part of the greater Emacs ecosystem. The emacs package <a href="https://github.com/jkitchin/org-ref">Org-ref</a> handles bibliographic management. <a href="https://github.com/weirdNox/org-noter">Org-noter</a> handles annotating PDFs and ePUBs, and <a href="https://github.com/org-roam/org-roam-bibtex">Org-roam-bibtex</a> brings it all together. Then, <a href="https://github.com/org-roam/org-roam-server">Org-roam-server</a> generates a graph, visualizing the links between the notes.</p>
+<p>And here’s how I got there. In my 10+ years as a graduate student, at
+three different institutions, I’ve tried so many notetaking systems. I
+started on paper, with <a
+href="https://en.wikipedia.org/wiki/Cornell_Notes">the Cornell Note
+methodology.</a>. Then, once I got a laptop, I moved to web-based
+utilities, like <a href="https://evernote.com/">Evernote</a>. After one
+of these, <a
+href="https://en.wikipedia.org/wiki/Springpad">Springpad</a>, bit the
+dust as a company, I realized I needed my own solution for notes that
+didn’t rely on an external web service. I quickly fell in love with <a
+href="https://en.wikipedia.org/wiki/Tomboy_(software)">Tomboy Notes</a>,
+which is like a superpowered Sticky Note system. The best feature of
+Tomboy, along with its later clone, <a
+href="https://en.wikipedia.org/wiki/Gnote">Gnote</a>, was that if you
+were writing one note, and happened to type the name of another note, it
+would automatically link to that other note. This meant you could have
+small, stickynote-sized notes and have them all relate to each
+other.</p>
+<p>This was amazingly empowering, because the notes I was taking were
+really all interconnected. Especially as a student of early 20th Century
+British literature: so many of the canonical figures of the field knew
+each other, published each other, and influenced each other. But Tomboy
+had its limitations, and really started to choke with a larger amount of
+notes, edits, and syncs with its server. Here again, I was in a similar
+situation as before: I had developed a huge note database in software
+that wasn’t totally reliable.</p>
+<p>So I switched to plain-text notes. There’s not much that can go wrong
+when you’re just editing a plain text file with a text editor. At that
+same time, I was also learning <a
+href="https://en.wikipedia.org/wiki/Vim_(text_editor)">Vim</a>, the
+modal text editor, and suddenly writing in any other program felt clunky
+and inefficient in comparison. So I moved all my notes into plain text.
+Then I discovered <a
+href="https://github.com/xolox/vim-notes">vim-notes</a>, the wonderful
+Tomboy-like system. But vim-notes used its own brand of markup, which
+wasn’t <em>quite</em> Markdown, and wasn’t quite any other format,
+either, which made export and compatibility with external programs a
+little unweildy. Around that time, I heard about <a
+href="https://en.wikipedia.org/wiki/Org-mode">Org-mode</a>.</p>
+<p>I say this without exaggeration: <em>org-mode is the best
+organizational software</em>. It’s a personal information manager,
+notetaking system, calendar, time tracker, and much more. There’s really
+nothing like it. If you’ve never heard of it, I’d recommend watching <a
+href="https://www.youtube.com/results?search_query=org+mode">one of the
+many introductory videos out there</a>. Org-mode was the reason I
+switched from Vim to Emacs (although I got to keep my familiar
+keybindings, via <a href="https://www.spacemacs.org/">Spacemacs</a> and
+eventually <a href="https://github.com/hlissner/doom-emacs">Doom
+Emacs</a>).</p>
+<p>Soon, I discovered that there are a lot of extensions to Org, and
+some of them help with academic notetaking. One of them, <a
+href="https://www.orgroam.com/">org-roam</a>, emulates <a
+href="https://en.wikipedia.org/wiki/Zettelkasten">Zettelkasten-style</a>
+notetaking programs like <a href="https://roamresearch.com/">Roam
+Research</a>. In short, it extends org-mode, by adding backlinks, tags,
+and search functionality to one’s collection of org notes. It’s a killer
+app, when considered as part of the greater Emacs ecosystem. The emacs
+package <a href="https://github.com/jkitchin/org-ref">Org-ref</a>
+handles bibliographic management. <a
+href="https://github.com/weirdNox/org-noter">Org-noter</a> handles
+annotating PDFs and ePUBs, and <a
+href="https://github.com/org-roam/org-roam-bibtex">Org-roam-bibtex</a>
+brings it all together. Then, <a
+href="https://github.com/org-roam/org-roam-server">Org-roam-server</a>
+generates a graph, visualizing the links between the notes.</p>
 <p>With this system, I’m able to get this workflow:</p>
 <ol>
-<li>Find a paper I want to annotate, somewhere online. Copy its DOI or Arxiv id.</li>
-<li>Run org-ref’s <code>doi-insert-bibtex</code> to automatically grab its bibtex and insert it into my bibliography. Or run <code>arxiv-get-pdf-add-bibtex-entry</code> to add its bibtex <em>and</em> get its PDF all in one step.</li>
-<li>Run <code>org-ref-open-bibtex-notes</code> to automatically generate a new note file from the bibtex entry.</li>
-<li>Open the associated PDF, now downloaded and renamed in my <code>papers</code> directory, with org-noter.</li>
-<li>Cite the paper in formal writing, using <code>helm-bibtex</code>. This then automatically adds it to the bibliography of the paper I’m writing.</li>
+<li>Find a paper I want to annotate, somewhere online. Copy its DOI or
+Arxiv id.</li>
+<li>Run org-ref’s <code>doi-insert-bibtex</code> to automatically grab
+its bibtex and insert it into my bibliography. Or run
+<code>arxiv-get-pdf-add-bibtex-entry</code> to add its bibtex
+<em>and</em> get its PDF all in one step.</li>
+<li>Run <code>org-ref-open-bibtex-notes</code> to automatically generate
+a new note file from the bibtex entry.</li>
+<li>Open the associated PDF, now downloaded and renamed in my
+<code>papers</code> directory, with org-noter.</li>
+<li>Cite the paper in formal writing, using <code>helm-bibtex</code>.
+This then automatically adds it to the bibliography of the paper I’m
+writing.</li>
 </ol>
-<p>See also part II in this series: Notetaking in Semantic Triples.</p></article><hr><p>I welcome your comments and annotations in the Hypothes.is sidebar to the right. →</p><script src="https://hypothes.is/embed.js"></script></div><footer><div class="container"><div class="columns"><div class="column col-8"><p>I believe in openness. This work is licensed under a <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/">Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International License</a>, unless otherwise stated. All content ©Jonathan Reeve 2020. Hand-coded with love, using exclusively free and open-source software, including <a href="https://github.com/srid/rib">Rib</a> and <a href="https://haskell.org/">Haskell</a>. Hosted on <a href="https://github.com">GitHub</a> and served with <a href="https://netlify.com">Netlify</a>. Icons by Nhor, via <a href="https://thenounproject.com">The Noun Project</a>. <a href="https://www.buymeacoffee.com/vaIVQZH">Buy me a coffee</a> or support me <a href="https://liberapay.com/JonathanReeve/donate">via Libera Pay</a> or <a href="bitcoin:3Qvm1DwzFGk3L1Eb6yeg5Nbc6db8sZUnbK">Bitcoin</a>.</p></div><div class="column col-4"><div class="icons"><a href="http://github.com/JonathanReeve"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512" fill="#fafafa" width="3em" height="3em"><path d="M400 32H48C21.5 32 0 53.5 0 80v352c0 26.5 21.5 48 48
+<p>See also part II in this series: Notetaking in Semantic Triples.</p></article><hr><p>I welcome your comments and annotations in the Hypothes.is sidebar to the right. →</p><script src="https://hypothes.is/embed.js"></script></div><footer><div class="container"><div class="columns"><div class="column col-8"><p>I believe in openness. This work is licensed under a <a
+href="https://creativecommons.org/licenses/by-nc-sa/4.0/">Creative
+Commons Attribution-NonCommercial-ShareAlike 4.0 International
+License</a>, unless otherwise stated. All content ©Jonathan Reeve 2020.
+Hand-coded with love, using exclusively free and open-source software,
+including <a href="https://github.com/srid/rib">Rib</a> and <a
+href="https://haskell.org/">Haskell</a>. Hosted on <a
+href="https://github.com">GitHub</a> and served with <a
+href="https://netlify.com">Netlify</a>. Icons by Nhor, via <a
+href="https://thenounproject.com">The Noun Project</a>. <a
+href="https://www.buymeacoffee.com/vaIVQZH">Buy me a coffee</a> or
+support me <a href="https://liberapay.com/JonathanReeve/donate">via
+Libera Pay</a> or <a
+href="bitcoin:3Qvm1DwzFGk3L1Eb6yeg5Nbc6db8sZUnbK">Bitcoin</a>.</p></div><div class="column col-4"><div class="icons"><a href="http://github.com/JonathanReeve"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512" fill="#fafafa" width="3em" height="3em"><path d="M400 32H48C21.5 32 0 53.5 0 80v352c0 26.5 21.5 48 48
 48h352c26.5 0 48-21.5 48-48V80c0-26.5-21.5-48-48-48zM277.3 415.7c-8.4
 1.5-11.5-3.7-11.5-8 0-5.4.2-33 .2-55.3 0-15.6-5.2-25.5-11.3-30.7 37-4.1 76-9.2
 76-73.1 0-18.2-6.5-27.3-17.1-39 1.7-4.3 7.4-22-1.7-45-13.9-4.3-45.7 17.9-45.7

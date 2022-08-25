@@ -1,5 +1,5 @@
 <html lang="en"><head><meta http-equiv="Content-Type" content="text/html; charset=utf-8"><title>Notes on My Online Teaching Methodology
-</title><link rel="stylesheet" href="/assets/css/spectre.min.css"><link rel="stylesheet" href="//fonts.googleapis.com/css?family=Montserrat|Raleway"><link rel="stylesheet" href="//cdn.jsdelivr.net/gh/highlightjs/cdn-release@10.2.0/build/styles/default.min.css"><link rel="icon" href="/images/favicon.svg" sizes="any" type="image/svg+xml"><style type="text/css">
+</title><base href="/"><link rel="stylesheet" href="/assets/css/spectre.min.css"><link rel="stylesheet" href="//fonts.googleapis.com/css?family=Montserrat|Raleway"><link rel="stylesheet" href="//cdn.jsdelivr.net/gh/highlightjs/cdn-release@10.2.0/build/styles/default.min.css"><link rel="icon" href="/images/favicon.svg" sizes="any" type="image/svg+xml"><style type="text/css">
 
 @media screen and (min-width: 1200px)
 {
@@ -49,8 +49,8 @@ body.has-docked-nav #main-header
 #headerWrapper
 {
   background-color : #ffffff;
-  border-top       : solid 2px #494e8e;
-  border-bottom    : solid 2px #494e8e;
+  border-top       : 2px solid #494e8e;
+  border-bottom    : 2px solid #494e8e;
 }
 
 #headerWrapper header
@@ -273,32 +273,147 @@ table
 
 }
 
-/* Generated with Clay, http://fvisser.nl/clay */</style><style type="text/css">@page{margin: 3cm;}</style></head><body><div id="headerWrapper"><header class="navbar"><section class="navbar-section"><a class="navbar-brand" href="/">Jonathan Reeve: <span>Computational Literary Analysis</span></a></section><section class="navbar-section"><ul class="nav"><li class="nav-item"><a href="/">posts</a></li><li class="nav-item"><a href="/cv.html">cv</a></li><li class="nav-item"><a href="/tags/">tags</a></li><li class="nav-item"><a href="/feed.xml">feed</a></li></ul></section></header></div><div class="container"><h1>Notes on My Online Teaching Methodology
-</h1><p>Posted 2020-09-08</p><article><p>I’ve had a lot of questions lately about my online teaching methods lately, so I thought I’d share my rationale behind them. The course I’m currently teaching, <a href="http://icla2020b.jonreeve.com">Introduction to Computational Literary Analysis</a>, in the Department of English and Comparative Literature at Columbia University, has a unique technological stack:</p>
+/* Generated with Clay, http://fvisser.nl/clay */</style><style type="text/css">@page{margin: 3cm;}</style></head><body><div id="headerWrapper"><header class="navbar"><section class="navbar-section"><a class="navbar-brand" href>Jonathan Reeve: <span>Computational Literary Analysis</span></a></section><section class="navbar-section"><ul class="nav"><li class="nav-item"><a href>posts</a></li><li class="nav-item"><a href="cv">cv</a></li><li class="nav-item"><a href="tags.html">tags</a></li><li class="nav-item"><a href="feed.xml">feed</a></li></ul></section></header></div><div class="container"><h1>Notes on My Online Teaching Methodology
+</h1><article><p>Posted 2020-09-08</p><p>I’ve had a lot of questions lately about my online teaching methods
+lately, so I thought I’d share my rationale behind them. The course I’m
+currently teaching, <a href="http://icla2020b.jonreeve.com">Introduction
+to Computational Literary Analysis</a>, in the Department of English and
+Comparative Literature at Columbia University, has a unique
+technological stack:</p>
 <ul>
-<li>A <a href="http://icla2020b.jonreeve">course website</a>. It’s built using <a href="https://www.haskell.org/">Haskell</a> and the static site generator <a href="https://rib.srid.ca/">Rib</a>, and styled with <a href="https://edwardtufte.github.io/tufte-css/">Tufte.css</a>, the CSS framework based on design concepts from <a href="https://en.wikipedia.org/wiki/Edward_Tufte">Edward Tufte</a></li>
-<li>A <a href="https://icla2020.jonreeve.com/texts/moonstone.html">course readings platform</a> made with Hypothes.is, open-source web annotation software</li>
-<li>A course communications system made with <a href="https://zulipchat.com/">Zulip, the open-source, threaded, text-based chat platform</a></li>
+<li>A <a href="http://icla2020b.jonreeve">course website</a>. It’s built
+using <a href="https://www.haskell.org/">Haskell</a> and the static site
+generator <a href="https://rib.srid.ca/">Rib</a>, and styled with <a
+href="https://edwardtufte.github.io/tufte-css/">Tufte.css</a>, the CSS
+framework based on design concepts from <a
+href="https://en.wikipedia.org/wiki/Edward_Tufte">Edward Tufte</a></li>
+<li>A <a
+href="https://icla2020.jonreeve.com/texts/moonstone.html">course
+readings platform</a> made with Hypothes.is, open-source web annotation
+software</li>
+<li>A course communications system made with <a
+href="https://zulipchat.com/">Zulip, the open-source, threaded,
+text-based chat platform</a></li>
 </ul>
 <h2 id="why-use-hypothesis">Why use Hypothesis?</h2>
-<p>As literary scholars, we talk about texts. We are often engaged in what one might call marginalia: writing, about another text, with reference to a very specific, page- or line-level passage of that text. Very rarely does this kind of writing actually take place in the margins of books, any more, but it recalls a time when conversations would happen in the margins. In the days when books were expensive, luxury items that were passed around among a coterie of friends, this would happen more often. But as books became cheaper, and were loaned around less frequently, conversational annotation became more of a rarity. Furthermore, the recent shift to digital textual media made this even harder: without electronic margins, and electronic pens to write in them, we have had difficulty recreating the experience of social annotation. Our writing has become increasingly divorced from the writing it discusses, and it has become less social, and more solitary.</p>
+<p>As literary scholars, we talk about texts. We are often engaged in
+what one might call marginalia: writing, about another text, with
+reference to a very specific, page- or line-level passage of that text.
+Very rarely does this kind of writing actually take place in the margins
+of books, any more, but it recalls a time when conversations would
+happen in the margins. In the days when books were expensive, luxury
+items that were passed around among a coterie of friends, this would
+happen more often. But as books became cheaper, and were loaned around
+less frequently, conversational annotation became more of a rarity.
+Furthermore, the recent shift to digital textual media made this even
+harder: without electronic margins, and electronic pens to write in
+them, we have had difficulty recreating the experience of social
+annotation. Our writing has become increasingly divorced from the
+writing it discusses, and it has become less social, and more
+solitary.</p>
 <figure>
-<img src="../../../images/teaching-online/frankenstein.jpg" alt="Mary Shelley’s Annotated Frankenstein, via the Morgan Library" /><figcaption aria-hidden="true">Mary Shelley’s Annotated <em>Frankenstein</em>, via the Morgan Library</figcaption>
+<img src="../../../images/teaching-online/frankenstein.jpg"
+alt="Mary Shelley’s Annotated Frankenstein, via the Morgan Library" />
+<figcaption aria-hidden="true">Mary Shelley’s Annotated
+<em>Frankenstein</em>, via the Morgan Library</figcaption>
 </figure>
-<p>This is where Web 2.0 technology comes in. Whereas Web 1.0 was static—you could read pages but not interact with them—Web 2.0 was dynamic: website visitors could interact with the pages, changing their content. Virtual “bulletin boards,” as the old metaphor went, became possible, and with them, virtual margins.</p>
-<p><a href="https://web.hypothes.is/">Hypothes.is</a> is an open-source web annotation platform, designed to do just this. It allows for highlighting, commenting, and discussing a text, in the margins of the text itself. It is already in wide use for annotating news articles, scientific journal articles, and more, but its ideal use case, in my opinion, is for literary texts.</p>
+<p>This is where Web 2.0 technology comes in. Whereas Web 1.0 was
+static—you could read pages but not interact with them—Web 2.0 was
+dynamic: website visitors could interact with the pages, changing their
+content. Virtual “bulletin boards,” as the old metaphor went, became
+possible, and with them, virtual margins.</p>
+<p><a href="https://web.hypothes.is/">Hypothes.is</a> is an open-source
+web annotation platform, designed to do just this. It allows for
+highlighting, commenting, and discussing a text, in the margins of the
+text itself. It is already in wide use for annotating news articles,
+scientific journal articles, and more, but its ideal use case, in my
+opinion, is for literary texts.</p>
 <figure>
-<img src="../../../images/teaching-online/hypothesis.png" alt="Hypothes.is-annotated edition of The Moonstone, one of our course texts." /><figcaption aria-hidden="true">Hypothes.is-annotated edition of <em>The Moonstone</em>, one of our course texts.</figcaption>
+<img src="../../../images/teaching-online/hypothesis.png"
+alt="Hypothes.is-annotated edition of The Moonstone, one of our course texts." />
+<figcaption aria-hidden="true">Hypothes.is-annotated edition of <em>The
+Moonstone</em>, one of our course texts.</figcaption>
 </figure>
 <h2 id="why-zulip">Why Zulip?</h2>
-<p>Again, as literary scholars, teaching in literature classrooms, we talk about text. It only makes sense that we do that using text. Zulip is an open-source text-based chat service, akin to services like Slack, but open-source, and with a few added features, like threading. Threading allows for a non-linear, asynchronous way of sorting discussions by topic. It allows you to join a past discussion that has since moved on to a new topic, and to change the topic without derailing a previous conversation. This does the work, technologically, of a intructor/facilitator, whose labor consists so much of discussion moderating. “Let’s go back to that earlier point,” and “let’s not forget X” are common refrains in a classroom that shoehorns the multiple timelines of students’ thoughts into one linear narrative.</p>
+<p>Again, as literary scholars, teaching in literature classrooms, we
+talk about text. It only makes sense that we do that using text. Zulip
+is an open-source text-based chat service, akin to services like Slack,
+but open-source, and with a few added features, like threading.
+Threading allows for a non-linear, asynchronous way of sorting
+discussions by topic. It allows you to join a past discussion that has
+since moved on to a new topic, and to change the topic without derailing
+a previous conversation. This does the work, technologically, of a
+intructor/facilitator, whose labor consists so much of discussion
+moderating. “Let’s go back to that earlier point,” and “let’s not forget
+X” are common refrains in a classroom that shoehorns the multiple
+timelines of students’ thoughts into one linear narrative.</p>
 <h2 id="why-not-just-use-zoom">Why not just use Zoom?</h2>
-<p>Too often, we accept technological services as the necessary background of our lives, without considering their social and economic consequences. We want them to just work, and get out of the way, so that we can do our jobs. However, for literary critics, that is highly paradoxical–and hypocritical, even—since we are so conscious of the social implications of other phenomena. This is to say, if we write an article about latent colonial ideologies in Jane Austen’s <em>Persuasion</em>, but we do it in Microsoft Word, on a laptop running MacOS, which we bought on Amazon, there are economic implications for what we are doing, materially, that are analagous to what we criticize in our article. We’ve voted with our dollars in favor of giant corporations, to the detriment of community-based alternatives.</p>
-<p>Economics aside, there are serious ethical issues behind using proprietary software instead of open-source software. To borrow <a href="https://switching.software/articles/free-libre-open-software/">an analogy from switching.software</a>, using proprietary software is like eating a slice of cake at a diner: we can’t be sure what the ingredients really are, and we just have to trust that it’s going to be what we expect. Using open-source software, however, is more like eating a piece of homemade cake: we know the recipe, we trust the ingredients, and we can reproduce it ourselves, if we want. We can even modify the recipe to our liking, and make it better.</p>
-<p>Now, we can’t make conscious choices for everything in our lives. That would be exhausting. But some choices are easy to make, and software choices are among those. After the pandemic hit, we all swarmed to Zoom without stopping to consider whether it’s a good idea. Our universities and libraries gave the for-profit Zoom corporation millions of dollars, and its stock price skyrocketed. Meanwhile, we have largely ignored the endless stream of articles that have reported on Zoom-related security problems, the cultural phenomenon of “Zoombombing,” and more.</p>
-<p>In my course, I largely replace videoconferencing with text-based conferencing on Zulip. But for the times when we want to meet using video, I use <a href="https://meet.jit.si">Jitsi</a>, an open-source alternative that’s simpler, nicer, and more ethical.</p>
+<p>Too often, we accept technological services as the necessary
+background of our lives, without considering their social and economic
+consequences. We want them to just work, and get out of the way, so that
+we can do our jobs. However, for literary critics, that is highly
+paradoxical–and hypocritical, even—since we are so conscious of the
+social implications of other phenomena. This is to say, if we write an
+article about latent colonial ideologies in Jane Austen’s
+<em>Persuasion</em>, but we do it in Microsoft Word, on a laptop running
+MacOS, which we bought on Amazon, there are economic implications for
+what we are doing, materially, that are analagous to what we criticize
+in our article. We’ve voted with our dollars in favor of giant
+corporations, to the detriment of community-based alternatives.</p>
+<p>Economics aside, there are serious ethical issues behind using
+proprietary software instead of open-source software. To borrow <a
+href="https://switching.software/articles/free-libre-open-software/">an
+analogy from switching.software</a>, using proprietary software is like
+eating a slice of cake at a diner: we can’t be sure what the ingredients
+really are, and we just have to trust that it’s going to be what we
+expect. Using open-source software, however, is more like eating a piece
+of homemade cake: we know the recipe, we trust the ingredients, and we
+can reproduce it ourselves, if we want. We can even modify the recipe to
+our liking, and make it better.</p>
+<p>Now, we can’t make conscious choices for everything in our lives.
+That would be exhausting. But some choices are easy to make, and
+software choices are among those. After the pandemic hit, we all swarmed
+to Zoom without stopping to consider whether it’s a good idea. Our
+universities and libraries gave the for-profit Zoom corporation millions
+of dollars, and its stock price skyrocketed. Meanwhile, we have largely
+ignored the endless stream of articles that have reported on
+Zoom-related security problems, the cultural phenomenon of
+“Zoombombing,” and more.</p>
+<p>In my course, I largely replace videoconferencing with text-based
+conferencing on Zulip. But for the times when we want to meet using
+video, I use <a href="https://meet.jit.si">Jitsi</a>, an open-source
+alternative that’s simpler, nicer, and more ethical.</p>
 <h2 id="why-host-videos-on-peertube">Why host videos on PeerTube?</h2>
-<p>University-based video hosting, like ours at Columbia, locks course videos behind a firewall, where they can only be accessed by other students within the university. This seems like it would be bad for the future life of the lectures: if students leave the university, for instance, and want to revisit the course material, they might no longer have access. The big video hosts, like YouTube, are even worse for course materials, since they’re ad-based. I won’t have my students watch ads just to get to my course material. So I opted to post my videos to <a href="https://us.tv">us.tv</a>, a PeerTube instance. <a href="https://joinpeertube.org/">PeerTube</a> is an ad-free, open-source, decentralized video hosting federation, where instances that follow one another share videos between them, using a Bittorrent-like protocol. My lecture videos are thus accessible across a wide variety of servers. This is important when we consider the potential that students might be calling in from countries with censored or restricted Internet: if one server has been blocked, the videos are still accessible on others that follow it.</p></article><hr><p>I welcome your comments and annotations in the Hypothes.is sidebar to the right. →</p><script src="https://hypothes.is/embed.js"></script></div><footer><div class="container"><div class="columns"><div class="column col-8"><p>I believe in openness. This work is licensed under a <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/">Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International License</a>, unless otherwise stated. All content ©Jonathan Reeve 2020. Hand-coded with love, using exclusively free and open-source software, including <a href="https://github.com/srid/rib">Rib</a> and <a href="https://haskell.org/">Haskell</a>. Hosted on <a href="https://github.com">GitHub</a> and served with <a href="https://netlify.com">Netlify</a>. Icons by Nhor, via <a href="https://thenounproject.com">The Noun Project</a>. <a href="https://www.buymeacoffee.com/vaIVQZH">Buy me a coffee</a> or support me <a href="https://liberapay.com/JonathanReeve/donate">via Libera Pay</a> or <a href="bitcoin:3Qvm1DwzFGk3L1Eb6yeg5Nbc6db8sZUnbK">Bitcoin</a>.</p></div><div class="column col-4"><div class="icons"><a href="http://github.com/JonathanReeve"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512" fill="#fafafa" width="3em" height="3em"><path d="M400 32H48C21.5 32 0 53.5 0 80v352c0 26.5 21.5 48 48
+<p>University-based video hosting, like ours at Columbia, locks course
+videos behind a firewall, where they can only be accessed by other
+students within the university. This seems like it would be bad for the
+future life of the lectures: if students leave the university, for
+instance, and want to revisit the course material, they might no longer
+have access. The big video hosts, like YouTube, are even worse for
+course materials, since they’re ad-based. I won’t have my students watch
+ads just to get to my course material. So I opted to post my videos to
+<a href="https://us.tv">us.tv</a>, a PeerTube instance. <a
+href="https://joinpeertube.org/">PeerTube</a> is an ad-free,
+open-source, decentralized video hosting federation, where instances
+that follow one another share videos between them, using a
+Bittorrent-like protocol. My lecture videos are thus accessible across a
+wide variety of servers. This is important when we consider the
+potential that students might be calling in from countries with censored
+or restricted Internet: if one server has been blocked, the videos are
+still accessible on others that follow it.</p></article><hr><p>I welcome your comments and annotations in the Hypothes.is sidebar to the right. →</p><script src="https://hypothes.is/embed.js"></script></div><footer><div class="container"><div class="columns"><div class="column col-8"><p>I believe in openness. This work is licensed under a <a
+href="https://creativecommons.org/licenses/by-nc-sa/4.0/">Creative
+Commons Attribution-NonCommercial-ShareAlike 4.0 International
+License</a>, unless otherwise stated. All content ©Jonathan Reeve 2020.
+Hand-coded with love, using exclusively free and open-source software,
+including <a href="https://github.com/srid/rib">Rib</a> and <a
+href="https://haskell.org/">Haskell</a>. Hosted on <a
+href="https://github.com">GitHub</a> and served with <a
+href="https://netlify.com">Netlify</a>. Icons by Nhor, via <a
+href="https://thenounproject.com">The Noun Project</a>. <a
+href="https://www.buymeacoffee.com/vaIVQZH">Buy me a coffee</a> or
+support me <a href="https://liberapay.com/JonathanReeve/donate">via
+Libera Pay</a> or <a
+href="bitcoin:3Qvm1DwzFGk3L1Eb6yeg5Nbc6db8sZUnbK">Bitcoin</a>.</p></div><div class="column col-4"><div class="icons"><a href="http://github.com/JonathanReeve"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512" fill="#fafafa" width="3em" height="3em"><path d="M400 32H48C21.5 32 0 53.5 0 80v352c0 26.5 21.5 48 48
 48h352c26.5 0 48-21.5 48-48V80c0-26.5-21.5-48-48-48zM277.3 415.7c-8.4
 1.5-11.5-3.7-11.5-8 0-5.4.2-33 .2-55.3 0-15.6-5.2-25.5-11.3-30.7 37-4.1 76-9.2
 76-73.1 0-18.2-6.5-27.3-17.1-39 1.7-4.3 7.4-22-1.7-45-13.9-4.3-45.7 17.9-45.7

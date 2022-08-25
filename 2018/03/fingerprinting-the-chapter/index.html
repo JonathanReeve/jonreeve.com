@@ -1,5 +1,5 @@
 <html lang="en"><head><meta http-equiv="Content-Type" content="text/html; charset=utf-8"><title>Fingerprinting the Chapter
-</title><link rel="stylesheet" href="/assets/css/spectre.min.css"><link rel="stylesheet" href="//fonts.googleapis.com/css?family=Montserrat|Raleway"><link rel="stylesheet" href="//cdn.jsdelivr.net/gh/highlightjs/cdn-release@10.2.0/build/styles/default.min.css"><link rel="icon" href="/images/favicon.svg" sizes="any" type="image/svg+xml"><style type="text/css">
+</title><base href="/"><link rel="stylesheet" href="/assets/css/spectre.min.css"><link rel="stylesheet" href="//fonts.googleapis.com/css?family=Montserrat|Raleway"><link rel="stylesheet" href="//cdn.jsdelivr.net/gh/highlightjs/cdn-release@10.2.0/build/styles/default.min.css"><link rel="icon" href="/images/favicon.svg" sizes="any" type="image/svg+xml"><style type="text/css">
 
 @media screen and (min-width: 1200px)
 {
@@ -49,8 +49,8 @@ body.has-docked-nav #main-header
 #headerWrapper
 {
   background-color : #ffffff;
-  border-top       : solid 2px #494e8e;
-  border-bottom    : solid 2px #494e8e;
+  border-top       : 2px solid #494e8e;
+  border-bottom    : 2px solid #494e8e;
 }
 
 #headerWrapper header
@@ -273,46 +273,163 @@ table
 
 }
 
-/* Generated with Clay, http://fvisser.nl/clay */</style><style type="text/css">@page{margin: 3cm;}</style></head><body><div id="headerWrapper"><header class="navbar"><section class="navbar-section"><a class="navbar-brand" href="/">Jonathan Reeve: <span>Computational Literary Analysis</span></a></section><section class="navbar-section"><ul class="nav"><li class="nav-item"><a href="/">posts</a></li><li class="nav-item"><a href="/cv.html">cv</a></li><li class="nav-item"><a href="/tags/">tags</a></li><li class="nav-item"><a href="/feed.xml">feed</a></li></ul></section></header></div><div class="container"><h1>Fingerprinting the Chapter
-</h1><p>Posted 2018-03-07</p><article><p>What is a chapter, really? Inspired by Nicholas Dames’s work on the history of the chapter (<a href="https://www.newyorker.com/books/page-turner/chapter-history">some of which appeared in the <em>New Yorker</em> a few years ago as “The Chapter: A History”</a>), I’ve started investigating this question. We all have an intuition about chapters—how long they should be, their temporal scope, what they generally contain. Most of us, if given a paragraph chosen at random from a novel, could probably tell whether it began a chapter, ended a chapter, or fell somewhere in between. Yet could we say why? Could we explain our intuition to a computer? Sure, if we read a line like “and they rode off into the setting sun” we might guess that it belongs to the end of a chapter. But is the presence of a setting sun a distinguishing criterion for the end of a chapter? Do chapters usually represent a single day in narrative time? I decided to compute the linguistic fingerprint of the chapter, to get closer to understanding what it is.</p>
-<p>First, I gathered as many novels as I could. <a href="http://corpus-db.org">Corpus-DB</a>, the <a href="http://jonreeve.com/2017/06/project-gutenberg-the-database/">textual corpus database I’ve been developing</a>, makes it easy to get large numbers of plain text files that match certain categories. At the moment it contains all 50,000 or so texts from Project Gutenberg, and metadata about these books gathered from Wikipedia and other sources. Using this database, I was easily able to assemble corpora of several thousand chaptered novels. I then broke these novels into chapters using two methods. The first, using my tool <a href="https://github.com/JonathanReeve/chapterize">chapterize</a>, reads the plain text files of the novels, looks for markers like “Chapter I” using regular expressions, and divides the novels accordingly. The second leverages hidden metadata in Project Gutenberg HTML files. If you take <a href="https://github.com/GITenberg/Pride-and-Prejudice_1342/blob/master/1342-h/1342-h.htm">a peek at the source code of a Project Gutenberg HTML file</a>, you’ll see named anchors that look like <code class="verbatim">&lt;a name</code>"c2" id=“c2”&gt;=. These IDs correspond to the chapter numbers—in this case, Chapter 2. By counting the number of words of text that occur between these markers, we can measure the chapter lengths of thousands of novels at a time. And by extracting the text that begins and ends these chapters, we can find language patterns that define a chapter’s boundaries. Here are some trends I found.</p>
+/* Generated with Clay, http://fvisser.nl/clay */</style><style type="text/css">@page{margin: 3cm;}</style></head><body><div id="headerWrapper"><header class="navbar"><section class="navbar-section"><a class="navbar-brand" href>Jonathan Reeve: <span>Computational Literary Analysis</span></a></section><section class="navbar-section"><ul class="nav"><li class="nav-item"><a href>posts</a></li><li class="nav-item"><a href="cv">cv</a></li><li class="nav-item"><a href="tags.html">tags</a></li><li class="nav-item"><a href="feed.xml">feed</a></li></ul></section></header></div><div class="container"><h1>Fingerprinting the Chapter
+</h1><article><p>Posted 2018-03-07</p><p>What is a chapter, really? Inspired by Nicholas Dames’s work on the
+history of the chapter (<a
+href="https://www.newyorker.com/books/page-turner/chapter-history">some
+of which appeared in the <em>New Yorker</em> a few years ago as “The
+Chapter: A History”</a>), I’ve started investigating this question. We
+all have an intuition about chapters—how long they should be, their
+temporal scope, what they generally contain. Most of us, if given a
+paragraph chosen at random from a novel, could probably tell whether it
+began a chapter, ended a chapter, or fell somewhere in between. Yet
+could we say why? Could we explain our intuition to a computer? Sure, if
+we read a line like “and they rode off into the setting sun” we might
+guess that it belongs to the end of a chapter. But is the presence of a
+setting sun a distinguishing criterion for the end of a chapter? Do
+chapters usually represent a single day in narrative time? I decided to
+compute the linguistic fingerprint of the chapter, to get closer to
+understanding what it is.</p>
+<p>First, I gathered as many novels as I could. <a
+href="http://corpus-db.org">Corpus-DB</a>, the <a
+href="http://jonreeve.com/2017/06/project-gutenberg-the-database/">textual
+corpus database I’ve been developing</a>, makes it easy to get large
+numbers of plain text files that match certain categories. At the moment
+it contains all 50,000 or so texts from Project Gutenberg, and metadata
+about these books gathered from Wikipedia and other sources. Using this
+database, I was easily able to assemble corpora of several thousand
+chaptered novels. I then broke these novels into chapters using two
+methods. The first, using my tool <a
+href="https://github.com/JonathanReeve/chapterize">chapterize</a>, reads
+the plain text files of the novels, looks for markers like “Chapter I”
+using regular expressions, and divides the novels accordingly. The
+second leverages hidden metadata in Project Gutenberg HTML files. If you
+take <a
+href="https://github.com/GITenberg/Pride-and-Prejudice_1342/blob/master/1342-h/1342-h.htm">a
+peek at the source code of a Project Gutenberg HTML file</a>, you’ll see
+named anchors that look like <code
+class="verbatim">&lt;a name</code>"c2" id=“c2”&gt;=. These IDs
+correspond to the chapter numbers—in this case, Chapter 2. By counting
+the number of words of text that occur between these markers, we can
+measure the chapter lengths of thousands of novels at a time. And by
+extracting the text that begins and ends these chapters, we can find
+language patterns that define a chapter’s boundaries. Here are some
+trends I found.</p>
 <h1 id="chapter-statistics">Chapter Statistics</h1>
-<p>Figure 1 shows the average number of chapters, the average text length, and the average chapter length for prose fiction works written by authors who were born in the decades shown. There is an amazing range of dates here, indicating the presence of some decidedly non-novelistic classical literature. (Project Gutenberg doesn’t maintain metadata about its texts’ original publication dates, but they do have author birth/death years, strangely, so I’m forced to use those as a proxy. This is a problem I’m trying to correct with Corpus-DB, but my solution isn’t quite ready yet.) This seems to show that by around the 19th Century, chapters are about the same length. They get a little shorter around the 20th Century, and are extreme and erratic before 1700, but I attribute this to the relative paucity of early (pre-1700) and late (post-1920) texts in the corpus, owing to factors like textual availability, canonicity, and copyright restrictions. It appears that novels have been getting shorter, however, and so there are also fewer chapters.</p>
+<p>Figure 1 shows the average number of chapters, the average text
+length, and the average chapter length for prose fiction works written
+by authors who were born in the decades shown. There is an amazing range
+of dates here, indicating the presence of some decidedly non-novelistic
+classical literature. (Project Gutenberg doesn’t maintain metadata about
+its texts’ original publication dates, but they do have author
+birth/death years, strangely, so I’m forced to use those as a proxy.
+This is a problem I’m trying to correct with Corpus-DB, but my solution
+isn’t quite ready yet.) This seems to show that by around the 19th
+Century, chapters are about the same length. They get a little shorter
+around the 20th Century, and are extreme and erratic before 1700, but I
+attribute this to the relative paucity of early (pre-1700) and late
+(post-1920) texts in the corpus, owing to factors like textual
+availability, canonicity, and copyright restrictions. It appears that
+novels have been getting shorter, however, and so there are also fewer
+chapters.</p>
 <figure>
-<img src="../../../images/chapters/chap-stats-by-author-dob.png" alt="Figure 1: Chapter statistics by author date of birth" /><figcaption aria-hidden="true">Figure 1: Chapter statistics by author date of birth</figcaption>
+<img src="../../../images/chapters/chap-stats-by-author-dob.png"
+alt="Figure 1: Chapter statistics by author date of birth" />
+<figcaption aria-hidden="true">Figure 1: Chapter statistics by author
+date of birth</figcaption>
 </figure>
-<p>Figure 2 shows the average number of chapters per novel, sorted by the novel’s Library of Congress subject headings. Subjects with the most number of chapters are on the left, and subjects with the least are on the right. There are a few things of note here:</p>
+<p>Figure 2 shows the average number of chapters per novel, sorted by
+the novel’s Library of Congress subject headings. Subjects with the most
+number of chapters are on the left, and subjects with the least are on
+the right. There are a few things of note here:</p>
 <ol>
-<li>The subject with the highest average is 19th Century English fiction, followed by Bildungsromans. Are Bildungsromans so long and chapter-filled because they have to represent the life of a person, rather than just one or two episodes in that person’s life?</li>
-<li>“Young men – fiction” is ranked slightly higher than “young women – fiction.”</li>
-<li>Civil war novels are ranked higher here than WWI novels. Is this a function of era (20th vs. 19th C), geography, or the nature of the wars themselves?</li>
+<li>The subject with the highest average is 19th Century English
+fiction, followed by Bildungsromans. Are Bildungsromans so long and
+chapter-filled because they have to represent the life of a person,
+rather than just one or two episodes in that person’s life?</li>
+<li>“Young men – fiction” is ranked slightly higher than “young women –
+fiction.”</li>
+<li>Civil war novels are ranked higher here than WWI novels. Is this a
+function of era (20th vs. 19th C), geography, or the nature of the wars
+themselves?</li>
 </ol>
-<p>Of course, there are many more things that can be said about this chart. Please feel free to chime in, in the comments below!</p>
+<p>Of course, there are many more things that can be said about this
+chart. Please feel free to chime in, in the comments below!</p>
 <figure>
-<img src="../../../images/chapters/numchaps-by-lcsh.png" alt="Figure 2: Average number of chapters by Library of Congress subject heading" /><figcaption aria-hidden="true">Figure 2: Average number of chapters by Library of Congress subject heading</figcaption>
+<img src="../../../images/chapters/numchaps-by-lcsh.png"
+alt="Figure 2: Average number of chapters by Library of Congress subject heading" />
+<figcaption aria-hidden="true">Figure 2: Average number of chapters by
+Library of Congress subject heading</figcaption>
 </figure>
-<h1 id="language-patterns-of-the-chapter">Language Patterns of the Chapter</h1>
-<p>For the next experiment, I extracted the first paragraphs of each chapter from a few thousand novels, as well as middle paragraphs and final paragraphs. From there, I calculated TF-IDF scores for each word. TF-IDF just represents word frequencies, adjusted for the frequencies of those words in the corpus. In this case, it represents term distinctiveness to a paragraph group: how frequently a term occurs in first paragraph of a chapter, for instance, compared with how frequently it occurs in other paragraph categories. Here are the words distinctive of the first paragraphs of chapters:</p>
+<h1 id="language-patterns-of-the-chapter">Language Patterns of the
+Chapter</h1>
+<p>For the next experiment, I extracted the first paragraphs of each
+chapter from a few thousand novels, as well as middle paragraphs and
+final paragraphs. From there, I calculated TF-IDF scores for each word.
+TF-IDF just represents word frequencies, adjusted for the frequencies of
+those words in the corpus. In this case, it represents term
+distinctiveness to a paragraph group: how frequently a term occurs in
+first paragraph of a chapter, for instance, compared with how frequently
+it occurs in other paragraph categories. Here are the words distinctive
+of the first paragraphs of chapters:</p>
 <blockquote>
-<p>morning, early, breakfast, afternoon, summer, autumn, winter, sunday, weather, october, arrival, june, september, saturday, awoke, situated, november, july, season, december</p>
+<p>morning, early, breakfast, afternoon, summer, autumn, winter, sunday,
+weather, october, arrival, june, september, saturday, awoke, situated,
+november, july, season, december</p>
 </blockquote>
-<p>It seems that the first paragraphs of chapters set the scene: the season, the month, and the time of day (usually the morning). Just for fun, I computed the relative mentions of certain months from this small sample, and found that my intuition was correct: spring is over-represented in the beginnings of chapters, and winter is under-represented, with May as the most mentioned month, and January the least, as shown in Figure 3.</p>
+<p>It seems that the first paragraphs of chapters set the scene: the
+season, the month, and the time of day (usually the morning). Just for
+fun, I computed the relative mentions of certain months from this small
+sample, and found that my intuition was correct: spring is
+over-represented in the beginnings of chapters, and winter is
+under-represented, with May as the most mentioned month, and January the
+least, as shown in Figure 3.</p>
 <figure>
-<img src="../../../images/chapters/months.png" alt="Figure 3: Months mentioned in the first paragraphs of chapters" /><figcaption aria-hidden="true">Figure 3: Months mentioned in the first paragraphs of chapters</figcaption>
+<img src="../../../images/chapters/months.png"
+alt="Figure 3: Months mentioned in the first paragraphs of chapters" />
+<figcaption aria-hidden="true">Figure 3: Months mentioned in the first
+paragraphs of chapters</figcaption>
 </figure>
 <p>Here are the words distinctive of middle paragraphs:</p>
 <blockquote>
-<p>replied, isn, ve, retorted, aren, hasn, mustn, shouldn, dey, inquired, doesn, haven, ye, wid, fer, wi, em, yer, protested, nothin</p>
+<p>replied, isn, ve, retorted, aren, hasn, mustn, shouldn, dey,
+inquired, doesn, haven, ye, wid, fer, wi, em, yer, protested, nothin</p>
 </blockquote>
-<p>Some of these irregularities are attributable to the tokenizer, which is breaking up contractions in the wrong places, but others are dialect words. This seems to show that dialect—funny-spelled words—is not something that usually starts or ends a chapter. In Dickens, for instance, dialect is usually heard from characters intended to provide some kind of comic relief. These comic characters rarely have a narratorial role, it seems, and rarely bookend chapters.</p>
+<p>Some of these irregularities are attributable to the tokenizer, which
+is breaking up contractions in the wrong places, but others are dialect
+words. This seems to show that dialect—funny-spelled words—is not
+something that usually starts or ends a chapter. In Dickens, for
+instance, dialect is usually heard from characters intended to provide
+some kind of comic relief. These comic characters rarely have a
+narratorial role, it seems, and rarely bookend chapters.</p>
 <p>Finally, here are the words distinctive of last paragraphs:</p>
 <blockquote>
-<p>pg, kissed, farewell, bye, muttered, parted, disappeared, sank, page, asleep, strode, chapter, kiss, withdrew, homeward, sobbing, thanked, wept, murmured, prayed</p>
+<p>pg, kissed, farewell, bye, muttered, parted, disappeared, sank, page,
+asleep, strode, chapter, kiss, withdrew, homeward, sobbing, thanked,
+wept, murmured, prayed</p>
 </blockquote>
-<p>There is a remarkably sad tone here in “sobbing,” “wept,” and “prayed.” Lots of goodbyes are happening here, as well. “Pg” and “page,” seem to be OCR artifacts, but is “chapter” a computing error, or the narrative voice, signaling the end of the chapter?</p>
+<p>There is a remarkably sad tone here in “sobbing,” “wept,” and
+“prayed.” Lots of goodbyes are happening here, as well. “Pg” and “page,”
+seem to be OCR artifacts, but is “chapter” a computing error, or the
+narrative voice, signaling the end of the chapter?</p>
 <p>What do you think defines a chapter? Let me know in the comments.</p>
 <h1 id="code">Code</h1>
-<p>The code used to generate all this is in <a href="https://github.com/JonathanReeve/chapter-experiments">my GitHub repo called chapter-experiments</a>.</p></article><hr><p>I welcome your comments and annotations in the Hypothes.is sidebar to the right. →</p><script src="https://hypothes.is/embed.js"></script></div><footer><div class="container"><div class="columns"><div class="column col-8"><p>I believe in openness. This work is licensed under a <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/">Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International License</a>, unless otherwise stated. All content ©Jonathan Reeve 2020. Hand-coded with love, using exclusively free and open-source software, including <a href="https://github.com/srid/rib">Rib</a> and <a href="https://haskell.org/">Haskell</a>. Hosted on <a href="https://github.com">GitHub</a> and served with <a href="https://netlify.com">Netlify</a>. Icons by Nhor, via <a href="https://thenounproject.com">The Noun Project</a>. <a href="https://www.buymeacoffee.com/vaIVQZH">Buy me a coffee</a> or support me <a href="https://liberapay.com/JonathanReeve/donate">via Libera Pay</a> or <a href="bitcoin:3Qvm1DwzFGk3L1Eb6yeg5Nbc6db8sZUnbK">Bitcoin</a>.</p></div><div class="column col-4"><div class="icons"><a href="http://github.com/JonathanReeve"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512" fill="#fafafa" width="3em" height="3em"><path d="M400 32H48C21.5 32 0 53.5 0 80v352c0 26.5 21.5 48 48
+<p>The code used to generate all this is in <a
+href="https://github.com/JonathanReeve/chapter-experiments">my GitHub
+repo called chapter-experiments</a>.</p></article><hr><p>I welcome your comments and annotations in the Hypothes.is sidebar to the right. →</p><script src="https://hypothes.is/embed.js"></script></div><footer><div class="container"><div class="columns"><div class="column col-8"><p>I believe in openness. This work is licensed under a <a
+href="https://creativecommons.org/licenses/by-nc-sa/4.0/">Creative
+Commons Attribution-NonCommercial-ShareAlike 4.0 International
+License</a>, unless otherwise stated. All content ©Jonathan Reeve 2020.
+Hand-coded with love, using exclusively free and open-source software,
+including <a href="https://github.com/srid/rib">Rib</a> and <a
+href="https://haskell.org/">Haskell</a>. Hosted on <a
+href="https://github.com">GitHub</a> and served with <a
+href="https://netlify.com">Netlify</a>. Icons by Nhor, via <a
+href="https://thenounproject.com">The Noun Project</a>. <a
+href="https://www.buymeacoffee.com/vaIVQZH">Buy me a coffee</a> or
+support me <a href="https://liberapay.com/JonathanReeve/donate">via
+Libera Pay</a> or <a
+href="bitcoin:3Qvm1DwzFGk3L1Eb6yeg5Nbc6db8sZUnbK">Bitcoin</a>.</p></div><div class="column col-4"><div class="icons"><a href="http://github.com/JonathanReeve"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512" fill="#fafafa" width="3em" height="3em"><path d="M400 32H48C21.5 32 0 53.5 0 80v352c0 26.5 21.5 48 48
 48h352c26.5 0 48-21.5 48-48V80c0-26.5-21.5-48-48-48zM277.3 415.7c-8.4
 1.5-11.5-3.7-11.5-8 0-5.4.2-33 .2-55.3 0-15.6-5.2-25.5-11.3-30.7 37-4.1 76-9.2
 76-73.1 0-18.2-6.5-27.3-17.1-39 1.7-4.3 7.4-22-1.7-45-13.9-4.3-45.7 17.9-45.7

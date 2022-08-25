@@ -1,5 +1,5 @@
 <html lang="en"><head><meta http-equiv="Content-Type" content="text/html; charset=utf-8"><title>Hacking at the Open Syllabus Project: Collocations by Subject
-</title><link rel="stylesheet" href="/assets/css/spectre.min.css"><link rel="stylesheet" href="//fonts.googleapis.com/css?family=Montserrat|Raleway"><link rel="stylesheet" href="//cdn.jsdelivr.net/gh/highlightjs/cdn-release@10.2.0/build/styles/default.min.css"><link rel="icon" href="/images/favicon.svg" sizes="any" type="image/svg+xml"><style type="text/css">
+</title><base href="/"><link rel="stylesheet" href="/assets/css/spectre.min.css"><link rel="stylesheet" href="//fonts.googleapis.com/css?family=Montserrat|Raleway"><link rel="stylesheet" href="//cdn.jsdelivr.net/gh/highlightjs/cdn-release@10.2.0/build/styles/default.min.css"><link rel="icon" href="/images/favicon.svg" sizes="any" type="image/svg+xml"><style type="text/css">
 
 @media screen and (min-width: 1200px)
 {
@@ -49,8 +49,8 @@ body.has-docked-nav #main-header
 #headerWrapper
 {
   background-color : #ffffff;
-  border-top       : solid 2px #494e8e;
-  border-bottom    : solid 2px #494e8e;
+  border-top       : 2px solid #494e8e;
+  border-bottom    : 2px solid #494e8e;
 }
 
 #headerWrapper header
@@ -273,47 +273,142 @@ table
 
 }
 
-/* Generated with Clay, http://fvisser.nl/clay */</style><style type="text/css">@page{margin: 3cm;}</style></head><body><div id="headerWrapper"><header class="navbar"><section class="navbar-section"><a class="navbar-brand" href="/">Jonathan Reeve: <span>Computational Literary Analysis</span></a></section><section class="navbar-section"><ul class="nav"><li class="nav-item"><a href="/">posts</a></li><li class="nav-item"><a href="/cv.html">cv</a></li><li class="nav-item"><a href="/tags/">tags</a></li><li class="nav-item"><a href="/feed.xml">feed</a></li></ul></section></header></div><div class="container"><h1>Hacking at the Open Syllabus Project: Collocations by Subject
-</h1><p>Posted 2014-06-09</p><article><p>I was invited to hack around on the <a href="http://opensyllabusproject.org/">Open Syllabus project</a> this past Saturday, which I was really excited to do. They’ve scraped the web and come up with around 1.5 million syllabi, and only just released their API to researchers this weekend. I wanted to run some computational analyses on these syllabi, to attempt questions like:</p>
+/* Generated with Clay, http://fvisser.nl/clay */</style><style type="text/css">@page{margin: 3cm;}</style></head><body><div id="headerWrapper"><header class="navbar"><section class="navbar-section"><a class="navbar-brand" href>Jonathan Reeve: <span>Computational Literary Analysis</span></a></section><section class="navbar-section"><ul class="nav"><li class="nav-item"><a href>posts</a></li><li class="nav-item"><a href="cv">cv</a></li><li class="nav-item"><a href="tags.html">tags</a></li><li class="nav-item"><a href="feed.xml">feed</a></li></ul></section></header></div><div class="container"><h1>Hacking at the Open Syllabus Project: Collocations by Subject
+</h1><article><p>Posted 2014-06-09</p><p>I was invited to hack around on the <a
+href="http://opensyllabusproject.org/">Open Syllabus project</a> this
+past Saturday, which I was really excited to do. They’ve scraped the web
+and come up with around 1.5 million syllabi, and only just released
+their API to researchers this weekend. I wanted to run some
+computational analyses on these syllabi, to attempt questions like:</p>
 <ul>
-<li>What were the most frequently assigned texts in freshman composition courses?</li>
-<li>What disciplines exhibit the most variance between their syllabi? That’s to say, which subjects have the most similar syllabi, and which have the most divergent?</li>
+<li>What were the most frequently assigned texts in freshman composition
+courses?</li>
+<li>What disciplines exhibit the most variance between their syllabi?
+That’s to say, which subjects have the most similar syllabi, and which
+have the most divergent?</li>
 <li>What disciplines have the longest syllabi?</li>
-<li>In which disciplines do technological marker words like “blog” or “Twitter” appear most frequently?</li>
+<li>In which disciplines do technological marker words like “blog” or
+“Twitter” appear most frequently?</li>
 </ul>
-<p>To start with, I used a JSON file containing a subset of these syllabi–around 1000, and tagged them by subject, using their first lines and filenames as hints. (<a href="https://github.com/JonathanReeve/opensyllabus/blob/master/nltk_experiments/syl-data.py">See the quick and dirty code here</a>.) I then imported another 600 subject-tagged syllabi from <a href="https://github.com/grahamsack">Graham Sack</a>’s corpus, resulting in a subject-tagged corpus of around 1,300 syllabi. From there, I sorted the results by subject and ran it through <a href="http://www.nltk.org">NLTK</a> to find collocations–words that frequently occur next to each other.</p>
-<p>There were some interesting findings. Some were predictable, like “mineral resources” for Geology, “corale room” for Music, or “Homeric Hymn” for Mythology. Others were revealing about required texts frequently assigned for these subjects—Michel Foucault is likely frequently assigned in Sociology courses, “Beyond Good” suggests that Nietzsche’s <em>Beyond Good and Evil</em> is required reading in Philosophy courses, and the truncated “nhead Wilson” suggests that Twain’s tragedy—although here with a mistaken word boundary—makes a frequent appearance in Literature courses.</p>
-<p>Some of the collocations are a little surprising, however. It’s a little surprising that “Hebrew Bible” appears as the highest-rated collocation in Literature syllabi. It’s even more surprising that “Gospel According” appears in Political Science syllabi. (Then again, since many of these syllbi come from Emory University, these may be features consistent with a Bible Belt institution.)</p>
-<p>There are some stylistic features that deserve note here, too. Syllabi in the natural sciences exhibit the most use of ALL CAPS by a wide margin. Could it be that scientists have less exposure to the style manuals—those so loved by humanists—that discourage this style? Or is it possible that there is something about the exacting nature of the hard sciences that demands this kind of emphasis?</p>
-<p>Chemistry syllabi featured some of these all caps collocations, and also featured the highest proportions of bigrams characteristic of course policy paragraphs: “make sure,” “honor code,” “usual penalty,” and “found guilty.” What is it about Chemistry as a discipline, I feel like asking, that makes it so strict in its policies? This could, of course, be an instance of a department-wide requirement for all syllabi to include a paragraph of boilerplate course policy text (this was a requirement for the composition courses I taught at CUNY).</p>
-<p>Faced with these preliminary results, here are a few questions I ended up asking, with some hints as to their answers:</p>
+<p>To start with, I used a JSON file containing a subset of these
+syllabi–around 1000, and tagged them by subject, using their first lines
+and filenames as hints. (<a
+href="https://github.com/JonathanReeve/opensyllabus/blob/master/nltk_experiments/syl-data.py">See
+the quick and dirty code here</a>.) I then imported another 600
+subject-tagged syllabi from <a
+href="https://github.com/grahamsack">Graham Sack</a>’s corpus, resulting
+in a subject-tagged corpus of around 1,300 syllabi. From there, I sorted
+the results by subject and ran it through <a
+href="http://www.nltk.org">NLTK</a> to find collocations–words that
+frequently occur next to each other.</p>
+<p>There were some interesting findings. Some were predictable, like
+“mineral resources” for Geology, “corale room” for Music, or “Homeric
+Hymn” for Mythology. Others were revealing about required texts
+frequently assigned for these subjects—Michel Foucault is likely
+frequently assigned in Sociology courses, “Beyond Good” suggests that
+Nietzsche’s <em>Beyond Good and Evil</em> is required reading in
+Philosophy courses, and the truncated “nhead Wilson” suggests that
+Twain’s tragedy—although here with a mistaken word boundary—makes a
+frequent appearance in Literature courses.</p>
+<p>Some of the collocations are a little surprising, however. It’s a
+little surprising that “Hebrew Bible” appears as the highest-rated
+collocation in Literature syllabi. It’s even more surprising that
+“Gospel According” appears in Political Science syllabi. (Then again,
+since many of these syllbi come from Emory University, these may be
+features consistent with a Bible Belt institution.)</p>
+<p>There are some stylistic features that deserve note here, too.
+Syllabi in the natural sciences exhibit the most use of ALL CAPS by a
+wide margin. Could it be that scientists have less exposure to the style
+manuals—those so loved by humanists—that discourage this style? Or is it
+possible that there is something about the exacting nature of the hard
+sciences that demands this kind of emphasis?</p>
+<p>Chemistry syllabi featured some of these all caps collocations, and
+also featured the highest proportions of bigrams characteristic of
+course policy paragraphs: “make sure,” “honor code,” “usual penalty,”
+and “found guilty.” What is it about Chemistry as a discipline, I feel
+like asking, that makes it so strict in its policies? This could, of
+course, be an instance of a department-wide requirement for all syllabi
+to include a paragraph of boilerplate course policy text (this was a
+requirement for the composition courses I taught at CUNY).</p>
+<p>Faced with these preliminary results, here are a few questions I
+ended up asking, with some hints as to their answers:</p>
 <ul>
-<li>Which disciplines care the most about dress code? Physical Education and Music.</li>
-<li>Which language course is the most concerned with grammatical accuracy? German.</li>
-<li>What is the most-mentioned historical period in (this small subset of) history courses? The Civil Rights Era.</li>
-<li>What discipline is concerned the most with weather? Geology. (Owing, probably, to class field trips.)</li>
+<li>Which disciplines care the most about dress code? Physical Education
+and Music.</li>
+<li>Which language course is the most concerned with grammatical
+accuracy? German.</li>
+<li>What is the most-mentioned historical period in (this small subset
+of) history courses? The Civil Rights Era.</li>
+<li>What discipline is concerned the most with weather? Geology. (Owing,
+probably, to class field trips.)</li>
 </ul>
-<p>Of course, since this data set is so severely limited, and since this analysis was so haphazard, none of these answers may be considered even halfway accurate. Still, I achieved an even more important goal in this process—to generate more questions.</p>
-<p>You can read the original output of the command <a href="https://drive.google.com/?authuser=0#folders/0B7WRJQdqro24eHgxVXA2YUdlM1U">here in the shared Google Drive folder we used</a>, run the script yourself from <a href="https://github.com/JonathanReeve/opensyllabus/tree/master/nltk_experiments">the code on github</a>, or check out this heavily-curated selection of the findings, organized by subject:</p>
-<p><strong>Astronomy</strong>: astronomers know; investigating nature; natural sciences; ultimate fate.</p>
-<p><strong>Biology</strong>: LAB EXAM; Cellular respiration; procedures outlined; FINAL EXAMINATION; SPRING BREAK.</p>
-<p><strong>Chemistry</strong>: Honor Code; Honor Code.; liberal arts; College Honor; Make sure; honor code; academic honesty; HONOR CODE; highest standards; usual penalty; found guilty.</p>
-<p><strong>Computer science</strong>: selected material; new StringBuffer; UNIX operating; constructor call.</p>
-<p><strong>English</strong>: Rhetorical Analyses; unauthorized information.</p>
-<p><strong>Film Studies</strong>: reserve Screening; Citizen Kane; Experimental Film; Francis Ford; Jean-Luc Godard; Maltese Falcon; Orson Welles; Royal Tenenbaums.</p>
-<p><strong>Geology</strong>: SPRING BREAK; scientific method; unsure whether; Mineral Resources.</p>
+<p>Of course, since this data set is so severely limited, and since this
+analysis was so haphazard, none of these answers may be considered even
+halfway accurate. Still, I achieved an even more important goal in this
+process—to generate more questions.</p>
+<p>You can read the original output of the command <a
+href="https://drive.google.com/?authuser=0#folders/0B7WRJQdqro24eHgxVXA2YUdlM1U">here
+in the shared Google Drive folder we used</a>, run the script yourself
+from <a
+href="https://github.com/JonathanReeve/opensyllabus/tree/master/nltk_experiments">the
+code on github</a>, or check out this heavily-curated selection of the
+findings, organized by subject:</p>
+<p><strong>Astronomy</strong>: astronomers know; investigating nature;
+natural sciences; ultimate fate.</p>
+<p><strong>Biology</strong>: LAB EXAM; Cellular respiration; procedures
+outlined; FINAL EXAMINATION; SPRING BREAK.</p>
+<p><strong>Chemistry</strong>: Honor Code; Honor Code.; liberal arts;
+College Honor; Make sure; honor code; academic honesty; HONOR CODE;
+highest standards; usual penalty; found guilty.</p>
+<p><strong>Computer science</strong>: selected material; new
+StringBuffer; UNIX operating; constructor call.</p>
+<p><strong>English</strong>: Rhetorical Analyses; unauthorized
+information.</p>
+<p><strong>Film Studies</strong>: reserve Screening; Citizen Kane;
+Experimental Film; Francis Ford; Jean-Luc Godard; Maltese Falcon; Orson
+Welles; Royal Tenenbaums.</p>
+<p><strong>Geology</strong>: SPRING BREAK; scientific method; unsure
+whether; Mineral Resources.</p>
 <p><strong>German</strong>: grammatical accuracy.</p>
-<p><strong>Hist</strong>: Civil Rights; World War; Luther King; Martin Luther; National Historic; University Press; Black Folk; Field Trip.</p>
-<p><strong>Literature</strong>: Hebrew Bible; Invisible Man; Kingsblood Royal; Black Folk; nhead Wilson; online lectures; Frederick Douglass; Human Stain; exegetical paper;</p>
-<p><strong>Music</strong>: aesthetic sense; Chorale Room; Old Church; Black dress; Chamber Ensemble;</p>
-<p><strong>Mythology</strong>: Classical Mythology; Homeric Hymn; Friedrich Nietzsche; Irrational Hero; Roman Appropriation; Sigmund Freud; Using Madness;</p>
-<p><strong>Philosophy</strong>: Nicomachean Ethics; Beyond Good; Categorical Syllogisms; Ordinary Language;</p>
-<p><strong>Physical Education</strong>: medical condition; body composition; dressed appropriately; include vigorous; full participation; physical fitness; Skill Test; Tai Chi;</p>
-<p><strong>Policial science</strong>: University Press; New York; Conflict Resolution; Communist Manifesto; Second Treatise; Gospel According</p>
-<p><strong>Psychology</strong>: Think Critically; mental processes; critical thinking; Psychological Disorders; Human Development; theoretical perspectives; system; appropriate documentation.</p>
-<p><strong>Public Relations</strong>: well organized; rewrite opportunities; Case Study; Social Media; Personal brand;</p>
-<p><strong>Religion</strong>: Native American; site visit; Reflective Analysis;</p>
-<p><strong>Sociology</strong>: Michel Foucault</p></article><hr><p>I welcome your comments and annotations in the Hypothes.is sidebar to the right. →</p><script src="https://hypothes.is/embed.js"></script></div><footer><div class="container"><div class="columns"><div class="column col-8"><p>I believe in openness. This work is licensed under a <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/">Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International License</a>, unless otherwise stated. All content ©Jonathan Reeve 2020. Hand-coded with love, using exclusively free and open-source software, including <a href="https://github.com/srid/rib">Rib</a> and <a href="https://haskell.org/">Haskell</a>. Hosted on <a href="https://github.com">GitHub</a> and served with <a href="https://netlify.com">Netlify</a>. Icons by Nhor, via <a href="https://thenounproject.com">The Noun Project</a>. <a href="https://www.buymeacoffee.com/vaIVQZH">Buy me a coffee</a> or support me <a href="https://liberapay.com/JonathanReeve/donate">via Libera Pay</a> or <a href="bitcoin:3Qvm1DwzFGk3L1Eb6yeg5Nbc6db8sZUnbK">Bitcoin</a>.</p></div><div class="column col-4"><div class="icons"><a href="http://github.com/JonathanReeve"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512" fill="#fafafa" width="3em" height="3em"><path d="M400 32H48C21.5 32 0 53.5 0 80v352c0 26.5 21.5 48 48
+<p><strong>Hist</strong>: Civil Rights; World War; Luther King; Martin
+Luther; National Historic; University Press; Black Folk; Field Trip.</p>
+<p><strong>Literature</strong>: Hebrew Bible; Invisible Man; Kingsblood
+Royal; Black Folk; nhead Wilson; online lectures; Frederick Douglass;
+Human Stain; exegetical paper;</p>
+<p><strong>Music</strong>: aesthetic sense; Chorale Room; Old Church;
+Black dress; Chamber Ensemble;</p>
+<p><strong>Mythology</strong>: Classical Mythology; Homeric Hymn;
+Friedrich Nietzsche; Irrational Hero; Roman Appropriation; Sigmund
+Freud; Using Madness;</p>
+<p><strong>Philosophy</strong>: Nicomachean Ethics; Beyond Good;
+Categorical Syllogisms; Ordinary Language;</p>
+<p><strong>Physical Education</strong>: medical condition; body
+composition; dressed appropriately; include vigorous; full
+participation; physical fitness; Skill Test; Tai Chi;</p>
+<p><strong>Policial science</strong>: University Press; New York;
+Conflict Resolution; Communist Manifesto; Second Treatise; Gospel
+According</p>
+<p><strong>Psychology</strong>: Think Critically; mental processes;
+critical thinking; Psychological Disorders; Human Development;
+theoretical perspectives; system; appropriate documentation.</p>
+<p><strong>Public Relations</strong>: well organized; rewrite
+opportunities; Case Study; Social Media; Personal brand;</p>
+<p><strong>Religion</strong>: Native American; site visit; Reflective
+Analysis;</p>
+<p><strong>Sociology</strong>: Michel Foucault</p></article><hr><p>I welcome your comments and annotations in the Hypothes.is sidebar to the right. →</p><script src="https://hypothes.is/embed.js"></script></div><footer><div class="container"><div class="columns"><div class="column col-8"><p>I believe in openness. This work is licensed under a <a
+href="https://creativecommons.org/licenses/by-nc-sa/4.0/">Creative
+Commons Attribution-NonCommercial-ShareAlike 4.0 International
+License</a>, unless otherwise stated. All content ©Jonathan Reeve 2020.
+Hand-coded with love, using exclusively free and open-source software,
+including <a href="https://github.com/srid/rib">Rib</a> and <a
+href="https://haskell.org/">Haskell</a>. Hosted on <a
+href="https://github.com">GitHub</a> and served with <a
+href="https://netlify.com">Netlify</a>. Icons by Nhor, via <a
+href="https://thenounproject.com">The Noun Project</a>. <a
+href="https://www.buymeacoffee.com/vaIVQZH">Buy me a coffee</a> or
+support me <a href="https://liberapay.com/JonathanReeve/donate">via
+Libera Pay</a> or <a
+href="bitcoin:3Qvm1DwzFGk3L1Eb6yeg5Nbc6db8sZUnbK">Bitcoin</a>.</p></div><div class="column col-4"><div class="icons"><a href="http://github.com/JonathanReeve"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512" fill="#fafafa" width="3em" height="3em"><path d="M400 32H48C21.5 32 0 53.5 0 80v352c0 26.5 21.5 48 48
 48h352c26.5 0 48-21.5 48-48V80c0-26.5-21.5-48-48-48zM277.3 415.7c-8.4
 1.5-11.5-3.7-11.5-8 0-5.4.2-33 .2-55.3 0-15.6-5.2-25.5-11.3-30.7 37-4.1 76-9.2
 76-73.1 0-18.2-6.5-27.3-17.1-39 1.7-4.3 7.4-22-1.7-45-13.9-4.3-45.7 17.9-45.7

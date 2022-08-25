@@ -1,5 +1,5 @@
 <html lang="en"><head><meta http-equiv="Content-Type" content="text/html; charset=utf-8"><title>Adventures in Reproducing 19th Century Digital Humanities Projects
-</title><link rel="stylesheet" href="/assets/css/spectre.min.css"><link rel="stylesheet" href="//fonts.googleapis.com/css?family=Montserrat|Raleway"><link rel="stylesheet" href="//cdn.jsdelivr.net/gh/highlightjs/cdn-release@10.2.0/build/styles/default.min.css"><link rel="icon" href="/images/favicon.svg" sizes="any" type="image/svg+xml"><style type="text/css">
+</title><base href="/"><link rel="stylesheet" href="/assets/css/spectre.min.css"><link rel="stylesheet" href="//fonts.googleapis.com/css?family=Montserrat|Raleway"><link rel="stylesheet" href="//cdn.jsdelivr.net/gh/highlightjs/cdn-release@10.2.0/build/styles/default.min.css"><link rel="icon" href="/images/favicon.svg" sizes="any" type="image/svg+xml"><style type="text/css">
 
 @media screen and (min-width: 1200px)
 {
@@ -49,8 +49,8 @@ body.has-docked-nav #main-header
 #headerWrapper
 {
   background-color : #ffffff;
-  border-top       : solid 2px #494e8e;
-  border-bottom    : solid 2px #494e8e;
+  border-top       : 2px solid #494e8e;
+  border-bottom    : 2px solid #494e8e;
 }
 
 #headerWrapper header
@@ -273,21 +273,90 @@ table
 
 }
 
-/* Generated with Clay, http://fvisser.nl/clay */</style><style type="text/css">@page{margin: 3cm;}</style></head><body><div id="headerWrapper"><header class="navbar"><section class="navbar-section"><a class="navbar-brand" href="/">Jonathan Reeve: <span>Computational Literary Analysis</span></a></section><section class="navbar-section"><ul class="nav"><li class="nav-item"><a href="/">posts</a></li><li class="nav-item"><a href="/cv.html">cv</a></li><li class="nav-item"><a href="/tags/">tags</a></li><li class="nav-item"><a href="/feed.xml">feed</a></li></ul></section></header></div><div class="container"><h1>Adventures in Reproducing 19th Century Digital Humanities Projects
-</h1><p>Posted 2019-10-23</p><article><p>In 1887, <a href="https://en.wikipedia.org/wiki/Thomas_Corwin_Mendenhall">Thomas Mendenhall</a>, a self-taught physicist, published an article in <em>Science</em> called <a href="https://archive.org/details/jstor-1764604/page/n1">“The Characteristic Curve of Composition,”</a> in which he studies mathematical properties of sentences written by fiction writers of the day. As an early work of quantitative literary analysis which preexisted the field of digital humanities by many decades, I like to think of it as nonetheless a “digital” study in the literal sense, even if Mendenhall was counting on his fingers instead of using a computer. Of course, what would have been a laborious process for Mendenhall and, presumably, his assistants—counting the number of words in each sentence in a novel—is now just a matter of a few lines of code. So during <a href="http://xpmethod.plaintext.in/events/digital-lit-studies-net.html">a hackathon at the Literary Modeling and Visualization Lab</a>, I decided to try to implement his algorithm.</p>
-<p>Using primarily novels of Charles Dickens, Mendenhall counts the number of words per sentence, in chunks of a thousand words each, and plots their distribution in a histogram that looks like this:</p>
+/* Generated with Clay, http://fvisser.nl/clay */</style><style type="text/css">@page{margin: 3cm;}</style></head><body><div id="headerWrapper"><header class="navbar"><section class="navbar-section"><a class="navbar-brand" href>Jonathan Reeve: <span>Computational Literary Analysis</span></a></section><section class="navbar-section"><ul class="nav"><li class="nav-item"><a href>posts</a></li><li class="nav-item"><a href="cv">cv</a></li><li class="nav-item"><a href="tags.html">tags</a></li><li class="nav-item"><a href="feed.xml">feed</a></li></ul></section></header></div><div class="container"><h1>Adventures in Reproducing 19th Century Digital Humanities Projects
+</h1><article><p>Posted 2019-10-23</p><p>In 1887, <a
+href="https://en.wikipedia.org/wiki/Thomas_Corwin_Mendenhall">Thomas
+Mendenhall</a>, a self-taught physicist, published an article in
+<em>Science</em> called <a
+href="https://archive.org/details/jstor-1764604/page/n1">“The
+Characteristic Curve of Composition,”</a> in which he studies
+mathematical properties of sentences written by fiction writers of the
+day. As an early work of quantitative literary analysis which preexisted
+the field of digital humanities by many decades, I like to think of it
+as nonetheless a “digital” study in the literal sense, even if
+Mendenhall was counting on his fingers instead of using a computer. Of
+course, what would have been a laborious process for Mendenhall and,
+presumably, his assistants—counting the number of words in each sentence
+in a novel—is now just a matter of a few lines of code. So during <a
+href="http://xpmethod.plaintext.in/events/digital-lit-studies-net.html">a
+hackathon at the Literary Modeling and Visualization Lab</a>, I decided
+to try to implement his algorithm.</p>
+<p>Using primarily novels of Charles Dickens, Mendenhall counts the
+number of words per sentence, in chunks of a thousand words each, and
+plots their distribution in a histogram that looks like this:</p>
 <figure>
-<img src="../../../images/mendenhall/mendenhall.png" alt="The “characteristic curve” of Oliver Twist" /><figcaption aria-hidden="true">The “characteristic curve” of <em>Oliver Twist</em></figcaption>
+<img src="../../../images/mendenhall/mendenhall.png"
+alt="The “characteristic curve” of Oliver Twist" />
+<figcaption aria-hidden="true">The “characteristic curve” of <em>Oliver
+Twist</em></figcaption>
 </figure>
-<p>According to Mendenhall, this is Dickens’s “characteristic curve,” that is, his stylistic signature, as expressed in the distribution of sentence lengths. The X axis here represents the number of words in a sentence, and the Y represents the number of sentences in that category. He shows that for other novels, this curve is roughly the same as in these samples from <em>Oliver Twist</em>. The curves of other writers, however, are somewhat different. Nonfiction, like John Stuart Mill’s <em>Essay on Liberty</em>, is the most different, and other fiction is only slightly different.</p>
-<p>During the hackathon, we decided to compare two genres of literary text: gothic novels and epistolary novels. Since <a href="http://corpus-db.org">Corpus-DB</a> allows for easy corpus generation from genre (via Library of Congress subject headings), I was able to quickly throw together a corpus of about eight gothic novels and ten epistolary novels. From there, I used SpaCy to compute the distribution of sentence lengths, and group them by genre. This is the result, the “characteristic curve” of these two corpora:</p>
+<p>According to Mendenhall, this is Dickens’s “characteristic curve,”
+that is, his stylistic signature, as expressed in the distribution of
+sentence lengths. The X axis here represents the number of words in a
+sentence, and the Y represents the number of sentences in that category.
+He shows that for other novels, this curve is roughly the same as in
+these samples from <em>Oliver Twist</em>. The curves of other writers,
+however, are somewhat different. Nonfiction, like John Stuart Mill’s
+<em>Essay on Liberty</em>, is the most different, and other fiction is
+only slightly different.</p>
+<p>During the hackathon, we decided to compare two genres of literary
+text: gothic novels and epistolary novels. Since <a
+href="http://corpus-db.org">Corpus-DB</a> allows for easy corpus
+generation from genre (via Library of Congress subject headings), I was
+able to quickly throw together a corpus of about eight gothic novels and
+ten epistolary novels. From there, I used SpaCy to compute the
+distribution of sentence lengths, and group them by genre. This is the
+result, the “characteristic curve” of these two corpora:</p>
 <figure>
-<img src="../../../images/mendenhall/genres.png" alt="Average sentence lengths, per genre" /><figcaption aria-hidden="true">Average sentence lengths, per genre</figcaption>
+<img src="../../../images/mendenhall/genres.png"
+alt="Average sentence lengths, per genre" />
+<figcaption aria-hidden="true">Average sentence lengths, per
+genre</figcaption>
 </figure>
-<p>I should’ve used a bar chart here, since this is a histogram with discrete values, but in an effort to be faithful to Mendenhall’s method, I kept it as a line chart. I find it interesting that these two lines are so different from each other. The epistolary novels in this corpus have many more shorter sentences. I attribute this to formal features of the letter, like “Dear Sir,” and “Sincerely.” But then gothic novels have more longer sentences, that is, among sentences longer than twenty words.</p>
-<p>Since these lines are so different, it seemed like this might be a good feature to use for a categorizer, which could guess the genre based on the sentence lengths of the novel. After scripting a quick function that compares the differences between all the categories in the histograms, I tried this, but only achieved an accuracy of 66%, so only slightly better than chance. Since some novels are both gothic <em>and</em> epistolary (<em>Dracula</em> comes to mind), I can see how this wouldn’t be an easy guess to make. Still, it’s something.</p>
-<p>What other historical literary studies algorithms should I try to implement? Let me know in the comments below.</p>
-<p><a href="https://colab.research.google.com/drive/1OTtqg9SJsZDu3R87XYzMRGxMqj1z4QMr">The code used for this analysis is here, on Colab</a>.</p></article><hr><p>I welcome your comments and annotations in the Hypothes.is sidebar to the right. →</p><script src="https://hypothes.is/embed.js"></script></div><footer><div class="container"><div class="columns"><div class="column col-8"><p>I believe in openness. This work is licensed under a <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/">Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International License</a>, unless otherwise stated. All content ©Jonathan Reeve 2020. Hand-coded with love, using exclusively free and open-source software, including <a href="https://github.com/srid/rib">Rib</a> and <a href="https://haskell.org/">Haskell</a>. Hosted on <a href="https://github.com">GitHub</a> and served with <a href="https://netlify.com">Netlify</a>. Icons by Nhor, via <a href="https://thenounproject.com">The Noun Project</a>. <a href="https://www.buymeacoffee.com/vaIVQZH">Buy me a coffee</a> or support me <a href="https://liberapay.com/JonathanReeve/donate">via Libera Pay</a> or <a href="bitcoin:3Qvm1DwzFGk3L1Eb6yeg5Nbc6db8sZUnbK">Bitcoin</a>.</p></div><div class="column col-4"><div class="icons"><a href="http://github.com/JonathanReeve"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512" fill="#fafafa" width="3em" height="3em"><path d="M400 32H48C21.5 32 0 53.5 0 80v352c0 26.5 21.5 48 48
+<p>I should’ve used a bar chart here, since this is a histogram with
+discrete values, but in an effort to be faithful to Mendenhall’s method,
+I kept it as a line chart. I find it interesting that these two lines
+are so different from each other. The epistolary novels in this corpus
+have many more shorter sentences. I attribute this to formal features of
+the letter, like “Dear Sir,” and “Sincerely.” But then gothic novels
+have more longer sentences, that is, among sentences longer than twenty
+words.</p>
+<p>Since these lines are so different, it seemed like this might be a
+good feature to use for a categorizer, which could guess the genre based
+on the sentence lengths of the novel. After scripting a quick function
+that compares the differences between all the categories in the
+histograms, I tried this, but only achieved an accuracy of 66%, so only
+slightly better than chance. Since some novels are both gothic
+<em>and</em> epistolary (<em>Dracula</em> comes to mind), I can see how
+this wouldn’t be an easy guess to make. Still, it’s something.</p>
+<p>What other historical literary studies algorithms should I try to
+implement? Let me know in the comments below.</p>
+<p><a
+href="https://colab.research.google.com/drive/1OTtqg9SJsZDu3R87XYzMRGxMqj1z4QMr">The
+code used for this analysis is here, on Colab</a>.</p></article><hr><p>I welcome your comments and annotations in the Hypothes.is sidebar to the right. →</p><script src="https://hypothes.is/embed.js"></script></div><footer><div class="container"><div class="columns"><div class="column col-8"><p>I believe in openness. This work is licensed under a <a
+href="https://creativecommons.org/licenses/by-nc-sa/4.0/">Creative
+Commons Attribution-NonCommercial-ShareAlike 4.0 International
+License</a>, unless otherwise stated. All content ©Jonathan Reeve 2020.
+Hand-coded with love, using exclusively free and open-source software,
+including <a href="https://github.com/srid/rib">Rib</a> and <a
+href="https://haskell.org/">Haskell</a>. Hosted on <a
+href="https://github.com">GitHub</a> and served with <a
+href="https://netlify.com">Netlify</a>. Icons by Nhor, via <a
+href="https://thenounproject.com">The Noun Project</a>. <a
+href="https://www.buymeacoffee.com/vaIVQZH">Buy me a coffee</a> or
+support me <a href="https://liberapay.com/JonathanReeve/donate">via
+Libera Pay</a> or <a
+href="bitcoin:3Qvm1DwzFGk3L1Eb6yeg5Nbc6db8sZUnbK">Bitcoin</a>.</p></div><div class="column col-4"><div class="icons"><a href="http://github.com/JonathanReeve"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512" fill="#fafafa" width="3em" height="3em"><path d="M400 32H48C21.5 32 0 53.5 0 80v352c0 26.5 21.5 48 48
 48h352c26.5 0 48-21.5 48-48V80c0-26.5-21.5-48-48-48zM277.3 415.7c-8.4
 1.5-11.5-3.7-11.5-8 0-5.4.2-33 .2-55.3 0-15.6-5.2-25.5-11.3-30.7 37-4.1 76-9.2
 76-73.1 0-18.2-6.5-27.3-17.1-39 1.7-4.3 7.4-22-1.7-45-13.9-4.3-45.7 17.9-45.7

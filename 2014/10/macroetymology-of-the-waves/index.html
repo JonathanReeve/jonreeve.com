@@ -1,6 +1,6 @@
 <html lang="en"><head><meta http-equiv="Content-Type" content="text/html; charset=utf-8"><title>A Macro-Etymological Analysis of Character Dialog in Virginia Woolf’s
 The Waves
-</title><link rel="stylesheet" href="/assets/css/spectre.min.css"><link rel="stylesheet" href="//fonts.googleapis.com/css?family=Montserrat|Raleway"><link rel="stylesheet" href="//cdn.jsdelivr.net/gh/highlightjs/cdn-release@10.2.0/build/styles/default.min.css"><link rel="icon" href="/images/favicon.svg" sizes="any" type="image/svg+xml"><style type="text/css">
+</title><base href="/"><link rel="stylesheet" href="/assets/css/spectre.min.css"><link rel="stylesheet" href="//fonts.googleapis.com/css?family=Montserrat|Raleway"><link rel="stylesheet" href="//cdn.jsdelivr.net/gh/highlightjs/cdn-release@10.2.0/build/styles/default.min.css"><link rel="icon" href="/images/favicon.svg" sizes="any" type="image/svg+xml"><style type="text/css">
 
 @media screen and (min-width: 1200px)
 {
@@ -50,8 +50,8 @@ body.has-docked-nav #main-header
 #headerWrapper
 {
   background-color : #ffffff;
-  border-top       : solid 2px #494e8e;
-  border-bottom    : solid 2px #494e8e;
+  border-top       : 2px solid #494e8e;
+  border-bottom    : 2px solid #494e8e;
 }
 
 #headerWrapper header
@@ -274,31 +274,114 @@ table
 
 }
 
-/* Generated with Clay, http://fvisser.nl/clay */</style><style type="text/css">@page{margin: 3cm;}</style></head><body><div id="headerWrapper"><header class="navbar"><section class="navbar-section"><a class="navbar-brand" href="/">Jonathan Reeve: <span>Computational Literary Analysis</span></a></section><section class="navbar-section"><ul class="nav"><li class="nav-item"><a href="/">posts</a></li><li class="nav-item"><a href="/cv.html">cv</a></li><li class="nav-item"><a href="/tags/">tags</a></li><li class="nav-item"><a href="/feed.xml">feed</a></li></ul></section></header></div><div class="container"><h1>A Macro-Etymological Analysis of Character Dialog in Virginia Woolf’s
+/* Generated with Clay, http://fvisser.nl/clay */</style><style type="text/css">@page{margin: 3cm;}</style></head><body><div id="headerWrapper"><header class="navbar"><section class="navbar-section"><a class="navbar-brand" href>Jonathan Reeve: <span>Computational Literary Analysis</span></a></section><section class="navbar-section"><ul class="nav"><li class="nav-item"><a href>posts</a></li><li class="nav-item"><a href="cv">cv</a></li><li class="nav-item"><a href="tags.html">tags</a></li><li class="nav-item"><a href="feed.xml">feed</a></li></ul></section></header></div><div class="container"><h1>A Macro-Etymological Analysis of Character Dialog in Virginia Woolf’s
 The Waves
-</h1><p>Posted 2014-10-21</p><article><p>Virginia Woolf’s experimental novel <em>The Waves</em> is structured as a series of dialogues and monologues by six characters. Some of these speeches are as short as a line, but most are between a few paragraphs and a chapter in length. Their extremely regular structure takes this form:</p>
+</h1><article><p>Posted 2014-10-21</p><p>Virginia Woolf’s experimental novel <em>The Waves</em> is structured
+as a series of dialogues and monologues by six characters. Some of these
+speeches are as short as a line, but most are between a few paragraphs
+and a chapter in length. Their extremely regular structure takes this
+form:</p>
 <blockquote>
-<p>‘I see a ring,’ said Bernard, ‘hanging above me. It quivers and hangs in a loop of light.’ (Woolf 9)</p>
+<p>‘I see a ring,’ said Bernard, ‘hanging above me. It quivers and hangs
+in a loop of light.’ (Woolf 9)</p>
 </blockquote>
-<p>There is a short phrase, an attribution with the word “said,” and a continuation of the speech–this is true of all the speech in the novel. This regularity makes this novel an unusually good subject for computational study, since the text can so easily be extracted—see Stephen Ramsay’s tf/idf experiment, and <a href="http://cforster.com/2013/02/reading-the-waves-with-stephen-ramsay/">Chris Forster’s subsequent blog post</a>, wherein he suggests a possible regular expression to capture dialogue. Additionally, the fact that there are three male characters and three female characters make this an interesting study for the investigation of gendered speech, at least as it appears in Woolf.</p>
-<p>For this experiment, text files containing each of the characters’ total speech were fed through the Macro-Etymological Analyzer. As the figure below shows, the macro-etymologies of the characters’ speech are distinct, and separate by gender, with the male characters showing the highest proportions of Latinate words, and the female characters showing the lowest.</p>
+<p>There is a short phrase, an attribution with the word “said,” and a
+continuation of the speech–this is true of all the speech in the novel.
+This regularity makes this novel an unusually good subject for
+computational study, since the text can so easily be extracted—see
+Stephen Ramsay’s tf/idf experiment, and <a
+href="http://cforster.com/2013/02/reading-the-waves-with-stephen-ramsay/">Chris
+Forster’s subsequent blog post</a>, wherein he suggests a possible
+regular expression to capture dialogue. Additionally, the fact that
+there are three male characters and three female characters make this an
+interesting study for the investigation of gendered speech, at least as
+it appears in Woolf.</p>
+<p>For this experiment, text files containing each of the characters’
+total speech were fed through the Macro-Etymological Analyzer. As the
+figure below shows, the macro-etymologies of the characters’ speech are
+distinct, and separate by gender, with the male characters showing the
+highest proportions of Latinate words, and the female characters showing
+the lowest.</p>
 <figure>
-<img src="../../../images/macro-etym/waves-with-screen.png" alt="The Waves by Narrator" /><figcaption aria-hidden="true">The Waves by Narrator</figcaption>
+<img src="../../../images/macro-etym/waves-with-screen.png"
+alt="The Waves by Narrator" />
+<figcaption aria-hidden="true">The Waves by Narrator</figcaption>
 </figure>
-<p>Bernard and Neville are the two university-educated characters, and the ones with the highest proportions of Latinate words. Bernard identifies with Shakespeare and is, according to Fogel, “a clear surrogate for Virginia Woolf herself” (157, quoted in Hussey, 25). Neville “anticipates becoming a classical scholar, exploring the writing of Virgil, Lucretius and Catallus” (Hussey 181-2). Early in the novel, Neville imagines entering the library where he “shall explore the exactitude of the Latin language” (31). That exactitude is invoked by Bernard later–during one of his conversations with Neville, he praises him thus:</p>
+<p>Bernard and Neville are the two university-educated characters, and
+the ones with the highest proportions of Latinate words. Bernard
+identifies with Shakespeare and is, according to Fogel, “a clear
+surrogate for Virginia Woolf herself” (157, quoted in Hussey, 25).
+Neville “anticipates becoming a classical scholar, exploring the writing
+of Virgil, Lucretius and Catallus” (Hussey 181-2). Early in the novel,
+Neville imagines entering the library where he “shall explore the
+exactitude of the Latin language” (31). That exactitude is invoked by
+Bernard later–during one of his conversations with Neville, he praises
+him thus:</p>
 <blockquote>
-<p>you wish to be a poet; and you wish to be a lover. But the splendid clarity of your intelligence, and the remorseless honesty of your intellect (these Latin words I owe you; these qualities of yours make me shift a little uneasily and see the faded patches, the thin strands in my own equipment) bring you to a halt. (85)</p>
+<p>you wish to be a poet; and you wish to be a lover. But the splendid
+clarity of your intelligence, and the remorseless honesty of your
+intellect (these Latin words I owe you; these qualities of yours make me
+shift a little uneasily and see the faded patches, the thin strands in
+my own equipment) bring you to a halt. (85)</p>
 </blockquote>
-<p>The “Latin words” to which Bernard refers are “splendid,” “clarity,” “intelligence,” and “remorseless,” all words descended from Latin which entered English through French. Later, Bernard describes Percival as one who thinks with “magnificent equanimity” (243). In parentheses, he justifies his own florid word choice here by saying “Latin words come naturally.” Is Woolf implying that, due to social circumstances, perhaps Latin words do not come as “naturally” to the female characters?</p>
-<p>In contrast to Bernard and Neville, Jinny is “sensual, alert to vivid color and to the power of her own body to attract men” (Hussey 131). Susan is a “representation of the maternal ‘instinct.’ … closely identified with the natural world. She marries a farmer, lives in the country, and is fiercely protective of her children” (280). These are qualities typically associated with Anglo-Saxon words—visceral, sensual words; kinship terms, rural settings.</p>
-<p>In Woolf’s “A Room of One’s Own,” she imagines a female Shakespeare, Shakespeare’s sister Judith. Woolf argues that Judith Shakespeare couldn’t have written her brother William’s works, not from lack of talent, but from lack of opportunities–“rooms of one’s own” for Elizabethan women writers during this period. “She had no chance of learning grammar and logic,” Woolf contends, “let alone of reading Horace and Virgil. She picked up a book now and then, one of her brother’s perhaps, and read a few pages. But then her parents came in and told her to mend the stockings or mind the stew and not moon about with books and papers” (47). Therefore, one imagines that Judith Shakespeare, like the female characters in <em>The Waves</em>, would have used fewer Latinate words than her male counterparts.</p>
+<p>The “Latin words” to which Bernard refers are “splendid,” “clarity,”
+“intelligence,” and “remorseless,” all words descended from Latin which
+entered English through French. Later, Bernard describes Percival as one
+who thinks with “magnificent equanimity” (243). In parentheses, he
+justifies his own florid word choice here by saying “Latin words come
+naturally.” Is Woolf implying that, due to social circumstances, perhaps
+Latin words do not come as “naturally” to the female characters?</p>
+<p>In contrast to Bernard and Neville, Jinny is “sensual, alert to vivid
+color and to the power of her own body to attract men” (Hussey 131).
+Susan is a “representation of the maternal ‘instinct.’ … closely
+identified with the natural world. She marries a farmer, lives in the
+country, and is fiercely protective of her children” (280). These are
+qualities typically associated with Anglo-Saxon words—visceral, sensual
+words; kinship terms, rural settings.</p>
+<p>In Woolf’s “A Room of One’s Own,” she imagines a female Shakespeare,
+Shakespeare’s sister Judith. Woolf argues that Judith Shakespeare
+couldn’t have written her brother William’s works, not from lack of
+talent, but from lack of opportunities–“rooms of one’s own” for
+Elizabethan women writers during this period. “She had no chance of
+learning grammar and logic,” Woolf contends, “let alone of reading
+Horace and Virgil. She picked up a book now and then, one of her
+brother’s perhaps, and read a few pages. But then her parents came in
+and told her to mend the stockings or mind the stew and not moon about
+with books and papers” (47). Therefore, one imagines that Judith
+Shakespeare, like the female characters in <em>The Waves</em>, would
+have used fewer Latinate words than her male counterparts.</p>
 <h2 id="works-cited">Works Cited</h2>
-<p>Hussey, Mark. <em>Virginia Woolf A to Z</em>. New York: Facts on File, 1995. Print.</p>
-<p>Ramsay, Stephen. “Algorithmic Criticism.” <em>A Companion to Digital Literary Studies</em>. Oxford: Blackwell, 2008. Web. <a href="http://www.digitalhumanities.org/companion">http://www.digitalhumanities.org/companion</a></p>
-<p>Woolf, Virginia. <em>A Room of One’s One</em>. New York: Harcourt, 1929. Print.</p>
+<p>Hussey, Mark. <em>Virginia Woolf A to Z</em>. New York: Facts on
+File, 1995. Print.</p>
+<p>Ramsay, Stephen. “Algorithmic Criticism.” <em>A Companion to Digital
+Literary Studies</em>. Oxford: Blackwell, 2008. Web. <a
+href="http://www.digitalhumanities.org/companion">http://www.digitalhumanities.org/companion</a></p>
+<p>Woolf, Virginia. <em>A Room of One’s One</em>. New York: Harcourt,
+1929. Print.</p>
 <p>—. <em>The Waves</em>. New York: Harcourt, 1931. Print.</p>
 <h2 id="note">Note</h2>
-<p>This post is an adapted and expanded excerpt from my 2013 Master’s thesis, “Macro-Etymological Textual Analysis: an Application of Language History to Literary Criticism.” The program described herein is the web app created for these experiments, the <a href="http://jonreeve.com/etym">Macro-Etymological Analyzer</a>. Read more about the program and related experiments in my introductory post, “<a href="file:///2013/11/introducing-the-macro-etymological-analyzer/">Introducing the Macro-Etymological Analyzer</a>.”</p></article><hr><p>I welcome your comments and annotations in the Hypothes.is sidebar to the right. →</p><script src="https://hypothes.is/embed.js"></script></div><footer><div class="container"><div class="columns"><div class="column col-8"><p>I believe in openness. This work is licensed under a <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/">Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International License</a>, unless otherwise stated. All content ©Jonathan Reeve 2020. Hand-coded with love, using exclusively free and open-source software, including <a href="https://github.com/srid/rib">Rib</a> and <a href="https://haskell.org/">Haskell</a>. Hosted on <a href="https://github.com">GitHub</a> and served with <a href="https://netlify.com">Netlify</a>. Icons by Nhor, via <a href="https://thenounproject.com">The Noun Project</a>. <a href="https://www.buymeacoffee.com/vaIVQZH">Buy me a coffee</a> or support me <a href="https://liberapay.com/JonathanReeve/donate">via Libera Pay</a> or <a href="bitcoin:3Qvm1DwzFGk3L1Eb6yeg5Nbc6db8sZUnbK">Bitcoin</a>.</p></div><div class="column col-4"><div class="icons"><a href="http://github.com/JonathanReeve"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512" fill="#fafafa" width="3em" height="3em"><path d="M400 32H48C21.5 32 0 53.5 0 80v352c0 26.5 21.5 48 48
+<p>This post is an adapted and expanded excerpt from my 2013 Master’s
+thesis, “Macro-Etymological Textual Analysis: an Application of Language
+History to Literary Criticism.” The program described herein is the web
+app created for these experiments, the <a
+href="http://jonreeve.com/etym">Macro-Etymological Analyzer</a>. Read
+more about the program and related experiments in my introductory post,
+“<a
+href="file:///2013/11/introducing-the-macro-etymological-analyzer/">Introducing
+the Macro-Etymological Analyzer</a>.”</p></article><hr><p>I welcome your comments and annotations in the Hypothes.is sidebar to the right. →</p><script src="https://hypothes.is/embed.js"></script></div><footer><div class="container"><div class="columns"><div class="column col-8"><p>I believe in openness. This work is licensed under a <a
+href="https://creativecommons.org/licenses/by-nc-sa/4.0/">Creative
+Commons Attribution-NonCommercial-ShareAlike 4.0 International
+License</a>, unless otherwise stated. All content ©Jonathan Reeve 2020.
+Hand-coded with love, using exclusively free and open-source software,
+including <a href="https://github.com/srid/rib">Rib</a> and <a
+href="https://haskell.org/">Haskell</a>. Hosted on <a
+href="https://github.com">GitHub</a> and served with <a
+href="https://netlify.com">Netlify</a>. Icons by Nhor, via <a
+href="https://thenounproject.com">The Noun Project</a>. <a
+href="https://www.buymeacoffee.com/vaIVQZH">Buy me a coffee</a> or
+support me <a href="https://liberapay.com/JonathanReeve/donate">via
+Libera Pay</a> or <a
+href="bitcoin:3Qvm1DwzFGk3L1Eb6yeg5Nbc6db8sZUnbK">Bitcoin</a>.</p></div><div class="column col-4"><div class="icons"><a href="http://github.com/JonathanReeve"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512" fill="#fafafa" width="3em" height="3em"><path d="M400 32H48C21.5 32 0 53.5 0 80v352c0 26.5 21.5 48 48
 48h352c26.5 0 48-21.5 48-48V80c0-26.5-21.5-48-48-48zM277.3 415.7c-8.4
 1.5-11.5-3.7-11.5-8 0-5.4.2-33 .2-55.3 0-15.6-5.2-25.5-11.3-30.7 37-4.1 76-9.2
 76-73.1 0-18.2-6.5-27.3-17.1-39 1.7-4.3 7.4-22-1.7-45-13.9-4.3-45.7 17.9-45.7

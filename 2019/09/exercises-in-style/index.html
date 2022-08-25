@@ -1,5 +1,5 @@
 <html lang="en"><head><meta http-equiv="Content-Type" content="text/html; charset=utf-8"><title>Isolating Literary Style with Raymond Queneau
-</title><link rel="stylesheet" href="/assets/css/spectre.min.css"><link rel="stylesheet" href="//fonts.googleapis.com/css?family=Montserrat|Raleway"><link rel="stylesheet" href="//cdn.jsdelivr.net/gh/highlightjs/cdn-release@10.2.0/build/styles/default.min.css"><link rel="icon" href="/images/favicon.svg" sizes="any" type="image/svg+xml"><style type="text/css">
+</title><base href="/"><link rel="stylesheet" href="/assets/css/spectre.min.css"><link rel="stylesheet" href="//fonts.googleapis.com/css?family=Montserrat|Raleway"><link rel="stylesheet" href="//cdn.jsdelivr.net/gh/highlightjs/cdn-release@10.2.0/build/styles/default.min.css"><link rel="icon" href="/images/favicon.svg" sizes="any" type="image/svg+xml"><style type="text/css">
 
 @media screen and (min-width: 1200px)
 {
@@ -49,8 +49,8 @@ body.has-docked-nav #main-header
 #headerWrapper
 {
   background-color : #ffffff;
-  border-top       : solid 2px #494e8e;
-  border-bottom    : solid 2px #494e8e;
+  border-top       : 2px solid #494e8e;
+  border-bottom    : 2px solid #494e8e;
 }
 
 #headerWrapper header
@@ -273,11 +273,33 @@ table
 
 }
 
-/* Generated with Clay, http://fvisser.nl/clay */</style><style type="text/css">@page{margin: 3cm;}</style></head><body><div id="headerWrapper"><header class="navbar"><section class="navbar-section"><a class="navbar-brand" href="/">Jonathan Reeve: <span>Computational Literary Analysis</span></a></section><section class="navbar-section"><ul class="nav"><li class="nav-item"><a href="/">posts</a></li><li class="nav-item"><a href="/cv.html">cv</a></li><li class="nav-item"><a href="/tags/">tags</a></li><li class="nav-item"><a href="/feed.xml">feed</a></li></ul></section></header></div><div class="container"><h1>Isolating Literary Style with Raymond Queneau
-</h1><p>Posted 2019-09-07</p><article><p>Recently, I’ve become interested in the problem of literary style. One of its great difficulties involves the separation of a writer’s stylistic signal from that of his or her era, nation, idiom, dialect, or chosen literary genre. Ideally, one might construct a corpus that controls for most of these variables, so that the style itself can be studied more easily. But since such corpora are hard to come by, I had the crazy idea to analyze a book that tells the same story over and over, but in different styles each time. One such book is <em>Exercises in Style</em>, and Raymond Queneau, celebrated literary experimenter, and founder of the famed OULIPO group, wrote it in 1947. Barbara Wright translated it into English in 1958, and because the English NLP toolchain is the most well developed, I chose to analyze the English translation.</p>
-<p>Queneau’s concept was to narrate one short episode in ninety-nine styles. Here is the first, “Notation”:</p>
+/* Generated with Clay, http://fvisser.nl/clay */</style><style type="text/css">@page{margin: 3cm;}</style></head><body><div id="headerWrapper"><header class="navbar"><section class="navbar-section"><a class="navbar-brand" href>Jonathan Reeve: <span>Computational Literary Analysis</span></a></section><section class="navbar-section"><ul class="nav"><li class="nav-item"><a href>posts</a></li><li class="nav-item"><a href="cv">cv</a></li><li class="nav-item"><a href="tags.html">tags</a></li><li class="nav-item"><a href="feed.xml">feed</a></li></ul></section></header></div><div class="container"><h1>Isolating Literary Style with Raymond Queneau
+</h1><article><p>Posted 2019-09-07</p><p>Recently, I’ve become interested in the problem of literary style.
+One of its great difficulties involves the separation of a writer’s
+stylistic signal from that of his or her era, nation, idiom, dialect, or
+chosen literary genre. Ideally, one might construct a corpus that
+controls for most of these variables, so that the style itself can be
+studied more easily. But since such corpora are hard to come by, I had
+the crazy idea to analyze a book that tells the same story over and
+over, but in different styles each time. One such book is <em>Exercises
+in Style</em>, and Raymond Queneau, celebrated literary experimenter,
+and founder of the famed OULIPO group, wrote it in 1947. Barbara Wright
+translated it into English in 1958, and because the English NLP
+toolchain is the most well developed, I chose to analyze the English
+translation.</p>
+<p>Queneau’s concept was to narrate one short episode in ninety-nine
+styles. Here is the first, “Notation”:</p>
 <blockquote>
-<p>In the S bus, in the rush hour. A chap of about 26, felt hat with a cord instead of a ribbon, neck too long, as if someone’s been having a tug-of-war with it. People getting off. The chap in question gets annoyed with one of the men standing next to him. He accuses him of jostling him every time anyone goes past. A snivelling tone which is meant to be aggressive. When he sees a vacant seat he throws himself on to it. Two hours later, I meet him in the Cour de Rome, in front of the gare Saint-Lazare. He’s with a friend who’s saying: “You ought to get an extra button put on your overcoat.” He shows him where (at the lapels) and why.</p>
+<p>In the S bus, in the rush hour. A chap of about 26, felt hat with a
+cord instead of a ribbon, neck too long, as if someone’s been having a
+tug-of-war with it. People getting off. The chap in question gets
+annoyed with one of the men standing next to him. He accuses him of
+jostling him every time anyone goes past. A snivelling tone which is
+meant to be aggressive. When he sees a vacant seat he throws himself on
+to it. Two hours later, I meet him in the Cour de Rome, in front of the
+gare Saint-Lazare. He’s with a friend who’s saying: “You ought to get an
+extra button put on your overcoat.” He shows him where (at the lapels)
+and why.</p>
 </blockquote>
 <p>Some versions of this story are minimalist, like “Haiku”:</p>
 <blockquote>
@@ -285,34 +307,80 @@ table
 plait hat toes abuse retreat<br />
 station button friend</p>
 </blockquote>
-<p>This is a somewhat parodic version of a haiku, reminescent of those works of “deformative criticism” which reduce a poem to only its nouns. Although here, it is difficult for both a human and a computer to parse the syntax. Are the three words in the last line simply a sequence of nouns, or are “station” and “button” adjectives that modify “friend?”</p>
+<p>This is a somewhat parodic version of a haiku, reminescent of those
+works of “deformative criticism” which reduce a poem to only its nouns.
+Although here, it is difficult for both a human and a computer to parse
+the syntax. Are the three words in the last line simply a sequence of
+nouns, or are “station” and “button” adjectives that modify
+“friend”?</p>
 <p>Here’s another example, “Prognostication”:</p>
 <blockquote>
-<p>When midday strikes you will be on the rear platform of a bus which will be crammed full of passengers among whom you will notice a ridiculous juvenile; skeleton-like neck and no ribbon on his felt hat. He don’t be feeling at his ease, poor little chap. He will think that a gentleman is pushing him on purpose every time that people getting on or off pass by. He will tell him so but the gentleman won’t deign to answer. And the ridiculous juvenile will be panic-stricken and run away from him in the direction of a vacant seat. You will see him a little later, in the Cour de Rome in front of the gate Saint-Lazare. A friend will be with him and you will hear these words: “Your overcoat doesn’t do up properly; you must have another button put on it.”</p>
+<p>When midday strikes you will be on the rear platform of a bus which
+will be crammed full of passengers among whom you will notice a
+ridiculous juvenile; skeleton-like neck and no ribbon on his felt hat.
+He don’t be feeling at his ease, poor little chap. He will think that a
+gentleman is pushing him on purpose every time that people getting on or
+off pass by. He will tell him so but the gentleman won’t deign to
+answer. And the ridiculous juvenile will be panic-stricken and run away
+from him in the direction of a vacant seat. You will see him a little
+later, in the Cour de Rome in front of the gate Saint-Lazare. A friend
+will be with him and you will hear these words: “Your overcoat doesn’t
+do up properly; you must have another button put on it.”</p>
 </blockquote>
-<p>This form revolves around the pronoun “you,” which is repeated in nearly every sentence. This and “haiku” are extreme examples, but they do show how style manifests in proportions of parts of speech.</p>
-<p>The figure below shows a few selected parts of speech, and their proportions in all ninety-nine styles, in the order in which they appear in the text. (Scroll right to see the whole figure.)</p>
+<p>This form revolves around the pronoun “you,” which is repeated in
+nearly every sentence. This and “haiku” are extreme examples, but they
+do show how style manifests in proportions of parts of speech.</p>
+<p>The figure below shows a few selected parts of speech, and their
+proportions in all ninety-nine styles, in the order in which they appear
+in the text. (Scroll right to see the whole figure.)</p>
 <figure id="all" style="overflow-x: scroll; width: 100%;">
 
 </figure>
 
-<p>There are a few things of note here. One is that, as Queneau’s styles become more specific, and more experimental, the parts of speech become much more erratic. Another is that some parts of speech are much more stable than others. The variance of nouns is nearly four times that of verbs, and eight times that of adverbs, meaning that the proportion of nouns fluctuates wildly, while the proportions of adverbs remains relatively stable.</p>
-<p>Here are the styles that rank the highest and lowest, according to proportions of certain parts of speech. These charts are interactive, so if you hover over a bar, it’ll show you a snippet of that style.</p>
+<p>There are a few things of note here. One is that, as Queneau’s styles
+become more specific, and more experimental, the parts of speech become
+much more erratic. Another is that some parts of speech are much more
+stable than others. The variance of nouns is nearly four times that of
+verbs, and eight times that of adverbs, meaning that the proportion of
+nouns fluctuates wildly, while the proportions of adverbs remains
+relatively stable.</p>
+<p>Here are the styles that rank the highest and lowest, according to
+proportions of certain parts of speech. These charts are interactive, so
+if you hover over a bar, it’ll show you a snippet of that style.</p>
 <h2 id="adjectives">Adjectives</h2>
 <figure id="ADJ">
 
 </figure>
 
-<p>The “philosophic” mode is one whose informational density and precision of language encodes its content into adjectives. Here is an example:</p>
+<p>The “philosophic” mode is one whose informational density and
+precision of language encodes its content into adjectives. Here is an
+example:</p>
 <blockquote>
-<p>Great cities alone can provide phenomenological spirituality with the essentialities of temporal and improbabilistic coincidences. The philosopher who occasionally ascends into the futile and utilitarian inexistentiality of an S bus can perceive therein wiht the lucidity of his pineal eye the transitory and faded appearance of a profane consciousness afflicted by the long neck of vanity and the hatly plait of ignorance.</p>
+<p>Great cities alone can provide phenomenological spirituality with the
+essentialities of temporal and improbabilistic coincidences. The
+philosopher who occasionally ascends into the futile and utilitarian
+inexistentiality of an S bus can perceive therein wiht the lucidity of
+his pineal eye the transitory and faded appearance of a profane
+consciousness afflicted by the long neck of vanity and the hatly plait
+of ignorance.</p>
 </blockquote>
 <h2 id="nouns">Nouns</h2>
 <figure id="NOUN">
 
 </figure>
 
-<p>Besides “haiku,” most of these outliers are styles that are phonetic or linguistic experiments: “paragoge,” “epenthesis,” and “apheresis,” for instance, all describe phonetic changes to words, which Quenaeu and Wright render with phonetic spellings. One might reasonably posit that the POS tagger misattributes some of these, but it does a surprisingly good job, since it is the probabilistic parser in the SpaCy library, which has been trained on an model of English collected from Internet text—text that is not always rendered with standard spellings. But even conceding that this would skew the rankings, when dealing with small differences in proportions, we might posit that Queneau might have highlighted the differences in these linguistic experiments with the aid of more noun-heavy phrases.</p>
+<p>Besides “haiku,” most of these outliers are styles that are phonetic
+or linguistic experiments: “paragoge,” “epenthesis,” and “apheresis,”
+for instance, all describe phonetic changes to words, which Quenaeu and
+Wright render with phonetic spellings. One might reasonably posit that
+the POS tagger misattributes some of these, but it does a surprisingly
+good job, since it is the probabilistic parser in the SpaCy library,
+which has been trained on an model of English collected from Internet
+text—text that is not always rendered with standard spellings. But even
+conceding that this would skew the rankings, when dealing with small
+differences in proportions, we might posit that Queneau might have
+highlighted the differences in these linguistic experiments with the aid
+of more noun-heavy phrases.</p>
 <h2 id="verbs">Verbs</h2>
 <figure id="VERB">
 
@@ -320,24 +388,42 @@ station button friend</p>
 
 <p>“Reported speech” is a style which apparently emphasizes verbs:</p>
 <blockquote>
-<p>Dr. Queneau said that it had happened at midday. Some passengers had got into the bus. They had been squashed tightly together. On his head a young man had been wearing a hat which had been encircled by a plait and not by a ribbon. He had had a long neck. […]</p>
+<p>Dr. Queneau said that it had happened at midday. Some passengers had
+got into the bus. They had been squashed tightly together. On his head a
+young man had been wearing a hat which had been encircled by a plait and
+not by a ribbon. He had had a long neck. […]</p>
 </blockquote>
-<p>I suspect that the high proportion of verbs here can be partially attributed to the addition of a frame-narrative: in addition to the original story’s verbs, there are also the verbs in “Dr. Queneau said,” “Dr. Queneau continued,” and so on.</p>
+<p>I suspect that the high proportion of verbs here can be partially
+attributed to the addition of a frame-narrative: in addition to the
+original story’s verbs, there are also the verbs in “Dr. Queneau said,”
+“Dr. Queneau continued,” and so on.</p>
 <h2 id="pronouns">Pronouns</h2>
 <figure id="PRON">
 
 </figure>
 
-<p>Of course “You Know” gets the highest proportions of pronouns here, since every other phrase is “you know”:</p>
+<p>Of course “You Know” gets the highest proportions of pronouns here,
+since every other phrase is “you know”:</p>
 <blockquote>
-<p>Well, you know, the bus arrived, so, you know, I got on. Then I saw, you know, a citizen who, you know, caught my eye, sort of.</p>
+<p>Well, you know, the bus arrived, so, you know, I got on. Then I saw,
+you know, a citizen who, you know, caught my eye, sort of.</p>
 </blockquote>
-<p>“Modern Style” also has many more “you”s, but for the reason that its rhetoric appeals to the reader, in an almost epistolary way:</p>
+<p>“Modern Style” also has many more “you”s, but for the reason that its
+rhetoric appeals to the reader, in an almost epistolary way:</p>
 <blockquote>
-<p>In a bus one day it so happened that I was a witness of the following as you might say tragi-comedy which revealing as it does the way our French cousins go on these days I thought I ought to put you in the picture.</p>
+<p>In a bus one day it so happened that I was a witness of the following
+as you might say tragi-comedy which revealing as it does the way our
+French cousins go on these days I thought I ought to put you in the
+picture.</p>
 </blockquote>
-<p>This was a toy analysis in many respects, which I didn’t expect would say anything very serious about literary style. For one, the corpus is so small that a statistical approach isn’t very useful. Still, a few interesting phenomena appear here, and I’m curious to see what this looks like in a bigger corpus.</p>
-<p><a href="https://gist.github.com/JonathanReeve/cacf9d874b405b621710a7436425af49">Here’s the code used to generate all this.</a></p>
+<p>This was a toy analysis in many respects, which I didn’t expect would
+say anything very serious about literary style. For one, the corpus is
+so small that a statistical approach isn’t very useful. Still, a few
+interesting phenomena appear here, and I’m curious to see what this
+looks like in a bigger corpus.</p>
+<p><a
+href="https://gist.github.com/JonathanReeve/cacf9d874b405b621710a7436425af49">Here’s
+the code used to generate all this.</a></p>
 <p>I’d love to hear your comments in the annotations.</p>
 <script src="https://cdn.jsdelivr.net/npm/vega@5"></script>
 
@@ -5142,7 +5228,20 @@ station button friend</p>
   var opt = {"renderer": "canvas", "actions": false};
   vegaEmbed("#all", spec, opt);
 </script>
-</article><hr><p>I welcome your comments and annotations in the Hypothes.is sidebar to the right. →</p><script src="https://hypothes.is/embed.js"></script></div><footer><div class="container"><div class="columns"><div class="column col-8"><p>I believe in openness. This work is licensed under a <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/">Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International License</a>, unless otherwise stated. All content ©Jonathan Reeve 2020. Hand-coded with love, using exclusively free and open-source software, including <a href="https://github.com/srid/rib">Rib</a> and <a href="https://haskell.org/">Haskell</a>. Hosted on <a href="https://github.com">GitHub</a> and served with <a href="https://netlify.com">Netlify</a>. Icons by Nhor, via <a href="https://thenounproject.com">The Noun Project</a>. <a href="https://www.buymeacoffee.com/vaIVQZH">Buy me a coffee</a> or support me <a href="https://liberapay.com/JonathanReeve/donate">via Libera Pay</a> or <a href="bitcoin:3Qvm1DwzFGk3L1Eb6yeg5Nbc6db8sZUnbK">Bitcoin</a>.</p></div><div class="column col-4"><div class="icons"><a href="http://github.com/JonathanReeve"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512" fill="#fafafa" width="3em" height="3em"><path d="M400 32H48C21.5 32 0 53.5 0 80v352c0 26.5 21.5 48 48
+</article><hr><p>I welcome your comments and annotations in the Hypothes.is sidebar to the right. →</p><script src="https://hypothes.is/embed.js"></script></div><footer><div class="container"><div class="columns"><div class="column col-8"><p>I believe in openness. This work is licensed under a <a
+href="https://creativecommons.org/licenses/by-nc-sa/4.0/">Creative
+Commons Attribution-NonCommercial-ShareAlike 4.0 International
+License</a>, unless otherwise stated. All content ©Jonathan Reeve 2020.
+Hand-coded with love, using exclusively free and open-source software,
+including <a href="https://github.com/srid/rib">Rib</a> and <a
+href="https://haskell.org/">Haskell</a>. Hosted on <a
+href="https://github.com">GitHub</a> and served with <a
+href="https://netlify.com">Netlify</a>. Icons by Nhor, via <a
+href="https://thenounproject.com">The Noun Project</a>. <a
+href="https://www.buymeacoffee.com/vaIVQZH">Buy me a coffee</a> or
+support me <a href="https://liberapay.com/JonathanReeve/donate">via
+Libera Pay</a> or <a
+href="bitcoin:3Qvm1DwzFGk3L1Eb6yeg5Nbc6db8sZUnbK">Bitcoin</a>.</p></div><div class="column col-4"><div class="icons"><a href="http://github.com/JonathanReeve"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512" fill="#fafafa" width="3em" height="3em"><path d="M400 32H48C21.5 32 0 53.5 0 80v352c0 26.5 21.5 48 48
 48h352c26.5 0 48-21.5 48-48V80c0-26.5-21.5-48-48-48zM277.3 415.7c-8.4
 1.5-11.5-3.7-11.5-8 0-5.4.2-33 .2-55.3 0-15.6-5.2-25.5-11.3-30.7 37-4.1 76-9.2
 76-73.1 0-18.2-6.5-27.3-17.1-39 1.7-4.3 7.4-22-1.7-45-13.9-4.3-45.7 17.9-45.7

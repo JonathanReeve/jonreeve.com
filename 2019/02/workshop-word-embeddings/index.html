@@ -1,5 +1,5 @@
 <html lang="en"><head><meta http-equiv="Content-Type" content="text/html; charset=utf-8"><title>Workshop Notebook: Advanced Topics in Word Embeddings
-</title><link rel="stylesheet" href="/assets/css/spectre.min.css"><link rel="stylesheet" href="//fonts.googleapis.com/css?family=Montserrat|Raleway"><link rel="stylesheet" href="//cdn.jsdelivr.net/gh/highlightjs/cdn-release@10.2.0/build/styles/default.min.css"><link rel="icon" href="/images/favicon.svg" sizes="any" type="image/svg+xml"><style type="text/css">
+</title><base href="/"><link rel="stylesheet" href="/assets/css/spectre.min.css"><link rel="stylesheet" href="//fonts.googleapis.com/css?family=Montserrat|Raleway"><link rel="stylesheet" href="//cdn.jsdelivr.net/gh/highlightjs/cdn-release@10.2.0/build/styles/default.min.css"><link rel="icon" href="/images/favicon.svg" sizes="any" type="image/svg+xml"><style type="text/css">
 
 @media screen and (min-width: 1200px)
 {
@@ -49,8 +49,8 @@ body.has-docked-nav #main-header
 #headerWrapper
 {
   background-color : #ffffff;
-  border-top       : solid 2px #494e8e;
-  border-bottom    : solid 2px #494e8e;
+  border-top       : 2px solid #494e8e;
+  border-bottom    : 2px solid #494e8e;
 }
 
 #headerWrapper header
@@ -273,25 +273,59 @@ table
 
 }
 
-/* Generated with Clay, http://fvisser.nl/clay */</style><style type="text/css">@page{margin: 3cm;}</style></head><body><div id="headerWrapper"><header class="navbar"><section class="navbar-section"><a class="navbar-brand" href="/">Jonathan Reeve: <span>Computational Literary Analysis</span></a></section><section class="navbar-section"><ul class="nav"><li class="nav-item"><a href="/">posts</a></li><li class="nav-item"><a href="/cv.html">cv</a></li><li class="nav-item"><a href="/tags/">tags</a></li><li class="nav-item"><a href="/feed.xml">feed</a></li></ul></section></header></div><div class="container"><h1>Workshop Notebook: Advanced Topics in Word Embeddings
-</h1><p>Posted 2019-02-20</p><article><p><a href="https://github.com/JonathanReeve/workshop-word-embeddings/blob/master/workshop-word-embeddings.ipynb">This notebook</a> originally accompanied a workshop I gave at NYCDH Week, in February of 2019, called “Advanced Topics in Word Embeddings.” (In truth, it’s only somewhat advanced. With a little background in NLP, this could even serve as an introduction to the subject.) You can <a href="https://mybinder.org/v2/gh/JonathanReeve/workshop-word-embeddings/master">run the code in a Binder, here</a>.</p>
-<p>Word embeddings are among the most discussed subjects in natural language processing, at the moment. If you’re not already familiar with them, there are a lot of great introductions out there. In particular, check out these:</p>
+/* Generated with Clay, http://fvisser.nl/clay */</style><style type="text/css">@page{margin: 3cm;}</style></head><body><div id="headerWrapper"><header class="navbar"><section class="navbar-section"><a class="navbar-brand" href>Jonathan Reeve: <span>Computational Literary Analysis</span></a></section><section class="navbar-section"><ul class="nav"><li class="nav-item"><a href>posts</a></li><li class="nav-item"><a href="cv">cv</a></li><li class="nav-item"><a href="tags.html">tags</a></li><li class="nav-item"><a href="feed.xml">feed</a></li></ul></section></header></div><div class="container"><h1>Workshop Notebook: Advanced Topics in Word Embeddings
+</h1><article><p>Posted 2019-02-20</p><p><a
+href="https://github.com/JonathanReeve/workshop-word-embeddings/blob/master/workshop-word-embeddings.ipynb">This
+notebook</a> originally accompanied a workshop I gave at NYCDH Week, in
+February of 2019, called “Advanced Topics in Word Embeddings.” (In
+truth, it’s only somewhat advanced. With a little background in NLP,
+this could even serve as an introduction to the subject.) You can <a
+href="https://mybinder.org/v2/gh/JonathanReeve/workshop-word-embeddings/master">run
+the code in a Binder, here</a>.</p>
+<p>Word embeddings are among the most discussed subjects in natural
+language processing, at the moment. If you’re not already familiar with
+them, there are a lot of great introductions out there. In particular,
+check out these:</p>
 <ul>
-<li><a href="https://www.tensorflow.org/tutorials/representation/word2vec">A classic primer on Word Embeddings, from Google (uses TensorFlow)</a></li>
-<li><a href="https://adventuresinmachinelearning.com/word2vec-tutorial-tensorflow/">Another word2vec tutorial using TensorFlow</a></li>
-<li><a href="https://code.google.com/archive/p/word2vec/">The original documentation of word2vec</a></li>
-<li><a href="https://spacy.io/usage/vectors-similarity">Spacy Docs on vector similarity</a></li>
-<li><a href="https://radimrehurek.com/gensim/models/keyedvectors.html">Gensim Docs</a></li>
+<li><a
+href="https://www.tensorflow.org/tutorials/representation/word2vec">A
+classic primer on Word Embeddings, from Google (uses
+TensorFlow)</a></li>
+<li><a
+href="https://adventuresinmachinelearning.com/word2vec-tutorial-tensorflow/">Another
+word2vec tutorial using TensorFlow</a></li>
+<li><a href="https://code.google.com/archive/p/word2vec/">The original
+documentation of word2vec</a></li>
+<li><a href="https://spacy.io/usage/vectors-similarity">Spacy Docs on
+vector similarity</a></li>
+<li><a
+href="https://radimrehurek.com/gensim/models/keyedvectors.html">Gensim
+Docs</a></li>
 </ul>
-<h2 id="an-example-of-document-vectors-project-gutenberg">An Example of Document Vectors: Project Gutenberg</h2>
-<p>This figure shows off some of the things you can do with document vectors. Using just the averaged word vectors of each document, and projecting them onto PCA space, you can see a nice divide between fiction and nonfiction books. In fact, I like to think of the line connecting the upper-left and the lower-right as a vector of “fictionality,” withthe upper-left corner as “highly fictional,” and the lower right as “highly non-fictional.” Curiously, religious texts are right in between.</p>
+<h2 id="an-example-of-document-vectors-project-gutenberg">An Example of
+Document Vectors: Project Gutenberg</h2>
+<p>This figure shows off some of the things you can do with document
+vectors. Using just the averaged word vectors of each document, and
+projecting them onto PCA space, you can see a nice divide between
+fiction and nonfiction books. In fact, I like to think of the line
+connecting the upper-left and the lower-right as a vector of
+“fictionality,” withthe upper-left corner as “highly fictional,” and the
+lower right as “highly non-fictional.” Curiously, religious texts are
+right in between.</p>
 <figure>
-<img src="../../../images/word-embeddings/example-gut.png" alt="First 30 Books of Project Gutenberg" /><figcaption aria-hidden="true">First 30 Books of Project Gutenberg</figcaption>
+<img src="../../../images/word-embeddings/example-gut.png"
+alt="First 30 Books of Project Gutenberg" />
+<figcaption aria-hidden="true">First 30 Books of Project
+Gutenberg</figcaption>
 </figure>
-<p>There’s more on this experiment <a href="http://jonreeve.com/2017/12/similar-documents-in-project-gutenberg/">in this 2015 post</a>.</p>
+<p>There’s more on this experiment <a
+href="http://jonreeve.com/2017/12/similar-documents-in-project-gutenberg/">in
+this 2015 post</a>.</p>
 <h2 id="getting-started">Getting Started</h2>
-<p>First, import the libraries below. (Make sure you have the packages beforehand, of course.)</p>
-<div class="sourceCode" id="cb1"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> pandas <span class="im">as</span> pd</span>
+<p>First, import the libraries below. (Make sure you have the packages
+beforehand, of course.)</p>
+<div class="sourceCode" id="cb1"><pre
+class="sourceCode python"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> pandas <span class="im">as</span> pd</span>
 <span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> spacy</span>
 <span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> glob <span class="im">import</span> glob</span>
 <span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a><span class="co"># import word2vec</span></span>
@@ -307,30 +341,63 @@ table
 <span id="cb1-14"><a href="#cb1-14" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> numpy.linalg <span class="im">import</span> norm</span>
 <span id="cb1-15"><a href="#cb1-15" aria-hidden="true" tabindex="-1"></a><span class="op">%</span>matplotlib notebook</span>
 <span id="cb1-16"><a href="#cb1-16" aria-hidden="true" tabindex="-1"></a>plt.rcParams[<span class="st">&quot;figure.figsize&quot;</span>] <span class="op">=</span> (<span class="dv">12</span>,<span class="dv">8</span>)</span></code></pre></div>
-<p>Now load the Spacy data that you downloaded (hopefully) prior to the workshop. If you don’t have it, or get an error below, you might want to <a href="https://spacy.io/models/en#en_vectors_web_lg">check out the documentation that Spacy maintains here</a> for how to download language models. Download the <code class="verbatim">en_core_web_lg</code> model.</p>
-<div class="sourceCode" id="cb2"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a>nlp <span class="op">=</span> spacy.load(<span class="st">&#39;en_core_web_lg&#39;</span>)</span></code></pre></div>
+<p>Now load the Spacy data that you downloaded (hopefully) prior to the
+workshop. If you don’t have it, or get an error below, you might want to
+<a href="https://spacy.io/models/en#en_vectors_web_lg">check out the
+documentation that Spacy maintains here</a> for how to download language
+models. Download the <code class="verbatim">en_core_web_lg</code>
+model.</p>
+<div class="sourceCode" id="cb2"><pre
+class="sourceCode python"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a>nlp <span class="op">=</span> spacy.load(<span class="st">&#39;en_core_web_lg&#39;</span>)</span></code></pre></div>
 <h1 id="word-vector-similarity">Word Vector Similarity</h1>
-<p>First, let’s make SpaCy “document” objects from a few expressions. These are fully parsed objects that contain lots of inferred information about the words present in the document, and their relations. For our purposes, we’ll be looking at the <code class="verbatim">.vector</code> property, and comparing documents using the <code class="verbatim">.similarity()</code> method. The <code class="verbatim">.vector</code> is just an average of the word vectors in the document, where each word vector comes from pre-trained model—the Stanford GloVe vectors. Just for fun, I’ve taken the examples below from <em>Monty Python and the Holy Grail</em>, the inspiration for the name of the Python programming language. (<a href="https://www.youtube.com/watch?v=liIlW-ovx0Y">If you haven’t seen it, this is the scene I’m referencing.</a>.)</p>
-<div class="sourceCode" id="cb3"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a>africanSwallow <span class="op">=</span> nlp(<span class="st">&#39;African swallow&#39;</span>)</span>
+<p>First, let’s make SpaCy “document” objects from a few expressions.
+These are fully parsed objects that contain lots of inferred information
+about the words present in the document, and their relations. For our
+purposes, we’ll be looking at the <code class="verbatim">.vector</code>
+property, and comparing documents using the <code
+class="verbatim">.similarity()</code> method. The <code
+class="verbatim">.vector</code> is just an average of the word vectors
+in the document, where each word vector comes from pre-trained model—the
+Stanford GloVe vectors. Just for fun, I’ve taken the examples below from
+<em>Monty Python and the Holy Grail</em>, the inspiration for the name
+of the Python programming language. (<a
+href="https://www.youtube.com/watch?v=liIlW-ovx0Y">If you haven’t seen
+it, this is the scene I’m referencing.</a>.)</p>
+<div class="sourceCode" id="cb3"><pre
+class="sourceCode python"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a>africanSwallow <span class="op">=</span> nlp(<span class="st">&#39;African swallow&#39;</span>)</span>
 <span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a>europeanSwallow <span class="op">=</span> nlp(<span class="st">&#39;European swallow&#39;</span>)</span>
 <span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a>coconut <span class="op">=</span> nlp(<span class="st">&#39;coconut&#39;</span>)</span></code></pre></div>
-<div class="sourceCode" id="cb4"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a>africanSwallow.similarity(europeanSwallow)</span></code></pre></div>
+<div class="sourceCode" id="cb4"><pre
+class="sourceCode python"><code class="sourceCode python"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a>africanSwallow.similarity(europeanSwallow)</span></code></pre></div>
 <pre class="example"><code>0.8596378859289445
 </code></pre>
-<div class="sourceCode" id="cb6"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a>africanSwallow.similarity(coconut)</span></code></pre></div>
+<div class="sourceCode" id="cb6"><pre
+class="sourceCode python"><code class="sourceCode python"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a>africanSwallow.similarity(coconut)</span></code></pre></div>
 <pre class="example"><code>0.2901231866716321
 </code></pre>
-<p>The <code class="verbatim">.similarity()</code> method is nothing special. We can implement our own, using dot products and norms:</p>
-<div class="sourceCode" id="cb8"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> similarity(vecA, vecB):</span>
+<p>The <code class="verbatim">.similarity()</code> method is nothing
+special. We can implement our own, using dot products and norms:</p>
+<div class="sourceCode" id="cb8"><pre
+class="sourceCode python"><code class="sourceCode python"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> similarity(vecA, vecB):</span>
 <span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> dot(vecA, vecB) <span class="op">/</span> (norm(vecA, <span class="bu">ord</span><span class="op">=</span><span class="dv">2</span>) <span class="op">*</span> norm(vecB, <span class="bu">ord</span><span class="op">=</span><span class="dv">2</span>))</span></code></pre></div>
-<div class="sourceCode" id="cb9"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a>similarity(africanSwallow.vector, europeanSwallow.vector)</span></code></pre></div>
+<div class="sourceCode" id="cb9"><pre
+class="sourceCode python"><code class="sourceCode python"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a>similarity(africanSwallow.vector, europeanSwallow.vector)</span></code></pre></div>
 <pre class="example"><code>0.8596379
 </code></pre>
 <h1 id="analogies-linear-algebra">Analogies (Linear Algebra)</h1>
-<p>In fact, using our custom similarity function above is probably the easiest way to do word2vec-style vector arithmetic (linear algebra). What will we get if we subtract “European swallow” from “African swallow?”</p>
-<div class="sourceCode" id="cb11"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a>swallowArithmetic <span class="op">=</span> (africanSwallow.vector <span class="op">-</span> europeanSwallow.vector)</span></code></pre></div>
-<p>To find out, we can make a function that will find all words with vectors that are most similar to our vector. If there’s a better way of doing this, let me know! I’m just going through all the possible words (all the words in <code class="verbatim">nlp.vocab</code>) and comparing them. This should take a long time.</p>
-<div class="sourceCode" id="cb12"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> mostSimilar(vec):</span>
+<p>In fact, using our custom similarity function above is probably the
+easiest way to do word2vec-style vector arithmetic (linear algebra).
+What will we get if we subtract “European swallow” from “African
+swallow”?</p>
+<div class="sourceCode" id="cb11"><pre
+class="sourceCode python"><code class="sourceCode python"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a>swallowArithmetic <span class="op">=</span> (africanSwallow.vector <span class="op">-</span> europeanSwallow.vector)</span></code></pre></div>
+<p>To find out, we can make a function that will find all words with
+vectors that are most similar to our vector. If there’s a better way of
+doing this, let me know! I’m just going through all the possible words
+(all the words in <code class="verbatim">nlp.vocab</code>) and comparing
+them. This should take a long time.</p>
+<div class="sourceCode" id="cb12"><pre
+class="sourceCode python"><code class="sourceCode python"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> mostSimilar(vec):</span>
 <span id="cb12-2"><a href="#cb12-2" aria-hidden="true" tabindex="-1"></a>    highestSimilarities <span class="op">=</span> [<span class="dv">0</span>]</span>
 <span id="cb12-3"><a href="#cb12-3" aria-hidden="true" tabindex="-1"></a>    highestWords <span class="op">=</span> [<span class="st">&quot;&quot;</span>]</span>
 <span id="cb12-4"><a href="#cb12-4" aria-hidden="true" tabindex="-1"></a>    <span class="cf">for</span> w <span class="kw">in</span> nlp.vocab:</span>
@@ -339,7 +406,8 @@ table
 <span id="cb12-7"><a href="#cb12-7" aria-hidden="true" tabindex="-1"></a>            highestSimilarities.append(sim)</span>
 <span id="cb12-8"><a href="#cb12-8" aria-hidden="true" tabindex="-1"></a>            highestWords.append(w.text.lower())</span>
 <span id="cb12-9"><a href="#cb12-9" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> <span class="bu">list</span>(<span class="bu">zip</span>(highestWords, highestSimilarities))[<span class="op">-</span><span class="dv">10</span>:]</span></code></pre></div>
-<div class="sourceCode" id="cb13"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a>mostSimilar(swallowArithmetic)</span></code></pre></div>
+<div class="sourceCode" id="cb13"><pre
+class="sourceCode python"><code class="sourceCode python"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a>mostSimilar(swallowArithmetic)</span></code></pre></div>
 <pre class="example"><code>[(&#39;croup&#39;, 0.06349668),
  (&#39;deceased&#39;, 0.11223719),
  (&#39;jambalaya&#39;, 0.14376064),
@@ -351,8 +419,11 @@ table
  (&#39;giraffe&#39;, 0.37119308),
  (&#39;african&#39;, 0.5032688)]
 </code></pre>
-<p>Our most similar word here is “african!” So “European swallow” - “African swallow” = “African!” Just out of curiosity, what will it say is the semantic neighborhood of “coconut?”</p>
-<div class="sourceCode" id="cb15"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a>mostSimilar(coconut.vector)</span></code></pre></div>
+<p>Our most similar word here is “african”! So “European swallow” -
+“African swallow” = “African”! Just out of curiosity, what will it say
+is the semantic neighborhood of “coconut”?</p>
+<div class="sourceCode" id="cb15"><pre
+class="sourceCode python"><code class="sourceCode python"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a>mostSimilar(coconut.vector)</span></code></pre></div>
 <pre class="example"><code>[(&#39;jambalaya&#39;, 0.24809697),
  (&#39;tawny&#39;, 0.2579049),
  (&#39;concentrate&#39;, 0.35225457),
@@ -364,10 +435,14 @@ table
  (&#39;peanut&#39;, 0.6609557),
  (&#39;coconut&#39;, 1.0000001)]
 </code></pre>
-<p>Looks like a recipe space. Let’s try the classic word2vec-style analogy, king - man + woman = queen:</p>
-<div class="sourceCode" id="cb17"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb17-1"><a href="#cb17-1" aria-hidden="true" tabindex="-1"></a>king, queen, woman, man <span class="op">=</span> [nlp(w).vector <span class="cf">for</span> w <span class="kw">in</span> [<span class="st">&#39;king&#39;</span>, <span class="st">&#39;queen&#39;</span>, <span class="st">&#39;woman&#39;</span>, <span class="st">&#39;man&#39;</span>]]</span></code></pre></div>
-<div class="sourceCode" id="cb18"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb18-1"><a href="#cb18-1" aria-hidden="true" tabindex="-1"></a>answer <span class="op">=</span> king <span class="op">-</span> man <span class="op">+</span> woman</span></code></pre></div>
-<div class="sourceCode" id="cb19"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb19-1"><a href="#cb19-1" aria-hidden="true" tabindex="-1"></a>mostSimilar(answer)</span></code></pre></div>
+<p>Looks like a recipe space. Let’s try the classic word2vec-style
+analogy, king - man + woman = queen:</p>
+<div class="sourceCode" id="cb17"><pre
+class="sourceCode python"><code class="sourceCode python"><span id="cb17-1"><a href="#cb17-1" aria-hidden="true" tabindex="-1"></a>king, queen, woman, man <span class="op">=</span> [nlp(w).vector <span class="cf">for</span> w <span class="kw">in</span> [<span class="st">&#39;king&#39;</span>, <span class="st">&#39;queen&#39;</span>, <span class="st">&#39;woman&#39;</span>, <span class="st">&#39;man&#39;</span>]]</span></code></pre></div>
+<div class="sourceCode" id="cb18"><pre
+class="sourceCode python"><code class="sourceCode python"><span id="cb18-1"><a href="#cb18-1" aria-hidden="true" tabindex="-1"></a>answer <span class="op">=</span> king <span class="op">-</span> man <span class="op">+</span> woman</span></code></pre></div>
+<div class="sourceCode" id="cb19"><pre
+class="sourceCode python"><code class="sourceCode python"><span id="cb19-1"><a href="#cb19-1" aria-hidden="true" tabindex="-1"></a>mostSimilar(answer)</span></code></pre></div>
 <pre class="example"><code>[(&#39;gorey&#39;, 0.03473952),
  (&#39;deceased&#39;, 0.2673984),
  (&#39;peasant&#39;, 0.32680285),
@@ -379,8 +454,10 @@ table
  (&#39;kingdom&#39;, 0.55209804),
  (&#39;king&#39;, 0.802426)]
 </code></pre>
-<p>It doesn’t work quite as well as expected. What about for countries and their capitals? Paris - France + Germany = Berlin?</p>
-<div class="sourceCode" id="cb21"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb21-1"><a href="#cb21-1" aria-hidden="true" tabindex="-1"></a>paris, france, germany <span class="op">=</span> [nlp(w).vector <span class="cf">for</span> w <span class="kw">in</span> [<span class="st">&#39;Paris&#39;</span>, <span class="st">&#39;France&#39;</span>, <span class="st">&#39;Germany&#39;</span>]]</span>
+<p>It doesn’t work quite as well as expected. What about for countries
+and their capitals? Paris - France + Germany = Berlin?</p>
+<div class="sourceCode" id="cb21"><pre
+class="sourceCode python"><code class="sourceCode python"><span id="cb21-1"><a href="#cb21-1" aria-hidden="true" tabindex="-1"></a>paris, france, germany <span class="op">=</span> [nlp(w).vector <span class="cf">for</span> w <span class="kw">in</span> [<span class="st">&#39;Paris&#39;</span>, <span class="st">&#39;France&#39;</span>, <span class="st">&#39;Germany&#39;</span>]]</span>
 <span id="cb21-2"><a href="#cb21-2" aria-hidden="true" tabindex="-1"></a>answer <span class="op">=</span> paris <span class="op">-</span> france <span class="op">+</span> germany</span>
 <span id="cb21-3"><a href="#cb21-3" aria-hidden="true" tabindex="-1"></a>mostSimilar(answer)</span></code></pre></div>
 <pre class="example"><code>[(&#39;orlando&#39;, 0.48517892),
@@ -394,20 +471,29 @@ table
  (&#39;berlin&#39;, 0.75474036),
  (&#39;germany&#39;, 0.8027713)]
 </code></pre>
-<p>It works! If you ignore the word itself (“Germany”), then the next most similar one is “Berlin!”</p>
+<p>It works! If you ignore the word itself (“Germany”), then the next
+most similar one is “Berlin”!</p>
 <h1 id="pride-and-prejudice">Pride and Prejudice</h1>
-<p>Now let’s look at the first bunch of nouns from <em>Pride and Prejudice</em>. It starts:</p>
+<p>Now let’s look at the first bunch of nouns from <em>Pride and
+Prejudice</em>. It starts:</p>
 <pre class="example"><code>It is a truth universally acknowledged, that a single man in possession of a good fortune, must be in want of a wife.
 However little known the feelings or views of such a man may be on his first entering a neighbourhood, this truth is so well fixed in the minds of the surrounding families, that he is considered the rightful property of some one or other of their daughters.
 </code></pre>
-<p>First, load and process it. We’ll grab just the first fifth of it, so we won’t run out of memory. (And if you still run out of memory, maybe increase that number.)</p>
-<div class="sourceCode" id="cb24"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb24-1"><a href="#cb24-1" aria-hidden="true" tabindex="-1"></a>pride <span class="op">=</span> <span class="bu">open</span>(<span class="st">&#39;pride.txt&#39;</span>).read()</span></code></pre></div>
-<div class="sourceCode" id="cb25"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb25-1"><a href="#cb25-1" aria-hidden="true" tabindex="-1"></a>pride <span class="op">=</span> pride[:<span class="bu">int</span>(<span class="bu">len</span>(pride)<span class="op">/</span><span class="dv">5</span>)]</span></code></pre></div>
-<div class="sourceCode" id="cb26"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb26-1"><a href="#cb26-1" aria-hidden="true" tabindex="-1"></a>prideDoc <span class="op">=</span> nlp(pride)</span></code></pre></div>
+<p>First, load and process it. We’ll grab just the first fifth of it, so
+we won’t run out of memory. (And if you still run out of memory, maybe
+increase that number.)</p>
+<div class="sourceCode" id="cb24"><pre
+class="sourceCode python"><code class="sourceCode python"><span id="cb24-1"><a href="#cb24-1" aria-hidden="true" tabindex="-1"></a>pride <span class="op">=</span> <span class="bu">open</span>(<span class="st">&#39;pride.txt&#39;</span>).read()</span></code></pre></div>
+<div class="sourceCode" id="cb25"><pre
+class="sourceCode python"><code class="sourceCode python"><span id="cb25-1"><a href="#cb25-1" aria-hidden="true" tabindex="-1"></a>pride <span class="op">=</span> pride[:<span class="bu">int</span>(<span class="bu">len</span>(pride)<span class="op">/</span><span class="dv">5</span>)]</span></code></pre></div>
+<div class="sourceCode" id="cb26"><pre
+class="sourceCode python"><code class="sourceCode python"><span id="cb26-1"><a href="#cb26-1" aria-hidden="true" tabindex="-1"></a>prideDoc <span class="op">=</span> nlp(pride)</span></code></pre></div>
 <p>Now grab the first, say, 40 nouns.</p>
-<div class="sourceCode" id="cb27"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb27-1"><a href="#cb27-1" aria-hidden="true" tabindex="-1"></a>prideNouns <span class="op">=</span> [w <span class="cf">for</span> w <span class="kw">in</span> prideDoc <span class="cf">if</span> w.pos_.startswith(<span class="st">&#39;N&#39;</span>)][:<span class="dv">40</span>]</span>
+<div class="sourceCode" id="cb27"><pre
+class="sourceCode python"><code class="sourceCode python"><span id="cb27-1"><a href="#cb27-1" aria-hidden="true" tabindex="-1"></a>prideNouns <span class="op">=</span> [w <span class="cf">for</span> w <span class="kw">in</span> prideDoc <span class="cf">if</span> w.pos_.startswith(<span class="st">&#39;N&#39;</span>)][:<span class="dv">40</span>]</span>
 <span id="cb27-2"><a href="#cb27-2" aria-hidden="true" tabindex="-1"></a>prideNounLabels <span class="op">=</span> [w.lemma_ <span class="cf">for</span> w <span class="kw">in</span> prideNouns]</span></code></pre></div>
-<div class="sourceCode" id="cb28"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb28-1"><a href="#cb28-1" aria-hidden="true" tabindex="-1"></a>prideNounLabels[:<span class="dv">10</span>]</span></code></pre></div>
+<div class="sourceCode" id="cb28"><pre
+class="sourceCode python"><code class="sourceCode python"><span id="cb28-1"><a href="#cb28-1" aria-hidden="true" tabindex="-1"></a>prideNounLabels[:<span class="dv">10</span>]</span></code></pre></div>
 <pre class="example"><code>[&#39;truth&#39;,
  &#39;man&#39;,
  &#39;possession&#39;,
@@ -422,19 +508,26 @@ However little known the feelings or views of such a man may be on his first ent
  ...
 </code></pre>
 <p>Get the vectors of those nouns.</p>
-<div class="sourceCode" id="cb30"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb30-1"><a href="#cb30-1" aria-hidden="true" tabindex="-1"></a>prideNounVecs <span class="op">=</span> [w.vector <span class="cf">for</span> w <span class="kw">in</span> prideNouns]</span></code></pre></div>
+<div class="sourceCode" id="cb30"><pre
+class="sourceCode python"><code class="sourceCode python"><span id="cb30-1"><a href="#cb30-1" aria-hidden="true" tabindex="-1"></a>prideNounVecs <span class="op">=</span> [w.vector <span class="cf">for</span> w <span class="kw">in</span> prideNouns]</span></code></pre></div>
 <p>Verify that they are, in fact, our 300-dimensional vectors.</p>
-<div class="sourceCode" id="cb31"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb31-1"><a href="#cb31-1" aria-hidden="true" tabindex="-1"></a>prideNounVecs[<span class="dv">0</span>].shape</span></code></pre></div>
+<div class="sourceCode" id="cb31"><pre
+class="sourceCode python"><code class="sourceCode python"><span id="cb31-1"><a href="#cb31-1" aria-hidden="true" tabindex="-1"></a>prideNounVecs[<span class="dv">0</span>].shape</span></code></pre></div>
 <pre class="example"><code>(300,)
 </code></pre>
-<p>Use PCA to reduce them to three dimensions, just so we can plot them.</p>
-<div class="sourceCode" id="cb33"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb33-1"><a href="#cb33-1" aria-hidden="true" tabindex="-1"></a>reduced <span class="op">=</span> PCA(n_components<span class="op">=</span><span class="dv">3</span>).fit_transform(prideNounVecs)</span></code></pre></div>
-<div class="sourceCode" id="cb34"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb34-1"><a href="#cb34-1" aria-hidden="true" tabindex="-1"></a>reduced[<span class="dv">0</span>].shape</span></code></pre></div>
+<p>Use PCA to reduce them to three dimensions, just so we can plot
+them.</p>
+<div class="sourceCode" id="cb33"><pre
+class="sourceCode python"><code class="sourceCode python"><span id="cb33-1"><a href="#cb33-1" aria-hidden="true" tabindex="-1"></a>reduced <span class="op">=</span> PCA(n_components<span class="op">=</span><span class="dv">3</span>).fit_transform(prideNounVecs)</span></code></pre></div>
+<div class="sourceCode" id="cb34"><pre
+class="sourceCode python"><code class="sourceCode python"><span id="cb34-1"><a href="#cb34-1" aria-hidden="true" tabindex="-1"></a>reduced[<span class="dv">0</span>].shape</span></code></pre></div>
 <pre class="example"><code>(3,)
 </code></pre>
-<div class="sourceCode" id="cb36"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb36-1"><a href="#cb36-1" aria-hidden="true" tabindex="-1"></a>prideDF <span class="op">=</span> pd.DataFrame(reduced)</span></code></pre></div>
+<div class="sourceCode" id="cb36"><pre
+class="sourceCode python"><code class="sourceCode python"><span id="cb36-1"><a href="#cb36-1" aria-hidden="true" tabindex="-1"></a>prideDF <span class="op">=</span> pd.DataFrame(reduced)</span></code></pre></div>
 <p>Plot them interactively, in 3D, just for fun.</p>
-<div class="sourceCode" id="cb37"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb37-1"><a href="#cb37-1" aria-hidden="true" tabindex="-1"></a><span class="op">%</span>matplotlib notebook</span>
+<div class="sourceCode" id="cb37"><pre
+class="sourceCode python"><code class="sourceCode python"><span id="cb37-1"><a href="#cb37-1" aria-hidden="true" tabindex="-1"></a><span class="op">%</span>matplotlib notebook</span>
 <span id="cb37-2"><a href="#cb37-2" aria-hidden="true" tabindex="-1"></a>plt.rcParams[<span class="st">&quot;figure.figsize&quot;</span>] <span class="op">=</span> (<span class="dv">10</span>,<span class="dv">8</span>)</span>
 <span id="cb37-3"><a href="#cb37-3" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb37-4"><a href="#cb37-4" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> plotResults3D(df, labels): </span>
@@ -443,12 +536,18 @@ However little known the feelings or views of such a man may be on his first ent
 <span id="cb37-7"><a href="#cb37-7" aria-hidden="true" tabindex="-1"></a>    ax.scatter(df[<span class="dv">0</span>], df[<span class="dv">1</span>], df[<span class="dv">2</span>], marker<span class="op">=</span><span class="st">&#39;o&#39;</span>)</span>
 <span id="cb37-8"><a href="#cb37-8" aria-hidden="true" tabindex="-1"></a>    <span class="cf">for</span> i, label <span class="kw">in</span> <span class="bu">enumerate</span>(labels):</span>
 <span id="cb37-9"><a href="#cb37-9" aria-hidden="true" tabindex="-1"></a>        ax.text(df.loc[i][<span class="dv">0</span>], df.loc[i][<span class="dv">1</span>], df.loc[i][<span class="dv">2</span>], label)</span></code></pre></div>
-<div class="sourceCode" id="cb38"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb38-1"><a href="#cb38-1" aria-hidden="true" tabindex="-1"></a>plotResults3D(prideDF, prideNounLabels)</span></code></pre></div>
+<div class="sourceCode" id="cb38"><pre
+class="sourceCode python"><code class="sourceCode python"><span id="cb38-1"><a href="#cb38-1" aria-hidden="true" tabindex="-1"></a>plotResults3D(prideDF, prideNounLabels)</span></code></pre></div>
 <figure>
-<img src="../../../images/word-embeddings/pride-nouns.png" alt="Pride and Prejudice Nouns" /><figcaption aria-hidden="true">Pride and Prejudice Nouns</figcaption>
+<img src="../../../images/word-embeddings/pride-nouns.png"
+alt="Pride and Prejudice Nouns" />
+<figcaption aria-hidden="true">Pride and Prejudice Nouns</figcaption>
 </figure>
-<p>Now we can rewrite the above function so that instead of cycling through all the words ever, it just looks through all the <em>Pride and Prejudice</em> nouns:</p>
-<div class="sourceCode" id="cb39"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb39-1"><a href="#cb39-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Redo this function with only nouns from Pride and Prejudice</span></span>
+<p>Now we can rewrite the above function so that instead of cycling
+through all the words ever, it just looks through all the <em>Pride and
+Prejudice</em> nouns:</p>
+<div class="sourceCode" id="cb39"><pre
+class="sourceCode python"><code class="sourceCode python"><span id="cb39-1"><a href="#cb39-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Redo this function with only nouns from Pride and Prejudice</span></span>
 <span id="cb39-2"><a href="#cb39-2" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> mostSimilar(vec):</span>
 <span id="cb39-3"><a href="#cb39-3" aria-hidden="true" tabindex="-1"></a>    highestSimilarities <span class="op">=</span> [<span class="dv">0</span>]</span>
 <span id="cb39-4"><a href="#cb39-4" aria-hidden="true" tabindex="-1"></a>    highestWords <span class="op">=</span> [<span class="st">&quot;&quot;</span>]</span>
@@ -458,38 +557,58 @@ However little known the feelings or views of such a man may be on his first ent
 <span id="cb39-8"><a href="#cb39-8" aria-hidden="true" tabindex="-1"></a>            highestSimilarities.append(sim)</span>
 <span id="cb39-9"><a href="#cb39-9" aria-hidden="true" tabindex="-1"></a>            highestWords.append(w.text.lower())</span>
 <span id="cb39-10"><a href="#cb39-10" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> <span class="bu">list</span>(<span class="bu">zip</span>(highestWords, highestSimilarities))[<span class="op">-</span><span class="dv">10</span>:]</span></code></pre></div>
-<p>Now we can investigate, more rigorously than just eyeballing the visualization above, the vector neighborhoods of some of these words:</p>
-<div class="sourceCode" id="cb40"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb40-1"><a href="#cb40-1" aria-hidden="true" tabindex="-1"></a>mostSimilar(nlp(<span class="st">&#39;fortune&#39;</span>).vector)</span></code></pre></div>
+<p>Now we can investigate, more rigorously than just eyeballing the
+visualization above, the vector neighborhoods of some of these
+words:</p>
+<div class="sourceCode" id="cb40"><pre
+class="sourceCode python"><code class="sourceCode python"><span id="cb40-1"><a href="#cb40-1" aria-hidden="true" tabindex="-1"></a>mostSimilar(nlp(<span class="st">&#39;fortune&#39;</span>).vector)</span></code></pre></div>
 <pre class="example"><code>[(&#39;&#39;, 0), (&#39;truth&#39;, 0.3837785), (&#39;man&#39;, 0.40059176), (&#39;fortune&#39;, 1.0000001)]
 </code></pre>
 <h1 id="senses">Senses</h1>
-<p>If we treat words as documents, and put them in the same vector space as other documents, we can infer how much like that word the document is, vector-wise. Let’s use four words representing the senses:</p>
-<div class="sourceCode" id="cb42"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb42-1"><a href="#cb42-1" aria-hidden="true" tabindex="-1"></a>senseDocs <span class="op">=</span> [nlp(w) <span class="cf">for</span> w <span class="kw">in</span> [<span class="st">&#39;sound&#39;</span>, <span class="st">&#39;sight&#39;</span>, <span class="st">&#39;touch&#39;</span>, <span class="st">&#39;smell&#39;</span>]]</span>
+<p>If we treat words as documents, and put them in the same vector space
+as other documents, we can infer how much like that word the document
+is, vector-wise. Let’s use four words representing the senses:</p>
+<div class="sourceCode" id="cb42"><pre
+class="sourceCode python"><code class="sourceCode python"><span id="cb42-1"><a href="#cb42-1" aria-hidden="true" tabindex="-1"></a>senseDocs <span class="op">=</span> [nlp(w) <span class="cf">for</span> w <span class="kw">in</span> [<span class="st">&#39;sound&#39;</span>, <span class="st">&#39;sight&#39;</span>, <span class="st">&#39;touch&#39;</span>, <span class="st">&#39;smell&#39;</span>]]</span>
 <span id="cb42-2"><a href="#cb42-2" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> whichSense(word):</span>
 <span id="cb42-3"><a href="#cb42-3" aria-hidden="true" tabindex="-1"></a>    doc <span class="op">=</span> nlp(word)</span>
 <span id="cb42-4"><a href="#cb42-4" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> {sense: doc.similarity(sense) <span class="cf">for</span> sense <span class="kw">in</span> senseDocs}</span></code></pre></div>
-<div class="sourceCode" id="cb43"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb43-1"><a href="#cb43-1" aria-hidden="true" tabindex="-1"></a>whichSense(<span class="st">&#39;symphony&#39;</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb43"><pre
+class="sourceCode python"><code class="sourceCode python"><span id="cb43-1"><a href="#cb43-1" aria-hidden="true" tabindex="-1"></a>whichSense(<span class="st">&#39;symphony&#39;</span>)</span></code></pre></div>
 <pre class="example"><code>{sound: 0.37716483832358116,
  sight: 0.20594014841156277,
  touch: 0.19551651130481998,
  smell: 0.19852637065751555}
 </code></pre>
-<div class="sourceCode" id="cb45"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb45-1"><a href="#cb45-1" aria-hidden="true" tabindex="-1"></a><span class="op">%</span>matplotlib inline</span>
+<div class="sourceCode" id="cb45"><pre
+class="sourceCode python"><code class="sourceCode python"><span id="cb45-1"><a href="#cb45-1" aria-hidden="true" tabindex="-1"></a><span class="op">%</span>matplotlib inline</span>
 <span id="cb45-2"><a href="#cb45-2" aria-hidden="true" tabindex="-1"></a>plt.rcParams[<span class="st">&quot;figure.figsize&quot;</span>] <span class="op">=</span> (<span class="dv">14</span>,<span class="dv">8</span>)</span></code></pre></div>
-<div class="sourceCode" id="cb46"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb46-1"><a href="#cb46-1" aria-hidden="true" tabindex="-1"></a>testWords <span class="op">=</span> <span class="st">&#39;symphony itchy flower crash&#39;</span>.split()</span>
+<div class="sourceCode" id="cb46"><pre
+class="sourceCode python"><code class="sourceCode python"><span id="cb46-1"><a href="#cb46-1" aria-hidden="true" tabindex="-1"></a>testWords <span class="op">=</span> <span class="st">&#39;symphony itchy flower crash&#39;</span>.split()</span>
 <span id="cb46-2"><a href="#cb46-2" aria-hidden="true" tabindex="-1"></a>pd.DataFrame([whichSense(w) <span class="cf">for</span> w <span class="kw">in</span> testWords], index<span class="op">=</span>testWords).plot(kind<span class="op">=</span><span class="st">&#39;bar&#39;</span>)</span></code></pre></div>
 <figure>
-<img src="../../../images/word-embeddings/output_52_1.png" alt="Pride and Prejudice Nouns" /><figcaption aria-hidden="true">Pride and Prejudice Nouns</figcaption>
+<img src="../../../images/word-embeddings/output_52_1.png"
+alt="Pride and Prejudice Nouns" />
+<figcaption aria-hidden="true">Pride and Prejudice Nouns</figcaption>
 </figure>
-<p>It looks like it correctly guesses that <em>symphony</em> correlates with <em>sound</em>, and also does so with <em>crash</em>, but its guesses for <em>itchy</em> (<em>smell</em>) and for <em>flower</em> (<em>touch</em>) are less intuitive.</p>
+<p>It looks like it correctly guesses that <em>symphony</em> correlates
+with <em>sound</em>, and also does so with <em>crash</em>, but its
+guesses for <em>itchy</em> (<em>smell</em>) and for <em>flower</em>
+(<em>touch</em>) are less intuitive.</p>
 <h1 id="the-inaugural-address-corpus">The Inaugural Address Corpus</h1>
-<p>In this repo, I’ve prepared a custom version of the Inaugural Address Corpus included with the NLTK. It just represents the inaugural addresses of most of the US presidents from the 20th and 21st centuries. Let’s compare them using document vectors! First let’s generate parallel lists of documents, labels, and other metadata:</p>
-<div class="sourceCode" id="cb47"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb47-1"><a href="#cb47-1" aria-hidden="true" tabindex="-1"></a>inauguralFilenames <span class="op">=</span> <span class="bu">sorted</span>(glob(<span class="st">&#39;inaugural/*&#39;</span>))</span>
+<p>In this repo, I’ve prepared a custom version of the Inaugural Address
+Corpus included with the NLTK. It just represents the inaugural
+addresses of most of the US presidents from the 20th and 21st centuries.
+Let’s compare them using document vectors! First let’s generate parallel
+lists of documents, labels, and other metadata:</p>
+<div class="sourceCode" id="cb47"><pre
+class="sourceCode python"><code class="sourceCode python"><span id="cb47-1"><a href="#cb47-1" aria-hidden="true" tabindex="-1"></a>inauguralFilenames <span class="op">=</span> <span class="bu">sorted</span>(glob(<span class="st">&#39;inaugural/*&#39;</span>))</span>
 <span id="cb47-2"><a href="#cb47-2" aria-hidden="true" tabindex="-1"></a>inauguralLabels <span class="op">=</span> [fn[<span class="dv">10</span>:<span class="op">-</span><span class="dv">4</span>] <span class="cf">for</span> fn <span class="kw">in</span> inauguralFilenames]</span>
 <span id="cb47-3"><a href="#cb47-3" aria-hidden="true" tabindex="-1"></a>inauguralDates <span class="op">=</span> [<span class="bu">int</span>(label[:<span class="dv">4</span>]) <span class="cf">for</span> label <span class="kw">in</span> inauguralLabels]</span>
 <span id="cb47-4"><a href="#cb47-4" aria-hidden="true" tabindex="-1"></a>parties <span class="op">=</span> <span class="st">&#39;rrrbbrrrbbbbbrrbbrrbrrrbbrrbr&#39;</span> <span class="co"># I did this manually. There are probably errors.</span></span>
 <span id="cb47-5"><a href="#cb47-5" aria-hidden="true" tabindex="-1"></a>inauguralRaw <span class="op">=</span> [<span class="bu">open</span>(f, errors<span class="op">=</span><span class="st">&quot;ignore&quot;</span>).read() <span class="cf">for</span> f <span class="kw">in</span> inauguralFilenames]</span></code></pre></div>
-<div class="sourceCode" id="cb48"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb48-1"><a href="#cb48-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Sanity check: peek</span></span>
+<div class="sourceCode" id="cb48"><pre
+class="sourceCode python"><code class="sourceCode python"><span id="cb48-1"><a href="#cb48-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Sanity check: peek</span></span>
 <span id="cb48-2"><a href="#cb48-2" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> i <span class="kw">in</span> <span class="bu">range</span>(<span class="dv">4</span>): </span>
 <span id="cb48-3"><a href="#cb48-3" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(inauguralLabels[i][:<span class="dv">30</span>], inauguralDates[i], inauguralRaw[i][:<span class="dv">30</span>])</span></code></pre></div>
 <pre class="example"><code>1901-McKinley 1901 My fellow-citizens, when we as
@@ -498,16 +617,25 @@ However little known the feelings or views of such a man may be on his first ent
 1913-Wilson 1913 There has been a change of gov
 </code></pre>
 <p>Process them and compute the vectors:</p>
-<div class="sourceCode" id="cb50"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb50-1"><a href="#cb50-1" aria-hidden="true" tabindex="-1"></a>inauguralDocs <span class="op">=</span> [nlp(text) <span class="cf">for</span> text <span class="kw">in</span> inauguralRaw]</span></code></pre></div>
-<div class="sourceCode" id="cb51"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb51-1"><a href="#cb51-1" aria-hidden="true" tabindex="-1"></a>inauguralVecs <span class="op">=</span> [doc.vector <span class="cf">for</span> doc <span class="kw">in</span> inauguralDocs]</span></code></pre></div>
-<p>Now compute a similarity matrix for them. Check the similarity of everything against everything else. There’s probably a more efficient way of doing this, using sparse matrices. If you can improve on this, please send me a pull request!</p>
-<div class="sourceCode" id="cb52"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb52-1"><a href="#cb52-1" aria-hidden="true" tabindex="-1"></a>similarities <span class="op">=</span> []</span>
+<div class="sourceCode" id="cb50"><pre
+class="sourceCode python"><code class="sourceCode python"><span id="cb50-1"><a href="#cb50-1" aria-hidden="true" tabindex="-1"></a>inauguralDocs <span class="op">=</span> [nlp(text) <span class="cf">for</span> text <span class="kw">in</span> inauguralRaw]</span></code></pre></div>
+<div class="sourceCode" id="cb51"><pre
+class="sourceCode python"><code class="sourceCode python"><span id="cb51-1"><a href="#cb51-1" aria-hidden="true" tabindex="-1"></a>inauguralVecs <span class="op">=</span> [doc.vector <span class="cf">for</span> doc <span class="kw">in</span> inauguralDocs]</span></code></pre></div>
+<p>Now compute a similarity matrix for them. Check the similarity of
+everything against everything else. There’s probably a more efficient
+way of doing this, using sparse matrices. If you can improve on this,
+please send me a pull request!</p>
+<div class="sourceCode" id="cb52"><pre
+class="sourceCode python"><code class="sourceCode python"><span id="cb52-1"><a href="#cb52-1" aria-hidden="true" tabindex="-1"></a>similarities <span class="op">=</span> []</span>
 <span id="cb52-2"><a href="#cb52-2" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> vec <span class="kw">in</span> inauguralDocs: </span>
 <span id="cb52-3"><a href="#cb52-3" aria-hidden="true" tabindex="-1"></a>    thisSimilarities <span class="op">=</span> [vec.similarity(other) <span class="cf">for</span> other <span class="kw">in</span> inauguralDocs]</span>
 <span id="cb52-4"><a href="#cb52-4" aria-hidden="true" tabindex="-1"></a>    similarities.append(thisSimilarities)</span></code></pre></div>
-<div class="sourceCode" id="cb53"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb53-1"><a href="#cb53-1" aria-hidden="true" tabindex="-1"></a>df <span class="op">=</span> pd.DataFrame(similarities, columns<span class="op">=</span>inauguralLabels, index<span class="op">=</span>inauguralLabels)</span></code></pre></div>
-<p>Now we can use <code class="verbatim">.idmax()</code> to compute the most semantically similar addresses.</p>
-<div class="sourceCode" id="cb54"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb54-1"><a href="#cb54-1" aria-hidden="true" tabindex="-1"></a>df[df <span class="op">&lt;</span> <span class="dv">1</span>].idxmax()</span></code></pre></div>
+<div class="sourceCode" id="cb53"><pre
+class="sourceCode python"><code class="sourceCode python"><span id="cb53-1"><a href="#cb53-1" aria-hidden="true" tabindex="-1"></a>df <span class="op">=</span> pd.DataFrame(similarities, columns<span class="op">=</span>inauguralLabels, index<span class="op">=</span>inauguralLabels)</span></code></pre></div>
+<p>Now we can use <code class="verbatim">.idmax()</code> to compute the
+most semantically similar addresses.</p>
+<div class="sourceCode" id="cb54"><pre
+class="sourceCode python"><code class="sourceCode python"><span id="cb54-1"><a href="#cb54-1" aria-hidden="true" tabindex="-1"></a>df[df <span class="op">&lt;</span> <span class="dv">1</span>].idxmax()</span></code></pre></div>
 <pre class="example"><code>1901-McKinley        1925-Coolidge
 1905-Roosevelt         1913-Wilson
 1909-Taft            1901-McKinley
@@ -539,34 +667,55 @@ However little known the feelings or views of such a man may be on his first ent
 2017-Trump            1993-Clinton
 dtype: object
 </code></pre>
-<p>If we reduce the dimensions here using PCA, we can visualize the similarity in 2D:</p>
-<div class="sourceCode" id="cb56"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb56-1"><a href="#cb56-1" aria-hidden="true" tabindex="-1"></a>embedded <span class="op">=</span> PCA(n_components<span class="op">=</span><span class="dv">2</span>).fit_transform(inauguralVecs)</span></code></pre></div>
-<div class="sourceCode" id="cb57"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb57-1"><a href="#cb57-1" aria-hidden="true" tabindex="-1"></a>xs, ys <span class="op">=</span> embedded[:,<span class="dv">0</span>], embedded[:,<span class="dv">1</span>]</span>
+<p>If we reduce the dimensions here using PCA, we can visualize the
+similarity in 2D:</p>
+<div class="sourceCode" id="cb56"><pre
+class="sourceCode python"><code class="sourceCode python"><span id="cb56-1"><a href="#cb56-1" aria-hidden="true" tabindex="-1"></a>embedded <span class="op">=</span> PCA(n_components<span class="op">=</span><span class="dv">2</span>).fit_transform(inauguralVecs)</span></code></pre></div>
+<div class="sourceCode" id="cb57"><pre
+class="sourceCode python"><code class="sourceCode python"><span id="cb57-1"><a href="#cb57-1" aria-hidden="true" tabindex="-1"></a>xs, ys <span class="op">=</span> embedded[:,<span class="dv">0</span>], embedded[:,<span class="dv">1</span>]</span>
 <span id="cb57-2"><a href="#cb57-2" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> i <span class="kw">in</span> <span class="bu">range</span>(<span class="bu">len</span>(xs)): </span>
 <span id="cb57-3"><a href="#cb57-3" aria-hidden="true" tabindex="-1"></a>    plt.scatter(xs[i], ys[i], c<span class="op">=</span>parties[i], s<span class="op">=</span>inauguralDates[i]<span class="op">-</span><span class="dv">1900</span>)</span>
 <span id="cb57-4"><a href="#cb57-4" aria-hidden="true" tabindex="-1"></a>    plt.annotate(inauguralLabels[i], (xs[i], ys[i]))</span></code></pre></div>
 <figure>
-<img src="../../../images/word-embeddings/output_67_0.png" alt="Presidential Inaugural Address Vectors" /><figcaption aria-hidden="true">Presidential Inaugural Address Vectors</figcaption>
+<img src="../../../images/word-embeddings/output_67_0.png"
+alt="Presidential Inaugural Address Vectors" />
+<figcaption aria-hidden="true">Presidential Inaugural Address
+Vectors</figcaption>
 </figure>
 <h1 id="detective-novels">Detective Novels</h1>
-<p>I’ve prepared a corpus of detective novels, using another notebook in this repository. It contains metadata and full texts of about 10 detective novels. Let’s compute their similarities to certain weapons! It seems the murder took place in the drawing room, with a candlestick, and the murderer was <a href="https://en.wikipedia.org/wiki/List_of_Cluedo_characters#Colonel_Mustard">Colonel Mustard</a>!</p>
-<div class="sourceCode" id="cb58"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb58-1"><a href="#cb58-1" aria-hidden="true" tabindex="-1"></a>detectiveJSON <span class="op">=</span> <span class="bu">open</span>(<span class="st">&#39;detectives.json&#39;</span>)</span>
+<p>I’ve prepared a corpus of detective novels, using another notebook in
+this repository. It contains metadata and full texts of about 10
+detective novels. Let’s compute their similarities to certain weapons!
+It seems the murder took place in the drawing room, with a candlestick,
+and the murderer was <a
+href="https://en.wikipedia.org/wiki/List_of_Cluedo_characters#Colonel_Mustard">Colonel
+Mustard</a>!</p>
+<div class="sourceCode" id="cb58"><pre
+class="sourceCode python"><code class="sourceCode python"><span id="cb58-1"><a href="#cb58-1" aria-hidden="true" tabindex="-1"></a>detectiveJSON <span class="op">=</span> <span class="bu">open</span>(<span class="st">&#39;detectives.json&#39;</span>)</span>
 <span id="cb58-2"><a href="#cb58-2" aria-hidden="true" tabindex="-1"></a>detectivesData <span class="op">=</span> json.load(detectiveJSON)</span>
 <span id="cb58-3"><a href="#cb58-3" aria-hidden="true" tabindex="-1"></a>detectivesData <span class="op">=</span> detectivesData[<span class="dv">1</span>:] <span class="co"># Chop off #1, which is actually a duplicate</span></span></code></pre></div>
-<div class="sourceCode" id="cb59"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb59-1"><a href="#cb59-1" aria-hidden="true" tabindex="-1"></a>detectiveTexts <span class="op">=</span> [book[<span class="st">&#39;text&#39;</span>] <span class="cf">for</span> book <span class="kw">in</span> detectivesData]</span></code></pre></div>
-<p>We might want to truncate these texts, so that we’re comparing the same amount of text throughout.</p>
-<div class="sourceCode" id="cb60"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb60-1"><a href="#cb60-1" aria-hidden="true" tabindex="-1"></a>detectiveLengths <span class="op">=</span> [<span class="bu">len</span>(text) <span class="cf">for</span> text <span class="kw">in</span> detectiveTexts] </span>
+<div class="sourceCode" id="cb59"><pre
+class="sourceCode python"><code class="sourceCode python"><span id="cb59-1"><a href="#cb59-1" aria-hidden="true" tabindex="-1"></a>detectiveTexts <span class="op">=</span> [book[<span class="st">&#39;text&#39;</span>] <span class="cf">for</span> book <span class="kw">in</span> detectivesData]</span></code></pre></div>
+<p>We might want to truncate these texts, so that we’re comparing the
+same amount of text throughout.</p>
+<div class="sourceCode" id="cb60"><pre
+class="sourceCode python"><code class="sourceCode python"><span id="cb60-1"><a href="#cb60-1" aria-hidden="true" tabindex="-1"></a>detectiveLengths <span class="op">=</span> [<span class="bu">len</span>(text) <span class="cf">for</span> text <span class="kw">in</span> detectiveTexts] </span>
 <span id="cb60-2"><a href="#cb60-2" aria-hidden="true" tabindex="-1"></a>detectiveLengths</span></code></pre></div>
 <pre class="example"><code>[351240, 415961, 440629, 611531, 399572, 242949, 648486, 350142, 288955]
 </code></pre>
-<div class="sourceCode" id="cb62"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb62-1"><a href="#cb62-1" aria-hidden="true" tabindex="-1"></a>detectiveTextsTruncated <span class="op">=</span> [t[:<span class="bu">min</span>(detectiveLengths)] <span class="cf">for</span> t <span class="kw">in</span> detectiveTexts]</span></code></pre></div>
-<div class="sourceCode" id="cb63"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb63-1"><a href="#cb63-1" aria-hidden="true" tabindex="-1"></a>detectiveDocs <span class="op">=</span> [nlp(book) <span class="cf">for</span> book <span class="kw">in</span> detectiveTextsTruncated] <span class="co"># This should take a while</span></span></code></pre></div>
-<div class="sourceCode" id="cb64"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb64-1"><a href="#cb64-1" aria-hidden="true" tabindex="-1"></a>extraWords <span class="op">=</span> <span class="st">&quot;gun knife snake diamond&quot;</span>.split()</span>
+<div class="sourceCode" id="cb62"><pre
+class="sourceCode python"><code class="sourceCode python"><span id="cb62-1"><a href="#cb62-1" aria-hidden="true" tabindex="-1"></a>detectiveTextsTruncated <span class="op">=</span> [t[:<span class="bu">min</span>(detectiveLengths)] <span class="cf">for</span> t <span class="kw">in</span> detectiveTexts]</span></code></pre></div>
+<div class="sourceCode" id="cb63"><pre
+class="sourceCode python"><code class="sourceCode python"><span id="cb63-1"><a href="#cb63-1" aria-hidden="true" tabindex="-1"></a>detectiveDocs <span class="op">=</span> [nlp(book) <span class="cf">for</span> book <span class="kw">in</span> detectiveTextsTruncated] <span class="co"># This should take a while</span></span></code></pre></div>
+<div class="sourceCode" id="cb64"><pre
+class="sourceCode python"><code class="sourceCode python"><span id="cb64-1"><a href="#cb64-1" aria-hidden="true" tabindex="-1"></a>extraWords <span class="op">=</span> <span class="st">&quot;gun knife snake diamond&quot;</span>.split()</span>
 <span id="cb64-2"><a href="#cb64-2" aria-hidden="true" tabindex="-1"></a>extraDocs <span class="op">=</span> [nlp(word) <span class="cf">for</span> word <span class="kw">in</span> extraWords]</span>
 <span id="cb64-3"><a href="#cb64-3" aria-hidden="true" tabindex="-1"></a>extraVecs <span class="op">=</span> [doc.vector <span class="cf">for</span> doc <span class="kw">in</span> extraDocs]</span></code></pre></div>
-<div class="sourceCode" id="cb65"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb65-1"><a href="#cb65-1" aria-hidden="true" tabindex="-1"></a>detectiveVecs <span class="op">=</span> [doc.vector <span class="cf">for</span> doc <span class="kw">in</span> detectiveDocs]</span>
+<div class="sourceCode" id="cb65"><pre
+class="sourceCode python"><code class="sourceCode python"><span id="cb65-1"><a href="#cb65-1" aria-hidden="true" tabindex="-1"></a>detectiveVecs <span class="op">=</span> [doc.vector <span class="cf">for</span> doc <span class="kw">in</span> detectiveDocs]</span>
 <span id="cb65-2"><a href="#cb65-2" aria-hidden="true" tabindex="-1"></a>detectiveLabels <span class="op">=</span> [doc[<span class="st">&#39;author&#39;</span>].split(<span class="st">&#39;,&#39;</span>)[<span class="dv">0</span>] <span class="op">+</span>  <span class="st">&#39;-&#39;</span> <span class="op">+</span> doc[<span class="st">&#39;title&#39;</span>][:<span class="dv">20</span>] <span class="cf">for</span> doc <span class="kw">in</span> detectivesData]</span></code></pre></div>
-<div class="sourceCode" id="cb66"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb66-1"><a href="#cb66-1" aria-hidden="true" tabindex="-1"></a>detectiveLabels</span></code></pre></div>
+<div class="sourceCode" id="cb66"><pre
+class="sourceCode python"><code class="sourceCode python"><span id="cb66-1"><a href="#cb66-1" aria-hidden="true" tabindex="-1"></a>detectiveLabels</span></code></pre></div>
 <pre class="example"><code>[&#39;Collins-The Haunted Hotel: A&#39;,
  &#39;Rohmer-The Insidious Dr. Fu&#39;,
  &#39;Chesterton-The Innocence of Fat&#39;,
@@ -577,26 +726,49 @@ dtype: object
  &quot;Rinehart-Where There&#39;s a Will&quot;,
  &quot;Michelson-In the Bishop&#39;s Carr&quot;]
 </code></pre>
-<div class="sourceCode" id="cb68"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb68-1"><a href="#cb68-1" aria-hidden="true" tabindex="-1"></a>pcaOut <span class="op">=</span> PCA(n_components<span class="op">=</span><span class="dv">10</span>).fit_transform(detectiveVecs <span class="op">+</span> extraVecs)</span>
+<div class="sourceCode" id="cb68"><pre
+class="sourceCode python"><code class="sourceCode python"><span id="cb68-1"><a href="#cb68-1" aria-hidden="true" tabindex="-1"></a>pcaOut <span class="op">=</span> PCA(n_components<span class="op">=</span><span class="dv">10</span>).fit_transform(detectiveVecs <span class="op">+</span> extraVecs)</span>
 <span id="cb68-2"><a href="#cb68-2" aria-hidden="true" tabindex="-1"></a>tsneOut <span class="op">=</span> TSNE(n_components<span class="op">=</span><span class="dv">2</span>).fit_transform(pcaOut)</span></code></pre></div>
-<div class="sourceCode" id="cb69"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb69-1"><a href="#cb69-1" aria-hidden="true" tabindex="-1"></a>xs, ys <span class="op">=</span> tsneOut[:,<span class="dv">0</span>], tsneOut[:,<span class="dv">1</span>]</span>
+<div class="sourceCode" id="cb69"><pre
+class="sourceCode python"><code class="sourceCode python"><span id="cb69-1"><a href="#cb69-1" aria-hidden="true" tabindex="-1"></a>xs, ys <span class="op">=</span> tsneOut[:,<span class="dv">0</span>], tsneOut[:,<span class="dv">1</span>]</span>
 <span id="cb69-2"><a href="#cb69-2" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> i <span class="kw">in</span> <span class="bu">range</span>(<span class="bu">len</span>(xs)): </span>
 <span id="cb69-3"><a href="#cb69-3" aria-hidden="true" tabindex="-1"></a>    plt.scatter(xs[i], ys[i])</span>
 <span id="cb69-4"><a href="#cb69-4" aria-hidden="true" tabindex="-1"></a>    plt.annotate((detectiveLabels <span class="op">+</span> extraWords)[i], (xs[i], ys[i]))</span></code></pre></div>
 <figure>
-<img src="../../../images/word-embeddings/output_79_0.png" alt="Detective Novel Vectors" /><figcaption aria-hidden="true">Detective Novel Vectors</figcaption>
+<img src="../../../images/word-embeddings/output_79_0.png"
+alt="Detective Novel Vectors" />
+<figcaption aria-hidden="true">Detective Novel Vectors</figcaption>
 </figure>
-<p>If you read the summaries of some of these novels on Wikipedia, this isn’t terrible. To check, let’s just see how often these words occur in the novels.</p>
-<div class="sourceCode" id="cb70"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb70-1"><a href="#cb70-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Sanity check</span></span>
+<p>If you read the summaries of some of these novels on Wikipedia, this
+isn’t terrible. To check, let’s just see how often these words occur in
+the novels.</p>
+<div class="sourceCode" id="cb70"><pre
+class="sourceCode python"><code class="sourceCode python"><span id="cb70-1"><a href="#cb70-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Sanity check</span></span>
 <span id="cb70-2"><a href="#cb70-2" aria-hidden="true" tabindex="-1"></a>counts <span class="op">=</span> {label: {w: <span class="dv">0</span> <span class="cf">for</span> w <span class="kw">in</span> extraWords} <span class="cf">for</span> label <span class="kw">in</span> detectiveLabels}</span>
 <span id="cb70-3"><a href="#cb70-3" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> i, doc <span class="kw">in</span> <span class="bu">enumerate</span>(detectiveDocs):</span>
 <span id="cb70-4"><a href="#cb70-4" aria-hidden="true" tabindex="-1"></a>    <span class="cf">for</span> w <span class="kw">in</span> doc: </span>
 <span id="cb70-5"><a href="#cb70-5" aria-hidden="true" tabindex="-1"></a>        <span class="cf">if</span> w.lemma_ <span class="kw">in</span> extraWords: </span>
 <span id="cb70-6"><a href="#cb70-6" aria-hidden="true" tabindex="-1"></a>            counts[detectiveLabels[i]][w.lemma_] <span class="op">+=</span> <span class="dv">1</span></span></code></pre></div>
-<div class="sourceCode" id="cb71"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb71-1"><a href="#cb71-1" aria-hidden="true" tabindex="-1"></a>pd.DataFrame(counts).T.plot(kind<span class="op">=</span><span class="st">&#39;bar&#39;</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb71"><pre
+class="sourceCode python"><code class="sourceCode python"><span id="cb71-1"><a href="#cb71-1" aria-hidden="true" tabindex="-1"></a>pd.DataFrame(counts).T.plot(kind<span class="op">=</span><span class="st">&#39;bar&#39;</span>)</span></code></pre></div>
 <figure>
-<img src="../../../images/word-embeddings/output_82_1.png" alt="Weapons By Novel" /><figcaption aria-hidden="true">Weapons By Novel</figcaption>
-</figure></article><hr><p>I welcome your comments and annotations in the Hypothes.is sidebar to the right. →</p><script src="https://hypothes.is/embed.js"></script></div><footer><div class="container"><div class="columns"><div class="column col-8"><p>I believe in openness. This work is licensed under a <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/">Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International License</a>, unless otherwise stated. All content ©Jonathan Reeve 2020. Hand-coded with love, using exclusively free and open-source software, including <a href="https://github.com/srid/rib">Rib</a> and <a href="https://haskell.org/">Haskell</a>. Hosted on <a href="https://github.com">GitHub</a> and served with <a href="https://netlify.com">Netlify</a>. Icons by Nhor, via <a href="https://thenounproject.com">The Noun Project</a>. <a href="https://www.buymeacoffee.com/vaIVQZH">Buy me a coffee</a> or support me <a href="https://liberapay.com/JonathanReeve/donate">via Libera Pay</a> or <a href="bitcoin:3Qvm1DwzFGk3L1Eb6yeg5Nbc6db8sZUnbK">Bitcoin</a>.</p></div><div class="column col-4"><div class="icons"><a href="http://github.com/JonathanReeve"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512" fill="#fafafa" width="3em" height="3em"><path d="M400 32H48C21.5 32 0 53.5 0 80v352c0 26.5 21.5 48 48
+<img src="../../../images/word-embeddings/output_82_1.png"
+alt="Weapons By Novel" />
+<figcaption aria-hidden="true">Weapons By Novel</figcaption>
+</figure></article><hr><p>I welcome your comments and annotations in the Hypothes.is sidebar to the right. →</p><script src="https://hypothes.is/embed.js"></script></div><footer><div class="container"><div class="columns"><div class="column col-8"><p>I believe in openness. This work is licensed under a <a
+href="https://creativecommons.org/licenses/by-nc-sa/4.0/">Creative
+Commons Attribution-NonCommercial-ShareAlike 4.0 International
+License</a>, unless otherwise stated. All content ©Jonathan Reeve 2020.
+Hand-coded with love, using exclusively free and open-source software,
+including <a href="https://github.com/srid/rib">Rib</a> and <a
+href="https://haskell.org/">Haskell</a>. Hosted on <a
+href="https://github.com">GitHub</a> and served with <a
+href="https://netlify.com">Netlify</a>. Icons by Nhor, via <a
+href="https://thenounproject.com">The Noun Project</a>. <a
+href="https://www.buymeacoffee.com/vaIVQZH">Buy me a coffee</a> or
+support me <a href="https://liberapay.com/JonathanReeve/donate">via
+Libera Pay</a> or <a
+href="bitcoin:3Qvm1DwzFGk3L1Eb6yeg5Nbc6db8sZUnbK">Bitcoin</a>.</p></div><div class="column col-4"><div class="icons"><a href="http://github.com/JonathanReeve"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512" fill="#fafafa" width="3em" height="3em"><path d="M400 32H48C21.5 32 0 53.5 0 80v352c0 26.5 21.5 48 48
 48h352c26.5 0 48-21.5 48-48V80c0-26.5-21.5-48-48-48zM277.3 415.7c-8.4
 1.5-11.5-3.7-11.5-8 0-5.4.2-33 .2-55.3 0-15.6-5.2-25.5-11.3-30.7 37-4.1 76-9.2
 76-73.1 0-18.2-6.5-27.3-17.1-39 1.7-4.3 7.4-22-1.7-45-13.9-4.3-45.7 17.9-45.7

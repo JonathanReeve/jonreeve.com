@@ -1,5 +1,5 @@
 <html lang="en"><head><meta http-equiv="Content-Type" content="text/html; charset=utf-8"><title>A Project Gutenberg Database for Text Mining
-</title><link rel="stylesheet" href="/assets/css/spectre.min.css"><link rel="stylesheet" href="//fonts.googleapis.com/css?family=Montserrat|Raleway"><link rel="stylesheet" href="//cdn.jsdelivr.net/gh/highlightjs/cdn-release@10.2.0/build/styles/default.min.css"><link rel="icon" href="/images/favicon.svg" sizes="any" type="image/svg+xml"><style type="text/css">
+</title><base href="/"><link rel="stylesheet" href="/assets/css/spectre.min.css"><link rel="stylesheet" href="//fonts.googleapis.com/css?family=Montserrat|Raleway"><link rel="stylesheet" href="//cdn.jsdelivr.net/gh/highlightjs/cdn-release@10.2.0/build/styles/default.min.css"><link rel="icon" href="/images/favicon.svg" sizes="any" type="image/svg+xml"><style type="text/css">
 
 @media screen and (min-width: 1200px)
 {
@@ -49,8 +49,8 @@ body.has-docked-nav #main-header
 #headerWrapper
 {
   background-color : #ffffff;
-  border-top       : solid 2px #494e8e;
-  border-bottom    : solid 2px #494e8e;
+  border-top       : 2px solid #494e8e;
+  border-bottom    : 2px solid #494e8e;
 }
 
 #headerWrapper header
@@ -273,8 +273,20 @@ table
 
 }
 
-/* Generated with Clay, http://fvisser.nl/clay */</style><style type="text/css">@page{margin: 3cm;}</style></head><body><div id="headerWrapper"><header class="navbar"><section class="navbar-section"><a class="navbar-brand" href="/">Jonathan Reeve: <span>Computational Literary Analysis</span></a></section><section class="navbar-section"><ul class="nav"><li class="nav-item"><a href="/">posts</a></li><li class="nav-item"><a href="/cv.html">cv</a></li><li class="nav-item"><a href="/tags/">tags</a></li><li class="nav-item"><a href="/feed.xml">feed</a></li></ul></section></header></div><div class="container"><h1>A Project Gutenberg Database for Text Mining
-</h1><p>Posted 2017-06-23</p><article><p>Project Gutenberg is a large store of public domain electronic texts, one which has been around since the 70s. Nearly everyone that has experimented with computational literary analysis has at some point used their electronic texts. Many digital humanists undoubtedly share my frustrations with it: its interface is clunky, its metadata is incomplete, and it’s not very friendly to computational text extraction. Inspired by David McClure’s textual databases, used at the Stanford Literary Lab, I decided to fix this by creating a structured database for Project Gutenberg’s corpus, and augmenting it as much as possible with publicly-available book data. This database contains the complete cleaned text of each work, all its associated metadata, and additional metadata derived from GITenberg and Wikipedia. Here’s an example entry, Dickens’s novel <em>A Tale of Two Cities</em>:</p>
+/* Generated with Clay, http://fvisser.nl/clay */</style><style type="text/css">@page{margin: 3cm;}</style></head><body><div id="headerWrapper"><header class="navbar"><section class="navbar-section"><a class="navbar-brand" href>Jonathan Reeve: <span>Computational Literary Analysis</span></a></section><section class="navbar-section"><ul class="nav"><li class="nav-item"><a href>posts</a></li><li class="nav-item"><a href="cv">cv</a></li><li class="nav-item"><a href="tags.html">tags</a></li><li class="nav-item"><a href="feed.xml">feed</a></li></ul></section></header></div><div class="container"><h1>A Project Gutenberg Database for Text Mining
+</h1><article><p>Posted 2017-06-23</p><p>Project Gutenberg is a large store of public domain electronic texts,
+one which has been around since the 70s. Nearly everyone that has
+experimented with computational literary analysis has at some point used
+their electronic texts. Many digital humanists undoubtedly share my
+frustrations with it: its interface is clunky, its metadata is
+incomplete, and it’s not very friendly to computational text extraction.
+Inspired by David McClure’s textual databases, used at the Stanford
+Literary Lab, I decided to fix this by creating a structured database
+for Project Gutenberg’s corpus, and augmenting it as much as possible
+with publicly-available book data. This database contains the complete
+cleaned text of each work, all its associated metadata, and additional
+metadata derived from GITenberg and Wikipedia. Here’s an example entry,
+Dickens’s novel <em>A Tale of Two Cities</em>:</p>
 <pre class="example"><code>LCC                                                                  {PR}
 author                                                   Dickens, Charles
 authoryearofbirth                                                    1812
@@ -320,7 +332,10 @@ wp_subjects             [&#39;Novels_by_Charles_Dickens&#39;, &#39;Victorian_nov
 wp_info                 {&#39;http://www.w3.org/1999/02/22-rdf-syntax-ns#t...
 wp_literary_genres                                 [&#39;Historical_fiction&#39;]
 </code></pre>
-<p>The first few fields contain Project Gutenberg’s own metadata about the book: the Dickens’s dates of birth and death, for instance. Project Gutenberg also provides Library of Congress classification and subject data: PR (British Literature) as well as these subjects:</p>
+<p>The first few fields contain Project Gutenberg’s own metadata about
+the book: the Dickens’s dates of birth and death, for instance. Project
+Gutenberg also provides Library of Congress classification and subject
+data: PR (British Literature) as well as these subjects:</p>
 <pre class="example"><code>&#39;British -- France -- Paris -- Fiction&#39;,
 &#39;Executions and executioners -- Fiction&#39;,
 &#39;France -- History -- Revolution, 1789-1799 -- Fiction&#39;,
@@ -331,9 +346,33 @@ wp_literary_genres                                 [&#39;Historical_fiction&#39;
 &#39;Paris (France) -- History -- 1789-1799 -- Fiction&#39;,
 &#39;War stories&#39;
 </code></pre>
-<p>Already you can see that this might be useful for corpus generation. If you’re interested in, say, the properties of novels that deal with lookalikes, you can easily build a corpus using these subject headings, and use those texts for your analyses.</p>
-<p>To Project Gutenberg’s metadata, I’ve added metadata from GITenberg. <a href="https://github.com/GITenberg">GITenberg</a>, like my project <a href="https://github.com/git-lit">Git-Lit</a>, is an initiative to make editable GitHub repositories for each Project Gutenberg book. They’ve also enhanced the metadata for these works. <a href="https://github.com/GITenberg/A-Tale-of-Two-Cities_98">Their edition of A Tale of Two Cities</a>, for instance, contains <a href="https://github.com/GITenberg/A-Tale-of-Two-Cities_98/blob/master/book.asciidoc">a nice ASCIIDOC version of the book</a> which anyone can edit in the browser, and <a href="https://github.com/GITenberg/A-Tale-of-Two-Cities_98/blob/master/cover.jpg">a Creative Commons-licensed cover designed as part of the Recovering the Classics project</a>. All of this data, as well as a link to the GITenberg repository itself, is included in the database, along with GITenberg’s version of the text.</p>
-<p>The next few fields come from Wikipedia. I queried DBPedia for the books with titles and authors similar to those in Project Gutenberg, and it returned about 1,800 matches. The wp<sub>info</sub> field here contains the complete structured set of data about the book, which I then parsed into the more useful individual fields prefixed with <code class="verbatim">wp_</code>. This includes, for instance, <code class="verbatim">wp_subjects</code>, the categories to which the book’s Wikipedia page belongs. For <em>A Tale of Two Cities</em>, this is:</p>
+<p>Already you can see that this might be useful for corpus generation.
+If you’re interested in, say, the properties of novels that deal with
+lookalikes, you can easily build a corpus using these subject headings,
+and use those texts for your analyses.</p>
+<p>To Project Gutenberg’s metadata, I’ve added metadata from GITenberg.
+<a href="https://github.com/GITenberg">GITenberg</a>, like my project <a
+href="https://github.com/git-lit">Git-Lit</a>, is an initiative to make
+editable GitHub repositories for each Project Gutenberg book. They’ve
+also enhanced the metadata for these works. <a
+href="https://github.com/GITenberg/A-Tale-of-Two-Cities_98">Their
+edition of A Tale of Two Cities</a>, for instance, contains <a
+href="https://github.com/GITenberg/A-Tale-of-Two-Cities_98/blob/master/book.asciidoc">a
+nice ASCIIDOC version of the book</a> which anyone can edit in the
+browser, and <a
+href="https://github.com/GITenberg/A-Tale-of-Two-Cities_98/blob/master/cover.jpg">a
+Creative Commons-licensed cover designed as part of the Recovering the
+Classics project</a>. All of this data, as well as a link to the
+GITenberg repository itself, is included in the database, along with
+GITenberg’s version of the text.</p>
+<p>The next few fields come from Wikipedia. I queried DBPedia for the
+books with titles and authors similar to those in Project Gutenberg, and
+it returned about 1,800 matches. The wp<sub>info</sub> field here
+contains the complete structured set of data about the book, which I
+then parsed into the more useful individual fields prefixed with <code
+class="verbatim">wp_</code>. This includes, for instance, <code
+class="verbatim">wp_subjects</code>, the categories to which the book’s
+Wikipedia page belongs. For <em>A Tale of Two Cities</em>, this is:</p>
 <pre class="example"><code>&#39;Novels_by_Charles_Dickens&#39;, 
 &#39;Victorian_novels&#39;, 
 &#39;19th-century_novels&#39;, 
@@ -353,10 +392,21 @@ wp_literary_genres                                 [&#39;Historical_fiction&#39;
 &#39;Novels_set_in_London&#39;, 
 &#39;Novels_set_in_the_French_Revolution&#39;
 </code></pre>
-<p>The potential for corpus creation here is immense. For instance, to get a corpus of all novels that Wikipedia lists as set in London, I can just run the Pandas query: <code class="verbatim">df[df.wp_subjects.str.contains('Novels_set_in_London')]</code>, which returns a table of 46 novels. To get the average year of birth of the authors in this corpus, I can append <code class="verbatim">.authordateofbirth.mean()</code> (it’s 1844). By using this metadata to query other APIs, I can then do fun things like compare the average Goodreads ratings for novels set in London and in Paris. (Paris wins, with an average rating of 3.8, compared with an average rating of 3.5 for London novels.)</p>
+<p>The potential for corpus creation here is immense. For instance, to
+get a corpus of all novels that Wikipedia lists as set in London, I can
+just run the Pandas query: <code
+class="verbatim">df[df.wp_subjects.str.contains('Novels_set_in_London')]</code>,
+which returns a table of 46 novels. To get the average year of birth of
+the authors in this corpus, I can append <code
+class="verbatim">.authordateofbirth.mean()</code> (it’s 1844). By using
+this metadata to query other APIs, I can then do fun things like compare
+the average Goodreads ratings for novels set in London and in Paris.
+(Paris wins, with an average rating of 3.8, compared with an average
+rating of 3.5 for London novels.)</p>
 <h1 id="corpus-statistics">Corpus Statistics</h1>
 <h2 id="subjects">Subjects</h2>
-<p>Here are the top ten Project Gutenberg-provided Library of Congress subject headings, along with the numbers of associated texts:</p>
+<p>Here are the top ten Project Gutenberg-provided Library of Congress
+subject headings, along with the numbers of associated texts:</p>
 <pre class="example"><code>(&#39;Fiction&#39;, 1921),
 (&#39;Short stories&#39;, 1604),
 (&#39;Science fiction&#39;, 1286),
@@ -368,7 +418,8 @@ wp_literary_genres                                 [&#39;Historical_fiction&#39;
 (&#39;English wit and humor -- Periodicals&#39;, 555),
 (&#39;Detective and mystery stories&#39;, 546)
 </code></pre>
-<p>For those books that could be found on Wikipedia, here are the top ten Wikipedia categories for those books, along with their counts:</p>
+<p>For those books that could be found on Wikipedia, here are the top
+ten Wikipedia categories for those books, along with their counts:</p>
 <pre class="example"><code>(&#39;Novels_first_published_in_serial_form&#39;, 247),
 (&#39;British_novels_adapted_into_films&#39;, 109),
 (&#39;19th-century_American_novels&#39;, 99),
@@ -381,7 +432,15 @@ wp_literary_genres                                 [&#39;Historical_fiction&#39;
 (&#39;American_novels_adapted_into_films&#39;, 59),
 (&#39;19th-century_novels&#39;, 58),
 </code></pre>
-<p>Other interesting categories include Debut Novels (51), 1915 Novels (39), Gothic Novels (37) and Novels Adapted into Comics (36). These categories could easily be used to create sub-corpora. If you’re interested in, say, differences between American and British science fiction novels, whether there’s anything unusually characteristic about 1915 novels, or the properties of novels that have been adapted into comics, it’s easy to construct those experiments using this corpus. Finally, here are the most common Project Gutenberg “bookshelves,” with associated text counts:</p>
+<p>Other interesting categories include Debut Novels (51), 1915 Novels
+(39), Gothic Novels (37) and Novels Adapted into Comics (36). These
+categories could easily be used to create sub-corpora. If you’re
+interested in, say, differences between American and British science
+fiction novels, whether there’s anything unusually characteristic about
+1915 novels, or the properties of novels that have been adapted into
+comics, it’s easy to construct those experiments using this corpus.
+Finally, here are the most common Project Gutenberg “bookshelves”, with
+associated text counts:</p>
 <pre class="example"><code>[(&#39;Bestsellers, American, 1895-1923&#39;, 225),
  (&quot;Children&#39;s Literature&quot;, 178),
  (&#39;The Mirror of Literature, Amusement, and Instruction&#39;, 174),
@@ -393,8 +452,12 @@ wp_literary_genres                                 [&#39;Historical_fiction&#39;
  (&#39;Movie Books&#39;, 86),
  (&#39;FR Littérature&#39;, 86)]
 </code></pre>
-<h2 id="it-was-a-dark-and-stormy-night">It was a dark and stormy night…</h2>
-<p>I wasn’t very surprised to find 306 works by Williams Shakespeare in the Project Gutenberg database, but I found it very surprising that the next most-represented author is Edward Bulwer Lytton, with 219 texts. Here are a few more:</p>
+<h2 id="it-was-a-dark-and-stormy-night">It was a dark and stormy
+night…</h2>
+<p>I wasn’t very surprised to find 306 works by Williams Shakespeare in
+the Project Gutenberg database, but I found it very surprising that the
+next most-represented author is Edward Bulwer Lytton, with 219 texts.
+Here are a few more:</p>
 <pre class="example"><code>Various                                            3253
 Anonymous                                           719
 Shakespeare, William                                306
@@ -406,7 +469,8 @@ Verne, Jules                                        137
 Kingston, William Henry Giles                       133
 </code></pre>
 <h2 id="languages">Languages</h2>
-<p>And here are the numbers of texts in Project Gutenberg, by language:</p>
+<p>And here are the numbers of texts in Project Gutenberg, by
+language:</p>
 <pre class="example"><code>English:             43410
 French:               2766
 Finnish:              1622
@@ -419,9 +483,34 @@ Chinese:               425
 Modern Greek (1453-):  219
 </code></pre>
 <h1 id="future-developments">Future Developments</h1>
-<p>In the coming months, I’m going to try to generate sub-corpora from this database, starting with large corpora like American Literature and British Literature, and moving into more specialized corpora, like single-author corpora. I’ll make these all available through <a href="https://github.com/DH-Box/corpus-downloader">the corpus downloader <code class="verbatim">corpus</code></a> that I’m developing with <a href="http://dhbox.org">DHBox</a>.</p>
+<p>In the coming months, I’m going to try to generate sub-corpora from
+this database, starting with large corpora like American Literature and
+British Literature, and moving into more specialized corpora, like
+single-author corpora. I’ll make these all available through <a
+href="https://github.com/DH-Box/corpus-downloader">the corpus downloader
+<code class="verbatim">corpus</code></a> that I’m developing with <a
+href="http://dhbox.org">DHBox</a>.</p>
 <h1 id="code">Code</h1>
-<p>To see the (very messy) code that I used to generate this database, check out <a href="https://github.com/JonathanReeve/gitenberg-experiments/blob/master/pr-metadata.ipynb">this project on GitHub</a>. I’ll release the database itself, as well, as soon as I can figure out a way to get it inexpensively online. If you have any ideas for how best to accomplish that, please leave a note in the comments below!</p></article><hr><p>I welcome your comments and annotations in the Hypothes.is sidebar to the right. →</p><script src="https://hypothes.is/embed.js"></script></div><footer><div class="container"><div class="columns"><div class="column col-8"><p>I believe in openness. This work is licensed under a <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/">Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International License</a>, unless otherwise stated. All content ©Jonathan Reeve 2020. Hand-coded with love, using exclusively free and open-source software, including <a href="https://github.com/srid/rib">Rib</a> and <a href="https://haskell.org/">Haskell</a>. Hosted on <a href="https://github.com">GitHub</a> and served with <a href="https://netlify.com">Netlify</a>. Icons by Nhor, via <a href="https://thenounproject.com">The Noun Project</a>. <a href="https://www.buymeacoffee.com/vaIVQZH">Buy me a coffee</a> or support me <a href="https://liberapay.com/JonathanReeve/donate">via Libera Pay</a> or <a href="bitcoin:3Qvm1DwzFGk3L1Eb6yeg5Nbc6db8sZUnbK">Bitcoin</a>.</p></div><div class="column col-4"><div class="icons"><a href="http://github.com/JonathanReeve"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512" fill="#fafafa" width="3em" height="3em"><path d="M400 32H48C21.5 32 0 53.5 0 80v352c0 26.5 21.5 48 48
+<p>To see the (very messy) code that I used to generate this database,
+check out <a
+href="https://github.com/JonathanReeve/gitenberg-experiments/blob/master/pr-metadata.ipynb">this
+project on GitHub</a>. I’ll release the database itself, as well, as
+soon as I can figure out a way to get it inexpensively online. If you
+have any ideas for how best to accomplish that, please leave a note in
+the comments below!</p></article><hr><p>I welcome your comments and annotations in the Hypothes.is sidebar to the right. →</p><script src="https://hypothes.is/embed.js"></script></div><footer><div class="container"><div class="columns"><div class="column col-8"><p>I believe in openness. This work is licensed under a <a
+href="https://creativecommons.org/licenses/by-nc-sa/4.0/">Creative
+Commons Attribution-NonCommercial-ShareAlike 4.0 International
+License</a>, unless otherwise stated. All content ©Jonathan Reeve 2020.
+Hand-coded with love, using exclusively free and open-source software,
+including <a href="https://github.com/srid/rib">Rib</a> and <a
+href="https://haskell.org/">Haskell</a>. Hosted on <a
+href="https://github.com">GitHub</a> and served with <a
+href="https://netlify.com">Netlify</a>. Icons by Nhor, via <a
+href="https://thenounproject.com">The Noun Project</a>. <a
+href="https://www.buymeacoffee.com/vaIVQZH">Buy me a coffee</a> or
+support me <a href="https://liberapay.com/JonathanReeve/donate">via
+Libera Pay</a> or <a
+href="bitcoin:3Qvm1DwzFGk3L1Eb6yeg5Nbc6db8sZUnbK">Bitcoin</a>.</p></div><div class="column col-4"><div class="icons"><a href="http://github.com/JonathanReeve"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512" fill="#fafafa" width="3em" height="3em"><path d="M400 32H48C21.5 32 0 53.5 0 80v352c0 26.5 21.5 48 48
 48h352c26.5 0 48-21.5 48-48V80c0-26.5-21.5-48-48-48zM277.3 415.7c-8.4
 1.5-11.5-3.7-11.5-8 0-5.4.2-33 .2-55.3 0-15.6-5.2-25.5-11.3-30.7 37-4.1 76-9.2
 76-73.1 0-18.2-6.5-27.3-17.1-39 1.7-4.3 7.4-22-1.7-45-13.9-4.3-45.7 17.9-45.7

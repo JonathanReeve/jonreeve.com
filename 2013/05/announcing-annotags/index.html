@@ -1,6 +1,6 @@
 <html lang="en"><head><meta http-equiv="Content-Type" content="text/html; charset=utf-8"><title>Announcing Annotags: A Concept for a Decentralized Literary Annotation
 Protocol
-</title><link rel="stylesheet" href="/assets/css/spectre.min.css"><link rel="stylesheet" href="//fonts.googleapis.com/css?family=Montserrat|Raleway"><link rel="stylesheet" href="//cdn.jsdelivr.net/gh/highlightjs/cdn-release@10.2.0/build/styles/default.min.css"><link rel="icon" href="/images/favicon.svg" sizes="any" type="image/svg+xml"><style type="text/css">
+</title><base href="/"><link rel="stylesheet" href="/assets/css/spectre.min.css"><link rel="stylesheet" href="//fonts.googleapis.com/css?family=Montserrat|Raleway"><link rel="stylesheet" href="//cdn.jsdelivr.net/gh/highlightjs/cdn-release@10.2.0/build/styles/default.min.css"><link rel="icon" href="/images/favicon.svg" sizes="any" type="image/svg+xml"><style type="text/css">
 
 @media screen and (min-width: 1200px)
 {
@@ -50,8 +50,8 @@ body.has-docked-nav #main-header
 #headerWrapper
 {
   background-color : #ffffff;
-  border-top       : solid 2px #494e8e;
-  border-bottom    : solid 2px #494e8e;
+  border-top       : 2px solid #494e8e;
+  border-bottom    : 2px solid #494e8e;
 }
 
 #headerWrapper header
@@ -274,77 +274,181 @@ table
 
 }
 
-/* Generated with Clay, http://fvisser.nl/clay */</style><style type="text/css">@page{margin: 3cm;}</style></head><body><div id="headerWrapper"><header class="navbar"><section class="navbar-section"><a class="navbar-brand" href="/">Jonathan Reeve: <span>Computational Literary Analysis</span></a></section><section class="navbar-section"><ul class="nav"><li class="nav-item"><a href="/">posts</a></li><li class="nav-item"><a href="/cv.html">cv</a></li><li class="nav-item"><a href="/tags/">tags</a></li><li class="nav-item"><a href="/feed.xml">feed</a></li></ul></section></header></div><div class="container"><h1>Announcing Annotags: A Concept for a Decentralized Literary Annotation
+/* Generated with Clay, http://fvisser.nl/clay */</style><style type="text/css">@page{margin: 3cm;}</style></head><body><div id="headerWrapper"><header class="navbar"><section class="navbar-section"><a class="navbar-brand" href>Jonathan Reeve: <span>Computational Literary Analysis</span></a></section><section class="navbar-section"><ul class="nav"><li class="nav-item"><a href>posts</a></li><li class="nav-item"><a href="cv">cv</a></li><li class="nav-item"><a href="tags.html">tags</a></li><li class="nav-item"><a href="feed.xml">feed</a></li></ul></section></header></div><div class="container"><h1>Announcing Annotags: A Concept for a Decentralized Literary Annotation
 Protocol
-</h1><p>Posted 2013-05-10</p><article><p>Have you ever wanted to livetweet a book? I often want to. Yet there doesn’t seem to be a standard way of doing that. You could tweet, for instance, “Oh Captain Wentworth! When will you propose? #JaneAustenPersuasion” but the hashtag isn’t standardized, so some people might be tweeting under #Persuasion and others under #AustenPersuasion. Furthermore, the hashtag isn’t specific enough to make it clear which part of the book you’re tweeting about. If you browse other tweets marked #JaneAustenPersuasion, you might find comments about other parts of the book, which may contain spoilers.</p>
-<p>Enter Annotags, a concept for a literary annotation hashtag, or annotag. Whenever you want to tweet about part of a book, use this format:</p>
+</h1><article><p>Posted 2013-05-10</p><p>Have you ever wanted to livetweet a book? I often want to. Yet there
+doesn’t seem to be a standard way of doing that. You could tweet, for
+instance, “Oh Captain Wentworth! When will you propose?
+#JaneAustenPersuasion” but the hashtag isn’t standardized, so some
+people might be tweeting under #Persuasion and others under
+#AustenPersuasion. Furthermore, the hashtag isn’t specific enough to
+make it clear which part of the book you’re tweeting about. If you
+browse other tweets marked #JaneAustenPersuasion, you might find
+comments about other parts of the book, which may contain spoilers.</p>
+<p>Enter Annotags, a concept for a literary annotation hashtag, or
+annotag. Whenever you want to tweet about part of a book, use this
+format:</p>
 <figure>
-<img src="../../../images/annotags/annotag-diagram.jpg" alt="Annotag diagram" /><figcaption aria-hidden="true">Annotag diagram</figcaption>
+<img src="../../../images/annotags/annotag-diagram.jpg"
+alt="Annotag diagram" />
+<figcaption aria-hidden="true">Annotag diagram</figcaption>
 </figure>
-<p>The first letter is the book code type. Uppercase letters refer to raw codes and IDs, and lowercase letters refer to base 64-encoded codes. Here are some examples:</p>
+<p>The first letter is the book code type. Uppercase letters refer to
+raw codes and IDs, and lowercase letters refer to base 64-encoded codes.
+Here are some examples:</p>
 <ul>
 <li><code class="verbatim">I</code> = Raw ISBN, ex. I0393911535.</li>
-<li><code class="verbatim">i</code> = Base 64-encoded ISBN, ex. iXepzv</li>
-<li><code class="verbatim">G</code> = raw Project Gutenberg book ID, ex. G105.</li>
-<li><code class="verbatim">g</code> = Base 64-encoded Gutenberg book ID, ex. gBp</li>
-<li><code class="verbatim">B</code> = <a href="http://books.google.com">Google Books</a> ID.</li>
-<li><code class="verbatim">O</code> = Raw OCLC Number. Ex. O29877721. These can be found using <a href="http://www.worldcat.org">Worldcat</a>.</li>
-<li><code class="verbatim">o</code> = Base 64-encoded OCLC number. Ex. oBx-XZ.</li>
+<li><code class="verbatim">i</code> = Base 64-encoded ISBN, ex.
+iXepzv</li>
+<li><code class="verbatim">G</code> = raw Project Gutenberg book ID, ex.
+G105.</li>
+<li><code class="verbatim">g</code> = Base 64-encoded Gutenberg book ID,
+ex. gBp</li>
+<li><code class="verbatim">B</code> = <a
+href="http://books.google.com">Google Books</a> ID.</li>
+<li><code class="verbatim">O</code> = Raw OCLC Number. Ex. O29877721.
+These can be found using <a
+href="http://www.worldcat.org">Worldcat</a>.</li>
+<li><code class="verbatim">o</code> = Base 64-encoded OCLC number. Ex.
+oBx-XZ.</li>
 </ul>
-<p>Any other sources can be added to this list. I’m working on a way to shorten <a href="https://en.wikipedia.org/wiki/Digital_object_identifier">DOIs</a>, for instance.</p>
-<p>The next letters and numbers before the colon are the book code, optionally encoded in base 64. What is <a href="http://en.wikipedia.org/wiki/Base_64">base 64</a>, you ask? It’s just a mathy way to take a long number and convert it to a short string of numbers and both uppercase and lowercase letters. That way, you can take an unwieldy ISBN—the ISBN for the Norton Critical Edition of Jane Austen’s <em>Persuasion</em>, for instance, is 0393911535—and write it as “Xepzv.” Both <code class="verbatim">I0393911535</code> and <code class="verbatim">iXepzv</code> are valid annotags, but the latter saves five characters, which you can use to write “LOL!!” or whatever your heart desires. To try this out, grab an ISBN of a book from Amazon.com or equivalent, remove all the hyphens and paste it into a converter like <a href="file:///projects/annotags">the annotag calculator I wrote here</a>, which will convert it into Base 64. Some book IDs won’t benefit much from encoding, of course. Many Project Gutenberg etexts IDs are short anyway, so you might as well keep them as-is. The <a href="http://www.gutenberg.org/files/105/105-h/105-h.htm">Project Gutenberg ebook for <em>Persuasion</em></a>, for instance, is listed as “EBook #105,” which can be represented as the annotag <code class="verbatim">#G105</code>. No calculator required.</p>
-<p>Next, there is a colon, followed by the location code. The location code is made up of chapter numbers, page numbers, or whatever you like. If you want to get super-specific—say, if you’re annotating a particular word or phrase—add a line number or word number. If your book doesn’t have page numbers (if you’re reading an etext, for instance), you can index your location any way you want—by chapter and paragraph number, or even chapter, paragraph, and word. This is simple, intuitive, and human-readable. If your book code is <code class="verbatim">G105</code>, and you want to tweet about something that happens in Chapter XXIII, you can tweet “Oh no you di’n’t, Captain Wentworth! #G105:c23.” Because the annotag is only eight characters, you have another 130 or so for your witty, insightful commentary.</p>
-<h2 id="list-of-location-abbreviations">List of Location Abbreviations:</h2>
+<p>Any other sources can be added to this list. I’m working on a way to
+shorten <a
+href="https://en.wikipedia.org/wiki/Digital_object_identifier">DOIs</a>,
+for instance.</p>
+<p>The next letters and numbers before the colon are the book code,
+optionally encoded in base 64. What is <a
+href="http://en.wikipedia.org/wiki/Base_64">base 64</a>, you ask? It’s
+just a mathy way to take a long number and convert it to a short string
+of numbers and both uppercase and lowercase letters. That way, you can
+take an unwieldy ISBN—the ISBN for the Norton Critical Edition of Jane
+Austen’s <em>Persuasion</em>, for instance, is 0393911535—and write it
+as “Xepzv”. Both <code class="verbatim">I0393911535</code> and <code
+class="verbatim">iXepzv</code> are valid annotags, but the latter saves
+five characters, which you can use to write “LOL!!” or whatever your
+heart desires. To try this out, grab an ISBN of a book from Amazon.com
+or equivalent, remove all the hyphens and paste it into a converter like
+<a href="file:///projects/annotags">the annotag calculator I wrote
+here</a>, which will convert it into Base 64. Some book IDs won’t
+benefit much from encoding, of course. Many Project Gutenberg etexts IDs
+are short anyway, so you might as well keep them as-is. The <a
+href="http://www.gutenberg.org/files/105/105-h/105-h.htm">Project
+Gutenberg ebook for <em>Persuasion</em></a>, for instance, is listed as
+“EBook #105,” which can be represented as the annotag <code
+class="verbatim">#G105</code>. No calculator required.</p>
+<p>Next, there is a colon, followed by the location code. The location
+code is made up of chapter numbers, page numbers, or whatever you like.
+If you want to get super-specific—say, if you’re annotating a particular
+word or phrase—add a line number or word number. If your book doesn’t
+have page numbers (if you’re reading an etext, for instance), you can
+index your location any way you want—by chapter and paragraph number, or
+even chapter, paragraph, and word. This is simple, intuitive, and
+human-readable. If your book code is <code class="verbatim">G105</code>,
+and you want to tweet about something that happens in Chapter XXIII, you
+can tweet “Oh no you di’n’t, Captain Wentworth! #G105:c23”. Because the
+annotag is only eight characters, you have another 130 or so for your
+witty, insightful commentary.</p>
+<h2 id="list-of-location-abbreviations">List of Location
+Abbreviations:</h2>
 <ul>
-<li><code class="verbatim">d</code> = part (“division”), ex. d2c5 is Part II, Chapter 5.</li>
-<li><code class="verbatim">b</code> = book, ex. D3c7 is Book III, Chapter 7. For those books that are divided into “books.”</li>
-<li><code class="verbatim">c</code> = chapter, ex. c34 or cXXXIV is Chapter 34.</li>
+<li><code class="verbatim">d</code> = part (“division”), ex. d2c5 is
+Part II, Chapter 5.</li>
+<li><code class="verbatim">b</code> = book, ex. D3c7 is Book III,
+Chapter 7. For those books that are divided into “books.”</li>
+<li><code class="verbatim">c</code> = chapter, ex. c34 or cXXXIV is
+Chapter 34.</li>
 <li><code class="verbatim">p</code> = page, ex. p54 is page 54.</li>
-<li><code class="verbatim">a</code> = act, ex. a1 is Act I. To be used for drama.</li>
-<li><code class="verbatim">s</code> = scene, ex. a1s3 is Act I, Scene 3.</li>
-<li><code class="verbatim">P</code> = paragraph or stanza, ex. c5P2 is the second paragraph of Chapter 5.</li>
-<li><code class="verbatim">l</code> = line number, ex. p76l20 is page 76, line 20.</li>
-<li><code class="verbatim">w</code> = word number, ex. p82l10w4 is the fourth word of the tenth line on page 82.</li>
+<li><code class="verbatim">a</code> = act, ex. a1 is Act I. To be used
+for drama.</li>
+<li><code class="verbatim">s</code> = scene, ex. a1s3 is Act I, Scene
+3.</li>
+<li><code class="verbatim">P</code> = paragraph or stanza, ex. c5P2 is
+the second paragraph of Chapter 5.</li>
+<li><code class="verbatim">l</code> = line number, ex. p76l20 is page
+76, line 20.</li>
+<li><code class="verbatim">w</code> = word number, ex. p82l10w4 is the
+fourth word of the tenth line on page 82.</li>
 </ul>
 <h2 id="examples">Examples:</h2>
 <ul>
-<li><p>Not to be, man. Not to be. Get over it. #Hamlet #G1524:a3s1P24</p>
+<li><p>Not to be, man. Not to be. Get over it. #Hamlet
+#G1524:a3s1P24</p>
 <ul>
-<li>The Gutenberg Ebook for Shakespeare’s play Hamlet, Act III, Scene 1, paragraph 24.</li>
+<li>The Gutenberg Ebook for Shakespeare’s play Hamlet, Act III, Scene 1,
+paragraph 24.</li>
 </ul></li>
-<li><p>Septimus’s shell shock makes him unusually atune to nature. #Dalloway #i<sub>ZOO</sub>:p22</p>
+<li><p>Septimus’s shell shock makes him unusually atune to nature.
+#Dalloway #i<sub>ZOO</sub>:p22</p>
 <ul>
-<li>The Harcourt Annotated Edition of Virginia Woolf’s novel <em>Mrs. Dalloway</em>, page 22.</li>
+<li>The Harcourt Annotated Edition of Virginia Woolf’s novel
+<em>Mrs. Dalloway</em>, page 22.</li>
 </ul></li>
-<li><p>What circles does the blackbird mark, exactly? #WallaceStevens #iB8F4h:p94P2</p>
+<li><p>What circles does the blackbird mark, exactly? #WallaceStevens
+#iB8F4h:p94P2</p>
 <ul>
-<li>The Collected Poems of Wallace Stevens, “Thirteen Ways of Looking at a Blackbird,” page 94, second stanza.</li>
+<li>The Collected Poems of Wallace Stevens, “Thirteen Ways of Looking at
+a Blackbird,” page 94, second stanza.</li>
 </ul></li>
 </ul>
 <h2 id="advantages-of-annotagging">Advantages of Annotagging:</h2>
 <ul>
-<li>It’s decentralized, so it’s not contingent on any one particular institution or website.</li>
-<li>Annotations are owned by their writers, not by the website that hosts them.</li>
-<li>Annotags are mostly human-readable. Once you know the code for your book, it’s easy to figure out what “p54” means (hint: it’s page 54).<br />
+<li>It’s decentralized, so it’s not contingent on any one particular
+institution or website.</li>
+<li>Annotations are owned by their writers, not by the website that
+hosts them.</li>
+<li>Annotags are mostly human-readable. Once you know the code for your
+book, it’s easy to figure out what “p54” means (hint: it’s page
+54).<br />
 </li>
-<li>Annotagging allows you to comment on both paper books and ebooks, and refer to specific editions when necessary.</li>
-<li>You don’t even need a computer to annotweet. Just send an SMS to your twitter account.</li>
-<li>No registration necessary, provided you already have an account on twitter or identi.ca.</li>
-<li>If you use Annotags in your blog posts, you aren’t restricted to the 140-character limit of microblogging platforms. You can even Annotag your scholarly papers.</li>
+<li>Annotagging allows you to comment on both paper books and ebooks,
+and refer to specific editions when necessary.</li>
+<li>You don’t even need a computer to annotweet. Just send an SMS to
+your twitter account.</li>
+<li>No registration necessary, provided you already have an account on
+twitter or identi.ca.</li>
+<li>If you use Annotags in your blog posts, you aren’t restricted to the
+140-character limit of microblogging platforms. You can even Annotag
+your scholarly papers.</li>
 </ul>
 <h2 id="future-applications">Future Applications</h2>
-<p>There are lots of ways that apps could interface with this type of protocol. Here are some ideas:</p>
+<p>There are lots of ways that apps could interface with this type of
+protocol. Here are some ideas:</p>
 <ul>
-<li>A webapp to generate Annotags, allowing the user to look up books by author, title, or ISBN, and generate Annotags from them.</li>
-<li>A webapp to aggregate Annotweets and display them in the margins of an etext, so that users can read an etext online and see what people have tweeted about it. Tweets that are line-specific will appear right next to those lines in the etext.</li>
-<li>A mobile webapp or native mobile app (i.e. an Android app) that can generate Annotags, and maybe even scan book barcodes using one’s smartphone camera.</li>
-<li>A script that can expand Annotags to regular MLA-compliant bibliographic entries.</li>
-<li>A browser extension (i.e. a Firefox plugin) that automatically generates Annotags for books when you visit a book page on Amazon or Worldcat.</li>
-<li>Labels for paper books that include that book’s annotag, pre-calculated:</li>
+<li>A webapp to generate Annotags, allowing the user to look up books by
+author, title, or ISBN, and generate Annotags from them.</li>
+<li>A webapp to aggregate Annotweets and display them in the margins of
+an etext, so that users can read an etext online and see what people
+have tweeted about it. Tweets that are line-specific will appear right
+next to those lines in the etext.</li>
+<li>A mobile webapp or native mobile app (i.e. an Android app) that can
+generate Annotags, and maybe even scan book barcodes using one’s
+smartphone camera.</li>
+<li>A script that can expand Annotags to regular MLA-compliant
+bibliographic entries.</li>
+<li>A browser extension (i.e. a Firefox plugin) that automatically
+generates Annotags for books when you visit a book page on Amazon or
+Worldcat.</li>
+<li>Labels for paper books that include that book’s annotag,
+pre-calculated:</li>
 </ul>
 <figure>
-<img src="../../../images/annotags/isbn-with-annotag.png" alt="ISBN with an Annotag" /><figcaption aria-hidden="true">ISBN with an Annotag</figcaption>
-</figure></article><hr><p>I welcome your comments and annotations in the Hypothes.is sidebar to the right. →</p><script src="https://hypothes.is/embed.js"></script></div><footer><div class="container"><div class="columns"><div class="column col-8"><p>I believe in openness. This work is licensed under a <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/">Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International License</a>, unless otherwise stated. All content ©Jonathan Reeve 2020. Hand-coded with love, using exclusively free and open-source software, including <a href="https://github.com/srid/rib">Rib</a> and <a href="https://haskell.org/">Haskell</a>. Hosted on <a href="https://github.com">GitHub</a> and served with <a href="https://netlify.com">Netlify</a>. Icons by Nhor, via <a href="https://thenounproject.com">The Noun Project</a>. <a href="https://www.buymeacoffee.com/vaIVQZH">Buy me a coffee</a> or support me <a href="https://liberapay.com/JonathanReeve/donate">via Libera Pay</a> or <a href="bitcoin:3Qvm1DwzFGk3L1Eb6yeg5Nbc6db8sZUnbK">Bitcoin</a>.</p></div><div class="column col-4"><div class="icons"><a href="http://github.com/JonathanReeve"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512" fill="#fafafa" width="3em" height="3em"><path d="M400 32H48C21.5 32 0 53.5 0 80v352c0 26.5 21.5 48 48
+<img src="../../../images/annotags/isbn-with-annotag.png"
+alt="ISBN with an Annotag" />
+<figcaption aria-hidden="true">ISBN with an Annotag</figcaption>
+</figure></article><hr><p>I welcome your comments and annotations in the Hypothes.is sidebar to the right. →</p><script src="https://hypothes.is/embed.js"></script></div><footer><div class="container"><div class="columns"><div class="column col-8"><p>I believe in openness. This work is licensed under a <a
+href="https://creativecommons.org/licenses/by-nc-sa/4.0/">Creative
+Commons Attribution-NonCommercial-ShareAlike 4.0 International
+License</a>, unless otherwise stated. All content ©Jonathan Reeve 2020.
+Hand-coded with love, using exclusively free and open-source software,
+including <a href="https://github.com/srid/rib">Rib</a> and <a
+href="https://haskell.org/">Haskell</a>. Hosted on <a
+href="https://github.com">GitHub</a> and served with <a
+href="https://netlify.com">Netlify</a>. Icons by Nhor, via <a
+href="https://thenounproject.com">The Noun Project</a>. <a
+href="https://www.buymeacoffee.com/vaIVQZH">Buy me a coffee</a> or
+support me <a href="https://liberapay.com/JonathanReeve/donate">via
+Libera Pay</a> or <a
+href="bitcoin:3Qvm1DwzFGk3L1Eb6yeg5Nbc6db8sZUnbK">Bitcoin</a>.</p></div><div class="column col-4"><div class="icons"><a href="http://github.com/JonathanReeve"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512" fill="#fafafa" width="3em" height="3em"><path d="M400 32H48C21.5 32 0 53.5 0 80v352c0 26.5 21.5 48 48
 48h352c26.5 0 48-21.5 48-48V80c0-26.5-21.5-48-48-48zM277.3 415.7c-8.4
 1.5-11.5-3.7-11.5-8 0-5.4.2-33 .2-55.3 0-15.6-5.2-25.5-11.3-30.7 37-4.1 76-9.2
 76-73.1 0-18.2-6.5-27.3-17.1-39 1.7-4.3 7.4-22-1.7-45-13.9-4.3-45.7 17.9-45.7
