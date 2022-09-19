@@ -26,9 +26,9 @@ coda =
   [fmt|I believe in openness. This work is licensed under a [Creative
             Commons Attribution-NonCommercial-ShareAlike 4.0 International
             License](https://creativecommons.org/licenses/by-nc-sa/4.0/), unless
-            otherwise stated. All content ©Jonathan Reeve 2020. Hand-coded with
+            otherwise stated. All content ©Jonathan Reeve 2022. Hand-coded with
             love, using exclusively free and open-source software, including
-            [Rib](https://github.com/srid/rib) and
+            [Ema](https://github.com/srid/ema) and
             [Haskell](https://haskell.org/). Hosted on
             [GitHub](https://github.com) and served with
             [Netlify](https://netlify.com). Icons by Nhor, via [The Noun

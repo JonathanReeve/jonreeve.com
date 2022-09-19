@@ -67,6 +67,8 @@ pageStyle = do
     header ? do
       paddingTop nil
       paddingBottom nil
+      paddingLeft (em 1)
+      paddingRight (em 2)
       minHeight (em 4)
       margin auto auto auto auto
       maxWidth (em 65)
@@ -97,7 +99,9 @@ pageStyle = do
   article ? img ? maxWidth (pct 80)
   -- Sometimes markdown processing adds an additional paragraph we have to subsume
   "span.update p" ? display inline
-  ".chip" ? margin (rem 0.1) (rem 0.3) (rem 0.1) (rem 0.3)
+  ".chip" ? do
+    margin (rem 0.1) (rem 0.3) (rem 0.1) (rem 0.3)
+    backgroundColor "#5755dd42"
   footer ? do
     backgroundColor myBlue
     color myLightgray

@@ -5,6 +5,7 @@ module JonReeve.CV.Shared where
 
 import Data.Text qualified as T
 import PyF
+import Data.Dependent.Sum (OrdTag)
 
 data Date
   = Present
@@ -61,18 +62,18 @@ type URI = T.Text
 
 data Link = Link {url :: URI, text :: T.Text} deriving stock (Show)
 
-data Update = Update Date Event deriving stock (Show)
+data Update = Update Date Event deriving stock (Show, Ord, Eq)
 
 data Event
   = News Markdown
   | Award T.Text Venue
   | Talk Title URI Venue
   | Publication PublicationType Title URI Venue
-  deriving stock (Show)
+  deriving stock (Show, Eq, Ord)
 
 type Title = T.Text
 
-data PublicationType = Tutorial | Article | Chapter | Abstract deriving stock (Show)
+data PublicationType = Tutorial | Article | Chapter | Abstract deriving stock (Show, Eq, Ord)
 
 uni :: T.Text -> T.Text
 uni abbr = case abbr of
@@ -91,4 +92,4 @@ data Venue = Venue
     venueUrl :: URI,
     location :: T.Text
   }
-  deriving stock (Show)
+  deriving stock (Show, Eq, Ord)

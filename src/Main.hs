@@ -20,7 +20,6 @@ import Text.Pandoc.Builder (setMeta)
 import Text.Pandoc (handleError)
 import Text.Pandoc.Class (runIO)
 import Text.Pandoc.Citeproc (processCitations)
-import Data.Maybe (fromJust)
 
 -- ------------------------
 -- Main entry point

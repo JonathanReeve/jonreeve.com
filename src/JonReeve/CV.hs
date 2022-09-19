@@ -219,7 +219,7 @@ publicationsSection = section_ [class_ "publications"] $ do
 formatPublication :: Project -> Html ()
 formatPublication proj = foldMap formatUpdate publicationsOnly
   where
-    publicationsOnly = filter getPub $ updates proj
+    publicationsOnly = sort $ filter getPub $ updates proj
     getPub update = case update of
       Update _ (Publication _ _ _ _) -> True
       _ -> False
@@ -246,9 +246,9 @@ languagesSection = do
   ul_ [] $ do
     mapM_
       langItem
-      [ "**Programming languages**: Python, Haskell, PHP. Some Ruby, JavaScript, Julia.",
-        "**Markup and style languages**: TEI XML, HTML, Markdown, XSL, CSS.",
-        "**Natural languages**: English, French, Chinese (Mandarin), Esperanto. Some Japanese, Italian, German, Spanish, and Irish."
+      [ "**Programming languages**: Python, Haskell, PHP. Some Ruby, JavaScript, Julia, Elm.",
+        "**Markup and style languages**: TEI XML, HTML, RDF, Markdown, XSL, CSS.",
+        "**Natural languages**: English, French, Chinese (Mandarin), Esperanto. Some Japanese, Italian, German, Spanish, Portuguese, Latin, and Irish."
       ]
   where
     langItem :: T.Text -> Html ()

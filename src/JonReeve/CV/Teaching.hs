@@ -143,7 +143,9 @@ teaching =
       { dateRanges =
           [ DateRange (date 2018 07) (date 2018 09),
             DateRange (date 2019 07) (date 2019 08),
-            DateRange (date 2020 07) (date 2020 08)
+            DateRange (date 2020 07) (date 2020 08),
+            DateRange (date 2021 07) (date 2021 08),
+            DateRange (date 2022 07) (date 2022 08)
           ],
         courseName = "Introduction to Computational Literary Analysis",
         teachingRole = Instructor,

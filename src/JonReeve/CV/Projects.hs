@@ -35,12 +35,13 @@ projects =
               (date 2021 12)
               ( Publication
                   Article
-                  "Mapping Data Ethics Curricula [Preprint]"
-                  "https://github.com/JonathanReeve/data-ethics-literature-review/blob/main/paper/jices-paper.pdf" -- TODO: Add URL
+                  "Mapping Data Ethics Curricula"
+                  -- "https://github.com/JonathanReeve/data-ethics-literature-review/blob/main/paper/jices-paper.pdf" -- TODO: Add URL
+                  "https://www.emerald.com/insight/content/doi/10.1108/JICES-12-2021-0124/full/html"
                   ( Venue
-                      "[Accepted, at Journal of Information, Communication, and Ethics in Society]"
+                      "Journal of Information, Communication, and Ethics in Society"
                       "https://www.emeraldgrouppublishing.com/journal/jices?id=jices"
-                      ""
+                      "Emerald Publishing"
                   )
               ),
             Update
@@ -51,6 +52,19 @@ projects =
                   (Venue "Association of Internet Researchers Conference, 2021" "https://aoir.org/aoir2021confinfo/aoir2021cfp/" "")
               )
           ],
+        pypi = Nothing
+      },
+    Project
+      { title = "Multilingual Digital Humanities",
+        role = Collaborator,
+        homepage = "http://multilingualdh.org/",
+        github = Just "https://github.com/multilingual-dh/multilingual-dh.github.io",
+        desc = "A catalog of text analysis resources in, and for, languages other than English.",
+        dateRange = DateRange (date 2019 01) Present,
+        updates = [
+          Update (date 2019 01)
+                  ( News "Website multilingualdh.org released, in Esperanto, English, German, Italian, Mandarin, Korean, Catalan, and French.")
+                  ],
         pypi = Nothing
       },
     Project
@@ -164,6 +178,16 @@ projects =
         desc = "Computational analyses of the critical history of George Eliot's novel _Middlemarch_. In collaboration with Milan Terlunen, Sierra Eckert, Columbia University’s [Group for Experimental Methods in the Humanities](http://xpmethod.plaintext.in/), and the Stanford Literary Lab.",
         updates =
           [ Update
+              (date 2022 08)
+              ( Publication Article
+              "How Scholars Quote from Source Texts: a Case for Corpus-Adapted Text Reuse Detection"
+              "https://github.com/lit-mod-viz/middlemarch-critical-histories/blob/master/papers/spring2022-dsh-methods-paper/paper.pdf"
+              (Venue
+               "Under Review at Digital Scholarship in the Humanities"
+               "https://academic.oup.com/dsh"
+               "Oxford University Press")
+              ),
+            Update
               (date 2017 10)
               ( Publication
                   Abstract
