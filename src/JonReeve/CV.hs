@@ -242,13 +242,16 @@ formatTalks proj = foldMap formatUpdate talksOnly
 
 languagesSection :: Html ()
 languagesSection = do
-  h1_ [] "Languages"
+  h1_ [] "Languages and Skills"
   ul_ [] $ do
     mapM_
       langItem
-      [ "**Programming languages**: Python, Haskell, PHP. Some Ruby, JavaScript, Julia, Elm.",
-        "**Markup and style languages**: TEI XML, HTML, RDF, Markdown, XSL, CSS.",
-        "**Natural languages**: English, French, Chinese (Mandarin), Esperanto. Some Japanese, Italian, German, Spanish, Portuguese, Latin, and Irish."
+      [ "**Programming languages**: Python, Haskell, PHP. Some Ruby, JavaScript, Julia, Elm, Nix.",
+        "**Markup and style languages**: TEI XML, HTML, RDF, Markdown, XSL, CSS, LaTeX.",
+        "**Shell languages**: BASH, ZSH, Fish, Nushell.",
+        "**Operating systems**: Linux (NixOS, Ubuntu, Fedora, Arch), MacOS, Windows.",
+        "**Natural languages**: English, French, Chinese (Mandarin), Esperanto. Some Japanese, Italian, German, Spanish, Portuguese, Latin, and Irish.",
+        "**Skills**: Natural language processing, data science, data analytics, web development, dev ops (NixOS, server scripting, Docker), cluster computing."
       ]
   where
     langItem :: T.Text -> Html ()
