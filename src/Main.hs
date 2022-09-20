@@ -5,6 +5,7 @@ module Main where
 
 import Control.Monad.Logger
 import Data.Default
+import Data.Text qualified as T
 import Ema
 import JonReeve.Main (renderPage, toPosts)
 import JonReeve.Pandoc qualified as Pandoc
@@ -14,12 +15,11 @@ import Lucid qualified
 import Optics.Core
 import System.FilePath ((</>))
 import System.UnionMount qualified as UnionMount
-import Text.Pandoc.Definition (Pandoc (..))
-import qualified Data.Text as T
-import Text.Pandoc.Builder (setMeta)
 import Text.Pandoc (handleError)
-import Text.Pandoc.Class (runIO)
+import Text.Pandoc.Builder (setMeta)
 import Text.Pandoc.Citeproc (processCitations)
+import Text.Pandoc.Class (runIO)
+import Text.Pandoc.Definition (Pandoc (..))
 
 -- ------------------------
 -- Main entry point
@@ -70,7 +70,7 @@ instance EmaSite SR where
           docProcessed <- liftIO $ runIO $ processCitations docWithMeta'
           -- liftIO $ print docProcessed
           liftIO $ handleError docProcessed
-  siteOutput = render
+  siteOutput rp m r = pure $ render rp m r
 
 -- ------------------------
 -- Our site HTML
