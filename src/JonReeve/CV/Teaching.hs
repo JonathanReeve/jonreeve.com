@@ -62,7 +62,17 @@ repeatTeachingItem teachingItem = case teachingItem of
 
 teaching :: [Teaching]
 teaching =
-  [ Workshop
+  [ Course
+  {
+    dateRanges = [DateRange (date 2022 01) (date 2022 06)],
+    courseName = "Data Visualization",
+    teachingRole = TA,
+    url = "",
+    venue = Venue "Quantitative Methods in the Social Sciences" "" (uni "cu"),
+    teachingUpdates = [],
+    notes = Just "Taught data visualization and NLP data visualization in the R language."
+  },
+    Workshop
       { dates = [date 2021 06],
         workshopName = "NYU Institute in Public Interest Technology",
         url = "https://pit2021.hosting.nyu.edu",
@@ -70,7 +80,7 @@ teaching =
         notes = Nothing
       },
     Workshop
-      { dates = [date 2021 06],
+      { dates = [date 2021 06, date 2022 06],
         workshopName = "Meaningful Text Analysis with Word Embeddings",
         url = "https://dhsi.org/course-offerings/",
         venue = Venue "Digital Humanities Summer Institute" "https://dhsi.org" "U Victoria, Canada",
@@ -149,7 +159,7 @@ teaching =
           ],
         courseName = "Introduction to Computational Literary Analysis",
         teachingRole = Instructor,
-        url = "https://icla2020.jonreeve.com",
+        url = "https://icla2022.jonreeve.com",
         venue = Venue "Digital Humanities Summer Minor Program" "https://summerdigitalhumanities.berkeley.edu/" (uni "ucb"),
         teachingUpdates =
           [ Update

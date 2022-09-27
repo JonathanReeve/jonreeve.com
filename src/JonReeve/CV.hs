@@ -246,12 +246,13 @@ languagesSection = do
   ul_ [] $ do
     mapM_
       langItem
-      [ "**Programming languages**: Python, Haskell, PHP. Some Ruby, JavaScript, Julia, Elm, Nix.",
-        "**Markup and style languages**: TEI XML, HTML, RDF, Markdown, XSL, CSS, LaTeX.",
+      [ "**Programming languages**: Python, Haskell, PHP, R. Learning JavaScript, Julia, Elm, Nix.",
+        "**Markup and style languages**: TEI XML, HTML, RDF, Markdown, XSL, CSS, LaTeX, BibLaTeX.",
         "**Shell languages**: BASH, ZSH, Fish, Nushell.",
         "**Operating systems**: Linux (NixOS, Ubuntu, Fedora, Arch), MacOS, Windows.",
-        "**Natural languages**: English, French, Chinese (Mandarin), Esperanto. Some Japanese, Italian, German, Spanish, Portuguese, Latin, and Irish.",
-        "**Skills**: Natural language processing, data science, data analytics, web development, dev ops (NixOS, server scripting, Docker), cluster computing."
+        "**Programs**: Emacs, Vim, LibreOffice, MS Office.",
+        "**Natural languages**: English, French, Mandarin Chinese, Esperanto. Learning Japanese, Italian, German, Spanish, Portuguese, Latin, and Irish.",
+        "**Skills**: Natural language processing, data science, data analytics, data visualization, web development, dev ops (NixOS, server scripting, Docker), cluster computing."
       ]
   where
     langItem :: T.Text -> Html ()
