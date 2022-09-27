@@ -13,10 +13,4 @@ jobs:
         with:
           nix_path: nixpkgs=channel:nixos-unstable
       - run: nix build
-      - run: ./result/bin/jonreevecom
-      - name: Deploy to GH Pages 🚀
-        uses: JamesIves/github-pages-deploy-action@4.1.3
-        with:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-          branch: gh-pages # The branch the action should deploy to.
-          folder: dest # The folder the action should deploy.
+
