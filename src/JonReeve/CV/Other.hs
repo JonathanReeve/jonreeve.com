@@ -42,7 +42,7 @@ positions =
       { posDateRange = DateRange (date 2020 03) (date 2020 09),
         project = "Digital Art History Directory",
         org = "Art Libraries Society of North America",
-        posRole = "Web Consultant",
+        posRole = "Web Development Consultant",
         posUrl = "",
         posUpdates =
           [ Update (date 2020 09) $ News "Developed a custom [WordPress theme](https://github.com/JonathanReeve/dahd-tainacan-theme) for the [Tainacan](https://tainacan.org/home/) repository framework.",
@@ -50,7 +50,7 @@ positions =
           ]
       },
     Position
-      { posDateRange = DateRange (date 2019 01) Present,
+      { posDateRange = DateRange (date 2019 01) (date 2021 01),
         project = "Modernist Networks",
         org = "Center for Textual Studies and Digital Humanities, Loyola U Chicago",
         posRole = "Project Manager",
