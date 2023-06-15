@@ -1,0 +1,90 @@
+#+title: Books with Question Titles
+#+date: 2023-06-14
+#+keywords: titles archive
+
+I've been playing around with some of the Open Library book data, and made an interesting mistake along the way. I incorrectly constructed a regular expression, using a literal question mark instead of an escaped question mark, and ended up with a list of book titles which end in question marks. This was a happy accident, since the results are interesting, and often hilarious, book titles:
+
+- Isn't that Lewis Carroll?
+- How Much Wine Will Fix My Broken Heart?
+- You're the Professor, What Next?
+- What Counts as Mathematics?
+- Too Many Babies?
+- What do we know about Namibia's competitiveness?
+- Enfants bandits?
+- Why Is That So Funny?
+- Do our people believe what our preachers preach?
+- Can we afford to waste municipal waste?
+- Mission accomplished?
+- IF YOU SAY MULTICULTURALISM IS THE WRONG ANSWER, THEN WHAT WAS THE QUESTION YOU ASKED? [Emphasis in the original.]
+- Is the key to successful breastfeeding all in the mind?
+- Why Grow Old?
+- We need to talk, but first, do you like my shoes?
+- But what if I don't want to go to college?
+- How come I feel so disconnected if this is such a user-friendly world?
+- How does a czar eat potatoes?
+- What Do Cats Do for Halloween?
+- Did You Want To Talk To The Doctor In Charge Or The Nurse Who Knows What's Going On?
+- Forty men are going to form the largest poultry farm in Canada, will you be one of them?
+- Is that lunch adequate?
+- What Color Is My Internet?
+- What's Funny About Yorkshire?
+- Could You Please, Please Stop Singing?
+- Dinosaurs or dynamos?
+- A concise answer to the inquiry, who or what are the Shakers?
+- What's With Modern Art?
+- Le Moyen Age pour quoi faire?
+- Elvis, is that you?
+- Mama amasa la masa?
+- Texas?
+- How Big Is Baby?
+- Where are the footnotes?
+- Your phone bill, fact or fiction?
+- What Is Western about the West?
+- I'm a Scientist Scary Isn't It?
+- What's so funny about computers?
+
+** Some patterns
+
+I liked the first one, with the "what next?" tag question, so I looked for titles that end with that pattern, and found some 134 such titles, including these good ones:
+
+ - Drama - what next?
+ - Northern Ireland, What Next?
+ - Helsinki, what next?
+ - After age 16 - what next?
+
+The last one, too, has an interesting form, so I searched for books beginning with "What's so funny about." There were 21, mostly about religion:
+
+ - What's so funny about faith?
+ - What's So Funny about God?
+ - What's So Funny about Being Catholic?
+ - What's so funny about microbiology?
+
+Since there are several book titles which are addressed to a person, like "Elvis, is that you?" and "Jesus, is your Daddy mean?", I tried searching for titles starting with "Jesus," and there are 31. Here are a few:
+
+ - Jesus, what's for lunch?
+ - Jesus, Were You Little?
+ - Jesus, where are you taking us?
+ - Jesus, Who Needs Him?
+
+The books that begin with "Elivis," and end with a question mark, are fewer:
+
+ - Elvis, is that you?
+ - Elvis, what happened?
+
+Books that begin with "how come" mostly sound like children's books. ("How come" feels like children's language to me, for some reason. [[https://english.stackexchange.com/questions/5563/how-come-vs-why][There are some interesting explanations on the English Stackexchange,]] and [[https://www.google.com/books/edition/Garner_s_Modern_English_Usage/mSjnCwAAQBAJ?hl=eo&gbpv=1&bsq=%22how%20come%22][Garner says to "avoid it in serious writing,"]] understandably.)
+
+- How Come It's Windy?
+- How come you're not married?
+- How come holding hands feels so good?
+- How come elephants?
+- How come they always had the battles in national parks?
+- How come I've never seen a can of broccoli?
+
+This makes for a funny tone in books that sound sound like they're written for adults:
+
+- How Come Every Time I Get Stabbed in the Back My Fingerprints Are on the Knife?
+- How Come That Idiot's Rich and I'm Not?
+
+There are unfortunately no other books beginning "How Much Wine Will Fix..."
+
+If you want to replicate this experiment, just grab the "works" dump [[https://openlibrary.org/developers/dumps][from the Open Library data dumps site]], and then run ~zgrep -io '"title": "Jesus, .*?"' ol_dump_works_latest.txt.gz~ or equivalent.
