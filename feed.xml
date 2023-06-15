@@ -13480,4 +13480,119 @@ Production in the Arts and Humanities&lt;/em&gt;. Open Book Publishers, 2021,
 &lt;a
 href=&#34;https://books.google.com/books?id=VY4tEAAAQBAJ&#34;&gt;https://books.google.com/books?id=VY4tEAAAQBAJ&lt;/a&gt;.
 &lt;/div&gt;
-&lt;/div&gt;</content><link href="https://jonreeve.com2022/03/best-practices-dissertation"/></entry></feed>
+&lt;/div&gt;</content><link href="https://jonreeve.com2022/03/best-practices-dissertation"/></entry><entry><id>https://jonreeve.com2023/06/books-with-question-titles</id><title type="text">Books with Question Titles
+</title><updated>2023-06-14
+</updated><author><name>Jonathan Reeve</name></author><content type="html">&lt;p&gt;I’ve been playing around with some of the Open Library book data, and
+made an interesting mistake along the way. I incorrectly constructed a
+regular expression, using a literal question mark instead of an escaped
+question mark, and ended up with a list of book titles which end in
+question marks. This was a happy accident, since the results are
+interesting, and often hilarious, book titles:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Isn’t that Lewis Carroll?&lt;/li&gt;
+&lt;li&gt;How Much Wine Will Fix My Broken Heart?&lt;/li&gt;
+&lt;li&gt;You’re the Professor, What Next?&lt;/li&gt;
+&lt;li&gt;What Counts as Mathematics?&lt;/li&gt;
+&lt;li&gt;Too Many Babies?&lt;/li&gt;
+&lt;li&gt;What do we know about Namibia’s competitiveness?&lt;/li&gt;
+&lt;li&gt;Enfants bandits?&lt;/li&gt;
+&lt;li&gt;Why Is That So Funny?&lt;/li&gt;
+&lt;li&gt;Do our people believe what our preachers preach?&lt;/li&gt;
+&lt;li&gt;Can we afford to waste municipal waste?&lt;/li&gt;
+&lt;li&gt;Mission accomplished?&lt;/li&gt;
+&lt;li&gt;IF YOU SAY MULTICULTURALISM IS THE WRONG ANSWER, THEN WHAT WAS THE
+QUESTION YOU ASKED? [Emphasis in the original.]&lt;/li&gt;
+&lt;li&gt;Is the key to successful breastfeeding all in the mind?&lt;/li&gt;
+&lt;li&gt;Why Grow Old?&lt;/li&gt;
+&lt;li&gt;We need to talk, but first, do you like my shoes?&lt;/li&gt;
+&lt;li&gt;But what if I don’t want to go to college?&lt;/li&gt;
+&lt;li&gt;How come I feel so disconnected if this is such a user-friendly
+world?&lt;/li&gt;
+&lt;li&gt;How does a czar eat potatoes?&lt;/li&gt;
+&lt;li&gt;What Do Cats Do for Halloween?&lt;/li&gt;
+&lt;li&gt;Did You Want To Talk To The Doctor In Charge Or The Nurse Who Knows
+What’s Going On?&lt;/li&gt;
+&lt;li&gt;Forty men are going to form the largest poultry farm in Canada, will
+you be one of them?&lt;/li&gt;
+&lt;li&gt;Is that lunch adequate?&lt;/li&gt;
+&lt;li&gt;What Color Is My Internet?&lt;/li&gt;
+&lt;li&gt;What’s Funny About Yorkshire?&lt;/li&gt;
+&lt;li&gt;Could You Please, Please Stop Singing?&lt;/li&gt;
+&lt;li&gt;Dinosaurs or dynamos?&lt;/li&gt;
+&lt;li&gt;A concise answer to the inquiry, who or what are the Shakers?&lt;/li&gt;
+&lt;li&gt;What’s With Modern Art?&lt;/li&gt;
+&lt;li&gt;Le Moyen Age pour quoi faire?&lt;/li&gt;
+&lt;li&gt;Elvis, is that you?&lt;/li&gt;
+&lt;li&gt;Mama amasa la masa?&lt;/li&gt;
+&lt;li&gt;Texas?&lt;/li&gt;
+&lt;li&gt;How Big Is Baby?&lt;/li&gt;
+&lt;li&gt;Where are the footnotes?&lt;/li&gt;
+&lt;li&gt;Your phone bill, fact or fiction?&lt;/li&gt;
+&lt;li&gt;What Is Western about the West?&lt;/li&gt;
+&lt;li&gt;I’m a Scientist Scary Isn’t It?&lt;/li&gt;
+&lt;li&gt;What’s so funny about computers?&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&#34;some-patterns&#34;&gt;Some patterns&lt;/h2&gt;
+&lt;p&gt;I liked the first one, with the “what next?” tag question, so I
+looked for titles that end with that pattern, and found some 134 such
+titles, including these good ones:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Drama - what next?&lt;/li&gt;
+&lt;li&gt;Northern Ireland, What Next?&lt;/li&gt;
+&lt;li&gt;Helsinki, what next?&lt;/li&gt;
+&lt;li&gt;After age 16 - what next?&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;The last one, too, has an interesting form, so I searched for books
+beginning with “What’s so funny about.” There were 21, mostly about
+religion:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;What’s so funny about faith?&lt;/li&gt;
+&lt;li&gt;What’s So Funny about God?&lt;/li&gt;
+&lt;li&gt;What’s So Funny about Being Catholic?&lt;/li&gt;
+&lt;li&gt;What’s so funny about microbiology?&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Since there are several book titles which are addressed to a person,
+like “Elvis, is that you?” and “Jesus, is your Daddy mean?”, I tried
+searching for titles starting with “Jesus,” and there are 31. Here are a
+few:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Jesus, what’s for lunch?&lt;/li&gt;
+&lt;li&gt;Jesus, Were You Little?&lt;/li&gt;
+&lt;li&gt;Jesus, where are you taking us?&lt;/li&gt;
+&lt;li&gt;Jesus, Who Needs Him?&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;The books that begin with “Elivis,” and end with a question mark, are
+fewer:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Elvis, is that you?&lt;/li&gt;
+&lt;li&gt;Elvis, what happened?&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Books that begin with “how come” mostly sound like children’s books.
+(“How come” feels like children’s language to me, for some reason. &lt;a
+href=&#34;https://english.stackexchange.com/questions/5563/how-come-vs-why&#34;&gt;There
+are some interesting explanations on the English Stackexchange,&lt;/a&gt; and
+&lt;a
+href=&#34;https://www.google.com/books/edition/Garner_s_Modern_English_Usage/mSjnCwAAQBAJ?hl=eo&amp;amp;gbpv=1&amp;amp;bsq=%22how%20come%22&#34;&gt;Garner
+says to “avoid it in serious writing,”&lt;/a&gt; understandably.)&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;How Come It’s Windy?&lt;/li&gt;
+&lt;li&gt;How come you’re not married?&lt;/li&gt;
+&lt;li&gt;How come holding hands feels so good?&lt;/li&gt;
+&lt;li&gt;How come elephants?&lt;/li&gt;
+&lt;li&gt;How come they always had the battles in national parks?&lt;/li&gt;
+&lt;li&gt;How come I’ve never seen a can of broccoli?&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;This makes for a funny tone in books that sound sound like they’re
+written for adults:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;How Come Every Time I Get Stabbed in the Back My Fingerprints Are on
+the Knife?&lt;/li&gt;
+&lt;li&gt;How Come That Idiot’s Rich and I’m Not?&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;There are unfortunately no other books beginning “How Much Wine Will
+Fix…”&lt;/p&gt;
+&lt;p&gt;If you want to replicate this experiment, just grab the “works” dump
+&lt;a href=&#34;https://openlibrary.org/developers/dumps&#34;&gt;from the Open Library
+data dumps site&lt;/a&gt;, and then run
+&lt;code&gt;zgrep -io &#39;&#34;title&#34;: &#34;Jesus, .*?&#34;&#39; ol_dump_works_latest.txt.gz&lt;/code&gt;
+or equivalent.&lt;/p&gt;</content><link href="https://jonreeve.com2023/06/books-with-question-titles"/></entry></feed>
