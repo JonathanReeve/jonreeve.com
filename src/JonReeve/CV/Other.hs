@@ -18,7 +18,7 @@ data Education = Education
 
 education :: [Education]
 education =
-  [ Education (date 2019 05) (uni "cu") "PhD Candidate" "English and Comparative Literature",
+  [ Education (date 2019 05) (uni "cu") "Doctor of Philosophy" "English and Comparative Literature",
     Education (date 2019 05) (uni "cu") "Master of Philosophy" "English and Comparative Literature",
     Education (date 2016 05) (uni "cu") "Master of Arts" "English and Comparative Literature",
     Education (date 2014 01) (uni "nyu") "Master of Arts" "Humanities",
@@ -38,7 +38,18 @@ data Position = Position
 
 positions :: [Position]
 positions =
-  [ Position
+  [
+
+    Position
+      { posDateRange = DateRange (date 2023 03) Present,
+        project = "Apple Books, AI/ML",
+        org = "Apple",
+        posRole = "Research Scientist",
+        posUrl = "https://www.apple.com/apple-books/",
+        posUpdates =
+          [ ]
+      },
+    Position
       { posDateRange = DateRange (date 2020 03) (date 2020 09),
         project = "Digital Art History Directory",
         org = "Art Libraries Society of North America",
@@ -73,7 +84,7 @@ positions =
           ]
       },
     Position
-      { org = "Institute for Comparative Literature and Society, Columbia University",
+      { org = "Institute for Comparative Literature and Society, Columbia U",
         project = "A Safer Online Public Square",
         posRole = "Research Assistant, Computational Methods of Abusive Language Detection",
         posUrl = "http://icls.columbia.edu/initiatives/a-safer-online-public-square/",
@@ -155,7 +166,7 @@ affiliations =
           "http://xpmethod.plaintext.in/projects/literary-modeling.html"
           "Group for Experimental Methods in the Humanities, Columbia U"
       )
-      [DateRange (date 2015 05) Present],
+      [DateRange (date 2015 05) (date 2023 01)],
     Affiliation
       "Founding member"
       ( Venue
@@ -163,7 +174,7 @@ affiliations =
           "https://dls.hypotheses.org/"
           "Association of Digital Humanities Organizations"
       )
-      [DateRange (date 2017 05) Present],
+      [DateRange (date 2017 05) (date 2023 01)],
     Affiliation
       "Reviewer"
       ( Venue
@@ -195,11 +206,11 @@ affiliations =
     Affiliation
       "Editor-at-Large"
       (Venue "Digital Humanities Now" "http://digitalhumanitiesnow.org/" "")
-      [DateRange (date 2014 01) Present],
+      [DateRange (date 2014 01) (date 2018 01)],
     Affiliation
       "Member"
       (Venue "Association of Internet Researchers" "https://aoir.org" "")
-      [DateRange (date 2021 01) Present],
+      [DateRange (date 2021 01) (date 2023 01)],
     Affiliation
       "Member"
       (Venue "Modern Language Association" "https://mla.org" "")
