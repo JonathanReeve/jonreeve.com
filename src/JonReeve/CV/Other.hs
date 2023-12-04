@@ -18,7 +18,7 @@ data Education = Education
 
 education :: [Education]
 education =
-  [ Education (date 2019 05) (uni "cu") "Doctor of Philosophy" "English and Comparative Literature",
+  [ Education (date 2023 10) (uni "cu") "Doctor of Philosophy" "English and Comparative Literature",
     Education (date 2019 05) (uni "cu") "Master of Philosophy" "English and Comparative Literature",
     Education (date 2016 05) (uni "cu") "Master of Arts" "English and Comparative Literature",
     Education (date 2014 01) (uni "nyu") "Master of Arts" "Humanities",
