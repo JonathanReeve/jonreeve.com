@@ -13595,4 +13595,147 @@ Fix…”&lt;/p&gt;
 &lt;a href=&#34;https://openlibrary.org/developers/dumps&#34;&gt;from the Open Library
 data dumps site&lt;/a&gt;, and then run
 &lt;code&gt;zgrep -io &#39;&#34;title&#34;: &#34;Jesus, .*?&#34;&#39; ol_dump_works_latest.txt.gz&lt;/code&gt;
-or equivalent.&lt;/p&gt;</content><link href="https://jonreeve.com2023/06/books-with-question-titles"/></entry></feed>
+or equivalent.&lt;/p&gt;</content><link href="https://jonreeve.com2023/06/books-with-question-titles"/></entry><entry><id>https://jonreeve.com2025/06/my-writing-workflow</id><title type="text">My Writing Workflow
+</title><updated>2025-06-31
+</updated><author><name>Jonathan Reeve</name></author><content type="html">&lt;p&gt;I thought I’d say a few things about my writing workflow, since I
+often get questions about my setup, and since there’s &lt;a
+href=&#34;https://gregnewman.io/blog/emacs-carnival-2025-07-writing-experience/&#34;&gt;a
+blog carnival happening this month on the topic&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;I write everything (books, dissertations, articles, blog posts,
+emails, code) using &lt;a
+href=&#34;https://en.wikipedia.org/wiki/Emacs&#34;&gt;Emacs&lt;/a&gt;, the venerable old
+text editor which has been in active development since the 1970s. I
+write using an Emacs mode called &lt;a
+href=&#34;https://en.wikipedia.org/wiki/Org-mode&#34;&gt;Org-mode&lt;/a&gt;, which itself
+has been around since 2003. I arrived at Emacs and Org-mode after trying
+everything else, since they’re the only tools I’ve found which can
+handle the whole writing pipeline: reading, notetaking, writing, and
+publication, and can do it well. This is an unusual choice, which
+deserves some explanation. But before I describe the software stack and
+discuss all the technical details, I’ll first say a few words about my
+writing process.&lt;/p&gt;
+&lt;h1 id=&#34;overview-and-methodology&#34;&gt;Overview and Methodology&lt;/h1&gt;
+&lt;p&gt;Writing starts with reading. Reading generates notes, which then
+become writing, and finally publication. I wanted a way to make this
+process as frictionless as possible. A great methodology for that is the
+Zettelkasten method, explained perhaps the mostly eloquently in Sönke
+Ahrens’s book, &lt;em&gt;How to Take Smart Notes&lt;/em&gt;. In a nutshell, it’s
+about keeping short, atomic notes, and ensuring that they’re deeply
+interconnected. Notes are either fleeting notes, concept notes, or
+literature notes. New thoughts become fleeting notes, which are
+eventually reworked into a concept notes, (an evergreen note which is
+often being revised), which then become writing. Every book or article
+has a literature note, too, which keeps track of the bibliographic
+information, so that it’s easy to cite sources later. The genius of this
+system is that daily tasks as simple as keeping a &lt;a
+href=&#34;https://en.wikipedia.org/wiki/Commonplace_book&#34;&gt;commonplace
+book&lt;/a&gt; can eventually become articles, or even books, without much
+additional effort.&lt;/p&gt;
+&lt;p&gt;Emacs can function as a great implementation of this Zettelkasten
+system, using a number of plugins which work together to streamline the
+writing process: org-noter for reading, org-roam for notetaking,
+org-mode for writing, and pandoc for publication. But if Emacs seems
+like a strange choice, allow me to explain.&lt;/p&gt;
+&lt;h1 id=&#34;why-emacs&#34;&gt;Why Emacs?&lt;/h1&gt;
+&lt;p&gt;As a grad student in English Literature, I didn’t know too many
+people using Emacs for writing. There are so many shiny tools for
+writing these days, and Emacs is very much not shiny. But it’s the best
+tool for the job, by far.&lt;/p&gt;
+&lt;p&gt;I arrived at Emacs via Vim, an equally old and venerable text editor,
+famous for it modal editing style. If you’ve never written with a modal
+text editor, you’re missing out. It gives your keyboard two modes: one
+for entering text, and one for editing it. This is effectively an
+editing superpower, since all the pointing-and-clicking, all the
+selecting text, and everything else annoying about writing can be
+replaced with a couple of keystrokes. Want to delete three words? Type
+&lt;code&gt;d3w&lt;/code&gt;, short for “delete three words.” Want to delete a
+paragraph? Type &lt;code&gt;dap&lt;/code&gt; for “delete a paragraph.” Change a
+double-quoted sentence to a single-quoted one? Type &lt;code&gt;cs&#39;&#34;&lt;/code&gt;
+for “change surrounding single-quotes to double-quotes.”&lt;/p&gt;
+&lt;p&gt;Once I got used to Vim, I wanted to use it to write everything. And I
+did, until I discovered Emacs. Emacs has modal editing functionality
+(cheekily called &lt;a
+href=&#34;https://github.com/emacs-evil/evil&#34;&gt;evil-mode&lt;/a&gt;) but can extend
+it to anything else in the Emacs ecosystem. Like Vim, it’s old (read:
+future-proof), open-source (read: free as in freedom), and
+extensible.&lt;/p&gt;
+&lt;p&gt;I write more prose than I do code, but it turns out a coder’s text
+editor is what I needed to write prose.&lt;/p&gt;
+&lt;p&gt;But the killer feature of Emacs is its built-in mode, &lt;a
+href=&#34;https://en.wikipedia.org/wiki/Org-mode&#34;&gt;Org-mode&lt;/a&gt;.&lt;/p&gt;
+&lt;h1 id=&#34;org-mode&#34;&gt;Org-mode&lt;/h1&gt;
+&lt;p&gt;It’s hard to describe just how powerful org-mode is. It’s a
+lightweight markup language, outliner, calendar, organizational system,
+todo list tracker, notetaking tool, literate programming utility, and a
+lot more. It’s built into Emacs, but there is a growing number of
+Org-compatible programs available for other platforms now.&lt;/p&gt;
+&lt;p&gt;You can think of Org like a supercharged Markdown, but with an entire
+ecosystem of plugins built around it. Whereas Markdown has a minimal
+core by definition, and has led to a huge number of Markdown-based
+markup languages (CommonMark, GitHub Flavored Markdown, and MyST
+Markdown, just to name a few), Org-mode is comparatively stable,
+standardized, and has grown along with its primary editor, Emacs,
+ensuring a tight compatibility between the two. I write just about
+everything in org-mode files, including emails, scripts, literate Python
+notebooks, and this blog post.&lt;/p&gt;
+&lt;h1 id=&#34;discovery-and-capture-org-capture-and-org-protocol&#34;&gt;Discovery
+and Capture: Org-capture and Org-protocol&lt;/h1&gt;
+&lt;p&gt;If I come across something interesting on the web, I’ll capture it
+using org-protocol and org-capture. I have key combinations set up for
+my preferred web browser, Qutebrowser, which send the website URL, the
+website title, and any text I’ve selected to org-capture, which then can
+allow me to insert that link and text to any existing note (via
+org-refile) or to a new note. In this way, I’m basically using org-mode
+as a bookmark management utility.&lt;/p&gt;
+&lt;h1 id=&#34;reading-org-noter&#34;&gt;Reading: Org-noter&lt;/h1&gt;
+&lt;p&gt;Once I collect reading material, in the form of papers or books,
+.pdfs or .epubs, I usually read it with &lt;a
+href=&#34;https://github.com/weirdNox/org-noter&#34;&gt;org-noter&lt;/a&gt;. Org-noter
+provides a two-pane interface for reading, with the text on the left and
+my Org-mode notes on the right. The notes stay in sync with the text,
+such that if I turn the page, the notes also jump to the appropriate
+page. I used to annotate PDFs and ePUBs by using PDF annotation
+programs, but these didn’t always make my annotations searchable.&lt;/p&gt;
+&lt;p&gt;If I read something which relates to a note I’ve already taken, I’ll
+simply type the title of the note, and org-roam will insert a link to
+it, ensuring that I’ll be able to find my literature notes from a
+concept note, and vice-versa.&lt;/p&gt;
+&lt;h1 id=&#34;notetaking-org-roam&#34;&gt;Notetaking: Org-roam&lt;/h1&gt;
+&lt;p&gt;&lt;a href=&#34;https://github.com/org-roam/org-roam&#34;&gt;Org-roam&lt;/a&gt; is a
+clone of &lt;a href=&#34;https://roamresearch.com/&#34;&gt;Roam Research&lt;/a&gt;, but made
+for org-mode. It enables Zettlekasten-like notetaking from within
+org-mode. I like it because it allows me to do graphical notetaking,
+where notes are part of a decentralized network, and also hierarchical
+notetaking, where notes are part of a hierarchy. For example, I have a
+file movies.org where I keep track of movies I’ve seen, along with
+ratings I’ve given them and links to their IMDB pages. That enables me
+to disambiguate between books and movies with the same title, without
+resorting to the parentheses-based namespacing of the kind used by
+Wikipedia.&lt;/p&gt;
+&lt;p&gt;Org-roam also works well with org-mode citation tools like &lt;a
+href=&#34;https://github.com/emacs-citar/citar&#34;&gt;citar&lt;/a&gt;, using &lt;a
+href=&#34;https://github.com/emacs-citar/citar-org-roam&#34;&gt;citar-org-roam&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;I can even visualize my whole Org-roam graph, now at over 3K notes,
+using &lt;a
+href=&#34;https://github.com/org-roam/org-roam-ui&#34;&gt;org-roam-ui&lt;/a&gt;.&lt;/p&gt;
+&lt;h1 id=&#34;publishing-pandoc&#34;&gt;Publishing: Pandoc&lt;/h1&gt;
+&lt;p&gt;&lt;a href=&#34;https://pandoc.org/&#34;&gt;Pandoc&lt;/a&gt; is an amazing program for
+converting between lots of different file formats, including Org files.
+With a little finessing, it’s a very powerful system for publishing. &lt;a
+href=&#34;https://pandoc.org/MANUAL.html#citation-rendering&#34;&gt;It can generate
+bibliographies&lt;/a&gt; from citations, Bibtex files, and .CSL citation
+styles. It can handle numbering your figures and equations, adding
+captions, dealing with special blocks of text, and more.&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;https://dissertation.jonreeve.com/&#34;&gt;My dissertation&lt;/a&gt;, for
+example, uses &lt;a
+href=&#34;https://github.com/JonathanReeve/dissertation/blob/master/Template.hs&#34;&gt;a
+custom Pandoc template&lt;/a&gt; along with &lt;a
+href=&#34;https://github.com/JonathanReeve/dissertation/blob/master/Shakefile.hs&#34;&gt;build
+instructions in a Shakefile, for the Shake build system&lt;/a&gt;, to convert
+.org files to the HTML files that I then published to the web and the
+university archives. &lt;a
+href=&#34;https://dissertation.jonreeve.com/00-introduction/introduction-v01.html#technologies&#34;&gt;I
+wrote about this here, in the dissertation introduction.&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;Since Pandoc can handle so many different types of document formats,
+I can write in .org and then publish HTML to the web, or export to PDF,
+ePUB, or whatever.&lt;/p&gt;</content><link href="https://jonreeve.com2025/06/my-writing-workflow"/></entry></feed>

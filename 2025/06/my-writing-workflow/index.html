@@ -1,0 +1,468 @@
+<html lang="en"><head><meta http-equiv="Content-Type" content="text/html; charset=utf-8"><title>My Writing Workflow
+</title><base href="/"><link rel="stylesheet" href="/assets/css/spectre.min.css"><link rel="stylesheet" href="//fonts.googleapis.com/css?family=Montserrat|Raleway"><link rel="stylesheet" href="//cdn.jsdelivr.net/gh/highlightjs/cdn-release@10.2.0/build/styles/default.min.css"><link rel="icon" href="/images/favicon.svg" sizes="any" type="image/svg+xml"><style type="text/css">
+
+@media screen and (min-width: 1200px)
+{
+html
+{
+  font-size : 23px;
+}
+
+}
+@media screen and (min-width: 992px)
+{
+html
+{
+  font-size : 24px;
+}
+
+}
+@media screen and (min-width: 768px)
+{
+html
+{
+  font-size : 25px;
+}
+
+}
+@media screen and (min-width: 576px)
+{
+html
+{
+  font-size : 27px;
+}
+
+}
+body
+{
+  font-family : "Raleway", sans-serif;
+}
+
+body.has-docked-nav #main-header
+{
+  width    : 100%;
+  opacity  : 0.94999;
+  z-index  : 2;
+  position : fixed;
+}
+
+#headerWrapper
+{
+  background-color : #ffffff;
+  border-top       : 2px solid #494e8e;
+  border-bottom    : 2px solid #494e8e;
+}
+
+#headerWrapper header
+{
+  padding-top    : 0;
+  padding-bottom : 0;
+  padding-left   : 1em;
+  padding-right  : 2em;
+  min-height     : 4em;
+  margin         : auto auto auto auto;
+  max-width      : 65em;
+}
+
+#headerWrapper header .nav
+{
+  flex-direction : row;
+}
+
+#headerWrapper header .nav li
+{
+  margin-top : 0;
+}
+
+.container
+{
+  max-width : 55em;
+  padding   : 3em 3em 3em 3em;
+}
+
+.header
+{
+  margin-bottom : 2em;
+}
+
+li.pages
+{
+  list-style-type : none;
+  margin-top      : 1em;
+}
+
+h1,
+h2,
+h3,
+h4
+{
+  margin-top : 1em;
+}
+
+b
+{
+  font-size : 1.19999em;
+}
+
+main
+{
+  font-family : "Raleway", sans-serif;
+}
+
+main li
+{
+  list-style-position : outside;
+}
+
+.csl-entry
+{
+  margin-left : 2em;
+  text-indent : -2em;
+}
+
+figure
+{
+  text-align : center;
+}
+
+figure figcaption
+{
+  text-align : center;
+}
+
+figure img
+{
+  max-width : 80%;
+}
+
+
+article img
+{
+  max-width : 80%;
+}
+
+span.update p
+{
+  display : inline;
+}
+
+.chip
+{
+  margin           : 0.1rem 0.29999rem 0.1rem 0.29999rem;
+  background-color : rgba(87,85,221,0.2588);
+}
+
+footer
+{
+  background-color : #494e8e;
+  color            : #fafafa;
+}
+
+footer a
+{
+  color : #ddddec;
+}
+
+footer a.icon img
+{
+  width : 3em;
+}
+
+footer .column
+{
+  display         : flex;
+  justify-content : center;
+  align-content   : center;
+}
+
+footer p
+{
+  margin-bottom : 0;
+}
+
+footer .icons
+{
+  color      : #fafafa;
+  font-size  : 2em;
+  display    : flex;
+  align-self : center;
+}
+
+footer .icons svg:hover
+{
+  opacity : 0.8;
+}
+
+@media screen and (min-width: 576px)
+{
+footer .icons
+{
+  flex-direction : column;
+}
+
+}
+@media screen and (min-width: 992px)
+{
+footer .icons
+{
+  flex-direction : row;
+}
+
+}
+section#greeting
+{
+  margin-top    : 4em;
+  margin-bottom : 2em;
+  font-size     : 2em;
+}
+
+section#greeting .icons
+{
+  display         : flex;
+  justify-content : space-between;
+}
+
+section#greeting .icons img
+{
+  height     : 4em;
+  margin-top : 2em;
+}
+
+
+section#postList li.post
+{
+  margin-top      : 5em;
+  list-style-type : none;
+}
+
+section#postList .postTitle
+{
+  font-size : 2em;
+}
+
+@media print
+{
+
+html
+{
+  font-size : 0.9rem;
+}
+
+button
+{
+  display : none;
+}
+
+#headerWrapper
+{
+  display : none;
+}
+
+footer
+{
+  display : none;
+}
+
+.container
+{
+  max-width : none;
+  padding   : 0em 0em 0em 0em;
+}
+
+table
+{
+  font-size : 0.8rem;
+}
+
+}
+
+/* Generated with Clay, http://fvisser.nl/clay */</style><style type="text/css">@page{margin: 3cm;}</style></head><body><div id="headerWrapper"><header class="navbar"><section class="navbar-section"><a class="navbar-brand" href>Jonathan Reeve: <span>Computational Literary Analysis</span></a></section><section class="navbar-section"><ul class="nav"><li class="nav-item"><a href>posts</a></li><li class="nav-item"><a href="cv">cv</a></li><li class="nav-item"><a href="tags.html">tags</a></li><li class="nav-item"><a href="feed.xml">feed</a></li></ul></section></header></div><div class="container"><h1>My Writing Workflow
+</h1><article><p>Posted 2025-06-31</p><p>I thought I’d say a few things about my writing workflow, since I
+often get questions about my setup, and since there’s <a
+href="https://gregnewman.io/blog/emacs-carnival-2025-07-writing-experience/">a
+blog carnival happening this month on the topic</a>.</p>
+<p>I write everything (books, dissertations, articles, blog posts,
+emails, code) using <a
+href="https://en.wikipedia.org/wiki/Emacs">Emacs</a>, the venerable old
+text editor which has been in active development since the 1970s. I
+write using an Emacs mode called <a
+href="https://en.wikipedia.org/wiki/Org-mode">Org-mode</a>, which itself
+has been around since 2003. I arrived at Emacs and Org-mode after trying
+everything else, since they’re the only tools I’ve found which can
+handle the whole writing pipeline: reading, notetaking, writing, and
+publication, and can do it well. This is an unusual choice, which
+deserves some explanation. But before I describe the software stack and
+discuss all the technical details, I’ll first say a few words about my
+writing process.</p>
+<h1 id="overview-and-methodology">Overview and Methodology</h1>
+<p>Writing starts with reading. Reading generates notes, which then
+become writing, and finally publication. I wanted a way to make this
+process as frictionless as possible. A great methodology for that is the
+Zettelkasten method, explained perhaps the mostly eloquently in Sönke
+Ahrens’s book, <em>How to Take Smart Notes</em>. In a nutshell, it’s
+about keeping short, atomic notes, and ensuring that they’re deeply
+interconnected. Notes are either fleeting notes, concept notes, or
+literature notes. New thoughts become fleeting notes, which are
+eventually reworked into a concept notes, (an evergreen note which is
+often being revised), which then become writing. Every book or article
+has a literature note, too, which keeps track of the bibliographic
+information, so that it’s easy to cite sources later. The genius of this
+system is that daily tasks as simple as keeping a <a
+href="https://en.wikipedia.org/wiki/Commonplace_book">commonplace
+book</a> can eventually become articles, or even books, without much
+additional effort.</p>
+<p>Emacs can function as a great implementation of this Zettelkasten
+system, using a number of plugins which work together to streamline the
+writing process: org-noter for reading, org-roam for notetaking,
+org-mode for writing, and pandoc for publication. But if Emacs seems
+like a strange choice, allow me to explain.</p>
+<h1 id="why-emacs">Why Emacs?</h1>
+<p>As a grad student in English Literature, I didn’t know too many
+people using Emacs for writing. There are so many shiny tools for
+writing these days, and Emacs is very much not shiny. But it’s the best
+tool for the job, by far.</p>
+<p>I arrived at Emacs via Vim, an equally old and venerable text editor,
+famous for it modal editing style. If you’ve never written with a modal
+text editor, you’re missing out. It gives your keyboard two modes: one
+for entering text, and one for editing it. This is effectively an
+editing superpower, since all the pointing-and-clicking, all the
+selecting text, and everything else annoying about writing can be
+replaced with a couple of keystrokes. Want to delete three words? Type
+<code>d3w</code>, short for “delete three words.” Want to delete a
+paragraph? Type <code>dap</code> for “delete a paragraph.” Change a
+double-quoted sentence to a single-quoted one? Type <code>cs'"</code>
+for “change surrounding single-quotes to double-quotes.”</p>
+<p>Once I got used to Vim, I wanted to use it to write everything. And I
+did, until I discovered Emacs. Emacs has modal editing functionality
+(cheekily called <a
+href="https://github.com/emacs-evil/evil">evil-mode</a>) but can extend
+it to anything else in the Emacs ecosystem. Like Vim, it’s old (read:
+future-proof), open-source (read: free as in freedom), and
+extensible.</p>
+<p>I write more prose than I do code, but it turns out a coder’s text
+editor is what I needed to write prose.</p>
+<p>But the killer feature of Emacs is its built-in mode, <a
+href="https://en.wikipedia.org/wiki/Org-mode">Org-mode</a>.</p>
+<h1 id="org-mode">Org-mode</h1>
+<p>It’s hard to describe just how powerful org-mode is. It’s a
+lightweight markup language, outliner, calendar, organizational system,
+todo list tracker, notetaking tool, literate programming utility, and a
+lot more. It’s built into Emacs, but there is a growing number of
+Org-compatible programs available for other platforms now.</p>
+<p>You can think of Org like a supercharged Markdown, but with an entire
+ecosystem of plugins built around it. Whereas Markdown has a minimal
+core by definition, and has led to a huge number of Markdown-based
+markup languages (CommonMark, GitHub Flavored Markdown, and MyST
+Markdown, just to name a few), Org-mode is comparatively stable,
+standardized, and has grown along with its primary editor, Emacs,
+ensuring a tight compatibility between the two. I write just about
+everything in org-mode files, including emails, scripts, literate Python
+notebooks, and this blog post.</p>
+<h1 id="discovery-and-capture-org-capture-and-org-protocol">Discovery
+and Capture: Org-capture and Org-protocol</h1>
+<p>If I come across something interesting on the web, I’ll capture it
+using org-protocol and org-capture. I have key combinations set up for
+my preferred web browser, Qutebrowser, which send the website URL, the
+website title, and any text I’ve selected to org-capture, which then can
+allow me to insert that link and text to any existing note (via
+org-refile) or to a new note. In this way, I’m basically using org-mode
+as a bookmark management utility.</p>
+<h1 id="reading-org-noter">Reading: Org-noter</h1>
+<p>Once I collect reading material, in the form of papers or books,
+.pdfs or .epubs, I usually read it with <a
+href="https://github.com/weirdNox/org-noter">org-noter</a>. Org-noter
+provides a two-pane interface for reading, with the text on the left and
+my Org-mode notes on the right. The notes stay in sync with the text,
+such that if I turn the page, the notes also jump to the appropriate
+page. I used to annotate PDFs and ePUBs by using PDF annotation
+programs, but these didn’t always make my annotations searchable.</p>
+<p>If I read something which relates to a note I’ve already taken, I’ll
+simply type the title of the note, and org-roam will insert a link to
+it, ensuring that I’ll be able to find my literature notes from a
+concept note, and vice-versa.</p>
+<h1 id="notetaking-org-roam">Notetaking: Org-roam</h1>
+<p><a href="https://github.com/org-roam/org-roam">Org-roam</a> is a
+clone of <a href="https://roamresearch.com/">Roam Research</a>, but made
+for org-mode. It enables Zettlekasten-like notetaking from within
+org-mode. I like it because it allows me to do graphical notetaking,
+where notes are part of a decentralized network, and also hierarchical
+notetaking, where notes are part of a hierarchy. For example, I have a
+file movies.org where I keep track of movies I’ve seen, along with
+ratings I’ve given them and links to their IMDB pages. That enables me
+to disambiguate between books and movies with the same title, without
+resorting to the parentheses-based namespacing of the kind used by
+Wikipedia.</p>
+<p>Org-roam also works well with org-mode citation tools like <a
+href="https://github.com/emacs-citar/citar">citar</a>, using <a
+href="https://github.com/emacs-citar/citar-org-roam">citar-org-roam</a>.</p>
+<p>I can even visualize my whole Org-roam graph, now at over 3K notes,
+using <a
+href="https://github.com/org-roam/org-roam-ui">org-roam-ui</a>.</p>
+<h1 id="publishing-pandoc">Publishing: Pandoc</h1>
+<p><a href="https://pandoc.org/">Pandoc</a> is an amazing program for
+converting between lots of different file formats, including Org files.
+With a little finessing, it’s a very powerful system for publishing. <a
+href="https://pandoc.org/MANUAL.html#citation-rendering">It can generate
+bibliographies</a> from citations, Bibtex files, and .CSL citation
+styles. It can handle numbering your figures and equations, adding
+captions, dealing with special blocks of text, and more.</p>
+<p><a href="https://dissertation.jonreeve.com/">My dissertation</a>, for
+example, uses <a
+href="https://github.com/JonathanReeve/dissertation/blob/master/Template.hs">a
+custom Pandoc template</a> along with <a
+href="https://github.com/JonathanReeve/dissertation/blob/master/Shakefile.hs">build
+instructions in a Shakefile, for the Shake build system</a>, to convert
+.org files to the HTML files that I then published to the web and the
+university archives. <a
+href="https://dissertation.jonreeve.com/00-introduction/introduction-v01.html#technologies">I
+wrote about this here, in the dissertation introduction.</a></p>
+<p>Since Pandoc can handle so many different types of document formats,
+I can write in .org and then publish HTML to the web, or export to PDF,
+ePUB, or whatever.</p></article><hr><p>I welcome your comments and annotations in the Hypothes.is sidebar to the right. →</p><script src="https://hypothes.is/embed.js"></script></div><footer><div class="container"><div class="columns"><div class="column col-8"><p>I believe in openness. This work is licensed under a <a
+href="https://creativecommons.org/licenses/by-nc-sa/4.0/">Creative
+Commons Attribution-NonCommercial-ShareAlike 4.0 International
+License</a>, unless otherwise stated. All content ©Jonathan Reeve 2023.
+Hand-coded with love, using exclusively free and open-source software,
+including <a href="https://github.com/srid/ema">Ema</a> and <a
+href="https://haskell.org/">Haskell</a>. Hosted on <a
+href="https://github.com">GitHub</a> and served with <a
+href="https://netlify.com">Netlify</a>. Icons by Nhor, via <a
+href="https://thenounproject.com">The Noun Project</a>. <a
+href="https://www.buymeacoffee.com/vaIVQZH">Buy me a coffee</a> or
+support me <a href="https://liberapay.com/JonathanReeve/donate">via
+Libera Pay</a>.</p></div><div class="column col-4"><div class="icons"><a href="http://github.com/JonathanReeve"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512" fill="#fafafa" width="3em" height="3em"><path d="M400 32H48C21.5 32 0 53.5 0 80v352c0 26.5 21.5 48 48
+48h352c26.5 0 48-21.5 48-48V80c0-26.5-21.5-48-48-48zM277.3 415.7c-8.4
+1.5-11.5-3.7-11.5-8 0-5.4.2-33 .2-55.3 0-15.6-5.2-25.5-11.3-30.7 37-4.1 76-9.2
+76-73.1 0-18.2-6.5-27.3-17.1-39 1.7-4.3 7.4-22-1.7-45-13.9-4.3-45.7 17.9-45.7
+17.9-13.2-3.7-27.5-5.6-41.6-5.6-14.1 0-28.4 1.9-41.6 5.6 0
+0-31.8-22.2-45.7-17.9-9.1 22.9-3.5 40.6-1.7 45-10.6 11.7-15.6 20.8-15.6 39 0
+63.6 37.3 69 74.3 73.1-4.8 4.3-9.1 11.7-10.6 22.3-9.5 4.3-33.8
+11.7-48.3-13.9-9.1-15.8-25.5-17.1-25.5-17.1-16.2-.2-1.1 10.2-1.1 10.2 10.8 5
+18.4 24.2 18.4 24.2 9.7 29.7 56.1 19.7 56.1 19.7 0 13.9.2 36.5.2 40.6 0 4.3-3
+9.5-11.5 8-66-22.1-112.2-84.9-112.2-158.3 0-91.8 70.2-161.5 162-161.5S388 165.6
+388 257.4c.1 73.4-44.7 136.3-110.7
+158.3zm-98.1-61.1c-1.9.4-3.7-.4-3.9-1.7-.2-1.5 1.1-2.8 3-3.2 1.9-.2 3.7.6 3.9
+1.9.3 1.3-1 2.6-3 3zm-9.5-.9c0 1.3-1.5 2.4-3.5 2.4-2.2.2-3.7-.9-3.7-2.4 0-1.3
+1.5-2.4 3.5-2.4 1.9-.2 3.7.9 3.7 2.4zm-13.7-1.1c-.4 1.3-2.4 1.9-4.1
+1.3-1.9-.4-3.2-1.9-2.8-3.2.4-1.3 2.4-1.9 4.1-1.5 2 .6 3.3 2.1 2.8
+3.4zm-12.3-5.4c-.9 1.1-2.8.9-4.3-.6-1.5-1.3-1.9-3.2-.9-4.1.9-1.1 2.8-.9 4.3.6
+1.3 1.3 1.8 3.3.9 4.1zm-9.1-9.1c-.9.6-2.6 0-3.7-1.5s-1.1-3.2 0-3.9c1.1-.9 2.8-.2
+3.7 1.3 1.1 1.5 1.1 3.3 0
+4.1zm-6.5-9.7c-.9.9-2.4.4-3.5-.6-1.1-1.3-1.3-2.8-.4-3.5.9-.9 2.4-.4 3.5.6 1.1
+1.3 1.3 2.8.4 3.5zm-6.7-7.4c-.4.9-1.7 1.1-2.8.4-1.3-.6-1.9-1.7-1.5-2.6.4-.6
+1.5-.9 2.8-.4 1.3.7 1.9 1.8 1.5 2.6z"></svg></a><a href="http://twitter.com/j0_0n"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512" fill="#fafafa" width="3em" height="3em"><path d="M400 32H48C21.5 32 0 53.5 0 80v352c0 26.5 21.5 48
+48 48h352c26.5 0 48-21.5 48-48V80c0-26.5-21.5-48-48-48zm-48.9 158.8c.2 2.8.2
+5.7.2 8.5 0 86.7-66 186.6-186.6 186.6-37.2 0-71.7-10.8-100.7-29.4 5.3.6 10.4.8
+15.8.8 30.7 0 58.9-10.4 81.4-28-28.8-.6-53-19.5-61.3-45.5 10.1 1.5 19.2 1.5
+29.6-1.2-30-6.1-52.5-32.5-52.5-64.4v-.8c8.7 4.9 18.9 7.9 29.6 8.3a65.447 65.447
+0 0 1-29.2-54.6c0-12.2 3.2-23.4 8.9-33.1 32.3 39.8 80.8 65.8 135.2 68.6-9.3-44.5
+24-80.6 64-80.6 18.9 0 35.9 7.9 47.9 20.7 14.8-2.8 29-8.3 41.6-15.8-4.9
+15.2-15.2 28-28.8 36.1 13.2-1.4 26-5.1 37.8-10.2-8.9 13.1-20.1 24.7-32.9 34z"></svg></a><a href="mailto:jonathan@jonreeve.com"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512" fill="#fafafa" width="3em" height="3em"><path d="M400 32H48C21.49 32 0 53.49 0 80v352c0 26.51 21.49 48
+48 48h352c26.51 0 48-21.49 48-48V80c0-26.51-21.49-48-48-48zM178.117
+262.104C87.429 196.287 88.353 196.121 64 177.167V152c0-13.255 10.745-24
+24-24h272c13.255 0 24 10.745 24 24v25.167c-24.371 18.969-23.434 19.124-114.117
+84.938-10.5 7.655-31.392 26.12-45.883
+25.894-14.503.218-35.367-18.227-45.883-25.895zM384 217.775V360c0 13.255-10.745
+24-24 24H88c-13.255 0-24-10.745-24-24V217.775c13.958 10.794 33.329 25.236 95.303
+70.214 14.162 10.341 37.975 32.145 64.694 32.01 26.887.134 51.037-22.041
+64.72-32.025 61.958-44.965 81.325-59.406 95.283-70.199z"></svg></a></div></div></div><script data-goatcounter="https://jonreeve.goatcounter.com/count" async src="//gc.zgo.at/count.js"></script><script src="/assets/js/jquery-3.5.1.min.js"></script><script src="/assets/js/main.js"></script><script src="//cdn.jsdelivr.net/gh/highlightjs/cdn-release@10.2.0/build/highlight.min.js"></script><script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script><script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script><script>hljs.initHighlightingOnLoad();</script></div></footer></body></html>
